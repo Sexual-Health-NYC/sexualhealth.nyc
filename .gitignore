@@ -1,0 +1,11 @@
+# Generated files
+docs/*.docx
+docs/*.html
+docs/PLAN_for_html.md
+docs/diagram.mmd
+
+# OS
+.DS_Store
+
+# Editor
+~$*
