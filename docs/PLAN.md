@@ -1,38 +1,288 @@
 # sexualhealth.nyc — Project Specification
 
-## Overview
+## The Problem
 
-An interactive map of all sexual health clinics in NYC with filterable metadata: insurance acceptance, services offered, hours, walk-in availability, and nearby transit options.
+If you need sexual health services in NYC — STI testing, PrEP, abortion care, contraception — there's no single place to find what's available. You have to check:
 
-**Why this matters:**
-Existing resources (NYC Health Map, HIV.gov locator, Planned Parenthood finder) are fragmented and lack:
+- NYC Health Department's site (only lists their 6 clinics)
+- Planned Parenthood's finder (only their locations)
+- HIV.gov locator (only HIV-related services)
+- Individual clinic websites
 
-- Comprehensive coverage (no single source aggregates all providers)
-- Insurance filtering (Medicaid vs. no-insurance-required vs. specific plans)
-- Service filtering (PrEP, abortion, gender-affirming care in one place)
-- Transit integration
-- Walk-in vs. appointment filtering
+None of these answer the questions people actually have:
+
+- "Can I walk in or do I need an appointment?"
+- "Do they take my insurance?"
+- "Can I go without insurance?"
+- "What's the closest clinic to my subway stop?"
+- "Are they LGBTQ+ friendly?"
+
+**Our solution:** One interactive map with every sexual health clinic in NYC, with filters for all the things that actually matter.
 
 ---
 
-## Status
+## What's Already Set Up
 
-| Item                           | Status                     |
-| ------------------------------ | -------------------------- |
-| Domain (sexualhealth.nyc)      | ✅ Registered (Porkbun)    |
-| Email (hello@sexualhealth.nyc) | ✅ Set up (Zoho Mail Lite) |
-| DNS (MX, SPF, DKIM)            | ✅ Configured              |
-| Netlify hosting                | ✅ Deployed                |
-| GoatCounter analytics          | ✅ Set up                  |
-| Static site                    | ⏳ Placeholder only        |
-| ArcGIS Experience Builder app  | ⏳ Not started             |
-| Data pipeline                  | ⏳ Not started             |
-| Data collection                | ⏳ Not started             |
+| What             | Status         | Details                                                    |
+| ---------------- | -------------- | ---------------------------------------------------------- |
+| Website domain   | ✅ Done        | sexualhealth.nyc (also sexualhealthnyc.com redirects here) |
+| Email            | ✅ Done        | hello@sexualhealth.nyc — check via mail.zoho.com           |
+| Placeholder site | ✅ Done        | Live at sexualhealth.nyc (just a "coming soon" page)       |
+| Analytics        | ✅ Done        | Stats at sexualhealthnyc.goatcounter.com                   |
+| Map tool         | ⏳ Not started | Will use ArcGIS via NYU license                            |
+| Clinic data      | ⏳ Not started | The main work — see below                                  |
 
-**Domains:**
+---
 
-- Primary: `sexualhealth.nyc`
-- Redirect: `sexualhealthnyc.com` → `sexualhealth.nyc`
+## What We're Building
+
+The site has two parts:
+
+**1. The map (the main thing)**
+An interactive map where users can:
+
+- See all clinics as pins on a map
+- Filter by services (STI testing, PrEP, abortion, etc.)
+- Filter by insurance (Medicaid, uninsured, etc.)
+- Filter by walk-in vs. appointment
+- Click a clinic to see details (hours, phone, address)
+- Get transit directions
+
+**2. Static pages (the wrapper)**
+Simple pages around the map:
+
+- Homepage with the embedded map
+- About page (who made this, methodology)
+- Resources page (hotlines, other links)
+- Contact page (submit corrections)
+
+---
+
+## The Data: What We're Collecting
+
+For each clinic, we need to collect specific information. Here's every field and why it matters:
+
+### Basic Info
+
+| Field        | Example                                | Why we need it                      |
+| ------------ | -------------------------------------- | ----------------------------------- |
+| Clinic name  | "Callen-Lorde Community Health Center" | Obviously                           |
+| Address      | "356 W 18th St, New York, NY 10011"    | For the map location and directions |
+| Borough      | "Manhattan"                            | Lets people filter to their borough |
+| Phone number | "(212) 271-7200"                       | So people can call                  |
+| Website      | "callen-lorde.org"                     | So people can learn more            |
+
+### Services Offered
+
+This is the most important filtering. We need to know if each clinic offers:
+
+| Service               | Why it matters                                                         |
+| --------------------- | ---------------------------------------------------------------------- |
+| STI testing           | The most common reason people search                                   |
+| HIV testing           | Often bundled with STI but not always                                  |
+| PrEP                  | HIV prevention pill — not everywhere offers it                         |
+| PEP                   | Emergency HIV prevention — time-sensitive, people need to find it fast |
+| Contraception         | Birth control                                                          |
+| Abortion              | Increasingly hard to find accurate info                                |
+| Gender-affirming care | Hormones, etc. — LGBTQ+ community needs this                           |
+| Vaccines              | HPV, Hepatitis, etc.                                                   |
+
+### Insurance & Cost
+
+The #1 barrier to care is "can I afford this?" We need:
+
+| Field                         | Why it matters                             |
+| ----------------------------- | ------------------------------------------ |
+| Accepts Medicaid              | Huge — many low-income NYers have Medicaid |
+| Accepts Medicare              | For older adults                           |
+| Accepts private insurance     | And ideally which ones                     |
+| Sliding scale available       | Reduced cost based on income               |
+| Can be seen without insurance | Critical for uninsured people              |
+
+### Access & Availability
+
+| Field                | Why it matters                |
+| -------------------- | ----------------------------- |
+| Walk-ins accepted    | Can you just show up?         |
+| Appointment required | Or do you need to call ahead? |
+| Hours                | When are they open?           |
+| Languages spoken     | NYC is multilingual           |
+
+### Special Populations
+
+Some clinics specialize in serving specific communities:
+
+| Field                       | Why it matters                                       |
+| --------------------------- | ---------------------------------------------------- |
+| LGBTQ+ focused              | Some clinics specialize in this (Callen-Lorde, GMHC) |
+| Youth-friendly              | Teens can go without parental consent                |
+| Anonymous testing available | Some people need this for safety reasons             |
+
+### Transit
+
+NYC runs on public transit. We'll calculate:
+
+| Field          | Example                     |
+| -------------- | --------------------------- |
+| Nearest subway | "A/C/E at 14th St (0.2 mi)" |
+| Nearest bus    | "M14A, M14D (0.1 mi)"       |
+
+### Metadata
+
+For maintenance:
+
+| Field              | Why                                                          |
+| ------------------ | ------------------------------------------------------------ |
+| Last verified date | So we know how stale the data might be                       |
+| Data sources       | Where did we get this info from?                             |
+| Notes              | Anything special (temporary closures, express testing, etc.) |
+
+---
+
+## Where the Data Comes From
+
+We're pulling from multiple sources and combining them. Think of it like assembling a puzzle from different boxes.
+
+### Official Government Data
+
+| Source                  | What we get                             | Reliability                 |
+| ----------------------- | --------------------------------------- | --------------------------- |
+| NYC Open Data           | Health facility locations and addresses | High — but limited detail   |
+| HRSA (federal)          | Federally Qualified Health Centers      | High — but only FQHCs       |
+| NYC Health Dept website | Their 6 sexual health clinics           | High — but only 6 locations |
+
+### Provider Websites (We Have to Scrape)
+
+These don't have APIs — we have to visit their websites and extract the info:
+
+| Organization                  | # of Locations | What they offer          |
+| ----------------------------- | -------------- | ------------------------ |
+| Planned Parenthood NYC        | ~10            | Full range of services   |
+| Callen-Lorde                  | 4              | LGBTQ+ focused           |
+| GMHC                          | 1              | HIV/AIDS focused         |
+| Community Healthcare Network  | ~14            | Community health centers |
+| The Door                      | 1              | Youth focused            |
+| Mount Sinai Adolescent Health | 1              | Youth focused            |
+
+### What "Scraping" Means
+
+We write code that visits each clinic's website and extracts the information (hours, services, insurance) from their pages. It's like copying info from a website, but automated.
+
+The tricky part: every website is different. Planned Parenthood's site is structured differently than Callen-Lorde's. We have to handle each one.
+
+---
+
+## What We Won't Know Until We Start
+
+Some things we can only figure out by doing the work:
+
+### Data Quality Issues
+
+- **Outdated websites:** Some clinics haven't updated their sites in years. The hours might be wrong.
+- **Inconsistent info:** One page says "walk-ins welcome" but another says "by appointment only."
+- **Missing info:** Many sites don't list what insurance they accept.
+- **Vague language:** "We accept most insurance" — what does that mean?
+
+### Scope Questions
+
+- **What counts as a "sexual health clinic"?**
+  - Narrow definition (only specialized clinics): ~30-50 locations
+  - Broad definition (any clinic offering STI testing): ~150-200 locations
+  - We'll need to decide as we go
+
+- **How do we handle hospitals?**
+  - Mount Sinai has an STI clinic, but it's inside a giant hospital
+  - Do we list the hospital or try to find the specific clinic?
+
+- **Telehealth?**
+  - Some services are now available online
+  - Do we include them? They don't have a "location"
+
+### Verification Challenges
+
+- **Closed permanently:** Some clinics from old databases may have shut down
+- **Moved:** Addresses may be outdated
+- **Changed services:** A clinic might have stopped offering abortion care
+
+**Our approach:** Start scraping, document issues as we find them, and make decisions together.
+
+---
+
+## Keeping the Data Updated (Your Job)
+
+After launch, the clinic info will slowly go out of date. Hours change, clinics close, new ones open. Here's how we'll handle it:
+
+### How Users Report Issues
+
+The site will have a "Report an error" form. When someone submits a correction:
+
+1. You'll get an email notification
+2. Submissions also appear in the Netlify dashboard
+3. You verify the info (check the clinic's website, or call them)
+4. You update the data in ArcGIS (see instructions below)
+5. Optionally reply to thank them
+
+### How to Update the Data
+
+ArcGIS has a spreadsheet-like interface. To update a clinic:
+
+1. Log into ArcGIS Online (I'll set up your account)
+2. Find the clinic data layer
+3. Click "Data" tab — you'll see all clinics in a table
+4. Find the row and edit the cell
+5. Save
+
+For adding a new clinic or deleting one, same interface but use the Add/Delete buttons.
+
+### How Often to Check
+
+Suggested routine:
+
+- **Weekly:** Check for user submissions, handle any corrections
+- **Monthly:** Spot-check 5-10 random clinics (visit their websites, make sure hours are still accurate)
+- **Quarterly:** Consider re-running the scraper to catch bulk changes
+
+### Dealing with Uncertainty
+
+When you're not sure if info is correct:
+
+- Check the clinic's website first
+- If website is unclear, call them (most clinics have reception)
+- If you can't verify, add a note like "Hours unverified as of [date]"
+
+---
+
+## What Success Looks Like
+
+### Minimum Viable Product (MVP)
+
+- [ ] Map with 50+ clinics
+- [ ] Filters for: services, insurance, walk-in
+- [ ] Each clinic shows: name, address, phone, hours
+- [ ] Transit info for each clinic
+- [ ] Mobile-friendly
+- [ ] "Report an error" form works
+
+### Nice to Have
+
+- [ ] 100+ clinics
+- [ ] All data fields populated
+- [ ] Clinic detail pages (for SEO)
+
+### Measuring Success
+
+- **Analytics:** How many people visit? (GoatCounter)
+- **Engagement:** How many filter/interact with the map? (ArcGIS stats)
+- **Feedback:** What do users say? (form submissions, emails)
+- **Sharing:** Does it get shared on social media, by orgs?
+
+---
+
+---
+
+# Technical Implementation Details
+
+_Everything below is implementation detail — you don't need to read this unless you're curious about how the technical side works._
 
 ---
 
@@ -86,92 +336,59 @@ flowchart TB
 
 ---
 
-## Phase 1: Initial Data Collection (One-Time)
+## Data Schema (Technical)
 
-### Goal
+| Field               | Type    | Notes                                                           |
+| ------------------- | ------- | --------------------------------------------------------------- |
+| `name`              | string  | Clinic name                                                     |
+| `address`           | string  | Full street address                                             |
+| `borough`           | string  | Manhattan, Brooklyn, Queens, Bronx, Staten Island               |
+| `latitude`          | float   | WGS84                                                           |
+| `longitude`         | float   | WGS84                                                           |
+| `bbl`               | string  | Borough-Block-Lot (NYC property ID, used for deduplication)     |
+| `phone`             | string  | Primary contact (E.164 format, used as dedup key)               |
+| `website`           | string  | Clinic URL                                                      |
+| `clinic_type`       | string  | DOH, Planned Parenthood, FQHC, LGBTQ+ Center, Hospital, Private |
+| `services`          | string  | Comma-separated list                                            |
+| `has_sti_testing`   | boolean | Filter flag                                                     |
+| `has_prep`          | boolean | Filter flag                                                     |
+| `has_abortion`      | boolean | Filter flag                                                     |
+| `insurance_types`   | string  | Comma-separated list                                            |
+| `accepts_medicaid`  | boolean | Filter flag                                                     |
+| `no_insurance_ok`   | boolean | Filter flag                                                     |
+| `hours`             | string  | Human-readable                                                  |
+| `walk_in`           | boolean | Walk-ins accepted?                                              |
+| `appointment_only`  | boolean | Appointment required?                                           |
+| `languages`         | string  | Comma-separated                                                 |
+| `lgbtq_focused`     | boolean |                                                                 |
+| `youth_friendly`    | boolean |                                                                 |
+| `anonymous_testing` | boolean |                                                                 |
+| `nearest_subway`    | string  | e.g., "A/C/E at 14th St (0.2 mi)"                               |
+| `nearest_bus`       | string  | e.g., "M14A, M14D (0.1 mi)"                                     |
+| `last_verified`     | date    |                                                                 |
+| `data_sources`      | string  | Where info came from                                            |
+| `notes`             | string  | Special info                                                    |
 
-Generate comprehensive, accurate dataset with ~100-200 clinic locations and rich metadata.
+---
 
-### Data Schema
+## Data Pipeline
 
-| Field               | Type    | Notes                                                                                                          |
-| ------------------- | ------- | -------------------------------------------------------------------------------------------------------------- |
-| `name`              | string  | Clinic name                                                                                                    |
-| `address`           | string  | Full street address                                                                                            |
-| `borough`           | string  | Manhattan, Brooklyn, Queens, Bronx, Staten Island                                                              |
-| `latitude`          | float   | WGS84                                                                                                          |
-| `longitude`         | float   | WGS84                                                                                                          |
-| `bbl`               | string  | Borough-Block-Lot (NYC property ID, used for deduplication)                                                    |
-| `phone`             | string  | Primary contact (E.164 format, used as dedup key)                                                              |
-| `website`           | string  | Clinic URL                                                                                                     |
-| `clinic_type`       | string  | DOH, Planned Parenthood, FQHC, LGBTQ+ Center, Hospital, Private                                                |
-| `services`          | string  | Comma-separated: STI testing, HIV testing, PrEP, PEP, contraception, abortion, gender-affirming care, vaccines |
-| `has_sti_testing`   | boolean | Filter flag: STI testing available                                                                             |
-| `has_prep`          | boolean | Filter flag: PrEP available                                                                                    |
-| `has_abortion`      | boolean | Filter flag: Abortion services available                                                                       |
-| `insurance_types`   | string  | Comma-separated: Medicaid, Medicare, Private, Sliding Scale                                                    |
-| `accepts_medicaid`  | boolean | Filter flag: Accepts Medicaid                                                                                  |
-| `no_insurance_ok`   | boolean | Filter flag: Can be seen without insurance                                                                     |
-| `hours`             | string  | Human-readable hours                                                                                           |
-| `walk_in`           | boolean | Walk-ins accepted?                                                                                             |
-| `appointment_only`  | boolean | Appointment required?                                                                                          |
-| `languages`         | string  | Comma-separated                                                                                                |
-| `lgbtq_focused`     | boolean | Specifically LGBTQ+ focused?                                                                                   |
-| `youth_friendly`    | boolean | Serves teens / no parental consent needed?                                                                     |
-| `anonymous_testing` | boolean | Anonymous testing available?                                                                                   |
-| `nearest_subway`    | string  | e.g., "A/C/E at 14th St (0.2 mi)"                                                                              |
-| `nearest_bus`       | string  | e.g., "M14A, M14D (0.1 mi)"                                                                                    |
-| `last_verified`     | date    | When data was last checked                                                                                     |
-| `notes`             | string  | Special info (closures, express testing, etc.)                                                                 |
+### Geocoding: NYC Planning Labs GeoSearch
 
-### Data Sources
-
-**Base clinic lists (APIs / structured data):**
-
-| Source                  | What it provides                         | Access                                 |
-| ----------------------- | ---------------------------------------- | -------------------------------------- |
-| NYC Open Data (Socrata) | Health facilities, addresses             | Open API, no auth needed, 1000 req/day |
-| HRSA Data Warehouse     | Federally Qualified Health Centers       | Open API                               |
-| NYC Health Dept         | DOH sexual health clinics (~6 locations) | Scrape from nyc.gov                    |
-
-**Supplemental sources (scraping required):**
-
-| Source                               | Locations | URL                   |
-| ------------------------------------ | --------- | --------------------- |
-| Planned Parenthood NYC               | ~10       | plannedparenthood.org |
-| Callen-Lorde                         | 4         | callen-lorde.org      |
-| GMHC                                 | 1         | gmhc.org              |
-| Community Healthcare Network         | ~14       | chnnyc.org            |
-| The Door (youth)                     | 1         | door.org              |
-| Mount Sinai Adolescent Health Center | 1         | mountsinai.org        |
-| Alliance for Positive Change         | Multiple  | apcnyc.org            |
-
-**Enrichment data:**
-
-| Data            | Source                      | Format  |
-| --------------- | --------------------------- | ------- |
-| Subway stations | MTA GTFS / NYC Open Data    | GeoJSON |
-| Bus stops       | MTA GTFS                    | GeoJSON |
-| Geocoding       | NYC Planning Labs GeoSearch | API     |
-
-### Technical Approach
-
-**Tools:**
-
-- Python: `requests`, `beautifulsoup4`, `geopandas`, `pandas`
-- Claude API for structured extraction from unstructured HTML
-- NYC Planning Labs GeoSearch for geocoding (free, returns BBL for dedup)
-- Output: Shapefile (.shp, .shx, .dbf, .prj) or GeoJSON
-
-**Why NYC GeoSearch over Nominatim:**
+We use NYC's official geocoder instead of Google or Nominatim because it:
 
 - Returns BBL (Borough-Block-Lot) — immutable NYC property ID, perfect for deduplication
 - Handles NYC borough logic correctly ("New York, NY" = Manhattan, not Queens)
 - Returns official standardized addresses
-- Endpoint: `https://geosearch.planninglabs.nyc/v2/search?text={address}`
-- See `pipeline/geocoder.py` for implementation
+- Free, no API key needed
 
-**LLM extraction prompt pattern:**
+Endpoint: `https://geosearch.planninglabs.nyc/v2/search?text={address}`
+
+See `pipeline/geocoder.py` for implementation.
+
+### LLM Extraction
+
+For scraping clinic websites, we use Claude API to extract structured data from HTML:
 
 ```
 Given this HTML from a clinic website, extract:
@@ -182,6 +399,8 @@ Given this HTML from a clinic website, extract:
 - Walk-in or appointment required
 - Languages spoken
 
+Flag any information that appears outdated (references to past years, old COVID policies, etc.)
+
 Return as JSON.
 
 HTML:
@@ -190,96 +409,71 @@ HTML:
 
 ### Deduplication Strategy
 
-**The problem:** Same clinic may appear in multiple sources (NYC Open Data, HRSA, provider websites) with slightly different names/addresses.
+Same clinic may appear in multiple sources with different names/addresses.
 
 **Step 0: Phone number matching (primary key)**
-Phone numbers are more reliable than addresses in NYC (vertical stacking of businesses). Normalize to E.164 format and match first:
+Phone numbers are more reliable than addresses in NYC (vertical stacking of businesses). Normalize to E.164 format and match first.
 
-```python
-def normalize_phone(phone):
-    digits = re.sub(r'\D', '', phone)
-    if len(digits) == 10:
-        return f"+1{digits}"
-    if len(digits) == 11 and digits[0] == '1':
-        return f"+{digits}"
-    return None  # Invalid
-```
+**Step 1: BBL matching**
+If two records have the same BBL (Borough-Block-Lot), they're at the same property.
 
-**Step 1: Normalize addresses**
+**Step 2: Fuzzy name matching within geographic clusters**
+Group records within 50 meters, then fuzzy match names:
 
-```python
-def normalize_address(addr):
-    addr = addr.lower().strip()
-    addr = addr.replace(" street", " st")
-    addr = addr.replace(" avenue", " ave")
-    addr = addr.replace(" boulevard", " blvd")
-    addr = addr.replace(" floor", " fl")
-    addr = re.sub(r'\s+', ' ', addr)  # collapse whitespace
-    addr = re.sub(r'[^\w\s]', '', addr)  # remove punctuation
-    return addr
-```
-
-**Step 2: Geocode and get BBL**
-All records get lat/long and BBL via NYC GeoSearch. BBL is the immutable property ID — if two records have the same BBL, they're definitively at the same location.
-
-**Step 3: Cluster by proximity**
-Group records within 50 meters of each other — likely the same location.
-
-**Step 4: Fuzzy match names within clusters**
-Use fuzzy string matching (e.g., `rapidfuzz`) on clinic names within each geographic cluster:
-
-- Score > 85 = likely same clinic
+- Score > 85 = auto-merge
 - Score 60-85 = flag for manual review
-- Score < 60 = probably different clinics at same address (e.g., building with multiple providers)
-
-**Step 5: Merge records**
-For duplicates:
-
-- Keep the record with the most complete metadata
-- Fill in missing fields from other records
-- Prefer data from authoritative sources (NYC DOH > scraped website)
-- Track `data_sources` field listing where info came from
-
-**Step 6: Manual review queue**
-Output uncertain matches to a CSV for human review before final import.
-
-**Example duplicate scenarios:**
-
-| Source A                                      | Source B                                 | Action                                         |
-| --------------------------------------------- | ---------------------------------------- | ---------------------------------------------- |
-| "Callen-Lorde Community Health Center"        | "Callen Lorde CHC"                       | Auto-merge (fuzzy score ~90)                   |
-| "NYC Health Dept Chelsea Clinic"              | "Chelsea Sexual Health Clinic"           | Flag for review                                |
-| "Mount Sinai Adolescent Health" at 320 E 94th | "Phillips Family Practice" at 320 E 94th | Keep both (different providers, same building) |
-
-### Deliverable
-
-Shapefile ready for import into ArcGIS Online.
+- Score < 60 = probably different clinics at same address
 
 ---
 
-## Phase 2: Ongoing Maintenance (If Traction)
+## Static Site
 
-Only invest in this after proving value (people use it, positive feedback).
+### Structure
 
-### Infrastructure
+```
+public/
+├── index.html          # Full-width embedded ArcGIS map
+├── about.html          # Project background, methodology
+├── resources.html      # Additional resources, hotlines
+├── contact.html        # Submit corrections form
+└── _headers            # Security headers
+```
 
-- PostgreSQL + PostGIS database
-- Scheduled scraper (monthly)
-- Change detection and alerting
-- API endpoint that ArcGIS consumes directly (no manual shapefile uploads)
+### Accessibility (WCAG 2.1 AA)
 
-### Considerations
+The static site wrapper must meet WCAG 2.1 AA:
 
-- Clinic info goes stale fast (hours change, insurance changes, closures)
-- Data quality/confidence scores per field
+- Semantic HTML with proper heading hierarchy
+- Keyboard navigation
+- Color contrast 4.5:1 minimum
+- Skip links
+- Alt text on images
+
+**ArcGIS accessibility:** Maps are challenging for screen readers. We configure:
+
+- Full-screen layouts (not free-form)
+- Auto-calculate tab orders
+- Accessible labels on all widgets
+- High-contrast themes
+- List view alongside map for non-visual access
+
+### Security Headers
+
+`public/_headers`:
+
+```
+/*
+  Content-Security-Policy: default-src 'self'; frame-src https://experience.arcgis.com https://*.arcgis.com; script-src 'self' https://gc.zgo.at; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+```
 
 ---
 
-## Community Submissions (Phase 1)
+## Community Submissions
 
-### Option A: Netlify Forms (Preferred)
-
-Netlify Forms are free, require no backend, and don't leak user email addresses like mailto links do.
+### Netlify Forms (Preferred)
 
 ```html
 <form name="clinic-update" method="POST" data-netlify="true">
@@ -295,162 +489,19 @@ Netlify Forms are free, require no backend, and don't leak user email addresses 
 </form>
 ```
 
-Submissions appear in Netlify dashboard and can email you.
-
-### Option B: Email fallback
-
-If forms feel like overkill, use `mailto:hello@sexualhealth.nyc?subject=Clinic%20Update`.
-
-### Process
-
-1. User submits correction via form or email
-2. We verify the info (check clinic website, call if needed)
-3. Update the feature layer in ArcGIS Online
-4. Reply to confirm (if email provided)
+Submissions appear in Netlify dashboard and can trigger email notifications.
 
 ---
 
-## Data Maintenance (ArcGIS)
+## Email & HIPAA
 
-### Quick Edits (1-2 fields)
+**Address:** hello@sexualhealth.nyc (Zoho Mail Lite, $12/year)
 
-Open the feature layer in **Map Viewer** → click the clinic point → edit attributes in the popup → save.
+**HIPAA note:** This site is a directory, not a healthcare provider. HIPAA doesn't apply to us. However, people may email health questions. Mitigations:
 
-### Bulk Attribute Edits
-
-On the feature layer's item page → **Data tab** → spreadsheet-like interface → edit cells directly → save.
-
-### Add New Clinic
-
-Data tab → click "Add" → fill in fields → save. Or use Map Viewer to drop a new point.
-
-### Full Data Refresh
-
-**Overwrite layer:** Upload a new CSV/GeoJSON/Shapefile to completely replace all data. Use when re-running the data pipeline.
-
-**Append data:** Add new records without replacing existing ones.
-
-### Programmatic Updates (Phase 2)
-
-ArcGIS REST API allows automated updates. Could connect directly to a PostGIS database or scheduled scraper output.
-
-### Survey123 (Phase 2)
-
-If community submissions grow, create a Survey123 form that writes directly to the feature layer — skips the email step, but requires moderation workflow.
-
----
-
-## Static Site
-
-### Structure
-
-```
-sexualhealth.nyc/
-├── index.html          # Full-width embedded ArcGIS map
-├── about.html          # Project background, methodology
-├── resources.html      # Additional resources, hotlines
-└── contact.html        # Submit corrections, add a clinic (mailto link)
-```
-
-### Accessibility (WCAG 2.1 AA)
-
-The static site wrapper must meet WCAG 2.1 AA compliance:
-
-- **Semantic HTML:** Proper heading hierarchy, landmarks (`<nav>`, `<main>`, `<footer>`), and ARIA labels where needed
-- **Keyboard navigation:** All interactive elements focusable and operable via keyboard
-- **Color contrast:** Minimum 4.5:1 for normal text, 3:1 for large text
-- **Focus indicators:** Visible focus states on all interactive elements
-- **Skip links:** "Skip to main content" link for keyboard users
-- **Alt text:** Descriptive alt attributes for all images
-- **Responsive design:** Usable at 200% zoom, works with screen readers
-- **Form labels:** Any mailto links or future forms properly labeled
-- **Testing:** Validate with axe DevTools, WAVE, and manual keyboard/screen reader testing
-
-**ArcGIS Experience Builder Accessibility:**
-
-Maps are inherently challenging for screen readers. Esri has partial WCAG support but requires manual configuration:
-
-_Required configuration in Experience Builder:_
-
-- Use full-screen or scrolling page layouts (not free-form drag-and-drop)
-- Click A11Y button → enable "Auto-calculate element tab orders"
-- Add accessible labels to every widget (Map, Filter, List, Search)
-- Use default themes (Prime, Ocean, etc.) which have optimized color contrast
-- If customizing colors, maintain 4.5:1 contrast ratio
-
-_Provide non-map alternatives:_
-
-- Include a filterable list view (List widget) alongside the map
-- Consider a downloadable CSV of all clinics for screen reader users
-- Add text descriptions of what the map shows
-
-_Reference:_ [Esri Accessibility Conformance Report (VPAT)](https://www.esri.com/content/dam/esrisites/en-us/media/legal/vpats/arcgis-experience-builder-10-25-23-vpat.pdf)
-
-### Hosting: Netlify (Free)
-
-- 100GB bandwidth/month (the iframe does the heavy lifting — Esri serves the map tiles/data, Netlify only serves your thin HTML/CSS wrapper)
-- 300 build minutes/month
-- Custom domain with free SSL
-- Dead simple: connect GitHub repo or drag-and-drop a folder
-
-**Bandwidth limits:** Netlify emails you at 50%, 75%, 90%, and 100% of usage. On the free tier, if you hit 100%, the site pauses until the next billing cycle — no surprise charges. It auto-resumes next month.
-
-### Domain Configuration (Porkbun DNS)
-
-1. Point `sexualhealth.nyc` to Netlify via CNAME record
-2. Add `sexualhealthnyc.com` and configure redirect → `sexualhealth.nyc` (via Netlify `_redirects` file)
-3. HTTPS is automatic with Netlify
-
-### Security Headers (CSP)
-
-`public/_headers` file configures Content-Security-Policy:
-
-```
-/*
-  Content-Security-Policy: default-src 'self'; frame-src https://experience.arcgis.com https://*.arcgis.com; script-src 'self' https://gc.zgo.at; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'
-  X-Frame-Options: DENY
-  X-Content-Type-Options: nosniff
-  Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: geolocation=(), microphone=(), camera=()
-```
-
-| Directive         | Value                                                | Why                                         |
-| ----------------- | ---------------------------------------------------- | ------------------------------------------- |
-| `frame-src`       | `https://experience.arcgis.com https://*.arcgis.com` | Allows the ArcGIS Experience Builder iframe |
-| `script-src`      | `'self' https://gc.zgo.at`                           | Your scripts + GoatCounter                  |
-| `X-Frame-Options` | `DENY`                                               | Prevents clickjacking                       |
-
----
-
-## Email: Zoho Mail Lite ($12/year)
-
-Need to send and receive as `hello@sexualhealth.nyc` — can't have replies coming from a personal address given the sensitive topic.
-
-**What you get:**
-
-- Send and receive as `hello@sexualhealth.nyc`
-- IMAP access (shows up in your regular mail client)
-- 5GB storage
-
-**Setup:**
-
-1. Create Zoho Mail account, select Lite plan ($1/user/month)
-2. Add `sexualhealth.nyc` domain
-3. Verify via DNS TXT record (add in Porkbun)
-4. Configure MX records (add in Porkbun)
-5. Create `hello@sexualhealth.nyc`
-6. Configure in mail client via IMAP
-
-**HIPAA / Health Info Disclaimer:**
-
-This site is a directory, not a healthcare provider. HIPAA only applies to covered entities (providers, health plans, clearinghouses). We're not one.
-
-However, people may email health questions anyway. Mitigations:
-
-- Set up auto-reply stating we don't provide medical advice
-- Clear disclaimer on contact page (see below)
-- Don't store/forward any health-related emails — delete after reading
-- Zoho Mail is not HIPAA-compliant, but doesn't need to be for our use case
+- Auto-reply stating we don't provide medical advice
+- Clear disclaimer on contact page
+- Don't store health-related emails
 
 **Required contact page language:**
 
@@ -458,157 +509,26 @@ However, people may email health questions anyway. Mitigations:
 
 ---
 
-## ArcGIS Components (Free via NYU)
+## SEO
 
-### What NYU license provides:
+The ArcGIS iframe is not crawlable by Google. SEO comes from the static wrapper pages.
 
-- ArcGIS Online account
-- ArcGIS Experience Builder (no-code web app builder)
-- Hosted feature layers
-- Geocoding credits
-- Base maps (streets, transit, satellite)
-
-### Experience Builder widgets to use:
-
-- **Map widget** — the map itself
-- **Filter widget** — dropdowns/checkboxes for insurance, services, etc.
-- **Search widget** — find clinics near an address
-- **List widget** — scrollable list of filtered results
-- **Directions widget** — routing/transit directions
-
-### Data layers to overlay:
-
-- NYC subway lines/stations (from ArcGIS Living Atlas)
-- NYC bus routes (from ArcGIS Living Atlas)
+**Phase 2 improvement:** Generate static HTML pages for each clinic (e.g., `sexualhealth.nyc/clinic/planned-parenthood-bronx`) to rank for long-tail searches like "planned parenthood bronx hours."
 
 ---
 
 ## Analytics
 
-Two layers, both privacy-preserving:
-
-### ArcGIS Built-in (Free, Automatic)
-
-Every ArcGIS item (the Experience Builder app, the hosted feature layer) has a Usage tab showing:
-
-- View counts over time (up to 1 year history)
-- Requests to the data layer
-- Average views per day
-
-This is server-side, no JavaScript, no cookies. Good enough to answer "is anyone using this?"
-
-### GoatCounter (Free, Optional)
-
-Add to the static wrapper site for more detail on the landing pages.
-
-- **Cost:** Free for non-commercial use
-- **Privacy:** No cookies, GDPR compliant, lightweight script
-- **What it shows:** Pageviews, referrers, browsers, countries, screen sizes
-- **Setup:** Add one `<script>` tag, create free account at goatcounter.com
-
-Only tracks the static wrapper pages (about, resources, contact). The ArcGIS iframe is tracked separately by Esri's built-in stats.
-
-**Start with ArcGIS built-in stats only.** Add GoatCounter later if you want referrer/geography data.
-
----
-
-## SEO
-
-### Basics
-
-- **Title tags:** Unique per page, include "NYC" and key terms (e.g., "Free STI Testing NYC | sexualhealth.nyc")
-- **Meta descriptions:** ~155 chars, action-oriented (e.g., "Find free and low-cost sexual health clinics in NYC. Filter by insurance, services, walk-in availability, and nearest subway.")
-- **Open Graph tags:** For social sharing (og:title, og:description, og:image)
-- **Canonical URLs:** Set to avoid duplicate content issues
-
-### Technical
-
-- **sitemap.xml:** Generate and submit to Google Search Console
-- **robots.txt:** Allow all (nothing to hide)
-- **Mobile responsive:** Critical — most users will be on phones
-- **Page speed:** Already fast (static HTML + iframe offloads to Esri)
-- **HTTPS:** Automatic via Netlify
-
-### Structured Data (Schema.org)
-
-Add `LocalBusiness` or `MedicalClinic` JSON-LD to help Google understand the content. Can be embedded in the static pages or generated dynamically if we build a clinic detail page later.
-
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "sexualhealth.nyc",
-  "url": "https://sexualhealth.nyc",
-  "description": "Interactive map of sexual health clinics in NYC"
-}
-```
-
-### Content Strategy
-
-- **About page:** Explain methodology, data sources, update frequency — builds trust and E-E-A-T
-- **Resources page:** Link to authoritative sources (NYC DOH, CDC, Planned Parenthood) — good for users and SEO
-- **Blog/updates (Phase 2):** If traction, occasional posts about sexual health resources in NYC can drive organic traffic
-
-### Local SEO
-
-- Submit to Google Search Console
-- Consider Google Business Profile if applicable (probably not for a directory site)
-- Target long-tail keywords: "free STI testing near me NYC", "walk-in PrEP clinic Brooklyn", "no insurance sexual health clinic Queens"
-
-### Limitations
-
-The ArcGIS iframe content is not crawlable by Google. All SEO value comes from the static wrapper pages.
-
-**Phase 2 SEO fix: Static clinic pages**
-Generate individual HTML pages for each clinic (e.g., `sexualhealth.nyc/clinic/planned-parenthood-bronx`). Since we already have the data in Python, add a build step that generates these pages. Benefits:
-
-- Every clinic becomes indexable by Google
-- Ranks for long-tail queries like "planned parenthood bronx hours"
-- Costs $0 (static HTML on Netlify)
-- Provides accessible non-map alternative for screen readers
-
----
-
-## Open Questions
-
-1. **Scope definition:** What counts as a "sexual health clinic"?
-   - Only specialized clinics? (~30-50)
-   - Or any clinic offering STI testing/PrEP/etc.? (~150-200)
-
----
-
-## Timeline (Rough)
-
-| Phase               | Tasks                                     | Duration  |
-| ------------------- | ----------------------------------------- | --------- |
-| **Data collection** | Run pipeline, generate shapefile          | 1-2 days  |
-| **ArcGIS setup**    | Import data, build Experience Builder app | 1 day     |
-| **Static site**     | Build wrapper, deploy to Netlify          | Few hours |
-| **DNS/Email**       | Configure domains, set up Zoho            | 1-2 hours |
-| **Testing**         | QA, mobile testing, feedback              | Ongoing   |
-
----
-
-## Success Metrics
-
-- People actually use it (basic analytics)
-- Positive feedback from target audience
-- Professors/advisors impressed (if this is for school)
-- Potential: picked up by NYC DOH or community orgs
+- **GoatCounter:** sexualhealthnyc.goatcounter.com (pageviews, referrers, countries)
+- **ArcGIS built-in:** View counts on the map, requests to data layer
 
 ---
 
 ## References
 
-- Previous chat: https://claude.ai/chat/593123d2-f831-4d87-8b59-1450a73f2195
 - NYC Open Data API: https://data.cityofnewyork.us
 - HRSA Data Warehouse: https://data.hrsa.gov
-- NYC Health Map (existing): https://a816-health.nyc.gov/NYCHealthMap
-- HIV.gov Locator: https://locator.hiv.gov
-- ArcGIS Experience Builder docs: https://doc.arcgis.com/en/experience-builder/
-- Netlify docs: https://docs.netlify.com
-- Porkbun: https://porkbun.com
-- Zoho Mail: https://www.zoho.com/mail/
+- NYC GeoSearch: https://geosearch.planninglabs.nyc
+- ArcGIS Experience Builder: https://doc.arcgis.com/en/experience-builder/
+- Netlify: https://docs.netlify.com
 - GoatCounter: https://goatcounter.com
-- Google Search Console: https://search.google.com/search-console
-- Schema.org: https://schema.org
