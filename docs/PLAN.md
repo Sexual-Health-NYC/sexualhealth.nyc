@@ -1,5 +1,20 @@
 # sexualhealth.nyc — Project Specification
 
+## Overview
+
+An interactive map of all sexual health clinics in NYC with filterable metadata: insurance acceptance, services offered, hours, walk-in availability, and nearby transit options.
+
+**Why this matters:**
+Existing resources (NYC Health Map, HIV.gov locator, Planned Parenthood finder) are fragmented and lack:
+
+- Comprehensive coverage (no single source aggregates all providers)
+- Insurance filtering (Medicaid vs. no-insurance-required vs. specific plans)
+- Service filtering (PrEP, abortion, gender-affirming care in one place)
+- Transit integration
+- Walk-in vs. appointment filtering
+
+---
+
 ## Status
 
 | Item                           | Status                     |
@@ -14,25 +29,10 @@
 | Data pipeline                  | ⏳ Not started             |
 | Data collection                | ⏳ Not started             |
 
----
-
-## Overview
-
-An interactive map of all sexual health clinics in NYC with filterable metadata: insurance acceptance, services offered, hours, walk-in availability, and nearby transit options.
-
 **Domains:**
 
 - Primary: `sexualhealth.nyc`
 - Redirect: `sexualhealthnyc.com` → `sexualhealth.nyc`
-
-**Why this matters:**
-Existing resources (NYC Health Map, HIV.gov locator, Planned Parenthood finder) are fragmented and lack:
-
-- Comprehensive coverage (no single source aggregates all providers)
-- Insurance filtering (Medicaid vs. no-insurance-required vs. specific plans)
-- Service filtering (PrEP, abortion, gender-affirming care in one place)
-- Transit integration
-- Walk-in vs. appointment filtering
 
 ---
 
