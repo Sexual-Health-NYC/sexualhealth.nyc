@@ -101,12 +101,17 @@ Generate comprehensive, accurate dataset with ~100-200 clinic locations and rich
 | `borough`           | string  | Manhattan, Brooklyn, Queens, Bronx, Staten Island                                                              |
 | `latitude`          | float   | WGS84                                                                                                          |
 | `longitude`         | float   | WGS84                                                                                                          |
-| `phone`             | string  | Primary contact                                                                                                |
+| `bbl`               | string  | Borough-Block-Lot (NYC property ID, used for deduplication)                                                    |
+| `phone`             | string  | Primary contact (E.164 format, used as dedup key)                                                              |
 | `website`           | string  | Clinic URL                                                                                                     |
 | `clinic_type`       | string  | DOH, Planned Parenthood, FQHC, LGBTQ+ Center, Hospital, Private                                                |
 | `services`          | string  | Comma-separated: STI testing, HIV testing, PrEP, PEP, contraception, abortion, gender-affirming care, vaccines |
+| `has_sti_testing`   | boolean | Filter flag: STI testing available                                                                             |
+| `has_prep`          | boolean | Filter flag: PrEP available                                                                                    |
+| `has_abortion`      | boolean | Filter flag: Abortion services available                                                                       |
 | `insurance_types`   | string  | Comma-separated: Medicaid, Medicare, Private, Sliding Scale                                                    |
-| `no_insurance_ok`   | boolean | Can be seen without insurance?                                                                                 |
+| `accepts_medicaid`  | boolean | Filter flag: Accepts Medicaid                                                                                  |
+| `no_insurance_ok`   | boolean | Filter flag: Can be seen without insurance                                                                     |
 | `hours`             | string  | Human-readable hours                                                                                           |
 | `walk_in`           | boolean | Walk-ins accepted?                                                                                             |
 | `appointment_only`  | boolean | Appointment required?                                                                                          |
@@ -143,11 +148,11 @@ Generate comprehensive, accurate dataset with ~100-200 clinic locations and rich
 
 **Enrichment data:**
 
-| Data            | Source                     | Format  |
-| --------------- | -------------------------- | ------- |
-| Subway stations | MTA GTFS / NYC Open Data   | GeoJSON |
-| Bus stops       | MTA GTFS                   | GeoJSON |
-| Geocoding       | Nominatim (free) or Google | API     |
+| Data            | Source                      | Format  |
+| --------------- | --------------------------- | ------- |
+| Subway stations | MTA GTFS / NYC Open Data    | GeoJSON |
+| Bus stops       | MTA GTFS                    | GeoJSON |
+| Geocoding       | NYC Planning Labs GeoSearch | API     |
 
 ### Technical Approach
 
@@ -155,8 +160,16 @@ Generate comprehensive, accurate dataset with ~100-200 clinic locations and rich
 
 - Python: `requests`, `beautifulsoup4`, `geopandas`, `pandas`
 - Claude API for structured extraction from unstructured HTML
-- Nominatim for geocoding (free, no API key)
+- NYC Planning Labs GeoSearch for geocoding (free, returns BBL for dedup)
 - Output: Shapefile (.shp, .shx, .dbf, .prj) or GeoJSON
+
+**Why NYC GeoSearch over Nominatim:**
+
+- Returns BBL (Borough-Block-Lot) — immutable NYC property ID, perfect for deduplication
+- Handles NYC borough logic correctly ("New York, NY" = Manhattan, not Queens)
+- Returns official standardized addresses
+- Endpoint: `https://geosearch.planninglabs.nyc/v2/search?text={address}`
+- See `pipeline/geocoder.py` for implementation
 
 **LLM extraction prompt pattern:**
 
@@ -179,6 +192,19 @@ HTML:
 
 **The problem:** Same clinic may appear in multiple sources (NYC Open Data, HRSA, provider websites) with slightly different names/addresses.
 
+**Step 0: Phone number matching (primary key)**
+Phone numbers are more reliable than addresses in NYC (vertical stacking of businesses). Normalize to E.164 format and match first:
+
+```python
+def normalize_phone(phone):
+    digits = re.sub(r'\D', '', phone)
+    if len(digits) == 10:
+        return f"+1{digits}"
+    if len(digits) == 11 and digits[0] == '1':
+        return f"+{digits}"
+    return None  # Invalid
+```
+
 **Step 1: Normalize addresses**
 
 ```python
@@ -193,8 +219,8 @@ def normalize_address(addr):
     return addr
 ```
 
-**Step 2: Geocode everything**
-All records get lat/long via Nominatim. This is the primary matching key.
+**Step 2: Geocode and get BBL**
+All records get lat/long and BBL via NYC GeoSearch. BBL is the immutable property ID — if two records have the same BBL, they're definitively at the same location.
 
 **Step 3: Cluster by proximity**
 Group records within 50 meters of each other — likely the same location.
@@ -251,20 +277,36 @@ Only invest in this after proving value (people use it, positive feedback).
 
 ## Community Submissions (Phase 1)
 
-Simple approach: email-based, manual updates.
+### Option A: Netlify Forms (Preferred)
+
+Netlify Forms are free, require no backend, and don't leak user email addresses like mailto links do.
+
+```html
+<form name="clinic-update" method="POST" data-netlify="true">
+  <input type="hidden" name="form-name" value="clinic-update" />
+  <input type="text" name="clinic-name" placeholder="Clinic name" required />
+  <textarea
+    name="correction"
+    placeholder="What needs to be updated?"
+    required
+  ></textarea>
+  <input type="email" name="email" placeholder="Your email (optional)" />
+  <button type="submit">Submit</button>
+</form>
+```
+
+Submissions appear in Netlify dashboard and can email you.
+
+### Option B: Email fallback
+
+If forms feel like overkill, use `mailto:hello@sexualhealth.nyc?subject=Clinic%20Update`.
 
 ### Process
 
-1. User sends email to `hello@sexualhealth.nyc` with correction or new clinic info
+1. User submits correction via form or email
 2. We verify the info (check clinic website, call if needed)
 3. Update the feature layer in ArcGIS Online
-4. Reply to confirm the update
-
-### On the Static Site
-
-Add a "Submit a correction" or "Add a clinic" link on the contact page pointing to `mailto:hello@sexualhealth.nyc?subject=Clinic%20Update`.
-
-No form, no database, no moderation queue. Just email. Revisit if volume becomes unmanageable.
+4. Reply to confirm (if email provided)
 
 ---
 
@@ -515,7 +557,15 @@ Add `LocalBusiness` or `MedicalClinic` JSON-LD to help Google understand the con
 
 ### Limitations
 
-The ArcGIS iframe content is not crawlable by Google. All SEO value comes from the static wrapper pages. This is fine — the wrapper pages describe what the tool does, and users find it via search, then interact with the map.
+The ArcGIS iframe content is not crawlable by Google. All SEO value comes from the static wrapper pages.
+
+**Phase 2 SEO fix: Static clinic pages**
+Generate individual HTML pages for each clinic (e.g., `sexualhealth.nyc/clinic/planned-parenthood-bronx`). Since we already have the data in Python, add a build step that generates these pages. Benefits:
+
+- Every clinic becomes indexable by Google
+- Ranks for long-tail queries like "planned parenthood bronx hours"
+- Costs $0 (static HTML on Netlify)
+- Provides accessible non-map alternative for screen readers
 
 ---
 
