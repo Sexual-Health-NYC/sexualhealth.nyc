@@ -1,5 +1,21 @@
 # sexualhealth.nyc — Project Specification
 
+## Status
+
+| Item                           | Status                     |
+| ------------------------------ | -------------------------- |
+| Domain (sexualhealth.nyc)      | ✅ Registered (Porkbun)    |
+| Email (hello@sexualhealth.nyc) | ✅ Set up (Zoho Mail Lite) |
+| DNS (MX, SPF, DKIM)            | ✅ Configured              |
+| Netlify hosting                | ✅ Deployed                |
+| GoatCounter analytics          | ✅ Set up                  |
+| Static site                    | ⏳ Placeholder only        |
+| ArcGIS Experience Builder app  | ⏳ Not started             |
+| Data pipeline                  | ⏳ Not started             |
+| Data collection                | ⏳ Not started             |
+
+---
+
 ## Overview
 
 An interactive map of all sexual health clinics in NYC with filterable metadata: insurance acceptance, services offered, hours, walk-in availability, and nearby transit options.
@@ -159,6 +175,56 @@ HTML:
 {html_snippet}
 ```
 
+### Deduplication Strategy
+
+**The problem:** Same clinic may appear in multiple sources (NYC Open Data, HRSA, provider websites) with slightly different names/addresses.
+
+**Step 1: Normalize addresses**
+
+```python
+def normalize_address(addr):
+    addr = addr.lower().strip()
+    addr = addr.replace(" street", " st")
+    addr = addr.replace(" avenue", " ave")
+    addr = addr.replace(" boulevard", " blvd")
+    addr = addr.replace(" floor", " fl")
+    addr = re.sub(r'\s+', ' ', addr)  # collapse whitespace
+    addr = re.sub(r'[^\w\s]', '', addr)  # remove punctuation
+    return addr
+```
+
+**Step 2: Geocode everything**
+All records get lat/long via Nominatim. This is the primary matching key.
+
+**Step 3: Cluster by proximity**
+Group records within 50 meters of each other — likely the same location.
+
+**Step 4: Fuzzy match names within clusters**
+Use fuzzy string matching (e.g., `rapidfuzz`) on clinic names within each geographic cluster:
+
+- Score > 85 = likely same clinic
+- Score 60-85 = flag for manual review
+- Score < 60 = probably different clinics at same address (e.g., building with multiple providers)
+
+**Step 5: Merge records**
+For duplicates:
+
+- Keep the record with the most complete metadata
+- Fill in missing fields from other records
+- Prefer data from authoritative sources (NYC DOH > scraped website)
+- Track `data_sources` field listing where info came from
+
+**Step 6: Manual review queue**
+Output uncertain matches to a CSV for human review before final import.
+
+**Example duplicate scenarios:**
+
+| Source A                                      | Source B                                 | Action                                         |
+| --------------------------------------------- | ---------------------------------------- | ---------------------------------------------- |
+| "Callen-Lorde Community Health Center"        | "Callen Lorde CHC"                       | Auto-merge (fuzzy score ~90)                   |
+| "NYC Health Dept Chelsea Clinic"              | "Chelsea Sexual Health Clinic"           | Flag for review                                |
+| "Mount Sinai Adolescent Health" at 320 E 94th | "Phillips Family Practice" at 320 E 94th | Keep both (different providers, same building) |
+
 ### Deliverable
 
 Shapefile ready for import into ArcGIS Online.
@@ -274,6 +340,25 @@ Note: The ArcGIS Experience Builder iframe has its own accessibility features ma
 1. Point `sexualhealth.nyc` to Netlify via CNAME record
 2. Add `sexualhealthnyc.com` and configure redirect → `sexualhealth.nyc` (via Netlify `_redirects` file)
 3. HTTPS is automatic with Netlify
+
+### Security Headers (CSP)
+
+`public/_headers` file configures Content-Security-Policy:
+
+```
+/*
+  Content-Security-Policy: default-src 'self'; frame-src https://experience.arcgis.com https://*.arcgis.com; script-src 'self' https://gc.zgo.at; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+```
+
+| Directive         | Value                                                | Why                                         |
+| ----------------- | ---------------------------------------------------- | ------------------------------------------- |
+| `frame-src`       | `https://experience.arcgis.com https://*.arcgis.com` | Allows the ArcGIS Experience Builder iframe |
+| `script-src`      | `'self' https://gc.zgo.at`                           | Your scripts + GoatCounter                  |
+| `X-Frame-Options` | `DENY`                                               | Prevents clickjacking                       |
 
 ---
 
