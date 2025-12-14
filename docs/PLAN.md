@@ -415,38 +415,47 @@ flowchart TB
 
 ## Data Schema (Technical)
 
-| Field                | Type    | Notes                                                           |
-| -------------------- | ------- | --------------------------------------------------------------- |
-| `name`               | string  | Clinic name                                                     |
-| `address`            | string  | Full street address                                             |
-| `borough`            | string  | Manhattan, Brooklyn, Queens, Bronx, Staten Island               |
-| `latitude`           | float   | WGS84                                                           |
-| `longitude`          | float   | WGS84                                                           |
-| `bbl`                | string  | Borough-Block-Lot (NYC property ID, used for deduplication)     |
-| `phone`              | string  | Primary contact (E.164 format, used as dedup key)               |
-| `website`            | string  | Clinic URL                                                      |
-| `clinic_type`        | string  | DOH, Planned Parenthood, FQHC, LGBTQ+ Center, Hospital, Private |
-| `services`           | string  | Comma-separated list                                            |
-| `has_sti_testing`    | boolean | Filter flag                                                     |
-| `has_prep`           | boolean | Filter flag                                                     |
-| `has_abortion`       | boolean | Filter flag                                                     |
-| `insurance_types`    | string  | Comma-separated list                                            |
-| `accepts_medicaid`   | boolean | Filter flag                                                     |
-| `medicaid_mcos`      | string  | Specific MCOs if known (Healthfirst, Fidelis, MetroPlus, etc.)  |
-| `no_insurance_ok`    | boolean | Filter flag                                                     |
-| `insurance_verified` | string  | "confirmed", "listed", or "unknown"                             |
-| `hours`              | string  | Human-readable                                                  |
-| `walk_in`            | boolean | Walk-ins accepted?                                              |
-| `appointment_only`   | boolean | Appointment required?                                           |
-| `languages`          | string  | Comma-separated                                                 |
-| `lgbtq_focused`      | boolean |                                                                 |
-| `youth_friendly`     | boolean |                                                                 |
-| `anonymous_testing`  | boolean |                                                                 |
-| `nearest_subway`     | string  | e.g., "A/C/E at 14th St (0.2 mi)"                               |
-| `nearest_bus`        | string  | e.g., "M14A, M14D (0.1 mi)"                                     |
-| `last_verified`      | date    |                                                                 |
-| `data_sources`       | string  | Where info came from                                            |
-| `notes`              | string  | Special info                                                    |
+| Field                  | Type    | Notes                                                           |
+| ---------------------- | ------- | --------------------------------------------------------------- |
+| `name`                 | string  | Clinic name                                                     |
+| `address`              | string  | Full street address                                             |
+| `borough`              | string  | Manhattan, Brooklyn, Queens, Bronx, Staten Island               |
+| `latitude`             | float   | WGS84                                                           |
+| `longitude`            | float   | WGS84                                                           |
+| `bbl`                  | string  | Borough-Block-Lot (NYC property ID, used for deduplication)     |
+| `phone`                | string  | Primary contact (E.164 format, used as dedup key)               |
+| `website`              | string  | Clinic URL                                                      |
+| `clinic_type`          | string  | DOH, Planned Parenthood, FQHC, LGBTQ+ Center, Hospital, Private |
+| `services`             | string  | Comma-separated list                                            |
+| `has_sti_testing`      | boolean | Filter flag                                                     |
+| `has_hiv_testing`      | boolean | Filter flag                                                     |
+| `has_prep`             | boolean | Filter flag                                                     |
+| `has_pep`              | boolean | Filter flag                                                     |
+| `has_contraception`    | boolean | Filter flag                                                     |
+| `has_abortion`         | boolean | Filter flag                                                     |
+| `has_gender_affirming` | boolean | Filter flag                                                     |
+| `has_vaccines`         | boolean | Filter flag                                                     |
+| `insurance_types`      | string  | Comma-separated list                                            |
+| `accepts_medicaid`     | boolean | Filter flag                                                     |
+| `medicaid_mcos`        | string  | Specific MCOs if known (Healthfirst, Fidelis, MetroPlus, etc.)  |
+| `accepts_medicare`     | boolean | Filter flag                                                     |
+| `sliding_scale`        | boolean | Reduced cost based on income                                    |
+| `no_insurance_ok`      | boolean | Filter flag                                                     |
+| `insurance_verified`   | string  | "confirmed", "listed", or "unknown"                             |
+| `hours`                | string  | Human-readable                                                  |
+| `walk_in`              | boolean | Walk-ins accepted?                                              |
+| `appointment_only`     | boolean | Appointment required?                                           |
+| `languages`            | string  | Comma-separated                                                 |
+| `lgbtq_focused`        | boolean |                                                                 |
+| `youth_friendly`       | boolean |                                                                 |
+| `anonymous_testing`    | boolean |                                                                 |
+| `nearest_subway`       | string  | e.g., "A/C/E at 14th St (0.2 mi)"                               |
+| `nearest_bus`          | string  | e.g., "M14A, M14D (0.1 mi)"                                     |
+| `last_verified`        | date    |                                                                 |
+| `verified_by`          | string  | "phone", "website", or "government_data"                        |
+| `data_sources`         | string  | Where info came from                                            |
+| `update_contact_email` | string  | Clinic contact for future updates (from phone outreach)         |
+| `notes`                | string  | Special info                                                    |
 
 ---
 
