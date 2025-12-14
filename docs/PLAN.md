@@ -185,6 +185,70 @@ The tricky part: every website is different. Planned Parenthood's site is struct
 
 ---
 
+## Verifying Data by Phone (Your Team)
+
+Website scraping gets us 60-70% of the way there. The rest requires phone calls. This is where you come in.
+
+### Why Calls Matter
+
+- Many clinics don't list insurance info on their website
+- Hours on websites are often outdated
+- "Walk-ins welcome" might have changed post-COVID
+- Some details (like specific Medicaid MCOs) are never on websites
+
+### Organizing Volunteers
+
+You can recruit friends, classmates, or club members to help. Each person gets a list of clinics to call.
+
+**The pitch to volunteers:**
+
+> "We're building a free resource to help NYers find sexual health services. Can you spend an hour calling 10 clinics to verify their info?"
+
+**What to ask on each call:**
+
+1. "I'm calling from sexualhealth.nyc — we're building a free directory of sexual health clinics in NYC. Can I verify a few details about your services?"
+2. Hours of operation
+3. Do you accept walk-ins?
+4. What insurance do you accept? (Specifically: Medicaid? Which plans?)
+5. Can someone be seen without insurance?
+6. Do you offer [STI testing / PrEP / etc.]?
+
+### Prioritizing Calls
+
+Not all clinics are equally important to call. Prioritize by:
+
+1. **Missing critical data** — no insurance info, no hours
+2. **High-traffic clinics** — Planned Parenthood, DOH clinics
+3. **Unverified data** — info scraped from old websites
+4. **Stale data** — last verified 6+ months ago
+
+We'll generate a spreadsheet sorted by priority for volunteers to work through.
+
+### Calls as Outreach
+
+Every call is also marketing. When you call, you're:
+
+- **Introducing the site** — "We're sexualhealth.nyc, a free clinic finder"
+- **Building relationships** — They may refer patients to the site
+- **Creating accountability** — If they know they're listed, they may notify us of changes
+- **Getting buy-in** — Some clinics may want to help keep their info current
+
+**Ask at the end of each call:**
+
+> "If your hours or services change, is there someone we can contact to update our listing? Can I get an email?"
+
+This creates a contact list for future updates — way better than re-scraping outdated websites.
+
+### Tracking Call Results
+
+Simple spreadsheet:
+| Clinic | Caller | Date | Verified? | Notes | Contact for updates |
+|--------|--------|------|-----------|-------|---------------------|
+
+We'll set this up in Google Sheets so multiple people can work on it.
+
+---
+
 ## What We Won't Know Until We Start
 
 Some things we can only figure out by doing the work:
