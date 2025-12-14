@@ -399,6 +399,21 @@ Need to send and receive as `hello@sexualhealth.nyc` — can't have replies comi
 5. Create `hello@sexualhealth.nyc`
 6. Configure in mail client via IMAP
 
+**HIPAA / Health Info Disclaimer:**
+
+This site is a directory, not a healthcare provider. HIPAA only applies to covered entities (providers, health plans, clearinghouses). We're not one.
+
+However, people may email health questions anyway. Mitigations:
+
+- Set up auto-reply stating we don't provide medical advice
+- Clear disclaimer on contact page (see below)
+- Don't store/forward any health-related emails — delete after reading
+- Zoho Mail is not HIPAA-compliant, but doesn't need to be for our use case
+
+**Required contact page language:**
+
+> This email is for reporting incorrect clinic information or suggesting additions only. We cannot provide medical advice or answer personal health questions. For health concerns, please contact a clinic directly or call 311.
+
 ---
 
 ## ArcGIS Components (Free via NYU)
