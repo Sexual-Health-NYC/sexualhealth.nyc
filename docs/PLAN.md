@@ -99,6 +99,19 @@ The #1 barrier to care is "can I afford this?" We need:
 | Sliding scale available       | Reduced cost based on income               |
 | Can be seen without insurance | Critical for uninsured people              |
 
+**The Medicaid nuance:** In NYC, "Medicaid" isn't one thing. There's:
+
+- **Straight Medicaid** — direct government coverage
+- **Managed Medicaid** — through an MCO like Healthfirst, Fidelis, MetroPlus, etc.
+
+Some clinics accept one but not the other. This is the difference between getting care and getting turned away. If clinic websites list specific MCOs, we'll capture them. If they just say "we accept Medicaid," we'll note it's unverified.
+
+**Verification status:** For insurance especially, we'll track confidence:
+
+- "Confirmed" — verified on website or by phone
+- "Listed on website" — site says so but we didn't verify
+- "Unknown" — website doesn't say
+
 ### Access & Availability
 
 | Field                | Why it matters                |
@@ -338,36 +351,38 @@ flowchart TB
 
 ## Data Schema (Technical)
 
-| Field               | Type    | Notes                                                           |
-| ------------------- | ------- | --------------------------------------------------------------- |
-| `name`              | string  | Clinic name                                                     |
-| `address`           | string  | Full street address                                             |
-| `borough`           | string  | Manhattan, Brooklyn, Queens, Bronx, Staten Island               |
-| `latitude`          | float   | WGS84                                                           |
-| `longitude`         | float   | WGS84                                                           |
-| `bbl`               | string  | Borough-Block-Lot (NYC property ID, used for deduplication)     |
-| `phone`             | string  | Primary contact (E.164 format, used as dedup key)               |
-| `website`           | string  | Clinic URL                                                      |
-| `clinic_type`       | string  | DOH, Planned Parenthood, FQHC, LGBTQ+ Center, Hospital, Private |
-| `services`          | string  | Comma-separated list                                            |
-| `has_sti_testing`   | boolean | Filter flag                                                     |
-| `has_prep`          | boolean | Filter flag                                                     |
-| `has_abortion`      | boolean | Filter flag                                                     |
-| `insurance_types`   | string  | Comma-separated list                                            |
-| `accepts_medicaid`  | boolean | Filter flag                                                     |
-| `no_insurance_ok`   | boolean | Filter flag                                                     |
-| `hours`             | string  | Human-readable                                                  |
-| `walk_in`           | boolean | Walk-ins accepted?                                              |
-| `appointment_only`  | boolean | Appointment required?                                           |
-| `languages`         | string  | Comma-separated                                                 |
-| `lgbtq_focused`     | boolean |                                                                 |
-| `youth_friendly`    | boolean |                                                                 |
-| `anonymous_testing` | boolean |                                                                 |
-| `nearest_subway`    | string  | e.g., "A/C/E at 14th St (0.2 mi)"                               |
-| `nearest_bus`       | string  | e.g., "M14A, M14D (0.1 mi)"                                     |
-| `last_verified`     | date    |                                                                 |
-| `data_sources`      | string  | Where info came from                                            |
-| `notes`             | string  | Special info                                                    |
+| Field                | Type    | Notes                                                           |
+| -------------------- | ------- | --------------------------------------------------------------- |
+| `name`               | string  | Clinic name                                                     |
+| `address`            | string  | Full street address                                             |
+| `borough`            | string  | Manhattan, Brooklyn, Queens, Bronx, Staten Island               |
+| `latitude`           | float   | WGS84                                                           |
+| `longitude`          | float   | WGS84                                                           |
+| `bbl`                | string  | Borough-Block-Lot (NYC property ID, used for deduplication)     |
+| `phone`              | string  | Primary contact (E.164 format, used as dedup key)               |
+| `website`            | string  | Clinic URL                                                      |
+| `clinic_type`        | string  | DOH, Planned Parenthood, FQHC, LGBTQ+ Center, Hospital, Private |
+| `services`           | string  | Comma-separated list                                            |
+| `has_sti_testing`    | boolean | Filter flag                                                     |
+| `has_prep`           | boolean | Filter flag                                                     |
+| `has_abortion`       | boolean | Filter flag                                                     |
+| `insurance_types`    | string  | Comma-separated list                                            |
+| `accepts_medicaid`   | boolean | Filter flag                                                     |
+| `medicaid_mcos`      | string  | Specific MCOs if known (Healthfirst, Fidelis, MetroPlus, etc.)  |
+| `no_insurance_ok`    | boolean | Filter flag                                                     |
+| `insurance_verified` | string  | "confirmed", "listed", or "unknown"                             |
+| `hours`              | string  | Human-readable                                                  |
+| `walk_in`            | boolean | Walk-ins accepted?                                              |
+| `appointment_only`   | boolean | Appointment required?                                           |
+| `languages`          | string  | Comma-separated                                                 |
+| `lgbtq_focused`      | boolean |                                                                 |
+| `youth_friendly`     | boolean |                                                                 |
+| `anonymous_testing`  | boolean |                                                                 |
+| `nearest_subway`     | string  | e.g., "A/C/E at 14th St (0.2 mi)"                               |
+| `nearest_bus`        | string  | e.g., "M14A, M14D (0.1 mi)"                                     |
+| `last_verified`      | date    |                                                                 |
+| `data_sources`       | string  | Where info came from                                            |
+| `notes`              | string  | Special info                                                    |
 
 ---
 
