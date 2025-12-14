@@ -324,7 +324,25 @@ The static site wrapper must meet WCAG 2.1 AA compliance:
 - **Form labels:** Any mailto links or future forms properly labeled
 - **Testing:** Validate with axe DevTools, WAVE, and manual keyboard/screen reader testing
 
-Note: The ArcGIS Experience Builder iframe has its own accessibility features managed by Esri. Focus on the wrapper site.
+**ArcGIS Experience Builder Accessibility:**
+
+Maps are inherently challenging for screen readers. Esri has partial WCAG support but requires manual configuration:
+
+_Required configuration in Experience Builder:_
+
+- Use full-screen or scrolling page layouts (not free-form drag-and-drop)
+- Click A11Y button → enable "Auto-calculate element tab orders"
+- Add accessible labels to every widget (Map, Filter, List, Search)
+- Use default themes (Prime, Ocean, etc.) which have optimized color contrast
+- If customizing colors, maintain 4.5:1 contrast ratio
+
+_Provide non-map alternatives:_
+
+- Include a filterable list view (List widget) alongside the map
+- Consider a downloadable CSV of all clinics for screen reader users
+- Add text descriptions of what the map shows
+
+_Reference:_ [Esri Accessibility Conformance Report (VPAT)](https://www.esri.com/content/dam/esrisites/en-us/media/legal/vpats/arcgis-experience-builder-10-25-23-vpat.pdf)
 
 ### Hosting: Netlify (Free)
 
