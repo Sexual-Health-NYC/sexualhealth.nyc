@@ -1,0 +1,9 @@
+name,address,borough,phone,website,clinic_type,data_source
+"Morrisania Sexual Health Clinic","1309 Fulton Avenue, Second Floor, Bronx, NY 10456",Bronx,,"https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",DOH,"NYC Health Department Website"
+"Jamaica Sexual Health Clinic","90-37 Parsons Boulevard, First Floor, Queens, NY 11432",Queens,,"https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",DOH,"NYC Health Department Website"
+"Corona Sexual Health Clinic","34-33 Junction Boulevard, First Floor, Queens, NY 11372",Queens,,"https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",DOH,"NYC Health Department Website"
+"Fort Greene Sexual Health Clinic","295 Flatbush Avenue Extension, Second Floor, Brooklyn, NY 11201",Brooklyn,,"https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",DOH,"NYC Health Department Website"
+"Fort Greene Express Clinic","295 Flatbush Avenue Extension, First Floor, Brooklyn, NY 11201",Brooklyn,,"https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",DOH,"NYC Health Department Website"
+"Chelsea Sexual Health Clinic","303 9th Avenue, First Floor, Manhattan, NY 10001",Manhattan,,"https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",DOH,"NYC Health Department Website"
+"Chelsea Express Clinic","303 9th Avenue, First Floor, Manhattan, NY 10001",Manhattan,,"https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",DOH,"NYC Health Department Website"
+"Central Harlem Sexual Health Clinic","2238 Fifth Avenue, First Floor, Manhattan, NY 10037",Manhattan,,"https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",DOH,"NYC Health Department Website"

@@ -158,30 +158,39 @@ We're pulling from multiple sources and combining them. Think of it like assembl
 
 ### Official Government Data
 
-| Source                  | What we get                             | Reliability                 |
-| ----------------------- | --------------------------------------- | --------------------------- |
-| NYC Open Data           | Health facility locations and addresses | High — but limited detail   |
-| HRSA (federal)          | Federally Qualified Health Centers      | High — but only FQHCs       |
-| NYC Health Dept website | Their 6 sexual health clinics           | High — but only 6 locations |
+| Source                          | What we get                                     | Status      | Reliability                    |
+| ------------------------------- | ----------------------------------------------- | ----------- | ------------------------------ |
+| NYC Open Data (HIV Testing)     | 116 HIV testing locations with coords & hours   | ✅ Imported | High — already geocoded        |
+| NYC Open Data (HIV Services)    | 8 HIV service providers                         | ✅ Imported | High — includes service types  |
+| NYC Health Dept website (DOH)   | 8 sexual health clinics (manual scrape)         | ✅ Imported | High — official DOH locations  |
+| HRSA (federal)                  | Federally Qualified Health Centers              | ⏳ TODO     | High — but only FQHCs          |
+| NYC Open Data (old shapefiles)  | 2009 DOHMH facilities shapefile                 | ❌ Dead     | Links broken, data too old     |
+
+**Datasets Used:**
+- `72ss-25qh` - HIV Testing Locations (599 total, 116 sexual health filtered)
+- `pwts-g83w` - DOHMH HIV Service Directory (71 total, 8 filtered)
+- Manual: nyc.gov DOH sexual health clinics page
 
 ### Provider Websites (We Have to Scrape)
 
 These don't have APIs — we have to visit their websites and extract the info:
 
-| Organization                  | # of Locations | What they offer          |
-| ----------------------------- | -------------- | ------------------------ |
-| Planned Parenthood NYC        | ~10            | Full range of services   |
-| Callen-Lorde                  | 4              | LGBTQ+ focused           |
-| GMHC                          | 1              | HIV/AIDS focused         |
-| Community Healthcare Network  | ~14            | Community health centers |
-| The Door                      | 1              | Youth focused            |
-| Mount Sinai Adolescent Health | 1              | Youth focused            |
+| Organization                  | # of Locations | What they offer          | Status         | Notes                                 |
+| ----------------------------- | -------------- | ------------------------ | -------------- | ------------------------------------- |
+| Planned Parenthood NYC        | ~3-5           | Full range of services   | ⏳ TODO        | Website blocks automation (403 error) |
+| Callen-Lorde                  | 4              | LGBTQ+ focused           | ⏳ TODO        | May need manual entry                 |
+| GMHC                          | 1              | HIV/AIDS focused         | ⏳ TODO        |                                       |
+| Community Healthcare Network  | ~14            | Community health centers | ⏳ TODO        |                                       |
+| The Door                      | 1              | Youth focused            | ⏳ TODO        |                                       |
+| Mount Sinai Adolescent Health | 1              | Youth focused            | ⏳ TODO        |                                       |
+
+**Note on Planned Parenthood:** Manhattan Health Center closed Oct 31, 2025. Remaining locations in Queens, Brooklyn, and Bronx. Website has anti-scraping protection.
 
 ### What "Scraping" Means
 
 We write code that visits each clinic's website and extracts the information (hours, services, insurance) from their pages. It's like copying info from a website, but automated.
 
-The tricky part: every website is different. Planned Parenthood's site is structured differently than Callen-Lorde's. We have to handle each one.
+The tricky part: every website is different. Planned Parenthood's site is structured differently than Callen-Lorde's. Some sites actively block automated requests (like Planned Parenthood), requiring manual data entry or more sophisticated scraping techniques.
 
 ---
 
@@ -333,18 +342,34 @@ When you're not sure if info is correct:
 
 ### Minimum Viable Product (MVP)
 
-- [ ] Map with 50+ clinics
+- [x] Map with 50+ clinics *(124 collected, needs deduplication & upload to ArcGIS)*
 - [ ] Filters for: services, insurance, walk-in
-- [ ] Each clinic shows: name, address, phone, hours
-- [ ] Transit info for each clinic
+- [x] Each clinic shows: name, address, phone, hours *(data includes these fields)*
+- [ ] Transit info for each clinic *(geocoded, transit calc pending)*
 - [ ] Mobile-friendly
 - [ ] "Report an error" form works
 
 ### Nice to Have
 
-- [ ] 100+ clinics
+- [x] 100+ clinics *(124 from NYC Open Data)*
 - [ ] All data fields populated
 - [ ] Clinic detail pages (for SEO)
+
+### Current Status (Dec 19, 2025)
+
+**Data Collection:**
+- ✅ 124 facilities from NYC Open Data (HIV testing + services)
+- ✅ 8 DOH sexual health clinics (manual scrape)
+- ✅ Already geocoded (lat/long in dataset)
+- ⏳ Need deduplication
+- ⏳ Need to add Planned Parenthood, Callen-Lorde, etc.
+
+**Technical:**
+- ✅ StoryMap created and embedded at sexualhealth.nyc/test-embed.html
+- ✅ Data pipeline working (fetch_nyc_opendata.py)
+- ✅ Geocoder ready (geocoder.py)
+- ⏳ Need GeoJSON export for ArcGIS
+- ⏳ Need transit calculator
 
 ### Measuring Success
 
