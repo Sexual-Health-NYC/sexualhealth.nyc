@@ -132,7 +132,7 @@ export default function ClinicMarkers({ clinics }) {
             <button
               role="button"
               tabIndex={0}
-              title={clinic.name}
+              title={`${clinic.name} - Click for info`}
               aria-label={`View details for ${clinic.name}`}
               aria-pressed={selectedClinic?.id === clinic.id}
               style={{

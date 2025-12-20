@@ -72,6 +72,27 @@ export default function Map() {
     useAppStore.setState({ filteredClinics, mapRef });
   }, [filteredClinics]);
 
+  // Recenter map when filters change to fit visible clinics
+  useEffect(() => {
+    if (filteredClinics.length > 0 && mapRef.current) {
+      // Calculate bounds of filtered clinics
+      const lngs = filteredClinics.map((c) => c.longitude);
+      const lats = filteredClinics.map((c) => c.latitude);
+
+      const bounds = [
+        [Math.min(...lngs), Math.min(...lats)], // Southwest
+        [Math.max(...lngs), Math.max(...lats)], // Northeast
+      ];
+
+      // Fit map to bounds with padding
+      mapRef.current.fitBounds(bounds, {
+        padding: { top: 100, bottom: 100, left: 100, right: 100 },
+        duration: 1000,
+        maxZoom: 14,
+      });
+    }
+  }, [filteredClinics]);
+
   return (
     <div
       style={{ position: "relative", width: "100%", height: "100%" }}
