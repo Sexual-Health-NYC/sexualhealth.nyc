@@ -139,6 +139,35 @@ Tidewave is configured for this project with:
 
 Note: Tidewave is a development-only tool and is not included in production builds.
 
+## Contact Form Setup
+
+The site includes a serverless contact form at `/contact.html` that submits corrections via `/api/submit-correction`.
+
+### Setting up Email Notifications
+
+1. **Sign up for Resend**: Go to https://resend.com and create a free account (3,000 emails/month free)
+2. **Get API Key**: https://resend.com/api-keys
+3. **Add to local dev** (optional):
+   ```bash
+   cp .env.example .env
+   # Edit .env and add your RESEND_API_KEY
+   ```
+4. **Add to Vercel**:
+   - Go to Vercel Dashboard > Your Project > Settings > Environment Variables
+   - Add `RESEND_API_KEY` with your key value
+   - Redeploy
+
+### Verify Domain for Sending (Optional)
+
+To send from `corrections@sexualhealth.nyc` instead of a Resend domain:
+
+1. Go to https://resend.com/domains
+2. Add `sexualhealth.nyc`
+3. Add the DNS records they provide to your domain
+4. Once verified, emails will send from `corrections@sexualhealth.nyc`
+
+Until then, emails send from `onboarding@resend.dev` (still works, just looks less professional).
+
 ## Contributing
 
 1. Create a new branch for your feature

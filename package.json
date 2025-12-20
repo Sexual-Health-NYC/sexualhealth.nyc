@@ -26,5 +26,8 @@
   "devDependencies": {
     "tidewave": "^0.5.5",
     "vite": "^7.3.0"
+  },
+  "dependencies": {
+    "resend": "^6.6.0"
   }
 }

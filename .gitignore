@@ -8,6 +8,10 @@ docs/diagram.mmd
 dist/
 node_modules/
 
+# Environment variables
+.env
+.env.local
+
 # OS
 .DS_Store
 

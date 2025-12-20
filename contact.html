@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report a Correction - sexualhealth.nyc</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+      background: #f8f9fa;
+      color: #212529;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    h1 {
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+    }
+    .description {
+      color: #6c757d;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    .disclaimer {
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+      padding: 1rem;
+      border-radius: 4px;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    button:disabled {
+      background: #6c757d;
+      cursor: not-allowed;
+    }
+    .message {
+      padding: 1rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      display: none;
+    }
+    .message.success {
+      background: #d4edda;
+      border: 1px solid #c3e6cb;
+      color: #155724;
+    }
+    .message.error {
+      background: #f8d7da;
+      border: 1px solid #f5c6cb;
+      color: #721c24;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #007bff;
+      text-decoration: none;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Report a Correction</h1>
+    <p class="description">
+      Help us keep clinic information accurate. If you notice incorrect details about a clinic, please let us know.
+    </p>
+
+    <div class="disclaimer">
+      <strong>Important:</strong> This form is for reporting incorrect clinic information only.
+      We cannot provide medical advice or answer personal health questions.
+      For health concerns, please contact a clinic directly or call 311.
+    </div>
+
+    <div id="message" class="message"></div>
+
+    <form id="correction-form">
+      <label for="clinic-name">Clinic Name *</label>
+      <input
+        type="text"
+        id="clinic-name"
+        name="clinicName"
+        placeholder="e.g., Planned Parenthood Brooklyn"
+        required
+      />
+
+      <label for="correction">What needs to be updated? *</label>
+      <textarea
+        id="correction"
+        name="correction"
+        placeholder="Please describe what information is incorrect and what it should be."
+        required
+      ></textarea>
+
+      <label for="email">Your Email (optional)</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="your@email.com (we'll only use this to follow up if needed)"
+      />
+
+      <button type="submit" id="submit-btn">Submit Correction</button>
+    </form>
+
+    <a href="/" class="back-link">← Back to map</a>
+  </div>
+
+  <script>
+    const form = document.getElementById('correction-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const messageDiv = document.getElementById('message');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Disable button and show loading state
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+      messageDiv.style.display = 'none';
+
+      try {
+        const formData = {
+          clinicName: document.getElementById('clinic-name').value,
+          correction: document.getElementById('correction').value,
+          email: document.getElementById('email').value
+        };
+
+        const response = await fetch('/api/submit-correction', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          // Success
+          messageDiv.textContent = data.message;
+          messageDiv.className = 'message success';
+          messageDiv.style.display = 'block';
+          form.reset();
+        } else {
+          // Error from server
+          throw new Error(data.error || 'Submission failed');
+        }
+      } catch (error) {
+        // Network or other error
+        messageDiv.textContent = error.message || 'Failed to submit. Please try again or email hello@sexualhealth.nyc directly.';
+        messageDiv.className = 'message error';
+        messageDiv.style.display = 'block';
+      } finally {
+        // Re-enable button
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Correction';
+      }
+    });
+  </script>
+</body>
+</html>
