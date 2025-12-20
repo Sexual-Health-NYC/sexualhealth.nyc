@@ -6,7 +6,7 @@ import ClinicMarkers from "./ClinicMarkers";
 import NearMeButton from "./NearMeButton";
 
 const MAPBOX_TOKEN =
-  "pk.eyJ1IjoicG9sb25pa292IiwiYSI6ImNtNHl0ZWRrMjA0eDYybHNkMDdsMWl0dTUifQ.rD_LtOdVrKmEUH0tMIQTiA";
+  "pk.eyJ1Ijoic2V4dWFsLWhlYWx0aC1ueWMiLCJhIjoiY21qZHF2ZTAyMDQ3aTNjb3MxbDFscWowZiJ9.BXuUrUio_grUlyoxU6WFBQ";
 
 export default function Map() {
   const { mapViewport, setMapViewport, setClinics, clinics, filters } =
