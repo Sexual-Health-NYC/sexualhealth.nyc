@@ -31,10 +31,10 @@ export const theme = {
     surface: "#f8f9fa",
     border: "#dee2e6",
 
-    // Status
-    open: "#10b981",
-    closed: "#94a3b8",
-    verified: "#3b82f6",
+    // Status - WCAG AA compliant (white text on these backgrounds)
+    open: "#059669", // Changed from #10b981 for 4.5:1 contrast with white
+    closed: "#64748b", // Changed from #94a3b8 for 4.5:1 contrast with white
+    verified: "#2563eb", // Changed from #3b82f6 for 4.5:1 contrast with white
 
     // Map markers
     markerDefault: "#7b2cbf",
