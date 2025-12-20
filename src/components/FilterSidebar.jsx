@@ -93,6 +93,7 @@ export default function FilterSidebar() {
       >
         <div
           style={{
+            fontFamily: theme.fonts.headingFamily,
             fontSize: theme.fonts.size["2xl"],
             fontWeight: theme.fonts.weight.bold,
             marginBottom: theme.spacing[6],
@@ -108,8 +109,9 @@ export default function FilterSidebar() {
 
         <h2
           style={{
+            fontFamily: theme.fonts.headingFamily,
             fontSize: theme.fonts.size.xl,
-            fontWeight: theme.fonts.weight.semibold,
+            fontWeight: theme.fonts.weight.bold,
             marginBottom: theme.spacing[6],
             marginTop: theme.spacing[6],
             color: theme.colors.textPrimary,

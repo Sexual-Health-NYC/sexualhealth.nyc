@@ -35,7 +35,9 @@ export const theme = {
   },
 
   fonts: {
-    family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+    family:
+      '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+    headingFamily: '"Montserrat", sans-serif',
     size: {
       xs: "0.75rem", // 12px
       sm: "0.875rem", // 14px
