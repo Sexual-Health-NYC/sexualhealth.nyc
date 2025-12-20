@@ -59,7 +59,10 @@ export default function ClinicMarkers({ clinics }) {
               longitude={longitude}
               latitude={latitude}
             >
-              <div
+              <button
+                role="button"
+                tabIndex={0}
+                aria-label={`Cluster of ${pointCount} clinics. Zoom in to see individual clinics.`}
                 style={{
                   width: `${30 + (pointCount / points.length) * 40}px`,
                   height: `${30 + (pointCount / points.length) * 40}px`,
@@ -75,9 +78,17 @@ export default function ClinicMarkers({ clinics }) {
                   cursor: "pointer",
                   boxShadow: theme.shadows.lg,
                 }}
+                onFocus={(e) => {
+                  e.currentTarget.style.outline = theme.focus.outline;
+                  e.currentTarget.style.outlineOffset =
+                    theme.focus.outlineOffset;
+                }}
+                onBlur={(e) => {
+                  e.currentTarget.style.outline = "none";
+                }}
               >
                 {pointCount}
-              </div>
+              </button>
             </Marker>
           );
         }
@@ -93,7 +104,11 @@ export default function ClinicMarkers({ clinics }) {
               selectClinic(clinic);
             }}
           >
-            <div
+            <button
+              role="button"
+              tabIndex={0}
+              aria-label={`View details for ${clinic.name}`}
+              aria-pressed={selectedClinic?.id === clinic.id}
               style={{
                 width: selectedClinic?.id === clinic.id ? "48px" : "32px",
                 height: selectedClinic?.id === clinic.id ? "48px" : "32px",
@@ -106,8 +121,22 @@ export default function ClinicMarkers({ clinics }) {
                 cursor: "pointer",
                 transition: `all ${theme.transitions.base}`,
                 boxShadow: theme.shadows.md,
+                padding: 0,
               }}
-              title={clinic.name}
+              onClick={() => selectClinic(clinic)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  selectClinic(clinic);
+                }
+              }}
+              onFocus={(e) => {
+                e.currentTarget.style.outline = theme.focus.outline;
+                e.currentTarget.style.outlineOffset = theme.focus.outlineOffset;
+              }}
+              onBlur={(e) => {
+                e.currentTarget.style.outline = "none";
+              }}
             />
           </Marker>
         );

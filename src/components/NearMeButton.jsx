@@ -78,8 +78,17 @@ export default function NearMeButton() {
           alignItems: "center",
           gap: theme.spacing[2],
         }}
+        onFocus={(e) => {
+          e.currentTarget.style.outline = theme.focus.outline;
+          e.currentTarget.style.outlineOffset = theme.focus.outlineOffset;
+        }}
+        onBlur={(e) => {
+          e.currentTarget.style.outline = "none";
+        }}
       >
-        <span style={{ fontSize: theme.fonts.size.lg }}>📍</span>
+        <span style={{ fontSize: theme.fonts.size.lg }} aria-hidden="true">
+          📍
+        </span>
         {loading ? "Finding..." : "Near Me"}
       </button>
       <button
@@ -94,6 +103,13 @@ export default function NearMeButton() {
           fontWeight: theme.fonts.weight.medium,
           cursor: "pointer",
           boxShadow: theme.shadows.md,
+        }}
+        onFocus={(e) => {
+          e.currentTarget.style.outline = theme.focus.outline;
+          e.currentTarget.style.outlineOffset = theme.focus.outlineOffset;
+        }}
+        onBlur={(e) => {
+          e.currentTarget.style.outline = "none";
         }}
       >
         Reset View

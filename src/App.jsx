@@ -47,6 +47,21 @@ export default function App() {
       </a>
 
       <FilterSidebar />
+      {/* Live region for screen reader announcements */}
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+        style={{
+          position: "absolute",
+          left: "-10000px",
+          width: "1px",
+          height: "1px",
+          overflow: "hidden",
+        }}
+      >
+        {filteredClinics ? `${filteredClinics.length} clinics found` : ""}
+      </div>
+
       <main
         id="main-content"
         aria-label="Main content"
@@ -65,6 +80,7 @@ export default function App() {
         >
           <button
             onClick={() => setViewMode("map")}
+            aria-pressed={viewMode === "map"}
             style={{
               padding: `${theme.spacing[2]} ${theme.spacing[3]}`,
               backgroundColor:
@@ -81,11 +97,19 @@ export default function App() {
               fontWeight: theme.fonts.weight.medium,
               cursor: "pointer",
             }}
+            onFocus={(e) => {
+              e.currentTarget.style.outline = theme.focus.outline;
+              e.currentTarget.style.outlineOffset = theme.focus.outlineOffset;
+            }}
+            onBlur={(e) => {
+              e.currentTarget.style.outline = "none";
+            }}
           >
             Map
           </button>
           <button
             onClick={() => setViewMode("list")}
+            aria-pressed={viewMode === "list"}
             style={{
               padding: `${theme.spacing[2]} ${theme.spacing[3]}`,
               backgroundColor:
@@ -101,6 +125,13 @@ export default function App() {
               fontSize: theme.fonts.size.sm,
               fontWeight: theme.fonts.weight.medium,
               cursor: "pointer",
+            }}
+            onFocus={(e) => {
+              e.currentTarget.style.outline = theme.focus.outline;
+              e.currentTarget.style.outlineOffset = theme.focus.outlineOffset;
+            }}
+            onBlur={(e) => {
+              e.currentTarget.style.outline = "none";
             }}
           >
             List

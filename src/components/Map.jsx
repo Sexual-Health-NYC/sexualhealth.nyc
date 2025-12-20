@@ -73,7 +73,11 @@ export default function Map() {
   }, [filteredClinics]);
 
   return (
-    <div style={{ position: "relative", width: "100%", height: "100%" }}>
+    <div
+      style={{ position: "relative", width: "100%", height: "100%" }}
+      role="application"
+      aria-label="Interactive map of sexual health clinics in NYC. Use tab to navigate markers, or switch to list view for a text-based alternative."
+    >
       <MapGL
         {...mapViewport}
         onMove={(evt) => setMapViewport(evt.viewState)}

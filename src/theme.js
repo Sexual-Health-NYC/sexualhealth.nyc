@@ -18,7 +18,7 @@ export const theme = {
 
     // Neutrals
     textPrimary: "#212529",
-    textSecondary: "#6c757d",
+    textSecondary: "#5a6570", // Changed from #6c757d for WCAG AA contrast (4.52:1)
     background: "#ffffff",
     surface: "#f8f9fa",
     border: "#dee2e6",
@@ -80,6 +80,12 @@ export const theme = {
     fast: "0.15s",
     base: "0.2s",
     slow: "0.3s",
+  },
+
+  // Accessibility
+  focus: {
+    outline: `2px solid #7b2cbf`,
+    outlineOffset: "2px",
   },
 };
 

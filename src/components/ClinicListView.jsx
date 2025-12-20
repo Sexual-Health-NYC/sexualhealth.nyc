@@ -84,6 +84,19 @@ function ClinicCard({ clinic, onClick }) {
         transition: `all ${theme.transitions.base}`,
         border: `2px solid ${theme.colors.border}`,
       }}
+      onFocus={(e) => {
+        e.currentTarget.style.outline = theme.focus.outline;
+        e.currentTarget.style.outlineOffset = theme.focus.outlineOffset;
+        e.currentTarget.style.boxShadow = "0 8px 20px rgba(123, 44, 191, 0.15)";
+        e.currentTarget.style.transform = "translateY(-4px)";
+        e.currentTarget.style.borderColor = theme.colors.primaryLight;
+      }}
+      onBlur={(e) => {
+        e.currentTarget.style.outline = "none";
+        e.currentTarget.style.boxShadow = "0 2px 8px rgba(123, 44, 191, 0.08)";
+        e.currentTarget.style.transform = "translateY(0)";
+        e.currentTarget.style.borderColor = theme.colors.border;
+      }}
       onMouseEnter={(e) => {
         e.currentTarget.style.boxShadow = "0 8px 20px rgba(123, 44, 191, 0.15)";
         e.currentTarget.style.transform = "translateY(-4px)";
@@ -176,8 +189,16 @@ function ClinicCard({ clinic, onClick }) {
           color: theme.colors.textSecondary,
         }}
       >
-        {clinic.walk_in && <span>✓ Walk-ins</span>}
-        {clinic.no_insurance_ok && <span>✓ No insurance required</span>}
+        {clinic.walk_in && (
+          <span>
+            <span aria-hidden="true">✓ </span>Walk-ins
+          </span>
+        )}
+        {clinic.no_insurance_ok && (
+          <span>
+            <span aria-hidden="true">✓ </span>No insurance required
+          </span>
+        )}
       </div>
     </div>
   );

@@ -42,6 +42,7 @@ export default function FilterSidebar() {
       {isMobile && (
         <button
           onClick={() => setIsOpen(!isOpen)}
+          aria-expanded={isOpen}
           style={{
             position: "fixed",
             top: theme.spacing[4],
@@ -56,6 +57,13 @@ export default function FilterSidebar() {
             fontWeight: theme.fonts.weight.medium,
             cursor: "pointer",
             boxShadow: theme.shadows.md,
+          }}
+          onFocus={(e) => {
+            e.currentTarget.style.outline = theme.focus.outline;
+            e.currentTarget.style.outlineOffset = theme.focus.outlineOffset;
+          }}
+          onBlur={(e) => {
+            e.currentTarget.style.outline = "none";
           }}
         >
           {isOpen ? "Close Filters" : "Filters"}
@@ -83,7 +91,7 @@ export default function FilterSidebar() {
         role="complementary"
         aria-label="Filter clinics"
       >
-        <h1
+        <div
           style={{
             fontSize: theme.fonts.size["2xl"],
             fontWeight: theme.fonts.weight.bold,
@@ -92,9 +100,11 @@ export default function FilterSidebar() {
             borderBottom: `3px solid ${theme.colors.primary}`,
             paddingBottom: theme.spacing[3],
           }}
+          role="heading"
+          aria-level="1"
         >
           sexualhealth.nyc
-        </h1>
+        </div>
 
         <h2
           style={{
@@ -219,6 +229,13 @@ export default function FilterSidebar() {
             marginTop: theme.spacing[4],
             transition: `all ${theme.transitions.fast}`,
           }}
+          onFocus={(e) => {
+            e.currentTarget.style.outline = theme.focus.outline;
+            e.currentTarget.style.outlineOffset = theme.focus.outlineOffset;
+          }}
+          onBlur={(e) => {
+            e.currentTarget.style.outline = "none";
+          }}
           onMouseEnter={(e) => {
             e.currentTarget.style.backgroundColor = theme.colors.primary;
             e.currentTarget.style.color = "white";
@@ -237,7 +254,7 @@ export default function FilterSidebar() {
 
 function FilterSection({ title, children }) {
   return (
-    <div
+    <fieldset
       style={{
         marginBottom: theme.spacing[6],
         padding: theme.spacing[4],
@@ -246,16 +263,17 @@ function FilterSection({ title, children }) {
         border: `1px solid ${theme.colors.border}`,
       }}
     >
-      <h3
+      <legend
         style={{
           fontSize: theme.fonts.size.lg,
           fontWeight: theme.fonts.weight.semibold,
           marginBottom: theme.spacing[3],
           color: theme.colors.primary,
+          padding: `0 ${theme.spacing[2]}`,
         }}
       >
         {title}
-      </h3>
+      </legend>
       <div
         style={{
           display: "flex",
@@ -265,7 +283,7 @@ function FilterSection({ title, children }) {
       >
         {children}
       </div>
-    </div>
+    </fieldset>
   );
 }
 
