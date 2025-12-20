@@ -57,6 +57,39 @@ The current `clinics.geojson` is missing critical fields specified in `PLAN.md`.
 }
 ```
 
+## Data Quality Issues (Urgent)
+
+### Email Addresses in Phone Field (8 clinics)
+
+**Privacy Risk:** Individual staff emails are exposed publicly in the phone field, will get spammed.
+
+Examples:
+
+- `sean@destinationtomorrow.org, asantiago@destinationtomorrow.org, ...`
+- `ahardikar@callen-lorde.org, ngoykhberg@callen-lorde.org, ashardikar@gmail.com`
+
+**Fix Needed:**
+
+- Separate general clinic contact emails (info@, contact@) from individual staff contacts
+- Add `contact_email` field for public general email
+- Add `internal_contacts` field (not displayed) for staff emails used during data verification
+- Remove all emails from `phone` field
+
+Run `node scripts/validate-data.js` to see full list.
+
+### Incomplete Addresses (9 clinics)
+
+Missing city, state, zip - won't work in map apps or clipboard copy.
+
+Examples:
+
+- `356 West 18th Street` → Should be `356 West 18th Street, New York, NY 10011`
+- `452 E 149th St` → Should be `452 E 149th St, Bronx, NY 10455`
+
+**Fix Needed:** Add full addresses with city, state, zip to all clinics.
+
+Run `node scripts/validate-data.js` to see full list.
+
 ## Next Steps
 
 1. **Data Collection** - Per PLAN.md, this requires:

@@ -320,7 +320,7 @@ export default function ClinicBottomSheet() {
         {/* Contact Info */}
         {(selectedClinic.phone || selectedClinic.website) && (
           <Section title="Contact">
-            {selectedClinic.phone && (
+            {selectedClinic.phone && !selectedClinic.phone.includes("@") && (
               <div style={{ marginBottom: theme.spacing[3] }}>
                 <p
                   style={{
