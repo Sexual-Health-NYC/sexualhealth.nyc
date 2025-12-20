@@ -1,6 +1,7 @@
 const { chromium } = require("playwright");
 const fs = require("fs");
 const path = require("path");
+const toIco = require("to-ico");
 
 async function renderLogo() {
   const browser = await chromium.launch();
@@ -63,7 +64,65 @@ async function renderLogo() {
     await page.close();
   }
 
+  // Icon sizes (square, no text - for favicons, apple-touch-icon, etc.)
+  const iconSizes = [
+    { name: "apple-touch-icon.png", size: 180 },
+    { name: "favicon-192.png", size: 192 },
+    { name: "favicon-512.png", size: 512 },
+    { name: "favicon.png", size: 32 },
+  ];
+
+  const iconSvg = fs.readFileSync(
+    path.join(publicDir, "logo-icon.svg"),
+    "utf8",
+  );
+
+  for (const config of iconSizes) {
+    const page = await browser.newPage();
+    await page.setViewportSize({
+      width: config.size + 40,
+      height: config.size + 40,
+    });
+
+    await page.setContent(`
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <style>
+          body {
+            margin: 0;
+            padding: 20px;
+            background: white;
+          }
+          svg {
+            width: ${config.size}px;
+            height: ${config.size}px;
+          }
+        </style>
+      </head>
+      <body>${iconSvg}</body>
+      </html>
+    `);
+
+    const element = await page.$("svg");
+    await element.screenshot({
+      path: path.join(publicDir, config.name),
+      omitBackground: true,
+    });
+    console.log(`Created ${config.name}`);
+    await page.close();
+  }
+
   await browser.close();
+
+  // Convert favicon.png to favicon.ico
+  const faviconPng = path.join(publicDir, "favicon.png");
+  const faviconIco = path.join(publicDir, "favicon.ico");
+  const faviconBuffer = fs.readFileSync(faviconPng);
+  const icoBuffer = await toIco([faviconBuffer], { sizes: [32] });
+  fs.writeFileSync(faviconIco, icoBuffer);
+  console.log("Created favicon.ico");
+
   console.log("Done!");
 }
 
