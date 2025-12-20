@@ -147,57 +147,9 @@ export default function ClinicBottomSheet() {
         {/* Quick Actions */}
         <div
           style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: theme.spacing[2],
             marginBottom: theme.spacing[4],
           }}
         >
-          <div style={{ display: "flex", gap: theme.spacing[2] }}>
-            {selectedClinic.phone && (
-              <a
-                href={`tel:${selectedClinic.phone}`}
-                style={{
-                  flex: 1,
-                  padding: theme.spacing[3],
-                  backgroundColor: theme.colors.prep,
-                  color: "white",
-                  textAlign: "center",
-                  textDecoration: "none",
-                  borderRadius: theme.borderRadius.sm,
-                  fontSize: theme.fonts.size.base,
-                  fontWeight: theme.fonts.weight.medium,
-                }}
-              >
-                Call
-              </a>
-            )}
-            {selectedClinic.website && (
-              <a
-                href={
-                  selectedClinic.website.startsWith("http")
-                    ? selectedClinic.website
-                    : `https://${selectedClinic.website}`
-                }
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  flex: 1,
-                  padding: theme.spacing[3],
-                  backgroundColor: theme.colors.surface,
-                  color: theme.colors.textPrimary,
-                  textAlign: "center",
-                  textDecoration: "none",
-                  borderRadius: theme.borderRadius.sm,
-                  fontSize: theme.fonts.size.base,
-                  fontWeight: theme.fonts.weight.medium,
-                  border: `1px solid ${theme.colors.border}`,
-                }}
-              >
-                Website
-              </a>
-            )}
-          </div>
           <a
             href={
               /iPhone|iPad|iPod/.test(navigator.userAgent)
@@ -207,6 +159,7 @@ export default function ClinicBottomSheet() {
             target="_blank"
             rel="noopener noreferrer"
             style={{
+              display: "block",
               padding: theme.spacing[3],
               backgroundColor: theme.colors.primary,
               color: "white",
@@ -344,20 +297,95 @@ export default function ClinicBottomSheet() {
           </Section>
         )}
 
-        {/* Phone */}
-        {selectedClinic.phone && (
+        {/* Contact Info */}
+        {(selectedClinic.phone || selectedClinic.website) && (
           <Section title="Contact">
-            <a
-              href={`tel:${selectedClinic.phone}`}
-              style={{
-                color: theme.colors.prep,
-                textDecoration: "none",
-                fontSize: theme.fonts.size.base,
-                fontWeight: theme.fonts.weight.medium,
-              }}
-            >
-              {selectedClinic.phone}
-            </a>
+            {selectedClinic.phone && (
+              <div style={{ marginBottom: theme.spacing[3] }}>
+                <p
+                  style={{
+                    margin: `0 0 ${theme.spacing[1]} 0`,
+                    fontSize: theme.fonts.size.xs,
+                    color: theme.colors.textSecondary,
+                    fontWeight: theme.fonts.weight.medium,
+                  }}
+                >
+                  Phone
+                </p>
+                <p
+                  style={{
+                    margin: 0,
+                    fontSize: theme.fonts.size.base,
+                    color: theme.colors.textPrimary,
+                    fontWeight: theme.fonts.weight.medium,
+                  }}
+                >
+                  {selectedClinic.phone}
+                </p>
+                <a
+                  href={`tel:${selectedClinic.phone}`}
+                  style={{
+                    display: "inline-block",
+                    marginTop: theme.spacing[2],
+                    padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
+                    backgroundColor: theme.colors.prep,
+                    color: "white",
+                    textDecoration: "none",
+                    borderRadius: theme.borderRadius.sm,
+                    fontSize: theme.fonts.size.sm,
+                    fontWeight: theme.fonts.weight.medium,
+                  }}
+                >
+                  Call Now
+                </a>
+              </div>
+            )}
+            {selectedClinic.website && (
+              <div>
+                <p
+                  style={{
+                    margin: `0 0 ${theme.spacing[1]} 0`,
+                    fontSize: theme.fonts.size.xs,
+                    color: theme.colors.textSecondary,
+                    fontWeight: theme.fonts.weight.medium,
+                  }}
+                >
+                  Website
+                </p>
+                <p
+                  style={{
+                    margin: `0 0 ${theme.spacing[2]} 0`,
+                    fontSize: theme.fonts.size.sm,
+                    color: theme.colors.textPrimary,
+                    wordBreak: "break-all",
+                  }}
+                >
+                  {selectedClinic.website.replace(/^https?:\/\//, "")}
+                </p>
+                <a
+                  href={
+                    selectedClinic.website.startsWith("http")
+                      ? selectedClinic.website
+                      : `https://${selectedClinic.website}`
+                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: "inline-block",
+                    padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
+                    backgroundColor: theme.colors.surface,
+                    color: theme.colors.primary,
+                    textDecoration: "none",
+                    borderRadius: theme.borderRadius.sm,
+                    fontSize: theme.fonts.size.sm,
+                    fontWeight: theme.fonts.weight.medium,
+                    border: `2px solid ${theme.colors.primary}`,
+                  }}
+                >
+                  Visit Website →
+                </a>
+              </div>
+            )}
           </Section>
         )}
       </div>

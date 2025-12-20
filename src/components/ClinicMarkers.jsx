@@ -5,7 +5,8 @@ import useAppStore from "../store/useAppStore";
 import theme from "../theme";
 
 export default function ClinicMarkers({ clinics }) {
-  const { selectedClinic, selectClinic, mapViewport } = useAppStore();
+  const { selectedClinic, selectClinic, mapViewport, setMapViewport } =
+    useAppStore();
 
   // Convert clinics to GeoJSON points
   const points = useMemo(
@@ -35,7 +36,7 @@ export default function ClinicMarkers({ clinics }) {
     ];
   }, [mapViewport]);
 
-  const { clusters } = useSupercluster({
+  const { clusters, supercluster } = useSupercluster({
     points,
     bounds,
     zoom: mapViewport.zoom,
@@ -62,7 +63,20 @@ export default function ClinicMarkers({ clinics }) {
               <button
                 role="button"
                 tabIndex={0}
+                title={`${pointCount} clinics - click to zoom in`}
                 aria-label={`Cluster of ${pointCount} clinics. Zoom in to see individual clinics.`}
+                onClick={() => {
+                  const expansionZoom = Math.min(
+                    supercluster.getClusterExpansionZoom(cluster.id),
+                    20,
+                  );
+                  setMapViewport({
+                    ...mapViewport,
+                    longitude,
+                    latitude,
+                    zoom: expansionZoom,
+                  });
+                }}
                 style={{
                   width: `${30 + (pointCount / points.length) * 40}px`,
                   height: `${30 + (pointCount / points.length) * 40}px`,
@@ -107,6 +121,7 @@ export default function ClinicMarkers({ clinics }) {
             <button
               role="button"
               tabIndex={0}
+              title={clinic.name}
               aria-label={`View details for ${clinic.name}`}
               aria-pressed={selectedClinic?.id === clinic.id}
               style={{

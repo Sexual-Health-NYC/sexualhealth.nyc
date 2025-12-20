@@ -93,18 +93,34 @@ export default function FilterSidebar() {
       >
         <div
           style={{
-            fontFamily: theme.fonts.headingFamily,
-            fontSize: theme.fonts.size["2xl"],
-            fontWeight: theme.fonts.weight.bold,
+            display: "flex",
+            alignItems: "center",
+            gap: theme.spacing[3],
             marginBottom: theme.spacing[6],
-            color: theme.colors.primary,
             borderBottom: `3px solid ${theme.colors.primary}`,
             paddingBottom: theme.spacing[3],
           }}
           role="heading"
           aria-level="1"
         >
-          sexualhealth.nyc
+          <img
+            src="/logo-icon.svg"
+            alt="Sexual Health NYC Logo"
+            style={{
+              width: "48px",
+              height: "48px",
+            }}
+          />
+          <span
+            style={{
+              fontFamily: theme.fonts.headingFamily,
+              fontSize: theme.fonts.size["2xl"],
+              fontWeight: theme.fonts.weight.bold,
+              color: theme.colors.primary,
+            }}
+          >
+            sexualhealth.nyc
+          </span>
         </div>
 
         <h2
