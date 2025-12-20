@@ -2,10 +2,20 @@ import { useState } from "react";
 import useAppStore from "../store/useAppStore";
 import theme from "../theme";
 
+const DEFAULT_VIEWPORT = {
+  longitude: -73.9712,
+  latitude: 40.7831,
+  zoom: 11,
+};
+
 export default function NearMeButton() {
   const { setMapViewport } = useAppStore();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  const handleReset = () => {
+    setMapViewport(DEFAULT_VIEWPORT);
+  };
 
   const handleNearMe = () => {
     if (!navigator.geolocation) {
@@ -45,6 +55,9 @@ export default function NearMeButton() {
         top: theme.spacing[4],
         right: theme.spacing[4],
         zIndex: 10,
+        display: "flex",
+        flexDirection: "column",
+        gap: theme.spacing[2],
       }}
     >
       <button
@@ -68,6 +81,22 @@ export default function NearMeButton() {
       >
         <span style={{ fontSize: theme.fonts.size.lg }}>📍</span>
         {loading ? "Finding..." : "Near Me"}
+      </button>
+      <button
+        onClick={handleReset}
+        style={{
+          padding: `${theme.spacing[2]} ${theme.spacing[3]}`,
+          backgroundColor: theme.colors.surface,
+          color: theme.colors.textPrimary,
+          border: `1px solid ${theme.colors.border}`,
+          borderRadius: theme.borderRadius.sm,
+          fontSize: theme.fonts.size.sm,
+          fontWeight: theme.fonts.weight.medium,
+          cursor: "pointer",
+          boxShadow: theme.shadows.md,
+        }}
+      >
+        Reset View
       </button>
       {error && (
         <div
