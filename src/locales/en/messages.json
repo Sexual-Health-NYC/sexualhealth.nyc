@@ -1,0 +1,15 @@
+{
+  "unknownContactClinic": "Unknown - contact clinic to verify",
+  "walkInsAccepted": "Walk-ins accepted",
+  "open": "Open",
+  "closed": "Closed",
+  "opensAt": "Opens at {{time}}",
+  "closesAt": "Closes at {{time}}",
+  "clinicsFound": "{{count}} clinics found",
+  "clinicsFound_one": "{{count}} clinic found",
+  "clinicsFound_other": "{{count}} clinics found",
+  "noMatches": "No clinics match your filters",
+  "viewDetails": "View details for {{name}}",
+  "cluster": "Cluster of {{count}} clinics. Zoom in to see individual clinics.",
+  "skipToMain": "Skip to main content"
+}

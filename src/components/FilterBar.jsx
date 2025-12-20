@@ -1,8 +1,16 @@
 import { useState, useRef, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import useAppStore from "../store/useAppStore";
 import theme from "../theme";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function FilterBar() {
+  const { t } = useTranslation([
+    "services",
+    "insurance",
+    "locations",
+    "actions",
+  ]);
   const { filters, setFilter, clearFilters, setGestationalWeeks } =
     useAppStore();
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -61,27 +69,27 @@ export default function FilterBar() {
   };
 
   const serviceOptions = [
-    { value: "sti_testing", label: "STI Testing" },
-    { value: "hiv_testing", label: "HIV Testing" },
-    { value: "prep", label: "PrEP" },
-    { value: "pep", label: "PEP" },
-    { value: "contraception", label: "Contraception" },
-    { value: "abortion", label: "Abortion" },
+    { value: "sti_testing", label: t("services:stiTesting") },
+    { value: "hiv_testing", label: t("services:hivTesting") },
+    { value: "prep", label: t("services:prep") },
+    { value: "pep", label: t("services:pep") },
+    { value: "contraception", label: t("services:contraception") },
+    { value: "abortion", label: t("services:abortion") },
   ];
 
   const insuranceOptions = [
-    { value: "accepts_medicaid", label: "Accepts Medicaid" },
-    { value: "accepts_medicare", label: "Accepts Medicare" },
-    { value: "no_insurance_ok", label: "No Insurance Required" },
-    { value: "sliding_scale", label: "Sliding Scale" },
+    { value: "accepts_medicaid", label: t("insurance:acceptsMedicaid") },
+    { value: "accepts_medicare", label: t("insurance:acceptsMedicare") },
+    { value: "no_insurance_ok", label: t("insurance:noInsuranceOk") },
+    { value: "sliding_scale", label: t("insurance:slidingScale") },
   ];
 
   const boroughOptions = [
-    { value: "Manhattan", label: "Manhattan" },
-    { value: "Brooklyn", label: "Brooklyn" },
-    { value: "Queens", label: "Queens" },
-    { value: "Bronx", label: "Bronx" },
-    { value: "Staten Island", label: "Staten Island" },
+    { value: "Manhattan", label: t("locations:boroughs.Manhattan") },
+    { value: "Brooklyn", label: t("locations:boroughs.Brooklyn") },
+    { value: "Queens", label: t("locations:boroughs.Queens") },
+    { value: "Bronx", label: t("locations:boroughs.Bronx") },
+    { value: "Staten Island", label: t("locations:boroughs.Staten Island") },
   ];
 
   const gestationalOptions = [
@@ -435,19 +443,19 @@ export default function FilterBar() {
           >
             <FilterDropdown
               name="services"
-              title="Services"
+              title={t("sections:services")}
               options={serviceOptions}
               category="services"
             />
             <FilterDropdown
               name="insurance"
-              title="Insurance & Cost"
+              title={t("sections:insuranceAndCost")}
               options={insuranceOptions}
               category="insurance"
             />
             <FilterDropdown
               name="boroughs"
-              title="Borough"
+              title={t("sections:borough")}
               options={boroughOptions}
               category="boroughs"
             />
@@ -475,9 +483,12 @@ export default function FilterBar() {
                 e.currentTarget.style.outline = "none";
               }}
             >
-              Clear All
+              {t("actions:clearAll")}
             </button>
           )}
+
+          {/* Language Switcher */}
+          <LanguageSwitcher />
         </div>
 
         {/* Bottom row: Active filter pills */}
@@ -595,7 +606,7 @@ export default function FilterBar() {
           <button
             onClick={() => setIsModalOpen(true)}
             aria-expanded={isModalOpen}
-            aria-label={`Filters${getActiveFilterCount() > 0 ? `, ${getActiveFilterCount()} active` : ""}`}
+            aria-label={`${t("actions:filters")}${getActiveFilterCount() > 0 ? `, ${getActiveFilterCount()} active` : ""}`}
             style={{
               flex: 1,
               padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
@@ -612,7 +623,7 @@ export default function FilterBar() {
               gap: theme.spacing[2],
             }}
           >
-            Filters
+            {t("actions:filters")}
             {getActiveFilterCount() > 0 && (
               <span
                 style={{
@@ -681,7 +692,7 @@ export default function FilterBar() {
                   margin: 0,
                 }}
               >
-                Filters
+                {t("actions:filters")}
               </h2>
               <button
                 onClick={() => setIsModalOpen(false)}
@@ -699,7 +710,7 @@ export default function FilterBar() {
             </div>
 
             {/* Mobile filter sections */}
-            <FilterSection title="Services">
+            <FilterSection title={t("sections:services")}>
               {serviceOptions.map((option) => (
                 <Checkbox
                   key={option.value}
@@ -710,7 +721,7 @@ export default function FilterBar() {
               ))}
             </FilterSection>
 
-            <FilterSection title="Insurance & Cost">
+            <FilterSection title={t("sections:insuranceAndCost")}>
               {insuranceOptions.map((option) => (
                 <Checkbox
                   key={option.value}
@@ -721,15 +732,15 @@ export default function FilterBar() {
               ))}
             </FilterSection>
 
-            <FilterSection title="Availability">
+            <FilterSection title={t("sections:walkIns")}>
               <Checkbox
-                label="Walk-ins Accepted"
+                label={t("messages:walkInsAccepted")}
                 checked={filters.access.has("walk_in")}
                 onChange={() => handleCheckbox("access", "walk_in")}
               />
             </FilterSection>
 
-            <FilterSection title="Borough">
+            <FilterSection title={t("sections:borough")}>
               {boroughOptions.map((option) => (
                 <Checkbox
                   key={option.value}
@@ -808,7 +819,7 @@ export default function FilterBar() {
                     cursor: "pointer",
                   }}
                 >
-                  Clear All
+                  {t("actions:clearAll")}
                 </button>
               )}
               <button
@@ -825,7 +836,7 @@ export default function FilterBar() {
                   cursor: "pointer",
                 }}
               >
-                Apply
+                {t("actions:apply")}
               </button>
             </div>
           </div>
