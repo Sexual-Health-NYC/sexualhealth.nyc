@@ -8,13 +8,21 @@ export const theme = {
     // Accent
     accent: "#ff006e",
 
-    // Service colors
-    stiTesting: "#7b2cbf",
-    prep: "#0096c7",
-    pep: "#e63946",
-    contraception: "#06a77d",
-    abortion: "#ff6b6b",
-    lgbtq: "#ff006e",
+    // Service colors - accessible pairs (light bg + dark text)
+    stiTestingBg: "#ebdff5",
+    stiTestingText: "#561f86",
+    hivTestingBg: "#ebdff5",
+    hivTestingText: "#561f86",
+    prepBg: "#d9eff7",
+    prepText: "#00698b",
+    pepBg: "#fbe1e3",
+    pepText: "#a12831",
+    contraceptionBg: "#daf2ec",
+    contraceptionText: "#047558",
+    abortionBg: "#ffe9e9",
+    abortionText: "#ad4949",
+    lgbtqBg: "#ffd9e9",
+    lgbtqText: "#b3004d",
 
     // Neutrals
     textPrimary: "#212529",

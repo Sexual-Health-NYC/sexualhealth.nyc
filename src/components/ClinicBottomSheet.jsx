@@ -16,20 +16,41 @@ export default function ClinicBottomSheet() {
 
   const services = [];
   if (selectedClinic.has_sti_testing)
-    services.push({ label: "STI Testing", color: theme.colors.stiTesting });
+    services.push({
+      label: "STI Testing",
+      bgColor: theme.colors.stiTestingBg,
+      textColor: theme.colors.stiTestingText,
+    });
   if (selectedClinic.has_hiv_testing)
-    services.push({ label: "HIV Testing", color: theme.colors.primary });
+    services.push({
+      label: "HIV Testing",
+      bgColor: theme.colors.hivTestingBg,
+      textColor: theme.colors.hivTestingText,
+    });
   if (selectedClinic.has_prep)
-    services.push({ label: "PrEP", color: theme.colors.prep });
+    services.push({
+      label: "PrEP",
+      bgColor: theme.colors.prepBg,
+      textColor: theme.colors.prepText,
+    });
   if (selectedClinic.has_pep)
-    services.push({ label: "PEP", color: theme.colors.pep });
+    services.push({
+      label: "PEP",
+      bgColor: theme.colors.pepBg,
+      textColor: theme.colors.pepText,
+    });
   if (selectedClinic.has_contraception)
     services.push({
       label: "Contraception",
-      color: theme.colors.contraception,
+      bgColor: theme.colors.contraceptionBg,
+      textColor: theme.colors.contraceptionText,
     });
   if (selectedClinic.has_abortion)
-    services.push({ label: "Abortion", color: theme.colors.abortion });
+    services.push({
+      label: "Abortion",
+      bgColor: theme.colors.abortionBg,
+      textColor: theme.colors.abortionText,
+    });
 
   const handleTouchStart = (e) => {
     startY.current = e.touches[0].clientY;
@@ -155,13 +176,13 @@ export default function ClinicBottomSheet() {
                 gap: theme.spacing[2],
               }}
             >
-              {services.map(({ label, color }) => (
+              {services.map(({ label, bgColor, textColor }) => (
                 <span
                   key={label}
                   style={{
                     padding: `${theme.spacing[2]} ${theme.spacing[3]}`,
-                    backgroundColor: color,
-                    color: "white",
+                    backgroundColor: bgColor,
+                    color: textColor,
                     borderRadius: theme.borderRadius.sm,
                     fontSize: theme.fonts.size.sm,
                     fontWeight: theme.fonts.weight.medium,
