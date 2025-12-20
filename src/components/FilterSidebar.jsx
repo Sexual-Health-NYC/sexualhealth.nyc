@@ -22,10 +22,10 @@ export default function FilterSidebar() {
   const sidebarStyle = {
     width: isMobile ? "280px" : "320px",
     height: "100%",
-    backgroundColor: theme.colors.background,
-    borderRight: `1px solid ${theme.colors.border}`,
+    backgroundColor: "#faf9fb",
+    borderRight: `2px solid ${theme.colors.primaryLight}20`,
     overflowY: "auto",
-    padding: theme.spacing[4],
+    padding: theme.spacing[6],
     ...(isMobile && {
       position: "fixed",
       left: isOpen ? 0 : "-280px",
@@ -83,11 +83,25 @@ export default function FilterSidebar() {
         role="complementary"
         aria-label="Filter clinics"
       >
-        <h2
+        <h1
           style={{
             fontSize: theme.fonts.size["2xl"],
+            fontWeight: theme.fonts.weight.bold,
+            marginBottom: theme.spacing[6],
+            color: theme.colors.primary,
+            borderBottom: `3px solid ${theme.colors.primary}`,
+            paddingBottom: theme.spacing[3],
+          }}
+        >
+          sexualhealth.nyc
+        </h1>
+
+        <h2
+          style={{
+            fontSize: theme.fonts.size.xl,
             fontWeight: theme.fonts.weight.semibold,
             marginBottom: theme.spacing[6],
+            marginTop: theme.spacing[6],
             color: theme.colors.textPrimary,
           }}
         >
@@ -132,13 +146,13 @@ export default function FilterSidebar() {
         <FilterSection title="Insurance & Cost">
           <Checkbox
             label="Accepts Medicaid"
-            checked={filters.insurance.has("medicaid")}
-            onChange={() => handleCheckbox("insurance", "medicaid")}
+            checked={filters.insurance.has("accepts_medicaid")}
+            onChange={() => handleCheckbox("insurance", "accepts_medicaid")}
           />
           <Checkbox
             label="Accepts Medicare"
-            checked={filters.insurance.has("medicare")}
-            onChange={() => handleCheckbox("insurance", "medicare")}
+            checked={filters.insurance.has("accepts_medicare")}
+            onChange={() => handleCheckbox("insurance", "accepts_medicare")}
           />
           <Checkbox
             label="No Insurance Required"
@@ -195,17 +209,26 @@ export default function FilterSidebar() {
           style={{
             width: "100%",
             padding: theme.spacing[3],
-            backgroundColor: theme.colors.surface,
-            border: `1px solid ${theme.colors.border}`,
-            borderRadius: theme.borderRadius.sm,
-            fontSize: theme.fonts.size.sm,
-            fontWeight: theme.fonts.weight.medium,
-            color: theme.colors.textPrimary,
+            backgroundColor: "white",
+            border: `2px solid ${theme.colors.primary}`,
+            borderRadius: theme.borderRadius.md,
+            fontSize: theme.fonts.size.base,
+            fontWeight: theme.fonts.weight.semibold,
+            color: theme.colors.primary,
             cursor: "pointer",
             marginTop: theme.spacing[4],
+            transition: `all ${theme.transitions.fast}`,
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = theme.colors.primary;
+            e.currentTarget.style.color = "white";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = "white";
+            e.currentTarget.style.color = theme.colors.primary;
           }}
         >
-          Clear Filters
+          Clear All Filters
         </button>
       </aside>
     </>
@@ -214,13 +237,21 @@ export default function FilterSidebar() {
 
 function FilterSection({ title, children }) {
   return (
-    <div style={{ marginBottom: theme.spacing[6] }}>
+    <div
+      style={{
+        marginBottom: theme.spacing[6],
+        padding: theme.spacing[4],
+        backgroundColor: "white",
+        borderRadius: theme.borderRadius.md,
+        border: `1px solid ${theme.colors.border}`,
+      }}
+    >
       <h3
         style={{
-          fontSize: theme.fonts.size.base,
+          fontSize: theme.fonts.size.lg,
           fontWeight: theme.fonts.weight.semibold,
           marginBottom: theme.spacing[3],
-          color: theme.colors.textPrimary,
+          color: theme.colors.primary,
         }}
       >
         {title}
@@ -229,7 +260,7 @@ function FilterSection({ title, children }) {
         style={{
           display: "flex",
           flexDirection: "column",
-          gap: theme.spacing[2],
+          gap: theme.spacing[3],
         }}
       >
         {children}
@@ -246,6 +277,22 @@ function Checkbox({ label, checked, onChange }) {
         alignItems: "center",
         cursor: "pointer",
         fontSize: theme.fonts.size.sm,
+        padding: theme.spacing[2],
+        borderRadius: theme.borderRadius.sm,
+        transition: `background-color ${theme.transitions.fast}`,
+        backgroundColor: checked
+          ? `${theme.colors.primaryLight}15`
+          : "transparent",
+      }}
+      onMouseEnter={(e) => {
+        if (!checked) {
+          e.currentTarget.style.backgroundColor = theme.colors.surface;
+        }
+      }}
+      onMouseLeave={(e) => {
+        if (!checked) {
+          e.currentTarget.style.backgroundColor = "transparent";
+        }
       }}
     >
       <input
@@ -257,9 +304,18 @@ function Checkbox({ label, checked, onChange }) {
           width: "18px",
           height: "18px",
           cursor: "pointer",
+          accentColor: theme.colors.primary,
         }}
       />
-      {label}
+      <span
+        style={{
+          fontWeight: checked
+            ? theme.fonts.weight.medium
+            : theme.fonts.weight.normal,
+        }}
+      >
+        {label}
+      </span>
     </label>
   );
 }

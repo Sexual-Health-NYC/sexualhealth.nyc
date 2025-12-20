@@ -12,9 +12,13 @@ export default function ClinicListView({ clinics }) {
           padding: theme.spacing[8],
           textAlign: "center",
           color: theme.colors.textSecondary,
+          fontSize: theme.fonts.size.lg,
         }}
       >
-        <p>No clinics match your filters.</p>
+        <p style={{ margin: 0 }}>No clinics match your filters.</p>
+        <p style={{ margin: theme.spacing[2], fontSize: theme.fonts.size.sm }}>
+          Try adjusting your filter selections.
+        </p>
       </div>
     );
   }
@@ -25,6 +29,7 @@ export default function ClinicListView({ clinics }) {
         height: "100%",
         overflowY: "auto",
         padding: theme.spacing[4],
+        paddingTop: "60px", // Space for Map/List toggle buttons
         backgroundColor: theme.colors.surface,
       }}
     >
@@ -71,21 +76,23 @@ function ClinicCard({ clinic, onClick }) {
       }}
       aria-label={`View details for ${clinic.name}`}
       style={{
-        backgroundColor: theme.colors.background,
-        borderRadius: theme.borderRadius.md,
-        padding: theme.spacing[4],
+        backgroundColor: "white",
+        borderRadius: theme.borderRadius.lg,
+        padding: theme.spacing[6],
         cursor: "pointer",
-        boxShadow: theme.shadows.sm,
+        boxShadow: "0 2px 8px rgba(123, 44, 191, 0.08)",
         transition: `all ${theme.transitions.base}`,
-        border: `1px solid ${theme.colors.border}`,
+        border: `2px solid ${theme.colors.border}`,
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.boxShadow = theme.shadows.md;
-        e.currentTarget.style.transform = "translateY(-2px)";
+        e.currentTarget.style.boxShadow = "0 8px 20px rgba(123, 44, 191, 0.15)";
+        e.currentTarget.style.transform = "translateY(-4px)";
+        e.currentTarget.style.borderColor = theme.colors.primaryLight;
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.boxShadow = theme.shadows.sm;
+        e.currentTarget.style.boxShadow = "0 2px 8px rgba(123, 44, 191, 0.08)";
         e.currentTarget.style.transform = "translateY(0)";
+        e.currentTarget.style.borderColor = theme.colors.border;
       }}
     >
       {/* Header */}
@@ -132,12 +139,13 @@ function ClinicCard({ clinic, onClick }) {
             <span
               key={service}
               style={{
-                padding: `${theme.spacing[1]} ${theme.spacing[2]}`,
-                backgroundColor: theme.colors.surface,
-                color: theme.colors.textPrimary,
-                borderRadius: theme.borderRadius.sm,
+                padding: `${theme.spacing[1]} ${theme.spacing[3]}`,
+                backgroundColor: `${theme.colors.primaryLight}10`,
+                color: theme.colors.primary,
+                borderRadius: theme.borderRadius.full,
                 fontSize: theme.fonts.size.xs,
-                border: `1px solid ${theme.colors.border}`,
+                border: `1px solid ${theme.colors.primaryLight}40`,
+                fontWeight: theme.fonts.weight.medium,
               }}
             >
               {service}

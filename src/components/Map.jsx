@@ -42,10 +42,10 @@ export default function Map() {
         if (!hasAllServices) return false;
       }
 
-      // Insurance: must have ANY selected insurance (OR logic)
+      // Insurance: must have ANY selected insurance option (OR logic)
       if (filters.insurance.size > 0) {
         const hasAnyInsurance = Array.from(filters.insurance).some(
-          (insurance) => clinic[insurance] === true,
+          (insuranceType) => clinic[insuranceType] === true,
         );
         if (!hasAnyInsurance) return false;
       }
