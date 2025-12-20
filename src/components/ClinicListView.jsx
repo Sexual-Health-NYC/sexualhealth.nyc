@@ -128,7 +128,7 @@ function ClinicCard({ clinic, onClick }) {
             marginBottom: theme.spacing[3],
           }}
         >
-          {services.slice(0, 3).map((service) => (
+          {services.map((service) => (
             <span
               key={service}
               style={{
@@ -143,17 +143,6 @@ function ClinicCard({ clinic, onClick }) {
               {service}
             </span>
           ))}
-          {services.length > 3 && (
-            <span
-              style={{
-                padding: `${theme.spacing[1]} ${theme.spacing[2]}`,
-                color: theme.colors.textSecondary,
-                fontSize: theme.fonts.size.xs,
-              }}
-            >
-              +{services.length - 3} more
-            </span>
-          )}
         </div>
       )}
 
