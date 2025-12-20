@@ -149,13 +149,20 @@ export default function ClinicDetailPanel() {
               {selectedClinic.borough && (
                 <>
                   <br />
-                  {selectedClinic.borough}, NY
+                  {selectedClinic.borough === "Manhattan"
+                    ? "New York"
+                    : selectedClinic.borough}
+                  , NY
                 </>
               )}
             </p>
             <button
               onClick={() => {
-                const fullAddress = `${selectedClinic.address}${selectedClinic.borough ? `, ${selectedClinic.borough}, NY` : ""}`;
+                const cityName =
+                  selectedClinic.borough === "Manhattan"
+                    ? "New York"
+                    : selectedClinic.borough;
+                const fullAddress = `${selectedClinic.address}${selectedClinic.borough ? `, ${cityName}, NY` : ""}`;
                 navigator.clipboard.writeText(fullAddress);
                 setCopiedAddress(true);
                 setTimeout(() => setCopiedAddress(false), 2000);
