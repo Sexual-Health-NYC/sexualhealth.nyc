@@ -5,7 +5,7 @@ import useAppStore from "../store/useAppStore";
 import theme from "../theme";
 
 export default function ClinicMarkers({ clinics }) {
-  const { selectedClinic, selectClinic, mapViewport, setMapViewport } =
+  const { selectedClinic, selectClinic, mapViewport, setMapViewport, mapRef } =
     useAppStore();
 
   // Convert clinics to GeoJSON points
@@ -70,12 +70,23 @@ export default function ClinicMarkers({ clinics }) {
                     supercluster.getClusterExpansionZoom(cluster.id),
                     20,
                   );
-                  setMapViewport({
-                    ...mapViewport,
-                    longitude,
-                    latitude,
-                    zoom: expansionZoom,
-                  });
+
+                  // Use flyTo for smooth animation
+                  if (mapRef?.current) {
+                    mapRef.current.flyTo({
+                      center: [longitude, latitude],
+                      zoom: expansionZoom,
+                      duration: 500,
+                    });
+                  } else {
+                    // Fallback to direct viewport update
+                    setMapViewport({
+                      ...mapViewport,
+                      longitude,
+                      latitude,
+                      zoom: expansionZoom,
+                    });
+                  }
                 }}
                 style={{
                   width: `${30 + (pointCount / points.length) * 40}px`,

@@ -151,7 +151,7 @@ export default function ClinicBottomSheet() {
           }}
         >
           <a
-            href={`geo:${selectedClinic.latitude},${selectedClinic.longitude}`}
+            href={`geo:${selectedClinic.latitude},${selectedClinic.longitude}?q=${selectedClinic.latitude},${selectedClinic.longitude}`}
             style={{
               display: "block",
               padding: theme.spacing[3],

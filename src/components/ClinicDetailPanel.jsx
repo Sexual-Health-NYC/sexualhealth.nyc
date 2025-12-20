@@ -104,7 +104,7 @@ export default function ClinicDetailPanel() {
           }}
         >
           <a
-            href={`geo:${selectedClinic.latitude},${selectedClinic.longitude}`}
+            href={`geo:${selectedClinic.latitude},${selectedClinic.longitude}?q=${selectedClinic.latitude},${selectedClinic.longitude}`}
             style={{
               flex: 1,
               padding: theme.spacing[3],

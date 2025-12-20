@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import MapGL, { NavigationControl } from "react-map-gl/mapbox";
 import "mapbox-gl/dist/mapbox-gl.css";
 import useAppStore from "../store/useAppStore";
@@ -10,6 +10,7 @@ const MAPBOX_TOKEN =
 export default function Map() {
   const { mapViewport, setMapViewport, setClinics, clinics, filters } =
     useAppStore();
+  const mapRef = useRef();
 
   useEffect(() => {
     // Load clinics data
@@ -68,7 +69,7 @@ export default function Map() {
 
   // Update store with filtered clinics for ClinicMarkers
   useEffect(() => {
-    useAppStore.setState({ filteredClinics });
+    useAppStore.setState({ filteredClinics, mapRef });
   }, [filteredClinics]);
 
   return (
@@ -78,12 +79,12 @@ export default function Map() {
       aria-label="Interactive map of sexual health clinics in NYC. Use tab to navigate markers, or switch to list view for a text-based alternative."
     >
       <MapGL
+        ref={mapRef}
         {...mapViewport}
         onMove={(evt) => setMapViewport(evt.viewState)}
         mapStyle="mapbox://styles/mapbox/streets-v12"
         mapboxAccessToken={MAPBOX_TOKEN}
         style={{ width: "100%", height: "100%" }}
-        transitionDuration={500}
       >
         <NavigationControl position="top-right" />
         <ClinicMarkers clinics={filteredClinics} />
