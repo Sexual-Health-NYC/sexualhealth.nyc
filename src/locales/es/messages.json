@@ -1,0 +1,15 @@
+{
+  "unknownContactClinic": "Desconocido - contacte a la clínica para verificar",
+  "walkInsAccepted": "Se aceptan visitas sin cita",
+  "open": "Abierto",
+  "closed": "Cerrado",
+  "opensAt": "Abre a las {{time}}",
+  "closesAt": "Cierra a las {{time}}",
+  "clinicsFound": "{{count}} clínicas encontradas",
+  "clinicsFound_one": "{{count}} clínica encontrada",
+  "clinicsFound_other": "{{count}} clínicas encontradas",
+  "noMatches": "Ninguna clínica coincide con sus filtros",
+  "viewDetails": "Ver detalles de {{name}}",
+  "cluster": "Grupo de {{count}} clínicas. Acerque para ver clínicas individuales.",
+  "skipToMain": "Saltar al contenido principal"
+}
