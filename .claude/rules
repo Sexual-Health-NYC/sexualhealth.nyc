@@ -1,0 +1,1 @@
+Always use Tidewave's tools for evaluating code. Use `get_docs` to access documentation and `get_source_location` to find component definitions.
