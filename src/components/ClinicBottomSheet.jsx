@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import useAppStore from "../store/useAppStore";
 import theme from "../theme";
 import { getOpenStatus } from "../utils/hours";
@@ -8,6 +8,7 @@ export default function ClinicBottomSheet() {
   const sheetRef = useRef(null);
   const startY = useRef(0);
   const currentY = useRef(0);
+  const [copiedAddress, setCopiedAddress] = useState(false);
 
   if (!selectedClinic) return null;
 
@@ -144,30 +145,6 @@ export default function ClinicBottomSheet() {
           </button>
         </div>
 
-        {/* Quick Actions */}
-        <div
-          style={{
-            marginBottom: theme.spacing[4],
-          }}
-        >
-          <a
-            href={`geo:${selectedClinic.latitude},${selectedClinic.longitude}?q=${selectedClinic.latitude},${selectedClinic.longitude}`}
-            style={{
-              display: "block",
-              padding: theme.spacing[3],
-              backgroundColor: theme.colors.primary,
-              color: "white",
-              textAlign: "center",
-              textDecoration: "none",
-              borderRadius: theme.borderRadius.sm,
-              fontSize: theme.fonts.size.base,
-              fontWeight: theme.fonts.weight.medium,
-            }}
-          >
-            Open in Maps
-          </a>
-        </div>
-
         {/* Services */}
         {services.length > 0 && (
           <Section title="Services">
@@ -198,12 +175,13 @@ export default function ClinicBottomSheet() {
         )}
 
         {/* Address */}
-        <Section title="Location">
+        <Section title="">
           <div
             style={{
               display: "flex",
               alignItems: "start",
               gap: theme.spacing[2],
+              marginBottom: theme.spacing[3],
             }}
           >
             <p
@@ -212,39 +190,56 @@ export default function ClinicBottomSheet() {
                 flex: 1,
                 color: theme.colors.textPrimary,
                 fontSize: theme.fonts.size.base,
+                lineHeight: "1.5",
               }}
             >
               {selectedClinic.address}
+              {selectedClinic.borough && (
+                <>
+                  <br />
+                  {selectedClinic.borough}, NY
+                </>
+              )}
             </p>
             <button
               onClick={() => {
-                navigator.clipboard.writeText(selectedClinic.address);
+                const fullAddress = `${selectedClinic.address}${selectedClinic.borough ? `, ${selectedClinic.borough}, NY` : ""}`;
+                navigator.clipboard.writeText(fullAddress);
+                setCopiedAddress(true);
+                setTimeout(() => setCopiedAddress(false), 2000);
               }}
-              title="Copy address"
+              title={copiedAddress ? "Copied!" : "Copy address"}
               aria-label="Copy address to clipboard"
               style={{
                 background: "none",
                 border: "none",
                 cursor: "pointer",
                 padding: theme.spacing[1],
-                color: theme.colors.primary,
-                fontSize: theme.fonts.size.lg,
+                color: copiedAddress ? theme.colors.prep : theme.colors.primary,
+                fontSize: theme.fonts.size.base,
+                fontWeight: theme.fonts.weight.medium,
+                transition: `color ${theme.transitions.fast}`,
               }}
             >
-              📋
+              {copiedAddress ? "✓ Copied" : "📋"}
             </button>
           </div>
-          {selectedClinic.borough && (
-            <p
-              style={{
-                margin: `${theme.spacing[1]} 0 0 0`,
-                color: theme.colors.textSecondary,
-                fontSize: theme.fonts.size.sm,
-              }}
-            >
-              {selectedClinic.borough}
-            </p>
-          )}
+          <a
+            href={`geo:${selectedClinic.latitude},${selectedClinic.longitude}?q=${selectedClinic.latitude},${selectedClinic.longitude}`}
+            style={{
+              display: "block",
+              padding: theme.spacing[3],
+              backgroundColor: theme.colors.primary,
+              color: "white",
+              textAlign: "center",
+              textDecoration: "none",
+              borderRadius: theme.borderRadius.sm,
+              fontSize: theme.fonts.size.base,
+              fontWeight: theme.fonts.weight.medium,
+            }}
+          >
+            Open in Maps
+          </a>
           {selectedClinic.transit && (
             <div
               style={{
@@ -288,26 +283,42 @@ export default function ClinicBottomSheet() {
 
         {/* Insurance */}
         <Section title="Insurance & Cost">
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: theme.spacing[2],
-            }}
-          >
-            {selectedClinic.accepts_medicaid && (
-              <InfoItem text="Accepts Medicaid" />
-            )}
-            {selectedClinic.accepts_medicare && (
-              <InfoItem text="Accepts Medicare" />
-            )}
-            {selectedClinic.no_insurance_ok && (
-              <InfoItem text="No insurance required" highlight />
-            )}
-            {selectedClinic.sliding_scale && (
-              <InfoItem text="Sliding scale available" />
-            )}
-          </div>
+          {!selectedClinic.accepts_medicaid &&
+          !selectedClinic.accepts_medicare &&
+          !selectedClinic.no_insurance_ok &&
+          !selectedClinic.sliding_scale ? (
+            <p
+              style={{
+                margin: 0,
+                color: theme.colors.textSecondary,
+                fontSize: theme.fonts.size.sm,
+                fontStyle: "italic",
+              }}
+            >
+              Unknown - call clinic to verify
+            </p>
+          ) : (
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: theme.spacing[2],
+              }}
+            >
+              {selectedClinic.accepts_medicaid && (
+                <InfoItem text="Accepts Medicaid" />
+              )}
+              {selectedClinic.accepts_medicare && (
+                <InfoItem text="Accepts Medicare" />
+              )}
+              {selectedClinic.no_insurance_ok && (
+                <InfoItem text="No insurance required" highlight />
+              )}
+              {selectedClinic.sliding_scale && (
+                <InfoItem text="Sliding scale available" />
+              )}
+            </div>
+          )}
         </Section>
 
         {/* Access */}
@@ -372,16 +383,6 @@ export default function ClinicBottomSheet() {
                 >
                   Website
                 </p>
-                <p
-                  style={{
-                    margin: `0 0 ${theme.spacing[2]} 0`,
-                    fontSize: theme.fonts.size.sm,
-                    color: theme.colors.textPrimary,
-                    wordBreak: "break-all",
-                  }}
-                >
-                  {selectedClinic.website.replace(/^https?:\/\//, "")}
-                </p>
                 <a
                   href={
                     selectedClinic.website.startsWith("http")
@@ -391,18 +392,13 @@ export default function ClinicBottomSheet() {
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
-                    display: "inline-block",
-                    padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
-                    backgroundColor: theme.colors.surface,
                     color: theme.colors.primary,
-                    textDecoration: "none",
-                    borderRadius: theme.borderRadius.sm,
                     fontSize: theme.fonts.size.sm,
-                    fontWeight: theme.fonts.weight.medium,
-                    border: `2px solid ${theme.colors.primary}`,
+                    wordBreak: "break-all",
+                    textDecoration: "underline",
                   }}
                 >
-                  Visit Website →
+                  {selectedClinic.website.replace(/^https?:\/\//, "")}
                 </a>
               </div>
             )}
