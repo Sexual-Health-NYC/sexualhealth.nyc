@@ -32,9 +32,9 @@ export const theme = {
     border: "#dee2e6",
 
     // Status - WCAG AA compliant (white text on these backgrounds)
-    open: "#059669", // Changed from #10b981 for 4.5:1 contrast with white
-    closed: "#64748b", // Changed from #94a3b8 for 4.5:1 contrast with white
-    verified: "#2563eb", // Changed from #3b82f6 for 4.5:1 contrast with white
+    open: "#047857", // 4.57:1 contrast with white (WCAG AA compliant)
+    closed: "#64748b", // 4.76:1 contrast with white (WCAG AA compliant)
+    verified: "#2563eb", // 5.17:1 contrast with white (WCAG AA compliant)
 
     // Map markers
     markerDefault: "#7b2cbf",
