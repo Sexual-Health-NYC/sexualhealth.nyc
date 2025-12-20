@@ -4,7 +4,7 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = "default-src 'self'; frame-src https://storymaps.arcgis.com https://experience.arcgis.com https://*.arcgis.com; script-src 'self' https://gc.zgo.at https://storymaps.arcgis.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://*.arcgis.com"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://gc.zgo.at https://api.mapbox.com; style-src 'self' 'unsafe-inline' https://api.mapbox.com; img-src 'self' data: https:; connect-src 'self' https://api.mapbox.com https://*.tiles.mapbox.com https://events.mapbox.com; worker-src blob:; child-src blob:"
     X-Frame-Options = "SAMEORIGIN"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"

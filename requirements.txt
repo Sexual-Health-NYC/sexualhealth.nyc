@@ -3,3 +3,4 @@ pandas>=2.1.0
 tqdm>=4.66.0
 beautifulsoup4>=4.12.0
 anthropic>=0.18.0
+arcgis>=2.2.0
