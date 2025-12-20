@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Map from "./components/Map";
-import FilterSidebar from "./components/FilterSidebar";
+import FilterBar from "./components/FilterBar";
 import ClinicDetailPanel from "./components/ClinicDetailPanel";
 import ClinicBottomSheet from "./components/ClinicBottomSheet";
 import ClinicListView from "./components/ClinicListView";
@@ -22,7 +22,14 @@ export default function App() {
   }, []);
 
   return (
-    <div style={{ width: "100vw", height: "100vh", display: "flex" }}>
+    <div
+      style={{
+        width: "100vw",
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
       {/* Skip to main content link for keyboard navigation */}
       <a
         href="#main-content"
@@ -46,7 +53,7 @@ export default function App() {
         Skip to main content
       </a>
 
-      <FilterSidebar />
+      <FilterBar />
       {/* Live region for screen reader announcements */}
       <div
         aria-live="polite"
@@ -72,7 +79,7 @@ export default function App() {
           style={{
             position: "absolute",
             top: theme.spacing[4],
-            left: isMobile ? theme.spacing[20] : theme.spacing[4],
+            right: theme.spacing[4],
             zIndex: 10,
             display: "flex",
             gap: theme.spacing[2],
