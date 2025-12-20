@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useRef } from "react";
 import MapGL, { NavigationControl } from "react-map-gl/mapbox";
 import "mapbox-gl/dist/mapbox-gl.css";
 import useAppStore from "../store/useAppStore";
@@ -7,9 +7,8 @@ import ClinicMarkers from "./ClinicMarkers";
 const MAPBOX_TOKEN =
   "pk.eyJ1Ijoic2V4dWFsLWhlYWx0aC1ueWMiLCJhIjoiY21qZHF2ZTAyMDQ3aTNjb3MxbDFscWowZiJ9.BXuUrUio_grUlyoxU6WFBQ";
 
-export default function Map() {
-  const { mapViewport, setMapViewport, setClinics, clinics, filters } =
-    useAppStore();
+export default function Map({ filteredClinics }) {
+  const { mapViewport, setMapViewport, setClinics } = useAppStore();
   const mapRef = useRef();
 
   useEffect(() => {
@@ -30,47 +29,6 @@ export default function Map() {
         console.error("Error loading clinics:", error);
       });
   }, [setClinics]);
-
-  // Filter clinics based on active filters
-  const filteredClinics = useMemo(() => {
-    return clinics.filter((clinic) => {
-      // Services: must have ALL selected services (AND logic)
-      if (filters.services.size > 0) {
-        const hasAllServices = Array.from(filters.services).every(
-          (service) => clinic[`has_${service}`] === true,
-        );
-        if (!hasAllServices) return false;
-      }
-
-      // Insurance: must have ANY selected insurance option (OR logic)
-      if (filters.insurance.size > 0) {
-        const hasAnyInsurance = Array.from(filters.insurance).some(
-          (insuranceType) => clinic[insuranceType] === true,
-        );
-        if (!hasAnyInsurance) return false;
-      }
-
-      // Access
-      if (filters.access.size > 0) {
-        const hasAccess = Array.from(filters.access).some(
-          (access) => clinic[access] === true,
-        );
-        if (!hasAccess) return false;
-      }
-
-      // Borough: must match if filter active
-      if (filters.boroughs.size > 0) {
-        if (!filters.boroughs.has(clinic.borough)) return false;
-      }
-
-      return true;
-    });
-  }, [clinics, filters]);
-
-  // Update store with filtered clinics for ClinicMarkers
-  useEffect(() => {
-    useAppStore.setState({ filteredClinics, mapRef });
-  }, [filteredClinics]);
 
   // Recenter map when filters change to fit visible clinics
   useEffect(() => {

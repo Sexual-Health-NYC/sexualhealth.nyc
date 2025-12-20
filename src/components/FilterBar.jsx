@@ -211,47 +211,55 @@ export default function FilterBar() {
     );
   };
 
-  const ActiveFilterPill = ({ category, value, label }) => (
-    <span
-      style={{
-        display: "inline-flex",
-        alignItems: "center",
-        gap: theme.spacing[2],
-        padding: `${theme.spacing[1]} ${theme.spacing[3]}`,
-        backgroundColor: "#f3e8ff",
-        color: theme.colors.primaryDark,
-        border: `1px solid ${theme.colors.primaryLight}`,
-        borderRadius: theme.borderRadius.full,
-        fontSize: theme.fonts.size.sm,
-        fontWeight: theme.fonts.weight.medium,
-      }}
-    >
-      {label}
-      <button
-        onClick={() => removeFilter(category, value)}
-        aria-label={`Remove ${label} filter`}
+  const ActiveFilterPill = ({ category, value, label }) => {
+    const [isHovered, setIsHovered] = useState(false);
+
+    return (
+      <span
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
         style={{
-          background: "none",
-          border: "none",
-          color: theme.colors.primaryDark,
-          cursor: "pointer",
-          fontSize: theme.fonts.size.base,
-          padding: 0,
-          display: "flex",
+          display: "inline-flex",
           alignItems: "center",
-        }}
-        onFocus={(e) => {
-          e.currentTarget.style.outline = theme.focus.outline;
-          e.currentTarget.style.outlineOffset = theme.focus.outlineOffset;
-        }}
-        onBlur={(e) => {
-          e.currentTarget.style.outline = "none";
+          gap: theme.spacing[2],
+          padding: `${theme.spacing[1]} ${theme.spacing[3]}`,
+          backgroundColor: isHovered ? "#e9d5ff" : "#f3e8ff",
+          color: theme.colors.primaryDark,
+          border: `1px solid ${isHovered ? theme.colors.primary : theme.colors.primaryLight}`,
+          borderRadius: theme.borderRadius.full,
+          fontSize: theme.fonts.size.sm,
+          fontWeight: theme.fonts.weight.medium,
+          transition: `all ${theme.transitions.fast}`,
+          cursor: "default",
         }}
       >
-        ×
-      </button>
-    </span>
-  );
+        {label}
+        <button
+          onClick={() => removeFilter(category, value)}
+          aria-label={`Remove ${label} filter`}
+          style={{
+            background: "none",
+            border: "none",
+            color: theme.colors.primaryDark,
+            cursor: "pointer",
+            fontSize: theme.fonts.size.base,
+            padding: 0,
+            display: "flex",
+            alignItems: "center",
+          }}
+          onFocus={(e) => {
+            e.currentTarget.style.outline = theme.focus.outline;
+            e.currentTarget.style.outlineOffset = theme.focus.outlineOffset;
+          }}
+          onBlur={(e) => {
+            e.currentTarget.style.outline = "none";
+          }}
+        >
+          ×
+        </button>
+      </span>
+    );
+  };
 
   // Desktop view
   if (!isMobile) {

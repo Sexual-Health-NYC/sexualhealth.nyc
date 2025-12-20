@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import useAppStore from "../store/useAppStore";
 import theme from "../theme";
 import { getOpenStatus } from "../utils/hours";
+import CorrectionFormModal from "./CorrectionFormModal";
 
 export default function ClinicBottomSheet() {
   const { selectedClinic, selectClinic } = useAppStore();
@@ -9,6 +10,7 @@ export default function ClinicBottomSheet() {
   const startY = useRef(0);
   const currentY = useRef(0);
   const [copiedAddress, setCopiedAddress] = useState(false);
+  const [showCorrectionForm, setShowCorrectionForm] = useState(false);
 
   if (!selectedClinic) return null;
 
@@ -432,7 +434,46 @@ export default function ClinicBottomSheet() {
             )}
           </Section>
         )}
+
+        {/* Report Correction */}
+        <div
+          style={{
+            marginTop: theme.spacing[4],
+            paddingTop: theme.spacing[4],
+            borderTop: `1px solid ${theme.colors.border}`,
+          }}
+        >
+          <button
+            onClick={() => setShowCorrectionForm(true)}
+            style={{
+              background: "none",
+              border: "none",
+              color: theme.colors.textSecondary,
+              fontSize: theme.fonts.size.sm,
+              cursor: "pointer",
+              padding: 0,
+              textDecoration: "underline",
+            }}
+            onFocus={(e) => {
+              e.currentTarget.style.outline = theme.focus.outline;
+              e.currentTarget.style.outlineOffset = theme.focus.outlineOffset;
+            }}
+            onBlur={(e) => {
+              e.currentTarget.style.outline = "none";
+            }}
+          >
+            Report a correction
+          </button>
+        </div>
       </div>
+
+      {/* Correction Form Modal */}
+      {showCorrectionForm && (
+        <CorrectionFormModal
+          clinicName={selectedClinic.name}
+          onClose={() => setShowCorrectionForm(false)}
+        />
+      )}
     </div>
   );
 }

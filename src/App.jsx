@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Map from "./components/Map";
 import FilterBar from "./components/FilterBar";
 import ClinicDetailPanel from "./components/ClinicDetailPanel";
@@ -10,7 +10,43 @@ import theme from "./theme";
 export default function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [viewMode, setViewMode] = useState("map"); // "map" or "list"
-  const { filteredClinics } = useAppStore();
+  const { clinics, filters } = useAppStore();
+
+  // Filter clinics based on active filters (shared between map and list views)
+  const filteredClinics = useMemo(() => {
+    return clinics.filter((clinic) => {
+      // Services: must have ALL selected services (AND logic)
+      if (filters.services.size > 0) {
+        const hasAllServices = Array.from(filters.services).every(
+          (service) => clinic[`has_${service}`] === true,
+        );
+        if (!hasAllServices) return false;
+      }
+
+      // Insurance: must have ANY selected insurance option (OR logic)
+      if (filters.insurance.size > 0) {
+        const hasAnyInsurance = Array.from(filters.insurance).some(
+          (insuranceType) => clinic[insuranceType] === true,
+        );
+        if (!hasAnyInsurance) return false;
+      }
+
+      // Access
+      if (filters.access.size > 0) {
+        const hasAccess = Array.from(filters.access).some(
+          (access) => clinic[access] === true,
+        );
+        if (!hasAccess) return false;
+      }
+
+      // Borough: must match if filter active
+      if (filters.boroughs.size > 0) {
+        if (!filters.boroughs.has(clinic.borough)) return false;
+      }
+
+      return true;
+    });
+  }, [clinics, filters]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -162,11 +198,11 @@ export default function App() {
         {/* Content */}
         {viewMode === "map" ? (
           <>
-            <Map />
+            <Map filteredClinics={filteredClinics} />
             {isMobile ? <ClinicBottomSheet /> : <ClinicDetailPanel />}
           </>
         ) : (
-          <ClinicListView clinics={filteredClinics || []} />
+          <ClinicListView clinics={filteredClinics} />
         )}
       </main>
     </div>

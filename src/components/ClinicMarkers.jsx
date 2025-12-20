@@ -149,6 +149,20 @@ export default function ClinicMarkers({ clinics }) {
                 boxShadow: theme.shadows.md,
                 padding: 0,
               }}
+              onMouseEnter={(e) => {
+                if (selectedClinic?.id !== clinic.id) {
+                  e.currentTarget.style.transform = "scale(1.15)";
+                  e.currentTarget.style.backgroundColor =
+                    theme.colors.primaryLight;
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (selectedClinic?.id !== clinic.id) {
+                  e.currentTarget.style.transform = "scale(1)";
+                  e.currentTarget.style.backgroundColor =
+                    theme.colors.markerDefault;
+                }
+              }}
               onClick={() => selectClinic(clinic)}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
