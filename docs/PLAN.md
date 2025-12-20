@@ -29,8 +29,11 @@ None of these answer the questions people actually have:
 | Email            | ✅ Done        | hello@sexualhealth.nyc — check via mail.zoho.com           |
 | Placeholder site | ✅ Done        | Live at sexualhealth.nyc (just a "coming soon" page)       |
 | Analytics        | ✅ Done        | Stats at sexualhealthnyc.goatcounter.com                   |
-| Map tool         | ⏳ Not started | Will use ArcGIS via NYU license                            |
-| Clinic data      | ⏳ Not started | The main work — see below                                  |
+| Hosting          | ✅ Done        | Vercel (migrated from Netlify)                             |
+| Build system     | ✅ Done        | Vite                                                       |
+| Map tool         | ✅ Done        | Mapbox GL JS (switched from ArcGIS)                        |
+| Dev tools        | ✅ Done        | Tidewave integrated with Claude Code                       |
+| Clinic data      | ⏳ In progress | 124+ clinics collected, needs deduplication                |
 
 ---
 
@@ -158,15 +161,16 @@ We're pulling from multiple sources and combining them. Think of it like assembl
 
 ### Official Government Data
 
-| Source                          | What we get                                     | Status      | Reliability                    |
-| ------------------------------- | ----------------------------------------------- | ----------- | ------------------------------ |
-| NYC Open Data (HIV Testing)     | 116 HIV testing locations with coords & hours   | ✅ Imported | High — already geocoded        |
-| NYC Open Data (HIV Services)    | 8 HIV service providers                         | ✅ Imported | High — includes service types  |
-| NYC Health Dept website (DOH)   | 8 sexual health clinics (manual scrape)         | ✅ Imported | High — official DOH locations  |
-| HRSA (federal)                  | Federally Qualified Health Centers              | ⏳ TODO     | High — but only FQHCs          |
-| NYC Open Data (old shapefiles)  | 2009 DOHMH facilities shapefile                 | ❌ Dead     | Links broken, data too old     |
+| Source                         | What we get                                   | Status      | Reliability                   |
+| ------------------------------ | --------------------------------------------- | ----------- | ----------------------------- |
+| NYC Open Data (HIV Testing)    | 116 HIV testing locations with coords & hours | ✅ Imported | High — already geocoded       |
+| NYC Open Data (HIV Services)   | 8 HIV service providers                       | ✅ Imported | High — includes service types |
+| NYC Health Dept website (DOH)  | 8 sexual health clinics (manual scrape)       | ✅ Imported | High — official DOH locations |
+| HRSA (federal)                 | Federally Qualified Health Centers            | ⏳ TODO     | High — but only FQHCs         |
+| NYC Open Data (old shapefiles) | 2009 DOHMH facilities shapefile               | ❌ Dead     | Links broken, data too old    |
 
 **Datasets Used:**
+
 - `72ss-25qh` - HIV Testing Locations (599 total, 116 sexual health filtered)
 - `pwts-g83w` - DOHMH HIV Service Directory (71 total, 8 filtered)
 - Manual: nyc.gov DOH sexual health clinics page
@@ -175,14 +179,14 @@ We're pulling from multiple sources and combining them. Think of it like assembl
 
 These don't have APIs — we have to visit their websites and extract the info:
 
-| Organization                  | # of Locations | What they offer          | Status         | Notes                                 |
-| ----------------------------- | -------------- | ------------------------ | -------------- | ------------------------------------- |
-| Planned Parenthood NYC        | ~3-5           | Full range of services   | ⏳ TODO        | Website blocks automation (403 error) |
-| Callen-Lorde                  | 4              | LGBTQ+ focused           | ⏳ TODO        | May need manual entry                 |
-| GMHC                          | 1              | HIV/AIDS focused         | ⏳ TODO        |                                       |
-| Community Healthcare Network  | ~14            | Community health centers | ⏳ TODO        |                                       |
-| The Door                      | 1              | Youth focused            | ⏳ TODO        |                                       |
-| Mount Sinai Adolescent Health | 1              | Youth focused            | ⏳ TODO        |                                       |
+| Organization                  | # of Locations | What they offer          | Status  | Notes                                 |
+| ----------------------------- | -------------- | ------------------------ | ------- | ------------------------------------- |
+| Planned Parenthood NYC        | ~3-5           | Full range of services   | ⏳ TODO | Website blocks automation (403 error) |
+| Callen-Lorde                  | 4              | LGBTQ+ focused           | ⏳ TODO | May need manual entry                 |
+| GMHC                          | 1              | HIV/AIDS focused         | ⏳ TODO |                                       |
+| Community Healthcare Network  | ~14            | Community health centers | ⏳ TODO |                                       |
+| The Door                      | 1              | Youth focused            | ⏳ TODO |                                       |
+| Mount Sinai Adolescent Health | 1              | Youth focused            | ⏳ TODO |                                       |
 
 **Note on Planned Parenthood:** Manhattan Health Center closed Oct 31, 2025. Remaining locations in Queens, Brooklyn, and Bronx. Website has anti-scraping protection.
 
@@ -342,33 +346,40 @@ When you're not sure if info is correct:
 
 ### Minimum Viable Product (MVP)
 
-- [x] Map with 50+ clinics *(124 collected, needs deduplication & upload to ArcGIS)*
+- [x] Map with 50+ clinics _(124 collected, needs deduplication & upload to ArcGIS)_
 - [ ] Filters for: services, insurance, walk-in
-- [x] Each clinic shows: name, address, phone, hours *(data includes these fields)*
-- [ ] Transit info for each clinic *(geocoded, transit calc pending)*
+- [x] Each clinic shows: name, address, phone, hours _(data includes these fields)_
+- [ ] Transit info for each clinic _(geocoded, transit calc pending)_
 - [ ] Mobile-friendly
 - [ ] "Report an error" form works
 
 ### Nice to Have
 
-- [x] 100+ clinics *(124 from NYC Open Data)*
+- [x] 100+ clinics _(124 from NYC Open Data)_
 - [ ] All data fields populated
 - [ ] Clinic detail pages (for SEO)
 
 ### Current Status (Dec 19, 2025)
 
 **Data Collection:**
+
 - ✅ 124 facilities from NYC Open Data (HIV testing + services)
 - ✅ 8 DOH sexual health clinics (manual scrape)
 - ✅ Already geocoded (lat/long in dataset)
+- ✅ GeoJSON export ready (clinics.geojson)
 - ⏳ Need deduplication
 - ⏳ Need to add Planned Parenthood, Callen-Lorde, etc.
 
 **Technical:**
-- ✅ StoryMap created and embedded at sexualhealth.nyc/test-embed.html
-- ✅ Data pipeline working (fetch_nyc_opendata.py)
+
+- ✅ Migrated to Vercel from Netlify
+- ✅ Converted to Vite build system
+- ✅ Switched from ArcGIS to Mapbox GL JS
+- ✅ Interactive map at sexualhealth.nyc/test-embed.html
+- ✅ Data pipeline working (fetch_nyc_opendata.py, upload_to_arcgis.py)
 - ✅ Geocoder ready (geocoder.py)
-- ⏳ Need GeoJSON export for ArcGIS
+- ✅ Tidewave development environment configured
+- ✅ Claude Code MCP integration for Tidewave
 - ⏳ Need transit calculator
 
 ### Measuring Success
@@ -392,7 +403,7 @@ _Everything below is implementation detail — you don't need to read this unles
 
 ```mermaid
 flowchart TB
-    subgraph static["Static Site (Netlify)"]
+    subgraph static["Static Site (Vercel)"]
         direction LR
         index["index.html"]
         about["about.html"]
@@ -400,19 +411,18 @@ flowchart TB
         contact["contact.html"]
     end
 
-    subgraph arcgis["ArcGIS Experience Builder (Esri/NYU)"]
+    subgraph mapbox["Mapbox GL JS"]
         direction LR
-        map["Map Widget"]
-        filter["Filter Widget"]
-        search["Search Widget"]
-        list["List Widget"]
+        map["Interactive Map"]
+        markers["Clinic Markers"]
+        popups["Clinic Details Popups"]
     end
 
-    subgraph data["ArcGIS Hosted Feature Layer"]
-        geojson["Clinic Data (GeoJSON/Shapefile)"]
+    subgraph data["Static GeoJSON"]
+        geojson["clinics.geojson"]
     end
 
-    subgraph pipeline["Data Acquisition Pipeline (Claude Code)"]
+    subgraph pipeline["Data Acquisition Pipeline (Claude Code + Tidewave)"]
         direction TB
         p1["1. Pull from NYC Open Data API"]
         p2["2. Supplement with PP, Callen-Lorde, etc."]
@@ -421,20 +431,20 @@ flowchart TB
         p5["5. Geocode addresses"]
         p6["6. Calculate nearest transit"]
         p7["7. Dedupe and validate"]
-        p8["8. Output shapefile/GeoJSON"]
+        p8["8. Output GeoJSON"]
         p1 --> p2 --> p3 --> p4 --> p5 --> p6 --> p7 --> p8
     end
 
     user((User)) --> static
-    static -->|iframe embed| arcgis
-    arcgis -->|consumes| data
+    static -->|loads directly| mapbox
+    mapbox -->|fetches| data
     pipeline -->|generates| data
 ```
 
 **URLs:**
 
-- Static site: `sexualhealth.nyc` (Netlify)
-- ArcGIS app: `experience.arcgis.com/...` (hosted by Esri via NYU license)
+- Static site: `sexualhealth.nyc` (Vercel)
+- Map library: Mapbox GL JS (client-side rendering)
 
 ---
 
@@ -544,12 +554,19 @@ Group records within 50 meters, then fuzzy match names:
 ### Structure
 
 ```
-public/
-├── index.html          # Full-width embedded ArcGIS map
-├── about.html          # Project background, methodology
-├── resources.html      # Additional resources, hotlines
-├── contact.html        # Submit corrections form
-└── _headers            # Security headers
+sexualhealthnyc/
+├── index.html          # Main landing page with "coming soon"
+├── test-embed.html     # Interactive Mapbox GL JS map
+├── clinics.geojson     # Clinic location data
+├── public/             # Static assets served as-is
+├── dist/               # Vite build output (deployed to Vercel)
+├── pipeline/           # Data processing scripts
+│   ├── upload_to_arcgis.py
+│   └── requirements.txt
+├── vite.config.js      # Vite + Tidewave configuration
+├── vercel.json         # Vercel deployment + security headers
+└── .claude/
+    └── rules           # Claude Code + Tidewave integration rules
 ```
 
 ### Accessibility (WCAG 2.1 AA)
@@ -562,47 +579,72 @@ The static site wrapper must meet WCAG 2.1 AA:
 - Skip links
 - Alt text on images
 
-**ArcGIS accessibility:** Maps are challenging for screen readers. We configure:
+**Mapbox accessibility:** Maps are challenging for screen readers. Best practices:
 
-- Full-screen layouts (not free-form)
-- Auto-calculate tab orders
-- Accessible labels on all widgets
-- High-contrast themes
-- List view alongside map for non-visual access
+- Provide alternative text-based list view of clinics
+- Keyboard navigation for map controls
+- High-contrast mode support
+- ARIA labels on interactive elements
+- Screen reader announcements for filter changes
 
 ### Security Headers
 
-`public/_headers`:
+`vercel.json`:
 
-```
-/*
-  Content-Security-Policy: default-src 'self'; frame-src https://experience.arcgis.com https://*.arcgis.com; script-src 'self' https://gc.zgo.at; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'
-  X-Frame-Options: DENY
-  X-Content-Type-Options: nosniff
-  Referrer-Policy: strict-origin-when-cross-origin
+```json
+{
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://gc.zgo.at https://api.mapbox.com; style-src 'self' 'unsafe-inline' https://api.mapbox.com; img-src 'self' data: https:; connect-src 'self' https://api.mapbox.com https://*.tiles.mapbox.com https://events.mapbox.com; worker-src blob:; child-src blob:"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    }
+  ]
+}
 ```
 
 ---
 
 ## Community Submissions
 
-### Netlify Forms (Preferred)
+### Vercel Contact Forms
+
+Options for handling form submissions on Vercel:
+
+1. **Client-side (FormSpree, Formsubmit.co)** - Free services that handle form submissions
+2. **Serverless function** - Write a Vercel serverless function to handle POST requests
+3. **Third-party (Tally, Google Forms)** - Embed external form service
+
+Example with FormSpree:
 
 ```html
-<form name="clinic-update" method="POST" data-netlify="true">
-  <input type="hidden" name="form-name" value="clinic-update" />
+<form action="https://formspree.io/f/{your-form-id}" method="POST">
   <input type="text" name="clinic-name" placeholder="Clinic name" required />
   <textarea
     name="correction"
     placeholder="What needs to be updated?"
     required
   ></textarea>
-  <input type="email" name="email" placeholder="Your email (optional)" />
+  <input type="email" name="_replyto" placeholder="Your email (optional)" />
   <button type="submit">Submit</button>
 </form>
 ```
-
-Submissions appear in Netlify dashboard and can trigger email notifications.
 
 ---
 
@@ -624,16 +666,21 @@ Submissions appear in Netlify dashboard and can trigger email notifications.
 
 ## SEO
 
-The ArcGIS iframe is not crawlable by Google. SEO comes from the static wrapper pages.
+Client-side rendered maps are not fully crawlable by Google. SEO comes from:
 
-**Phase 2 improvement:** Generate static HTML pages for each clinic (e.g., `sexualhealth.nyc/clinic/planned-parenthood-bronx`) to rank for long-tail searches like "planned parenthood bronx hours."
+1. **Static wrapper pages** - About, Resources, Contact pages with rich content
+2. **Structured metadata** - JSON-LD schema for LocalBusiness on each clinic
+3. **Phase 2 improvement:** Generate static HTML pages for each clinic (e.g., `sexualhealth.nyc/clinic/planned-parenthood-bronx`) to rank for long-tail searches like "planned parenthood bronx hours."
+
+Mapbox GL JS renders on the client, so search engines see the static HTML. We can add server-side rendering later if needed.
 
 ---
 
 ## Analytics
 
 - **GoatCounter:** sexualhealthnyc.goatcounter.com (pageviews, referrers, countries)
-- **ArcGIS built-in:** View counts on the map, requests to data layer
+- **Vercel Analytics:** Built-in deployment and performance metrics
+- **Mapbox Analytics:** API usage and map interactions (available in Mapbox dashboard)
 
 ---
 
@@ -642,6 +689,8 @@ The ArcGIS iframe is not crawlable by Google. SEO comes from the static wrapper 
 - NYC Open Data API: https://data.cityofnewyork.us
 - HRSA Data Warehouse: https://data.hrsa.gov
 - NYC GeoSearch: https://geosearch.planninglabs.nyc
-- ArcGIS Experience Builder: https://doc.arcgis.com/en/experience-builder/
-- Netlify: https://docs.netlify.com
+- Mapbox GL JS: https://docs.mapbox.com/mapbox-gl-js/
+- Vite: https://vite.dev
+- Vercel: https://vercel.com/docs
+- Tidewave: https://tidewave.ai
 - GoatCounter: https://goatcounter.com
