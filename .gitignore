@@ -4,6 +4,10 @@ docs/*.html
 docs/PLAN_for_html.md
 docs/diagram.mmd
 
+# Build output
+dist/
+node_modules/
+
 # OS
 .DS_Store
 
