@@ -1,0 +1,1695 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.94163,
+          40.8407
+        ]
+      },
+      "properties": {
+        "name": "Community Healthcare Network",
+        "address": "Community Healthcare Network - Mobile Unit",
+        "borough": "",
+        "phone": "(212) 545-2495",
+        "website": "http://www.chnnyc.org/find-us/mobile-van, https://www.facebook.com/CommunityHealthcareNetwork, https://www.twitter.com/chnnyc",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "Tuesday: 1:00PM - 9:00PM; Thursday: 12:00PM - 8:00PM; Friday: 1:00PM - 9:00PM",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.929978,
+          40.815796
+        ]
+      },
+      "properties": {
+        "name": "Pace University-LGBTQA & Social Justice Center",
+        "address": "Pace University-LGBTQA & Social Justice Center",
+        "borough": "",
+        "phone": "",
+        "website": "",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.888115,
+          40.656305
+        ]
+      },
+      "properties": {
+        "name": "Staten Island LGBT Community Center",
+        "address": "Staten Island LGBT Community Center",
+        "borough": "",
+        "phone": "",
+        "website": "",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.973702,
+          40.759733
+        ]
+      },
+      "properties": {
+        "name": "The HIV Center for Clinical and Behavioral Studies at the New York State Psychiatric Institute and Columbia University",
+        "address": "The HIV Center for Clinical and Behavioral Studies at the New York State Psychiatric Institute and Columbia University",
+        "borough": "",
+        "phone": "",
+        "website": "",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.93554,
+          40.81921
+        ]
+      },
+      "properties": {
+        "name": "Young Women of Color HIV/AIDS Coalition",
+        "address": "Young Women of Color HIV/AIDS Coalition",
+        "borough": "",
+        "phone": "",
+        "website": "",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.881072,
+          40.852577
+        ]
+      },
+      "properties": {
+        "name": "Bronx Community Health Network",
+        "address": "Bronx Community Health Network - Corporate",
+        "borough": "Bronx",
+        "phone": "(718) 405-7720",
+        "website": "http://www.bchnhealth.org/",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.881072,
+          40.852577
+        ]
+      },
+      "properties": {
+        "name": "Community Healthcare Network",
+        "address": "Community Healthcare Network - Bronx Health Center",
+        "borough": "Bronx",
+        "phone": "(718) 320-4466",
+        "website": "http://www.chnnyc.org/our-locations/bronx-health-center",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "Monday: 9:00AM - 6:00PM; Tuesday: 9:00AM - 5:00PM; Wednesday: 10:00AM - 6:00PM; Thursday: 9:00AM - 7:00PM; Friday: 9:00AM - 5:00PM; Saturday: 8:30AM - 3:30PM",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.860112,
+          40.880754
+        ]
+      },
+      "properties": {
+        "name": "Destination Tomorrow",
+        "address": "Destination Tomorrow",
+        "borough": "Bronx",
+        "phone": "646-723-3325",
+        "website": "",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.915961,
+          40.81535
+        ]
+      },
+      "properties": {
+        "name": "Destination Tomorrow",
+        "address": "452 E 149th St",
+        "borough": "Bronx",
+        "phone": "sean@destinationtomorrow.org, asantiago@destinationtomorrow.org, drtillery@destinationtomorrow.org, eishelle@destinationtomorrow.org",
+        "website": "http://destinationtomorrow.org/",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_services",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.903443,
+          40.832794
+        ]
+      },
+      "properties": {
+        "name": "Morrisania Sexual Health Clinic",
+        "address": "1309 Fulton Avenue, Second Floor, Bronx, NY 10456",
+        "borough": "Bronx",
+        "phone": "",
+        "website": "https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",
+        "clinic_type": "DOH",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": true,
+        "has_pep": true,
+        "hours": "",
+        "walk_in": true,
+        "data_source": "NYC Health Department Website",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.996026,
+          40.729896
+        ]
+      },
+      "properties": {
+        "name": "Muslim Women's Institute for Research and Development",
+        "address": "Muslim Women's Institute for Research and Development",
+        "borough": "Bronx",
+        "phone": "(718) 960-2262",
+        "website": "",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9084,
+          40.82301
+        ]
+      },
+      "properties": {
+        "name": "Planned Parenthood-New York City Chapter",
+        "address": "PPNYC Project Street Beat",
+        "borough": "Bronx",
+        "phone": "(212) 965-7000",
+        "website": "",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "Tuesday: 9:00 AM - 11:30 AM, 1:30 PM - 3:30 PM; Wednesday: 9:00 AM - 11:30 AM, 1:30 PM - 3:30 PM; Thursday: 9:00 AM - 11:30 AM, 1:30 PM - 3:30 PM; Friday: 1:30 PM - 3:30 PM; Saturday: 9:00 AM - 2:30 PM",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9094,
+          40.85017
+        ]
+      },
+      "properties": {
+        "name": "The Institute for Family Health",
+        "address": "IFH Mount Hope Family Practice",
+        "borough": "Bronx",
+        "phone": "(718) 583-9000",
+        "website": "",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "Monday: 8:30 AM - 5:00 PM; Tuesday: 8:30 AM - 5:00 PM; Wednesday: 8:30 AM - 5:00 PM; Thursday: 8:30 AM - 5:00 PM; Friday: 8:30 AM - 5:00 PM; Saturday: 8:30 AM - 12:30 PM",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.96085,
+          40.77365
+        ]
+      },
+      "properties": {
+        "name": "Union Community Health Center",
+        "address": "Union Community Health Center Family Practice Site",
+        "borough": "Bronx",
+        "phone": "(718) 960-3805",
+        "website": "",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "Monday: 9:00 AM - 5:00 PM; Tuesday: 9:00 AM - 5:00 PM; Wednesday: 9:00 AM - 5:00 PM; Thursday: 9:00 AM - 5:00 PM; Friday: 9:00 AM - 5:00 PM",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.96085,
+          40.77365
+        ]
+      },
+      "properties": {
+        "name": "Union Community Health Center",
+        "address": "Union Community Health Center",
+        "borough": "Bronx",
+        "phone": "(718) 220-2020 ext 8263",
+        "website": "http://www.uchcbronx.org/",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "Monday: 9:00 AM - 4:00 PM; Tuesday: 9:00 AM - 4:00 PM; Wednesday: 9:00 AM - 4:00 PM; Thursday: 9:00 AM - 4:00 PM; Friday: 9:00 AM - 4:00 PM",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.946214,
+          40.655136
+        ]
+      },
+      "properties": {
+        "name": "Urban Health Plan",
+        "address": "Urban Health Plan Plaza Del Castillo Health Center",
+        "borough": "Bronx",
+        "phone": "(718) 589-1600",
+        "website": "http://www.urbanhealthplan.org/content/plaza-del-castillo-health-center",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "Monday: 8:00 AM - 6:00 PM; Tuesday: 8:00 AM - 6:00 PM; Wednesday: 8:00 AM - 6:00 PM; Thursday: 8:00 AM - 6:00 PM; Friday: 8:00 AM - 6:00 PM; Saturday: 9:00 AM- 1:00 PM",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.74576,
+          40.698306
+        ]
+      },
+      "properties": {
+        "name": "Brownsville Multi-Service Family Health Center",
+        "address": "Brownsville Multi-Service Family Health Center - Institute for Speciality and Integrative Services",
+        "borough": "Brooklyn",
+        "phone": "(718) 345-5000 ext. 4719",
+        "website": "www.bmsfhc.wix.com/bms-family-health",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "Monday: 8:30 AM - 4:30 PM; Tuesday: 8:30 AM - 4:30 PM; Wednesday: 8:30 AM - 4:30 PM; Thursday: 8:30 AM - 7:00 PM; Friday: 8:30 AM - 4:30 PM",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.94309,
+          40.6952
+        ]
+      },
+      "properties": {
+        "name": "CAMBA (Church Avenue Merchants Block Association)",
+        "address": "CAMBA (Church Avenue Merchants Block Association) - Project Accept LGBT Youth (ALY)",
+        "borough": "Brooklyn",
+        "phone": "(718) 675-3372",
+        "website": "http://www.camba.org/projectaly",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.946214,
+          40.655136
+        ]
+      },
+      "properties": {
+        "name": "Community Healthcare Network",
+        "address": "Community Healthcare Network - Dr Betty Shabazz Health Center",
+        "borough": "Brooklyn",
+        "phone": "(718)-277-8303",
+        "website": "http://www.chnnyc.org/our-locations/dr-betty-shabazz-health-center",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "Monday: 9:00AM - 5:00PM; Tuesday: 9:00 AM - 6:00 PM; Wednesday: 9:00 AM - 5:00 PM; Thursday: 9:00 AM - 6:00 PM; Friday: 9:00 AM - 5:00 PM; Saturday: 9:00AM - 4:00PM",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.982058,
+          40.691771
+        ]
+      },
+      "properties": {
+        "name": "Fort Greene Express Clinic",
+        "address": "295 Flatbush Avenue Extension, First Floor, Brooklyn, NY 11201",
+        "borough": "Brooklyn",
+        "phone": "",
+        "website": "https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",
+        "clinic_type": "DOH",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": true,
+        "has_pep": true,
+        "hours": "",
+        "walk_in": true,
+        "data_source": "NYC Health Department Website",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.982058,
+          40.691771
+        ]
+      },
+      "properties": {
+        "name": "Fort Greene Sexual Health Clinic",
+        "address": "295 Flatbush Avenue Extension, Second Floor, Brooklyn, NY 11201",
+        "borough": "Brooklyn",
+        "phone": "",
+        "website": "https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",
+        "clinic_type": "DOH",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": true,
+        "has_pep": true,
+        "hours": "",
+        "walk_in": true,
+        "data_source": "NYC Health Department Website",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.946214,
+          40.655136
+        ]
+      },
+      "properties": {
+        "name": "HHC Ida G. Israel Community Health Center",
+        "address": "HHC Ida G. Israel Community Health Center",
+        "borough": "Brooklyn",
+        "phone": "(718) 946-3400",
+        "website": "",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "Monday: 8:30 AM - 7:00 PM; Tuesday: 8:30 AM - 5:00 PM; Wednesday: 8:30 AM - 5:00 PM; Thursday: 8:30 AM - 5:00 PM; Friday: 8:30 AM - 5:00 PM; Saturday: 8:30 AM - 1:00 PM",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": "Medicaid is accepted as full payment; Uninsured may receive care at little or no cost depending on income; Medicare and other insurance plans will be contacted for payment approval and may require patient to cover costs."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.946214,
+          40.655136
+        ]
+      },
+      "properties": {
+        "name": "Housing Works Housing Works",
+        "address": "Housing Works Community Health Care - East New York Health Center",
+        "borough": "Brooklyn",
+        "phone": "718-277-0386",
+        "website": "",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "Monday: 9:00AM - 5:00PM; Tuesday: 9:00AM - 5:00PM; Wednesday: 9:00AM - 5:00PM; Thursday: 9:00AM - 9:00PM; Sunday: 9:00AM - 3:00PM",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.946214,
+          40.655136
+        ]
+      },
+      "properties": {
+        "name": "Housing Works Housing Works",
+        "address": "East New York Community Health Center",
+        "borough": "Brooklyn",
+        "phone": "718-827-8700",
+        "website": "",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "Monday: 9:00 AM- 5:00 PM; Tuesday: 9:00 AM- 5:00 PM; Wednesday: 9:00 AM- 5:00 PM; Thursday: 9:00 AM- 5:00 PM; Friday: 9:00 AM- 5:00 PM",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9575,
+          40.67103
+        ]
+      },
+      "properties": {
+        "name": "MIC Women's Health Center",
+        "address": "MIC Women's Health Services - Eastern Parkway",
+        "borough": "Brooklyn",
+        "phone": "(718) 498-1001",
+        "website": "",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "Monday: 9:00 AM - 5:00 PM; Tuesday: 9:00 AM - 5:00 PM; Wednesday: 9:00 AM - 5:00 PM; Thursday: 9:00 AM - 5:00 PM; Friday: 9:00 AM - 5:00 PM",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9575,
+          40.67103
+        ]
+      },
+      "properties": {
+        "name": "MIC Women's Health Center",
+        "address": "MIC Women's Health Center- Eastern Parkway",
+        "borough": "Brooklyn",
+        "phone": "718-498-1001",
+        "website": "",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "Monday: 9:00 AM- 5:00 PM; Tuesday: 9:00 AM- 5:00 PM; Wednesday: 9:00 AM- 5:00 PM; Thursday: 9:00 AM- 5:00 PM; Friday: 9:00 AM- 5:00 PM",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.01212,
+          40.647365
+        ]
+      },
+      "properties": {
+        "name": "NYU Lutheran Medical Center",
+        "address": "Lutheran Medical Center - Sunset Park Terrace/Women's Health Achieve Clinic",
+        "borough": "Brooklyn",
+        "phone": "(718) 630-6891",
+        "website": "",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "Monday: 8:30 AM - 7:00 PM; Tuesday: 8:30 AM - 7:00 PM; Wednesday: 8:30 AM - 7:00 PM; Thursday: 8:30 AM - 7:00 PM; Friday: 8:30 AM - 7:00 PM; Saturday: 9:00 AM - 4:00 PM",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.946214,
+          40.655136
+        ]
+      },
+      "properties": {
+        "name": "SUNY Downstate Medical Center Suny Downstate Medical Center",
+        "address": "SUNY Downstate Medical Center STAR Health Center",
+        "borough": "Brooklyn",
+        "phone": "(718) 270-7293",
+        "website": "http://www.downstate.edu/hiv/AETC.html",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "Monday: 9:00 AM - 3:00 PM; Tuesday: 9:00 AM - 3:00 PM; Wednesday: 9:00 AM - 3:00 PM",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.96085,
+          40.77365
+        ]
+      },
+      "properties": {
+        "name": "APICHA Community Health Center",
+        "address": "APICHA Community Health Center",
+        "borough": "Manhattan",
+        "phone": "866-274-2429",
+        "website": "https://apicha.org",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "Monday: 10:00 AM - 4:30 PM; Tuesday: 10:00 AM - 4:30 PM; Wednesday: 12:00 PM - 6:30 PM; Thursday: 10:00 AM - 4:30 PM; Friday: 10:00 AM - 4:30 PM",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.002464,
+          40.718702
+        ]
+      },
+      "properties": {
+        "name": "APICHA Community Health Center",
+        "address": "400 Broadway",
+        "borough": "Manhattan",
+        "phone": "tau@apicha.org, vvacharakitja@apicha.org",
+        "website": "https://apicha.org/",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": false,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_services",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.946214,
+          40.655136
+        ]
+      },
+      "properties": {
+        "name": "Callen Lorde Community Health Center",
+        "address": "Callen Lorde Community Health Center",
+        "borough": "Manhattan",
+        "phone": "212-271-7200",
+        "website": "www.callen-lorde.org",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "Monday: 8:30 AM -8:30 PM; Tuesday: 8:30 AM - 8:30 PM; Wednesday: 8:30 AM - 8:30 PM; Thursday: 8:30 AM - 8:30 PM; Friday: 8:30 AM - 4:30 PM; Saturday: 8:30 AM - 3:30 PM",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.96085,
+          40.77365
+        ]
+      },
+      "properties": {
+        "name": "Callen Lorde Community Health Center",
+        "address": "Community Health Project",
+        "borough": "Manhattan",
+        "phone": "(212) 627-3769",
+        "website": "",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00227,
+          40.742905
+        ]
+      },
+      "properties": {
+        "name": "Callen-Lorde Community Health Center",
+        "address": "356 West 18th Street",
+        "borough": "Manhattan",
+        "phone": "ahardikar@callen-lorde.org, ngoykhberg@callen-lorde.org, ashardikar@gmail.com",
+        "website": "callen-lorde.org/",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": false,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_services",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.93715,
+          40.813864
+        ]
+      },
+      "properties": {
+        "name": "Central Harlem Sexual Health Clinic",
+        "address": "2238 Fifth Avenue, First Floor, Manhattan, NY 10037",
+        "borough": "Manhattan",
+        "phone": "",
+        "website": "https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",
+        "clinic_type": "DOH",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": true,
+        "has_pep": true,
+        "hours": "",
+        "walk_in": true,
+        "data_source": "NYC Health Department Website",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.946214,
+          40.655136
+        ]
+      },
+      "properties": {
+        "name": "Charles B Wang Community Health Center - Teens",
+        "address": "Charles B Wang Community Health Center - Teens",
+        "borough": "Manhattan",
+        "phone": "(212) 226-3888",
+        "website": "",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.946214,
+          40.655136
+        ]
+      },
+      "properties": {
+        "name": "Charles B Wang Community Health Center - Teens",
+        "address": "Charles B Wang Community Health Center - Canal",
+        "borough": "Manhattan",
+        "phone": "(212) 379-6996",
+        "website": "",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99983,
+          40.749585
+        ]
+      },
+      "properties": {
+        "name": "Chelsea Express Clinic",
+        "address": "303 9th Avenue, First Floor, Manhattan, NY 10001",
+        "borough": "Manhattan",
+        "phone": "",
+        "website": "https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",
+        "clinic_type": "DOH",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": true,
+        "has_pep": true,
+        "hours": "",
+        "walk_in": true,
+        "data_source": "NYC Health Department Website",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99983,
+          40.749585
+        ]
+      },
+      "properties": {
+        "name": "Chelsea Sexual Health Clinic",
+        "address": "303 9th Avenue, First Floor, Manhattan, NY 10001",
+        "borough": "Manhattan",
+        "phone": "",
+        "website": "https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",
+        "clinic_type": "DOH",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": true,
+        "has_pep": true,
+        "hours": "",
+        "walk_in": true,
+        "data_source": "NYC Health Department Website",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.940741,
+          40.841014
+        ]
+      },
+      "properties": {
+        "name": "Clinic - Lenox Avenue",
+        "address": "Clinic - Lenox Avenue",
+        "borough": "Manhattan",
+        "phone": "(212) 961-5742",
+        "website": "",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "Monday: 11:00 AM - 7:00 PM; Tuesday: 9:00 AM - 5:00 PM; Wednesday: 9:00 AM - 5:00 PM; Thursday: 9:00 AM - 5:00 PM; Friday: 9:00 AM - 7:00 PM",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.96085,
+          40.77365
+        ]
+      },
+      "properties": {
+        "name": "Community Healthcare Network",
+        "address": "Community Healthcare Network - Community League Health Center",
+        "borough": "Manhattan",
+        "phone": "(212)-781-7979",
+        "website": "http://www.chnnyc.org/our-locations/community-league-health-center",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "Monday: 9:30 AM- 6:00 PM; Tuesday: 8:30 AM-5:00 PM; Wednesday: 10:30 AM- 7:00 PM; Thursday: 8:30 AM-5:00 PM; Friday: 8:30 AM-5:00 PM; Saturday: 9:00 AM - 4:00 PM",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.946214,
+          40.655136
+        ]
+      },
+      "properties": {
+        "name": "Community Healthcare Network",
+        "address": "Community Healthcare Network - Helen B Atkinson Health Center",
+        "borough": "Manhattan",
+        "phone": "(212)-426-0088",
+        "website": "http://www.chnnyc.org/our-locations/helen-b-atkinson-health-center",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "Monday: 9:00AM - 5:00PM; Tuesday: 9:00AM - 5:00PM; Wednesday: 9:00AM - 7:00PM; Thursday: 9:00AM - 5:00PM; Friday: 9:00AM - 5:00PM; Saturday: 9:00AM - 4:00PM",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.939711,
+          40.814111
+        ]
+      },
+      "properties": {
+        "name": "HHC Harlem Hospital - Family Planning Clinic",
+        "address": "HHC Harlem Hospital - Family Planning Clinic",
+        "borough": "Manhattan",
+        "phone": "(212) 935-8275",
+        "website": "",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "Monday: 9:00 AM - 7:00 PM; Tuesday: 9:00 AM - 5:00 PM; Wednesday: 9:00 AM - 5:00 PM; Thursday: 9:00 AM - 5:00 PM; Friday: 9:00 AM - 5:00 PM",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.74576,
+          40.698306
+        ]
+      },
+      "properties": {
+        "name": "Institute for Community Living",
+        "address": "Institute for Community Living",
+        "borough": "Manhattan",
+        "phone": "(212) 385-3030",
+        "website": "",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.007477,
+          40.708497
+        ]
+      },
+      "properties": {
+        "name": "Mobilization for Justice, Inc., formerly known as MFY Legal Services, Inc.",
+        "address": "100 William Street, 6th Floor",
+        "borough": "Manhattan",
+        "phone": "rkahn@mfjlegal.org",
+        "website": "https://mobilizationforjustice.org/",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_services",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.96554,
+          40.78249
+        ]
+      },
+      "properties": {
+        "name": "NYC DOHMH STD Control",
+        "address": "Central Harlem STD Clinic",
+        "borough": "Manhattan",
+        "phone": "N/A",
+        "website": "",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "Tuesday: 8:30 AM - 3:30 PM; Wednesday: 8:30 AM - 3:30 PM; Thursday: 8:30 AM - 3:30 PM; Friday: 8:30 AM - 3:30 PM; Saturday: 8:30 AM - 3:30 PM",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.993488,
+          40.725564
+        ]
+      },
+      "properties": {
+        "name": "Planned Parenthood of Greater New York",
+        "address": "26 Bleecker Street",
+        "borough": "Manhattan",
+        "phone": "shaun.turnbull@ppgreaterny.org",
+        "website": "https://www.plannedparenthood.org/planned-parenthood-greater-new-york",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": false,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_services",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99218,
+          40.737122
+        ]
+      },
+      "properties": {
+        "name": "The Institute for Family Health",
+        "address": "16 East 16th Street",
+        "borough": "Manhattan",
+        "phone": "lcurry@institute.org, jmusella@institute.org, acurry@institute.org, mifrazier@institute.org",
+        "website": "https://www.institute.org/",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_services",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.01398,
+          40.702908
+        ]
+      },
+      "properties": {
+        "name": "Urban Justice Center (SWOP)",
+        "address": "Urban Justice Center",
+        "borough": "Manhattan",
+        "phone": "",
+        "website": "",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.946214,
+          40.655136
+        ]
+      },
+      "properties": {
+        "name": "William F. Ryan Community Health Network",
+        "address": "William F. Ryan Community Health Center",
+        "borough": "Manhattan",
+        "phone": "212-749-1820",
+        "website": "http://www.ryancenter.org/find.htm; http://std-clinics.healthgrove.com/l/4155/William-F-Ryan-Community-Health-Center",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "Monday: 8:30 AM - 6:00 PM; Tuesday: 8:30 AM - 4:00 PM; Wednesday: 8:30 AM - 4:00 PM; Thursday: 8:30 AM - 6:00 PM; Friday: 8:30 AM - 4:00 PM; Saturday: 9:30 AM - 1:00 PM",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.96085,
+          40.77365
+        ]
+      },
+      "properties": {
+        "name": "Charles B Wang Community Health Center - Teens",
+        "address": "Charles B Wang Community Health Center - Women's Health Clinic",
+        "borough": "Queens",
+        "phone": "(718) 886-1212",
+        "website": "http://www.cbwchc.org/wh.asp",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.980217,
+          40.690274
+        ]
+      },
+      "properties": {
+        "name": "Community Healthcare Network",
+        "address": "Community Healthcare Network - Long Island City Health Center",
+        "borough": "Queens",
+        "phone": "(718)-482-7772",
+        "website": "http://www.chnnyc.org/our-locations/long-island-city-health-center",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "Monday: 9:00 AM - 5:00 PM; Tuesday: 9:00 AM - 5:00 PM; Wednesday: 9:00 AM - 5:00 PM; Thursday: 9:00 AM - 5:00 PM; Friday: 9:00 AM - 5:00 PM; Saturday: 8:30 AM- 3:30 PM",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.871979,
+          40.754221
+        ]
+      },
+      "properties": {
+        "name": "Corona Sexual Health Clinic",
+        "address": "34-33 Junction Boulevard, First Floor, Queens, NY 11372",
+        "borough": "Queens",
+        "phone": "",
+        "website": "https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",
+        "clinic_type": "DOH",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": true,
+        "has_pep": true,
+        "hours": "",
+        "walk_in": true,
+        "data_source": "NYC Health Department Website",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.800209,
+          40.703964
+        ]
+      },
+      "properties": {
+        "name": "Jamaica Sexual Health Clinic",
+        "address": "90-37 Parsons Boulevard, First Floor, Queens, NY 11432",
+        "borough": "Queens",
+        "phone": "",
+        "website": "https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",
+        "clinic_type": "DOH",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": true,
+        "has_pep": true,
+        "hours": "",
+        "walk_in": true,
+        "data_source": "NYC Health Department Website",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.95695,
+          40.74433
+        ]
+      },
+      "properties": {
+        "name": "LGBT Network",
+        "address": "Q Center",
+        "borough": "Queens",
+        "phone": "516.323.0011",
+        "website": "http://lgbtnetwork.org/q-center",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.93371,
+          40.659406
+        ]
+      },
+      "properties": {
+        "name": "North Shore LIJ",
+        "address": "Adolescent and GYN Sexual Health Services - Long Island Jewish Medical Center",
+        "borough": "Queens",
+        "phone": "516-465-3270",
+        "website": "",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.980217,
+          40.690274
+        ]
+      },
+      "properties": {
+        "name": "Planned Parenthood-New York City Chapter",
+        "address": "Planned Parenthood Diane L. Max Health Center (Queens)",
+        "borough": "Queens",
+        "phone": "212-965-7000",
+        "website": "https://www.plannedparenthood.org/health-center/new-york/queens/11101/diane-l.-max-health-center-4184-91110",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.946214,
+          40.655136
+        ]
+      },
+      "properties": {
+        "name": "Beacon Christian Community Health Center",
+        "address": "Beacon Christian Community Health Center",
+        "borough": "Staten Island",
+        "phone": "(718) 815-6560",
+        "website": "http://beaconcchc.com/",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.214478,
+          40.527503
+        ]
+      },
+      "properties": {
+        "name": "Community Health Action of Staten Island (CHASI)",
+        "address": "Community Health Action of Staten Island- Main Office",
+        "borough": "Staten Island",
+        "phone": "718-808-1300",
+        "website": "http://chasiny.org",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.102616,
+          40.64402
+        ]
+      },
+      "properties": {
+        "name": "Community Health Action of Staten Island (CHASI)",
+        "address": "Staten Island LGBT Center",
+        "borough": "Staten Island",
+        "phone": "718-808-1360",
+        "website": "http://chasiny.org",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "Monday: 1:00 PM- 8:00 PM; Tuesday: 1:00 PM- 8:00 PM; Wednesday: 1:00 PM- 8:00 PM; Thursday: 1:00 PM- 8:00 PM; Friday: 1:00 PM- 8:00 PM",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.214478,
+          40.527503
+        ]
+      },
+      "properties": {
+        "name": "Community Health Action of Staten Island (CHASI)",
+        "address": "Community Health Action of Staten Island- Community Food Pantry",
+        "borough": "Staten Island",
+        "phone": "718-818-1840 / 718-818-1311",
+        "website": "http://chasiny.org",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "Monday: 9:00AM - 4:00PM; Tuesday: 9:00AM - 4:00PM; Wednesday: 9:00AM - 4:00PM; Thursday: 9:00AM - 4:00PM; Friday: 9:00AM - 4:00PM; Saturday: 9:00AM - 4:00PM",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.089612,
+          40.622138
+        ]
+      },
+      "properties": {
+        "name": "Community Health Action of Staten Island (CHASI)",
+        "address": "Community Health Action of Staten Island- Hyatt Street",
+        "borough": "Staten Island",
+        "phone": "718-808-1311",
+        "website": "www.chasiny.org",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "Monday: 9:00 AM - 4:00 PM; Tuesday: 19:00 AM - 4:00 PM; Wednesday: 9:00 AM - 4:00 PM; Thursday: 9:00 AM - 4:00 PM; Friday: 9:00 AM - 4:00 PM",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.075957,
+          40.64139
+        ]
+      },
+      "properties": {
+        "name": "Community Health Action of Staten Island (CHASI)",
+        "address": "26 Bay Street",
+        "borough": "Staten Island",
+        "phone": "taryn.lyon@chasiny.org, felicia.caple@chasiny.org, denise.brown@chasiny.org",
+        "website": "www.chasiny.org",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": false,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_services",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.96085,
+          40.77365
+        ]
+      },
+      "properties": {
+        "name": "Community Health Center of Richmond",
+        "address": "Community Health Center of Richmond",
+        "borough": "Staten Island",
+        "phone": "(718) 876-1732",
+        "website": "chcrichmond.org",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "Monday: 8:30am-8:30pm; Tuesday: 8:30am-10pm; Wednesday: 8:30am-8:30pm; Thursday: 8:30am-10pm; Friday: 8:30am-4:30pm; Saturday: 8:30am-12:30pm",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.13832,
+          40.631386
+        ]
+      },
+      "properties": {
+        "name": "Community Health Center of Richmond",
+        "address": "439 Port Richmond Avenue",
+        "borough": "Staten Island",
+        "phone": "(718) 876-1732",
+        "website": "chcrichmond.org",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "Monday: 8am-5pm; Tuesday: 8am-5pm; Wednesday: 8am-5pm; Thursday: 8am-5pm; Friday: 8am-5pm",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.135021,
+          40.635621
+        ]
+      },
+      "properties": {
+        "name": "Community Health Center of Richmond",
+        "address": "235 Port Richmond Avenue",
+        "borough": "Staten Island",
+        "phone": "hthompson@chcrichmond.org, gharris@chcrichmond.org",
+        "website": "www.chcrichmond.org",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": false,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": false,
+        "data_source": "NYC Open Data: hiv_services",
+        "notes": ""
+      }
+    }
+  ]
+}

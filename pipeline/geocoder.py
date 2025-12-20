@@ -10,9 +10,6 @@ Superior to Nominatim for NYC because it returns:
 
 import requests
 import time
-import pandas as pd
-import concurrent.futures
-from tqdm import tqdm
 
 
 def geocode_nyc_address(address_str: str) -> dict | None:
@@ -62,47 +59,7 @@ def geocode_nyc_address(address_str: str) -> dict | None:
         return None
 
 
-def _fetch_row(row, address_col: str) -> dict:
-    """Process a single row for geocoding."""
-    address = row[address_col]
-
-    if not isinstance(address, str) or not address.strip():
-        return {}
-
-    result = geocode_nyc_address(address)
-    return result if result else {}
-
-
-def batch_geocode_dataframe(
-    df: pd.DataFrame,
-    address_col: str = 'address',
-    max_workers: int = 5
-) -> pd.DataFrame:
-    """
-    Parallel geocode a dataframe.
-
-    Args:
-        df: Clinic data
-        address_col: Name of address column
-        max_workers: Parallel threads (keep <= 10 to be polite)
-
-    Returns:
-        Original dataframe with geodata columns attached
-    """
-    print(f"🌍 Geocoding {len(df)} records with {max_workers} threads...")
-
-    with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
-        rows = [row for _, row in df.iterrows()]
-
-        # executor.map preserves input order
-        results = list(tqdm(
-            executor.map(lambda r: _fetch_row(r, address_col), rows),
-            total=len(rows),
-            desc="Geocoding"
-        ))
-
-    geo_df = pd.DataFrame(results)
-    return pd.concat([df.reset_index(drop=True), geo_df], axis=1)
+# Batch geocoding function removed - use geocode_clinics.py instead
 
 
 if __name__ == "__main__":
