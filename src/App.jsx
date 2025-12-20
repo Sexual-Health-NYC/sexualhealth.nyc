@@ -89,20 +89,6 @@ export default function App() {
         Skip to main content
       </a>
 
-      {/* Visually hidden page title for screen readers */}
-      <h1
-        style={{
-          position: "absolute",
-          left: "-10000px",
-          width: "1px",
-          height: "1px",
-          overflow: "hidden",
-        }}
-      >
-        Sexual Health NYC - Find Clinics for STI Testing, HIV Testing, PrEP,
-        PEP, Contraception, and Abortion Services
-      </h1>
-
       <FilterBar />
       {/* Live region for screen reader announcements */}
       <div
@@ -129,7 +115,7 @@ export default function App() {
           style={{
             position: "absolute",
             top: theme.spacing[4],
-            left: theme.spacing[4],
+            right: theme.spacing[4],
             zIndex: 10,
             display: "flex",
             gap: theme.spacing[2],
