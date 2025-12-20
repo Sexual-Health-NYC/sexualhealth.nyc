@@ -3,7 +3,6 @@ import MapGL, { NavigationControl } from "react-map-gl/mapbox";
 import "mapbox-gl/dist/mapbox-gl.css";
 import useAppStore from "../store/useAppStore";
 import ClinicMarkers from "./ClinicMarkers";
-import NearMeButton from "./NearMeButton";
 
 const MAPBOX_TOKEN =
   "pk.eyJ1Ijoic2V4dWFsLWhlYWx0aC1ueWMiLCJhIjoiY21qZHF2ZTAyMDQ3aTNjb3MxbDFscWowZiJ9.BXuUrUio_grUlyoxU6WFBQ";
@@ -84,11 +83,11 @@ export default function Map() {
         mapStyle="mapbox://styles/mapbox/streets-v12"
         mapboxAccessToken={MAPBOX_TOKEN}
         style={{ width: "100%", height: "100%" }}
+        transitionDuration={500}
       >
         <NavigationControl position="top-right" />
         <ClinicMarkers clinics={filteredClinics} />
       </MapGL>
-      <NearMeButton />
     </div>
   );
 }

@@ -104,13 +104,7 @@ export default function ClinicDetailPanel() {
           }}
         >
           <a
-            href={
-              /iPhone|iPad|iPod/.test(navigator.userAgent)
-                ? `maps://maps.apple.com/?daddr=${selectedClinic.latitude},${selectedClinic.longitude}`
-                : `https://www.google.com/maps/dir/?api=1&destination=${selectedClinic.latitude},${selectedClinic.longitude}`
-            }
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`geo:${selectedClinic.latitude},${selectedClinic.longitude}`}
             style={{
               flex: 1,
               padding: theme.spacing[3],
@@ -123,7 +117,7 @@ export default function ClinicDetailPanel() {
               fontWeight: theme.fonts.weight.medium,
             }}
           >
-            Get Directions
+            Open in Maps
           </a>
         </div>
 
@@ -158,15 +152,41 @@ export default function ClinicDetailPanel() {
 
         {/* Address */}
         <Section title="Location">
-          <p
+          <div
             style={{
-              margin: 0,
-              color: theme.colors.textPrimary,
-              fontSize: theme.fonts.size.base,
+              display: "flex",
+              alignItems: "start",
+              gap: theme.spacing[2],
             }}
           >
-            {selectedClinic.address}
-          </p>
+            <p
+              style={{
+                margin: 0,
+                flex: 1,
+                color: theme.colors.textPrimary,
+                fontSize: theme.fonts.size.base,
+              }}
+            >
+              {selectedClinic.address}
+            </p>
+            <button
+              onClick={() => {
+                navigator.clipboard.writeText(selectedClinic.address);
+              }}
+              title="Copy address"
+              aria-label="Copy address to clipboard"
+              style={{
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                padding: theme.spacing[1],
+                color: theme.colors.primary,
+                fontSize: theme.fonts.size.lg,
+              }}
+            >
+              📋
+            </button>
+          </div>
           {selectedClinic.borough && (
             <p
               style={{
