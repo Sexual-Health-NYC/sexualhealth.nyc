@@ -1,0 +1,447 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.915961,
+          40.81535
+        ]
+      },
+      "properties": {
+        "name": "Destination Tomorrow",
+        "address": "452 E 149th St",
+        "borough": "Bronx",
+        "phone": "sean@destinationtomorrow.org, asantiago@destinationtomorrow.org, drtillery@destinationtomorrow.org, eishelle@destinationtomorrow.org",
+        "website": "http://destinationtomorrow.org/",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": null,
+        "data_source": "NYC Open Data: hiv_services",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.903443,
+          40.832794
+        ]
+      },
+      "properties": {
+        "name": "Morrisania Sexual Health Clinic",
+        "address": "1309 Fulton Avenue, Second Floor, Bronx, NY 10456",
+        "borough": "Bronx",
+        "phone": "",
+        "website": "https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",
+        "clinic_type": "DOH",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": true,
+        "has_pep": true,
+        "hours": "",
+        "walk_in": true,
+        "data_source": "NYC Health Department Website",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.982058,
+          40.691771
+        ]
+      },
+      "properties": {
+        "name": "Fort Greene Express Clinic",
+        "address": "295 Flatbush Avenue Extension, First Floor, Brooklyn, NY 11201",
+        "borough": "Brooklyn",
+        "phone": "",
+        "website": "https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",
+        "clinic_type": "DOH",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": true,
+        "has_pep": true,
+        "hours": "",
+        "walk_in": true,
+        "data_source": "NYC Health Department Website",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.982058,
+          40.691771
+        ]
+      },
+      "properties": {
+        "name": "Fort Greene Sexual Health Clinic",
+        "address": "295 Flatbush Avenue Extension, Second Floor, Brooklyn, NY 11201",
+        "borough": "Brooklyn",
+        "phone": "",
+        "website": "https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",
+        "clinic_type": "DOH",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": true,
+        "has_pep": true,
+        "hours": "",
+        "walk_in": true,
+        "data_source": "NYC Health Department Website",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.002464,
+          40.718702
+        ]
+      },
+      "properties": {
+        "name": "APICHA Community Health Center",
+        "address": "400 Broadway",
+        "borough": "Manhattan",
+        "phone": "tau@apicha.org, vvacharakitja@apicha.org",
+        "website": "https://apicha.org/",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": false,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": null,
+        "data_source": "NYC Open Data: hiv_services",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00227,
+          40.742905
+        ]
+      },
+      "properties": {
+        "name": "Callen-Lorde Community Health Center",
+        "address": "356 West 18th Street",
+        "borough": "Manhattan",
+        "phone": "ahardikar@callen-lorde.org, ngoykhberg@callen-lorde.org, ashardikar@gmail.com",
+        "website": "callen-lorde.org/",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": false,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": null,
+        "data_source": "NYC Open Data: hiv_services",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.93715,
+          40.813864
+        ]
+      },
+      "properties": {
+        "name": "Central Harlem Sexual Health Clinic",
+        "address": "2238 Fifth Avenue, First Floor, Manhattan, NY 10037",
+        "borough": "Manhattan",
+        "phone": "",
+        "website": "https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",
+        "clinic_type": "DOH",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": true,
+        "has_pep": true,
+        "hours": "",
+        "walk_in": true,
+        "data_source": "NYC Health Department Website",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99983,
+          40.749585
+        ]
+      },
+      "properties": {
+        "name": "Chelsea Express Clinic",
+        "address": "303 9th Avenue, First Floor, Manhattan, NY 10001",
+        "borough": "Manhattan",
+        "phone": "",
+        "website": "https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",
+        "clinic_type": "DOH",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": true,
+        "has_pep": true,
+        "hours": "",
+        "walk_in": true,
+        "data_source": "NYC Health Department Website",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99983,
+          40.749585
+        ]
+      },
+      "properties": {
+        "name": "Chelsea Sexual Health Clinic",
+        "address": "303 9th Avenue, First Floor, Manhattan, NY 10001",
+        "borough": "Manhattan",
+        "phone": "",
+        "website": "https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",
+        "clinic_type": "DOH",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": true,
+        "has_pep": true,
+        "hours": "",
+        "walk_in": true,
+        "data_source": "NYC Health Department Website",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.007477,
+          40.708497
+        ]
+      },
+      "properties": {
+        "name": "Mobilization for Justice, Inc., formerly known as MFY Legal Services, Inc.",
+        "address": "100 William Street, 6th Floor",
+        "borough": "Manhattan",
+        "phone": "rkahn@mfjlegal.org",
+        "website": "https://mobilizationforjustice.org/",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": null,
+        "data_source": "NYC Open Data: hiv_services",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.993488,
+          40.725564
+        ]
+      },
+      "properties": {
+        "name": "Planned Parenthood of Greater New York",
+        "address": "26 Bleecker Street",
+        "borough": "Manhattan",
+        "phone": "shaun.turnbull@ppgreaterny.org",
+        "website": "https://www.plannedparenthood.org/planned-parenthood-greater-new-york",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": false,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": null,
+        "data_source": "NYC Open Data: hiv_services",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99218,
+          40.737122
+        ]
+      },
+      "properties": {
+        "name": "The Institute for Family Health",
+        "address": "16 East 16th Street",
+        "borough": "Manhattan",
+        "phone": "lcurry@institute.org, jmusella@institute.org, acurry@institute.org, mifrazier@institute.org",
+        "website": "https://www.institute.org/",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": null,
+        "data_source": "NYC Open Data: hiv_services",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.871979,
+          40.754221
+        ]
+      },
+      "properties": {
+        "name": "Corona Sexual Health Clinic",
+        "address": "34-33 Junction Boulevard, First Floor, Queens, NY 11372",
+        "borough": "Queens",
+        "phone": "",
+        "website": "https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",
+        "clinic_type": "DOH",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": true,
+        "has_pep": true,
+        "hours": "",
+        "walk_in": true,
+        "data_source": "NYC Health Department Website",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.800209,
+          40.703964
+        ]
+      },
+      "properties": {
+        "name": "Jamaica Sexual Health Clinic",
+        "address": "90-37 Parsons Boulevard, First Floor, Queens, NY 11432",
+        "borough": "Queens",
+        "phone": "",
+        "website": "https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",
+        "clinic_type": "DOH",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": true,
+        "has_pep": true,
+        "hours": "",
+        "walk_in": true,
+        "data_source": "NYC Health Department Website",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.075957,
+          40.64139
+        ]
+      },
+      "properties": {
+        "name": "Community Health Action of Staten Island (CHASI)",
+        "address": "26 Bay Street",
+        "borough": "Staten Island",
+        "phone": "taryn.lyon@chasiny.org, felicia.caple@chasiny.org, denise.brown@chasiny.org",
+        "website": "www.chasiny.org",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": false,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": null,
+        "data_source": "NYC Open Data: hiv_services",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.13832,
+          40.631386
+        ]
+      },
+      "properties": {
+        "name": "Community Health Center of Richmond",
+        "address": "439 Port Richmond Avenue",
+        "borough": "Staten Island",
+        "phone": "(718) 876-1732",
+        "website": "chcrichmond.org",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "Monday: 8am-5pm; Tuesday: 8am-5pm; Wednesday: 8am-5pm; Thursday: 8am-5pm; Friday: 8am-5pm",
+        "walk_in": null,
+        "data_source": "NYC Open Data: hiv_testing",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.135021,
+          40.635621
+        ]
+      },
+      "properties": {
+        "name": "Community Health Center of Richmond",
+        "address": "235 Port Richmond Avenue",
+        "borough": "Staten Island",
+        "phone": "hthompson@chcrichmond.org, gharris@chcrichmond.org",
+        "website": "www.chcrichmond.org",
+        "clinic_type": "HIV Testing",
+        "has_sti_testing": false,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "hours": "",
+        "walk_in": null,
+        "data_source": "NYC Open Data: hiv_services",
+        "notes": ""
+      }
+    }
+  ]
+}

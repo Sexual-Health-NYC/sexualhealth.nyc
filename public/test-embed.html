@@ -91,7 +91,7 @@
 
     // Load GeoJSON data
     map.on('load', () => {
-      fetch('../data/export/sexual_health_clinics_verified.geojson')
+      fetch('clinics.geojson')
         .then(response => response.json())
         .then(data => {
           // Add source
