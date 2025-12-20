@@ -10,6 +10,7 @@ const useAppStore = create((set) => ({
     insurance: new Set(),
     access: new Set(),
     boroughs: new Set(),
+    gestationalWeeks: null, // null = no filter, number = weeks pregnant
   },
 
   // UI State
@@ -35,8 +36,13 @@ const useAppStore = create((set) => ({
         insurance: new Set(),
         access: new Set(),
         boroughs: new Set(),
+        gestationalWeeks: null,
       },
     }),
+  setGestationalWeeks: (weeks) =>
+    set((state) => ({
+      filters: { ...state.filters, gestationalWeeks: weeks },
+    })),
 }));
 
 export default useAppStore;

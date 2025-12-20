@@ -3,7 +3,8 @@ import useAppStore from "../store/useAppStore";
 import theme from "../theme";
 
 export default function FilterBar() {
-  const { filters, setFilter, clearFilters } = useAppStore();
+  const { filters, setFilter, clearFilters, setGestationalWeeks } =
+    useAppStore();
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -11,6 +12,7 @@ export default function FilterBar() {
     services: useRef(null),
     insurance: useRef(null),
     boroughs: useRef(null),
+    gestational: useRef(null),
   };
 
   useEffect(() => {
@@ -47,7 +49,8 @@ export default function FilterBar() {
       filters.services.size +
       filters.insurance.size +
       filters.access.size +
-      filters.boroughs.size
+      filters.boroughs.size +
+      (filters.gestationalWeeks !== null ? 1 : 0)
     );
   };
 
@@ -79,6 +82,15 @@ export default function FilterBar() {
     { value: "Queens", label: "Queens" },
     { value: "Bronx", label: "Bronx" },
     { value: "Staten Island", label: "Staten Island" },
+  ];
+
+  const gestationalOptions = [
+    { value: null, label: "Any" },
+    { value: 10, label: "Up to 10 weeks" },
+    { value: 12, label: "Up to 12 weeks" },
+    { value: 20, label: "Up to 20 weeks" },
+    { value: 24, label: "Up to 24 weeks" },
+    { value: 99, label: "20+ weeks (late-term)" },
   ];
 
   const FilterDropdown = ({ name, title, options, category }) => {
@@ -211,6 +223,128 @@ export default function FilterBar() {
     );
   };
 
+  const GestationalDropdown = () => {
+    const isOpen = openDropdown === "gestational";
+    const hasFilter = filters.gestationalWeeks !== null;
+    const currentLabel =
+      gestationalOptions.find((o) => o.value === filters.gestationalWeeks)
+        ?.label || "Weeks Pregnant";
+
+    return (
+      <div
+        ref={dropdownRefs.gestational}
+        style={{ position: "relative", display: "inline-block" }}
+      >
+        <button
+          onClick={() => setOpenDropdown(isOpen ? null : "gestational")}
+          aria-expanded={isOpen}
+          aria-haspopup="true"
+          aria-label={`Gestational age filter${hasFilter ? `, ${currentLabel}` : ""}`}
+          style={{
+            padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
+            backgroundColor: hasFilter ? theme.colors.accent : "white",
+            color: hasFilter ? "white" : theme.colors.textPrimary,
+            border: `2px solid ${hasFilter ? theme.colors.accent : theme.colors.border}`,
+            borderRadius: theme.borderRadius.md,
+            fontSize: theme.fonts.size.sm,
+            fontWeight: theme.fonts.weight.medium,
+            cursor: "pointer",
+            display: "flex",
+            alignItems: "center",
+            gap: theme.spacing[2],
+          }}
+          onFocus={(e) => {
+            e.currentTarget.style.outline = theme.focus.outline;
+            e.currentTarget.style.outlineOffset = theme.focus.outlineOffset;
+          }}
+          onBlur={(e) => {
+            e.currentTarget.style.outline = "none";
+          }}
+        >
+          {hasFilter ? currentLabel : "Weeks Pregnant"}
+          <span aria-hidden="true">{isOpen ? "▲" : "▼"}</span>
+        </button>
+
+        {isOpen && (
+          <div
+            role="menu"
+            style={{
+              position: "absolute",
+              top: "calc(100% + 4px)",
+              left: 0,
+              backgroundColor: "white",
+              border: `1px solid ${theme.colors.border}`,
+              borderRadius: theme.borderRadius.md,
+              boxShadow: theme.shadows.lg,
+              padding: theme.spacing[2],
+              minWidth: "200px",
+              zIndex: 100,
+            }}
+          >
+            {gestationalOptions.map((option) => (
+              <label
+                key={option.value ?? "any"}
+                role="menuitemradio"
+                aria-checked={filters.gestationalWeeks === option.value}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  padding: theme.spacing[2],
+                  cursor: "pointer",
+                  borderRadius: theme.borderRadius.sm,
+                  transition: `background-color ${theme.transitions.fast}`,
+                  backgroundColor:
+                    filters.gestationalWeeks === option.value
+                      ? `${theme.colors.accent}15`
+                      : "transparent",
+                }}
+                onMouseEnter={(e) => {
+                  if (filters.gestationalWeeks !== option.value) {
+                    e.currentTarget.style.backgroundColor =
+                      theme.colors.surface;
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (filters.gestationalWeeks !== option.value) {
+                    e.currentTarget.style.backgroundColor = "transparent";
+                  }
+                }}
+              >
+                <input
+                  type="radio"
+                  name="gestational"
+                  checked={filters.gestationalWeeks === option.value}
+                  onChange={() => {
+                    setGestationalWeeks(option.value);
+                    setOpenDropdown(null);
+                  }}
+                  style={{
+                    marginRight: theme.spacing[2],
+                    width: "18px",
+                    height: "18px",
+                    cursor: "pointer",
+                    accentColor: theme.colors.accent,
+                  }}
+                />
+                <span
+                  style={{
+                    fontSize: theme.fonts.size.sm,
+                    fontWeight:
+                      filters.gestationalWeeks === option.value
+                        ? theme.fonts.weight.medium
+                        : theme.fonts.weight.normal,
+                  }}
+                >
+                  {option.label}
+                </span>
+              </label>
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  };
+
   const ActiveFilterPill = ({ category, value, label }) => {
     const [isHovered, setIsHovered] = useState(false);
 
@@ -317,6 +451,7 @@ export default function FilterBar() {
               options={boroughOptions}
               category="boroughs"
             />
+            {filters.services.has("abortion") && <GestationalDropdown />}
           </div>
 
           {getActiveFilterCount() > 0 && (
@@ -388,6 +523,42 @@ export default function FilterBar() {
                 label={value}
               />
             ))}
+            {filters.gestationalWeeks !== null && (
+              <span
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: theme.spacing[2],
+                  padding: `${theme.spacing[1]} ${theme.spacing[3]}`,
+                  backgroundColor: "#ffe9e9",
+                  color: theme.colors.accent,
+                  border: `1px solid ${theme.colors.accent}`,
+                  borderRadius: theme.borderRadius.full,
+                  fontSize: theme.fonts.size.sm,
+                  fontWeight: theme.fonts.weight.medium,
+                }}
+              >
+                {gestationalOptions.find(
+                  (o) => o.value === filters.gestationalWeeks,
+                )?.label || ""}
+                <button
+                  onClick={() => setGestationalWeeks(null)}
+                  aria-label="Remove gestational filter"
+                  style={{
+                    background: "none",
+                    border: "none",
+                    color: theme.colors.accent,
+                    cursor: "pointer",
+                    fontSize: theme.fonts.size.base,
+                    padding: 0,
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  ×
+                </button>
+              </span>
+            )}
           </div>
         )}
       </div>
@@ -568,6 +739,49 @@ export default function FilterBar() {
                 />
               ))}
             </FilterSection>
+
+            {filters.services.has("abortion") && (
+              <FilterSection title="Abortion Options">
+                <div style={{ marginBottom: theme.spacing[2] }}>
+                  <label
+                    style={{
+                      fontSize: theme.fonts.size.sm,
+                      fontWeight: theme.fonts.weight.medium,
+                      color: theme.colors.textSecondary,
+                      marginBottom: theme.spacing[1],
+                      display: "block",
+                    }}
+                  >
+                    Weeks Pregnant
+                  </label>
+                  <select
+                    value={filters.gestationalWeeks ?? ""}
+                    onChange={(e) =>
+                      setGestationalWeeks(
+                        e.target.value === "" ? null : Number(e.target.value),
+                      )
+                    }
+                    style={{
+                      width: "100%",
+                      padding: theme.spacing[2],
+                      borderRadius: theme.borderRadius.md,
+                      border: `1px solid ${theme.colors.border}`,
+                      fontSize: theme.fonts.size.sm,
+                      backgroundColor: "white",
+                    }}
+                  >
+                    {gestationalOptions.map((option) => (
+                      <option
+                        key={option.value ?? "any"}
+                        value={option.value ?? ""}
+                      >
+                        {option.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </FilterSection>
+            )}
 
             <div
               style={{

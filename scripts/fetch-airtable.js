@@ -91,6 +91,9 @@ function recordToFeature(record) {
       in_clinic_abortion: f["In-Clinic Abortion"] || false,
       abortion_medication_limit: f["Abortion: Medication (limit)"] || "",
       abortion_procedure_limit: f["Abortion: Procedure (limit)"] || "",
+      abortion_medication_max_weeks: f["Abortion Medication Max Weeks"] || null,
+      abortion_procedure_max_weeks: f["Abortion Procedure Max Weeks"] || null,
+      offers_late_term: f["Offers Late-Term (20+ weeks)"] || false,
 
       // Insurance
       accepts_medicaid: f["Accepts Medicaid"] || false,
@@ -145,6 +148,9 @@ async function main() {
 
   // Summary
   const withAbortion = features.filter((f) => f.properties.has_abortion).length;
+  const withLateTerm = features.filter(
+    (f) => f.properties.offers_late_term,
+  ).length;
   const withPrep = features.filter((f) => f.properties.has_prep).length;
   const withMedicaid = features.filter(
     (f) => f.properties.accepts_medicaid,
@@ -152,6 +158,7 @@ async function main() {
 
   console.log("\nSummary:");
   console.log(`  Abortion services: ${withAbortion}`);
+  console.log(`  Late-term (20+ weeks): ${withLateTerm}`);
   console.log(`  PrEP services: ${withPrep}`);
   console.log(`  Accepts Medicaid: ${withMedicaid}`);
 }

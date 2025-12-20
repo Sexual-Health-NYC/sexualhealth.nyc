@@ -44,6 +44,23 @@ export default function App() {
         if (!filters.boroughs.has(clinic.borough)) return false;
       }
 
+      // Gestational age: filter abortion clinics by weeks
+      if (filters.gestationalWeeks !== null) {
+        // 99 means "late-term (20+ weeks)" - look for offers_late_term
+        if (filters.gestationalWeeks === 99) {
+          if (!clinic.offers_late_term) return false;
+        } else {
+          // Check if clinic can serve this gestational age
+          const medMax = clinic.abortion_medication_max_weeks;
+          const procMax = clinic.abortion_procedure_max_weeks;
+          // Clinic must have at least one method that covers the weeks
+          const canServe =
+            (medMax && medMax >= filters.gestationalWeeks) ||
+            (procMax && procMax >= filters.gestationalWeeks);
+          if (!canServe) return false;
+        }
+      }
+
       return true;
     });
   }, [clinics, filters]);
