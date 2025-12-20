@@ -25,6 +25,7 @@
   "homepage": "https://github.com/Sexual-Health-NYC/sexualhealth.nyc#readme",
   "devDependencies": {
     "@vitejs/plugin-react": "^5.1.2",
+    "playwright": "^1.57.0",
     "tidewave": "^0.5.5",
     "vite": "^7.3.0"
   },
