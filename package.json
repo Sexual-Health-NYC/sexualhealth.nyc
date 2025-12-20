@@ -24,10 +24,16 @@
   },
   "homepage": "https://github.com/Sexual-Health-NYC/sexualhealth.nyc#readme",
   "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.2",
     "tidewave": "^0.5.5",
     "vite": "^7.3.0"
   },
   "dependencies": {
-    "resend": "^6.6.0"
+    "mapbox-gl": "^3.17.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-map-gl": "^8.1.0",
+    "resend": "^6.6.0",
+    "zustand": "^5.0.9"
   }
 }
