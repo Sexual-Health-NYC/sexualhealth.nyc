@@ -93,9 +93,6 @@ export default function FilterSidebar() {
       >
         <div
           style={{
-            display: "flex",
-            alignItems: "center",
-            gap: theme.spacing[3],
             marginBottom: theme.spacing[6],
             borderBottom: `3px solid ${theme.colors.primary}`,
             paddingBottom: theme.spacing[3],
@@ -104,23 +101,15 @@ export default function FilterSidebar() {
           aria-level="1"
         >
           <img
-            src="/logo-icon.svg"
-            alt="Sexual Health NYC Logo"
+            src="/logo-horizontal.png"
+            srcSet="/logo-horizontal.png 1x, /logo-horizontal@2x.png 2x, /logo-horizontal@3x.png 3x"
+            alt="sexualhealth.nyc"
             style={{
-              width: "48px",
-              height: "48px",
+              width: "280px",
+              height: "60px",
+              display: "block",
             }}
           />
-          <span
-            style={{
-              fontFamily: theme.fonts.headingFamily,
-              fontSize: theme.fonts.size["2xl"],
-              fontWeight: theme.fonts.weight.bold,
-              color: theme.colors.primary,
-            }}
-          >
-            sexualhealth.nyc
-          </span>
         </div>
 
         <h2
