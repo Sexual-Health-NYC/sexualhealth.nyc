@@ -93,7 +93,7 @@ export default function App() {
           style={{
             position: "absolute",
             top: theme.spacing[4],
-            right: theme.spacing[4],
+            left: theme.spacing[4],
             zIndex: 10,
             display: "flex",
             gap: theme.spacing[2],
