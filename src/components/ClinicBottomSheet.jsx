@@ -302,7 +302,7 @@ export default function ClinicBottomSheet() {
                 fontStyle: "italic",
               }}
             >
-              Unknown - call clinic to verify
+              Unknown - contact clinic to verify
             </p>
           ) : (
             <div
