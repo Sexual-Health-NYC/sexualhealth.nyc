@@ -144,6 +144,8 @@ export default function Footer() {
           gap: theme.spacing[4],
           flexWrap: "wrap",
           fontSize: theme.fonts.size.xs,
+          position: "relative",
+          zIndex: 30,
         }}
       >
         <button
