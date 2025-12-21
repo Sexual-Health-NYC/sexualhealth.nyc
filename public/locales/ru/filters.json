@@ -1,0 +1,13 @@
+{
+  "genderAffirmingCare": "Гендерно-подтверждающий уход",
+  "genderAffirmingYouth": "Молодежь (до 19 лет)",
+  "genderAffirmingHormones": "Гормональная терапия",
+  "genderAffirmingSurgery": "Операция",
+  "prepServices": "Услуги PrEP",
+  "prepStarter": "Немедленное начало (Экспресс)",
+  "prepPrescriber": "Постоянный назначивший врач",
+  "prepAP": "PrEP-AP (Финансовая помощь)",
+  "virtualTelehealth": "Виртуальный / Телемедицина",
+  "clearAllFilters": "Очистить все фильтры",
+  "closeFilters": "Закрыть фильтры"
+}

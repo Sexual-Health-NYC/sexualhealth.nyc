@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import useAppStore from "../store/useAppStore";
 import theme from "../theme";
 
 export default function FilterSidebar() {
+  const { t } = useTranslation(["filters", "services", "insurance", "sections", "access"]);
   const { filters, setFilter, clearFilters } = useAppStore();
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -66,7 +68,7 @@ export default function FilterSidebar() {
             e.currentTarget.style.outline = "none";
           }}
         >
-          {isOpen ? "Close Filters" : "Filters"}
+          {isOpen ? t("filters:closeFilters") : t("filters:filters")}
         </button>
       )}
 
@@ -89,7 +91,7 @@ export default function FilterSidebar() {
       <aside
         style={sidebarStyle}
         role="complementary"
-        aria-label="Filter clinics"
+        aria-label={t("filters:filters")}
       >
         <div
           style={{
@@ -103,7 +105,7 @@ export default function FilterSidebar() {
           <img
             src="/logo-horizontal.png"
             srcSet="/logo-horizontal.png 1x, /logo-horizontal@2x.png 2x, /logo-horizontal@3x.png 3x"
-            alt="sexualhealth.nyc"
+            alt={t("filters:filters")}
             width={280}
             height={60}
             fetchPriority="high"
@@ -125,100 +127,148 @@ export default function FilterSidebar() {
             color: theme.colors.textPrimary,
           }}
         >
-          Filters
+          {t("filters:filters")}
         </h2>
 
         {/* Services */}
-        <FilterSection title="Services">
+        <FilterSection title={t("filters:services")}>
           <Checkbox
-            label="STI Testing"
+            label={t("services:stiTesting")}
             checked={filters.services.has("sti_testing")}
             onChange={() => handleCheckbox("services", "sti_testing")}
           />
           <Checkbox
-            label="HIV Testing"
+            label={t("services:hivTesting")}
             checked={filters.services.has("hiv_testing")}
             onChange={() => handleCheckbox("services", "hiv_testing")}
           />
           <Checkbox
-            label="PrEP"
+            label={t("services:prep")}
             checked={filters.services.has("prep")}
             onChange={() => handleCheckbox("services", "prep")}
           />
           <Checkbox
-            label="PEP"
+            label={t("services:pep")}
             checked={filters.services.has("pep")}
             onChange={() => handleCheckbox("services", "pep")}
           />
           <Checkbox
-            label="Contraception"
+            label={t("services:contraception")}
             checked={filters.services.has("contraception")}
             onChange={() => handleCheckbox("services", "contraception")}
           />
           <Checkbox
-            label="Abortion"
+            label={t("services:abortion")}
             checked={filters.services.has("abortion")}
             onChange={() => handleCheckbox("services", "abortion")}
           />
         </FilterSection>
 
-        {/* Insurance */}
-        <FilterSection title="Insurance & Cost">
+        {/* Gender-Affirming Care */}
+        <FilterSection title={t("filters:genderAffirmingCare")}>
           <Checkbox
-            label="Accepts Medicaid"
+            label={t("filters:genderAffirmingYouth")}
+            checked={filters.services.has("gender_affirming_youth")}
+            onChange={() => handleCheckbox("services", "gender_affirming_youth")}
+          />
+          <Checkbox
+            label={t("filters:genderAffirmingHormones")}
+            checked={filters.services.has("gender_affirming_hormones")}
+            onChange={() => handleCheckbox("services", "gender_affirming_hormones")}
+          />
+          <Checkbox
+            label={t("filters:genderAffirmingSurgery")}
+            checked={filters.services.has("gender_affirming_surgery")}
+            onChange={() => handleCheckbox("services", "gender_affirming_surgery")}
+          />
+        </FilterSection>
+
+        {/* PrEP Services */}
+        <FilterSection title={t("filters:prepServices")}>
+          <Checkbox
+            label={t("filters:prepStarter")}
+            checked={filters.services.has("prep_starter")}
+            onChange={() => handleCheckbox("services", "prep_starter")}
+          />
+          <Checkbox
+            label={t("filters:prepPrescriber")}
+            checked={filters.services.has("prep_prescriber")}
+            onChange={() => handleCheckbox("services", "prep_prescriber")}
+          />
+          <Checkbox
+            label={t("filters:prepAP")}
+            checked={filters.services.has("prep_ap_registered")}
+            onChange={() => handleCheckbox("services", "prep_ap_registered")}
+          />
+        </FilterSection>
+
+
+        {/* Insurance */}
+        <FilterSection title={t("filters:insuranceAndCost")}>
+          <Checkbox
+            label={t("insurance:acceptsMedicaid")}
             checked={filters.insurance.has("accepts_medicaid")}
             onChange={() => handleCheckbox("insurance", "accepts_medicaid")}
           />
           <Checkbox
-            label="Accepts Medicare"
+            label={t("insurance:acceptsMedicare")}
             checked={filters.insurance.has("accepts_medicare")}
             onChange={() => handleCheckbox("insurance", "accepts_medicare")}
           />
           <Checkbox
-            label="No Insurance Required"
+            label={t("insurance:noInsuranceOk")}
             checked={filters.insurance.has("no_insurance_ok")}
             onChange={() => handleCheckbox("insurance", "no_insurance_ok")}
           />
           <Checkbox
-            label="Sliding Scale"
+            label={t("insurance:slidingScale")}
             checked={filters.insurance.has("sliding_scale")}
             onChange={() => handleCheckbox("insurance", "sliding_scale")}
           />
         </FilterSection>
 
         {/* Access */}
-        <FilterSection title="Availability">
+        <FilterSection title={t("filters:availability")}>
           <Checkbox
-            label="Walk-ins Accepted"
+            label={t("messages:walkInsAccepted")}
             checked={filters.access.has("walk_in")}
             onChange={() => handleCheckbox("access", "walk_in")}
           />
         </FilterSection>
 
-        {/* Borough */}
-        <FilterSection title="Borough">
+        {/* Access Type (Virtual/Telehealth) */}
+        <FilterSection title={t("filters:accessType")}>
           <Checkbox
-            label="Manhattan"
+            label={t("filters:virtualTelehealth")}
+            checked={filters.access.has("is_virtual")}
+            onChange={() => handleCheckbox("access", "is_virtual")}
+          />
+        </FilterSection>
+
+        {/* Borough */}
+        <FilterSection title={t("filters:borough")}>
+          <Checkbox
+            label={t("locations:boroughs.Manhattan")}
             checked={filters.boroughs.has("Manhattan")}
             onChange={() => handleCheckbox("boroughs", "Manhattan")}
           />
           <Checkbox
-            label="Brooklyn"
+            label={t("locations:boroughs.Brooklyn")}
             checked={filters.boroughs.has("Brooklyn")}
             onChange={() => handleCheckbox("boroughs", "Brooklyn")}
           />
           <Checkbox
-            label="Queens"
+            label={t("locations:boroughs.Queens")}
             checked={filters.boroughs.has("Queens")}
             onChange={() => handleCheckbox("boroughs", "Queens")}
           />
           <Checkbox
-            label="Bronx"
+            label={t("locations:boroughs.Bronx")}
             checked={filters.boroughs.has("Bronx")}
             onChange={() => handleCheckbox("boroughs", "Bronx")}
           />
           <Checkbox
-            label="Staten Island"
+            label={t("locations:boroughs.Staten Island")}
             checked={filters.boroughs.has("Staten Island")}
             onChange={() => handleCheckbox("boroughs", "Staten Island")}
           />
@@ -255,7 +305,7 @@ export default function FilterSidebar() {
             e.currentTarget.style.color = theme.colors.primary;
           }}
         >
-          Clear All Filters
+          {t("filters:clearAllFilters")}
         </button>
       </aside>
     </>

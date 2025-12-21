@@ -1,0 +1,18 @@
+{
+  "filters": "Filters",
+  "services": "Services",
+  "insuranceAndCost": "Insurance & Cost",
+  "availability": "Availability",
+  "borough": "Borough",
+  "genderAffirmingCare": "Gender-Affirming Care",
+  "genderAffirmingYouth": "Youth (Under 19)",
+  "genderAffirmingHormones": "Hormone Therapy",
+  "genderAffirmingSurgery": "Surgery",
+  "prepServices": "PrEP Services",
+  "prepStarter": "Immediate Start (Express)",
+  "prepPrescriber": "Ongoing Prescriber",
+  "prepAP": "PrEP-AP (Financial Aid)",
+  "virtualTelehealth": "Virtual / Telehealth",
+  "clearAllFilters": "Clear All Filters",
+  "closeFilters": "Close Filters"
+}

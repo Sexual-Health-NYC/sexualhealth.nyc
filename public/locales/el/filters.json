@@ -1,0 +1,13 @@
+{
+  "genderAffirmingCare": "Φροντίδα Επιβεβαίωσης Φύλου",
+  "genderAffirmingYouth": "Νέοι (κάτω των 19)",
+  "genderAffirmingHormones": "Ορμονοθεραπεία",
+  "genderAffirmingSurgery": "Χειρουργείο",
+  "prepServices": "Υπηρεσίες PrEP",
+  "prepStarter": "Άμεση Έναρξη (Express)",
+  "prepPrescriber": "Συνεχής Συνταγογράφος",
+  "prepAP": "PrEP-AP (Οικονομική Βοήθεια)",
+  "virtualTelehealth": "Εικονική / Τηλεϊατρική",
+  "clearAllFilters": "Εκκαθάριση όλων των φίλτρων",
+  "closeFilters": "Κλείσιμο φίλτρων"
+}

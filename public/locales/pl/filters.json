@@ -1,0 +1,13 @@
+{
+  "genderAffirmingCare": "Opieka afirmacji płci",
+  "genderAffirmingYouth": "Młodzież (poniżej 19 lat)",
+  "genderAffirmingHormones": "Terapia hormonalna",
+  "genderAffirmingSurgery": "Chirurgia",
+  "prepServices": "Usługi PrEP",
+  "prepStarter": "Natychmiastowe rozpoczęcie (Express)",
+  "prepPrescriber": "Ciągły lekarz przepisujący",
+  "prepAP": "PrEP-AP (Pomoc finansowa)",
+  "virtualTelehealth": "Wirtualne / Telemedycyna",
+  "clearAllFilters": "Wyczyść wszystkie filtry",
+  "closeFilters": "Zamknij filtry"
+}

@@ -1,0 +1,13 @@
+{
+  "genderAffirmingCare": "성별 확인 케어",
+  "genderAffirmingYouth": "청소년 (19세 미만)",
+  "genderAffirmingHormones": "호르몬 요법",
+  "genderAffirmingSurgery": "수술",
+  "prepServices": "PrEP 서비스",
+  "prepStarter": "즉시 시작 (급행)",
+  "prepPrescriber": "지속 처방",
+  "prepAP": "PrEP-AP (재정 지원)",
+  "virtualTelehealth": "가상 / 원격 의료",
+  "clearAllFilters": "모든 필터 지우기",
+  "closeFilters": "필터 닫기"
+}

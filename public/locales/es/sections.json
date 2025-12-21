@@ -8,5 +8,7 @@
   "phone": "Teléfono",
   "website": "Sitio web",
   "borough": "Municipio",
-  "access": "Acceso"
+  "access": "Acceso",
+  "telehealthOptions": "Opciones de Telesalud",
+  "telehealthDescription": "Recibe pastillas abortivas por correo — sin necesidad de visita en persona"
 }

@@ -1,0 +1,13 @@
+{
+  "genderAffirmingCare": "Atención de afirmación de género",
+  "genderAffirmingYouth": "Jóvenes (menores de 19)",
+  "genderAffirmingHormones": "Terapia hormonal",
+  "genderAffirmingSurgery": "Cirugía",
+  "prepServices": "Servicios de PrEP",
+  "prepStarter": "Inicio inmediato (Express)",
+  "prepPrescriber": "Prescriptor continuo",
+  "prepAP": "PrEP-AP (Ayuda financiera)",
+  "virtualTelehealth": "Virtual / Telesalud",
+  "clearAllFilters": "Borrar todos los filtros",
+  "closeFilters": "Cerrar filtros"
+}

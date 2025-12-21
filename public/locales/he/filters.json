@@ -1,0 +1,13 @@
+{
+  "genderAffirmingCare": "טיפול להתאמה מגדרית",
+  "genderAffirmingYouth": "נוער (מתחת לגיל 19)",
+  "genderAffirmingHormones": "טיפול הורמונלי",
+  "genderAffirmingSurgery": "ניתוח",
+  "prepServices": "שירותי PrEP",
+  "prepStarter": "התחלה מיידית (אקספרס)",
+  "prepPrescriber": "רושם קבוע",
+  "prepAP": "PrEP-AP (סיוע כלכלי)",
+  "virtualTelehealth": "וירטואלי / טלה-רפואה",
+  "clearAllFilters": "נקה את כל המסננים",
+  "closeFilters": "סגור מסננים"
+}

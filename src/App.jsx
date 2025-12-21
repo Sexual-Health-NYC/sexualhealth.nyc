@@ -32,6 +32,30 @@ export default function App() {
         );
         if (!hasAllServices) return false;
       }
+      
+      // Gender Affirming filters
+      if (filters.genderAffirming.size > 0) {
+        const hasAllGAC = Array.from(filters.genderAffirming).every(
+          (gacType) => clinic[`gender_affirming_${gacType}`] === true,
+        );
+        if (!hasAllGAC) return false;
+      }
+
+      // PrEP filters
+      if (filters.prep.size > 0) {
+        const hasAllPrep = Array.from(filters.prep).every(
+          (prepType) => clinic[`prep_${prepType}`] === true,
+        );
+        if (!hasAllPrep) return false;
+      }
+
+      // Access Type filters (e.g., Virtual/Telehealth)
+      if (filters.accessType.size > 0) {
+        const hasAllAccessTypes = Array.from(filters.accessType).every(
+          (accessType) => clinic[accessType] === true,
+        );
+        if (!hasAllAccessTypes) return false;
+      }
 
       // Insurance: must have ANY selected insurance option (OR logic)
       if (filters.insurance.size > 0) {

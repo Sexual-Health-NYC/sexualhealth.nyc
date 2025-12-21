@@ -3,12 +3,16 @@ import { create } from "zustand";
 const useAppStore = create((set) => ({
   // Data
   clinics: [],
+  virtualClinics: [],
 
   // Filters
   filters: {
     services: new Set(),
     insurance: new Set(),
     access: new Set(),
+    accessType: new Set(),
+    genderAffirming: new Set(),
+    prep: new Set(),
     boroughs: new Set(),
     gestationalWeeks: null, // null = no filter, number = weeks pregnant
     openNow: false,
@@ -30,6 +34,7 @@ const useAppStore = create((set) => ({
   // Actions
   setMapRef: (ref) => set({ mapRef: ref }),
   setClinics: (clinics) => set({ clinics }),
+  setVirtualClinics: (virtualClinics) => set({ virtualClinics }),
   selectClinic: (clinic) => set({ selectedClinic: clinic }),
   setMapViewport: (viewport) => set({ mapViewport: viewport }),
   setFilter: (category, value) =>
@@ -42,6 +47,9 @@ const useAppStore = create((set) => ({
         services: new Set(),
         insurance: new Set(),
         access: new Set(),
+        accessType: new Set(),
+        genderAffirming: new Set(),
+        prep: new Set(),
         boroughs: new Set(),
         gestationalWeeks: null,
         openNow: false,

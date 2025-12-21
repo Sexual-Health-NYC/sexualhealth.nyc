@@ -1,0 +1,13 @@
+{
+  "genderAffirmingCare": "性別肯定医療",
+  "genderAffirmingYouth": "若年層（19歳未満）",
+  "genderAffirmingHormones": "ホルモン療法",
+  "genderAffirmingSurgery": "手術",
+  "prepServices": "PrEPサービス",
+  "prepStarter": "即時開始（エクスプレス）",
+  "prepPrescriber": "継続処方者",
+  "prepAP": "PrEP-AP（経済的支援）",
+  "virtualTelehealth": "バーチャル／遠隔医療",
+  "clearAllFilters": "すべてのフィルターをクリア",
+  "closeFilters": "フィルターを閉じる"
+}

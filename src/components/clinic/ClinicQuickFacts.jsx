@@ -12,6 +12,9 @@ export default function ClinicQuickFacts({ clinic }) {
   if (clinic.accepts_medicaid) {
       quickFacts.push(t("insurance:acceptsMedicaid"));
   }
+  if (clinic.prep_ap_registered) {
+    quickFacts.push(t("filters:prepAP")); // Use filter namespace key
+  }
 
   if (quickFacts.length === 0) return null;
 
