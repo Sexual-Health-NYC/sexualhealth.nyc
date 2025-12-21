@@ -9,6 +9,7 @@ import {
   getUpcomingHoliday,
 } from "../utils/hours";
 import CorrectionFormModal from "./CorrectionFormModal";
+import { TransitInfo, BusInfo } from "./SubwayBullet";
 
 export default function ClinicBottomSheet() {
   const { t } = useTranslation([
@@ -329,28 +330,39 @@ export default function ClinicBottomSheet() {
           >
             {t("actions:openInMaps")}
           </a>
-          {selectedClinic.transit && (
+          {(selectedClinic.transit || selectedClinic.bus) && (
             <div
               style={{
                 marginTop: theme.spacing[3],
-                padding: theme.spacing[2],
-                backgroundColor: theme.colors.surface,
-                borderRadius: theme.borderRadius.sm,
                 display: "flex",
-                alignItems: "center",
+                flexDirection: "column",
                 gap: theme.spacing[2],
               }}
             >
-              <span style={{ fontSize: theme.fonts.size.lg }}>🚇</span>
-              <p
-                style={{
-                  margin: 0,
-                  color: theme.colors.textSecondary,
-                  fontSize: theme.fonts.size.sm,
-                }}
-              >
-                {selectedClinic.transit}
-              </p>
+              {selectedClinic.transit && (
+                <div
+                  style={{
+                    padding: theme.spacing[2],
+                    backgroundColor: theme.colors.surface,
+                    borderRadius: theme.borderRadius.sm,
+                    fontSize: theme.fonts.size.sm,
+                  }}
+                >
+                  <TransitInfo transit={selectedClinic.transit} />
+                </div>
+              )}
+              {selectedClinic.bus && (
+                <div
+                  style={{
+                    padding: theme.spacing[2],
+                    backgroundColor: theme.colors.surface,
+                    borderRadius: theme.borderRadius.sm,
+                    fontSize: theme.fonts.size.sm,
+                  }}
+                >
+                  <BusInfo bus={selectedClinic.bus} />
+                </div>
+              )}
             </div>
           )}
         </Section>
@@ -359,54 +371,54 @@ export default function ClinicBottomSheet() {
         {formattedHours.length > 0 && (
           <Section title={t("sections:hours")}>
             <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: theme.spacing[3],
-                }}
-              >
-                {formattedHours.map((dept, i) => (
-                  <div key={i}>
-                    {formattedHours.length > 1 && (
-                      <p
-                        style={{
-                          margin: `0 0 ${theme.spacing[1]} 0`,
-                          fontSize: theme.fonts.size.sm,
-                          fontWeight: theme.fonts.weight.medium,
-                          color: theme.colors.textSecondary,
-                        }}
-                      >
-                        {t(dept.department, { ns: "dynamic" })}
-                      </p>
-                    )}
-                    <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: theme.spacing[3],
+              }}
+            >
+              {formattedHours.map((dept, i) => (
+                <div key={i}>
+                  {formattedHours.length > 1 && (
+                    <p
                       style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: theme.spacing[1],
+                        margin: `0 0 ${theme.spacing[1]} 0`,
+                        fontSize: theme.fonts.size.sm,
+                        fontWeight: theme.fonts.weight.medium,
+                        color: theme.colors.textSecondary,
                       }}
                     >
-                      {dept.schedules.map((sched, j) => (
-                        <div
-                          key={j}
-                          style={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                            fontSize: theme.fonts.size.sm,
-                          }}
-                        >
-                          <span style={{ color: theme.colors.textPrimary }}>
-                            {sched.days}
-                          </span>
-                          <span style={{ color: theme.colors.textSecondary }}>
-                            {sched.isAllDay ? t("messages:allDay") : sched.time}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
+                      {t(dept.department, { ns: "dynamic" })}
+                    </p>
+                  )}
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: theme.spacing[1],
+                    }}
+                  >
+                    {dept.schedules.map((sched, j) => (
+                      <div
+                        key={j}
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                          fontSize: theme.fonts.size.sm,
+                        }}
+                      >
+                        <span style={{ color: theme.colors.textPrimary }}>
+                          {sched.days}
+                        </span>
+                        <span style={{ color: theme.colors.textSecondary }}>
+                          {sched.isAllDay ? t("messages:allDay") : sched.time}
+                        </span>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
+            </div>
           </Section>
         )}
 

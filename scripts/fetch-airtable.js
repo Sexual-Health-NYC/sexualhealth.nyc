@@ -127,8 +127,8 @@ function recordToFeature(record, hoursMap) {
       anonymous_testing: f["Anonymous Testing"] || false,
 
       // Transit
-      nearest_subway: f["Nearest Subway"] || "",
-      nearest_bus: f["Nearest Bus"] || "",
+      transit: f["Nearest Subway"] || "",
+      bus: f["Nearest Bus"] || "",
 
       // Metadata
       last_verified: f["Last Verified"] || "",

@@ -6,8 +6,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -74.0018,
-          40.7421
+          -74.003117,
+          40.743047
         ]
       },
       "properties": {
@@ -69,8 +69,8 @@
         "lgbtq_focused": true,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "A/C/E at 14 St (879 ft)",
+        "bus": "M11, M12, M14D-SBS at 9 AV/W 18 ST (201 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -80,8 +80,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9937,
-          40.7461
+          -73.994152,
+          40.745558
         ]
       },
       "properties": {
@@ -119,8 +119,8 @@
         "lgbtq_focused": false,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "1 at 28 St (642 ft)",
+        "bus": "M20, M7 at 7 AV/W 25 ST (271 ft)",
         "last_verified": "",
         "data_sources": "Planned Parenthood Project xlsx"
       }
@@ -130,8 +130,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.8306,
-          40.7136
+          -73.82922,
+          40.713216
         ]
       },
       "properties": {
@@ -169,8 +169,8 @@
         "lgbtq_focused": false,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "E/F at Kew Gardens-Union Tpke (666 ft)",
+        "bus": "Q10, Q60 at QUEENS BL /80 RD (211 ft)",
         "last_verified": "",
         "data_sources": "Planned Parenthood Project xlsx"
       }
@@ -180,8 +180,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9435,
-          40.7058
+          -73.944429,
+          40.70564
         ]
       },
       "properties": {
@@ -243,8 +243,8 @@
         "lgbtq_focused": true,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "M/J at Lorimer St (0.20 mi)",
+        "bus": "B43 at GRAHAM AV/JOHNSON AV (433 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -254,8 +254,75 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.8306,
-          40.7136
+          -73.834427,
+          40.756696
+        ]
+      },
+      "properties": {
+        "id": "rec300DSYS7nc0oRF",
+        "name": "Charles B. Wang Community Health Center (Flushing)",
+        "address": "131-72 40th Road",
+        "borough": "Queens",
+        "phone": "(718) 886-1200",
+        "website": "https://www.cbwchc.org",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri",
+              "Sat",
+              "Sun"
+            ],
+            "open": "09:00",
+            "close": "18:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "organization": "",
+        "clinic_type": "",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "has_contraception": false,
+        "has_abortion": false,
+        "has_gender_affirming": false,
+        "has_vaccines": true,
+        "medication_abortion": false,
+        "in_clinic_abortion": false,
+        "abortion_medication_limit": "",
+        "abortion_procedure_limit": "",
+        "abortion_medication_max_weeks": null,
+        "abortion_procedure_max_weeks": null,
+        "offers_late_term": false,
+        "accepts_medicaid": true,
+        "accepts_medicare": true,
+        "sliding_scale": true,
+        "no_insurance_ok": true,
+        "insurance_plans": [],
+        "walk_in": false,
+        "appointment_only": false,
+        "lgbtq_focused": false,
+        "youth_friendly": true,
+        "anonymous_testing": false,
+        "transit": "7 at Flushing-Main St (0.31 mi)",
+        "bus": "Q58 at 41 RD/COLLEGE PT BL (545 ft)",
+        "last_verified": "",
+        "data_sources": "Yelp search, CDC GetTested, CBWCHC website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.82922,
+          40.713216
         ]
       },
       "properties": {
@@ -309,8 +376,8 @@
         "lgbtq_focused": false,
         "youth_friendly": true,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "E/F at Kew Gardens-Union Tpke (666 ft)",
+        "bus": "Q10, Q60 at QUEENS BL /80 RD (211 ft)",
         "last_verified": "",
         "data_sources": ""
       }
@@ -320,8 +387,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.8044,
-          40.7163
+          -73.804176,
+          40.717004
         ]
       },
       "properties": {
@@ -397,8 +464,8 @@
         "lgbtq_focused": true,
         "youth_friendly": true,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "F at Parsons Blvd (0.65 mi)",
+        "bus": "Q65 at 164 ST/QUEENS GENERAL HOSPITAL (227 ft)",
         "last_verified": "",
         "data_sources": ""
       }
@@ -408,8 +475,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.8967,
-          40.8447
+          -73.896944,
+          40.846125
         ]
       },
       "properties": {
@@ -462,8 +529,8 @@
         "lgbtq_focused": false,
         "youth_friendly": true,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "B/D at Tremont Av (0.52 mi)",
+        "bus": "Bx40, Bx42 at E TREMONT AV/3 AV (251 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -473,8 +540,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.8817,
-          40.8804
+          -73.881035,
+          40.880535
         ]
       },
       "properties": {
@@ -527,8 +594,8 @@
         "lgbtq_focused": true,
         "youth_friendly": true,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "4 at Mosholu Pkwy (0.20 mi)",
+        "bus": "Bx10, Bx16, Bx28, Bx30... at BAINBRIDGE AV/E GUN HILL RD (666 ft)",
         "last_verified": "",
         "data_sources": ""
       }
@@ -628,8 +695,8 @@
         "lgbtq_focused": false,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "SIR at Stapleton (3.32 mi)",
+        "bus": "S59 at PORT RICHMOND AV/BLACKFORD AV (101 ft)",
         "last_verified": "",
         "data_sources": "NYC Open Data: hiv_testing"
       }
@@ -639,8 +706,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.99218,
-          40.737122
+          -73.99199,
+          40.73664
         ]
       },
       "properties": {
@@ -678,8 +745,8 @@
         "lgbtq_focused": false,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "N/Q/R/W at 14 St-Union Sq (513 ft)",
+        "bus": "M1, M2, M3, M55 at 5 AV/W 17 ST (404 ft)",
         "last_verified": "",
         "data_sources": "NYC Open Data: hiv_services"
       }
@@ -689,8 +756,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9764,
-          40.7506
+          -73.977329,
+          40.750123
         ]
       },
       "properties": {
@@ -728,8 +795,8 @@
         "lgbtq_focused": false,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "7 at Grand Central-42 St (595 ft)",
+        "bus": "M101, M102, M103 at LEXINGTON AV/E 40 ST (130 ft)",
         "last_verified": "",
         "data_sources": "Planned Parenthood Project xlsx"
       }
@@ -739,8 +806,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.985,
-          40.697
+          -73.985887,
+          40.697433
         ]
       },
       "properties": {
@@ -811,8 +878,8 @@
         "lgbtq_focused": true,
         "youth_friendly": true,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "A/C at High St (0.28 mi)",
+        "bus": "B67 at JAY ST/CONCORD ST (306 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -822,8 +889,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9722,
-          40.7505
+          -73.971659,
+          40.75007
         ]
       },
       "properties": {
@@ -887,8 +954,8 @@
         "lgbtq_focused": false,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "7 at Grand Central-42 St (0.25 mi)",
+        "bus": "M42 at E 42 ST/2 AV (189 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -898,8 +965,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9827,
-          40.6905
+          -73.982274,
+          40.689773
         ]
       },
       "properties": {
@@ -937,8 +1004,8 @@
         "lgbtq_focused": false,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "B/Q/R at DeKalb Av (338 ft)",
+        "bus": "B38 at DE KALB AV/BOND ST (147 ft)",
         "last_verified": "",
         "data_sources": "Planned Parenthood Project xlsx"
       }
@@ -948,8 +1015,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.8465,
-          40.8574
+          -73.847523,
+          40.856603
         ]
       },
       "properties": {
@@ -1002,8 +1069,8 @@
         "lgbtq_focused": true,
         "youth_friendly": true,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "5 at Pelham Pkwy (0.44 mi)",
+        "bus": "Bx12 at PELHAM PKWY/JACOBI HOSP (297 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -1013,8 +1080,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9515,
-          40.8009
+          -73.949464,
+          40.801275
         ]
       },
       "properties": {
@@ -1076,8 +1143,8 @@
         "lgbtq_focused": true,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "2/3 at 116 St (304 ft)",
+        "bus": "M102, M116 at W 116 ST/MALCOLM X BL (188 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -1087,8 +1154,58 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9767,
-          40.7397
+          -73.974657,
+          40.749602
+        ]
+      },
+      "properties": {
+        "id": "recKA2a4p91pezFGM",
+        "name": "Maze Women’s Sexual Health - NYC",
+        "address": "633 3rd Ave #9b, New York, NY 10017",
+        "borough": "Manhattan",
+        "phone": "",
+        "website": "",
+        "hours": [],
+        "organization": "",
+        "clinic_type": "",
+        "has_sti_testing": false,
+        "has_hiv_testing": false,
+        "has_prep": false,
+        "has_pep": false,
+        "has_contraception": false,
+        "has_abortion": false,
+        "has_gender_affirming": false,
+        "has_vaccines": false,
+        "medication_abortion": false,
+        "in_clinic_abortion": false,
+        "abortion_medication_limit": "",
+        "abortion_procedure_limit": "",
+        "abortion_medication_max_weeks": null,
+        "abortion_procedure_max_weeks": null,
+        "offers_late_term": false,
+        "accepts_medicaid": false,
+        "accepts_medicare": false,
+        "sliding_scale": false,
+        "no_insurance_ok": false,
+        "insurance_plans": [],
+        "walk_in": false,
+        "appointment_only": false,
+        "lgbtq_focused": false,
+        "youth_friendly": false,
+        "anonymous_testing": false,
+        "transit": "7 at Grand Central-42 St (769 ft)",
+        "bus": "BxM1 at 3 AV/E 41 ST (154 ft)",
+        "last_verified": "",
+        "data_sources": "Planned Parenthood Project xlsx"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.975002,
+          40.739174
         ]
       },
       "properties": {
@@ -1126,8 +1243,8 @@
         "lgbtq_focused": false,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "6 at 28 St (0.55 mi)",
+        "bus": "M15, M9 at 1 AV/E 27 ST (445 ft)",
         "last_verified": "",
         "data_sources": "Planned Parenthood Project xlsx"
       }
@@ -1137,8 +1254,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9504,
-          40.6592
+          -73.950172,
+          40.658992
         ]
       },
       "properties": {
@@ -1200,8 +1317,8 @@
         "lgbtq_focused": true,
         "youth_friendly": true,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "2/5 at Winthrop St (854 ft)",
+        "bus": "B44 at NOSTRAND AV/RUTLAND RD (106 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -1211,8 +1328,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9438,
-          40.7845
+          -73.944937,
+          40.785071
         ]
       },
       "properties": {
@@ -1250,8 +1367,8 @@
         "lgbtq_focused": false,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "Q at 96 St (671 ft)",
+        "bus": "M96 at E 97 ST/1 AV (250 ft)",
         "last_verified": "",
         "data_sources": "Planned Parenthood Project xlsx"
       }
@@ -1261,8 +1378,75 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9712,
-          40.7634
+          -74.001375,
+          40.718685
+        ]
+      },
+      "properties": {
+        "id": "recMR6Jy92Lstw0zC",
+        "name": "Charles B. Wang Community Health Center (Chinatown)",
+        "address": "268 Canal Street",
+        "borough": "Manhattan",
+        "phone": "(212) 379-6988",
+        "website": "https://www.cbwchc.org",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri",
+              "Sat",
+              "Sun"
+            ],
+            "open": "09:00",
+            "close": "18:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "organization": "",
+        "clinic_type": "",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": false,
+        "has_pep": false,
+        "has_contraception": false,
+        "has_abortion": false,
+        "has_gender_affirming": false,
+        "has_vaccines": true,
+        "medication_abortion": false,
+        "in_clinic_abortion": false,
+        "abortion_medication_limit": "",
+        "abortion_procedure_limit": "",
+        "abortion_medication_max_weeks": null,
+        "abortion_procedure_max_weeks": null,
+        "offers_late_term": false,
+        "accepts_medicaid": true,
+        "accepts_medicare": true,
+        "sliding_scale": true,
+        "no_insurance_ok": true,
+        "insurance_plans": [],
+        "walk_in": false,
+        "appointment_only": false,
+        "lgbtq_focused": false,
+        "youth_friendly": true,
+        "anonymous_testing": false,
+        "transit": "N/Q at Canal St (276 ft)",
+        "bus": "B99 at CANAL ST/BROADWAY (243 ft)",
+        "last_verified": "",
+        "data_sources": "Yelp search, CDC GetTested, CBWCHC website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.971003,
+          40.763673
         ]
       },
       "properties": {
@@ -1300,8 +1484,8 @@
         "lgbtq_focused": false,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "N/R/W at 5 Av/59 St (769 ft)",
+        "bus": "BxM6, BxM9 at MADISON AV/E 59 ST (67 ft)",
         "last_verified": "",
         "data_sources": "Planned Parenthood Project xlsx"
       }
@@ -1311,8 +1495,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9396,
-          40.8143
+          -73.939711,
+          40.814111
         ]
       },
       "properties": {
@@ -1373,8 +1557,8 @@
         "lgbtq_focused": true,
         "youth_friendly": true,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "2/3 at 135 St (296 ft)",
+        "bus": "Bx33 at W 135 ST/MALCOLM X BL (198 ft)",
         "last_verified": "",
         "data_sources": ""
       }
@@ -1423,8 +1607,8 @@
         "lgbtq_focused": false,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "7 at Junction Blvd (0.37 mi)",
+        "bus": "Q72 at JUNCTION BL/35 AV (250 ft)",
         "last_verified": "",
         "data_sources": "NYC Health Department Website"
       }
@@ -1434,8 +1618,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.915961,
-          40.81535
+          -73.915636,
+          40.814928
         ]
       },
       "properties": {
@@ -1473,8 +1657,8 @@
         "lgbtq_focused": false,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "2/5 at 3 Av-149 St (727 ft)",
+        "bus": "Bx19, Bx4, Bx4A at E 149 ST/BROOK AV (127 ft)",
         "last_verified": "",
         "data_sources": "NYC Open Data: hiv_services"
       }
@@ -1484,8 +1668,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -74.0019,
-          40.7192
+          -74.002177,
+          40.718598
         ]
       },
       "properties": {
@@ -1538,8 +1722,8 @@
         "lgbtq_focused": true,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "R/W at Canal St (357 ft)",
+        "bus": "M55 at BROADWAY/WALKER ST (117 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -1549,8 +1733,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9483,
-          40.7476
+          -73.946126,
+          40.746572
         ]
       },
       "properties": {
@@ -1634,8 +1818,8 @@
         "lgbtq_focused": false,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "7 at Court Sq (290 ft)",
+        "bus": "B62 at JACKSON AV/23 ST (303 ft)",
         "last_verified": "",
         "data_sources": "Planned Parenthood Project xlsx"
       }
@@ -1645,58 +1829,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -74.007477,
-          40.708497
-        ]
-      },
-      "properties": {
-        "id": "recU5F677vGQdr3CO",
-        "name": "Mobilization for Justice, Inc., formerly known as MFY Legal Services, Inc.",
-        "address": "100 William Street, 6th Floor",
-        "borough": "Manhattan",
-        "phone": "",
-        "website": "https://mobilizationforjustice.org/",
-        "hours": [],
-        "organization": "",
-        "clinic_type": "",
-        "has_sti_testing": true,
-        "has_hiv_testing": true,
-        "has_prep": false,
-        "has_pep": false,
-        "has_contraception": false,
-        "has_abortion": false,
-        "has_gender_affirming": false,
-        "has_vaccines": false,
-        "medication_abortion": false,
-        "in_clinic_abortion": false,
-        "abortion_medication_limit": "",
-        "abortion_procedure_limit": "",
-        "abortion_medication_max_weeks": null,
-        "abortion_procedure_max_weeks": null,
-        "offers_late_term": false,
-        "accepts_medicaid": false,
-        "accepts_medicare": false,
-        "sliding_scale": false,
-        "no_insurance_ok": false,
-        "insurance_plans": [],
-        "walk_in": false,
-        "appointment_only": false,
-        "lgbtq_focused": false,
-        "youth_friendly": false,
-        "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
-        "last_verified": "",
-        "data_sources": "NYC Open Data: hiv_services"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -73.8918,
-          40.8245
+          -73.8934,
+          40.82354
         ]
       },
       "properties": {
@@ -1758,8 +1892,8 @@
         "lgbtq_focused": true,
         "youth_friendly": true,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "2/5 at Simpson St (215 ft)",
+        "bus": "Bx4, Bx4A at WESTCHESTER AV/SIMPSON ST (187 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -1769,8 +1903,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9824,
-          40.6917
+          -73.982058,
+          40.691771
         ]
       },
       "properties": {
@@ -1808,8 +1942,8 @@
         "lgbtq_focused": false,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "B/Q/R at DeKalb Av (419 ft)",
+        "bus": "B54 at MYRTLE AV/FLEET PL (650 ft)",
         "last_verified": "",
         "data_sources": "Planned Parenthood Project xlsx"
       }
@@ -1819,8 +1953,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9863,
-          40.6917
+          -73.986553,
+          40.692535
         ]
       },
       "properties": {
@@ -1873,8 +2007,8 @@
         "lgbtq_focused": true,
         "youth_friendly": true,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "R at Jay St-MetroTech (213 ft)",
+        "bus": "B57, B67 at JAY ST/WILLOUGHBY ST (179 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -1884,8 +2018,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9938,
-          40.7547
+          -73.992379,
+          40.754368
         ]
       },
       "properties": {
@@ -1938,8 +2072,8 @@
         "lgbtq_focused": true,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "A/C/E at 34 St-Penn Station (809 ft)",
+        "bus": "M20, M34A-SBS at 8 AV/W 37 ST (177 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -1949,8 +2083,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9442,
-          40.6564
+          -73.944896,
+          40.656588
         ]
       },
       "properties": {
@@ -2012,8 +2146,8 @@
         "lgbtq_focused": true,
         "youth_friendly": true,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "2/5 at Winthrop St (0.28 mi)",
+        "bus": "B12 at CLARKSON AV/KINGS CNTY HOS MAIN (302 ft)",
         "last_verified": "",
         "data_sources": ""
       }
@@ -2023,8 +2157,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -74.135021,
-          40.635621
+          -74.134895,
+          40.635411
         ]
       },
       "properties": {
@@ -2062,8 +2196,8 @@
         "lgbtq_focused": false,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "SIR at Tompkinsville (3.15 mi)",
+        "bus": "S46, S96 at CASTLETON AV/PORT RICHMOND AV (197 ft)",
         "last_verified": "",
         "data_sources": "NYC Open Data: hiv_services"
       }
@@ -2073,8 +2207,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9416,
-          40.7006
+          -73.942288,
+          40.699542
         ]
       },
       "properties": {
@@ -2145,8 +2279,8 @@
         "lgbtq_focused": true,
         "youth_friendly": true,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "M/J at Flushing Av (415 ft)",
+        "bus": "B47 at MARCUS GARVEY BLVD/BROADWAY (234 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -2156,8 +2290,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9939,
-          40.7463
+          -73.993363,
+          40.746656
         ]
       },
       "properties": {
@@ -2210,8 +2344,8 @@
         "lgbtq_focused": true,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "1 at 28 St (204 ft)",
+        "bus": "M20, M7 at 7 AV/W 28 ST (158 ft)",
         "last_verified": "",
         "data_sources": ""
       }
@@ -2221,8 +2355,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -74.00227,
-          40.742905
+          -74.003117,
+          40.743047
         ]
       },
       "properties": {
@@ -2260,8 +2394,8 @@
         "lgbtq_focused": false,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "A/C/E at 14 St (879 ft)",
+        "bus": "M11, M12, M14D-SBS at 9 AV/W 18 ST (201 ft)",
         "last_verified": "",
         "data_sources": "NYC Open Data: hiv_services"
       }
@@ -2271,8 +2405,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9827,
-          40.6905
+          -73.982274,
+          40.689773
         ]
       },
       "properties": {
@@ -2310,8 +2444,8 @@
         "lgbtq_focused": false,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "B/Q/R at DeKalb Av (338 ft)",
+        "bus": "B38 at DE KALB AV/BOND ST (147 ft)",
         "last_verified": "",
         "data_sources": "Planned Parenthood Project xlsx"
       }
@@ -2321,8 +2455,92 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -74.0048,
-          40.7237
+          -73.994172,
+          40.7621
+        ]
+      },
+      "properties": {
+        "id": "recdHRE6efIR8vQJ5",
+        "name": "Ryan Chelsea-Clinton Community Health Center",
+        "address": "645 10th Ave",
+        "borough": "Manhattan",
+        "phone": "(212) 749-1820",
+        "website": "https://ryanhealth.org/locations/ryan-chelsea-clinton-community-health-center",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Sat"
+            ],
+            "open": "09:30",
+            "close": "13:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Wed",
+              "Fri"
+            ],
+            "open": "08:30",
+            "close": "16:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Thu"
+            ],
+            "open": "08:30",
+            "close": "19:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "organization": "",
+        "clinic_type": "",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": true,
+        "has_pep": true,
+        "has_contraception": false,
+        "has_abortion": false,
+        "has_gender_affirming": false,
+        "has_vaccines": false,
+        "medication_abortion": false,
+        "in_clinic_abortion": false,
+        "abortion_medication_limit": "",
+        "abortion_procedure_limit": "",
+        "abortion_medication_max_weeks": null,
+        "abortion_procedure_max_weeks": null,
+        "offers_late_term": false,
+        "accepts_medicaid": true,
+        "accepts_medicare": true,
+        "sliding_scale": true,
+        "no_insurance_ok": true,
+        "insurance_plans": [],
+        "walk_in": true,
+        "appointment_only": false,
+        "lgbtq_focused": false,
+        "youth_friendly": false,
+        "anonymous_testing": false,
+        "transit": "A/C/E at 42 St-Port Authority Bus Terminal (0.40 mi)",
+        "bus": "M11 at 10 AV/W 45 ST (165 ft)",
+        "last_verified": "",
+        "data_sources": "Yelp search, Ryan Health website"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.005145,
+          40.724128
         ]
       },
       "properties": {
@@ -2384,8 +2602,8 @@
         "lgbtq_focused": true,
         "youth_friendly": true,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "1 at Canal St (560 ft)",
+        "bus": "M55 at AV OF THE AMERICAS/BROOME ST (195 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -2434,8 +2652,8 @@
         "lgbtq_focused": false,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "2/5 at Freeman St (0.64 mi)",
+        "bus": "Bx15 at 3 AV/E 169 ST (358 ft)",
         "last_verified": "",
         "data_sources": "NYC Health Department Website"
       }
@@ -2445,8 +2663,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9103,
-          40.8236
+          -73.910558,
+          40.822129
         ]
       },
       "properties": {
@@ -2508,8 +2726,8 @@
         "lgbtq_focused": true,
         "youth_friendly": true,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "2/5 at Jackson Av (0.42 mi)",
+        "bus": "Bx15, Bx21 at 3 AV/E 161 ST (266 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -2519,8 +2737,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9823,
-          40.6922
+          -73.982058,
+          40.691771
         ]
       },
       "properties": {
@@ -2583,8 +2801,8 @@
         "lgbtq_focused": true,
         "youth_friendly": true,
         "anonymous_testing": true,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "B/Q/R at DeKalb Av (419 ft)",
+        "bus": "B54 at MYRTLE AV/FLEET PL (650 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -2594,8 +2812,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9242,
-          40.8175
+          -73.92437,
+          40.817045
         ]
       },
       "properties": {
@@ -2648,8 +2866,8 @@
         "lgbtq_focused": true,
         "youth_friendly": true,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "2/5 at 149 St-Grand Concourse (817 ft)",
+        "bus": "Bx19, Bx2 at E 149 ST/MORRIS AV (415 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -2659,8 +2877,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9189,
-          40.8357
+          -73.920638,
+          40.836225
         ]
       },
       "properties": {
@@ -2732,8 +2950,8 @@
         "lgbtq_focused": true,
         "youth_friendly": true,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "4 at 167 St (327 ft)",
+        "bus": "Bx35 at E 167 ST/RIVER AV (268 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -2743,8 +2961,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -74.0003,
-          40.7489
+          -73.99983,
+          40.749585
         ]
       },
       "properties": {
@@ -2807,8 +3025,8 @@
         "lgbtq_focused": true,
         "youth_friendly": false,
         "anonymous_testing": true,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "C/E at 23 St (0.27 mi)",
+        "bus": "M11 at 9 AV/W 28 ST (147 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -2818,8 +3036,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -74.0817,
-          40.6192
+          -74.076804,
+          40.620496
         ]
       },
       "properties": {
@@ -2872,8 +3090,8 @@
         "lgbtq_focused": true,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "SIR at Clifton (0.29 mi)",
+        "bus": "S52, S78, SIM30 at TOMPKINS AV/VANDERBILT AV (95 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -2883,8 +3101,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9185,
-          40.8163
+          -73.919711,
+          40.816869
         ]
       },
       "properties": {
@@ -2991,8 +3209,8 @@
         "lgbtq_focused": true,
         "youth_friendly": true,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "2/5 at 3 Av-149 St (607 ft)",
+        "bus": "Bx19 at E 149 ST/COURTLANDT AV (59 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -3002,8 +3220,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9011,
-          40.8133
+          -73.900746,
+          40.812808
         ]
       },
       "properties": {
@@ -3041,8 +3259,8 @@
         "lgbtq_focused": false,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "6 at E 149 St (959 ft)",
+        "bus": "Bx19 at SOUTHERN BL/AV SAINT JOHN (78 ft)",
         "last_verified": "",
         "data_sources": "Planned Parenthood Project xlsx"
       }
@@ -3052,8 +3270,58 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.8856,
-          40.7454
+          -73.939711,
+          40.814111
+        ]
+      },
+      "properties": {
+        "id": "reclMEjJ8cGS07MTs",
+        "name": "NYC Health + Hospitals / Harlem",
+        "address": "506 Lenox Ave, New York, NY 10037",
+        "borough": "Manhattan",
+        "phone": "(212) 939-8095",
+        "website": "",
+        "hours": [],
+        "organization": "",
+        "clinic_type": "",
+        "has_sti_testing": false,
+        "has_hiv_testing": false,
+        "has_prep": false,
+        "has_pep": false,
+        "has_contraception": false,
+        "has_abortion": false,
+        "has_gender_affirming": false,
+        "has_vaccines": false,
+        "medication_abortion": false,
+        "in_clinic_abortion": false,
+        "abortion_medication_limit": "",
+        "abortion_procedure_limit": "",
+        "abortion_medication_max_weeks": null,
+        "abortion_procedure_max_weeks": null,
+        "offers_late_term": false,
+        "accepts_medicaid": false,
+        "accepts_medicare": false,
+        "sliding_scale": false,
+        "no_insurance_ok": false,
+        "insurance_plans": [],
+        "walk_in": false,
+        "appointment_only": false,
+        "lgbtq_focused": false,
+        "youth_friendly": false,
+        "anonymous_testing": false,
+        "transit": "2/3 at 135 St (296 ft)",
+        "bus": "Bx33 at W 135 ST/MALCOLM X BL (198 ft)",
+        "last_verified": "",
+        "data_sources": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.885989,
+          40.745023
         ]
       },
       "properties": {
@@ -3129,8 +3397,8 @@
         "lgbtq_focused": true,
         "youth_friendly": true,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "7 at 82 St-Jackson Hts (0.22 mi)",
+        "bus": "Q53-SBS at BROADWAY/78 ST (258 ft)",
         "last_verified": "",
         "data_sources": ""
       }
@@ -3140,8 +3408,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9918,
-          40.7299
+          -73.992743,
+          40.729789
         ]
       },
       "properties": {
@@ -3202,8 +3470,8 @@
         "lgbtq_focused": true,
         "youth_friendly": true,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "R/W at 8 St-NYU (199 ft)",
+        "bus": "SIM1C, SIM33C, SIM3C, SIM4C... at BROADWAY/WAVERLY PL (193 ft)",
         "last_verified": "",
         "data_sources": ""
       }
@@ -3213,8 +3481,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9443,
-          40.8337
+          -73.942452,
+          40.833352
         ]
       },
       "properties": {
@@ -3276,8 +3544,8 @@
         "lgbtq_focused": true,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "1 at 157 St (718 ft)",
+        "bus": "M100, M101, M3 at AMSTERDAM AV/W 158 ST (187 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -3287,8 +3555,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9918,
-          40.6925
+          -73.991303,
+          40.692781
         ]
       },
       "properties": {
@@ -3387,8 +3655,8 @@
         "lgbtq_focused": true,
         "youth_friendly": true,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "4/5 at Borough Hall (347 ft)",
+        "bus": "B103, B25, B26, B38... at JORALEMON ST/COURT ST (196 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -3398,8 +3666,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9942,
-          40.755
+          -73.992215,
+          40.755261
         ]
       },
       "properties": {
@@ -3452,8 +3720,8 @@
         "lgbtq_focused": true,
         "youth_friendly": false,
         "anonymous_testing": true,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "A/C/E at 42 St-Port Authority Bus Terminal (0.19 mi)",
+        "bus": "M20 at 8 AV/W 39 ST (300 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -3463,8 +3731,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.7963,
-          40.7065
+          -73.796925,
+          40.706033
         ]
       },
       "properties": {
@@ -3535,8 +3803,8 @@
         "lgbtq_focused": true,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "E/J/Z at Jamaica Center-Parsons/Archer (0.35 mi)",
+        "bus": "Q41, Q6, Q8, Q9 at JAMAICA AV / 164 ST (467 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -3546,8 +3814,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.8095,
-          40.7013
+          -73.806586,
+          40.701538
         ]
       },
       "properties": {
@@ -3609,8 +3877,8 @@
         "lgbtq_focused": false,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "E/J/Z at Sutphin Blvd-Archer Av-JFK Airport (542 ft)",
+        "bus": "Q41, Q6, Q8, Q9 at JAMAICA AV /148 ST (79 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -3620,8 +3888,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.8075,
-          40.6976
+          -73.80597,
+          40.69692
         ]
       },
       "properties": {
@@ -3674,8 +3942,8 @@
         "lgbtq_focused": true,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "E/J/Z at Sutphin Blvd-Archer Av-JFK Airport (0.27 mi)",
+        "bus": "Q40, Q6, Q60, Q8... at SUTPHIN BL /97 AV (160 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -3685,8 +3953,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9038,
-          40.8335
+          -73.903443,
+          40.832794
         ]
       },
       "properties": {
@@ -3739,8 +4007,8 @@
         "lgbtq_focused": true,
         "youth_friendly": true,
         "anonymous_testing": true,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "2/5 at Freeman St (0.64 mi)",
+        "bus": "Bx15 at 3 AV/E 169 ST (358 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -3750,8 +4018,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9961,
-          40.7162
+          -73.996977,
+          40.717029
         ]
       },
       "properties": {
@@ -3789,8 +4057,8 @@
         "lgbtq_focused": false,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "J/Z at Canal St (895 ft)",
+        "bus": "B99 at CANAL ST/BOWERY (253 ft)",
         "last_verified": "",
         "data_sources": "Planned Parenthood Project xlsx"
       }
@@ -3800,8 +4068,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9658,
-          40.5866
+          -73.96487,
+          40.58565
         ]
       },
       "properties": {
@@ -3854,8 +4122,8 @@
         "lgbtq_focused": true,
         "youth_friendly": true,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "F at Avenue X (0.56 mi)",
+        "bus": "B1, B36, B4 at OCEAN PY/SHORE PY (407 ft)",
         "last_verified": "",
         "data_sources": ""
       }
@@ -3865,8 +4133,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9363,
-          40.8143
+          -73.93715,
+          40.813864
         ]
       },
       "properties": {
@@ -3919,8 +4187,8 @@
         "lgbtq_focused": true,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "2/3 at 135 St (0.19 mi)",
+        "bus": "M1 at 5 AV/W 137 ST (49 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -3930,8 +4198,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.8962,
-          40.6765
+          -73.899127,
+          40.676034
         ]
       },
       "properties": {
@@ -3984,8 +4252,8 @@
         "lgbtq_focused": true,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "J/Z at Alabama Av (373 ft)",
+        "bus": "B20 at FULTON ST/ALABAMA AV (319 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -3995,8 +4263,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9922,
-          40.7549
+          -73.992215,
+          40.755261
         ]
       },
       "properties": {
@@ -4053,8 +4321,8 @@
         "lgbtq_focused": true,
         "youth_friendly": true,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "A/C/E at 42 St-Port Authority Bus Terminal (0.19 mi)",
+        "bus": "M20 at 8 AV/W 39 ST (300 ft)",
         "last_verified": "",
         "data_sources": ""
       }
@@ -4064,8 +4332,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9329,
-          40.758
+          -73.936804,
+          40.759346
         ]
       },
       "properties": {
@@ -4127,8 +4395,8 @@
         "lgbtq_focused": true,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "N/W at 36 Av (0.42 mi)",
+        "bus": "Q69 at 21 ST/36 AV (169 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -4138,8 +4406,58 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9808,
-          40.7458
+          -73.804176,
+          40.717004
+        ]
+      },
+      "properties": {
+        "id": "rect3ECyWg4XcvaK9",
+        "name": "NYC Health + Hospitals / Queens",
+        "address": "82-68 164th St, Jamaica, NY 11432",
+        "borough": "Queens",
+        "phone": "(718) 883-3244",
+        "website": "",
+        "hours": [],
+        "organization": "",
+        "clinic_type": "",
+        "has_sti_testing": false,
+        "has_hiv_testing": false,
+        "has_prep": false,
+        "has_pep": false,
+        "has_contraception": false,
+        "has_abortion": false,
+        "has_gender_affirming": false,
+        "has_vaccines": false,
+        "medication_abortion": false,
+        "in_clinic_abortion": false,
+        "abortion_medication_limit": "",
+        "abortion_procedure_limit": "",
+        "abortion_medication_max_weeks": null,
+        "abortion_procedure_max_weeks": null,
+        "offers_late_term": false,
+        "accepts_medicaid": false,
+        "accepts_medicare": false,
+        "sliding_scale": false,
+        "no_insurance_ok": false,
+        "insurance_plans": [],
+        "walk_in": false,
+        "appointment_only": false,
+        "lgbtq_focused": false,
+        "youth_friendly": false,
+        "anonymous_testing": false,
+        "transit": "F at Parsons Blvd (0.65 mi)",
+        "bus": "Q65 at 164 ST/QUEENS GENERAL HOSPITAL (227 ft)",
+        "last_verified": "",
+        "data_sources": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.980102,
+          40.745407
         ]
       },
       "properties": {
@@ -4177,8 +4495,8 @@
         "lgbtq_focused": false,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "6 at 33 St (598 ft)",
+        "bus": "SIM11, SIM6 at LEXINGTON AV/E 34 ST (192 ft)",
         "last_verified": "",
         "data_sources": "Planned Parenthood Project xlsx"
       }
@@ -4188,8 +4506,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -74.0758,
-          40.6425
+          -74.077327,
+          40.642059
         ]
       },
       "properties": {
@@ -4240,8 +4558,8 @@
         "lgbtq_focused": true,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "SIR at St George (0.23 mi)",
+        "bus": "S42, S52 at HYATT ST/CENTRAL AV (103 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -4251,8 +4569,108 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9466,
-          40.7831
+          -73.884065,
+          40.750024
+        ]
+      },
+      "properties": {
+        "id": "recvaATCITzpbs5g5",
+        "name": "Apicha Community Health Center (Jackson Heights)",
+        "address": "82-11 37th Ave, Jackson Heights, NY 11372",
+        "borough": "Queens",
+        "phone": "(718) 567-5200",
+        "website": "https://www.apicha.org/locations/jackson-heights-clinic/",
+        "hours": [],
+        "organization": "",
+        "clinic_type": "",
+        "has_sti_testing": false,
+        "has_hiv_testing": false,
+        "has_prep": false,
+        "has_pep": false,
+        "has_contraception": false,
+        "has_abortion": false,
+        "has_gender_affirming": false,
+        "has_vaccines": false,
+        "medication_abortion": false,
+        "in_clinic_abortion": false,
+        "abortion_medication_limit": "",
+        "abortion_procedure_limit": "",
+        "abortion_medication_max_weeks": null,
+        "abortion_procedure_max_weeks": null,
+        "offers_late_term": false,
+        "accepts_medicaid": false,
+        "accepts_medicare": false,
+        "sliding_scale": false,
+        "no_insurance_ok": false,
+        "insurance_plans": [],
+        "walk_in": false,
+        "appointment_only": false,
+        "lgbtq_focused": false,
+        "youth_friendly": false,
+        "anonymous_testing": false,
+        "transit": "7 at 82 St-Jackson Hts (869 ft)",
+        "bus": "Q32, Q33 at 82 ST/37 AV (122 ft)",
+        "last_verified": "",
+        "data_sources": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.078272,
+          40.626944
+        ]
+      },
+      "properties": {
+        "id": "recvtTblgl92vIKLo",
+        "name": "Community Health Center of Richmond - Canal Street",
+        "address": "135 Canal St, Staten Island, NY 10304",
+        "borough": "Staten Island",
+        "phone": "(718) 924-2254",
+        "website": "https://chcrichmond.org",
+        "hours": [],
+        "organization": "",
+        "clinic_type": "",
+        "has_sti_testing": false,
+        "has_hiv_testing": false,
+        "has_prep": false,
+        "has_pep": false,
+        "has_contraception": false,
+        "has_abortion": false,
+        "has_gender_affirming": false,
+        "has_vaccines": false,
+        "medication_abortion": false,
+        "in_clinic_abortion": false,
+        "abortion_medication_limit": "",
+        "abortion_procedure_limit": "",
+        "abortion_medication_max_weeks": null,
+        "abortion_procedure_max_weeks": null,
+        "offers_late_term": false,
+        "accepts_medicaid": false,
+        "accepts_medicare": false,
+        "sliding_scale": false,
+        "no_insurance_ok": false,
+        "insurance_plans": [],
+        "walk_in": false,
+        "appointment_only": false,
+        "lgbtq_focused": false,
+        "youth_friendly": false,
+        "anonymous_testing": false,
+        "transit": "SIR at Stapleton (931 ft)",
+        "bus": "S52, S74, S78, SIM30 at CANAL ST/WRIGHT ST (67 ft)",
+        "last_verified": "",
+        "data_sources": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.947193,
+          40.782353
         ]
       },
       "properties": {
@@ -4306,8 +4724,8 @@
         "lgbtq_focused": true,
         "youth_friendly": true,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "Q at 96 St (717 ft)",
+        "bus": "M15 at 2 AV/E 94 ST (328 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -4317,8 +4735,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -74.075957,
-          40.64139
+          -74.076236,
+          40.641523
         ]
       },
       "properties": {
@@ -4356,8 +4774,8 @@
         "lgbtq_focused": false,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "SIR at St George (0.21 mi)",
+        "bus": "S42, S46, S48, S51... at BAY ST/NICK LAPORTE PL (218 ft)",
         "last_verified": "",
         "data_sources": "NYC Open Data: hiv_services"
       }
@@ -4406,8 +4824,8 @@
         "lgbtq_focused": false,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "C/E at 23 St (0.27 mi)",
+        "bus": "M11 at 9 AV/W 28 ST (147 ft)",
         "last_verified": "",
         "data_sources": "NYC Health Department Website"
       }
@@ -4417,8 +4835,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9876,
-          40.7225
+          -73.98514,
+          40.72151
         ]
       },
       "properties": {
@@ -4480,8 +4898,8 @@
         "lgbtq_focused": true,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "M/J/Z at Delancey St-Essex St (0.25 mi)",
+        "bus": "M21, M9 at E HOUSTON ST/NORFOLK ST (78 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
@@ -4491,8 +4909,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.8028,
-          40.7067
+          -73.800209,
+          40.703964
         ]
       },
       "properties": {
@@ -4545,17 +4963,17 @@
         "lgbtq_focused": true,
         "youth_friendly": false,
         "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
+        "transit": "E/J/Z at Jamaica Center-Parsons/Archer (708 ft)",
+        "bus": "Q25, Q34, Q65 at PARSONS BL/JAMAICA AV (127 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025"
       }
     }
   ],
   "metadata": {
-    "generated": "2025-12-21T02:34:06.265Z",
+    "generated": "2025-12-21T03:15:21.649Z",
     "source": "Airtable",
-    "total_records": 70,
-    "records_with_coords": 68
+    "total_records": 75,
+    "records_with_coords": 75
   }
 }
