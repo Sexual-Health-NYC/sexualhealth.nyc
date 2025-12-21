@@ -28,6 +28,17 @@ export default function ClinicDetailPanel() {
     setShowCorrectionForm(false);
   }, [selectedClinic]);
 
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === "Escape" && selectedClinic) {
+        selectClinic(null);
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, [selectedClinic, selectClinic]);
+
   if (!selectedClinic) return null;
 
   const openStatus = getOpenStatus(selectedClinic.hours);
@@ -298,7 +309,7 @@ export default function ClinicDetailPanel() {
               {copiedAddress ? "✓ copied" : "copy"}
             </button>
             <a
-              href={`https://www.openstreetmap.org/directions?route=;${selectedClinic.latitude},${selectedClinic.longitude}`}
+              href={`https://www.openstreetmap.org/directions?from=&to=${selectedClinic.latitude},${selectedClinic.longitude}#map=15/${selectedClinic.latitude}/${selectedClinic.longitude}`}
               target="_blank"
               rel="noopener noreferrer"
               style={{

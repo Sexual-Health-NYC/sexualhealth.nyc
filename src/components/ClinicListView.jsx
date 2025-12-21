@@ -20,7 +20,7 @@ export default function ClinicListView({ clinics, onShowMap }) {
     "actions",
     "dynamic",
   ]);
-  const { selectClinic } = useAppStore();
+  const { selectClinic, setMapViewport } = useAppStore();
   const [expandedId, setExpandedId] = useState(null);
 
   if (clinics.length === 0) {
@@ -69,6 +69,11 @@ export default function ClinicListView({ clinics, onShowMap }) {
             }
             onShowOnMap={() => {
               selectClinic(clinic);
+              setMapViewport({
+                longitude: clinic.longitude,
+                latitude: clinic.latitude,
+                zoom: 15,
+              });
               onShowMap();
             }}
             t={t}
@@ -382,7 +387,7 @@ function ClinicCard({ clinic, expanded, onToggle, onShowOnMap, t }) {
               {copiedAddress ? "✓ copied" : "copy"}
             </button>
             <a
-              href={`https://www.openstreetmap.org/directions?route=;${clinic.latitude},${clinic.longitude}`}
+              href={`https://www.openstreetmap.org/directions?from=&to=${clinic.latitude},${clinic.longitude}#map=15/${clinic.latitude}/${clinic.longitude}`}
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
