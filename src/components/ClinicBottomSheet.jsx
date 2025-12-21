@@ -9,6 +9,7 @@ import ClinicAddress from "./clinic/ClinicAddress";
 import ClinicHours from "./clinic/ClinicHours";
 import ClinicContact from "./clinic/ClinicContact";
 import ClinicInsurance from "./clinic/ClinicInsurance";
+import ClinicVerificationBadge from "./clinic/ClinicVerificationBadge";
 
 export default function ClinicBottomSheet() {
   const { t } = useTranslation(["actions", "forms"]);
@@ -122,6 +123,7 @@ export default function ClinicBottomSheet() {
               {selectedClinic.name}
             </h2>
             <ClinicStatusBadge clinic={selectedClinic} />
+            <ClinicVerificationBadge clinic={selectedClinic} />
           </div>
           <button
             onClick={() => selectClinic(null)}

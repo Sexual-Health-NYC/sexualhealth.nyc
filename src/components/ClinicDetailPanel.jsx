@@ -9,6 +9,7 @@ import ClinicAddress from "./clinic/ClinicAddress";
 import ClinicHours from "./clinic/ClinicHours";
 import ClinicContact from "./clinic/ClinicContact";
 import ClinicInsurance from "./clinic/ClinicInsurance";
+import ClinicVerificationBadge from "./clinic/ClinicVerificationBadge";
 
 export default function ClinicDetailPanel() {
   const { t } = useTranslation(["actions", "forms"]);
@@ -74,6 +75,7 @@ export default function ClinicDetailPanel() {
               {selectedClinic.name}
             </h2>
             <ClinicStatusBadge clinic={selectedClinic} />
+            <ClinicVerificationBadge clinic={selectedClinic} />
           </div>
           <button
             onClick={() => selectClinic(null)}
