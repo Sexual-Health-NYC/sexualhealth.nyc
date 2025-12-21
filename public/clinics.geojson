@@ -2635,7 +2635,7 @@
         "transit": "",
         "bus": "",
         "last_verified": "",
-        "data_sources": "GEMINI-GENDER-AFFIRMING.md research (Dec 2024)",
+        "data_sources": "GEMINI-GENDER-AFFIRMING.md research (Dec 2024); NYU Langone website. IMPORTANT: In Jan 2025, NYU Langone paused youth gender-affirming care following federal executive order. As of March 2025, care has reportedly resumed but may be limited to existing patients. Callers should verify current acceptance of new minor patients.",
         "is_virtual": false
       }
     },
@@ -6392,7 +6392,7 @@
     }
   ],
   "metadata": {
-    "generated": "2025-12-21T15:41:37.986Z",
+    "generated": "2025-12-21T15:48:14.797Z",
     "source": "Airtable",
     "total_records": 85,
     "records_with_coords": 75
