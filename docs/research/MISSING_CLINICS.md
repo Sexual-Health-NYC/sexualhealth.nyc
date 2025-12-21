@@ -5,7 +5,8 @@ This document tracks clinics identified in research documents that are not yet p
 ## Priority 1: From Previous Research (Updated Status)
 
 ## 1. Apicha Community Health Center (Jackson Heights)
-*Status: ADDED to Airtable*
+
+_Status: ADDED to Airtable_
 
 - **Clinic Name:** Apicha Community Health Center (Jackson Heights)
 - **Address:** 82-11 37th Ave, Jackson Heights, NY 11372
@@ -19,7 +20,8 @@ This document tracks clinics identified in research documents that are not yet p
 - **LGBTQ+ Focused:** Yes
 
 ## 2. Community Health Center of Richmond - Canal Street
-*Status: ADDED to Airtable*
+
+_Status: ADDED to Airtable_
 
 - **Clinic Name:** Community Health Center of Richmond - Canal Street
 - **Address:** 135 Canal St, Staten Island, NY 10304
@@ -32,7 +34,8 @@ This document tracks clinics identified in research documents that are not yet p
 - **Insurance:** Medicaid, Sliding Scale, No Insurance OK
 
 ## 3. NYC Health + Hospitals / Queens
-*Status: ADDED to Airtable*
+
+_Status: ADDED to Airtable_
 
 - **Clinic Name:** NYC Health + Hospitals/Queens (Women's Health Services)
 - **Address:** 82-68 164th St, Jamaica, NY 11432
@@ -46,7 +49,8 @@ This document tracks clinics identified in research documents that are not yet p
 - **Notes:** Women's Health Services department.
 
 ## 4. NYC Health + Hospitals / Harlem
-*Status: ADDED to Airtable*
+
+_Status: ADDED to Airtable_
 
 - **Clinic Name:** NYC Health + Hospitals/Harlem (Family Planning Clinic)
 - **Address:** 506 Lenox Ave, New York, NY 10037
@@ -66,35 +70,54 @@ This document tracks clinics identified in research documents that are not yet p
 The following clinics/programs have been identified as potentially missing or needing detailed research to determine their suitability for inclusion and to gather their full details.
 
 ### 1. Queens Hospital Center (H+H)
-*Status: Needs Research*
+
+_Status: Needs Research_
+
 - **Reason:** Identified as missing in `GEMINI-RESEARCH-ROUND2.md`. Likely part of NYC Health + Hospitals/Queens. Need specific sexual health/women's health clinic details.
 
 ### 2. Harlem Hospital (H+H)
-*Status: Needs Research*
+
+_Status: Needs Research_
+
 - **Reason:** Identified as missing in `GEMINI-RESEARCH-ROUND2.md`. Likely part of NYC Health + Hospitals/Harlem. Need specific sexual health/women's health clinic details.
 
 ### 3. Coney Island (H+H)
-*Status: Needs Research*
+
+_Status: Needs Research_
+
 - **Reason:** Identified as missing in `GEMINI-RESEARCH-ROUND2.md`. While "NYC Health + Hospitals/South Brooklyn Health" exists in DB (new name for Coney Island Hospital), we need to confirm if it contains specific sexual health clinic details within it.
 
 ### 4. Manhattan Women's Health & Wellness (Private)
-*Status: Needs Research*
+
+_Status: Needs Research_
+
 - **Reason:** Mentioned as missing in `GEMINI-RESEARCH-ROUND2.md`. Need to verify if it offers specialized sexual health services beyond general OB/GYN.
 
 ### 5. Ambulatory Surgical Center (Private)
-*Status: Needs Research*
+
+_Status: Needs Research_
+
 - **Reason:** Mentioned as missing in `GEMINI-RESEARCH-ROUND2.md`. Need to verify if it's distinct from "Brooklyn Abortion Clinic" or just an alias.
 
 ### 6. Planned Parenthood - Manhattan (Margaret Sanger)
-*Status: Needs Research*
+
+_Status: Needs Research_
+
 - **Reason:** Identified as missing in `GEMINI-RESEARCH-ROUND2.md`. Document suggests it might be closed. Need to verify closure or new location/services.
 
 ### 7. Mount Sinai CTMS
-*Status: Needs Research*
-- **Reason:** Center for Transgender Medicine and Surgery (CTMS) at Mount Sinai identified in `GEMINI-GENDER-AFFIRMING.md`. Need to gather specific address (e.g., floor/suite), phone, and hours for this specialized program.
+
+_Status: ADDED to Airtable (Dec 2024)_
+
+- **Clinic Name:** Mount Sinai Center for Transgender Medicine and Surgery (CTMS)
+- **Address:** 275 7th Avenue, 12th Floor, New York, NY 10001
+- **Phone:** (212) 604-1730
+- **Website:** https://www.mountsinai.org/care/transgender-medicine
+- **Services:** Gender-Affirming Care (Hormones + Surgery), STI Testing, HIV Testing, PrEP, PEP
 
 ### 8. NYU Langone Health - Transgender Health Program (Adult)
-*Status: ADDED to Airtable*
+
+_Status: ADDED to Airtable_
 
 - **Clinic Name:** NYU Langone Health - Transgender Health Program (Adult)
 - **Address:** 550 First Avenue, New York, NY 10016
@@ -108,7 +131,8 @@ The following clinics/programs have been identified as potentially missing or ne
 - **Notes:** Distributed services across NYU Langone. Call for specific doctor's location and hours.
 
 ### 9. NYU Langone Health - Hassenfeld Children's Hospital (Transgender Youth Health Program)
-*Status: ADDED to Airtable*
+
+_Status: ADDED to Airtable_
 
 - **Clinic Name:** NYU Langone Health - Hassenfeld Children's Hospital (Transgender Youth Health Program)
 - **Address:** One Park Avenue, 7th Floor, New York, NY 10016 (Child Study Center—Manhattan)
@@ -122,25 +146,37 @@ The following clinics/programs have been identified as potentially missing or ne
 - **Notes:** Dedicated program for youth. Early 2025 reports of denial of care to minors due to political pressure; status for minors should be verified by caller.
 
 ### 10. BronxCare Hospital Center (DAC)
-*Status: Needs Research*
+
+_Status: Needs Research_
+
 - **Reason:** Designated AIDS Center identified in `GEMINI-GENDER-AFFIRMING.md` as part of the DAC network. Need to gather specific sexual health/HIV clinic details.
 
 ### 11. Montefiore Medical Center (Center for Positive Living)
-*Status: Needs Research*
+
+_Status: Needs Research_
+
 - **Reason:** Designated AIDS Center identified in `GEMINI-GENDER-AFFIRMING.md`. We have "The Oval Center at Montefiore" in DB, need to verify if this is the same or a distinct entry.
 
 ### 12. Brookdale Hospital (STAR Health)
-*Status: Needs Research*
+
+_Status: Needs Research_
+
 - **Reason:** Designated AIDS Center identified in `GEMINI-GENDER-AFFIRMING.md`. Need to gather specific sexual health/HIV clinic details.
 
 ### 13. The Brooklyn Hospital Center (P.A.T.H. Center)
-*Status: Needs Research*
+
+_Status: Needs Research_
+
 - **Reason:** Designated AIDS Center identified in `GEMINI-GENDER-AFFIRMING.md`. Need to gather specific sexual health/HIV clinic details.
 
 ### 14. Mount Sinai Beth Israel (DAC)
-*Status: Needs Research*
+
+_Status: Needs Research_
+
 - **Reason:** Designated AIDS Center identified in `GEMINI-GENDER-AFFIRMING.md`. Need to gather specific sexual health/HIV clinic details.
 
 ### 15. Mount Sinai Hospital (DAC)
-*Status: Needs Research*
+
+_Status: Needs Research_
+
 - **Reason:** Designated AIDS Center identified in `GEMINI-GENDER-AFFIRMING.md`. Need to gather specific sexual health/HIV clinic details.

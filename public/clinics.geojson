@@ -2586,6 +2586,64 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -73.981104,
+          40.748041
+        ]
+      },
+      "properties": {
+        "id": "recUxIRgbfbS8X5xa",
+        "name": "NYU Langone Hassenfeld Childrens Hospital - Transgender Youth Health Program",
+        "address": "One Park Avenue, 7th Floor, New York, NY 10016",
+        "borough": "Manhattan",
+        "phone": "(212) 263-5940",
+        "website": "https://nyulangone.org/locations/hassenfeld-childrens-hospital/transgender-youth-health-program",
+        "hours": [],
+        "organization": "",
+        "clinic_type": "",
+        "has_sti_testing": false,
+        "has_hiv_testing": false,
+        "has_prep": false,
+        "has_pep": false,
+        "prep_ap_registered": false,
+        "has_contraception": false,
+        "has_abortion": false,
+        "has_gender_affirming": true,
+        "has_vaccines": false,
+        "gender_affirming_youth": true,
+        "gender_affirming_hormones": true,
+        "gender_affirming_surgery": false,
+        "gender_affirming_youth_policy": "",
+        "medication_abortion": false,
+        "in_clinic_abortion": false,
+        "abortion_medication_limit": "",
+        "abortion_procedure_limit": "",
+        "abortion_medication_max_weeks": null,
+        "abortion_procedure_max_weeks": null,
+        "offers_late_term": false,
+        "accepts_medicaid": true,
+        "accepts_medicare": true,
+        "sliding_scale": false,
+        "no_insurance_ok": false,
+        "insurance_plans": [],
+        "medicaid_mcos": [],
+        "medicaid_type": null,
+        "walk_in": false,
+        "appointment_only": false,
+        "lgbtq_focused": true,
+        "youth_friendly": true,
+        "anonymous_testing": false,
+        "transit": "",
+        "bus": "",
+        "last_verified": "",
+        "data_sources": "GEMINI-GENDER-AFFIRMING.md research (Dec 2024)",
+        "is_virtual": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -73.8934,
           40.82354
         ]
@@ -3179,6 +3237,64 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -73.994152,
+          40.745558
+        ]
+      },
+      "properties": {
+        "id": "recbk3igjTN3oeaqT",
+        "name": "Mount Sinai Center for Transgender Medicine and Surgery (CTMS)",
+        "address": "275 7th Avenue, 12th Floor, New York, NY 10001",
+        "borough": "Manhattan",
+        "phone": "(212) 604-1730",
+        "website": "https://www.mountsinai.org/care/transgender-medicine",
+        "hours": [],
+        "organization": "Mount Sinai",
+        "clinic_type": "Hospital",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": true,
+        "has_pep": true,
+        "prep_ap_registered": false,
+        "has_contraception": false,
+        "has_abortion": false,
+        "has_gender_affirming": true,
+        "has_vaccines": false,
+        "gender_affirming_youth": false,
+        "gender_affirming_hormones": true,
+        "gender_affirming_surgery": true,
+        "gender_affirming_youth_policy": "",
+        "medication_abortion": false,
+        "in_clinic_abortion": false,
+        "abortion_medication_limit": "",
+        "abortion_procedure_limit": "",
+        "abortion_medication_max_weeks": null,
+        "abortion_procedure_max_weeks": null,
+        "offers_late_term": false,
+        "accepts_medicaid": true,
+        "accepts_medicare": true,
+        "sliding_scale": false,
+        "no_insurance_ok": false,
+        "insurance_plans": [],
+        "medicaid_mcos": [],
+        "medicaid_type": null,
+        "walk_in": false,
+        "appointment_only": false,
+        "lgbtq_focused": true,
+        "youth_friendly": false,
+        "anonymous_testing": false,
+        "transit": "",
+        "bus": "",
+        "last_verified": "",
+        "data_sources": "GEMINI-GENDER-AFFIRMING.md research (Dec 2024); Mount Sinai website",
+        "is_virtual": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -73.982274,
           40.69037300000001
         ]
@@ -3629,6 +3745,64 @@
         "bus": "B54 at MYRTLE AV/FLEET PL (650 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025",
+        "is_virtual": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.973471,
+          40.741501
+        ]
+      },
+      "properties": {
+        "id": "recg5XpV0RrDDX2i9",
+        "name": "NYU Langone Transgender Health Program",
+        "address": "550 First Avenue, New York, NY 10016",
+        "borough": "Manhattan",
+        "phone": "(646) 929-7875",
+        "website": "https://nyulangone.org/locations/transgender-health-program",
+        "hours": [],
+        "organization": "",
+        "clinic_type": "",
+        "has_sti_testing": true,
+        "has_hiv_testing": true,
+        "has_prep": true,
+        "has_pep": true,
+        "prep_ap_registered": false,
+        "has_contraception": true,
+        "has_abortion": false,
+        "has_gender_affirming": true,
+        "has_vaccines": false,
+        "gender_affirming_youth": false,
+        "gender_affirming_hormones": true,
+        "gender_affirming_surgery": true,
+        "gender_affirming_youth_policy": "",
+        "medication_abortion": false,
+        "in_clinic_abortion": false,
+        "abortion_medication_limit": "",
+        "abortion_procedure_limit": "",
+        "abortion_medication_max_weeks": null,
+        "abortion_procedure_max_weeks": null,
+        "offers_late_term": false,
+        "accepts_medicaid": true,
+        "accepts_medicare": true,
+        "sliding_scale": false,
+        "no_insurance_ok": false,
+        "insurance_plans": [],
+        "medicaid_mcos": [],
+        "medicaid_type": null,
+        "walk_in": false,
+        "appointment_only": false,
+        "lgbtq_focused": true,
+        "youth_friendly": false,
+        "anonymous_testing": false,
+        "transit": "",
+        "bus": "",
+        "last_verified": "",
+        "data_sources": "GEMINI-GENDER-AFFIRMING.md research (Dec 2024)",
         "is_virtual": false
       }
     },
@@ -6218,9 +6392,9 @@
     }
   ],
   "metadata": {
-    "generated": "2025-12-21T08:09:26.780Z",
+    "generated": "2025-12-21T15:41:37.986Z",
     "source": "Airtable",
-    "total_records": 82,
-    "records_with_coords": 72
+    "total_records": 85,
+    "records_with_coords": 75
   }
 }
