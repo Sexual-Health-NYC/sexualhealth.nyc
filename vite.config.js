@@ -11,6 +11,13 @@ export default defineConfig({
         main: "index.html",
         embed: "test-embed.html",
       },
+      output: {
+        manualChunks(id) {
+          if (id.includes("node_modules/mapbox-gl")) {
+            return "mapbox-gl";
+          }
+        },
+      },
     },
   },
   publicDir: "public",
