@@ -56,9 +56,11 @@ export default function App() {
 
       // Gestational age: filter abortion clinics by weeks
       if (filters.gestationalWeeks !== null) {
-        // 99 means "late-term (20+ weeks)" - look for offers_late_term
+        // 99 means "beyond 24 weeks" - check checkbox OR procedure weeks > 24
         if (filters.gestationalWeeks === 99) {
-          if (!clinic.offers_late_term) return false;
+          const hasBeyond24 =
+            clinic.offers_late_term || clinic.abortion_procedure_max_weeks > 24;
+          if (!hasBeyond24) return false;
         } else {
           // Check if clinic can serve this gestational age
           const medMax = clinic.abortion_medication_max_weeks;
