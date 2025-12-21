@@ -128,11 +128,42 @@ function extractMedicaidInfo(insurancePlans) {
   return { medicaid_mcos: mcos, medicaid_type: medicaidType };
 }
 
+function recordToVirtualClinic(record) {
+  const f = record.fields;
+
+  // Only include virtual clinics
+  if (!f["Is Virtual"]) {
+    return null;
+  }
+
+  return {
+    id: record.id,
+    name: f["Clinic Name"] || "",
+    phone: f.Phone || "",
+    website: f.Website || "",
+    email: f["Public Email"] || "",
+
+    // Services
+    has_abortion: f.Abortion || false,
+    medication_abortion: f["Medication Abortion"] || false,
+    abortion_medication_max_weeks: f["Abortion Medication Max Weeks"] || null,
+    has_contraception: f.Contraception || false,
+
+    // Insurance
+    accepts_medicaid: f["Accepts Medicaid"] || false,
+    sliding_scale: f["Sliding Scale"] || false,
+    no_insurance_ok: f["No Insurance OK"] || false,
+
+    // Metadata
+    data_sources: f["Data Sources"] || "",
+  };
+}
+
 function recordToFeature(record, hoursMap) {
   const f = record.fields;
 
-  // Skip records without coordinates
-  if (!f.Latitude || !f.Longitude) {
+  // Skip virtual clinics (no physical location) and records without coordinates
+  if (f["Is Virtual"] || !f.Latitude || !f.Longitude) {
     return null;
   }
 
@@ -168,6 +199,12 @@ function recordToFeature(record, hoursMap) {
       has_gender_affirming: f["Gender-Affirming Care"] || false,
       has_vaccines: f.Vaccines || false,
 
+      // Gender Affirming Details
+      gender_affirming_youth: f["Gender Affirming Care (Youth)"] || false,
+      gender_affirming_hormones: f["Gender Affirming Hormones"] || false,
+      gender_affirming_surgery: f["Gender Affirming Surgery"] || false,
+      gender_affirming_youth_policy: f["Gender Affirming Youth Policy"] || "",
+
       // Service subtypes
       medication_abortion: f["Medication Abortion"] || false,
       in_clinic_abortion: f["In-Clinic Abortion"] || false,
@@ -202,6 +239,9 @@ function recordToFeature(record, hoursMap) {
       // Metadata
       last_verified: f["Last Verified"] || "",
       data_sources: f["Data Sources"] || "",
+
+      // Virtual/telehealth
+      is_virtual: f["Is Virtual"] || false,
     },
   };
 }
@@ -231,7 +271,12 @@ async function main() {
     .map((r) => recordToFeature(r, hoursMap))
     .filter((f) => f !== null);
 
-  console.log(`${features.length} records have coordinates`);
+  const virtualClinics = clinics
+    .map((r) => recordToVirtualClinic(r))
+    .filter((v) => v !== null);
+
+  console.log(`${features.length} physical clinics with coordinates`);
+  console.log(`${virtualClinics.length} virtual/telehealth clinics`);
 
   const geojson = {
     type: "FeatureCollection",
@@ -247,6 +292,19 @@ async function main() {
   const outputPath = path.join(rootDir, "public", "clinics.geojson");
   fs.writeFileSync(outputPath, JSON.stringify(geojson, null, 2));
   console.log(`Wrote ${outputPath}`);
+
+  // Write virtual clinics to separate JSON file
+  const virtualOutput = {
+    clinics: virtualClinics,
+    metadata: {
+      generated: new Date().toISOString(),
+      source: "Airtable",
+      count: virtualClinics.length,
+    },
+  };
+  const virtualPath = path.join(rootDir, "public", "virtual-clinics.json");
+  fs.writeFileSync(virtualPath, JSON.stringify(virtualOutput, null, 2));
+  console.log(`Wrote ${virtualPath}`);
 
   // Summary
   const withAbortion = features.filter((f) => f.properties.has_abortion).length;
