@@ -25,8 +25,10 @@ const useAppStore = create((set) => ({
     latitude: 40.7831,
     zoom: 11,
   },
+  mapRef: null,
 
   // Actions
+  setMapRef: (ref) => set({ mapRef: ref }),
   setClinics: (clinics) => set({ clinics }),
   selectClinic: (clinic) => set({ selectedClinic: clinic }),
   setMapViewport: (viewport) => set({ mapViewport: viewport }),

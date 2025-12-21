@@ -165,7 +165,7 @@ export default function FilterBar() {
               boxShadow: theme.shadows.lg,
               padding: theme.spacing[2],
               minWidth: "220px",
-              zIndex: 100,
+              zIndex: 1000,
             }}
           >
             {options.map((option) => (
@@ -286,7 +286,7 @@ export default function FilterBar() {
               boxShadow: theme.shadows.lg,
               padding: theme.spacing[2],
               minWidth: "200px",
-              zIndex: 100,
+              zIndex: 1000,
             }}
           >
             {gestationalOptions.map((option) => (
@@ -620,6 +620,10 @@ export default function FilterBar() {
                   ...base,
                   backgroundColor: `${theme.colors.primary}20`,
                 }),
+                menu: (base) => ({
+                  ...base,
+                  zIndex: 1000,
+                }),
               }}
             />
           </div>
@@ -656,6 +660,10 @@ export default function FilterBar() {
                 multiValue: (base) => ({
                   ...base,
                   backgroundColor: `${theme.colors.primary}20`,
+                }),
+                menu: (base) => ({
+                  ...base,
+                  zIndex: 1000,
                 }),
               }}
             />

@@ -24,8 +24,16 @@ export default function Map({ filteredClinics }) {
     setClinics,
     selectedClinic,
     selectClinic,
+    setMapRef,
   } = useAppStore();
   const mapRef = useRef();
+
+  // Store map ref globally for cluster zoom animations
+  useEffect(() => {
+    if (mapRef.current) {
+      setMapRef(mapRef);
+    }
+  }, [mapRef.current, setMapRef]);
 
   useEffect(() => {
     // Load clinics data
