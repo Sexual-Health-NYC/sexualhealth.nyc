@@ -18,8 +18,13 @@ export default function FilterBar() {
     "gestational",
     "messages",
   ]);
-  const { filters, setFilter, clearFilters, setGestationalWeeks } =
-    useAppStore();
+  const {
+    filters,
+    setFilter,
+    clearFilters,
+    setGestationalWeeks,
+    selectedClinic,
+  } = useAppStore();
   const {
     serviceOptions,
     insuranceOptions,
@@ -54,6 +59,13 @@ export default function FilterBar() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [openDropdown]);
+
+  // Close mobile filter modal when a clinic is selected
+  useEffect(() => {
+    if (selectedClinic && isModalOpen && isMobile) {
+      setIsModalOpen(false);
+    }
+  }, [selectedClinic, isModalOpen, isMobile]);
 
   const handleCheckbox = (category, value) => {
     const newFilters = { ...filters };
