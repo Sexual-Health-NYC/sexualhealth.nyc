@@ -9,5 +9,10 @@
   "prepAP": "PrEP-AP (经济援助)",
   "virtualTelehealth": "虚拟 / 远程医疗",
   "clearAllFilters": "清除所有筛选器",
-  "closeFilters": "关闭筛选器"
+  "closeFilters": "关闭筛选器",
+  "borough": "行政区",
+  "services": "服务",
+  "availability": "可用性",
+  "filters": "筛选",
+  "insuranceAndCost": "保险与费用"
 }

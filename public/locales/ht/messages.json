@@ -23,5 +23,10 @@
   "allDay": "Tout jounen",
   "openAfter5pm": "Louvri apre 5pm",
   "subway": "Liy tren",
-  "bus": "Wout otobis"
+  "bus": "Wout otobis",
+  "search": "Chèche",
+  "selectBus": "Chwazi wout otobis yo",
+  "selectSubway": "Chwazi liy tren yo",
+  "hours": "Lè travay",
+  "searchByName": "Chèche pa non klinik..."
 }

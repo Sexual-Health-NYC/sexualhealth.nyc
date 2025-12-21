@@ -23,5 +23,10 @@
   "allDay": "全天",
   "openAfter5pm": "下午5点后营业",
   "subway": "地铁线路",
-  "bus": "公交线路"
+  "bus": "公交线路",
+  "search": "搜索",
+  "selectBus": "选择公交路线",
+  "selectSubway": "选择地铁线路",
+  "hours": "营业时间",
+  "searchByName": "按诊所名称搜索..."
 }

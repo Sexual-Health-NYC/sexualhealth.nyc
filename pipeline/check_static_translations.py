@@ -39,7 +39,7 @@ def find_keys_in_code(src_dir):
     # Also handles t('ns:key')
     # Use simple capture group for quote to ensure matching
     # Matches t("...") or t('...')
-    regex = re.compile(r'''t\((['"])([a-zA-Z0-9_.:\-]+)\1\)''')
+    regex = re.compile(r'''\bt\((['"])([a-zA-Z0-9_.:\-]+)\1\)''')
     
     found_keys = set()
     file_count = 0
@@ -62,12 +62,6 @@ def find_keys_in_code(src_dir):
                         found_keys.add(match[1])
     
     print(f"Scanned {file_count} files.")
-    # Test regex
-    test_str = 't("services:stiTesting")'
-    if not regex.search(test_str):
-        print("❌ Regex test failed on: " + test_str)
-    else:
-        print("✅ Regex test passed.")
         
     return found_keys
 

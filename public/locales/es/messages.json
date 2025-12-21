@@ -23,5 +23,10 @@
   "skipToMain": "Saltar al contenido principal",
   "openAfter5pm": "Abierto después de 5pm",
   "subway": "Línea de metro",
-  "bus": "Ruta de autobús"
+  "bus": "Ruta de autobús",
+  "search": "Buscar",
+  "selectBus": "Seleccionar rutas de autobús",
+  "selectSubway": "Seleccionar líneas de metro",
+  "hours": "Horario",
+  "searchByName": "Buscar por nombre de clínica..."
 }

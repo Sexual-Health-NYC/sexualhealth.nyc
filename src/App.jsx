@@ -214,8 +214,7 @@ export default function App() {
           overflow: "hidden",
         }}
       >
-        Sexual Health NYC - Find Clinics for STI Testing, HIV Testing, PrEP,
-        PEP, Contraception, and Abortion Services
+        {t("messages:siteTitle")}
       </h1>
 
       <FilterBar />

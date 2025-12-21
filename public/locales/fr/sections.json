@@ -8,5 +8,7 @@
   "phone": "Téléphone",
   "website": "Site Web",
   "borough": "Arrondissement",
-  "access": "Accès"
+  "access": "Accès",
+  "telehealthDescription": "Recevez des pilules abortives par courrier — aucune visite en personne requise",
+  "telehealthOptions": "Options de télésanté"
 }

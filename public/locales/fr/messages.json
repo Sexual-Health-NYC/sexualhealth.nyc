@@ -23,5 +23,10 @@
   "allDay": "Toute la journée",
   "openAfter5pm": "Ouvert après 17h",
   "subway": "Ligne de métro",
-  "bus": "Ligne de bus"
+  "bus": "Ligne de bus",
+  "search": "Rechercher",
+  "selectBus": "Sélectionner les lignes de bus",
+  "selectSubway": "Sélectionner les lignes de métro",
+  "hours": "Horaires",
+  "searchByName": "Rechercher par nom de clinique..."
 }

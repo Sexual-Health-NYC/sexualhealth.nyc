@@ -454,7 +454,7 @@ export default function ClinicDetails({ clinic }) {
           aria-expanded={showCorrectionForm}
         >
           {showCorrectionForm
-            ? "Cancel correction"
+            ? t("actions:cancelCorrection")
             : t("actions:reportCorrection")}
         </button>
 

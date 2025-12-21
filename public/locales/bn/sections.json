@@ -8,5 +8,7 @@
   "phone": "ফোন",
   "website": "ওয়েবসাইট",
   "borough": "বরো",
-  "access": "অ্যাক্সেস"
+  "access": "অ্যাক্সেস",
+  "telehealthDescription": "ডাকে গর্ভপাতের বড়ি পান — সশরীরে উপস্থিত হওয়ার প্রয়োজন নেই",
+  "telehealthOptions": "টেলিহেলথ বিকল্প"
 }

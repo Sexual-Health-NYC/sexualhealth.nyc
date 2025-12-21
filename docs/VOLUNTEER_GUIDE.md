@@ -4,86 +4,74 @@ Help us build the most accurate sexual health directory for NYC.
 
 ## Before you call
 
-Look up the clinic on our site first. Know what services we list for them so you can verify intelligently. If we say they offer PrEP, ask about PrEP. If we say they do abortion, ask about that. Don't ask a PrEP clinic about abortion services.
-
-Clinic staff are busy. Be efficient, friendly, and genuinely curious. If they seem rushed, offer to call back.
+Look up the clinic on our site first. Note what services we list for them — you'll only ask about those. A clinic that does PrEP and STI testing doesn't need questions about abortion.
 
 ## The call
 
-**Start with:**
+**Opening:**
 
 > "Hi, I'm a volunteer with sexualhealth.nyc — we're a free directory helping New Yorkers find sexual health services. I'm calling to make sure our listing for [clinic name] is accurate. Do you have a couple minutes?"
 
-If yes, verify what's relevant to that clinic. If no, ask when's a better time.
+If they're busy, ask when's better and call back then.
 
-**Core questions (for any clinic):**
+**Core questions:**
 
-- What are your hours? (If a hospital: "specifically for the sexual health clinic or family planning department")
-- Do you take walk-ins or is it appointment only?
-- Is there a registration cutoff before closing?
+- What are your hours? (At hospitals, ask specifically about the sexual health clinic or family planning department — not the ER)
+- Walk-ins accepted, or appointment only?
+- Any registration cutoff before closing?
 
-**Before you hang up:**
+**Closing:**
 
-> "If your hours or services ever change, is there an email we can reach out to?"
+> "If your hours or services change, is there an email we can reach out to?"
 
-This contact info is valuable for future updates.
+Direct contact info helps us keep listings current.
 
 ## Service-specific questions
 
-Only ask these if we list the clinic as offering that service.
+Ask these based on what we list for the clinic.
 
-### STI testing / HIV testing
+**STI / HIV testing**
 
 - How long for results?
 - Anonymous testing available?
-- Any age restrictions?
 
-### PrEP
+**PrEP**
 
-- Do you prescribe PrEP on-site or refer out?
-- Informed consent model, or do patients need prior appointments/labs first?
-- PrEP-AP (financial assistance) available?
+- Prescribed on-site or referral?
+- Informed consent, or prior appointments/labs needed?
+- PrEP-AP financial assistance available?
 
-### Abortion
+**Abortion**
 
-- Medication abortion: up to how many weeks?
-- Procedural abortion: up to how many weeks?
-- Sedation options?
+- Medication abortion up to how many weeks?
+- Procedural abortion up to how many weeks?
+- Sedation available?
 
-### Gender-affirming care
+**Gender-affirming care**
 
-- Hormone therapy: informed consent, or letters required?
-- Do you see patients under 18?
-- Surgical referrals available?
+- Hormones: informed consent or letters required?
+- Patients under 18 seen?
+- Surgical referrals?
 
-### Contraception
+**Contraception**
 
-- IUD insertion available?
-- Same-day or appointment needed?
+- IUD insertion on-site?
+- Same-day or scheduled?
 
-## Tips
+## Notes
 
-**Hospital vs. clinic hours.** The ER is 24/7 but the Family Planning clinic might be Mon-Fri 9-5. Always ask about the specific department.
+Hospital hours aren't clinic hours. The building may be open 24/7, but Family Planning might only see patients Mon-Fri 9-5.
 
-**Lunch breaks.** Some clinics close 12-1pm. Worth asking.
+Some clinics close for lunch (12-1pm is common). Some stop taking patients 30-60 minutes before closing.
 
-**Registration cutoff.** "We close at 5pm but stop taking patients at 4pm" — note the earlier time.
+If something doesn't match our records — "we don't do PrEP" when we have them listed for it — worth a gentle follow-up: "oh interesting, maybe that changed recently?" Front desk staff don't always know every service.
 
-**Use judgment.** If the person sounds stressed or confused by a question, skip it. We can always call back. Don't waste their time reading a script robotically.
+## Submitting findings
 
-**Trust but verify.** If something sounds wrong ("we don't do PrEP" but we have them listed for PrEP), it's worth a gentle "oh interesting, our records show you do — maybe that changed recently?" Sometimes the front desk doesn't know all services.
+Use our [contact form](https://sexualhealth.nyc/contact) or update Airtable directly if you have access.
 
-## Submitting your findings
+Include: clinic name, date called, what you learned, and who you spoke with if they gave a name.
 
-Use our [contact form](https://sexualhealth.nyc/contact) or, if you have Airtable access, update directly.
+---
 
-Include:
-
-- Clinic name
-- Date you called
-- What you verified or corrected
-- Name of person you spoke with (if given)
-
-## Ready?
-
-**[See the Call List →](VOLUNTEER_CALL_LIST.md)**
+**[Call List →](VOLUNTEER_CALL_LIST.md)**

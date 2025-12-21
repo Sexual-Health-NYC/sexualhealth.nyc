@@ -9,5 +9,10 @@
   "prepAP": "PrEP-AP (Финансовая помощь)",
   "virtualTelehealth": "Виртуальный / Телемедицина",
   "clearAllFilters": "Очистить все фильтры",
-  "closeFilters": "Закрыть фильтры"
+  "closeFilters": "Закрыть фильтры",
+  "borough": "Район",
+  "services": "Услуги",
+  "availability": "Доступность",
+  "filters": "Фильтры",
+  "insuranceAndCost": "Страхование и стоимость"
 }

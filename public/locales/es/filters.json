@@ -9,5 +9,10 @@
   "prepAP": "PrEP-AP (Ayuda financiera)",
   "virtualTelehealth": "Virtual / Telesalud",
   "clearAllFilters": "Borrar todos los filtros",
-  "closeFilters": "Cerrar filtros"
+  "closeFilters": "Cerrar filtros",
+  "borough": "Condado",
+  "services": "Servicios",
+  "availability": "Disponibilidad",
+  "filters": "Filtros",
+  "insuranceAndCost": "Seguro y Costo"
 }

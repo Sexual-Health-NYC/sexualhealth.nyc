@@ -9,5 +9,10 @@
   "prepAP": "PrEP-AP (আর্থিক সহায়তা)",
   "virtualTelehealth": "ভার্চুয়াল / টেলিহেলথ",
   "clearAllFilters": "সব ফিল্টার মুছুন",
-  "closeFilters": "ফিল্টার বন্ধ করুন"
+  "closeFilters": "ফিল্টার বন্ধ করুন",
+  "borough": "এলাকা",
+  "services": "পরিষেবা",
+  "availability": "প্রাপ্যতা",
+  "filters": "ফিল্টার",
+  "insuranceAndCost": "বিমা এবং খরচ"
 }
