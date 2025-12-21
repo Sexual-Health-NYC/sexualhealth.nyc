@@ -1746,24 +1746,7 @@
         "borough": "Manhattan",
         "phone": "(212) 379-6988",
         "website": "https://www.cbwchc.org",
-        "hours": [
-          {
-            "department": "General",
-            "days": [
-              "Mon",
-              "Tue",
-              "Wed",
-              "Thu",
-              "Fri",
-              "Sat",
-              "Sun"
-            ],
-            "open": "09:00",
-            "close": "18:00",
-            "allDay": false,
-            "notes": ""
-          }
-        ],
+        "hours": [],
         "organization": "",
         "clinic_type": "",
         "has_sti_testing": true,
@@ -3014,16 +2997,6 @@
           {
             "department": "General",
             "days": [
-              "Sat"
-            ],
-            "open": "09:30",
-            "close": "13:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
               "Wed",
               "Fri"
             ],
@@ -3623,14 +3596,6 @@
         "phone": "(212) 965-7000",
         "website": "https://www.plannedparenthood.org/planned-parenthood-greater-new-york",
         "hours": [
-          {
-            "department": "General",
-            "days": [],
-            "open": "",
-            "close": "",
-            "allDay": false,
-            "notes": "check portal)"
-          },
           {
             "department": "General",
             "days": [
@@ -4894,14 +4859,6 @@
         "website": "https://www.aliforneycenter.org/",
         "hours": [
           {
-            "department": "General",
-            "days": [],
-            "open": "",
-            "close": "",
-            "allDay": false,
-            "notes": "24/7 Drop-in"
-          },
-          {
             "department": "Medical",
             "days": [
               "Mon"
@@ -5621,7 +5578,7 @@
     }
   ],
   "metadata": {
-    "generated": "2025-12-21T05:22:16.410Z",
+    "generated": "2025-12-21T06:17:45.297Z",
     "source": "Airtable",
     "total_records": 68,
     "records_with_coords": 68
