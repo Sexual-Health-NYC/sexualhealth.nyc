@@ -14,5 +14,13 @@
   "services": "דינסטן",
   "availability": "פאַראַנען",
   "filters": "פילטערס",
-  "insuranceAndCost": "אינשורענס און קאָסטן"
+  "insuranceAndCost": "אינשורענס און קאָסטן",
+  "informedConsentHRT": "הארמאן טעראפיע מיט באוויליקונג",
+  "topSurgery": "בריסט אפּעראציע (Top Surgery)",
+  "bottomSurgery": "אונטערשטע אפּעראציע (Bottom Surgery)",
+  "facialFeminization": "פנים פעמיניזאציע (FFS)",
+  "voiceTherapy": "קול טעראפיע",
+  "electrolysis": "עלעקטראליזע",
+  "facialMasculinization": "פנים מאַסקוליניזאַציע (FMS)",
+  "laserHairRemoval": "לאַזער האָר באַזייַטיקונג"
 }

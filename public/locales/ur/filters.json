@@ -14,5 +14,13 @@
   "services": "خدمات",
   "availability": "دستیابی",
   "filters": "فلٹرز",
-  "insuranceAndCost": "انشورنس اور قیمت"
+  "insuranceAndCost": "انشورنس اور قیمت",
+  "informedConsentHRT": "باخبر رضامندی HRT",
+  "topSurgery": "ٹاپ سرجری",
+  "bottomSurgery": "نچلے حصے کی سرجری",
+  "facialFeminization": "چہرے کی نسوانیت (FFS)",
+  "voiceTherapy": "آواز کی تھراپی",
+  "electrolysis": "الیکٹرولائسس",
+  "facialMasculinization": "چہرے کی مردانہ صفات (FMS)",
+  "laserHairRemoval": "لیزر کے ذریعے بالوں کا خاتمہ"
 }

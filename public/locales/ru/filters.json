@@ -14,5 +14,13 @@
   "services": "Услуги",
   "availability": "Доступность",
   "filters": "Фильтры",
-  "insuranceAndCost": "Страхование и стоимость"
+  "insuranceAndCost": "Страхование и стоимость",
+  "informedConsentHRT": "ГЗТ по информированному согласию",
+  "topSurgery": "Операции на груди (Top Surgery)",
+  "bottomSurgery": "Генитальная хирургия (Bottom Surgery)",
+  "facialFeminization": "Феминизация лица (FFS)",
+  "voiceTherapy": "Голосовая терапия",
+  "electrolysis": "Электроэпиляция",
+  "facialMasculinization": "Маскулинизация лица (FMS)",
+  "laserHairRemoval": "Лазерная эпиляция"
 }

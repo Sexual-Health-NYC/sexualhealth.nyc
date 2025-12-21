@@ -1,0 +1,212 @@
+{
+  "our_clinic_count": 75,
+  "service_coverage": {
+    "has_sti_testing": 54,
+    "has_hiv_testing": 54,
+    "has_prep": 44,
+    "has_pep": 31,
+    "has_contraception": 43,
+    "has_gender_affirming": 26,
+    "gender_affirming_hormones": 26,
+    "has_vaccines": 16,
+    "has_abortion": 21,
+    "gender_affirming_youth": 5,
+    "gender_affirming_surgery": 4
+  },
+  "gist_facilities": [
+    "Housing Works",
+    "NYU Langone",
+    "Northwell",
+    "New York Presbyterian",
+    "Planned Parenthood",
+    "Mt. Sinai/Mount Sinai",
+    "Beth Israel",
+    "Metropolitan Hospital",
+    "SUNY Downstate",
+    "Ryan Chelsea",
+    "Bellevue",
+    "The Oval Center",
+    "Montefiore",
+    "APICHA",
+    "Callen-Lorde",
+    "Lenox Hill"
+  ],
+  "gac_services_in_gist": [
+    "Body Contouring (Feminizing)",
+    "Body Contouring (Masculinizing)",
+    "Breast Augmentation",
+    "Chest Masculinization",
+    "Facial Fillers",
+    "Facial Feminization",
+    "Facial Masculinization",
+    "Hair Grafting",
+    "Hair Removal (Electrolysis)",
+    "Hair Removal (Laser)",
+    "Hysterectomy",
+    "Lymphatic Massage",
+    "Metoidioplasty",
+    "Orchiectomy",
+    "Phalloplasty",
+    "Silicone Removal",
+    "Speech Therapy / Voice Modification",
+    "Tracheal Shave",
+    "Vaginoplasty"
+  ],
+  "nyc_dacs": [
+    {
+      "facility": "\uf0b7     BronxCare Hospital Center",
+      "borough": "Bronx"
+    },
+    {
+      "facility": "\uf0b7     Montefiore Medical Center - Moses Division",
+      "borough": "Bronx"
+    },
+    {
+      "facility": "\uf0b7     Montefiore Medical Center \u2013 Moses Division",
+      "borough": "Bronx"
+    },
+    {
+      "facility": "\uf0b7     New York City H + H / Jacobi",
+      "borough": "Bronx"
+    },
+    {
+      "facility": "\uf0b7     New York City H + H / Lincoln",
+      "borough": "Bronx"
+    },
+    {
+      "facility": "\uf0b7     New York City H + H / North Central Bronx",
+      "borough": "Bronx"
+    },
+    {
+      "facility": "\uf0b7     St. Barnabas Hospital Health System",
+      "borough": "Bronx"
+    },
+    {
+      "facility": "\uf0b7     Brookdale Hospital Medical Center",
+      "borough": "Brooklyn"
+    },
+    {
+      "facility": "\uf0b7     The Brooklyn Hospital Center",
+      "borough": "Brooklyn"
+    },
+    {
+      "facility": "\uf0b7     The Brooklyn Hospital Center",
+      "borough": "Brooklyn"
+    },
+    {
+      "facility": "\uf0b7     Interfaith Medical Center",
+      "borough": "Brooklyn"
+    },
+    {
+      "facility": "\uf0b7     Kingsbrook Jewish Medical Center",
+      "borough": "Brooklyn"
+    },
+    {
+      "facility": "\uf0b7     New York City H + H / Coney Island",
+      "borough": "Brooklyn"
+    },
+    {
+      "facility": "\uf0b7     New York City H + H / Kings County",
+      "borough": "Brooklyn"
+    },
+    {
+      "facility": "\uf0b7     New York City H + H / Woodhull",
+      "borough": "Brooklyn"
+    },
+    {
+      "facility": "\uf0b7     NYU Langone Hospital - Brooklyn",
+      "borough": "Brooklyn"
+    },
+    {
+      "facility": "\uf0b7     SUNY Downstate Medical Center",
+      "borough": "Brooklyn"
+    },
+    {
+      "facility": "\uf0b7     Lenox Hill Hospital - Northwell Health",
+      "borough": "Manhattan"
+    },
+    {
+      "facility": "\uf0b7     Mount Sinai Hospital",
+      "borough": "Manhattan"
+    },
+    {
+      "facility": "\uf0b7     Mount Sinai - Beth Israel",
+      "borough": "Manhattan"
+    },
+    {
+      "facility": "\uf0b7     Mount Sinai - Chelsea",
+      "borough": "Manhattan"
+    },
+    {
+      "facility": "\uf0b7     Mount Sinai / St. Luke's",
+      "borough": "Manhattan"
+    },
+    {
+      "facility": "\uf0b7     Mount Sinai / West",
+      "borough": "Manhattan"
+    },
+    {
+      "facility": "\uf0b7     New York City H + H / Bellevue",
+      "borough": "Manhattan"
+    },
+    {
+      "facility": "\uf0b7     New York City H + H / Harlem",
+      "borough": "Manhattan"
+    },
+    {
+      "facility": "\uf0b7     New York City H + H / Metropolitan",
+      "borough": "Manhattan"
+    },
+    {
+      "facility": "\uf0b7     New York Presbyterian Hospital (Columbia Presbyterian Center)",
+      "borough": "Manhattan"
+    },
+    {
+      "facility": "\uf0b7     New York Presbyterian Hospital (Columbia Presbyterian Center)",
+      "borough": "Manhattan"
+    },
+    {
+      "facility": "\uf0b7     New York Presbyterian Hospital (New York Weill Cornell Center)",
+      "borough": "Manhattan"
+    },
+    {
+      "facility": "\uf0b7     New York Presbyterian Hospital (New York Weill Cornell Center)",
+      "borough": "Manhattan"
+    },
+    {
+      "facility": "\uf0b7     New York City H + H / Elmhurst",
+      "borough": "Queens"
+    },
+    {
+      "facility": "\uf0b7     New York City H + H / Queens",
+      "borough": "Queens"
+    },
+    {
+      "facility": "\uf0b7     New York Presbyterian Hospital - Queens",
+      "borough": "Queens"
+    }
+  ],
+  "dac_missing": [
+    {
+      "facility": "\uf0b7     St. Barnabas Hospital Health System",
+      "borough": "Bronx"
+    },
+    {
+      "facility": "\uf0b7     Kingsbrook Jewish Medical Center",
+      "borough": "Brooklyn"
+    },
+    {
+      "facility": "\uf0b7     SUNY Downstate Medical Center",
+      "borough": "Brooklyn"
+    },
+    {
+      "facility": "\uf0b7     Lenox Hill Hospital - Northwell Health",
+      "borough": "Manhattan"
+    }
+  ],
+  "competitor_comparison": {
+    "ineedana_nyc": 3,
+    "abortionfinder_sample": 10,
+    "our_abortion_providers": 21
+  }
+}

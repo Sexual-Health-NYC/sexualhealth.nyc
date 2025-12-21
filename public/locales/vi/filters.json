@@ -14,5 +14,13 @@
   "services": "Dịch vụ",
   "availability": "Tình trạng sẵn có",
   "filters": "Bộ lọc",
-  "insuranceAndCost": "Bảo hiểm & Chi phí"
+  "insuranceAndCost": "Bảo hiểm & Chi phí",
+  "informedConsentHRT": "HRT có sự đồng ý",
+  "topSurgery": "Phẫu thuật ngực (Top Surgery)",
+  "bottomSurgery": "Phẫu thuật hạ bộ (Bottom Surgery)",
+  "facialFeminization": "Nữ hóa khuôn mặt (FFS)",
+  "voiceTherapy": "Liệu pháp giọng nói",
+  "electrolysis": "Điện phân",
+  "facialMasculinization": "Nam hóa khuôn mặt (FMS)",
+  "laserHairRemoval": "Triệt lông bằng laser"
 }

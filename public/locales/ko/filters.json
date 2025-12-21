@@ -14,5 +14,13 @@
   "services": "서비스",
   "availability": "이용 가능 여부",
   "filters": "필터",
-  "insuranceAndCost": "보험 및 비용"
+  "insuranceAndCost": "보험 및 비용",
+  "informedConsentHRT": "정보에 입각한 동의 호르몬 요법 (Informed Consent)",
+  "topSurgery": "상체 수술 (Top Surgery)",
+  "bottomSurgery": "하체 수술 (Bottom Surgery)",
+  "facialFeminization": "안면 여성화 수술 (FFS)",
+  "voiceTherapy": "음성 치료",
+  "electrolysis": "전기분해 제모",
+  "facialMasculinization": "안면 남성화 수술 (FMS)",
+  "laserHairRemoval": "레이저 제모"
 }

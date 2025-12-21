@@ -14,5 +14,13 @@
   "services": "שירותים",
   "availability": "זמינות",
   "filters": "מסננים",
-  "insuranceAndCost": "ביטוח ועלות"
+  "insuranceAndCost": "ביטוח ועלות",
+  "informedConsentHRT": "טיפול הורמונלי בהסכמה מדעת",
+  "topSurgery": "ניתוח חזה (Top Surgery)",
+  "bottomSurgery": "ניתוח תחתון (Bottom Surgery)",
+  "facialFeminization": "ניתוח לנישוי פנים (FFS)",
+  "voiceTherapy": "טיפול בקול",
+  "electrolysis": "אלקטרוליזה",
+  "facialMasculinization": "הגברת גבריות הפנים (FMS)",
+  "laserHairRemoval": "הסרת שיער בלייזר"
 }

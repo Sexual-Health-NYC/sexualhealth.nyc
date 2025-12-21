@@ -14,5 +14,13 @@
   "services": "Usługi",
   "availability": "Dostępność",
   "filters": "Filtry",
-  "insuranceAndCost": "Ubezpieczenie i koszty"
+  "insuranceAndCost": "Ubezpieczenie i koszty",
+  "informedConsentHRT": "HTZ za świadomą zgodą",
+  "topSurgery": "Operacja klatki piersiowej (Top Surgery)",
+  "bottomSurgery": "Operacja dolna (Bottom Surgery)",
+  "facialFeminization": "Feminizacja twarzy (FFS)",
+  "voiceTherapy": "Terapia głosowa",
+  "electrolysis": "Elektroliza",
+  "facialMasculinization": "Maskulinizacja twarzy (FMS)",
+  "laserHairRemoval": "Depilacja laserowa"
 }

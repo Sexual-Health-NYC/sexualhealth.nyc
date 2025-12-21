@@ -30,5 +30,6 @@
   "selectSubway": "Select subway lines",
   "selectBus": "Select bus routes",
   "siteTitle": "Sexual Health NYC - Find Clinics for STI Testing, HIV Testing, PrEP, PEP, Contraception, and Abortion Services",
-  "verifiedUnknown": "Not yet verified"
+  "verifiedUnknown": "Not yet verified",
+  "appointmentOnly": "By appointment only"
 }

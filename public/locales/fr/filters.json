@@ -14,5 +14,13 @@
   "services": "Services",
   "availability": "Disponibilité",
   "filters": "Filtres",
-  "insuranceAndCost": "Assurance et Coût"
+  "insuranceAndCost": "Assurance et Coût",
+  "informedConsentHRT": "THS sous consentement éclairé",
+  "topSurgery": "Chirurgie du torse (Top Surgery)",
+  "bottomSurgery": "Chirurgie génitale (Bottom Surgery)",
+  "facialFeminization": "Féminisation faciale (FFS)",
+  "voiceTherapy": "Thérapie vocale",
+  "electrolysis": "Électrolyse",
+  "facialMasculinization": "Masculinisation faciale (FMS)",
+  "laserHairRemoval": "Épilation au laser"
 }

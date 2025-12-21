@@ -205,6 +205,17 @@ function recordToFeature(record, hoursMap) {
       gender_affirming_hormones: f["Gender Affirming Hormones"] || false,
       gender_affirming_surgery: f["Gender Affirming Surgery"] || false,
       gender_affirming_youth_policy: f["Gender Affirming Youth Policy"] || "",
+      // Granular GAC procedures (from Amida GIST directory)
+      gender_affirming_ffs: f["Gender Affirming FFS"] || false, // Facial feminization
+      gender_affirming_fms: f["Gender Affirming FMS"] || false, // Facial masculinization
+      gender_affirming_voice: f["Gender Affirming Voice"] || false, // Speech therapy/voice modification
+      gender_affirming_electrolysis:
+        f["Gender Affirming Electrolysis"] || false,
+      gender_affirming_laser: f["Gender Affirming Laser"] || false,
+      gender_affirming_top_surgery: f["Gender Affirming Top Surgery"] || false,
+      gender_affirming_bottom_surgery:
+        f["Gender Affirming Bottom Surgery"] || false,
+      gender_affirming_informed_consent: f["Informed Consent HRT"] || false,
 
       // Service subtypes
       medication_abortion: f["Medication Abortion"] || false,

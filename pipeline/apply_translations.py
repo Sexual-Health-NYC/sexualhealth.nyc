@@ -15,7 +15,15 @@ TRANSLATIONS = {
             "services": "Servicios",
             "availability": "Disponibilidad",
             "filters": "Filtros",
-            "insuranceAndCost": "Seguro y Costo"
+            "insuranceAndCost": "Seguro y Costo",
+            "informedConsentHRT": "TRH bajo consentimiento informado",
+            "topSurgery": "Cirugía de pecho (Top Surgery)",
+            "bottomSurgery": "Cirugía genital (Bottom Surgery)",
+            "facialFeminization": "Feminización facial (FFS)",
+            "facialMasculinization": "Masculinización facial (FMS)",
+            "voiceTherapy": "Terapia de voz",
+            "electrolysis": "Electrólisis",
+            "laserHairRemoval": "Depilación láser"
         },
         "messages": {
             "search": "Buscar",
@@ -24,7 +32,8 @@ TRANSLATIONS = {
             "hours": "Horario",
             "searchByName": "Buscar por nombre de clínica...",
             "siteTitle": "Sexual Health NYC - Encuentre clínicas para pruebas de ITS, pruebas de VIH, PrEP, PEP, anticoncepción y servicios de aborto",
-            "verifiedUnknown": "Aún no verificado"
+            "verifiedUnknown": "Aún no verificado",
+            "appointmentOnly": "Solo con cita"
         },
         "sections": {
             "telehealthDescription": "Reciba píldoras abortivas por correo — no se requiere visita en persona",
@@ -32,6 +41,9 @@ TRANSLATIONS = {
         },
         "services": {
             "genderAffirmingCare": "Atención de afirmación de género"
+        },
+        "insurance": {
+            "slidingScale": "Tarifas según ingresos (Sliding Scale)"
         },
         "actions": {
             "cancelCorrection": "Cancelar corrección"
@@ -59,7 +71,15 @@ TRANSLATIONS = {
             "services": "服务",
             "availability": "可用性",
             "filters": "筛选",
-            "insuranceAndCost": "保险与费用"
+            "insuranceAndCost": "保险与费用",
+            "informedConsentHRT": "知情同意激素治疗 (Informed Consent HRT)",
+            "topSurgery": "胸部手术 (Top Surgery)",
+            "bottomSurgery": "生殖器手术 (Bottom Surgery)",
+            "facialFeminization": "面部女性化手术 (FFS)",
+            "facialMasculinization": "面部男性化手术 (FMS)",
+            "voiceTherapy": "嗓音治疗",
+            "electrolysis": "电解脱毛",
+            "laserHairRemoval": "激光脱毛"
         },
         "messages": {
             "search": "搜索",
@@ -68,14 +88,16 @@ TRANSLATIONS = {
             "hours": "营业时间",
             "searchByName": "按诊所名称搜索...",
             "siteTitle": "Sexual Health NYC - 查找性传播感染检测、艾滋病检测、PrEP、PEP、避孕和堕胎服务的诊所",
-            "verifiedUnknown": "尚未验证"
+            "verifiedUnknown": "尚未验证",
+            "appointmentOnly": "仅限预约"
         },
         "sections": {
             "telehealthDescription": "邮寄堕胎药给您 — 无需亲自就诊",
             "telehealthOptions": "远程医疗选项"
         },
         "services": {
-            "genderAffirmingCare": "性别肯定护理"
+            "genderAffirmingCare": "性别肯定护理",
+            "abortion": "人工流产服务 (堕胎)"
         },
         "actions": {
             "cancelCorrection": "取消更正"
@@ -103,7 +125,15 @@ TRANSLATIONS = {
             "services": "Услуги",
             "availability": "Доступность",
             "filters": "Фильтры",
-            "insuranceAndCost": "Страхование и стоимость"
+            "insuranceAndCost": "Страхование и стоимость",
+            "informedConsentHRT": "ГЗТ по информированному согласию",
+            "topSurgery": "Операции на груди (Top Surgery)",
+            "bottomSurgery": "Генитальная хирургия (Bottom Surgery)",
+            "facialFeminization": "Феминизация лица (FFS)",
+            "facialMasculinization": "Маскулинизация лица (FMS)",
+            "voiceTherapy": "Голосовая терапия",
+            "electrolysis": "Электроэпиляция",
+            "laserHairRemoval": "Лазерная эпиляция"
         },
         "messages": {
             "search": "Поиск",
@@ -112,7 +142,8 @@ TRANSLATIONS = {
             "hours": "Часы работы",
             "searchByName": "Поиск по названию клиники...",
             "siteTitle": "Sexual Health NYC - Найдите клиники для тестирования на ИППП, ВИЧ, PrEP, PEP, контрацепции и услуг по прерыванию беременности",
-            "verifiedUnknown": "Ещё не проверено"
+            "verifiedUnknown": "Ещё не проверено",
+            "appointmentOnly": "Только по записи"
         },
         "sections": {
             "telehealthDescription": "Получите таблетки для прерывания беременности по почте — личный визит не требуется",
@@ -147,7 +178,15 @@ TRANSLATIONS = {
             "services": "Services",
             "availability": "Disponibilité",
             "filters": "Filtres",
-            "insuranceAndCost": "Assurance et Coût"
+            "insuranceAndCost": "Assurance et Coût",
+            "informedConsentHRT": "THS sous consentement éclairé",
+            "topSurgery": "Chirurgie du torse (Top Surgery)",
+            "bottomSurgery": "Chirurgie génitale (Bottom Surgery)",
+            "facialFeminization": "Féminisation faciale (FFS)",
+            "facialMasculinization": "Masculinisation faciale (FMS)",
+            "voiceTherapy": "Thérapie vocale",
+            "electrolysis": "Électrolyse",
+            "laserHairRemoval": "Épilation au laser"
         },
         "messages": {
             "search": "Rechercher",
@@ -156,7 +195,8 @@ TRANSLATIONS = {
             "hours": "Horaires",
             "searchByName": "Rechercher par nom de clinique...",
             "siteTitle": "Sexual Health NYC - Trouvez des cliniques pour le dépistage des IST, le dépistage du VIH, la PrEP, la PEP, la contraception et les services d'avortement",
-            "verifiedUnknown": "Pas encore vérifié"
+            "verifiedUnknown": "Pas encore vérifié",
+            "appointmentOnly": "Sur rendez-vous uniquement"
         },
         "sections": {
             "telehealthDescription": "Recevez des pilules abortives par courrier — aucune visite en personne requise",
@@ -191,7 +231,15 @@ TRANSLATIONS = {
             "services": "Sèvis",
             "availability": "Disponibilite",
             "filters": "Filtè",
-            "insuranceAndCost": "Asirans ak Pri"
+            "insuranceAndCost": "Asirans ak Pri",
+            "informedConsentHRT": "HRT Konsantman Enfòme",
+            "topSurgery": "Operasyon nan pwatrin (Top Surgery)",
+            "bottomSurgery": "Operasyon jenital (Bottom Surgery)",
+            "facialFeminization": "Feminizasyon Figi (FFS)",
+            "facialMasculinization": "Maskilinizasyon Figi (FMS)",
+            "voiceTherapy": "Terapi Vwa",
+            "electrolysis": "Elektroliz",
+            "laserHairRemoval": "Epilasyon lazè"
         },
         "messages": {
             "search": "Chèche",
@@ -200,7 +248,8 @@ TRANSLATIONS = {
             "hours": "Lè travay",
             "searchByName": "Chèche pa non klinik...",
             "siteTitle": "Sexual Health NYC - Jwenn klinik pou tès STI, tès HIV, PrEP, PEP, kontrasepsyon, ak sèvis avòtman",
-            "verifiedUnknown": "Pokò verifye"
+            "verifiedUnknown": "Pokò verifye",
+            "appointmentOnly": "Sou randevou sèlman"
         },
         "sections": {
             "telehealthDescription": "Resevwa grenn avòtman pa lapòs — pa bezwen vizit an pèsòn",
@@ -208,6 +257,9 @@ TRANSLATIONS = {
         },
         "services": {
             "genderAffirmingCare": "Swen Afimasyon Sèks"
+        },
+        "insurance": {
+            "slidingScale": "Pri ki baze sou revni (Sliding Scale)"
         },
         "actions": {
             "cancelCorrection": "Anile koreksyon"
@@ -235,7 +287,15 @@ TRANSLATIONS = {
             "services": "পরিষেবা",
             "availability": "প্রাপ্যতা",
             "filters": "ফিল্টার",
-            "insuranceAndCost": "বিমা এবং খরচ"
+            "insuranceAndCost": "বিমা এবং খরচ",
+            "informedConsentHRT": "সম্মতিসহ হরমোন থেরাপি (Informed Consent HRT)",
+            "topSurgery": "বুকের সার্জারি (Top Surgery)",
+            "bottomSurgery": "যৌনাঙ্গের সার্জারি (Bottom Surgery)",
+            "facialFeminization": "মুখের নারীকরণ (FFS)",
+            "facialMasculinization": "মুখের পুরুষত্বকরণ (FMS)",
+            "voiceTherapy": "ভয়েস থেরাপি",
+            "electrolysis": "ইলেক্ট্রোলাইসিস",
+            "laserHairRemoval": "লেজার হেয়ার রিমুভাল"
         },
         "messages": {
             "search": "অনুসন্ধান",
@@ -243,8 +303,9 @@ TRANSLATIONS = {
             "selectSubway": "সাবওয়ে লাইন নির্বাচন করুন",
             "hours": "সময়সূচী",
             "searchByName": "ক্লিনিকের নাম দিয়ে অনুসন্ধান করুন...",
-            "siteTitle": "Sexual Health NYC - STI পরীক্ষা, HIV পরীক্ষা, PrEP, PEP, গর্ভनिरোধक, এবং গর্ভপাত পরিষেবার জন্য ক্লিনিক খুঁজুন",
-            "verifiedUnknown": "এখনও যাচাই করা হয়নি"
+            "siteTitle": "Sexual Health NYC - STI পরীক্ষা, HIV পরীক্ষা, PrEP, PEP, গর্ভনিরোধক, এবং গর্ভপাত পরিষেবার জন্য ক্লিনিক খুঁজুন",
+            "verifiedUnknown": "এখনও যাচাই করা হয়নি",
+            "appointmentOnly": "শুধুমাত্র অ্যাপয়েন্টমেন্টের মাধ্যমে"
         },
         "sections": {
             "telehealthDescription": "ডাকে গর্ভপাতের বড়ি পান — সশরীরে উপস্থিত হওয়ার প্রয়োজন নেই",
@@ -279,7 +340,15 @@ TRANSLATIONS = {
             "services": "خدمات",
             "availability": "التوفر",
             "filters": "مرشحات",
-            "insuranceAndCost": "التأمين والتكلفة"
+            "insuranceAndCost": "التأمين والتكلفة",
+            "informedConsentHRT": "العلاج الهرموني بالموافقة المستنيرة",
+            "topSurgery": "جراحة الصدر (Top Surgery)",
+            "bottomSurgery": "جراحة الأعضاء التناسلية (Bottom Surgery)",
+            "facialFeminization": "تأنيث الوجه (FFS)",
+            "facialMasculinization": "تذكير الوجه (FMS)",
+            "voiceTherapy": "علاج الصوت",
+            "electrolysis": "التحليل الكهربائي",
+            "laserHairRemoval": "إزالة الشعر بالليزر"
         },
         "messages": {
             "search": "بحث",
@@ -288,7 +357,8 @@ TRANSLATIONS = {
             "hours": "ساعات العمل",
             "searchByName": "البحث حسب اسم العيادة...",
             "siteTitle": "Sexual Health NYC - اعثر على عيادات لفحص الأمراض المنقولة جنسياً، وفحص فيروس نقص المناعة البشرية، وPrEP، وPEP، ومنع الحمل، وخدمات الإجهاض",
-            "verifiedUnknown": "لم يتم التحقق بعد"
+            "verifiedUnknown": "لم يتم التحقق بعد",
+            "appointmentOnly": "بموعد مسبق فقط"
         },
         "sections": {
             "telehealthDescription": "احصل على حبوب الإجهاض بالبريد — لا حاجة لزيارة شخصية",
@@ -323,7 +393,15 @@ TRANSLATIONS = {
             "services": "서비스",
             "availability": "이용 가능 여부",
             "filters": "필터",
-            "insuranceAndCost": "보험 및 비용"
+            "insuranceAndCost": "보험 및 비용",
+            "informedConsentHRT": "정보에 입각한 동의 호르몬 요법 (Informed Consent)",
+            "topSurgery": "상체 수술 (Top Surgery)",
+            "bottomSurgery": "하체 수술 (Bottom Surgery)",
+            "facialFeminization": "안면 여성화 수술 (FFS)",
+            "facialMasculinization": "안면 남성화 수술 (FMS)",
+            "voiceTherapy": "음성 치료",
+            "electrolysis": "전기분해 제모",
+            "laserHairRemoval": "레이저 제모"
         },
         "messages": {
             "search": "검색",
@@ -332,7 +410,8 @@ TRANSLATIONS = {
             "hours": "운영 시간",
             "searchByName": "병원 이름으로 검색...",
             "siteTitle": "Sexual Health NYC - STI 검사, HIV 검사, PrEP, PEP, 피임 및 낙태 서비스를 위한 클리닉 찾기",
-            "verifiedUnknown": "아직 확인되지 않음"
+            "verifiedUnknown": "아직 확인되지 않음",
+            "appointmentOnly": "예약 전용"
         },
         "sections": {
             "telehealthDescription": "우편으로 낙태약을 받으세요 — 직접 방문할 필요 없음",
@@ -367,7 +446,15 @@ TRANSLATIONS = {
             "services": "Servizi",
             "availability": "Disponibilità",
             "filters": "Filtri",
-            "insuranceAndCost": "Assicurazione e Costi"
+            "insuranceAndCost": "Assicurazione e Costi",
+            "informedConsentHRT": "TOS con consenso informato",
+            "topSurgery": "Chirurgia toracica (Top Surgery)",
+            "bottomSurgery": "Chirurgia genitale (Bottom Surgery)",
+            "facialFeminization": "Femminilizzazione facciale (FFS)",
+            "facialMasculinization": "Mascolinizzazione facciale (FMS)",
+            "voiceTherapy": "Terapia vocale",
+            "electrolysis": "Elettrolisi",
+            "laserHairRemoval": "Epilazione laser"
         },
         "messages": {
             "search": "Cerca",
@@ -376,7 +463,8 @@ TRANSLATIONS = {
             "hours": "Orari",
             "searchByName": "Cerca per nome della clinica...",
             "siteTitle": "Sexual Health NYC - Trova cliniche per test STI, test HIV, PrEP, PEP, contraccezione e servizi di aborto",
-            "verifiedUnknown": "Non ancora verificato"
+            "verifiedUnknown": "Non ancora verificato",
+            "appointmentOnly": "Solo su appuntamento"
         },
         "sections": {
             "telehealthDescription": "Ricevi pillole abortive per posta — nessuna visita di persona richiesta",
@@ -411,7 +499,15 @@ TRANSLATIONS = {
             "services": "Mga Serbisyo",
             "availability": "Pagkakaroon",
             "filters": "Mga Filter",
-            "insuranceAndCost": "Seguro at Gastos"
+            "insuranceAndCost": "Seguro at Gastos",
+            "informedConsentHRT": "Informed Consent HRT",
+            "topSurgery": "Top Surgery (Operasyon sa dibdib)",
+            "bottomSurgery": "Bottom Surgery (Operasyon sa ari)",
+            "facialFeminization": "Facial Feminization (FFS)",
+            "facialMasculinization": "Facial Masculinization (FMS)",
+            "voiceTherapy": "Voice Therapy",
+            "electrolysis": "Electrolysis",
+            "laserHairRemoval": "Laser Hair Removal"
         },
         "messages": {
             "search": "Maghanap",
@@ -420,7 +516,8 @@ TRANSLATIONS = {
             "hours": "Oras",
             "searchByName": "Maghanap gamit ang pangalan ng klinika...",
             "siteTitle": "Sexual Health NYC - Maghanap ng mga Klinika para sa STI Testing, HIV Testing, PrEP, PEP, Contraception, at Abortion Services",
-            "verifiedUnknown": "Hindi pa na-verify"
+            "verifiedUnknown": "Hindi pa na-verify",
+            "appointmentOnly": "Sa pamamagitan ng appointment lamang"
         },
         "sections": {
             "telehealthDescription": "Tumanggap ng mga tableta sa pagpapalaglag sa pamamagitan ng koreo — hindi kailangan ng personal na pagbisita",
@@ -455,7 +552,15 @@ TRANSLATIONS = {
             "services": "Usługi",
             "availability": "Dostępność",
             "filters": "Filtry",
-            "insuranceAndCost": "Ubezpieczenie i koszty"
+            "insuranceAndCost": "Ubezpieczenie i koszty",
+            "informedConsentHRT": "HTZ za świadomą zgodą",
+            "topSurgery": "Operacja klatki piersiowej (Top Surgery)",
+            "bottomSurgery": "Operacja dolna (Bottom Surgery)",
+            "facialFeminization": "Feminizacja twarzy (FFS)",
+            "facialMasculinization": "Maskulinizacja twarzy (FMS)",
+            "voiceTherapy": "Terapia głosowa",
+            "electrolysis": "Elektroliza",
+            "laserHairRemoval": "Depilacja laserowa"
         },
         "messages": {
             "search": "Szukaj",
@@ -464,7 +569,8 @@ TRANSLATIONS = {
             "hours": "Godziny otwarcia",
             "searchByName": "Szukaj według nazwy kliniki...",
             "siteTitle": "Sexual Health NYC - Znajdź kliniki oferujące testy na STI, testy na HIV, PrEP, PEP, antykoncepcję i usługi aborcyjne",
-            "verifiedUnknown": "Jeszcze nie zweryfikowano"
+            "verifiedUnknown": "Jeszcze nie zweryfikowano",
+            "appointmentOnly": "Tylko po umówieniu"
         },
         "sections": {
             "telehealthDescription": "Otrzymaj tabletki poronne pocztą — wizyta osobista nie jest wymagana",
@@ -499,7 +605,15 @@ TRANSLATIONS = {
             "services": "خدمات",
             "availability": "دستیابی",
             "filters": "فلٹرز",
-            "insuranceAndCost": "انشورنس اور قیمت"
+            "insuranceAndCost": "انشورنس اور قیمت",
+            "informedConsentHRT": "باخبر رضامندی HRT",
+            "topSurgery": "ٹاپ سرجری",
+            "bottomSurgery": "نچلے حصے کی سرجری",
+            "facialFeminization": "چہرے کی نسوانیت (FFS)",
+            "facialMasculinization": "چہرے کی مردانہ صفات (FMS)",
+            "voiceTherapy": "آواز کی تھراپی",
+            "electrolysis": "الیکٹرولائسس",
+            "laserHairRemoval": "لیزر کے ذریعے بالوں کا خاتمہ"
         },
         "messages": {
             "search": "تلاش کریں",
@@ -508,7 +622,8 @@ TRANSLATIONS = {
             "hours": "اوقات",
             "searchByName": "کلینک کے نام سے تلاش کریں...",
             "siteTitle": "Sexual Health NYC - STI ٹیسٹنگ، HIV ٹیسٹنگ، PrEP، PEP، مانع حمل، اور اسقاط حمل کی خدمات کے لیے کلینک تلاش کریں",
-            "verifiedUnknown": "ابھی تک تصدیق نہیں ہوئی"
+            "verifiedUnknown": "ابھی تک تصدیق نہیں ہوئی",
+            "appointmentOnly": "صرف ملاقات کے ذریعے"
         },
         "sections": {
             "telehealthDescription": "اسقاط حمل کی گولیاں بذریعہ ڈاک حاصل کریں — ذاتی دورے کی ضرورت نہیں",
@@ -543,7 +658,15 @@ TRANSLATIONS = {
             "services": "Υπηρεσίες",
             "availability": "Διαθεσιμότητα",
             "filters": "Φίλτρα",
-            "insuranceAndCost": "Ασφάλιση και Κόστος"
+            "insuranceAndCost": "Ασφάλιση και Κόστος",
+            "informedConsentHRT": "HRT με ενημερωμένη συναίνεση",
+            "topSurgery": "Χειρουργική στήθους (Top Surgery)",
+            "bottomSurgery": "Χειρουργική κάτω μέρους (Bottom Surgery)",
+            "facialFeminization": "Θηλυκοποίηση προσώπου (FFS)",
+            "facialMasculinization": "Ανδροποίηση προσώπου (FMS)",
+            "voiceTherapy": "Φωνοθεραπεία",
+            "electrolysis": "Ηλεκτρόλυση",
+            "laserHairRemoval": "Αποτρίχωση με λέιζερ"
         },
         "messages": {
             "search": "Αναζήτηση",
@@ -552,7 +675,8 @@ TRANSLATIONS = {
             "hours": "Ώρες λειτουργίας",
             "searchByName": "Αναζήτηση με όνομα κλινικής...",
             "siteTitle": "Sexual Health NYC - Βρείτε κλινικές για εξετάσεις ΣΜΝ, εξετάσεις HIV, PrEP, PEP, αντισύλληψη και υπηρεσίες άμβλωσης",
-            "verifiedUnknown": "Δεν έχει επαληθευτεί ακόμα"
+            "verifiedUnknown": "Δεν έχει επαληθευτεί ακόμα",
+            "appointmentOnly": "Μόνο με ραντεβού"
         },
         "sections": {
             "telehealthDescription": "Λάβετε χάπια άμβλωσης ταχυδρομικώς — δεν απαιτείται επίσκεψη",
@@ -587,7 +711,15 @@ TRANSLATIONS = {
             "services": "שירותים",
             "availability": "זמינות",
             "filters": "מסננים",
-            "insuranceAndCost": "ביטוח ועלות"
+            "insuranceAndCost": "ביטוח ועלות",
+            "informedConsentHRT": "טיפול הורמונלי בהסכמה מדעת",
+            "topSurgery": "ניתוח חזה (Top Surgery)",
+            "bottomSurgery": "ניתוח תחתון (Bottom Surgery)",
+            "facialFeminization": "ניתוח לנישוי פנים (FFS)",
+            "facialMasculinization": "הגברת גבריות הפנים (FMS)",
+            "voiceTherapy": "טיפול בקול",
+            "electrolysis": "אלקטרוליזה",
+            "laserHairRemoval": "הסרת שיער בלייזר"
         },
         "messages": {
             "search": "חיפוש",
@@ -596,7 +728,8 @@ TRANSLATIONS = {
             "hours": "שעות פעילות",
             "searchByName": "חפש לפי שם המרפאה...",
             "siteTitle": "Sexual Health NYC - מצא מרפאות לבדיקות STI, בדיקות HIV, PrEP, PEP, אמצעי מניעה ושירותי הפלה",
-            "verifiedUnknown": "טרם אומת"
+            "verifiedUnknown": "טרם אומת",
+            "appointmentOnly": "בתיאום מראש בלבד"
         },
         "sections": {
             "telehealthDescription": "קבלי כדורי הפלה בדואר — אין צורך בביקור אישי",
@@ -631,7 +764,15 @@ TRANSLATIONS = {
             "services": "सेवाएं",
             "availability": "उपलब्धता",
             "filters": "फिल्टर",
-            "insuranceAndCost": "बीमा और लागत"
+            "insuranceAndCost": "बीमा और लागत",
+            "informedConsentHRT": "सूचित सहमति HRT",
+            "topSurgery": "टॉप सर्जरी (Top Surgery)",
+            "bottomSurgery": "बॉटम सर्जरी (Bottom Surgery)",
+            "facialFeminization": "चेहरे का स्त्रीकरण (FFS)",
+            "facialMasculinization": "चेहरे का पुरुषीकरण (FMS)",
+            "voiceTherapy": "आवाज चिकित्सा",
+            "electrolysis": "इलेक्ट्रोलिसिस",
+            "laserHairRemoval": "लेजर से बाल हटाना"
         },
         "messages": {
             "search": "खोजें",
@@ -640,7 +781,8 @@ TRANSLATIONS = {
             "hours": "समय",
             "searchByName": "क्लिनिक के नाम से खोजें...",
             "siteTitle": "Sexual Health NYC - STI परीक्षण, HIV परीक्षण, PrEP, PEP, गर्भनिरोधक और गर्भपात सेवाओं के लिए क्लीनिक खोजें",
-            "verifiedUnknown": "अभी सत्यापित नहीं हुआ"
+            "verifiedUnknown": "अभी सत्यापित नहीं हुआ",
+            "appointmentOnly": "केवल अपॉइंटमेंट के द्वारा"
         },
         "sections": {
             "telehealthDescription": "डाक द्वारा गर्भपात की गोलियां प्राप्त करें — व्यक्तिगत रूप से जाने की आवश्यकता नहीं",
@@ -658,7 +800,7 @@ TRANSLATIONS = {
             "changeLanguage": "भाषा बदलें",
             "selectLanguage": "भाषा चुनें",
             "aboutText1": "यह निःशुल्क निर्देशिका न्यूयॉर्क वासियों को यौन स्वास्थ्य सेवाएं खोजने में मदद करती है, जिनमें STI परीक्षण, HIV परीक्षण, PrEP, गर्भनिरोधक, गर्भपात देखभाल और लिंग पुष्टि देखभाल शामिल हैं।",
-            "aboutText2": "स्वयंसेवकों द्वारा निर्मित। किसी भी क्लिनिक या स्वास्थ्य सेवा संगठन से संबद्ध नहीं है।",
+            "aboutText2": "स्वयंसेวकों द्वारा निर्मित। किसी भी क्लिनिक या स्वास्थ्य सेवा संगठन से संबद्ध नहीं है।",
             "aboutDisclaimer": "यह निर्देशिका केवल सूचनात्मक उद्देश्यों के लिए है। हम स्वास्थ्य सेवा प्रदाता नहीं हैं। जाने से पहले हमेशा सीधे क्लीनिकों से जानकारी सत्यापित करें।",
             "privacyIntro": "आपकी गोपनीयता मायने रखती है। यह साइट यथासंभव कम डेटा एकत्र करने के लिए डिज़ाइन की गई है।",
             "privacyNoAccounts": "कोई खाता या व्यक्तिगत डेटा एकत्र नहीं किया जाता",
@@ -675,7 +817,15 @@ TRANSLATIONS = {
             "services": "サービス",
             "availability": "空き状況",
             "filters": "フィルター",
-            "insuranceAndCost": "保険と費用"
+            "insuranceAndCost": "保険と費用",
+            "informedConsentHRT": "インフォームドコンセントHRT",
+            "topSurgery": "トップサージェリー (胸部手術)",
+            "bottomSurgery": "ボトムサージェリー (性別適合手術)",
+            "facialFeminization": "顔の女性化手术 (FFS)",
+            "facialMasculinization": "顔の男性化手术 (FMS)",
+            "voiceTherapy": "音声療法",
+            "electrolysis": "電気分解脱毛",
+            "laserHairRemoval": "レーザー脱毛"
         },
         "messages": {
             "search": "検索",
@@ -684,7 +834,8 @@ TRANSLATIONS = {
             "hours": "営業時間",
             "searchByName": "クリニック名で検索...",
             "siteTitle": "Sexual Health NYC - STI検査、HIV検査、PrEP、PEP、避妊、中絶サービスのためのクリニックを探す",
-            "verifiedUnknown": "まだ確認されていません"
+            "verifiedUnknown": "まだ確認されていません",
+            "appointmentOnly": "予約制のみ"
         },
         "sections": {
             "telehealthDescription": "経口中絶薬を郵送で受け取る — 来院不要",
@@ -705,7 +856,7 @@ TRANSLATIONS = {
             "aboutText2": "ボランティアによって作成されました。特定のクリニックや医療機関とは一切関係ありません。",
             "aboutDisclaimer": "このディレクトリは情報提供のみを目的としています。私たちは医療提供者ではありません。訪問前に必ずクリニックに直接情報を確認してください。",
             "privacyIntro": "あなたのプライバシーは重要です。このサイトは、収集するデータを最小限に抑えるように設計されています。",
-            "privacyNoAccounts": "アカウントや個人データの収集はありません",
+            "privacyNoAccounts": "アカウントや个人データの収集はありません",
             "privacyAnalytics": "プライバシー重視の分析 (GoatCounter) — クッキーなし、サイト間追跡なし",
             "privacyLanguage": "言語設定はブラウザにのみローカルに保存されます",
             "privacyMaps": "Mapbox提供の地図（地図の使用にはMapboxのプライバシーポリシーが適用されます）",
@@ -719,7 +870,15 @@ TRANSLATIONS = {
             "services": "דינסטן",
             "availability": "פאַראַנען",
             "filters": "פילטערס",
-            "insuranceAndCost": "אינשורענס און קאָסטן"
+            "insuranceAndCost": "אינשורענס און קאָסטן",
+            "informedConsentHRT": "הארמאן טעראפיע מיט באוויליקונג",
+            "topSurgery": "בריסט אפּעראציע (Top Surgery)",
+            "bottomSurgery": "אונטערשטע אפּעראציע (Bottom Surgery)",
+            "facialFeminization": "פנים פעמיניזאציע (FFS)",
+            "facialMasculinization": "פנים מאַסקוליניזאַציע (FMS)",
+            "voiceTherapy": "קול טעראפיע",
+            "electrolysis": "עלעקטראליזע",
+            "laserHairRemoval": "לאַזער האָר באַזייַטיקונג"
         },
         "messages": {
             "search": "זוכן",
@@ -728,7 +887,8 @@ TRANSLATIONS = {
             "hours": "שעהן",
             "searchByName": "זוכן דורך קליניק נאָמען...",
             "siteTitle": "Sexual Health NYC - געפֿינען קליניקס פֿאַר STI טעסטינג, היוו טעסטינג, PrEP, PEP, קאַנטראַסעפּשאַן און אַבאָרשאַן באַדינונגס",
-            "verifiedUnknown": "נאָך נישט וועריפייד"
+            "verifiedUnknown": "נאָך נישט וועריפייד",
+            "appointmentOnly": "בלויז מיט אן אפּוינטמענט"
         },
         "sections": {
             "telehealthDescription": "באַקומען אַבאָרשאַן פּילז דורך פּאָסט — קיין פערזענלעכע באַזוכן נייטיק",
@@ -763,7 +923,15 @@ TRANSLATIONS = {
             "services": "Serviços",
             "availability": "Disponibilidade",
             "filters": "Filtros",
-            "insuranceAndCost": "Seguro e Custo"
+            "insuranceAndCost": "Seguro e Custo",
+            "informedConsentHRT": "TRH com consentimento informado",
+            "topSurgery": "Cirurgia superior (Top Surgery)",
+            "bottomSurgery": "Cirurgia inferior (Bottom Surgery)",
+            "facialFeminization": "Feminização facial (FFS)",
+            "facialMasculinization": "Masculinização facial (FMS)",
+            "voiceTherapy": "Terapia vocal",
+            "electrolysis": "Eletrólise",
+            "laserHairRemoval": "Depilação a laser"
         },
         "messages": {
             "search": "Pesquisar",
@@ -772,7 +940,8 @@ TRANSLATIONS = {
             "hours": "Horário",
             "searchByName": "Pesquisar por nome da clínica...",
             "siteTitle": "Sexual Health NYC - Encontre clínicas para testes de IST, testes de HIV, PrEP, PEP, contracepção e serviços de aborto",
-            "verifiedUnknown": "Ainda não verificado"
+            "verifiedUnknown": "Ainda não verificado",
+            "appointmentOnly": "Apenas com hora marcada"
         },
         "sections": {
             "telehealthDescription": "Receba pílulas abortivas pelo correio — não é necessária visita presencial",
@@ -807,7 +976,15 @@ TRANSLATIONS = {
             "services": "Dịch vụ",
             "availability": "Tình trạng sẵn có",
             "filters": "Bộ lọc",
-            "insuranceAndCost": "Bảo hiểm & Chi phí"
+            "insuranceAndCost": "Bảo hiểm & Chi phí",
+            "informedConsentHRT": "HRT có sự đồng ý",
+            "topSurgery": "Phẫu thuật ngực (Top Surgery)",
+            "bottomSurgery": "Phẫu thuật hạ bộ (Bottom Surgery)",
+            "facialFeminization": "Nữ hóa khuôn mặt (FFS)",
+            "facialMasculinization": "Nam hóa khuôn mặt (FMS)",
+            "voiceTherapy": "Liệu pháp giọng nói",
+            "electrolysis": "Điện phân",
+            "laserHairRemoval": "Triệt lông bằng laser"
         },
         "messages": {
             "search": "Tìm kiếm",
@@ -816,7 +993,8 @@ TRANSLATIONS = {
             "hours": "Giờ làm việc",
             "searchByName": "Tìm kiếm theo tên phòng khám...",
             "siteTitle": "Sexual Health NYC - Tìm phòng khám xét nghiệm STI, xét nghiệm HIV, PrEP, PEP, tránh thai và dịch vụ phá thai",
-            "verifiedUnknown": "Chưa được xác minh"
+            "verifiedUnknown": "Chưa được xác minh",
+            "appointmentOnly": "Chỉ nhận lịch hẹn"
         },
         "sections": {
             "telehealthDescription": "Nhận thuốc phá thai qua đường bưu điện — không cần đến trực tiếp",

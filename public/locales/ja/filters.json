@@ -14,5 +14,13 @@
   "services": "サービス",
   "availability": "空き状況",
   "filters": "フィルター",
-  "insuranceAndCost": "保険と費用"
+  "insuranceAndCost": "保険と費用",
+  "informedConsentHRT": "インフォームドコンセントHRT",
+  "topSurgery": "トップサージェリー (胸部手術)",
+  "bottomSurgery": "ボトムサージェリー (性別適合手術)",
+  "facialFeminization": "顔の女性化手术 (FFS)",
+  "voiceTherapy": "音声療法",
+  "electrolysis": "電気分解脱毛",
+  "facialMasculinization": "顔の男性化手术 (FMS)",
+  "laserHairRemoval": "レーザー脱毛"
 }

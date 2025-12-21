@@ -14,5 +14,13 @@
   "services": "Mga Serbisyo",
   "availability": "Pagkakaroon",
   "filters": "Mga Filter",
-  "insuranceAndCost": "Seguro at Gastos"
+  "insuranceAndCost": "Seguro at Gastos",
+  "informedConsentHRT": "Informed Consent HRT",
+  "topSurgery": "Top Surgery (Operasyon sa dibdib)",
+  "bottomSurgery": "Bottom Surgery (Operasyon sa ari)",
+  "facialFeminization": "Facial Feminization (FFS)",
+  "voiceTherapy": "Voice Therapy",
+  "electrolysis": "Electrolysis",
+  "facialMasculinization": "Facial Masculinization (FMS)",
+  "laserHairRemoval": "Laser Hair Removal"
 }

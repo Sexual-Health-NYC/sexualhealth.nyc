@@ -30,5 +30,6 @@
   "hours": "営業時間",
   "searchByName": "クリニック名で検索...",
   "siteTitle": "Sexual Health NYC - STI検査、HIV検査、PrEP、PEP、避妊、中絶サービスのためのクリニックを探す",
-  "verifiedUnknown": "まだ確認されていません"
+  "verifiedUnknown": "まだ確認されていません",
+  "appointmentOnly": "予約制のみ"
 }

@@ -233,7 +233,9 @@ function ClinicCard({ clinic, expanded, onToggle, onShowOnMap, t }) {
                 textDecoration: "underline",
               }}
             >
-              {showCorrectionForm ? "Cancel" : t("actions:reportCorrection")}
+              {showCorrectionForm
+                ? t("actions:cancelCorrection")
+                : t("actions:reportCorrection")}
             </button>
             <CorrectionFormModal
               clinicName={clinic.name}

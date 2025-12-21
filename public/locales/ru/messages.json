@@ -30,5 +30,6 @@
   "hours": "Часы работы",
   "searchByName": "Поиск по названию клиники...",
   "siteTitle": "Sexual Health NYC - Найдите клиники для тестирования на ИППП, ВИЧ, PrEP, PEP, контрацепции и услуг по прерыванию беременности",
-  "verifiedUnknown": "Ещё не проверено"
+  "verifiedUnknown": "Ещё не проверено",
+  "appointmentOnly": "Только по записи"
 }

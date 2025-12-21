@@ -14,5 +14,13 @@
   "services": "পরিষেবা",
   "availability": "প্রাপ্যতা",
   "filters": "ফিল্টার",
-  "insuranceAndCost": "বিমা এবং খরচ"
+  "insuranceAndCost": "বিমা এবং খরচ",
+  "informedConsentHRT": "সম্মতিসহ হরমোন থেরাপি (Informed Consent HRT)",
+  "topSurgery": "বুকের সার্জারি (Top Surgery)",
+  "bottomSurgery": "যৌনাঙ্গের সার্জারি (Bottom Surgery)",
+  "facialFeminization": "মুখের নারীকরণ (FFS)",
+  "voiceTherapy": "ভয়েস থেরাপি",
+  "electrolysis": "ইলেক্ট্রোলাইসিস",
+  "facialMasculinization": "মুখের পুরুষত্বকরণ (FMS)",
+  "laserHairRemoval": "লেজার হেয়ার রিমুভাল"
 }

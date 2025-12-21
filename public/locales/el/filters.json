@@ -14,5 +14,13 @@
   "services": "Υπηρεσίες",
   "availability": "Διαθεσιμότητα",
   "filters": "Φίλτρα",
-  "insuranceAndCost": "Ασφάλιση και Κόστος"
+  "insuranceAndCost": "Ασφάλιση και Κόστος",
+  "informedConsentHRT": "HRT με ενημερωμένη συναίνεση",
+  "topSurgery": "Χειρουργική στήθους (Top Surgery)",
+  "bottomSurgery": "Χειρουργική κάτω μέρους (Bottom Surgery)",
+  "facialFeminization": "Θηλυκοποίηση προσώπου (FFS)",
+  "voiceTherapy": "Φωνοθεραπεία",
+  "electrolysis": "Ηλεκτρόλυση",
+  "facialMasculinization": "Ανδροποίηση προσώπου (FMS)",
+  "laserHairRemoval": "Αποτρίχωση με λέιζερ"
 }

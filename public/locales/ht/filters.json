@@ -14,5 +14,13 @@
   "services": "Sèvis",
   "availability": "Disponibilite",
   "filters": "Filtè",
-  "insuranceAndCost": "Asirans ak Pri"
+  "insuranceAndCost": "Asirans ak Pri",
+  "informedConsentHRT": "HRT Konsantman Enfòme",
+  "topSurgery": "Operasyon nan pwatrin (Top Surgery)",
+  "bottomSurgery": "Operasyon jenital (Bottom Surgery)",
+  "facialFeminization": "Feminizasyon Figi (FFS)",
+  "voiceTherapy": "Terapi Vwa",
+  "electrolysis": "Elektroliz",
+  "facialMasculinization": "Maskilinizasyon Figi (FMS)",
+  "laserHairRemoval": "Epilasyon lazè"
 }

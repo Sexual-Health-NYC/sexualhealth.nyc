@@ -20,9 +20,17 @@ export default function useFilterOptions() {
   ];
 
   const genderAffirmingOptions = [
-    { value: "youth", label: t("filters:genderAffirmingYouth") },
     { value: "hormones", label: t("filters:genderAffirmingHormones") },
+    { value: "informed_consent", label: t("filters:informedConsentHRT") },
     { value: "surgery", label: t("filters:genderAffirmingSurgery") },
+    { value: "top_surgery", label: t("filters:topSurgery") },
+    { value: "bottom_surgery", label: t("filters:bottomSurgery") },
+    { value: "ffs", label: t("filters:facialFeminization") },
+    { value: "fms", label: t("filters:facialMasculinization") },
+    { value: "voice", label: t("filters:voiceTherapy") },
+    { value: "electrolysis", label: t("filters:electrolysis") },
+    { value: "laser", label: t("filters:laserHairRemoval") },
+    { value: "youth", label: t("filters:genderAffirmingYouth") },
   ];
 
   const prepOptions = [

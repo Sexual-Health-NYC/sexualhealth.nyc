@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Montefiore Medical Center",
+    "url": "https://www.abortionfinder.org/provider/98188-montefiore-medical-center",
+    "gestational_limit": 2
+  },
+  {
+    "name": "NYC Health + Hospitals - South Brooklyn",
+    "url": "https://www.abortionfinder.org/provider/108175-nyc-health-hospitals-south-brooklyn",
+    "gestational_limit": 1
+  },
+  {
+    "name": "Dr. Emily Women's Health Center",
+    "url": "https://www.abortionfinder.org/provider/110747-dr-emily-womens-health-center",
+    "gestational_limit": 1
+  },
+  {
+    "name": "Early Options",
+    "url": "https://www.abortionfinder.org/provider/109285-early-options",
+    "gestational_limit": 1
+  },
+  {
+    "name": "Choices Women's Medical Center",
+    "url": "https://www.abortionfinder.org/provider/80972-choices-womens-medical-center",
+    "gestational_limit": 1
+  }
+]

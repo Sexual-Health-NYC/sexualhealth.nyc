@@ -14,5 +14,13 @@
   "services": "服务",
   "availability": "可用性",
   "filters": "筛选",
-  "insuranceAndCost": "保险与费用"
+  "insuranceAndCost": "保险与费用",
+  "informedConsentHRT": "知情同意激素治疗 (Informed Consent HRT)",
+  "topSurgery": "胸部手术 (Top Surgery)",
+  "bottomSurgery": "生殖器手术 (Bottom Surgery)",
+  "facialFeminization": "面部女性化手术 (FFS)",
+  "voiceTherapy": "嗓音治疗",
+  "electrolysis": "电解脱毛",
+  "facialMasculinization": "面部男性化手术 (FMS)",
+  "laserHairRemoval": "激光脱毛"
 }

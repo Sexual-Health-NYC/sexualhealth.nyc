@@ -14,5 +14,13 @@
   "services": "خدمات",
   "availability": "التوفر",
   "filters": "مرشحات",
-  "insuranceAndCost": "التأمين والتكلفة"
+  "insuranceAndCost": "التأمين والتكلفة",
+  "informedConsentHRT": "العلاج الهرموني بالموافقة المستنيرة",
+  "topSurgery": "جراحة الصدر (Top Surgery)",
+  "bottomSurgery": "جراحة الأعضاء التناسلية (Bottom Surgery)",
+  "facialFeminization": "تأنيث الوجه (FFS)",
+  "voiceTherapy": "علاج الصوت",
+  "electrolysis": "التحليل الكهربائي",
+  "facialMasculinization": "تذكير الوجه (FMS)",
+  "laserHairRemoval": "إزالة الشعر بالليزر"
 }

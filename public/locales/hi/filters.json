@@ -14,5 +14,13 @@
   "services": "सेवाएं",
   "availability": "उपलब्धता",
   "filters": "फिल्टर",
-  "insuranceAndCost": "बीमा और लागत"
+  "insuranceAndCost": "बीमा और लागत",
+  "informedConsentHRT": "सूचित सहमति HRT",
+  "topSurgery": "टॉप सर्जरी (Top Surgery)",
+  "bottomSurgery": "बॉटम सर्जरी (Bottom Surgery)",
+  "facialFeminization": "चेहरे का स्त्रीकरण (FFS)",
+  "voiceTherapy": "आवाज चिकित्सा",
+  "electrolysis": "इलेक्ट्रोलिसिस",
+  "facialMasculinization": "चेहरे का पुरुषीकरण (FMS)",
+  "laserHairRemoval": "लेजर से बाल हटाना"
 }

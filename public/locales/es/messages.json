@@ -30,5 +30,6 @@
   "hours": "Horario",
   "searchByName": "Buscar por nombre de clínica...",
   "siteTitle": "Sexual Health NYC - Encuentre clínicas para pruebas de ITS, pruebas de VIH, PrEP, PEP, anticoncepción y servicios de aborto",
-  "verifiedUnknown": "Aún no verificado"
+  "verifiedUnknown": "Aún no verificado",
+  "appointmentOnly": "Solo con cita"
 }

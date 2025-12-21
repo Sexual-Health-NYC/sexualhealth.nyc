@@ -2,7 +2,7 @@
   "acceptsMedicaid": "Acepta Medicaid",
   "acceptsMedicare": "Acepta Medicare",
   "noInsuranceOk": "No se requiere seguro",
-  "slidingScale": "Escala móvil",
+  "slidingScale": "Tarifas según ingresos (Sliding Scale)",
   "medicaidStraight": "Medicaid Directo",
   "medicaidManaged": "Medicaid Administrado",
   "medicaidBoth": "Medicaid Directo y Administrado",

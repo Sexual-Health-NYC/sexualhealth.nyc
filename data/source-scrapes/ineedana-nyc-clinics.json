@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Maiden Lane Downtown",
+    "url": "/clinic/maiden-lane-downtown-recxoGdnlIyAuUuhX",
+    "address": null,
+    "inclinic_weeks": 12,
+    "pill_weeks": 12,
+    "all_weeks_mentioned": [
+      12,
+      6,
+      12
+    ],
+    "telehealth": true,
+    "walkin": true
+  },
+  {
+    "name": "Mount Sinai Union Square",
+    "url": "/clinic/mount-sinai-union-square-recgNflISp83tQhwQ",
+    "address": null,
+    "inclinic_weeks": 12,
+    "pill_weeks": 12,
+    "all_weeks_mentioned": [
+      12,
+      6,
+      12
+    ],
+    "telehealth": true,
+    "walkin": true
+  },
+  {
+    "name": "NYU Langone at Trinity",
+    "url": "/clinic/nyu-langone-at-trinity-recYLHB8wJR6mHTPh",
+    "address": null,
+    "inclinic_weeks": 12,
+    "pill_weeks": 12,
+    "all_weeks_mentioned": [
+      12,
+      6,
+      12
+    ],
+    "telehealth": true,
+    "walkin": true
+  }
+]
