@@ -268,7 +268,7 @@
       "properties": {
         "id": "rec300DSYS7nc0oRF",
         "name": "Charles B. Wang Community Health Center (Flushing)",
-        "address": "131-72 40th Road",
+        "address": "131-72 40th Road, Flushing, NY 11354",
         "borough": "Queens",
         "phone": "(718) 886-1200",
         "website": "https://www.cbwchc.org",
@@ -629,7 +629,7 @@
       "properties": {
         "id": "rec9bbaqQDdNcvvKb",
         "name": "Community Health Center of Richmond - Port Richmond",
-        "address": "439 Port Richmond Avenue",
+        "address": "439 Port Richmond Avenue, Staten Island, NY 10302",
         "borough": "Staten Island",
         "phone": "(718) 876-1732",
         "website": "chcrichmond.org",
@@ -732,7 +732,7 @@
       "properties": {
         "id": "recAsqaYOwyqhAi2p",
         "name": "The Institute for Family Health",
-        "address": "16 East 16th Street",
+        "address": "16 East 16th Street, New York, NY 10003",
         "borough": "Manhattan",
         "phone": "(844) 434-2778",
         "website": "https://www.institute.org/",
@@ -1742,7 +1742,7 @@
       "properties": {
         "id": "recMR6Jy92Lstw0zC",
         "name": "Charles B. Wang Community Health Center (Chinatown)",
-        "address": "268 Canal Street",
+        "address": "268 Canal Street, New York, NY 10013",
         "borough": "Manhattan",
         "phone": "(212) 379-6988",
         "website": "https://www.cbwchc.org",
@@ -2051,7 +2051,7 @@
       "properties": {
         "id": "recPacKnRzNgYVr0V",
         "name": "Destination Tomorrow",
-        "address": "452 E 149th St",
+        "address": "452 E 149th St, Bronx, NY 10455",
         "borough": "Bronx",
         "phone": "(646) 723-3325",
         "website": "http://destinationtomorrow.org/",
@@ -2618,7 +2618,7 @@
       "properties": {
         "id": "recZQuUmvW84BYJY7",
         "name": "Community Health Center of Richmond - South Avenue",
-        "address": "235 Port Richmond Avenue",
+        "address": "235 Port Richmond Avenue, Staten Island, NY 10302",
         "borough": "Staten Island",
         "phone": "(718) 924-2254",
         "website": "www.chcrichmond.org",
@@ -3006,7 +3006,7 @@
       "properties": {
         "id": "recdHRE6efIR8vQJ5",
         "name": "Ryan Chelsea-Clinton Community Health Center",
-        "address": "645 10th Ave",
+        "address": "645 10th Ave, New York, NY 10036",
         "borough": "Manhattan",
         "phone": "(212) 749-1820",
         "website": "https://ryanhealth.org/locations/ryan-chelsea-clinton-community-health-center",
@@ -5436,7 +5436,7 @@
       "properties": {
         "id": "recwWwlA0l9e539Tw",
         "name": "Community Health Action of Staten Island (CHASI)",
-        "address": "26 Bay Street",
+        "address": "26 Bay Street, Staten Island, NY 10301",
         "borough": "Staten Island",
         "phone": "(718) 808-1300",
         "website": "www.chasiny.org",
@@ -5621,7 +5621,7 @@
     }
   ],
   "metadata": {
-    "generated": "2025-12-21T04:08:41.878Z",
+    "generated": "2025-12-21T04:24:44.710Z",
     "source": "Airtable",
     "total_records": 68,
     "records_with_coords": 68
