@@ -149,7 +149,7 @@ updates = {
 }
 
 for lang, messages in updates.items():
-    path = f'src/locales/{lang}/messages.json'
+    path = f'public/locales/{lang}/messages.json'
     if os.path.exists(path):
         with open(path, 'r', encoding='utf-8') as f:
             data = json.load(f)
