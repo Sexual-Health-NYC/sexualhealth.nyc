@@ -22,6 +22,16 @@ import esLocations from "./locales/es/locations.json";
 import esGestational from "./locales/es/gestational.json";
 import esForms from "./locales/es/forms.json";
 
+// Import Chinese translations
+import zhServices from "./locales/zh/services.json";
+import zhInsurance from "./locales/zh/insurance.json";
+import zhSections from "./locales/zh/sections.json";
+import zhActions from "./locales/zh/actions.json";
+import zhMessages from "./locales/zh/messages.json";
+import zhLocations from "./locales/zh/locations.json";
+import zhGestational from "./locales/zh/gestational.json";
+import zhForms from "./locales/zh/forms.json";
+
 const resources = {
   en: {
     services: enServices,
@@ -43,6 +53,16 @@ const resources = {
     gestational: esGestational,
     forms: esForms,
   },
+  zh: {
+    services: zhServices,
+    insurance: zhInsurance,
+    sections: zhSections,
+    actions: zhActions,
+    messages: zhMessages,
+    locations: zhLocations,
+    gestational: zhGestational,
+    forms: zhForms,
+  },
 };
 
 i18n
@@ -51,7 +71,7 @@ i18n
   .init({
     resources,
     fallbackLng: "en",
-    supportedLngs: ["en", "es"],
+    supportedLngs: ["en", "es", "zh"],
     detection: {
       order: ["localStorage", "navigator"],
       caches: ["localStorage"],
