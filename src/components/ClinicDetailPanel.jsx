@@ -75,6 +75,18 @@ export default function ClinicDetailPanel() {
       textColor: theme.colors.abortionText,
     });
 
+  // Collect quick facts (insurance + walk-ins)
+  const quickFacts = [];
+  if (selectedClinic.walk_in) quickFacts.push(t("messages:walkIns"));
+  if (selectedClinic.no_insurance_ok)
+    quickFacts.push(t("insurance:noInsuranceOk"));
+  if (selectedClinic.accepts_medicaid)
+    quickFacts.push(t("insurance:acceptsMedicaid"));
+  if (selectedClinic.accepts_medicare)
+    quickFacts.push(t("insurance:acceptsMedicare"));
+  if (selectedClinic.sliding_scale)
+    quickFacts.push(t("insurance:slidingScale"));
+
   return (
     <div
       style={{
@@ -90,41 +102,37 @@ export default function ClinicDetailPanel() {
         animation: `slideInRight ${theme.motion.duration.slow} ${theme.motion.easing.gentle}`,
       }}
     >
-      <div style={{ padding: theme.spacing[6] }}>
-        {/* Header */}
+      <div style={{ padding: theme.spacing[4] }}>
+        {/* Header: Name + Status + Close */}
         <div
           style={{
             display: "flex",
             justifyContent: "space-between",
             alignItems: "start",
-            marginBottom: theme.spacing[4],
+            marginBottom: theme.spacing[3],
           }}
         >
           <div style={{ flex: 1 }}>
             <h2
               style={{
-                fontSize: theme.fonts.size["2xl"],
+                fontSize: theme.fonts.size.xl,
                 fontWeight: theme.fonts.weight.semibold,
                 color: theme.colors.textPrimary,
                 margin: 0,
-                marginBottom: openStatus ? theme.spacing[2] : 0,
+                lineHeight: 1.3,
               }}
             >
               {selectedClinic.name}
             </h2>
             {openStatus && (
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: theme.spacing[1],
-                }}
-              >
+              <div style={{ marginTop: theme.spacing[1] }}>
                 <span
                   style={{
                     display: "inline-block",
-                    padding: `${theme.spacing[1]} ${theme.spacing[2]}`,
-                    backgroundColor: openStatus.isOpen ? "#10b981" : "#94a3b8",
+                    padding: `2px ${theme.spacing[2]}`,
+                    backgroundColor: openStatus.isOpen
+                      ? theme.colors.open
+                      : theme.colors.closed,
                     color: "white",
                     borderRadius: theme.borderRadius.sm,
                     fontSize: theme.fonts.size.xs,
@@ -153,6 +161,7 @@ export default function ClinicDetailPanel() {
                 {holidayToday && (
                   <span
                     style={{
+                      marginLeft: theme.spacing[2],
                       fontSize: theme.fonts.size.xs,
                       color: theme.colors.textSecondary,
                       fontStyle: "italic",
@@ -183,65 +192,53 @@ export default function ClinicDetailPanel() {
           </button>
         </div>
 
-        {/* Services */}
+        {/* Service Tags - no header needed */}
         {services.length > 0 && (
-          <Section title={t("sections:services")}>
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                gap: theme.spacing[2],
-              }}
-            >
-              {services.map(({ label, bgColor, textColor }) => (
-                <span
-                  key={label}
-                  style={{
-                    padding: `${theme.spacing[2]} ${theme.spacing[3]}`,
-                    backgroundColor: bgColor,
-                    color: textColor,
-                    borderRadius: theme.borderRadius.sm,
-                    fontSize: theme.fonts.size.sm,
-                    fontWeight: theme.fonts.weight.medium,
-                  }}
-                >
-                  {label}
-                </span>
-              ))}
-            </div>
-          </Section>
-        )}
-
-        {/* Address */}
-        <Section title="">
           <div
             style={{
               display: "flex",
-              alignItems: "start",
-              gap: theme.spacing[2],
+              flexWrap: "wrap",
+              gap: theme.spacing[1],
               marginBottom: theme.spacing[3],
             }}
           >
-            <p
-              style={{
-                margin: 0,
-                flex: 1,
-                color: theme.colors.textPrimary,
-                fontSize: theme.fonts.size.base,
-                lineHeight: "1.5",
-              }}
-            >
-              {selectedClinic.address}
-              {selectedClinic.borough && (
-                <>
-                  <br />
-                  {selectedClinic.borough === "Manhattan"
-                    ? "New York"
-                    : selectedClinic.borough}
-                  , NY
-                </>
-              )}
-            </p>
+            {services.map(({ label, bgColor, textColor }) => (
+              <span
+                key={label}
+                style={{
+                  padding: `${theme.spacing[1]} ${theme.spacing[2]}`,
+                  backgroundColor: bgColor,
+                  color: textColor,
+                  borderRadius: theme.borderRadius.sm,
+                  fontSize: theme.fonts.size.xs,
+                  fontWeight: theme.fonts.weight.medium,
+                }}
+              >
+                {label}
+              </span>
+            ))}
+          </div>
+        )}
+
+        {/* Address + Actions */}
+        <div style={{ marginBottom: theme.spacing[3] }}>
+          <p
+            style={{
+              margin: `0 0 ${theme.spacing[2]} 0`,
+              color: theme.colors.textPrimary,
+              fontSize: theme.fonts.size.sm,
+            }}
+          >
+            {selectedClinic.address}
+            {selectedClinic.borough && (
+              <>
+                ,{" "}
+                {selectedClinic.borough === "Manhattan"
+                  ? "New York"
+                  : selectedClinic.borough}
+                , NY
+              </>
+            )}
             <button
               onClick={() => {
                 const cityName =
@@ -261,195 +258,144 @@ export default function ClinicDetailPanel() {
                 background: "none",
                 border: "none",
                 cursor: "pointer",
-                padding: theme.spacing[1],
-                color: copiedAddress ? theme.colors.prep : theme.colors.primary,
-                fontSize: theme.fonts.size.base,
-                fontWeight: theme.fonts.weight.medium,
-                transition: `color ${theme.transitions.fast}`,
+                marginLeft: theme.spacing[1],
+                padding: 0,
+                color: copiedAddress ? theme.colors.open : theme.colors.primary,
+                fontSize: theme.fonts.size.xs,
+                verticalAlign: "middle",
               }}
             >
-              {copiedAddress ? `✓ ${t("actions:copied")}` : "📋"}
+              {copiedAddress ? "✓ copied" : "copy"}
             </button>
-          </div>
-          <a
-            href={`geo:${selectedClinic.latitude},${selectedClinic.longitude}?q=${selectedClinic.latitude},${selectedClinic.longitude}`}
-            style={{
-              display: "inline-block",
-              padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
-              backgroundColor: theme.colors.primary,
-              color: "white",
-              textAlign: "center",
-              textDecoration: "none",
-              borderRadius: theme.borderRadius.sm,
-              fontSize: theme.fonts.size.sm,
-              fontWeight: theme.fonts.weight.medium,
-            }}
-          >
-            {t("actions:openInMaps")}
-          </a>
+            <a
+              href={`https://maps.google.com/?q=${encodeURIComponent(selectedClinic.address + (selectedClinic.borough ? `, ${selectedClinic.borough}, NY` : ""))}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                marginLeft: theme.spacing[2],
+                color: theme.colors.primary,
+                fontSize: theme.fonts.size.xs,
+                textDecoration: "none",
+                verticalAlign: "middle",
+              }}
+              title={t("actions:openInMaps")}
+            >
+              directions
+            </a>
+          </p>
+
+          {/* Transit - compact */}
           {(selectedClinic.transit || selectedClinic.bus) && (
             <div
               style={{
-                marginTop: theme.spacing[3],
-                display: "flex",
-                flexDirection: "column",
-                gap: theme.spacing[2],
+                fontSize: theme.fonts.size.xs,
+                color: theme.colors.textSecondary,
               }}
             >
               {selectedClinic.transit && (
-                <div
-                  style={{
-                    padding: theme.spacing[2],
-                    backgroundColor: theme.colors.surface,
-                    borderRadius: theme.borderRadius.sm,
-                    fontSize: theme.fonts.size.sm,
-                  }}
-                >
+                <div style={{ marginBottom: theme.spacing[1] }}>
                   <TransitInfo transit={selectedClinic.transit} />
                 </div>
               )}
-              {selectedClinic.bus && (
-                <div
-                  style={{
-                    padding: theme.spacing[2],
-                    backgroundColor: theme.colors.surface,
-                    borderRadius: theme.borderRadius.sm,
-                    fontSize: theme.fonts.size.sm,
-                  }}
-                >
-                  <BusInfo bus={selectedClinic.bus} />
-                </div>
-              )}
+              {selectedClinic.bus && <BusInfo bus={selectedClinic.bus} />}
             </div>
           )}
-        </Section>
+        </div>
+
+        {/* Quick Facts - horizontal compact */}
+        {quickFacts.length > 0 && (
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: `${theme.spacing[1]} ${theme.spacing[3]}`,
+              marginBottom: theme.spacing[3],
+              fontSize: theme.fonts.size.sm,
+              color: theme.colors.textPrimary,
+            }}
+          >
+            {quickFacts.map((fact) => (
+              <span key={fact}>✓ {fact}</span>
+            ))}
+          </div>
+        )}
 
         {/* Hours */}
-        {formattedHours.length > 0 && (
-          <Section title={t("sections:hours")}>
-            <div
+        {formattedHours && formattedHours.length > 0 && (
+          <div style={{ marginBottom: theme.spacing[3] }}>
+            <h3
               style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: theme.spacing[4],
+                fontSize: theme.fonts.size.sm,
+                fontWeight: theme.fonts.weight.semibold,
+                color: theme.colors.textSecondary,
+                margin: `0 0 ${theme.spacing[2]} 0`,
+                textTransform: "uppercase",
+                letterSpacing: "0.5px",
               }}
             >
-              {formattedHours.map((dept, i) => (
-                <div key={i}>
-                  {formattedHours.length > 1 && (
-                    <p
-                      style={{
-                        margin: `0 0 ${theme.spacing[2]} 0`,
-                        fontSize: theme.fonts.size.sm,
-                        fontWeight: theme.fonts.weight.medium,
-                        color: theme.colors.textSecondary,
-                      }}
-                    >
-                      {t(dept.department, { ns: "dynamic" })}
-                    </p>
-                  )}
-                  <div
+              {t("sections:hours")}
+            </h3>
+            {formattedHours.map((dept, i) => (
+              <div key={i} style={{ marginBottom: theme.spacing[2] }}>
+                {formattedHours.length > 1 && (
+                  <p
                     style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: theme.spacing[1],
+                      margin: `0 0 ${theme.spacing[1]} 0`,
+                      fontSize: theme.fonts.size.xs,
+                      fontWeight: theme.fonts.weight.medium,
+                      color: theme.colors.textSecondary,
                     }}
                   >
-                    {dept.schedules.map((sched, j) => (
-                      <div
-                        key={j}
-                        style={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                          alignItems: "baseline",
-                          fontSize: theme.fonts.size.sm,
-                        }}
-                      >
-                        <span style={{ color: theme.colors.textPrimary }}>
-                          {sched.days}
-                        </span>
-                        <span style={{ color: theme.colors.textSecondary }}>
-                          {sched.isAllDay ? t("messages:allDay") : sched.time}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Section>
-        )}
-
-        {/* Insurance */}
-        <Section title={t("sections:insuranceAndCost")}>
-          {!selectedClinic.accepts_medicaid &&
-          !selectedClinic.accepts_medicare &&
-          !selectedClinic.no_insurance_ok &&
-          !selectedClinic.sliding_scale ? (
-            <p
-              style={{
-                margin: 0,
-                color: theme.colors.textSecondary,
-                fontSize: theme.fonts.size.sm,
-                fontStyle: "italic",
-              }}
-            >
-              {t("messages:unknownContactClinic")}
-            </p>
-          ) : (
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: theme.spacing[2],
-              }}
-            >
-              {selectedClinic.accepts_medicaid && (
-                <InfoItem text={t("insurance:acceptsMedicaid")} />
-              )}
-              {selectedClinic.accepts_medicare && (
-                <InfoItem text={t("insurance:acceptsMedicare")} />
-              )}
-              {selectedClinic.no_insurance_ok && (
-                <InfoItem text={t("insurance:noInsuranceOk")} highlight />
-              )}
-              {selectedClinic.sliding_scale && (
-                <InfoItem text={t("insurance:slidingScale")} />
-              )}
-            </div>
-          )}
-        </Section>
-
-        {/* Access */}
-        {selectedClinic.walk_in && (
-          <Section title={t("sections:walkIns")}>
-            <InfoItem text={t("messages:walkInsAccepted")} />
-          </Section>
-        )}
-
-        {/* Contact Info */}
-        {(selectedClinic.phone || selectedClinic.website) && (
-          <Section title={t("sections:contact")}>
-            {selectedClinic.phone && !selectedClinic.phone.includes("@") && (
-              <div style={{ marginBottom: theme.spacing[2] }}>
-                <p
+                    {t(dept.department, { ns: "dynamic" })}
+                  </p>
+                )}
+                <div
                   style={{
-                    margin: `0 0 ${theme.spacing[1]} 0`,
-                    fontSize: theme.fonts.size.xs,
-                    color: theme.colors.textSecondary,
-                    fontWeight: theme.fonts.weight.medium,
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "2px",
                   }}
                 >
-                  {t("sections:phone")}
-                </p>
+                  {dept.schedules.map((sched, j) => (
+                    <div
+                      key={j}
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        fontSize: theme.fonts.size.sm,
+                      }}
+                    >
+                      <span style={{ color: theme.colors.textPrimary }}>
+                        {sched.days}
+                      </span>
+                      <span style={{ color: theme.colors.textSecondary }}>
+                        {sched.isAllDay ? t("messages:allDay") : sched.time}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Contact - inline labels */}
+        {(selectedClinic.phone || selectedClinic.website) && (
+          <div
+            style={{
+              marginBottom: theme.spacing[3],
+              fontSize: theme.fonts.size.sm,
+            }}
+          >
+            {selectedClinic.phone && !selectedClinic.phone.includes("@") && (
+              <div style={{ marginBottom: theme.spacing[1] }}>
+                <span style={{ color: theme.colors.textSecondary }}>
+                  {t("sections:phone")}:{" "}
+                </span>
                 <a
                   href={`tel:${selectedClinic.phone}`}
                   style={{
-                    display: "block",
-                    margin: 0,
-                    fontSize: theme.fonts.size.base,
                     color: theme.colors.primary,
-                    fontWeight: theme.fonts.weight.medium,
                     textDecoration: "none",
                   }}
                 >
@@ -459,16 +405,9 @@ export default function ClinicDetailPanel() {
             )}
             {selectedClinic.website && (
               <div>
-                <p
-                  style={{
-                    margin: `0 0 ${theme.spacing[1]} 0`,
-                    fontSize: theme.fonts.size.xs,
-                    color: theme.colors.textSecondary,
-                    fontWeight: theme.fonts.weight.medium,
-                  }}
-                >
-                  {t("sections:website")}
-                </p>
+                <span style={{ color: theme.colors.textSecondary }}>
+                  {t("sections:website")}:{" "}
+                </span>
                 <a
                   href={
                     selectedClinic.website.startsWith("http")
@@ -479,23 +418,27 @@ export default function ClinicDetailPanel() {
                   rel="noopener noreferrer"
                   style={{
                     color: theme.colors.primary,
-                    fontSize: theme.fonts.size.sm,
                     wordBreak: "break-all",
-                    textDecoration: "underline",
                   }}
                 >
-                  {selectedClinic.website.replace(/^https?:\/\//, "")}
+                  {selectedClinic.website
+                    .replace(/^https?:\/\//, "")
+                    .replace(/\/$/, "")
+                    .substring(0, 35)}
+                  {selectedClinic.website.replace(/^https?:\/\//, "").length >
+                  35
+                    ? "..."
+                    : ""}
                 </a>
               </div>
             )}
-          </Section>
+          </div>
         )}
 
         {/* Report Correction */}
         <div
           style={{
-            marginTop: theme.spacing[4],
-            paddingTop: theme.spacing[4],
+            paddingTop: theme.spacing[3],
             borderTop: `1px solid ${theme.colors.border}`,
           }}
         >
@@ -505,7 +448,7 @@ export default function ClinicDetailPanel() {
               background: "none",
               border: "none",
               color: theme.colors.textSecondary,
-              fontSize: theme.fonts.size.sm,
+              fontSize: theme.fonts.size.xs,
               cursor: "pointer",
               padding: 0,
               textDecoration: "underline",
@@ -530,40 +473,6 @@ export default function ClinicDetailPanel() {
           onClose={() => setShowCorrectionForm(false)}
         />
       )}
-    </div>
-  );
-}
-
-function Section({ title, children }) {
-  return (
-    <div style={{ marginBottom: theme.spacing[6] }}>
-      <h3
-        style={{
-          fontSize: theme.fonts.size.base,
-          fontWeight: theme.fonts.weight.semibold,
-          color: theme.colors.textPrimary,
-          marginBottom: theme.spacing[3],
-        }}
-      >
-        {title}
-      </h3>
-      {children}
-    </div>
-  );
-}
-
-function InfoItem({ text, highlight }) {
-  return (
-    <div
-      style={{
-        padding: theme.spacing[2],
-        backgroundColor: highlight ? theme.colors.surface : "transparent",
-        borderRadius: theme.borderRadius.sm,
-        fontSize: theme.fonts.size.sm,
-        color: theme.colors.textPrimary,
-      }}
-    >
-      ✓ {text}
     </div>
   );
 }
