@@ -23,5 +23,11 @@
   "allDay": "Buong araw",
   "openAfter5pm": "Bukas pagkalipas ng 5pm",
   "subway": "Linya ng tren",
-  "bus": "Ruta ng bus"
+  "bus": "Ruta ng bus",
+  "search": "Maghanap",
+  "selectBus": "Pumili ng mga ruta ng bus",
+  "selectSubway": "Pumili ng mga linya ng tren",
+  "hours": "Oras",
+  "searchByName": "Maghanap gamit ang pangalan ng klinika...",
+  "siteTitle": "Sexual Health NYC - Maghanap ng mga Klinika para sa STI Testing, HIV Testing, PrEP, PEP, Contraception, at Abortion Services"
 }

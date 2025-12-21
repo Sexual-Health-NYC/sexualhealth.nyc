@@ -23,5 +23,11 @@
   "allDay": "Cả ngày",
   "openAfter5pm": "Mở cửa sau 5 giờ chiều",
   "subway": "Tuyến tàu điện ngầm",
-  "bus": "Tuyến xe buýt"
+  "bus": "Tuyến xe buýt",
+  "search": "Tìm kiếm",
+  "selectBus": "Chọn tuyến xe buýt",
+  "selectSubway": "Chọn tuyến tàu điện ngầm",
+  "hours": "Giờ làm việc",
+  "searchByName": "Tìm kiếm theo tên phòng khám...",
+  "siteTitle": "Sexual Health NYC - Tìm phòng khám xét nghiệm STI, xét nghiệm HIV, PrEP, PEP, tránh thai và dịch vụ phá thai"
 }

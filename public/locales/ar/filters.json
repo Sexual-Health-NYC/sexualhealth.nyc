@@ -9,5 +9,10 @@
   "prepAP": "PrEP-AP (مساعدة مالية)",
   "virtualTelehealth": "افتراضي / رعاية صحية عن بعد",
   "clearAllFilters": "مسح جميع الفلاتر",
-  "closeFilters": "إغلاق الفلاتر"
+  "closeFilters": "إغلاق الفلاتر",
+  "borough": "حي",
+  "services": "خدمات",
+  "availability": "التوفر",
+  "filters": "مرشحات",
+  "insuranceAndCost": "التأمين والتكلفة"
 }

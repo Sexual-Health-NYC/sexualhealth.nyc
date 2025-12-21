@@ -23,5 +23,11 @@
   "allDay": "पूरे दिन",
   "openAfter5pm": "शाम 5 बजे के बाद खुला",
   "subway": "सबवे लाइन",
-  "bus": "बस रूट"
+  "bus": "बस रूट",
+  "search": "खोजें",
+  "selectBus": "बस मार्ग चुनें",
+  "selectSubway": "सबवे लाइनें चुनें",
+  "hours": "समय",
+  "searchByName": "क्लिनिक के नाम से खोजें...",
+  "siteTitle": "Sexual Health NYC - STI परीक्षण, HIV परीक्षण, PrEP, PEP, गर्भनिरोधक और गर्भपात सेवाओं के लिए क्लीनिक खोजें"
 }

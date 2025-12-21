@@ -9,5 +9,10 @@
   "prepAP": "PrEP-AP (مالی امداد)",
   "virtualTelehealth": "ورچوئل / ٹیلی ہیلتھ",
   "clearAllFilters": "تمام فلٹرز صاف کریں",
-  "closeFilters": "فلٹرز بند کریں"
+  "closeFilters": "فلٹرز بند کریں",
+  "borough": "بورو",
+  "services": "خدمات",
+  "availability": "دستیابی",
+  "filters": "فلٹرز",
+  "insuranceAndCost": "انشورنس اور قیمت"
 }

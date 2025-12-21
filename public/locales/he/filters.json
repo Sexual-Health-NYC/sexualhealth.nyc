@@ -9,5 +9,10 @@
   "prepAP": "PrEP-AP (סיוע כלכלי)",
   "virtualTelehealth": "וירטואלי / טלה-רפואה",
   "clearAllFilters": "נקה את כל המסננים",
-  "closeFilters": "סגור מסננים"
+  "closeFilters": "סגור מסננים",
+  "borough": "רובע",
+  "services": "שירותים",
+  "availability": "זמינות",
+  "filters": "מסננים",
+  "insuranceAndCost": "ביטוח ועלות"
 }

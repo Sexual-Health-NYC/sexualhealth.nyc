@@ -5,7 +5,7 @@ function InfoItem({ text, highlight }) {
   return (
     <div
       style={{
-        padding: theme.spacing[2],
+        padding: `${theme.spacing[1]} ${theme.spacing[2]}`,
         backgroundColor: highlight ? theme.colors.surface : "transparent",
         borderRadius: theme.borderRadius.sm,
         fontSize: theme.fonts.size.sm,
@@ -32,7 +32,7 @@ export default function ClinicInsurance({ clinic }) {
       >
         {t("sections:insuranceAndCost")}
       </h3>
-      
+
       {!clinic.accepts_medicaid &&
       !clinic.accepts_medicare &&
       !clinic.no_insurance_ok &&
@@ -52,7 +52,7 @@ export default function ClinicInsurance({ clinic }) {
           style={{
             display: "flex",
             flexDirection: "column",
-            gap: theme.spacing[2],
+            gap: theme.spacing[1],
           }}
         >
           {clinic.accepts_medicaid && (

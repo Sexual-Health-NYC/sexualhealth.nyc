@@ -23,5 +23,11 @@
   "allDay": "終日",
   "openAfter5pm": "午後5時以降も営業",
   "subway": "地下鉄路線",
-  "bus": "バス路線"
+  "bus": "バス路線",
+  "search": "検索",
+  "selectBus": "バス路線を選択",
+  "selectSubway": "地下鉄路線を選択",
+  "hours": "営業時間",
+  "searchByName": "クリニック名で検索...",
+  "siteTitle": "Sexual Health NYC - STI検査、HIV検査、PrEP、PEP、避妊、中絶サービスのためのクリニックを探す"
 }

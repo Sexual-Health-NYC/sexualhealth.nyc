@@ -20,5 +20,6 @@
   "resetView": "Réinitialiser la vue",
   "geolocationNotSupported": "Votre navigateur ne supporte pas la géolocalisation",
   "unableToGetLocation": "Impossible d'obtenir votre position",
-  "showOnMap": "Afficher sur la carte"
+  "showOnMap": "Afficher sur la carte",
+  "cancelCorrection": "Annuler la correction"
 }

@@ -23,5 +23,11 @@
   "allDay": "Cały dzień",
   "openAfter5pm": "Otwarte po 17:00",
   "subway": "Linia metra",
-  "bus": "Linia autobusowa"
+  "bus": "Linia autobusowa",
+  "search": "Szukaj",
+  "selectBus": "Wybierz linie autobusowe",
+  "selectSubway": "Wybierz linie metra",
+  "hours": "Godziny otwarcia",
+  "searchByName": "Szukaj według nazwy kliniki...",
+  "siteTitle": "Sexual Health NYC - Znajdź kliniki oferujące testy na STI, testy na HIV, PrEP, PEP, antykoncepcję i usługi aborcyjne"
 }

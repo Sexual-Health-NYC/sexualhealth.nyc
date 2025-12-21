@@ -20,5 +20,6 @@
   "resetView": "ভিউ রিসেট করুন",
   "geolocationNotSupported": "আপনার ব্রাউজার জিওলোকেশন সমর্থন করে না",
   "unableToGetLocation": "আপনার অবস্থান পাওয়া যায়নি",
-  "showOnMap": "মানচিত্রে দেখান"
+  "showOnMap": "মানচিত্রে দেখান",
+  "cancelCorrection": "সংশোধন বাতিল করুন"
 }

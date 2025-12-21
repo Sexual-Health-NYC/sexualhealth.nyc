@@ -9,5 +9,10 @@
   "prepAP": "PrEP-AP (Aiuto finanziario)",
   "virtualTelehealth": "Virtuale / Telemedicina",
   "clearAllFilters": "Cancella tutti i filtri",
-  "closeFilters": "Chiudi filtri"
+  "closeFilters": "Chiudi filtri",
+  "borough": "Quartiere",
+  "services": "Servizi",
+  "availability": "Disponibilità",
+  "filters": "Filtri",
+  "insuranceAndCost": "Assicurazione e Costi"
 }

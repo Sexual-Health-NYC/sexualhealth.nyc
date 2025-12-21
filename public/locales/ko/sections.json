@@ -8,5 +8,7 @@
   "phone": "전화번호",
   "website": "웹사이트",
   "borough": "자치구",
-  "access": "접근성"
+  "access": "접근성",
+  "telehealthDescription": "우편으로 낙태약을 받으세요 — 직접 방문할 필요 없음",
+  "telehealthOptions": "원격 진료 옵션"
 }

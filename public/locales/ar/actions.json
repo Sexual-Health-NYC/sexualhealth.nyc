@@ -20,5 +20,6 @@
   "resetView": "إعادة تعيين العرض",
   "geolocationNotSupported": "المتصفح لا يدعم تحديد الموقع",
   "unableToGetLocation": "تعذر تحديد موقعك",
-  "showOnMap": "عرض على الخريطة"
+  "showOnMap": "عرض على الخريطة",
+  "cancelCorrection": "إلغاء التصحيح"
 }

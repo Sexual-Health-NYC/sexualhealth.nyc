@@ -9,5 +9,10 @@
   "prepAP": "PrEP-AP (재정 지원)",
   "virtualTelehealth": "가상 / 원격 의료",
   "clearAllFilters": "모든 필터 지우기",
-  "closeFilters": "필터 닫기"
+  "closeFilters": "필터 닫기",
+  "borough": "자치구",
+  "services": "서비스",
+  "availability": "이용 가능 여부",
+  "filters": "필터",
+  "insuranceAndCost": "보험 및 비용"
 }

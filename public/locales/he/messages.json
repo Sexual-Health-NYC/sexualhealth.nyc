@@ -23,5 +23,11 @@
   "allDay": "כל היום",
   "openAfter5pm": "פתוח אחרי 17:00",
   "subway": "קו רכבת תחתית",
-  "bus": "קו אוטובוס"
+  "bus": "קו אוטובוס",
+  "search": "חיפוש",
+  "selectBus": "בחר קווי אוטובוס",
+  "selectSubway": "בחר קווי רכבת תחתית",
+  "hours": "שעות פעילות",
+  "searchByName": "חפש לפי שם המרפאה...",
+  "siteTitle": "Sexual Health NYC - מצא מרפאות לבדיקות STI, בדיקות HIV, PrEP, PEP, אמצעי מניעה ושירותי הפלה"
 }

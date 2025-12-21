@@ -9,5 +9,10 @@
   "prepAP": "PrEP-AP (Pinansyal na Tulong)",
   "virtualTelehealth": "Virtual / Telehealth",
   "clearAllFilters": "I-clear ang Lahat ng Filter",
-  "closeFilters": "Isara ang Mga Filter"
+  "closeFilters": "Isara ang Mga Filter",
+  "borough": "Purok",
+  "services": "Mga Serbisyo",
+  "availability": "Pagkakaroon",
+  "filters": "Mga Filter",
+  "insuranceAndCost": "Seguro at Gastos"
 }

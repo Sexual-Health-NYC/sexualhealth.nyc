@@ -8,5 +8,7 @@
   "phone": "Telefon",
   "website": "Strona www",
   "borough": "Dzielnica",
-  "access": "Dostęp"
+  "access": "Dostęp",
+  "telehealthDescription": "Otrzymaj tabletki poronne pocztą — wizyta osobista nie jest wymagana",
+  "telehealthOptions": "Opcje telemedycyny"
 }

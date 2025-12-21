@@ -8,5 +8,7 @@
   "phone": "Telepono",
   "website": "Website",
   "borough": "Borough",
-  "access": "Access"
+  "access": "Access",
+  "telehealthDescription": "Tumanggap ng mga tableta sa pagpapalaglag sa pamamagitan ng koreo — hindi kailangan ng personal na pagbisita",
+  "telehealthOptions": "Mga Opsyon sa Telehealth"
 }

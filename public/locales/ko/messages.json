@@ -23,5 +23,11 @@
   "allDay": "하루 종일",
   "openAfter5pm": "오후 5시 이후 영업",
   "subway": "지하철 노선",
-  "bus": "버스 노선"
+  "bus": "버스 노선",
+  "search": "검색",
+  "selectBus": "버스 노선 선택",
+  "selectSubway": "지하철 노선 선택",
+  "hours": "운영 시간",
+  "searchByName": "병원 이름으로 검색...",
+  "siteTitle": "Sexual Health NYC - STI 검사, HIV 검사, PrEP, PEP, 피임 및 낙태 서비스를 위한 클리닉 찾기"
 }

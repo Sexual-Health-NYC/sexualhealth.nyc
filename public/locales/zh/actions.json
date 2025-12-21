@@ -20,5 +20,6 @@
   "resetView": "重置视图",
   "geolocationNotSupported": "您的浏览器不支持地理定位",
   "unableToGetLocation": "无法获取您的位置",
-  "showOnMap": "在地图上显示"
+  "showOnMap": "在地图上显示",
+  "cancelCorrection": "取消更正"
 }

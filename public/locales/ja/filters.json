@@ -9,5 +9,10 @@
   "prepAP": "PrEP-AP（経済的支援）",
   "virtualTelehealth": "バーチャル／遠隔医療",
   "clearAllFilters": "すべてのフィルターをクリア",
-  "closeFilters": "フィルターを閉じる"
+  "closeFilters": "フィルターを閉じる",
+  "borough": "地区",
+  "services": "サービス",
+  "availability": "空き状況",
+  "filters": "フィルター",
+  "insuranceAndCost": "保険と費用"
 }

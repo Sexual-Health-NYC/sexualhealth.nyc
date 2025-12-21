@@ -20,5 +20,6 @@
   "resetView": "منظر دوبارہ ترتیب دیں",
   "geolocationNotSupported": "آپ کا براؤزر جغرافیائی محل وقوع کو سپورٹ نہیں کرتا",
   "unableToGetLocation": "آپ کا مقام حاصل کرنے سے قاصر",
-  "showOnMap": "نقشے پر دکھائیں"
+  "showOnMap": "نقشے پر دکھائیں",
+  "cancelCorrection": "تصحیح منسوخ کریں"
 }

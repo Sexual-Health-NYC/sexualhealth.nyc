@@ -20,5 +20,6 @@
   "resetView": "I-reset ang View",
   "geolocationNotSupported": "Hindi suportado ng iyong browser ang geolocation",
   "unableToGetLocation": "Hindi makuha ang iyong lokasyon",
-  "showOnMap": "Ipakita sa Mapa"
+  "showOnMap": "Ipakita sa Mapa",
+  "cancelCorrection": "Kanselahin ang pagwawasto"
 }

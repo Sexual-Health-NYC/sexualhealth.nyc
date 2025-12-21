@@ -20,5 +20,6 @@
   "resetView": "뷰 초기화",
   "geolocationNotSupported": "브라우저가 위치 정보를 지원하지 않습니다",
   "unableToGetLocation": "위치를 확인할 수 없습니다",
-  "showOnMap": "지도에 표시"
+  "showOnMap": "지도에 표시",
+  "cancelCorrection": "수정 취소"
 }

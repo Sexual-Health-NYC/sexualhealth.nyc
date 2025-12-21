@@ -20,5 +20,6 @@
   "resetView": "Đặt lại chế độ xem",
   "geolocationNotSupported": "Trình duyệt của bạn không hỗ trợ định vị",
   "unableToGetLocation": "Không thể lấy vị trí của bạn",
-  "showOnMap": "Hiển thị trên bản đồ"
+  "showOnMap": "Hiển thị trên bản đồ",
+  "cancelCorrection": "Hủy sửa đổi"
 }

@@ -8,5 +8,7 @@
   "phone": "電話番号",
   "website": "ウェブサイト",
   "borough": "行政区",
-  "access": "アクセス"
+  "access": "アクセス",
+  "telehealthDescription": "経口中絶薬を郵送で受け取る — 来院不要",
+  "telehealthOptions": "遠隔医療オプション"
 }

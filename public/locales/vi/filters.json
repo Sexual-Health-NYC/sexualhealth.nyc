@@ -9,5 +9,10 @@
   "prepAP": "PrEP-AP (Hỗ trợ tài chính)",
   "virtualTelehealth": "Ảo / Y tế từ xa",
   "clearAllFilters": "Xóa tất cả bộ lọc",
-  "closeFilters": "Đóng bộ lọc"
+  "closeFilters": "Đóng bộ lọc",
+  "borough": "Quận",
+  "services": "Dịch vụ",
+  "availability": "Tình trạng sẵn có",
+  "filters": "Bộ lọc",
+  "insuranceAndCost": "Bảo hiểm & Chi phí"
 }

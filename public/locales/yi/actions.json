@@ -20,5 +20,6 @@
   "resetView": "רעסעט מיינונג",
   "geolocationNotSupported": "דיין בלעטערער שטיצט נישט געאָלאָקאַטיאָן",
   "unableToGetLocation": "קען נישט באַקומען דיין אָרט",
-  "showOnMap": "ווייַזן אויף מאַפּע"
+  "showOnMap": "ווייַזן אויף מאַפּע",
+  "cancelCorrection": "באָטל מאַכן קערעקשאַן"
 }

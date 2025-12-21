@@ -9,5 +9,10 @@
   "prepAP": "PrEP-AP (Οικονομική Βοήθεια)",
   "virtualTelehealth": "Εικονική / Τηλεϊατρική",
   "clearAllFilters": "Εκκαθάριση όλων των φίλτρων",
-  "closeFilters": "Κλείσιμο φίλτρων"
+  "closeFilters": "Κλείσιμο φίλτρων",
+  "borough": "Δήμος",
+  "services": "Υπηρεσίες",
+  "availability": "Διαθεσιμότητα",
+  "filters": "Φίλτρα",
+  "insuranceAndCost": "Ασφάλιση και Κόστος"
 }

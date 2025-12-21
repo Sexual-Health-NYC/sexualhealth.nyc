@@ -9,5 +9,10 @@
   "prepAP": "PrEP-AP (वित्तीय सहायता)",
   "virtualTelehealth": "वर्चुअल / टेलीहेल्थ",
   "clearAllFilters": "सभी फिल्टर साफ करें",
-  "closeFilters": "फिल्टर बंद करें"
+  "closeFilters": "फिल्टर बंद करें",
+  "borough": "बोरो (Borough)",
+  "services": "सेवाएं",
+  "availability": "उपलब्धता",
+  "filters": "फिल्टर",
+  "insuranceAndCost": "बीमा और लागत"
 }

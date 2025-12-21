@@ -8,5 +8,7 @@
   "phone": "טלפון",
   "website": "אתר אינטרנט",
   "borough": "רובע",
-  "access": "נגישות"
+  "access": "נגישות",
+  "telehealthDescription": "קבלי כדורי הפלה בדואר — אין צורך בביקור אישי",
+  "telehealthOptions": "אפשרויות רפואה מרחוק"
 }
