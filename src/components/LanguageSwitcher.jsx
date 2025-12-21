@@ -5,9 +5,10 @@ import theme from "../theme";
 export default function LanguageSwitcher() {
   const { i18n } = useTranslation();
 
-  // Update html lang attribute when language changes
+  // Update html lang attribute and direction when language changes
   useEffect(() => {
     document.documentElement.lang = i18n.language;
+    document.documentElement.dir = i18n.dir(i18n.language);
   }, [i18n.language]);
 
   return (

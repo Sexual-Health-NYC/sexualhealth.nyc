@@ -1,8 +1,18 @@
 import { useEffect, useRef } from "react";
 import MapGL, { NavigationControl } from "react-map-gl/mapbox";
+import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import useAppStore from "../store/useAppStore";
 import ClinicMarkers from "./ClinicMarkers";
+
+// Enable RTL text support
+if (mapboxgl.getRTLTextPluginStatus() === 'unavailable') {
+  mapboxgl.setRTLTextPlugin(
+    'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.2.3/mapbox-gl-rtl-text.js',
+    null,
+    true // Lazy load
+  );
+}
 
 const MAPBOX_TOKEN =
   "pk.eyJ1Ijoic2V4dWFsLWhlYWx0aC1ueWMiLCJhIjoiY21qZHF2ZTAyMDQ3aTNjb3MxbDFscWowZiJ9.BXuUrUio_grUlyoxU6WFBQ";
