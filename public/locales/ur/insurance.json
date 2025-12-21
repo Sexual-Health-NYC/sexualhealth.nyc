@@ -2,5 +2,10 @@
   "acceptsMedicaid": "Medicaid قبول کرتا ہے",
   "acceptsMedicare": "Medicare قبول کرتا ہے",
   "noInsuranceOk": "انشورنس کی ضرورت نہیں",
-  "slidingScale": "سلائیڈنگ اسکیل (Sliding Scale)"
+  "slidingScale": "سلائیڈنگ اسکیل (Sliding Scale)",
+  "medicaidStraight": "براہ راست Medicaid",
+  "medicaidManaged": "مینیجڈ Medicaid",
+  "medicaidBoth": "براہ راست اور مینیجڈ Medicaid",
+  "medicaidMcos": "منصوبے: {{mcos}}",
+  "medicaidCallToVerify": "(تصدیق کے لیے کال کریں)"
 }

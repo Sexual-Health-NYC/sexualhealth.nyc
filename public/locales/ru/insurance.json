@@ -2,5 +2,10 @@
   "acceptsMedicaid": "Принимает Medicaid",
   "acceptsMedicare": "Принимает Medicare",
   "noInsuranceOk": "Страховка не требуется",
-  "slidingScale": "Скользящая шкала оплаты"
+  "slidingScale": "Скользящая шкала оплаты",
+  "medicaidStraight": "Прямой Medicaid",
+  "medicaidManaged": "Управляемый Medicaid",
+  "medicaidBoth": "Прямой и управляемый Medicaid",
+  "medicaidMcos": "Планы: {{mcos}}",
+  "medicaidCallToVerify": "(позвоните для уточнения)"
 }

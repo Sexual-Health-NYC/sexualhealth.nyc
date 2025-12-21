@@ -2,5 +2,10 @@
   "acceptsMedicaid": "Accetta Medicaid",
   "acceptsMedicare": "Accetta Medicare",
   "noInsuranceOk": "Nessuna assicurazione richiesta",
-  "slidingScale": "Tariffa variabile (Sliding Scale)"
+  "slidingScale": "Tariffa variabile (Sliding Scale)",
+  "medicaidStraight": "Medicaid diretto",
+  "medicaidManaged": "Medicaid gestito",
+  "medicaidBoth": "Medicaid diretto e gestito",
+  "medicaidMcos": "Piani: {{mcos}}",
+  "medicaidCallToVerify": "(chiama per verificare)"
 }

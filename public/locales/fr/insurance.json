@@ -2,5 +2,10 @@
   "acceptsMedicaid": "Accepte Medicaid",
   "acceptsMedicare": "Accepte Medicare",
   "noInsuranceOk": "Sans assurance accepté",
-  "slidingScale": "Tarifs dégressifs (Sliding Scale)"
+  "slidingScale": "Tarifs dégressifs (Sliding Scale)",
+  "medicaidStraight": "Medicaid direct",
+  "medicaidManaged": "Medicaid géré",
+  "medicaidBoth": "Medicaid direct et géré",
+  "medicaidMcos": "Plans : {{mcos}}",
+  "medicaidCallToVerify": "(appelez pour vérifier)"
 }

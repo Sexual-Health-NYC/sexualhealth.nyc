@@ -2,5 +2,10 @@
   "acceptsMedicaid": "يقبل Medicaid",
   "acceptsMedicare": "يقبل Medicare",
   "noInsuranceOk": "لا يلزم وجود تأمين",
-  "slidingScale": "مقياس متدرج (Sliding Scale)"
+  "slidingScale": "مقياس متدرج (Sliding Scale)",
+  "medicaidStraight": "Medicaid المباشر",
+  "medicaidManaged": "Medicaid المدار",
+  "medicaidBoth": "Medicaid المباشر والمدار",
+  "medicaidMcos": "الخطط: {{mcos}}",
+  "medicaidCallToVerify": "(اتصل للتحقق)"
 }

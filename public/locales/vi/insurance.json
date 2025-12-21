@@ -2,5 +2,10 @@
   "acceptsMedicaid": "Chấp nhận Medicaid",
   "acceptsMedicare": "Chấp nhận Medicare",
   "noInsuranceOk": "Không cần bảo hiểm",
-  "slidingScale": "Phí theo thu nhập (Sliding Scale)"
+  "slidingScale": "Phí theo thu nhập (Sliding Scale)",
+  "medicaidStraight": "Medicaid Trực tiếp",
+  "medicaidManaged": "Medicaid Được quản lý",
+  "medicaidBoth": "Medicaid Trực tiếp & Được quản lý",
+  "medicaidMcos": "Các gói: {{mcos}}",
+  "medicaidCallToVerify": "(gọi để xác minh)"
 }

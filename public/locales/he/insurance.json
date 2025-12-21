@@ -2,5 +2,10 @@
   "acceptsMedicaid": "מקבל Medicaid",
   "acceptsMedicare": "מקבל Medicare",
   "noInsuranceOk": "אין צורך בביטוח",
-  "slidingScale": "תשלום לפי הכנסה (Sliding Scale)"
+  "slidingScale": "תשלום לפי הכנסה (Sliding Scale)",
+  "medicaidStraight": "Medicaid ישיר",
+  "medicaidManaged": "Medicaid מנוהל",
+  "medicaidBoth": "Medicaid ישיר ומנוהל",
+  "medicaidMcos": "תוכניות: {{mcos}}",
+  "medicaidCallToVerify": "(התקשר לאימות)"
 }

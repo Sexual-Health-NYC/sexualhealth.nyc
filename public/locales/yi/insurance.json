@@ -2,5 +2,10 @@
   "acceptsMedicaid": "נעמט Medicaid",
   "acceptsMedicare": "נעמט Medicare",
   "noInsuranceOk": "קיין פאַרזיכערונג נייטיק",
-  "slidingScale": "סליידינג סקאַלע (Sliding Scale)"
+  "slidingScale": "סליידינג סקאַלע (Sliding Scale)",
+  "medicaidStraight": "דירעקט Medicaid",
+  "medicaidManaged": "מאַנאַדזשד Medicaid",
+  "medicaidBoth": "דירעקט און מאַנאַדזשד Medicaid",
+  "medicaidMcos": "פּלענער: {{mcos}}",
+  "medicaidCallToVerify": "(רופן צו באַשטעטיקן)"
 }

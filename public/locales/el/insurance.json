@@ -2,5 +2,10 @@
   "acceptsMedicaid": "Δέχεται Medicaid",
   "acceptsMedicare": "Δέχεται Medicare",
   "noInsuranceOk": "Δεν απαιτείται ασφάλιση",
-  "slidingScale": "Κυλιόμενη κλίμακα (Sliding Scale)"
+  "slidingScale": "Κυλιόμενη κλίμακα (Sliding Scale)",
+  "medicaidStraight": "Απευθείας Medicaid",
+  "medicaidManaged": "Διαχειριζόμενο Medicaid",
+  "medicaidBoth": "Απευθείας και Διαχειριζόμενο Medicaid",
+  "medicaidMcos": "Σχέδια: {{mcos}}",
+  "medicaidCallToVerify": "(καλέστε για επαλήθευση)"
 }

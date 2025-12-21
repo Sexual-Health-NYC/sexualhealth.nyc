@@ -2,5 +2,10 @@
   "acceptsMedicaid": "Medicaid対応",
   "acceptsMedicare": "Medicare対応",
   "noInsuranceOk": "保険なしでも可",
-  "slidingScale": "スライディングスケール（所得に応じた料金）"
+  "slidingScale": "スライディングスケール（所得に応じた料金）",
+  "medicaidStraight": "直接Medicaid",
+  "medicaidManaged": "管理型Medicaid",
+  "medicaidBoth": "直接および管理型Medicaid",
+  "medicaidMcos": "プラン: {{mcos}}",
+  "medicaidCallToVerify": "(電話で確認)"
 }

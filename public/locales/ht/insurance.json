@@ -2,5 +2,10 @@
   "acceptsMedicaid": "Aksepte Medicaid",
   "acceptsMedicare": "Aksepte Medicare",
   "noInsuranceOk": "Pa Bezwen Asirans",
-  "slidingScale": "Echèl Glisman (Sliding Scale)"
+  "slidingScale": "Echèl Glisman (Sliding Scale)",
+  "medicaidStraight": "Medicaid Dirèk",
+  "medicaidManaged": "Medicaid Jere",
+  "medicaidBoth": "Medicaid Dirèk ak Jere",
+  "medicaidMcos": "Plan: {{mcos}}",
+  "medicaidCallToVerify": "(rele pou verifye)"
 }

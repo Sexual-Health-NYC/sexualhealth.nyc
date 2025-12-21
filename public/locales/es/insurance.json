@@ -2,5 +2,10 @@
   "acceptsMedicaid": "Acepta Medicaid",
   "acceptsMedicare": "Acepta Medicare",
   "noInsuranceOk": "No se requiere seguro",
-  "slidingScale": "Escala móvil"
+  "slidingScale": "Escala móvil",
+  "medicaidStraight": "Medicaid Directo",
+  "medicaidManaged": "Medicaid Administrado",
+  "medicaidBoth": "Medicaid Directo y Administrado",
+  "medicaidMcos": "Planes: {{mcos}}",
+  "medicaidCallToVerify": "(llamar para verificar)"
 }

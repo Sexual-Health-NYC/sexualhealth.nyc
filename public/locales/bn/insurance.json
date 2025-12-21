@@ -2,5 +2,10 @@
   "acceptsMedicaid": "Medicaid গ্রহণ করে",
   "acceptsMedicare": "Medicare গ্রহণ করে",
   "noInsuranceOk": "বীমার প্রয়োজন নেই",
-  "slidingScale": "স্লাইডিং স্কেল (Sliding Scale)"
+  "slidingScale": "স্লাইডিং স্কেল (Sliding Scale)",
+  "medicaidStraight": "সরাসরি Medicaid",
+  "medicaidManaged": "ম্যানেজড Medicaid",
+  "medicaidBoth": "সরাসরি এবং ম্যানেজড Medicaid",
+  "medicaidMcos": "প্ল্যান: {{mcos}}",
+  "medicaidCallToVerify": "(যাচাই করতে কল করুন)"
 }

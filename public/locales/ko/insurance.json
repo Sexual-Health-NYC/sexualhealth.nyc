@@ -2,5 +2,10 @@
   "acceptsMedicaid": "Medicaid(메디케이드) 수용",
   "acceptsMedicare": "Medicare(메디케어) 수용",
   "noInsuranceOk": "보험 없어도 가능",
-  "slidingScale": "차등 요금제(Sliding Scale)"
+  "slidingScale": "차등 요금제(Sliding Scale)",
+  "medicaidStraight": "일반 Medicaid",
+  "medicaidManaged": "관리형 Medicaid",
+  "medicaidBoth": "일반 및 관리형 Medicaid",
+  "medicaidMcos": "플랜: {{mcos}}",
+  "medicaidCallToVerify": "(전화 확인 요망)"
 }

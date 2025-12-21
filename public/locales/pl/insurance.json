@@ -2,5 +2,10 @@
   "acceptsMedicaid": "Akceptuje Medicaid",
   "acceptsMedicare": "Akceptuje Medicare",
   "noInsuranceOk": "Brak ubezpieczenia OK",
-  "slidingScale": "Skala przesuwna (Sliding Scale)"
+  "slidingScale": "Skala przesuwna (Sliding Scale)",
+  "medicaidStraight": "Bezpośredni Medicaid",
+  "medicaidManaged": "Zarządzany Medicaid",
+  "medicaidBoth": "Bezpośredni i zarządzany Medicaid",
+  "medicaidMcos": "Plany: {{mcos}}",
+  "medicaidCallToVerify": "(zadzwoń, aby sprawdzić)"
 }

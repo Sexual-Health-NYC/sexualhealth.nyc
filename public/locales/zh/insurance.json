@@ -2,5 +2,10 @@
   "acceptsMedicaid": "接受 Medicaid (白卡)",
   "acceptsMedicare": "接受 Medicare (红蓝卡)",
   "noInsuranceOk": "无需保险",
-  "slidingScale": "按收入收费 (Sliding Scale)"
+  "slidingScale": "按收入收费 (Sliding Scale)",
+  "medicaidStraight": "直接 Medicaid",
+  "medicaidManaged": "Medicaid 管理式医疗",
+  "medicaidBoth": "直接和管理式 Medicaid",
+  "medicaidMcos": "计划: {{mcos}}",
+  "medicaidCallToVerify": "(致电核实)"
 }
