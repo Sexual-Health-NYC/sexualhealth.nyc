@@ -20,5 +20,8 @@
   "closedOpensDay": "閉店 · {{day}} {{time}} 開店",
   "closedOpens": "閉店 · {{day}} 開店",
   "holidayHoursWarning": "{{holiday}} - 時間が変更される可能性があります",
-  "allDay": "終日"
+  "allDay": "終日",
+  "openAfter5pm": "午後5時以降も営業",
+  "subway": "地下鉄路線",
+  "bus": "バス路線"
 }

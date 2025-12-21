@@ -20,5 +20,8 @@
   "closedOpensDay": "بند ہے · {{day}} کو {{time}} پر کھلے گا",
   "closedOpens": "بند ہے · {{day}} کو کھلے گا",
   "holidayHoursWarning": "{{holiday}} - اوقات مختلف ہو سکتے ہیں",
-  "allDay": "پورا دن"
+  "allDay": "پورا دن",
+  "openAfter5pm": "شام 5 بجے کے بعد کھلا",
+  "subway": "سب وے لائن",
+  "bus": "بس روٹ"
 }

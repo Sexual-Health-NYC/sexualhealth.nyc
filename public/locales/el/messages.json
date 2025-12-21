@@ -20,5 +20,8 @@
   "closedOpensDay": "Κλειστό · Ανοίγει {{day}} στις {{time}}",
   "closedOpens": "Κλειστό · Ανοίγει {{day}}",
   "holidayHoursWarning": "{{holiday}} - οι ώρες μπορεί να διαφέρουν",
-  "allDay": "Όλη μέρα"
+  "allDay": "Όλη μέρα",
+  "openAfter5pm": "Ανοιχτά μετά τις 5μμ",
+  "subway": "Γραμμή μετρό",
+  "bus": "Γραμμή λεωφορείου"
 }

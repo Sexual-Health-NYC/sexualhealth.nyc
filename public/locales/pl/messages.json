@@ -20,5 +20,8 @@
   "closedOpensDay": "Zamknięte · Otwiera się {{day}} o {{time}}",
   "closedOpens": "Zamknięte · Otwiera się {{day}}",
   "holidayHoursWarning": "{{holiday}} - godziny mogą się różnić",
-  "allDay": "Cały dzień"
+  "allDay": "Cały dzień",
+  "openAfter5pm": "Otwarte po 17:00",
+  "subway": "Linia metra",
+  "bus": "Linia autobusowa"
 }

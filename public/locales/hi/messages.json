@@ -20,5 +20,8 @@
   "closedOpensDay": "बंद है · {{day}} को {{time}} पर खुलेगा",
   "closedOpens": "बंद है · {{day}} को खुलेगा",
   "holidayHoursWarning": "{{holiday}} - समय अलग हो सकता है",
-  "allDay": "पूरे दिन"
+  "allDay": "पूरे दिन",
+  "openAfter5pm": "शाम 5 बजे के बाद खुला",
+  "subway": "सबवे लाइन",
+  "bus": "बस रूट"
 }

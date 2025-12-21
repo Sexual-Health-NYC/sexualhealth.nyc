@@ -20,5 +20,8 @@
   "closedOpensDay": "مغلق · يفتح {{day}} في {{time}}",
   "closedOpens": "مغلق · يفتح {{day}}",
   "holidayHoursWarning": "{{holiday}} - قد تختلف الساعات",
-  "allDay": "طوال اليوم"
+  "allDay": "طوال اليوم",
+  "openAfter5pm": "مفتوح بعد 5 مساءً",
+  "subway": "خط المترو",
+  "bus": "خط الحافلة"
 }

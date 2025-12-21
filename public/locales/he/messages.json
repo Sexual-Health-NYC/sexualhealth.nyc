@@ -20,5 +20,8 @@
   "closedOpensDay": "סגור · נפתח ב-{{day}} ב-{{time}}",
   "closedOpens": "סגור · נפתח ב-{{day}}",
   "holidayHoursWarning": "{{holiday}} - השעות עשויות להשתנות",
-  "allDay": "כל היום"
+  "allDay": "כל היום",
+  "openAfter5pm": "פתוח אחרי 17:00",
+  "subway": "קו רכבת תחתית",
+  "bus": "קו אוטובוס"
 }

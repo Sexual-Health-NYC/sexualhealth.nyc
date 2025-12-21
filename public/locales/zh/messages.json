@@ -20,5 +20,8 @@
   "closedOpensDay": "已关闭 · {{day}} {{time}} 开门",
   "closedOpens": "已关闭 · {{day}} 开门",
   "holidayHoursWarning": "{{holiday}} - 营业时间可能有所不同",
-  "allDay": "全天"
+  "allDay": "全天",
+  "openAfter5pm": "下午5点后营业",
+  "subway": "地铁线路",
+  "bus": "公交线路"
 }

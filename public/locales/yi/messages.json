@@ -20,5 +20,8 @@
   "closedOpensDay": "פארמאכט · עפנט {{day}} ביי {{time}}",
   "closedOpens": "פארמאכט · עפנט {{day}}",
   "holidayHoursWarning": "{{holiday}} - שעה קענען בייטן",
-  "allDay": "גאנצן טאג"
+  "allDay": "גאנצן טאג",
+  "openAfter5pm": "אפן נאָך 5 נאָכמיטאָג",
+  "subway": "סאַבוויי ליניע",
+  "bus": "ויטאָבוס רוט"
 }

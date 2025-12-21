@@ -20,5 +20,8 @@
   "closedOpensDay": "Fechado · Abre {{day}} às {{time}}",
   "closedOpens": "Fechado · Abre {{day}}",
   "holidayHoursWarning": "{{holiday}} - horário pode variar",
-  "allDay": "Todo o dia"
+  "allDay": "Todo o dia",
+  "openAfter5pm": "Aberto após as 17h",
+  "subway": "Linha de metro",
+  "bus": "Rota de autocarro"
 }

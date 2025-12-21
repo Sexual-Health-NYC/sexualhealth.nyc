@@ -20,5 +20,8 @@
   "closedOpensDay": "বন্ধ · {{day}} {{time}}-এ খুলবে",
   "closedOpens": "বন্ধ · {{day}} খুলবে",
   "holidayHoursWarning": "{{holiday}} - সময়সূচী পরিবর্তিত হতে পারে",
-  "allDay": "সারাদিন"
+  "allDay": "সারাদিন",
+  "openAfter5pm": "বিকাল ৫টার পর খোলা",
+  "subway": "সাবওয়ে লাইন",
+  "bus": "বাস রুট"
 }

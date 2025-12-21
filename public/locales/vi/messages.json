@@ -20,5 +20,8 @@
   "closedOpensDay": "Đóng cửa · Mở {{day}} lúc {{time}}",
   "closedOpens": "Đóng cửa · Mở {{day}}",
   "holidayHoursWarning": "{{holiday}} - giờ có thể thay đổi",
-  "allDay": "Cả ngày"
+  "allDay": "Cả ngày",
+  "openAfter5pm": "Mở cửa sau 5 giờ chiều",
+  "subway": "Tuyến tàu điện ngầm",
+  "bus": "Tuyến xe buýt"
 }

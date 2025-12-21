@@ -20,5 +20,8 @@
   "closedOpensDay": "영업 종료 · {{day}} {{time}}에 개점",
   "closedOpens": "영업 종료 · {{day}}에 개점",
   "holidayHoursWarning": "{{holiday}} - 운영 시간이 다를 수 있음",
-  "allDay": "하루 종일"
+  "allDay": "하루 종일",
+  "openAfter5pm": "오후 5시 이후 영업",
+  "subway": "지하철 노선",
+  "bus": "버스 노선"
 }

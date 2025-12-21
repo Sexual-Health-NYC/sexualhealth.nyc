@@ -20,5 +20,8 @@
   "closedOpensDay": "Закрыто · Откроется {{day}} в {{time}}",
   "closedOpens": "Закрыто · Откроется {{day}}",
   "holidayHoursWarning": "{{holiday}} - часы работы могут меняться",
-  "allDay": "Весь день"
+  "allDay": "Весь день",
+  "openAfter5pm": "Открыто после 17:00",
+  "subway": "Линия метро",
+  "bus": "Автобусный маршрут"
 }

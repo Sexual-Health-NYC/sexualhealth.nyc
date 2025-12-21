@@ -20,5 +20,8 @@
   "closedOpensDay": "Sarado · Magbubukas sa {{day}} nang {{time}}",
   "closedOpens": "Sarado · Magbubukas sa {{day}}",
   "holidayHoursWarning": "{{holiday}} - maaaring mag-iba ang oras",
-  "allDay": "Buong araw"
+  "allDay": "Buong araw",
+  "openAfter5pm": "Bukas pagkalipas ng 5pm",
+  "subway": "Linya ng tren",
+  "bus": "Ruta ng bus"
 }

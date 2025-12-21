@@ -20,5 +20,8 @@
   "closedOpensDay": "Fèmen · Louvri {{day}} a {{time}}",
   "closedOpens": "Fèmen · Louvri {{day}}",
   "holidayHoursWarning": "{{holiday}} - lè yo ka varye",
-  "allDay": "Tout jounen"
+  "allDay": "Tout jounen",
+  "openAfter5pm": "Louvri apre 5pm",
+  "subway": "Liy tren",
+  "bus": "Wout otobis"
 }
