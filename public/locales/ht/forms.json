@@ -1,0 +1,18 @@
+{
+  "reportCorrection": "Rapòte yon Koreksyon",
+  "closeCorrectionForm": "Fèmen fòm koreksyon an",
+  "correctionFormDescription": "Ede nou kenbe enfòmasyon sa yo egzat. Rapòte nenpòt erè oswa enfòmasyon ki pa ajou pou",
+  "whatNeedsCorrection": "Kisa ki bezwen korije?",
+  "required": "obligatwa",
+  "correctionPlaceholder": "egzanp, nimewo telefòn nan pa kòrèk, lè ouvèti yo chanje, klinik sa a fèmen, elatriye.",
+  "yourEmail": "Imèl ou (si ou vle)",
+  "emailPlaceholder": "your@email.com",
+  "emailDisclaimer": "Nou pral itilize li sèlman pou swivi si sa nesesè.",
+  "cancel": "Anile",
+  "submitCorrection": "Soumèt Koreksyon",
+  "submitting": "Ap soumèt...",
+  "submitted": "Soumèt!",
+  "correctionRequired": "Tanpri dekri koreksyon ki nesesè a.",
+  "correctionSuccess": "Mèsi! Yo resevwa koreksyon ou a epi nou pral revize li byento.",
+  "correctionError": "Echèk nan soumèt koreksyon an. Tanpri eseye ankò oswa voye yon imèl bay hello@sexualhealth.nyc dirèkteman."
+}

@@ -1,0 +1,23 @@
+{
+  "openInMaps": "지도에서 열기",
+  "copyAddress": "주소 복사",
+  "copied": "복사됨!",
+  "callNow": "전화 걸기",
+  "visitWebsite": "웹사이트 방문",
+  "getDirections": "길찾기",
+  "apply": "적용",
+  "clearAll": "모두 지우기",
+  "map": "지도",
+  "list": "목록",
+  "filters": "필터",
+  "clickForInfo": "정보 보기",
+  "zoomIn": "확대하려면 클릭",
+  "close": "닫기",
+  "reportCorrection": "오류 신고",
+  "copyAddressToClipboard": "주소를 클립보드에 복사",
+  "nearMe": "내 주변",
+  "finding": "찾는 중...",
+  "resetView": "뷰 초기화",
+  "geolocationNotSupported": "브라우저가 위치 정보를 지원하지 않습니다",
+  "unableToGetLocation": "위치를 확인할 수 없습니다"
+}

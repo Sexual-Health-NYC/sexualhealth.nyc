@@ -1,0 +1,23 @@
+{
+  "openInMaps": "Louvri nan Maps",
+  "copyAddress": "Kopye adrès",
+  "copied": "Kopye!",
+  "callNow": "Rele Kounye a",
+  "visitWebsite": "Vizite Sitwèb",
+  "getDirections": "Jwenn Direksyon",
+  "apply": "Aplike",
+  "clearAll": "Efase Tout",
+  "map": "Kat",
+  "list": "Lis",
+  "filters": "Filtè",
+  "clickForInfo": "Klike pou plis enfòmasyon",
+  "zoomIn": "klike pou rale",
+  "close": "Fèmen",
+  "reportCorrection": "Rapòte yon erè",
+  "copyAddressToClipboard": "Kopye adrès nan près-papye",
+  "nearMe": "Toupre Mwen",
+  "finding": "Ap chèche...",
+  "resetView": "Reyajiste Vizyon",
+  "geolocationNotSupported": "Navigatè ou a pa sipòte jewolokalizasyon",
+  "unableToGetLocation": "Pa kapab jwenn pozisyon ou"
+}

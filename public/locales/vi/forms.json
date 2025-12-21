@@ -1,0 +1,18 @@
+{
+  "reportCorrection": "Báo cáo sửa đổi",
+  "closeCorrectionForm": "Đóng biểu mẫu",
+  "correctionFormDescription": "Giúp chúng tôi giữ thông tin chính xác. Báo cáo bất kỳ lỗi hoặc thông tin lỗi thời nào cho",
+  "whatNeedsCorrection": "Cần sửa đổi gì?",
+  "required": "bắt buộc",
+  "correctionPlaceholder": "vd: Số điện thoại sai, giờ làm việc thay đổi, phòng khám này đã đóng cửa, v.v.",
+  "yourEmail": "Email của bạn (tùy chọn)",
+  "emailPlaceholder": "your@email.com",
+  "emailDisclaimer": "Chúng tôi sẽ chỉ sử dụng để theo dõi nếu cần thiết.",
+  "cancel": "Hủy",
+  "submitCorrection": "Gửi sửa đổi",
+  "submitting": "Đang gửi...",
+  "submitted": "Đã gửi!",
+  "correctionRequired": "Vui lòng mô tả sửa đổi cần thiết.",
+  "correctionSuccess": "Cảm ơn! Sửa đổi của bạn đã được gửi và sẽ được xem xét sớm.",
+  "correctionError": "Không thể gửi sửa đổi. Vui lòng thử lại hoặc gửi email trực tiếp đến hello@sexualhealth.nyc."
+}

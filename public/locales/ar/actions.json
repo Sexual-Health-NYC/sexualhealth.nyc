@@ -1,0 +1,23 @@
+{
+  "openInMaps": "فتح في الخرائط",
+  "copyAddress": "نسخ العنوان",
+  "copied": "تم النسخ!",
+  "callNow": "اتصل الآن",
+  "visitWebsite": "زيارة الموقع",
+  "getDirections": "الحصول على الاتجاهات",
+  "apply": "تطبيق",
+  "clearAll": "مسح الكل",
+  "map": "خريطة",
+  "list": "قائمة",
+  "filters": "تصفية",
+  "clickForInfo": "اضغط للمعلومات",
+  "zoomIn": "اضغط للتكبير",
+  "close": "إغلاق",
+  "reportCorrection": "الإبلاغ عن خطأ",
+  "copyAddressToClipboard": "نسخ العنوان إلى الحافظة",
+  "nearMe": "بالقرب مني",
+  "finding": "جاري البحث...",
+  "resetView": "إعادة تعيين العرض",
+  "geolocationNotSupported": "المتصفح لا يدعم تحديد الموقع",
+  "unableToGetLocation": "تعذر تحديد موقعك"
+}

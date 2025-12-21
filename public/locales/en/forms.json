@@ -1,0 +1,18 @@
+{
+  "reportCorrection": "Report a Correction",
+  "closeCorrectionForm": "Close correction form",
+  "correctionFormDescription": "Help us keep this information accurate. Report any errors or outdated information for",
+  "whatNeedsCorrection": "What needs to be corrected?",
+  "required": "required",
+  "correctionPlaceholder": "e.g., The phone number is incorrect, hours have changed, this clinic has closed, etc.",
+  "yourEmail": "Your email (optional)",
+  "emailPlaceholder": "your@email.com",
+  "emailDisclaimer": "We'll only use this to follow up if needed.",
+  "cancel": "Cancel",
+  "submitCorrection": "Submit Correction",
+  "submitting": "Submitting...",
+  "submitted": "Submitted!",
+  "correctionRequired": "Please describe the correction needed.",
+  "correctionSuccess": "Thank you! Your correction has been submitted and will be reviewed shortly.",
+  "correctionError": "Failed to submit correction. Please try again or email hello@sexualhealth.nyc directly."
+}

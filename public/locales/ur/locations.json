@@ -1,0 +1,9 @@
+{
+  "boroughs": {
+    "Manhattan": "مین ہیٹن",
+    "Brooklyn": "بروکین",
+    "Queens": "کوئنز",
+    "Bronx": "برونکس",
+    "Staten Island": "اسٹیٹن آئی لینڈ"
+  }
+}

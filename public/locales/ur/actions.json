@@ -1,0 +1,23 @@
+{
+  "openInMaps": "نقشے میں کھولیں",
+  "copyAddress": "پتہ کاپی کریں",
+  "copied": "کاپی ہو گیا!",
+  "callNow": "ابھی کال کریں",
+  "visitWebsite": "ویب سائٹ دیکھیں",
+  "getDirections": "راستہ دیکھیں",
+  "apply": "لگو",
+  "clearAll": "سب صاف کریں",
+  "map": "نقشہ",
+  "list": "فہرست",
+  "filters": "فلٹرز",
+  "clickForInfo": "معلومات کے لیے کلک کریں",
+  "zoomIn": "بڑا کرنے کے لیے کلک کریں",
+  "close": "بند کریں",
+  "reportCorrection": "غلطی کی رپورٹ کریں",
+  "copyAddressToClipboard": "پتہ کلپ بورڈ پر کاپی کریں",
+  "nearMe": "میرے قریب",
+  "finding": "تلاش جاری ہے...",
+  "resetView": "منظر دوبارہ ترتیب دیں",
+  "geolocationNotSupported": "آپ کا براؤزر جغرافیائی محل وقوع کو سپورٹ نہیں کرتا",
+  "unableToGetLocation": "آپ کا مقام حاصل کرنے سے قاصر"
+}

@@ -1,0 +1,23 @@
+{
+  "openInMaps": "Open in Maps",
+  "copyAddress": "Copy address",
+  "copied": "Copied!",
+  "callNow": "Call Now",
+  "visitWebsite": "Visit Website",
+  "getDirections": "Get Directions",
+  "apply": "Apply",
+  "clearAll": "Clear All",
+  "map": "Map",
+  "list": "List",
+  "filters": "Filters",
+  "clickForInfo": "Click for info",
+  "zoomIn": "click to zoom in",
+  "close": "Close",
+  "reportCorrection": "Report a correction",
+  "copyAddressToClipboard": "Copy address to clipboard",
+  "nearMe": "Near Me",
+  "finding": "Finding...",
+  "resetView": "Reset View",
+  "geolocationNotSupported": "Geolocation is not supported by your browser",
+  "unableToGetLocation": "Unable to get your location"
+}

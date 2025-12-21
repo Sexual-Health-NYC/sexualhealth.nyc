@@ -1,0 +1,18 @@
+{
+  "reportCorrection": "সংশোধন রিপোর্ট করুন",
+  "closeCorrectionForm": "সংশোধন ফর্ম বন্ধ করুন",
+  "correctionFormDescription": "তথ্য সঠিক রাখতে আমাদের সাহায্য করুন। কোনো ভুল বা পুরোনো তথ্য থাকলে জানান",
+  "whatNeedsCorrection": "কী সংশোধন করা প্রয়োজন?",
+  "required": "আবশ্যক",
+  "correctionPlaceholder": "যেমন: ফোন নম্বর ভুল, সময় পরিবর্তন হয়েছে, ক্লিনিক বন্ধ হয়ে গেছে ইত্যাদি।",
+  "yourEmail": "আপনার ইমেল (ঐচ্ছিক)",
+  "emailPlaceholder": "your@email.com",
+  "emailDisclaimer": "আমরা শুধুমাত্র প্রয়োজনে যোগাযোগের জন্য এটি ব্যবহার করব।",
+  "cancel": "বাতিল",
+  "submitCorrection": "সংশোধন জমা দিন",
+  "submitting": "জমা দেওয়া হচ্ছে...",
+  "submitted": "জমা দেওয়া হয়েছে!",
+  "correctionRequired": "অনুগ্রহ করে কী সংশোধন প্রয়োজন তা লিখুন।",
+  "correctionSuccess": "ধন্যবাদ! আপনার সংশোধন জমা দেওয়া হয়েছে এবং শীঘ্রই পর্যালোচনা করা হবে।",
+  "correctionError": "সংশোধন জমা দিতে ব্যর্থ হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন বা সরাসরি hello@sexualhealth.nyc তে ইমেল করুন।"
+}

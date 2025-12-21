@@ -1,0 +1,23 @@
+{
+  "openInMaps": "Otwórz w Mapach",
+  "copyAddress": "Kopiuj adres",
+  "copied": "Skopiowano!",
+  "callNow": "Zadzwoń teraz",
+  "visitWebsite": "Odwiedź stronę",
+  "getDirections": "Wskazówki dojazdu",
+  "apply": "Zastosuj",
+  "clearAll": "Wyczyść wszystko",
+  "map": "Mapa",
+  "list": "Lista",
+  "filters": "Filtry",
+  "clickForInfo": "Kliknij, aby uzyskać info",
+  "zoomIn": "kliknij, aby powiększyć",
+  "close": "Zamknij",
+  "reportCorrection": "Zgłoś błąd",
+  "copyAddressToClipboard": "Kopiuj adres do schowka",
+  "nearMe": "Blisko mnie",
+  "finding": "Szukanie...",
+  "resetView": "Zresetuj widok",
+  "geolocationNotSupported": "Twoja przeglądarka nie obsługuje geolokalizacji",
+  "unableToGetLocation": "Nie można pobrać Twojej lokalizacji"
+}

@@ -1,0 +1,9 @@
+{
+  "boroughs": {
+    "Manhattan": "맨해튼",
+    "Brooklyn": "브루클린",
+    "Queens": "퀸즈",
+    "Bronx": "브롱스",
+    "Staten Island": "스태튼 아일랜드"
+  }
+}

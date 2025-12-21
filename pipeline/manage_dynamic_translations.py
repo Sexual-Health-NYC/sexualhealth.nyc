@@ -24,7 +24,7 @@ def load_geojson(path):
         return json.load(f)
 
 def load_translations(lang):
-    path = f'src/locales/{lang}/dynamic.json'
+    path = f'public/locales/{lang}/dynamic.json'
     if os.path.exists(path):
         with open(path, 'r', encoding='utf-8') as f:
             try:
@@ -34,7 +34,7 @@ def load_translations(lang):
     return {}
 
 def save_translations(lang, data):
-    path = f'src/locales/{lang}/dynamic.json'
+    path = f'public/locales/{lang}/dynamic.json'
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
@@ -75,43 +75,52 @@ def main():
     en_translations = load_translations('en')
     
     # Identify missing in English (new strings)
-    missing = []
+    new_strings = []
     for s in current_strings:
         if s not in en_translations:
-            missing.append(s)
+            new_strings.append(s)
             
-    print(f"📊 Missing translations (new): {len(missing)}")
+    print(f"📊 New strings (missing in English): {len(new_strings)}")
     
-    if not missing:
-        # Check other languages for completeness
-        print("  Checking coverage for other languages...")
-        for lang in LANGUAGES:
-            if lang == 'en': continue
-            t = load_translations(lang)
-            missing_in_lang = [s for s in current_strings if s not in t]
-            if missing_in_lang:
-                print(f"  ⚠️  {lang}: missing {len(missing_in_lang)} strings")
-            else:
-                pass # print(f"  ✅ {lang}: complete")
-        return
-
-    print("\n📝 New strings found:")
-    for s in missing:
-        print(f"  - {s[:50]}..." if len(s) > 50 else f"  - {s}")
-        
     # Update English immediately
-    print("\nupdating English dictionary...")
-    for s in missing:
-        en_translations[s] = s
-    save_translations('en', en_translations)
+    if new_strings:
+        print("\nupdating English dictionary...")
+        for s in new_strings:
+            en_translations[s] = s
+        save_translations('en', en_translations)
+
+    # Check ALL languages for missing translations relative to English
+    global_missing = set()
+    for lang in LANGUAGES:
+        if lang == 'en': continue
+        t = load_translations(lang)
+        for s in current_strings:
+            if s not in t:
+                global_missing.add(s)
     
-    # Placeholder for LLM translation
-    api_key = os.getenv("ANTHROPIC_API_KEY")
-    if not api_key:
-        print("\n⚠️ ANTHROPIC_API_KEY not found. Skipping automatic translation for other languages.")
-        print("To translate, add the key to .env.")
+    global_missing_list = sorted(list(global_missing))
+
+    if global_missing_list:
+        print(f"\n🌍 Found {len(global_missing_list)} strings missing in at least one non-English language.")
+        missing_file = 'pipeline/missing_translations.json'
+        with open(missing_file, 'w', encoding='utf-8') as f:
+            json.dump(global_missing_list, f, indent=2)
+        print(f"💾 Saved list to {missing_file}")
     else:
-        print("🚀 Starting translation process (Not implemented in this demo script yet")
+        if os.path.exists('pipeline/missing_translations.json'):
+            os.remove('pipeline/missing_translations.json')
+        print("\n✅ All languages are fully synced!")
+
+    # Placeholder for LLM translation
+    # ...
+
+    # Placeholder for LLM translation
+    # api_key = os.getenv("ANTHROPIC_API_KEY")
+    # if not api_key:
+    #     print("\n⚠️ ANTHROPIC_API_KEY not found. Skipping automatic translation for other languages.")
+    #     print("To translate, add the key to .env.")
+    # else:
+    #     print("🚀 Starting translation process (Not implemented in this demo script yet)")
 
 if __name__ == "__main__":
     main()

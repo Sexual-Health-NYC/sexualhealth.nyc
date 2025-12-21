@@ -1,0 +1,18 @@
+{
+  "reportCorrection": "Signaler une correction",
+  "closeCorrectionForm": "Fermer le formulaire",
+  "correctionFormDescription": "Aidez-nous à garder ces informations exactes. Signalez toute erreur ou information obsolète concernant",
+  "whatNeedsCorrection": "Que faut-il corriger ?",
+  "required": "requis",
+  "correctionPlaceholder": "ex: Le numéro de téléphone est incorrect, les horaires ont changé, cette clinique est fermée, etc.",
+  "yourEmail": "Votre email (optionnel)",
+  "emailPlaceholder": "votre@email.com",
+  "emailDisclaimer": "Nous l'utiliserons uniquement pour le suivi si nécessaire.",
+  "cancel": "Annuler",
+  "submitCorrection": "Envoyer",
+  "submitting": "Envoi...",
+  "submitted": "Envoyé !",
+  "correctionRequired": "Veuillez décrire la correction nécessaire.",
+  "correctionSuccess": "Merci ! Votre correction a été envoyée et sera examinée sous peu.",
+  "correctionError": "Échec de l'envoi. Veuillez réessayer ou envoyer un email à hello@sexualhealth.nyc."
+}

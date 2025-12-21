@@ -1,0 +1,18 @@
+{
+  "reportCorrection": "报告更正",
+  "closeCorrectionForm": "关闭更正表格",
+  "correctionFormDescription": "帮助我们保持信息的准确性。如发现",
+  "whatNeedsCorrection": "需要更正什么内容？",
+  "required": "必填",
+  "correctionPlaceholder": "例如：电话号码不正确、营业时间已更改、该诊所已关闭等。",
+  "yourEmail": "您的电子邮箱（选填）",
+  "emailPlaceholder": "your@email.com",
+  "emailDisclaimer": "我们仅在需要时使用此邮箱进行跟进。",
+  "cancel": "取消",
+  "submitCorrection": "提交更正",
+  "submitting": "正在提交...",
+  "submitted": "已提交！",
+  "correctionRequired": "请描述需要更正的内容。",
+  "correctionSuccess": "谢谢！您的更正已提交，我们将尽快审核。",
+  "correctionError": "更正提交失败。请重试或直接发送电子邮件至 hello@sexualhealth.nyc。"
+}
