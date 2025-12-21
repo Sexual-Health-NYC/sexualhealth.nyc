@@ -11,18 +11,38 @@
 const DAY_ORDER = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const DAY_INDEX = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
 
-// Major US holidays when clinics are likely closed
-const HOLIDAYS_2024_2025 = [
-  "2024-12-25", // Christmas
-  "2025-01-01", // New Year's Day
-  "2025-01-20", // MLK Day
-  "2025-02-17", // Presidents Day
-  "2025-05-26", // Memorial Day
-  "2025-07-04", // Independence Day
-  "2025-09-01", // Labor Day
-  "2025-11-27", // Thanksgiving
+// Major US holidays when clinics are likely closed (2025-2028)
+const HOLIDAYS = [
+  // 2025
   "2025-12-25", // Christmas
   "2026-01-01", // New Year's Day
+  // 2026
+  "2026-01-19", // MLK Day
+  "2026-02-16", // Presidents Day
+  "2026-05-25", // Memorial Day
+  "2026-07-03", // Independence Day (observed)
+  "2026-09-07", // Labor Day
+  "2026-11-26", // Thanksgiving
+  "2026-12-25", // Christmas
+  "2027-01-01", // New Year's Day
+  // 2027
+  "2027-01-18", // MLK Day
+  "2027-02-15", // Presidents Day
+  "2027-05-31", // Memorial Day
+  "2027-07-05", // Independence Day (observed)
+  "2027-09-06", // Labor Day
+  "2027-11-25", // Thanksgiving
+  "2027-12-24", // Christmas (observed)
+  "2028-01-01", // New Year's Day (observed from 2027)
+  // 2028
+  "2028-01-17", // MLK Day
+  "2028-02-21", // Presidents Day
+  "2028-05-29", // Memorial Day
+  "2028-07-04", // Independence Day
+  "2028-09-04", // Labor Day
+  "2028-11-23", // Thanksgiving
+  "2028-12-25", // Christmas
+  "2029-01-01", // New Year's Day
 ];
 
 /**
@@ -39,33 +59,51 @@ function getNYCTime() {
  */
 export function isHoliday(date = getNYCTime()) {
   const dateStr = date.toISOString().split("T")[0];
-  return HOLIDAYS_2024_2025.includes(dateStr);
+  return HOLIDAYS.includes(dateStr);
 }
 
 /**
- * Get next upcoming holiday name
+ * Get today's holiday i18n key (for use with holidays namespace)
+ * Returns key like "christmas", "thanksgiving", etc.
  */
-export function getUpcomingHoliday() {
+export function getHolidayKey() {
   const now = getNYCTime();
   const todayStr = now.toISOString().split("T")[0];
 
-  const holidayNames = {
-    "2024-12-25": "Christmas",
-    "2025-01-01": "New Year's Day",
-    "2025-01-20": "MLK Day",
-    "2025-02-17": "Presidents Day",
-    "2025-05-26": "Memorial Day",
-    "2025-07-04": "Independence Day",
-    "2025-09-01": "Labor Day",
-    "2025-11-27": "Thanksgiving",
-    "2025-12-25": "Christmas",
-    "2026-01-01": "New Year's Day",
+  const holidayKeys = {
+    // 2025
+    "2025-12-25": "christmas",
+    "2026-01-01": "newYearsDay",
+    // 2026
+    "2026-01-19": "mlkDay",
+    "2026-02-16": "presidentsDay",
+    "2026-05-25": "memorialDay",
+    "2026-07-03": "independenceDay",
+    "2026-09-07": "laborDay",
+    "2026-11-26": "thanksgiving",
+    "2026-12-25": "christmas",
+    "2027-01-01": "newYearsDay",
+    // 2027
+    "2027-01-18": "mlkDay",
+    "2027-02-15": "presidentsDay",
+    "2027-05-31": "memorialDay",
+    "2027-07-05": "independenceDay",
+    "2027-09-06": "laborDay",
+    "2027-11-25": "thanksgiving",
+    "2027-12-24": "christmas",
+    "2028-01-01": "newYearsDay",
+    // 2028
+    "2028-01-17": "mlkDay",
+    "2028-02-21": "presidentsDay",
+    "2028-05-29": "memorialDay",
+    "2028-07-04": "independenceDay",
+    "2028-09-04": "laborDay",
+    "2028-11-23": "thanksgiving",
+    "2028-12-25": "christmas",
+    "2029-01-01": "newYearsDay",
   };
 
-  if (holidayNames[todayStr]) {
-    return holidayNames[todayStr];
-  }
-  return null;
+  return holidayKeys[todayStr] || null;
 }
 
 /**
@@ -232,8 +270,10 @@ function getLegacyOpenStatus(hoursText) {
 /**
  * Format hours array for display in UI
  * Groups by department and consolidates days
+ * @param {Array} hours - Array of hour objects
+ * @param {Function} translateDay - Function to translate day names (key => localized name)
  */
-export function formatHoursForDisplay(hours) {
+export function formatHoursForDisplay(hours, translateDay = (d) => d) {
   if (!hours || hours.length === 0) return [];
 
   // Group by department
@@ -248,7 +288,7 @@ export function formatHoursForDisplay(hours) {
 
   for (const [dept, schedules] of Object.entries(byDept)) {
     // Try to consolidate schedules with same times
-    const consolidated = consolidateSchedules(schedules);
+    const consolidated = consolidateSchedules(schedules, translateDay);
 
     result.push({
       department: dept,
@@ -262,7 +302,7 @@ export function formatHoursForDisplay(hours) {
 /**
  * Consolidate schedules with same times into single entries
  */
-function consolidateSchedules(schedules) {
+function consolidateSchedules(schedules, translateDay = (d) => d) {
   // Group by time signature
   const byTime = {};
 
@@ -289,7 +329,7 @@ function consolidateSchedules(schedules) {
     // Sort days by day order
     s.days.sort((a, b) => DAY_INDEX[a] - DAY_INDEX[b]);
     return {
-      days: formatDayRange(s.days),
+      days: formatDayRange(s.days, translateDay),
       time: s.allDay
         ? null
         : `${formatTime(parseTime(s.open))} - ${formatTime(parseTime(s.close))}`,
@@ -301,13 +341,13 @@ function consolidateSchedules(schedules) {
 
 /**
  * Format day array into readable range
- * ["Mon", "Tue", "Wed", "Thu", "Fri"] -> "Mon - Fri"
- * ["Mon", "Wed", "Fri"] -> "Mon, Wed, Fri"
- * ["Sat", "Sun"] -> "Sat - Sun"
+ * ["Mon", "Tue", "Wed", "Thu", "Fri"] -> "Mon - Fri" (localized)
+ * ["Mon", "Wed", "Fri"] -> "Mon, Wed, Fri" (localized)
+ * ["Sat", "Sun"] -> "Sat - Sun" (localized)
  */
-function formatDayRange(days) {
+function formatDayRange(days, translateDay = (d) => d) {
   if (days.length === 0) return "";
-  if (days.length === 1) return days[0];
+  if (days.length === 1) return translateDay(days[0]);
 
   // Check if consecutive
   const indices = days.map((d) => DAY_INDEX[d]).sort((a, b) => a - b);
@@ -320,10 +360,10 @@ function formatDayRange(days) {
   }
 
   if (isConsecutive && days.length > 2) {
-    return `${days[0]} - ${days[days.length - 1]}`;
+    return `${translateDay(days[0])} - ${translateDay(days[days.length - 1])}`;
   }
 
-  return days.join(", ");
+  return days.map(translateDay).join(", ");
 }
 
 /**

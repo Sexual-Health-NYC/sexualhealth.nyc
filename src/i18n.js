@@ -11,6 +11,7 @@ i18n
     fallbackLng: "en",
     ns: [
       "actions",
+      "days",
       "dynamic",
       "filters",
       "footer",

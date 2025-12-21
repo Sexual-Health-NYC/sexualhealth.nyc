@@ -3,11 +3,11 @@ import theme from "../../theme";
 import { formatHoursForDisplay } from "../../utils/hours";
 
 export default function ClinicHours({ clinic }) {
-  const { t } = useTranslation(["sections", "messages", "dynamic"]);
+  const { t } = useTranslation(["sections", "messages", "dynamic", "days"]);
 
   const formattedHours =
     Array.isArray(clinic.hours) && clinic.hours.length > 0
-      ? formatHoursForDisplay(clinic.hours)
+      ? formatHoursForDisplay(clinic.hours, (day) => t(day, { ns: "days" }))
       : null;
 
   if (!formattedHours || formattedHours.length === 0) return null;
