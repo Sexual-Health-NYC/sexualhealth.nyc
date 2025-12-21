@@ -104,6 +104,9 @@ export default function FilterSidebar() {
             src="/logo-horizontal.png"
             srcSet="/logo-horizontal.png 1x, /logo-horizontal@2x.png 2x, /logo-horizontal@3x.png 3x"
             alt="sexualhealth.nyc"
+            width={280}
+            height={60}
+            fetchpriority="high"
             style={{
               width: "280px",
               height: "60px",

@@ -440,6 +440,9 @@ export default function FilterBar() {
             src="/logo-horizontal.png"
             srcSet="/logo-horizontal.png 1x, /logo-horizontal@2x.png 2x, /logo-horizontal@3x.png 3x"
             alt="sexualhealth.nyc"
+            width={187}
+            height={40}
+            fetchpriority="high"
             style={{
               height: "40px",
               width: "auto",
@@ -614,6 +617,9 @@ export default function FilterBar() {
             src="/logo-horizontal.png"
             srcSet="/logo-horizontal.png 1x, /logo-horizontal@2x.png 2x"
             alt="sexualhealth.nyc"
+            width={140}
+            height={30}
+            fetchpriority="high"
             style={{
               height: "30px",
               width: "auto",
