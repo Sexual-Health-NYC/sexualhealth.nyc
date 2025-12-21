@@ -10,7 +10,7 @@ import {
 } from "../utils/hours";
 import { TransitInfo, BusInfo } from "./SubwayBullet";
 
-export default function ClinicListView({ clinics }) {
+export default function ClinicListView({ clinics, onShowMap }) {
   const { t } = useTranslation([
     "messages",
     "services",
@@ -55,6 +55,7 @@ export default function ClinicListView({ clinics }) {
           display: "grid",
           gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
           gap: theme.spacing[4],
+          alignItems: "start",
         }}
       >
         {clinics.map((clinic) => (
@@ -65,7 +66,10 @@ export default function ClinicListView({ clinics }) {
             onToggle={() =>
               setExpandedId(expandedId === clinic.id ? null : clinic.id)
             }
-            onShowOnMap={() => selectClinic(clinic)}
+            onShowOnMap={() => {
+              selectClinic(clinic);
+              onShowMap();
+            }}
             t={t}
           />
         ))}
@@ -209,11 +213,19 @@ function ClinicCard({ clinic, expanded, onToggle, onShowOnMap, t }) {
         </h3>
         <span
           style={{
-            fontSize: theme.fonts.size.lg,
-            color: theme.colors.textSecondary,
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+            width: "28px",
+            height: "28px",
+            fontSize: "20px",
+            color: theme.colors.primary,
+            backgroundColor: `${theme.colors.primary}15`,
+            borderRadius: theme.borderRadius.full,
             marginLeft: theme.spacing[2],
             transform: expanded ? "rotate(180deg)" : "rotate(0deg)",
             transition: `transform ${theme.motion.duration.fast}`,
+            flexShrink: 0,
           }}
         >
           ▾

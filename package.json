@@ -10,7 +10,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "fetch-data": "node scripts/fetch-airtable.js"
+    "fetch-data": "node scripts/fetch-airtable.js",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "repository": {
     "type": "git",
@@ -25,12 +27,17 @@
   },
   "homepage": "https://github.com/Sexual-Health-NYC/sexualhealth.nyc#readme",
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.1",
     "@vitejs/plugin-react": "^5.1.2",
+    "jest-axe": "^10.0.0",
+    "jsdom": "^27.0.1",
     "playwright": "^1.57.0",
     "sharp": "^0.34.5",
     "tidewave": "^0.5.5",
     "to-ico": "^1.1.5",
-    "vite": "^7.3.0"
+    "vite": "^7.3.0",
+    "vitest": "^3.2.4"
   },
   "dependencies": {
     "i18next": "^25.7.3",

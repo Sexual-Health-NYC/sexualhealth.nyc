@@ -226,7 +226,10 @@ export default function App() {
             {isMobile ? <ClinicBottomSheet /> : <ClinicDetailPanel />}
           </>
         ) : (
-          <ClinicListView clinics={filteredClinics} />
+          <ClinicListView
+            clinics={filteredClinics}
+            onShowMap={() => setViewMode("map")}
+          />
         )}
       </main>
     </div>

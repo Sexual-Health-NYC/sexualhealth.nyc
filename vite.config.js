@@ -4,6 +4,11 @@ import tidewave from "tidewave/vite-plugin";
 
 export default defineConfig({
   plugins: [react(), tidewave()],
+  test: {
+    globals: true,
+    environment: "jsdom",
+    setupFiles: "./src/test/setup.js",
+  },
   build: {
     outDir: "dist",
     rollupOptions: {
