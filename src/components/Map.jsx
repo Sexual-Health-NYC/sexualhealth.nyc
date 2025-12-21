@@ -22,6 +22,7 @@ export default function Map({ filteredClinics }) {
     mapViewport,
     setMapViewport,
     setClinics,
+    setVirtualClinics,
     selectedClinic,
     selectClinic,
     setMapRef,
@@ -61,7 +62,17 @@ export default function Map({ filteredClinics }) {
       .catch((error) => {
         console.error("Error loading clinics:", error);
       });
-  }, [setClinics]);
+
+    // Load virtual clinics data
+    fetch("/virtual-clinics.json")
+      .then((response) => response.json())
+      .then((data) => {
+        setVirtualClinics(data.clinics || []);
+      })
+      .catch((error) => {
+        console.error("Error loading virtual clinics:", error);
+      });
+  }, [setClinics, setVirtualClinics]);
 
   // Pan map when a clinic is selected to ensure marker is visible
   useEffect(() => {

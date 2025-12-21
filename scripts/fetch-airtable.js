@@ -194,6 +194,7 @@ function recordToFeature(record, hoursMap) {
       has_hiv_testing: f["HIV Testing"] || false,
       has_prep: f.PrEP || false,
       has_pep: f.PEP || false,
+      prep_ap_registered: f["PrEP-AP Registered"] || false,
       has_contraception: f.Contraception || false,
       has_abortion: f.Abortion || false,
       has_gender_affirming: f["Gender-Affirming Care"] || false,

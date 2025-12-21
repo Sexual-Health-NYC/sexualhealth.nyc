@@ -9,13 +9,21 @@ import ClinicAddress from "./clinic/ClinicAddress";
 import ClinicHours from "./clinic/ClinicHours";
 import ClinicContact from "./clinic/ClinicContact";
 import ClinicQuickFacts from "./clinic/ClinicQuickFacts";
+import VirtualClinicSection from "./VirtualClinicSection";
 
 export default function ClinicListView({ clinics, onShowMap }) {
   const { t } = useTranslation(["messages", "actions"]);
-  const { selectClinic, setMapViewport } = useAppStore();
+  const { selectClinic, setMapViewport, virtualClinics, filters } =
+    useAppStore();
   const [expandedId, setExpandedId] = useState(null);
 
-  if (clinics.length === 0) {
+  // Show virtual clinics when abortion is in the filter
+  const showVirtualClinics = filters.services.has("abortion");
+
+  if (
+    clinics.length === 0 &&
+    !(showVirtualClinics && virtualClinics.length > 0)
+  ) {
     return (
       <div
         style={{
@@ -43,6 +51,11 @@ export default function ClinicListView({ clinics, onShowMap }) {
         backgroundColor: theme.colors.surface,
       }}
     >
+      {/* Virtual/Telehealth clinics section - shown when abortion is filtered */}
+      {showVirtualClinics && virtualClinics.length > 0 && (
+        <VirtualClinicSection clinics={virtualClinics} />
+      )}
+
       <div
         style={{
           display: "grid",
@@ -223,9 +236,9 @@ function ClinicCard({ clinic, expanded, onToggle, onShowOnMap, t }) {
               {showCorrectionForm ? "Cancel" : t("actions:reportCorrection")}
             </button>
             <CorrectionFormModal
-                clinicName={clinic.name}
-                onClose={() => setShowCorrectionForm(false)}
-                isExpanded={showCorrectionForm}
+              clinicName={clinic.name}
+              onClose={() => setShowCorrectionForm(false)}
+              isExpanded={showCorrectionForm}
             />
           </div>
 

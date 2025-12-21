@@ -6,6 +6,7 @@ export default function useFilterOptions() {
     "insurance",
     "locations",
     "gestational",
+    "filters",
   ]);
 
   const serviceOptions = [
@@ -15,6 +16,17 @@ export default function useFilterOptions() {
     { value: "pep", label: t("services:pep") },
     { value: "contraception", label: t("services:contraception") },
     { value: "abortion", label: t("services:abortion") },
+    { value: "gender_affirming", label: t("services:genderAffirmingCare") },
+  ];
+
+  const genderAffirmingOptions = [
+    { value: "youth", label: t("filters:genderAffirmingYouth") },
+    { value: "hormones", label: t("filters:genderAffirmingHormones") },
+    { value: "surgery", label: t("filters:genderAffirmingSurgery") },
+  ];
+
+  const prepOptions = [
+    { value: "prep_ap_registered", label: t("filters:prepAP") },
   ];
 
   const insuranceOptions = [
@@ -43,6 +55,8 @@ export default function useFilterOptions() {
 
   return {
     serviceOptions,
+    genderAffirmingOptions,
+    prepOptions,
     insuranceOptions,
     boroughOptions,
     gestationalOptions,

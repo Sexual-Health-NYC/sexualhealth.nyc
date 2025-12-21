@@ -7,10 +7,12 @@ import SubwayBullet from "./SubwayBullet";
 import transitData from "../data/transitLines.json";
 
 export default function FilterControls({ mode = "mobile" }) {
-  const { t } = useTranslation(["actions", "messages", "sections"]);
+  const { t } = useTranslation(["actions", "messages", "sections", "filters"]);
   const { filters, setFilter, setGestationalWeeks } = useAppStore();
   const {
     serviceOptions,
+    genderAffirmingOptions,
+    prepOptions,
     insuranceOptions,
     boroughOptions,
     gestationalOptions,
@@ -102,6 +104,32 @@ export default function FilterControls({ mode = "mobile" }) {
               ))}
             </select>
           </div>
+        </FilterSection>
+      )}
+
+      {filters.services.has("gender_affirming") && (
+        <FilterSection title={t("filters:genderAffirmingCare")}>
+          {genderAffirmingOptions.map((option) => (
+            <Checkbox
+              key={option.value}
+              label={option.label}
+              checked={filters.genderAffirming?.has(option.value) || false}
+              onChange={() => handleCheckbox("genderAffirming", option.value)}
+            />
+          ))}
+        </FilterSection>
+      )}
+
+      {filters.services.has("prep") && (
+        <FilterSection title={t("filters:prepServices")}>
+          {prepOptions.map((option) => (
+            <Checkbox
+              key={option.value}
+              label={option.label}
+              checked={filters.prep?.has(option.value) || false}
+              onChange={() => handleCheckbox("prep", option.value)}
+            />
+          ))}
         </FilterSection>
       )}
 

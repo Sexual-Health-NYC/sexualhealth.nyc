@@ -42,7 +42,32 @@ def check_missing():
         # else:
         #     print(f"  ✅ Found: {target}")
 
-    print(f"\nSummary: {missing_count} clinics from research doc are missing in the database.")
+    # List of "Missing" clinics from research docs (now more comprehensive)
+    target_clinics = [
+        "Kings County", "Elmhurst", "Queens Hospital", "Harlem Hospital", "Coney Island",
+        "South Brooklyn Health", "North Central Bronx", "Manhattan Women's Health",
+        "Ambulatory Surgical Center", "SAGE", "Ali Forney", "Hetrick-Martin",
+        "Planned Parenthood - Manhattan", "Margaret Sanger",
+        # New from GEMINI-GENDER-AFFIRMING.md
+        "Mount Sinai CTMS", "NYU Langone Health Transgender Health Program",
+        "BronxCare Hospital Center", "Montefiore Medical Center (Center for Positive Living)",
+        "Brookdale Hospital", "The Brooklyn Hospital Center", "Mount Sinai Beth Israel",
+        "Mount Sinai Hospital"
+    ]
+
+    print(f"📊 Analyzing {len(existing_names)} existing clinics...")
+    
+    found_count = 0
+    print("\n🔍 Checking for Priority Targets (from all research docs):")
+    for target in target_clinics:
+        match = next((name for name in existing_names if target.lower() in name.lower() or name.lower() in target.lower()), None)
+        if match:
+            print(f"  ✅ Found: {target} (matched '{match}')")
+            found_count += 1
+        else:
+            print(f"  ❌ MISSING: {target}")
+
+    print(f"\nSummary: Found {found_count} of {len(target_clinics)} targets.")
 
 if __name__ == "__main__":
     check_missing()

@@ -17,6 +17,7 @@ export default function FilterBar() {
     "actions",
     "gestational",
     "messages",
+    "filters",
   ]);
   const {
     filters,
@@ -27,6 +28,8 @@ export default function FilterBar() {
   } = useAppStore();
   const {
     serviceOptions,
+    genderAffirmingOptions,
+    prepOptions,
     insuranceOptions,
     boroughOptions,
     gestationalOptions,
@@ -36,6 +39,8 @@ export default function FilterBar() {
   const [openDropdown, setOpenDropdown] = useState(null);
   const dropdownRefs = {
     services: useRef(null),
+    genderAffirming: useRef(null),
+    prep: useRef(null),
     insurance: useRef(null),
     boroughs: useRef(null),
     gestational: useRef(null),
@@ -85,6 +90,8 @@ export default function FilterBar() {
   const getActiveFilterCount = () => {
     return (
       filters.services.size +
+      (filters.genderAffirming?.size || 0) +
+      (filters.prep?.size || 0) +
       filters.insurance.size +
       filters.access.size +
       filters.boroughs.size +
@@ -537,6 +544,22 @@ export default function FilterBar() {
             options={serviceOptions}
             category="services"
           />
+          {filters.services.has("gender_affirming") && (
+            <FilterDropdown
+              name="genderAffirming"
+              title={t("filters:genderAffirmingCare")}
+              options={genderAffirmingOptions}
+              category="genderAffirming"
+            />
+          )}
+          {filters.services.has("prep") && (
+            <FilterDropdown
+              name="prep"
+              title={t("filters:prepServices")}
+              options={prepOptions}
+              category="prep"
+            />
+          )}
           {filters.services.has("abortion") && <GestationalDropdown />}
           <FilterDropdown
             name="insurance"
@@ -700,6 +723,24 @@ export default function FilterBar() {
                 category="services"
                 value={value}
                 label={serviceOptions.find((o) => o.value === value)?.label}
+              />
+            ))}
+            {Array.from(filters.genderAffirming || []).map((value) => (
+              <ActiveFilterPill
+                key={`ga-${value}`}
+                category="genderAffirming"
+                value={value}
+                label={
+                  genderAffirmingOptions.find((o) => o.value === value)?.label
+                }
+              />
+            ))}
+            {Array.from(filters.prep || []).map((value) => (
+              <ActiveFilterPill
+                key={`prep-${value}`}
+                category="prep"
+                value={value}
+                label={prepOptions.find((o) => o.value === value)?.label}
               />
             ))}
             {Array.from(filters.insurance).map((value) => (

@@ -200,10 +200,10 @@ def main():
         return
 
     try:
-        with open('docs/MISSING_CLINICS.md', 'r', encoding='utf-8') as f:
+        with open('docs/research/MISSING_CLINICS.md', 'r', encoding='utf-8') as f:
             content = f.read()
     except FileNotFoundError:
-        print("Error: docs/MISSING_CLINICS.md not found. Ensure the file exists.")
+        print("Error: docs/research/MISSING_CLINICS.md not found. Ensure the file exists.")
         return
 
     # Split the markdown by clinic entry header (e.g., "## 1. Clinic Name")
@@ -228,35 +228,38 @@ def main():
     # Each entry will be a tuple like (full_block_text, next_header_or_empty)
     # I need to extract the full block content.
     
-    # Split the markdown by clinic entry header (e.g., "## 1. Apicha...")
-    clinic_entries_raw = re.split(r"^\s*##\s*\d+\.\s*", content, flags=re.MULTILINE)
-    # The first element will be the preamble, discard it
-    clinic_entries_raw = [block.strip() for block in clinic_entries_raw if block.strip()]
+    # Find all "Priority 2" clinics that are "Ready to Add"
+    priority2_block_match = re.search(r"##\s*Priority 2: Identified Missing Clinics\s*\([\s\S]+", content, re.MULTILINE)
+    if not priority2_block_match:
+        print("Error: Could not find 'Priority 2' block in MISSING_CLINICS.md.")
+        return
 
-    print(f"Found {len(clinic_entries_raw)} clinic entries in MISSING_CLINICS.md.")
+    priority2_content = priority2_block_match.group(0)
+
+    # Now, split the Priority 2 block into individual clinic entries
+    # Looking for "### N. Clinic Name\n*Status: Ready to Add*"
+    ready_to_add_entries = re.findall(r"(###\s*\d+\.\s*.+?)\n\s*\*Status: Ready to Add\*[\s\S]*?(?=(?:###\s*\d+\.|\Z))", priority2_content, re.MULTILINE)
+    
+    if not ready_to_add_entries:
+        print("No new 'Ready to Add' clinics found in 'Priority 2' section.")
+        return
 
     added_count = 0
+    print(f"Found {len(ready_to_add_entries)} 'Ready to Add' clinics in 'Priority 2' section to process.")
 
-    for clinic_block_text in clinic_entries_raw:
-        # Extract clinic name from the first line of the block (which is the title)
-        clinic_title_match = re.match(r"(.+?)\n", clinic_block_text)
-        clinic_title = clinic_title_match.group(1).strip() if clinic_title_match else "Unknown Clinic"
+    for clinic_block_text in ready_to_add_entries:
+        clinic_name_match = re.search(r"###\s*\d+\.\s*(.+)", clinic_block_text)
+        clinic_name_from_header = clinic_name_match.group(1).strip() if clinic_name_match else "Unknown Clinic"
         
-        status_match = re.search(r"^\s*\*(Status: Ready to Add)\*", clinic_block_text, re.MULTILINE)
-
-        if status_match:
-            print(f"\nProcessing: {clinic_title} ({status_match.group(1)})")
-            
-            clinic_data = parse_clinic_block(clinic_block_text, clinic_title) 
-            if clinic_data.get('Clinic Name'):
-                airtable_record_id = add_clinic_to_airtable(clinic_data)
-                if airtable_record_id:
-                    added_count += 1
-            else:
-                print(f"  Skipping '{clinic_title}' due to parsing error (Clinic Name missing in parsed data).")
+        print(f"\nProcessing: {clinic_name_from_header} (Status: Ready to Add)")
+        
+        clinic_data = parse_clinic_block(clinic_block_text, clinic_name_from_header) 
+        if clinic_data.get('Clinic Name'):
+            airtable_record_id = add_clinic_to_airtable(clinic_data)
+            if airtable_record_id:
+                added_count += 1
         else:
-            print(f"\nSkipping: {clinic_title} (Status: Needs Research)")
-
+            print(f"  Skipping '{clinic_name_from_header}' due to parsing error (Clinic Name missing in parsed data).")
 
     print(f"\n--- Script Finished ---")
     print(f"Attempted to add {added_count} clinics to Airtable.")
