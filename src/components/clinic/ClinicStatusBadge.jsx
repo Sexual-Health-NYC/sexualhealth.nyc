@@ -1,27 +1,38 @@
 import { useTranslation } from "react-i18next";
 import theme from "../../theme";
-import { getOpenStatus, isHoliday, getUpcomingHoliday } from "../../utils/hours";
+import { getOpenStatus, isHoliday, getHolidayKey } from "../../utils/hours";
 
 export default function ClinicStatusBadge({ clinic }) {
-  const { t } = useTranslation(["messages"]);
+  const { t } = useTranslation(["messages", "holidays"]);
   const openStatus = getOpenStatus(clinic.hours);
   const holidayToday = isHoliday();
-  const holidayName = holidayToday ? getUpcomingHoliday()?.name || "Holiday" : null;
+  const holidayKey = holidayToday ? getHolidayKey() : null;
+  const holidayName = holidayKey
+    ? t(`holidays:${holidayKey}`)
+    : t("holidays:holiday");
 
   if (!openStatus) return null;
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: theme.spacing[1] }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: theme.spacing[1],
+      }}
+    >
       <span
         style={{
           display: "inline-block",
           padding: `2px ${theme.spacing[2]}`,
-          backgroundColor: openStatus.isOpen ? theme.colors.open : theme.colors.closed,
+          backgroundColor: openStatus.isOpen
+            ? theme.colors.open
+            : theme.colors.closed,
           color: "white",
           borderRadius: theme.borderRadius.sm,
           fontSize: theme.fonts.size.xs,
           fontWeight: theme.fonts.weight.medium,
-          width: "fit-content"
+          width: "fit-content",
         }}
       >
         {openStatus.isOpen

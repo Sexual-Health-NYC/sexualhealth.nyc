@@ -34,7 +34,7 @@ export default function ClinicContact({ clinic }) {
           <a
             href={`tel:${clinic.phone}`}
             style={{
-              marginLeft: "auto",
+              marginInlineStart: "auto",
               padding: `${theme.spacing[1]} ${theme.spacing[3]}`,
               backgroundColor: theme.colors.prep,
               color: "white",
@@ -70,7 +70,9 @@ export default function ClinicContact({ clinic }) {
               .replace(/^https?:\/\//, "")
               .replace(/\/$/, "")
               .substring(0, 35)}
-            {clinic.website.replace(/^https?:\/\//, "").length > 35 ? "..." : ""}
+            {clinic.website.replace(/^https?:\/\//, "").length > 35
+              ? "..."
+              : ""}
           </a>
         </div>
       )}

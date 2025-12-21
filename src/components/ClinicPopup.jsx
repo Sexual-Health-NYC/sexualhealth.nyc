@@ -50,7 +50,7 @@ export default function ClinicPopup() {
                 style={{
                   display: "inline-block",
                   padding: `${theme.spacing[1]} ${theme.spacing[2]}`,
-                  marginRight: theme.spacing[1],
+                  marginInlineEnd: theme.spacing[1],
                   marginBottom: theme.spacing[1],
                   fontSize: theme.fonts.size.xs,
                   backgroundColor: theme.colors.primary,

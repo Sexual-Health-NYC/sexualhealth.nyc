@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import theme from "../theme";
 import { GlobeIcon } from "./Icons";
@@ -6,6 +6,22 @@ import LanguageSwitcher from "./LanguageSwitcher";
 
 function FooterModal({ isOpen, onClose, title, children }) {
   const { t } = useTranslation(["actions"]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleEscape = (e) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        e.stopPropagation();
+        onClose();
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   return (
@@ -85,7 +101,22 @@ function FooterModal({ isOpen, onClose, title, children }) {
 }
 
 function LanguageModal({ isOpen, onClose }) {
-  const { t } = useTranslation(["footer"]);
+  const { t } = useTranslation(["footer", "actions"]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleEscape = (e) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        e.stopPropagation();
+        onClose();
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -114,14 +145,38 @@ function LanguageModal({ isOpen, onClose }) {
       >
         <div
           style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
             marginBottom: theme.spacing[3],
-            fontSize: theme.fonts.size.sm,
-            color: theme.colors.textSecondary,
+            gap: theme.spacing[3],
           }}
         >
-          {t("footer:selectLanguage")}
+          <div
+            style={{
+              fontSize: theme.fonts.size.sm,
+              color: theme.colors.textSecondary,
+            }}
+          >
+            {t("footer:selectLanguage")}
+          </div>
+          <button
+            onClick={onClose}
+            style={{
+              background: "none",
+              border: "none",
+              fontSize: theme.fonts.size.xl,
+              color: theme.colors.textSecondary,
+              cursor: "pointer",
+              padding: 0,
+              lineHeight: 1,
+            }}
+            aria-label={t("actions:close")}
+          >
+            ×
+          </button>
         </div>
-        <LanguageSwitcher />
+        <LanguageSwitcher onLanguageChange={onClose} />
       </div>
     </div>
   );
@@ -225,7 +280,7 @@ export default function Footer() {
         <ul
           style={{
             margin: `0 0 ${theme.spacing[3]} 0`,
-            paddingLeft: theme.spacing[4],
+            paddingInlineStart: theme.spacing[4],
           }}
         >
           <li style={{ marginBottom: theme.spacing[2] }}>

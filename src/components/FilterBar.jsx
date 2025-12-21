@@ -176,7 +176,7 @@ export default function FilterBar() {
             style={{
               position: "absolute",
               top: "calc(100% + 4px)",
-              left: 0,
+              insetInlineStart: 0,
               backgroundColor: "white",
               border: `1px solid ${theme.colors.border}`,
               borderRadius: theme.borderRadius.md,
@@ -219,7 +219,7 @@ export default function FilterBar() {
                   checked={filters[category].has(option.value)}
                   onChange={() => handleCheckbox(category, option.value)}
                   style={{
-                    marginRight: theme.spacing[2],
+                    marginInlineEnd: theme.spacing[2],
                     width: "18px",
                     height: "18px",
                     cursor: "pointer",
@@ -297,7 +297,7 @@ export default function FilterBar() {
             style={{
               position: "absolute",
               top: "calc(100% + 4px)",
-              left: 0,
+              insetInlineStart: 0,
               backgroundColor: "white",
               border: `1px solid ${theme.colors.border}`,
               borderRadius: theme.borderRadius.md,
@@ -345,7 +345,7 @@ export default function FilterBar() {
                     setOpenDropdown(null);
                   }}
                   style={{
-                    marginRight: theme.spacing[2],
+                    marginInlineEnd: theme.spacing[2],
                     width: "18px",
                     height: "18px",
                     cursor: "pointer",
@@ -502,7 +502,7 @@ export default function FilterBar() {
                 fontSize: theme.fonts.size.sm,
                 fontWeight: theme.fonts.weight.medium,
                 cursor: "pointer",
-                marginLeft: "auto",
+                marginInlineStart: "auto",
               }}
               onFocus={(e) => {
                 e.currentTarget.style.outline = theme.focus.outline;

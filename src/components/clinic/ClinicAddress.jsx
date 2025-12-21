@@ -79,7 +79,7 @@ export default function ClinicAddress({ clinic }) {
               padding: 0,
               color: copiedAddress ? theme.colors.open : theme.colors.primary,
               fontSize: theme.fonts.size.sm,
-              textAlign: "left",
+              textAlign: "start",
               whiteSpace: "nowrap",
               transition: `color ${theme.transitions.fast}`,
               display: "flex",

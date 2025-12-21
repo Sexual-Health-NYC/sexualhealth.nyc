@@ -112,7 +112,7 @@ export function TransitInfo({ transit }) {
       {lines.map((line) => (
         <SubwayBullet key={line} line={line} />
       ))}
-      <span style={{ marginLeft: "4px" }}>{stationAndDistance}</span>
+      <span style={{ marginInlineStart: "4px" }}>{stationAndDistance}</span>
     </span>
   );
 }
@@ -177,7 +177,7 @@ export function BusInfo({ bus }) {
       {hasMore && (
         <span style={{ fontSize: "11px", color: "#666" }}>+more</span>
       )}
-      <span style={{ marginLeft: "4px" }}>{stopAndDistance}</span>
+      <span style={{ marginInlineStart: "4px" }}>{stopAndDistance}</span>
     </span>
   );
 }

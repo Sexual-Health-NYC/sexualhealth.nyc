@@ -162,7 +162,7 @@ function ClinicCard({ clinic, expanded, onToggle, onShowOnMap, t }) {
             color: theme.colors.primary,
             backgroundColor: `${theme.colors.primary}15`,
             borderRadius: theme.borderRadius.full,
-            marginLeft: theme.spacing[2],
+            marginInlineStart: theme.spacing[2],
             transform: expanded ? "rotate(180deg)" : "rotate(0deg)",
             transition: `transform ${theme.motion.duration.fast}`,
             flexShrink: 0,

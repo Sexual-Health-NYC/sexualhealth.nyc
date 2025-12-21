@@ -313,7 +313,7 @@ function Checkbox({ label, checked, onChange }) {
         checked={checked}
         onChange={onChange}
         style={{
-          marginRight: theme.spacing[2],
+          marginInlineEnd: theme.spacing[2],
           width: "16px",
           height: "16px",
           cursor: "pointer",

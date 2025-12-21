@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 import theme from "../theme";
 
-export default function LanguageSwitcher() {
+export default function LanguageSwitcher({ onLanguageChange }) {
   const { i18n } = useTranslation();
 
   // Update html lang attribute and direction when language changes
@@ -11,10 +11,17 @@ export default function LanguageSwitcher() {
     document.documentElement.dir = i18n.dir(i18n.language);
   }, [i18n.language]);
 
+  const handleChange = (e) => {
+    i18n.changeLanguage(e.target.value);
+    if (onLanguageChange) {
+      onLanguageChange(e.target.value);
+    }
+  };
+
   return (
     <select
       value={i18n.language}
-      onChange={(e) => i18n.changeLanguage(e.target.value)}
+      onChange={handleChange}
       aria-label="Select language"
       style={{
         padding: `${theme.spacing[2]} ${theme.spacing[3]}`,

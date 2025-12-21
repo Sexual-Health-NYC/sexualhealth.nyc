@@ -3,6 +3,9 @@ import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import HttpBackend from "i18next-http-backend";
 
+// RTL languages
+const RTL_LANGUAGES = ["ar", "he", "ur", "yi"];
+
 i18n
   .use(HttpBackend)
   .use(LanguageDetector)
@@ -60,5 +63,11 @@ i18n
       useSuspense: true,
     },
   });
+
+// Override i18next's dir() method to properly detect RTL languages
+i18n.dir = function (lng) {
+  const language = lng || this.language;
+  return RTL_LANGUAGES.includes(language) ? "rtl" : "ltr";
+};
 
 export default i18n;

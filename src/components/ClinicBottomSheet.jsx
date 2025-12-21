@@ -134,7 +134,7 @@ export default function ClinicBottomSheet() {
               color: theme.colors.textSecondary,
               cursor: "pointer",
               padding: 0,
-              marginLeft: theme.spacing[2],
+              marginInlineStart: theme.spacing[2],
             }}
             aria-label={t("actions:close")}
           >

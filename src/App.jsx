@@ -11,7 +11,13 @@ import theme from "./theme";
 import { getOpenStatus, isOpenAfter } from "./utils/hours";
 
 export default function App() {
-  const { t } = useTranslation(["messages", "actions"]);
+  const { t, i18n } = useTranslation(["messages", "actions"]);
+
+  // Set document direction on mount and language change
+  useEffect(() => {
+    document.documentElement.lang = i18n.language;
+    document.documentElement.dir = i18n.dir(i18n.language);
+  }, [i18n.language]);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [viewMode, setViewMode] = useState("map"); // "map" or "list"
   const { clinics, filters, selectedClinic, selectClinic } = useAppStore();
