@@ -11,6 +11,7 @@ export default function FilterBar() {
     "locations",
     "actions",
     "gestational",
+    "messages",
   ]);
   const { filters, setFilter, clearFilters, setGestationalWeeks } =
     useAppStore();
@@ -535,7 +536,7 @@ export default function FilterBar() {
               <ActiveFilterPill
                 category="access"
                 value="walk_in"
-                label="Walk-ins"
+                label={t("messages:walkIns")}
               />
             )}
             {Array.from(filters.boroughs).map((value) => (
@@ -543,7 +544,7 @@ export default function FilterBar() {
                 key={value}
                 category="boroughs"
                 value={value}
-                label={value}
+                label={boroughOptions.find((o) => o.value === value)?.label}
               />
             ))}
             {filters.gestationalWeeks !== null && (
