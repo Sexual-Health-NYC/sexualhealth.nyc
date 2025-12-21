@@ -1,38 +1,41 @@
-# Volunteer Data Verification & Outreach Guide
+# Volunteer Guide
 
-Thank you for helping us build the most accurate sexual health resource for NYC! Your calls serve two purposes: **verifying critical data** and **introducing clinics to this free resource**.
+Help us build the most accurate sexual health directory for NYC.
 
-## 🎯 Current Goal: Fill the Gaps
-We have 75 clinics in our database, but **26 of them are missing operating hours**. This is our top priority.
+## What We Need
 
-## 📋 Your Task
-1.  **Pick a clinic** from the [Call List](VOLUNTEER_CALL_LIST.md).
-2.  **Call them** during business hours.
-3.  **Verify** the information below.
-4.  **Submit** your findings via our [Correction Form](https://sexualhealth.nyc/contact) (or the Airtable form if you have access).
+**Priority 1: Missing Hours** — 12 clinics have no hours listed. A 2-minute call can fix this.
 
-## 📞 Script
+**Priority 2: Verify Phone/Address** — A few clinics may have outdated contact info.
 
-### 1. Introduction
-> "Hi, I'm calling from **sexualhealth.nyc** — we're building a free, non-profit directory to help New Yorkers find sexual health services. I just wanted to verify your current operating hours to make sure we're sending patients to you at the right times."
+## How to Help
 
-### 2. Verification Questions
-*   "What are your specific hours for **[STI testing / PrEP / Abortion services]**?" (Many clinics have general hospital hours that differ from specific service hours).
-*   "Do you accept walk-ins, or is it appointment only?"
-*   "Are there specific hours for walk-ins?"
+1. Pick a clinic from the [Call List](VOLUNTEER_CALL_LIST.md)
+2. Call during business hours
+3. Submit findings via [contact form](https://sexualhealth.nyc/contact)
 
-### 3. Closing & Future Contact (Important!)
-> "Thank you! One last thing — if your hours or services ever change, is there a specific email address we can contact to update our listing? We want to keep your page accurate."
+## Phone Script
 
-*(Record this email if given — it's gold for future maintenance!)*
+**Intro:**
 
-## 📝 What to Watch Out For
-*   **Department Hours vs. General Hours:** Hospitals often have a main line open 24/7, but the *Sexual Health Clinic* might only be open Mon-Fri 9-5. **Always ask for the specific clinic hours.**
-*   **Lunch Breaks:** Some clinics close from 12-1pm. Ask if they close for lunch.
-*   **Registration Cut-off:** "We close at 5pm, but stop taking patients at 4pm." Record the 4pm time if possible, or note it.
+> "Hi, I'm calling from sexualhealth.nyc — we're a free directory helping New Yorkers find sexual health services. I wanted to verify your hours so we can send patients to you at the right times."
 
-## 🔍 Deep Dive: Discrepancy Report
-If you are an advanced volunteer, check `docs/DATA_DISCREPANCIES.md`. This report lists clinics where our data conflicts with their website (e.g., different phone number, missing service mentions). Verifying these specific discrepancies is high-value work.
+**Questions to ask:**
 
-## 🚀 Ready?
-Go to **[VOLUNTEER_CALL_LIST.md](VOLUNTEER_CALL_LIST.md)** to see which clinics need help!
+- "What are your hours for [STI testing / PrEP / the sexual health clinic]?"
+- "Do you accept walk-ins, or appointment only?"
+- "Do you close for lunch?"
+
+**Before hanging up:**
+
+> "If your hours change, is there an email we can contact to update your listing?"
+
+## Tips
+
+- **Hospital hours ≠ clinic hours.** The ER is 24/7 but the Family Planning clinic might be Mon-Fri 9-5. Always ask for the specific department.
+- **Registration cutoffs.** "We close at 5pm but stop taking patients at 4pm" — note the 4pm.
+- **Get their email.** Direct contact info for future updates is valuable.
+
+## Ready?
+
+**[See the Call List →](VOLUNTEER_CALL_LIST.md)**
