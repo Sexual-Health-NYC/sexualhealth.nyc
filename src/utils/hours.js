@@ -88,7 +88,7 @@ export function isOpenNow(hoursString) {
 }
 
 /**
- * Get status badge info
+ * Get status badge info (without label - component should translate)
  */
 export function getOpenStatus(hoursString) {
   const isOpen = isOpenNow(hoursString);
@@ -99,7 +99,6 @@ export function getOpenStatus(hoursString) {
 
   return {
     isOpen,
-    label: isOpen ? "Open Now" : "Closed",
     color: isOpen ? "#10b981" : "#94a3b8",
   };
 }

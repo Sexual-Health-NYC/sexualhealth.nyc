@@ -2,6 +2,7 @@
   "unknownContactClinic": "Unknown - contact clinic to verify",
   "walkInsAccepted": "Walk-ins accepted",
   "open": "Open",
+  "openNow": "Open Now",
   "closed": "Closed",
   "opensAt": "Opens at {{time}}",
   "closesAt": "Closes at {{time}}",

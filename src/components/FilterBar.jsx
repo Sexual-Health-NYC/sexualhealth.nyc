@@ -109,7 +109,11 @@ export default function FilterBar() {
     return (
       <div
         ref={dropdownRefs[name]}
-        style={{ position: "relative", display: "inline-block" }}
+        style={{
+          position: "relative",
+          display: "inline-block",
+          transition: "transform 0.2s ease-out",
+        }}
       >
         <button
           onClick={() => setOpenDropdown(isOpen ? null : name)}
@@ -242,7 +246,11 @@ export default function FilterBar() {
     return (
       <div
         ref={dropdownRefs.gestational}
-        style={{ position: "relative", display: "inline-block" }}
+        style={{
+          position: "relative",
+          display: "inline-block",
+          transition: "transform 0.2s ease-out",
+        }}
       >
         <button
           onClick={() => setOpenDropdown(isOpen ? null : "gestational")}
@@ -440,6 +448,9 @@ export default function FilterBar() {
               display: "flex",
               gap: theme.spacing[3],
               flex: 1,
+              flexWrap: "wrap",
+              alignItems: "center",
+              transition: "all 0.2s ease-out",
             }}
           >
             <FilterDropdown

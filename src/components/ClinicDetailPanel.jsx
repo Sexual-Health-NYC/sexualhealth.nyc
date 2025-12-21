@@ -107,7 +107,7 @@ export default function ClinicDetailPanel() {
                   fontWeight: theme.fonts.weight.medium,
                 }}
               >
-                {openStatus.label}
+                {t(openStatus.isOpen ? "messages:openNow" : "messages:closed")}
               </span>
             )}
           </div>

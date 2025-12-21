@@ -2,6 +2,7 @@
   "unknownContactClinic": "Desconocido - contacte a la clínica para verificar",
   "walkInsAccepted": "Se aceptan visitas sin cita",
   "open": "Abierto",
+  "openNow": "Abierto ahora",
   "closed": "Cerrado",
   "opensAt": "Abre a las {{time}}",
   "closesAt": "Cierra a las {{time}}",
