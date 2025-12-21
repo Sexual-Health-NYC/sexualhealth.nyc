@@ -31,6 +31,8 @@ export default function Map({ filteredClinics }) {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const previousFilteredClinicsRef = useRef(filteredClinics);
 
+  const displayedClinics = selectedClinic ? [selectedClinic] : filteredClinics;
+
   // Track window resize for mobile detection
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
@@ -141,7 +143,7 @@ export default function Map({ filteredClinics }) {
         keyboard={false}
       >
         <NavigationControl position="top-right" />
-        <ClinicMarkers clinics={filteredClinics} />
+        <ClinicMarkers clinics={displayedClinics} />
       </MapGL>
     </div>
   );
