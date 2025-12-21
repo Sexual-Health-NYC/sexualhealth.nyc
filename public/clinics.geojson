@@ -181,56 +181,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.82922,
-          40.713216
-        ]
-      },
-      "properties": {
-        "id": "rec28qrxMlhGeOxLi",
-        "name": "Queens Abortion Pill",
-        "address": "120-34 Queens Blvd suite 420D, Kew Gardens, NY 11415",
-        "borough": "Queens",
-        "phone": "(718) 793-1943",
-        "website": "",
-        "hours": [],
-        "organization": "",
-        "clinic_type": "",
-        "has_sti_testing": false,
-        "has_hiv_testing": false,
-        "has_prep": false,
-        "has_pep": false,
-        "has_contraception": false,
-        "has_abortion": false,
-        "has_gender_affirming": false,
-        "has_vaccines": false,
-        "medication_abortion": false,
-        "in_clinic_abortion": false,
-        "abortion_medication_limit": "",
-        "abortion_procedure_limit": "",
-        "abortion_medication_max_weeks": null,
-        "abortion_procedure_max_weeks": null,
-        "offers_late_term": false,
-        "accepts_medicaid": false,
-        "accepts_medicare": false,
-        "sliding_scale": false,
-        "no_insurance_ok": false,
-        "insurance_plans": [],
-        "walk_in": false,
-        "appointment_only": false,
-        "lgbtq_focused": false,
-        "youth_friendly": false,
-        "anonymous_testing": false,
-        "transit": "E/F at Kew Gardens-Union Tpke (666 ft)",
-        "bus": "Q10, Q60 at QUEENS BL /80 RD (211 ft)",
-        "last_verified": "",
-        "data_sources": "Planned Parenthood Project xlsx"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -73.944429,
           40.70564
         ]
@@ -6051,9 +6001,9 @@
     }
   ],
   "metadata": {
-    "generated": "2025-12-21T03:50:19.110Z",
+    "generated": "2025-12-21T03:51:50.598Z",
     "source": "Airtable",
-    "total_records": 75,
-    "records_with_coords": 75
+    "total_records": 74,
+    "records_with_coords": 74
   }
 }
