@@ -219,9 +219,7 @@
   transform: scale(0.97);
 }
 
-.filter-pill.active {
-  animation: scaleIn var(--duration-fast) var(--ease-bounce);
-}
+/* Active state uses transitions, not animation (avoids flash) */
 
 /* Service tag animations */
 .service-tag {

@@ -36,20 +36,18 @@ export default function ClinicListView({ clinics }) {
       }}
     >
       <div
-        className="stagger-children"
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
           gap: theme.spacing[4],
         }}
       >
-        {clinics.map((clinic, index) => (
+        {clinics.map((clinic) => (
           <ClinicCard
             key={clinic.id}
             clinic={clinic}
             onClick={() => selectClinic(clinic)}
             t={t}
-            index={index}
           />
         ))}
       </div>
@@ -57,7 +55,7 @@ export default function ClinicListView({ clinics }) {
   );
 }
 
-function ClinicCard({ clinic, onClick, t, index }) {
+function ClinicCard({ clinic, onClick, t }) {
   const openStatus = getOpenStatus(clinic.hours);
 
   const services = [];
@@ -80,7 +78,6 @@ function ClinicCard({ clinic, onClick, t, index }) {
         }
       }}
       aria-label={t("messages:viewDetails", { name: clinic.name })}
-      className="card-hover"
       style={{
         backgroundColor: "white",
         borderRadius: theme.borderRadius.lg,
@@ -89,7 +86,6 @@ function ClinicCard({ clinic, onClick, t, index }) {
         boxShadow: "0 2px 8px rgba(123, 44, 191, 0.08)",
         transition: `all ${theme.motion.duration.normal} ${theme.motion.easing.gentle}`,
         border: `2px solid ${theme.colors.border}`,
-        animationDelay: `${Math.min(index, 10) * 50}ms`,
       }}
       onFocus={(e) => {
         e.currentTarget.style.outline = theme.focus.outline;
