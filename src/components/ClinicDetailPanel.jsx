@@ -308,10 +308,9 @@ export default function ClinicDetailPanel() {
         </Section>
 
         {/* Hours */}
-        {(formattedHours.length > 0 || selectedClinic.hours_text) && (
+        {formattedHours.length > 0 && (
           <Section title={t("sections:hours")}>
-            {formattedHours.length > 0 ? (
-              <div
+            <div
                 style={{
                   display: "flex",
                   flexDirection: "column",
@@ -361,17 +360,6 @@ export default function ClinicDetailPanel() {
                   </div>
                 ))}
               </div>
-            ) : (
-              <p
-                style={{
-                  margin: 0,
-                  color: theme.colors.textPrimary,
-                  fontSize: theme.fonts.size.base,
-                }}
-              >
-                {selectedClinic.hours_text}
-              </p>
-            )}
           </Section>
         )}
 

@@ -86,7 +86,6 @@ function recordToFeature(record, hoursMap) {
       phone: f.Phone || "",
       website: f.Website || "",
       hours: formatHours(record.id, hoursMap),
-      hours_text: f.Hours || "", // Legacy fallback
 
       // Organization
       organization: f.Organization || "",
