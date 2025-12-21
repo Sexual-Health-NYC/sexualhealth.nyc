@@ -1,0 +1,18 @@
+{
+  "reportCorrection": "الإبلاغ عن تصحيح",
+  "closeCorrectionForm": "إغلاق نموذج التصحيح",
+  "correctionFormDescription": "ساعدنا في الحفاظ على دقة هذه المعلومات. أبلغ عن أي أخطاء أو معلومات قديمة بخصوص",
+  "whatNeedsCorrection": "ما الذي يحتاج إلى تصحيح؟",
+  "required": "مطلوب",
+  "correctionPlaceholder": "مثال: رقم الهاتف غير صحيح، تغيرت ساعات العمل، العيادة مغلقة، إلخ.",
+  "yourEmail": "بريدك الإلكتروني (اختياري)",
+  "emailPlaceholder": "your@email.com",
+  "emailDisclaimer": "سنستخدمه فقط للمتابعة إذا لزم الأمر.",
+  "cancel": "إلغاء",
+  "submitCorrection": "إرسال التصحيح",
+  "submitting": "جاري الإرسال...",
+  "submitted": "تم الإرسال!",
+  "correctionRequired": "يرجى وصف التصحيح المطلوب.",
+  "correctionSuccess": "شكراً! تم إرسال التصحيح وسنقوم بمراجعته قريباً.",
+  "correctionError": "فشل إرسال التصحيح. يرجى المحاولة مرة أخرى أو مراسلتنا عبر البريد الإلكتروني hello@sexualhealth.nyc."
+}

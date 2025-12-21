@@ -1,0 +1,18 @@
+{
+  "unknownContactClinic": "Inconnu - contacter la clinique",
+  "walkInsAccepted": "Sans rendez-vous accepté",
+  "open": "Ouvert",
+  "openNow": "Ouvert maintenant",
+  "closed": "Fermé",
+  "opensAt": "Ouvre à {{time}}",
+  "closesAt": "Ferme à {{time}}",
+  "clinicsFound": "{{count}} cliniques trouvées",
+  "clinicsFound_one": "{{count}} clinique trouvée",
+  "clinicsFound_other": "{{count}} cliniques trouvées",
+  "noMatches": "Aucune clinique ne correspond à vos filtres",
+  "tryAdjustingFilters": "Essayez d'ajuster vos filtres.",
+  "walkIns": "Sans rdv",
+  "viewDetails": "Voir les détails pour {{name}}",
+  "cluster": "Groupe de {{count}} cliniques. Zoomez pour voir les détails.",
+  "skipToMain": "Aller au contenu principal"
+}

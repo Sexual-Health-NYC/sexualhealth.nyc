@@ -36,6 +36,12 @@ export default function LanguageSwitcher() {
       <option value="en">English</option>
       <option value="es">Español</option>
       <option value="zh">中文</option>
+      <option value="ru">Русский</option>
+      <option value="bn">বাংলা</option>
+      <option value="ht">Kreyòl Ayisyen</option>
+      <option value="fr">Français</option>
+      <option value="ar">العربية</option>
+      <option value="ko">한국어</option>
     </select>
   );
 }

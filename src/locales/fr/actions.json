@@ -1,0 +1,23 @@
+{
+  "openInMaps": "Ouvrir dans Maps",
+  "copyAddress": "Copier l'adresse",
+  "copied": "Copié !",
+  "callNow": "Appeler",
+  "visitWebsite": "Visiter le site",
+  "getDirections": "Itinéraire",
+  "apply": "Appliquer",
+  "clearAll": "Tout effacer",
+  "map": "Carte",
+  "list": "Liste",
+  "filters": "Filtres",
+  "clickForInfo": "Cliquer pour info",
+  "zoomIn": "cliquez pour zoomer",
+  "close": "Fermer",
+  "reportCorrection": "Signaler une erreur",
+  "copyAddressToClipboard": "Copier l'adresse",
+  "nearMe": "Près de moi",
+  "finding": "Recherche...",
+  "resetView": "Réinitialiser la vue",
+  "geolocationNotSupported": "Votre navigateur ne supporte pas la géolocalisation",
+  "unableToGetLocation": "Impossible d'obtenir votre position"
+}

@@ -1,0 +1,18 @@
+{
+  "unknownContactClinic": "Enkoni - kontakte klinik la pou verifye",
+  "walkInsAccepted": "Aksepte vizit san randevou",
+  "open": "Louvri",
+  "openNow": "Louvri Kounye a",
+  "closed": "Fèmen",
+  "opensAt": "Louvri a {{time}}",
+  "closesAt": "Fèmen a {{time}}",
+  "clinicsFound": "{{count}} klinik yo jwenn",
+  "clinicsFound_one": "{{count}} klinik yo jwenn",
+  "clinicsFound_other": "{{count}} klinik yo jwenn",
+  "noMatches": "Pa gen klinik ki matche ak filtè ou yo",
+  "tryAdjustingFilters": "Eseye ajiste seleksyon filtè ou yo.",
+  "walkIns": "San Randevou",
+  "viewDetails": "Gade detay pou {{name}}",
+  "cluster": "Gwoup {{count}} klinik. Rale pou wè klinik endividyèl yo.",
+  "skipToMain": "Ale nan kontni prensipal la"
+}
