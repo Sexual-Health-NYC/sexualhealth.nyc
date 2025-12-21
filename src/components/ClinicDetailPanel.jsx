@@ -287,7 +287,7 @@ export default function ClinicDetailPanel() {
               {copiedAddress ? "✓ copied" : "copy"}
             </button>
             <a
-              href={`https://maps.google.com/?q=${encodeURIComponent(selectedClinic.address + (selectedClinic.borough ? `, ${selectedClinic.borough}, NY` : ""))}`}
+              href={`https://www.openstreetmap.org/directions?route=;${selectedClinic.latitude},${selectedClinic.longitude}`}
               target="_blank"
               rel="noopener noreferrer"
               style={{
