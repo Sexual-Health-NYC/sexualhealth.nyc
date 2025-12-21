@@ -1,34 +1,21 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
-
-// Dynamically load all locale files
-const modules = import.meta.glob('./locales/*/*.json', { eager: true });
-
-const resources = {};
-
-for (const path in modules) {
-  // path is like "./locales/en/services.json"
-  const parts = path.split('/');
-  const lang = parts[2]; // "en"
-  const filename = parts[3]; // "services.json"
-  const namespace = filename.replace('.json', ''); // "services"
-
-  if (!resources[lang]) {
-    resources[lang] = {};
-  }
-
-  // Vite JSON imports are the default export
-  resources[lang][namespace] = modules[path].default || modules[path];
-}
+import HttpBackend from "i18next-http-backend";
 
 i18n
+  .use(HttpBackend)
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    resources,
     fallbackLng: "en",
-    supportedLngs: Object.keys(resources),
+    supportedLngs: [
+      "en", "es", "zh", "ru", "bn", "ht", "fr", "ar", "ko", "it", 
+      "tl", "pl", "ur", "el", "he", "hi", "ja", "yi", "pt", "vi"
+    ],
+    backend: {
+      loadPath: "/locales/{{lng}}/{{ns}}.json",
+    },
     detection: {
       order: ["localStorage", "navigator"],
       caches: ["localStorage"],
@@ -37,7 +24,7 @@ i18n
       escapeValue: false, // React already escapes
     },
     react: {
-      useSuspense: false,
+      useSuspense: true,
     },
   });
 
