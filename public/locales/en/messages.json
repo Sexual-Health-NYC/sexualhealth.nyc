@@ -24,5 +24,9 @@
   "openAfter5pm": "Open after 5pm",
   "subway": "Subway line",
   "bus": "Bus route",
-  "searchByName": "Search by clinic name..."
+  "searchByName": "Search by clinic name...",
+  "search": "Search",
+  "hours": "Hours",
+  "selectSubway": "Select subway lines",
+  "selectBus": "Select bus routes"
 }

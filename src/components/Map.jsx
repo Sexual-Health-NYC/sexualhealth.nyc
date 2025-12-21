@@ -18,7 +18,13 @@ const MAPBOX_TOKEN =
   "pk.eyJ1Ijoic2V4dWFsLWhlYWx0aC1ueWMiLCJhIjoiY21qZHF2ZTAyMDQ3aTNjb3MxbDFscWowZiJ9.BXuUrUio_grUlyoxU6WFBQ";
 
 export default function Map({ filteredClinics }) {
-  const { mapViewport, setMapViewport, setClinics } = useAppStore();
+  const {
+    mapViewport,
+    setMapViewport,
+    setClinics,
+    selectedClinic,
+    selectClinic,
+  } = useAppStore();
   const mapRef = useRef();
 
   useEffect(() => {
@@ -71,6 +77,11 @@ export default function Map({ filteredClinics }) {
         ref={mapRef}
         {...mapViewport}
         onMove={(evt) => setMapViewport(evt.viewState)}
+        onClick={() => {
+          if (selectedClinic) {
+            selectClinic(null);
+          }
+        }}
         mapStyle="mapbox://styles/mapbox/streets-v12"
         mapboxAccessToken={MAPBOX_TOKEN}
         style={{ width: "100%", height: "100%" }}

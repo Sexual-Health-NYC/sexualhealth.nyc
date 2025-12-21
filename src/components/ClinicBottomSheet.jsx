@@ -360,25 +360,18 @@ export default function ClinicBottomSheet() {
             >
               {copiedAddress ? "✓ copied" : "copy"}
             </button>
+            {" · "}
+            <a
+              href={`geo:${selectedClinic.latitude},${selectedClinic.longitude}?q=${encodeURIComponent(selectedClinic.address + (selectedClinic.borough ? `, ${selectedClinic.borough}, NY` : ""))}`}
+              style={{
+                color: theme.colors.primary,
+                textDecoration: "underline",
+                fontSize: theme.fonts.size.sm,
+              }}
+            >
+              directions
+            </a>
           </p>
-
-          {/* Open in Maps button - prominent for mobile */}
-          <a
-            href={`geo:${selectedClinic.latitude},${selectedClinic.longitude}?q=${encodeURIComponent(selectedClinic.address + (selectedClinic.borough ? `, ${selectedClinic.borough}, NY` : ""))}`}
-            style={{
-              display: "block",
-              padding: theme.spacing[3],
-              backgroundColor: theme.colors.primary,
-              color: "white",
-              textAlign: "center",
-              textDecoration: "none",
-              borderRadius: theme.borderRadius.sm,
-              fontSize: theme.fonts.size.base,
-              fontWeight: theme.fonts.weight.medium,
-            }}
-          >
-            {t("actions:openInMaps")}
-          </a>
 
           {/* Transit - compact */}
           {(selectedClinic.transit || selectedClinic.bus) && (

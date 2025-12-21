@@ -6,6 +6,7 @@ import theme from "../theme";
 import LanguageSwitcher from "./LanguageSwitcher";
 import SubwayBullet from "./SubwayBullet";
 import transitData from "../data/transitLines.json";
+import FilterControls from "./FilterControls";
 
 export default function FilterBar() {
   const { t } = useTranslation([
@@ -840,6 +841,7 @@ export default function FilterBar() {
               </span>
             )}
           </button>
+          <LanguageSwitcher />
         </div>
       </div>
 
@@ -854,8 +856,9 @@ export default function FilterBar() {
               left: 0,
               right: 0,
               bottom: 0,
-              backgroundColor: "rgba(0, 0, 0, 0.5)",
+              backgroundColor: "rgba(0, 0, 0, 0.3)",
               zIndex: 1000,
+              pointerEvents: "none",
             }}
             aria-hidden="true"
           />
@@ -871,10 +874,11 @@ export default function FilterBar() {
               backgroundColor: "white",
               borderTopLeftRadius: theme.borderRadius.lg,
               borderTopRightRadius: theme.borderRadius.lg,
-              maxHeight: "80vh",
-              overflowY: "auto",
+              maxHeight: "60vh",
               zIndex: 1001,
-              padding: theme.spacing[4],
+              display: "flex",
+              flexDirection: "column",
+              pointerEvents: "auto",
             }}
           >
             <div
@@ -882,7 +886,10 @@ export default function FilterBar() {
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
-                marginBottom: theme.spacing[4],
+                padding: theme.spacing[4],
+                paddingBottom: theme.spacing[3],
+                borderBottom: `1px solid ${theme.colors.border}`,
+                flexShrink: 0,
               }}
             >
               <h2
@@ -909,96 +916,25 @@ export default function FilterBar() {
               </button>
             </div>
 
-            {/* Mobile filter sections */}
-            <FilterSection title={t("sections:services")}>
-              {serviceOptions.map((option) => (
-                <Checkbox
-                  key={option.value}
-                  label={option.label}
-                  checked={filters.services.has(option.value)}
-                  onChange={() => handleCheckbox("services", option.value)}
-                />
-              ))}
-            </FilterSection>
-
-            <FilterSection title={t("sections:insuranceAndCost")}>
-              {insuranceOptions.map((option) => (
-                <Checkbox
-                  key={option.value}
-                  label={option.label}
-                  checked={filters.insurance.has(option.value)}
-                  onChange={() => handleCheckbox("insurance", option.value)}
-                />
-              ))}
-            </FilterSection>
-
-            <FilterSection title={t("sections:walkIns")}>
-              <Checkbox
-                label={t("messages:walkInsAccepted")}
-                checked={filters.access.has("walk_in")}
-                onChange={() => handleCheckbox("access", "walk_in")}
-              />
-            </FilterSection>
-
-            <FilterSection title={t("sections:borough")}>
-              {boroughOptions.map((option) => (
-                <Checkbox
-                  key={option.value}
-                  label={option.label}
-                  checked={filters.boroughs.has(option.value)}
-                  onChange={() => handleCheckbox("boroughs", option.value)}
-                />
-              ))}
-            </FilterSection>
-
-            {filters.services.has("abortion") && (
-              <FilterSection title={t("services:abortion")}>
-                <div style={{ marginBottom: theme.spacing[2] }}>
-                  <label
-                    style={{
-                      fontSize: theme.fonts.size.sm,
-                      fontWeight: theme.fonts.weight.medium,
-                      color: theme.colors.textSecondary,
-                      marginBottom: theme.spacing[1],
-                      display: "block",
-                    }}
-                  >
-                    {t("gestational:weeksPregnant")}
-                  </label>
-                  <select
-                    value={filters.gestationalWeeks ?? ""}
-                    onChange={(e) =>
-                      setGestationalWeeks(
-                        e.target.value === "" ? null : Number(e.target.value),
-                      )
-                    }
-                    style={{
-                      width: "100%",
-                      padding: theme.spacing[2],
-                      borderRadius: theme.borderRadius.md,
-                      border: `1px solid ${theme.colors.border}`,
-                      fontSize: theme.fonts.size.sm,
-                      backgroundColor: "white",
-                    }}
-                  >
-                    {gestationalOptions.map((option) => (
-                      <option
-                        key={option.value ?? "any"}
-                        value={option.value ?? ""}
-                      >
-                        {option.label}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </FilterSection>
-            )}
+            <div
+              style={{
+                overflowY: "auto",
+                flex: 1,
+                padding: theme.spacing[4],
+                paddingTop: theme.spacing[3],
+              }}
+            >
+              <FilterControls mode="mobile" />
+            </div>
 
             <div
               style={{
                 display: "flex",
                 gap: theme.spacing[3],
-                marginTop: theme.spacing[4],
+                padding: theme.spacing[4],
+                paddingTop: theme.spacing[3],
+                borderTop: `1px solid ${theme.colors.border}`,
+                flexShrink: 0,
               }}
             >
               {getActiveFilterCount() > 0 && (
@@ -1044,76 +980,5 @@ export default function FilterBar() {
         </>
       )}
     </>
-  );
-}
-
-function FilterSection({ title, children }) {
-  return (
-    <fieldset
-      style={{
-        marginBottom: theme.spacing[4],
-        padding: theme.spacing[3],
-        backgroundColor: theme.colors.surface,
-        borderRadius: theme.borderRadius.md,
-        border: "none",
-      }}
-    >
-      <legend
-        style={{
-          fontSize: theme.fonts.size.base,
-          fontWeight: theme.fonts.weight.semibold,
-          marginBottom: theme.spacing[2],
-          color: theme.colors.primary,
-        }}
-      >
-        {title}
-      </legend>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: theme.spacing[2],
-        }}
-      >
-        {children}
-      </div>
-    </fieldset>
-  );
-}
-
-function Checkbox({ label, checked, onChange }) {
-  return (
-    <label
-      style={{
-        display: "flex",
-        alignItems: "center",
-        cursor: "pointer",
-        padding: theme.spacing[2],
-        borderRadius: theme.borderRadius.sm,
-      }}
-    >
-      <input
-        type="checkbox"
-        checked={checked}
-        onChange={onChange}
-        style={{
-          marginRight: theme.spacing[2],
-          width: "18px",
-          height: "18px",
-          cursor: "pointer",
-          accentColor: theme.colors.primary,
-        }}
-      />
-      <span
-        style={{
-          fontSize: theme.fonts.size.sm,
-          fontWeight: checked
-            ? theme.fonts.weight.medium
-            : theme.fonts.weight.normal,
-        }}
-      >
-        {label}
-      </span>
-    </label>
   );
 }
