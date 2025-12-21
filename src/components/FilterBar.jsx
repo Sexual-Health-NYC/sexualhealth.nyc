@@ -61,6 +61,29 @@ export default function FilterBar() {
         .slice(0, 10)
     : [];
 
+  // Helper function to highlight matching text
+  const highlightMatch = (text, query) => {
+    if (!query.trim()) return text;
+
+    const lowerText = text.toLowerCase();
+    const lowerQuery = query.toLowerCase().trim();
+    const index = lowerText.indexOf(lowerQuery);
+
+    if (index === -1) return text;
+
+    const before = text.slice(0, index);
+    const match = text.slice(index, index + query.length);
+    const after = text.slice(index + query.length);
+
+    return (
+      <>
+        {before}
+        <strong style={{ fontWeight: theme.fonts.weight.bold }}>{match}</strong>
+        {after}
+      </>
+    );
+  };
+
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
     window.addEventListener("resize", handleResize);
@@ -603,7 +626,7 @@ export default function FilterBar() {
                         color: theme.colors.textPrimary,
                       }}
                     >
-                      {clinic.name}
+                      {highlightMatch(clinic.name, filters.searchQuery)}
                     </div>
                     {clinic.borough && (
                       <div
