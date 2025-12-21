@@ -1,0 +1,16 @@
+{
+  "about": "Tungkol sa Amin",
+  "privacy": "Privacy",
+  "changeLanguage": "Baguhin ang wika",
+  "selectLanguage": "Pumili ng wika",
+  "aboutText1": "Ang libreng direktoryo na ito ay tumutulong sa mga New Yorker na makahanap ng mga serbisyo sa kalusugang sekswal kabilang ang STI testing, HIV testing, PrEP, contraception, abortion care, at pangangalagang nagpapatibay ng kasarian.",
+  "aboutText2": "Binuo ng mga boluntaryo. Hindi kaanib sa anumang klinika o organisasyong pangkalusugan.",
+  "aboutDisclaimer": "Ang direktoryo na ito ay para sa layuning pang-impormasyon lamang. Hindi kami tagapagbigay ng pangangalagang pangkalusugan. Palaging i-verify ang impormasyon nang direkta sa mga klinika bago bumisita.",
+  "privacyIntro": "Mahalaga ang iyong privacy. Ang site na ito ay idinisenyo upang mangolekta ng kaunting data hangga't maaari.",
+  "privacyNoAccounts": "Walang mga account o personal na data na kinokolekta",
+  "privacyAnalytics": "Analytics na nakatuon sa privacy (GoatCounter) - walang cookies, walang tracking sa iba't ibang site",
+  "privacyLanguage": "Ang kagustuhan sa wika ay nakaimbak lamang nang lokal sa iyong browser",
+  "privacyMaps": "Mga mapang ibinigay ng Mapbox (nalalapat ang kanilang patakaran sa privacy sa paggamit ng mapa)",
+  "privacyCorrections": "Ang mga pagsusumite ng pagwawasto ay ipinapadala sa pamamagitan ng email sa mga maintainer, pagkatapos ay binubura",
+  "privacyNoCookies": "Hindi kami gumagamit ng mga advertising cookie o nagbebenta ng anumang data."
+}

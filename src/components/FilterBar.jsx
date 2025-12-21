@@ -4,7 +4,6 @@ import Select from "react-select";
 import useAppStore from "../store/useAppStore";
 import useFilterOptions from "../hooks/useFilterOptions";
 import theme from "../theme";
-import LanguageSwitcher from "./LanguageSwitcher";
 import SubwayBullet from "./SubwayBullet";
 import transitData from "../data/transitLines.json";
 import FilterControls from "./FilterControls";
@@ -490,42 +489,32 @@ export default function FilterBar() {
             />
           </div>
 
-          <div
-            style={{
-              display: "flex",
-              gap: theme.spacing[3],
-              alignItems: "center",
-              marginLeft: "auto",
-            }}
-          >
-            {getActiveFilterCount() > 0 && (
-              <button
-                onClick={clearFilters}
-                className="btn-interactive"
-                style={{
-                  padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
-                  backgroundColor: "white",
-                  color: theme.colors.textSecondary,
-                  border: `1px solid ${theme.colors.border}`,
-                  borderRadius: theme.borderRadius.md,
-                  fontSize: theme.fonts.size.sm,
-                  fontWeight: theme.fonts.weight.medium,
-                  cursor: "pointer",
-                }}
-                onFocus={(e) => {
-                  e.currentTarget.style.outline = theme.focus.outline;
-                  e.currentTarget.style.outlineOffset =
-                    theme.focus.outlineOffset;
-                }}
-                onBlur={(e) => {
-                  e.currentTarget.style.outline = "none";
-                }}
-              >
-                {t("actions:clearAll")}
-              </button>
-            )}
-            <LanguageSwitcher />
-          </div>
+          {getActiveFilterCount() > 0 && (
+            <button
+              onClick={clearFilters}
+              className="btn-interactive"
+              style={{
+                padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
+                backgroundColor: "white",
+                color: theme.colors.textSecondary,
+                border: `1px solid ${theme.colors.border}`,
+                borderRadius: theme.borderRadius.md,
+                fontSize: theme.fonts.size.sm,
+                fontWeight: theme.fonts.weight.medium,
+                cursor: "pointer",
+                marginLeft: "auto",
+              }}
+              onFocus={(e) => {
+                e.currentTarget.style.outline = theme.focus.outline;
+                e.currentTarget.style.outlineOffset = theme.focus.outlineOffset;
+              }}
+              onBlur={(e) => {
+                e.currentTarget.style.outline = "none";
+              }}
+            >
+              {t("actions:clearAll")}
+            </button>
+          )}
         </div>
 
         {/* Filter dropdowns row */}
@@ -876,7 +865,6 @@ export default function FilterBar() {
               </span>
             )}
           </button>
-          <LanguageSwitcher />
         </div>
       </div>
 

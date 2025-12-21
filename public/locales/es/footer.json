@@ -1,0 +1,16 @@
+{
+  "about": "Acerca de",
+  "privacy": "Privacidad",
+  "changeLanguage": "Cambiar idioma",
+  "selectLanguage": "Seleccionar idioma",
+  "aboutText1": "Este directorio gratuito ayuda a los neoyorquinos a encontrar servicios de salud sexual, incluyendo pruebas de ITS, pruebas de VIH, PrEP, anticoncepción, servicios de aborto y atención de afirmación de género.",
+  "aboutText2": "Construido por voluntarios. No afiliado a ninguna clínica u organización de salud.",
+  "aboutDisclaimer": "Este directorio es solo para fines informativos. No somos un proveedor de atención médica. Siempre verifique la información directamente con las clínicas antes de visitarlas.",
+  "privacyIntro": "Su privacidad es importante. Este sitio está diseñado para recopilar la menor cantidad de datos posible.",
+  "privacyNoAccounts": "No se recopilan cuentas ni datos personales",
+  "privacyAnalytics": "Análisis centrados en la privacidad (GoatCounter): sin cookies, sin seguimiento entre sitios",
+  "privacyLanguage": "Preferencia de idioma almacenada localmente en su navegador únicamente",
+  "privacyMaps": "Mapas proporcionados por Mapbox (su política de privacidad se aplica al uso del mapa)",
+  "privacyCorrections": "Los envíos de correcciones se envían por correo electrónico a los mantenedores y luego se eliminan",
+  "privacyNoCookies": "No utilizamos cookies publicitarias ni vendemos ningún dato."
+}

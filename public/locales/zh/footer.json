@@ -1,0 +1,16 @@
+{
+  "about": "关于",
+  "privacy": "隐私",
+  "changeLanguage": "更改语言",
+  "selectLanguage": "选择语言",
+  "aboutText1": "本免费指南旨在帮助纽约人寻找性健康服务，包括性传播感染检测、艾滋病毒检测、PrEP、避孕、堕胎服务和性别肯定护理。",
+  "aboutText2": "由志愿者建立。不隶属于任何诊所或医疗机构。",
+  "aboutDisclaimer": "本指南仅供参考。我们并非医疗服务提供者。访问前请务必直接向诊所核实信息。",
+  "privacyIntro": "您的隐私至关重要。本网站的设计宗旨是收集尽可能少的数据。",
+  "privacyNoAccounts": "不收集账户或个人数据",
+  "privacyAnalytics": "注重隐私的分析 (GoatCounter) — 无 Cookie，无跨站跟踪",
+  "privacyLanguage": "语言偏好仅本地存储在您的浏览器中",
+  "privacyMaps": "地图由 Mapbox 提供（其隐私政策适用于地图使用）",
+  "privacyCorrections": "更正提交内容将通过电子邮件发送给维护者，然后删除",
+  "privacyNoCookies": "我们不使用广告 Cookie，也不出售任何数据。"
+}

@@ -1,0 +1,16 @@
+{
+  "about": "O nas",
+  "privacy": "Prywatność",
+  "changeLanguage": "Zmień język",
+  "selectLanguage": "Wybierz język",
+  "aboutText1": "Ten bezpłatny katalog pomaga nowojorczykom znaleźć usługi z zakresu zdrowia seksualnego, w tym testy na STI, testy na HIV, PrEP, antykoncepcję, opiekę aborcyjną i opiekę afirmującą płeć.",
+  "aboutText2": "Zbudowane przez wolontariuszy. Niezwiązane z żadną kliniką ani organizacją opieki zdrowotnej.",
+  "aboutDisclaimer": "Niniejszy katalog służy wyłącznie celom informacyjnym. Nie jesteśmy dostawcą opieki zdrowotnej. Przed wizytą zawsze należy zweryfikować informacje bezpośrednio w klinice.",
+  "privacyIntro": "Twoja prywatność jest ważna. Ta strona została zaprojektowana tak, aby gromadzić jak najmniej danych.",
+  "privacyNoAccounts": "Nie gromadzimy kont ani danych osobowych",
+  "privacyAnalytics": "Analiza skupiona na prywatności (GoatCounter) - brak ciasteczek, brak śledzenia między stronami",
+  "privacyLanguage": "Preferencje językowe są przechowywane wyłącznie lokalnie w Twojej przeglądarce",
+  "privacyMaps": "Mapy dostarczone przez Mapbox (ich polityka prywatności ma zastosowanie do korzystania z map)",
+  "privacyCorrections": "Zgłoszenia poprawek są wysyłane pocztą elektroniczną do administratorów, a następnie usuwane",
+  "privacyNoCookies": "Nie używamy ciasteczek reklamowych ani nie sprzedajemy żadnych danych."
+}

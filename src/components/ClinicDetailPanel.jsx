@@ -100,11 +100,11 @@ export default function ClinicDetailPanel() {
           <ClinicAddress clinic={selectedClinic} />
         </div>
 
+        <ClinicContact clinic={selectedClinic} />
+
         <ClinicHours clinic={selectedClinic} />
 
         <ClinicInsurance clinic={selectedClinic} />
-
-        <ClinicContact clinic={selectedClinic} />
 
         {/* Report Correction */}
         <div

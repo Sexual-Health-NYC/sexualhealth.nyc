@@ -1,0 +1,16 @@
+{
+  "about": "À propos",
+  "privacy": "Confidentialité",
+  "changeLanguage": "Changer de langue",
+  "selectLanguage": "Sélectionner la langue",
+  "aboutText1": "Cet annuaire gratuit aide les New-Yorkais à trouver des services de santé sexuelle, notamment le dépistage des IST et du VIH, la PrEP, la contraception, les soins liés à l'avortement et les soins d'affirmation de genre.",
+  "aboutText2": "Construit par des bénévoles. Non affilié à une clinique ou à un organisme de santé.",
+  "aboutDisclaimer": "Cet annuaire est fourni à titre informatif uniquement. Nous ne sommes pas un fournisseur de soins de santé. Vérifiez toujours les informations directement auprès des cliniques avant de vous déplacer.",
+  "privacyIntro": "Votre vie privée est importante. Ce site est conçu pour collecter le moins de données possible.",
+  "privacyNoAccounts": "Aucun compte ni donnée personnelle collectée",
+  "privacyAnalytics": "Analyses axées sur la confidentialité (GoatCounter) — pas de cookies, pas de suivi intersite",
+  "privacyLanguage": "Préférence linguistique stockée localement dans votre navigateur uniquement",
+  "privacyMaps": "Cartes fournies par Mapbox (leur politique de confidentialité s'applique à l'utilisation des cartes)",
+  "privacyCorrections": "Les demandes de correction sont envoyées par e-mail aux responsables, puis supprimées",
+  "privacyNoCookies": "Nous n'utilisons pas de cookies publicitaires et ne vendons aucune donnée."
+}

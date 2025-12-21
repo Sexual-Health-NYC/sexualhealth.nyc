@@ -1,0 +1,16 @@
+{
+  "about": "Informazioni",
+  "privacy": "Privacy",
+  "changeLanguage": "Cambia lingua",
+  "selectLanguage": "Seleziona lingua",
+  "aboutText1": "Questa directory gratuita aiuta i newyorkesi a trovare servizi di salute sessuale, inclusi test STI, test HIV, PrEP, contraccezione, interruzione di gravidanza e cure per l'affermazione di genere.",
+  "aboutText2": "Realizzato da volontari. Non affiliato ad alcuna clinica o organizzazione sanitaria.",
+  "aboutDisclaimer": "Questa directory è solo a scopo informativo. Non siamo un fornitore di assistenza sanitaria. Verificare sempre le informazioni direttamente con le cliniche prima della visita.",
+  "privacyIntro": "La tua privacy è importante. Questo sito è progettato per raccogliere meno dati possibile.",
+  "privacyNoAccounts": "Nessun account o dato personale raccolto",
+  "privacyAnalytics": "Analitica focalizzata sulla privacy (GoatCounter): niente cookie, niente tracciamento tra siti",
+  "privacyLanguage": "Preferenza della lingua memorizzata solo localmente nel browser",
+  "privacyMaps": "Mappe fornite da Mapbox (la loro politica sulla privacy si applica all'uso delle mappe)",
+  "privacyCorrections": "Le segnalazioni di correzione vengono inviate via e-mail ai gestori, quindi eliminate",
+  "privacyNoCookies": "Non utilizziamo cookie pubblicitari né vendiamo alcun dato."
+}

@@ -4,129 +4,63 @@ An interactive map of sexual health clinics in NYC. Find free and low-cost STI t
 
 ## Tech Stack
 
-- **Frontend**: Vanilla HTML/CSS/JavaScript with Mapbox GL JS
-- **Build System**: Vite
+- **Frontend**: React (Vite)
+- **Internationalization**: i18next (20 languages supported)
+- **Map**: Mapbox GL JS / react-map-gl
+- **Styling**: Standard CSS with theme-based variables
 - **Hosting**: Vercel
-- **Development Tool**: Tidewave
 
-## Development Setup
+...
 
-### Prerequisites
+## Data Pipeline
 
-- Node.js (see `.tool-versions` for version)
-- npm or yarn
+The `pipeline/` directory contains scripts for processing clinic data and maintaining translations:
 
-### Installation
-
+### Data Management
 ```bash
-# Clone the repository
-git clone git@github.com:Sexual-Health-NYC/sexualhealth.nyc.git
-cd sexualhealth.nyc
-
-# Install dependencies
-npm install
+# Fetch latest clinic data from Airtable
+npm run fetch-data
 ```
 
-### Running Locally
+### Translation Maintenance
+We support 20 languages 100%. To maintain this coverage:
 
-#### Option 1: Standard Development
+1. **Check for missing strings**:
+   ```bash
+   python3 pipeline/check_static_translations.py
+   ```
+   This scans the code for `t()` calls and identifies keys missing from any language.
 
-```bash
-npm run dev
-```
+2. **Sync dynamic data**:
+   ```bash
+   python3 pipeline/manage_dynamic_translations.py
+   ```
+   This harvests unique strings from the clinic data (like subway lines or special notes) and syncs them to the dynamic locales.
 
-This will start the Vite dev server at http://localhost:5173
-
-#### Option 2: Development with Tidewave
-
-Tidewave provides an enhanced development experience with AI-powered code assistance.
-
-**Terminal 1 - Run Vite:**
-
-```bash
-npm run dev
-```
-
-**Terminal 2 - Tidewave Desktop App:**
-
-1. Download and open [Tidewave](https://tidewave.ai/install) desktop app
-2. Connect to http://localhost:5173
-
-**Terminal 3 - Claude Code (Optional):**
-
-```bash
-claude
-```
-
-The Tidewave MCP server is configured in `~/.claude/claude_mcp_config.json` and will be available in Claude Code.
-
-### Building for Production
-
-```bash
-npm run build
-```
-
-This builds the site to the `dist/` directory.
-
-### Preview Production Build
-
-```bash
-npm run preview
-```
-
-## Deployment
-
-The site is automatically deployed to Vercel:
-
-- **Production**: Merges to `main` branch automatically deploy to production
-- **Preview**: Pull requests automatically get preview deployments with unique URLs
-
-### Manual Deployment
-
-If needed, you can deploy manually:
-
-```bash
-npm run build
-npx vercel --prod
-```
+3. **Apply manual translations**:
+   ```bash
+   python3 pipeline/apply_translations.py
+   ```
+   This script contains a dictionary of translations for core UI elements and applies them across all 20 languages.
 
 ## Project Structure
 
 ```
 sexualhealthnyc/
-├── index.html              # Main landing page
-├── test-embed.html         # Embeddable map component
-├── clinics.geojson         # Clinic location data
-├── public/                 # Static assets (served as-is)
+├── src/                    # React source code
+│   ├── components/         # UI components
+│   ├── store/              # State management (Zustand)
+│   ├── utils/              # Business logic (hours, etc.)
+│   └── i18n.js             # Translation config
+├── public/
+│   └── locales/            # Translation JSON files (20 languages)
+├── pipeline/               # Data and translation scripts
+│   ├── check_static_translations.py
+│   ├── apply_translations.py
+│   └── manage_dynamic_translations.py
 ├── data/                   # Source data files
-├── pipeline/               # Data processing scripts
-│   ├── upload_to_arcgis.py
-│   └── requirements.txt
 ├── docs/                   # Documentation
-├── vite.config.js          # Vite configuration
-├── vercel.json             # Vercel deployment config (includes security headers)
-├── .claude/                # Claude Code configuration
-│   └── rules               # Rules for Tidewave integration
-└── package.json
-```
-
-## Security Headers
-
-The site is configured with the following security headers (see `vercel.json`):
-
-- **Content-Security-Policy**: Restricts resource loading to trusted sources (Mapbox, GoatCounter analytics)
-- **X-Frame-Options**: Prevents clickjacking attacks
-- **X-Content-Type-Options**: Prevents MIME sniffing
-- **Referrer-Policy**: Controls referrer information sent to other sites
-
-## Data Pipeline
-
-The `pipeline/` directory contains scripts for processing and uploading clinic data:
-
-```bash
-cd pipeline
-pip install -r requirements.txt
-python upload_to_arcgis.py
+└── ...
 ```
 
 ## Tidewave Configuration

@@ -1,0 +1,16 @@
+{
+  "about": "About",
+  "privacy": "Privacy",
+  "changeLanguage": "Change language",
+  "selectLanguage": "Select language",
+  "aboutText1": "This free directory helps New Yorkers find sexual health services including STI testing, HIV testing, PrEP, contraception, abortion care, and gender-affirming care.",
+  "aboutText2": "Built by volunteers. Not affiliated with any clinic or healthcare organization.",
+  "aboutDisclaimer": "This directory is for informational purposes only. We are not a healthcare provider. Always verify information directly with clinics before visiting.",
+  "privacyIntro": "Your privacy matters. This site is designed to collect as little data as possible.",
+  "privacyNoAccounts": "No accounts or personal data collected",
+  "privacyAnalytics": "Privacy-focused analytics (GoatCounter) - no cookies, no tracking across sites",
+  "privacyLanguage": "Language preference stored locally in your browser only",
+  "privacyMaps": "Maps provided by Mapbox (their privacy policy applies to map usage)",
+  "privacyCorrections": "Correction submissions are emailed to maintainers, then deleted",
+  "privacyNoCookies": "We do not use advertising cookies or sell any data."
+}

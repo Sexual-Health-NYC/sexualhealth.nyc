@@ -5,6 +5,7 @@ import FilterBar from "./components/FilterBar";
 import ClinicDetailPanel from "./components/ClinicDetailPanel";
 import ClinicBottomSheet from "./components/ClinicBottomSheet";
 import ClinicListView from "./components/ClinicListView";
+import Footer from "./components/Footer";
 import useAppStore from "./store/useAppStore";
 import theme from "./theme";
 import { getOpenStatus, isOpenAfter } from "./utils/hours";
@@ -32,7 +33,7 @@ export default function App() {
         );
         if (!hasAllServices) return false;
       }
-      
+
       // Gender Affirming filters
       if (filters.genderAffirming.size > 0) {
         const hasAllGAC = Array.from(filters.genderAffirming).every(
@@ -326,6 +327,7 @@ export default function App() {
           />
         )}
       </main>
+      <Footer />
     </div>
   );
 }

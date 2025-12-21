@@ -1,0 +1,16 @@
+{
+  "about": "Giới thiệu",
+  "privacy": "Quyền riêng tư",
+  "changeLanguage": "Thay đổi ngôn ngữ",
+  "selectLanguage": "Chọn ngôn ngữ",
+  "aboutText1": "Danh bạ miễn phí này giúp người dân New York tìm thấy các dịch vụ sức khỏe tình dục bao gồm xét nghiệm STI, xét nghiệm HIV, PrEP, tránh thai, chăm sóc phá thai và chăm sóc khẳng định giới tính.",
+  "aboutText2": "Được xây dựng bởi các tình nguyện viên. Không liên kết với bất kỳ phòng khám hoặc tổ chức y tế nào.",
+  "aboutDisclaimer": "Danh bạ này chỉ dành cho mục đích thông tin. Chúng tôi không phải là nhà cung cấp dịch vụ y tế. Luôn xác minh thông tin trực tiếp với các phòng khám trước khi đến.",
+  "privacyIntro": "Quyền riêng tư của bạn rất quan trọng. Trang web này được thiết kế để thu thập ít dữ liệu nhất có thể.",
+  "privacyNoAccounts": "Không thu thập tài khoản hoặc dữ liệu cá nhân",
+  "privacyAnalytics": "Phân tích tập trung vào quyền riêng tư (GoatCounter) - không có cookie, không theo dõi trên các trang web",
+  "privacyLanguage": "Sở thích ngôn ngữ chỉ được lưu trữ cục bộ trong trình duyệt của bạn",
+  "privacyMaps": "Bản đồ do Mapbox cung cấp (chính sách quyền riêng tư của họ áp dụng cho việc sử dụng bản đồ)",
+  "privacyCorrections": "Các bản sửa lỗi được gửi qua email cho người quản trị, sau đó sẽ bị xóa",
+  "privacyNoCookies": "Chúng tôi không sử dụng cookie quảng cáo hoặc bán bất kỳ dữ liệu nào."
+}

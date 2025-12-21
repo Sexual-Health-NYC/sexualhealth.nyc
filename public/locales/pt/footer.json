@@ -1,0 +1,16 @@
+{
+  "about": "Sobre",
+  "privacy": "Privacidade",
+  "changeLanguage": "Alterar idioma",
+  "selectLanguage": "Selecionar idioma",
+  "aboutText1": "Este diretório gratuito ajuda os nova-iorquinos a encontrar serviços de saúde sexual, incluindo testes de IST, testes de HIV, PrEP, contracepção, cuidados de aborto e cuidados de afirmação de gênero.",
+  "aboutText2": "Construído por voluntários. Não afiliado a nenhuma clínica ou organização de saúde.",
+  "aboutDisclaimer": "Este diretório é apenas para fins informativos. Não somos um provedor de saúde. Sempre verifique as informações diretamente com as clínicas antes de visitar.",
+  "privacyIntro": "Sua privacidade é importante. Este site foi projetado para coletar o mínimo de dados possível.",
+  "privacyNoAccounts": "Nenhuma conta ou dado pessoal coletado",
+  "privacyAnalytics": "Análise focada na privacidade (GoatCounter): sem cookies, sem rastreamento entre sites",
+  "privacyLanguage": "Preferência de idioma armazenada apenas localmente no seu navegador",
+  "privacyMaps": "Mapas fornecidos pela Mapbox (a política de privacidade deles se aplica ao uso do mapa)",
+  "privacyCorrections": "Os envios de correção são enviados por e-mail aos mantenedores e, em seguida, excluídos",
+  "privacyNoCookies": "Não usamos cookies de publicidade nem vendemos quaisquer dados."
+}
