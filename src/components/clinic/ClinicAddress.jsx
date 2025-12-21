@@ -18,26 +18,36 @@ export default function ClinicAddress({ clinic }) {
         }}
       >
         <div style={{ flex: 1 }}>
-          <div
-            style={{
-              color: theme.colors.textPrimary,
-              fontSize: theme.fonts.size.base,
-              lineHeight: 1.5,
-            }}
-          >
-            {clinic.address}
-          </div>
-          <div
-            style={{
-              color: theme.colors.textPrimary,
-              fontSize: theme.fonts.size.base,
-              lineHeight: 1.5,
-            }}
-          >
-            {clinic.borough && !clinic.address.includes(", NY")
-              ? `${clinic.borough === "Manhattan" ? "New York" : clinic.borough}, NY`
-              : ""}
-          </div>
+          {(() => {
+            // Split address: street on first line, city/state/zip on second
+            const parts = clinic.address.split(/, (?=[A-Z])/);
+            const street = parts[0];
+            const cityStateZip = parts.slice(1).join(", ");
+            return (
+              <>
+                <div
+                  style={{
+                    color: theme.colors.textPrimary,
+                    fontSize: theme.fonts.size.base,
+                    lineHeight: 1.5,
+                  }}
+                >
+                  {street}
+                </div>
+                {cityStateZip && (
+                  <div
+                    style={{
+                      color: theme.colors.textPrimary,
+                      fontSize: theme.fonts.size.base,
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    {cityStateZip}
+                  </div>
+                )}
+              </>
+            );
+          })()}
         </div>
         <div
           style={{
@@ -58,7 +68,9 @@ export default function ClinicAddress({ clinic }) {
               setCopiedAddress(true);
               setTimeout(() => setCopiedAddress(false), 2000);
             }}
-            title={copiedAddress ? t("actions:copied") : t("actions:copyAddress")}
+            title={
+              copiedAddress ? t("actions:copied") : t("actions:copyAddress")
+            }
             aria-label={t("actions:copyAddressToClipboard")}
             style={{
               background: "none",
@@ -99,7 +111,7 @@ export default function ClinicAddress({ clinic }) {
             }}
             title={t("actions:openInMaps")}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
               <MapIcon style={{ width: "16px", height: "16px" }} />
               {t("actions:getDirections")}
             </div>
