@@ -9,8 +9,7 @@ import {
   getUpcomingHoliday,
 } from "../utils/hours";
 import CorrectionFormModal from "./CorrectionFormModal";
-import { TransitInfo, BusInfo } from "./SubwayBullet";
-import { getDirectionsUrl } from "../utils/directions";
+import { ClipboardIcon, CheckIcon, MapIcon } from "./Icons";
 
 export default function ClinicBottomSheet() {
   const { t } = useTranslation([
@@ -352,14 +351,35 @@ export default function ClinicBottomSheet() {
                 background: "none",
                 border: "none",
                 cursor: "pointer",
-                marginLeft: theme.spacing[1],
                 padding: 0,
                 color: copiedAddress ? theme.colors.open : theme.colors.primary,
-                fontSize: theme.fonts.size.xs,
-                verticalAlign: "middle",
+                fontSize: theme.fonts.size.sm,
+                textAlign: "left",
+                whiteSpace: "nowrap",
+                transition: `color ${theme.transitions.fast}`,
+                display: "flex",
+                alignItems: "center",
+                gap: "4px",
+              }}
+              onFocus={(e) => {
+                e.currentTarget.style.outline = theme.focus.outline;
+                e.currentTarget.style.outlineOffset = theme.focus.outlineOffset;
+              }}
+              onBlur={(e) => {
+                e.currentTarget.style.outline = "none";
               }}
             >
-              {copiedAddress ? "✓ copied" : "copy"}
+              {copiedAddress ? (
+                <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <CheckIcon style={{ width: "16px", height: "16px" }} />
+                  {t("actions:copied")}
+                </div>
+              ) : (
+                <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <ClipboardIcon style={{ width: "16px", height: "16px" }} />
+                  {t("actions:copyAddress")}
+                </div>
+              )}
             </button>
             {" · "}
             <a
@@ -375,8 +395,10 @@ export default function ClinicBottomSheet() {
                 fontSize: theme.fonts.size.sm,
               }}
             >
-              directions
-            </a>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '4px', justifyContent: 'center' }}>
+                            <MapIcon style={{ width: "16px", height: "16px" }} />
+                            {t("actions:getDirections")}
+                          </div>            </a>
           </p>
 
           {/* Transit - compact */}

@@ -10,6 +10,7 @@ import {
 } from "../utils/hours";
 import CorrectionFormModal from "./CorrectionFormModal";
 import { TransitInfo, BusInfo } from "./SubwayBullet";
+import { ClipboardIcon, CheckIcon, MapIcon } from "./Icons";
 
 export default function ClinicDetailPanel() {
   const { t } = useTranslation([
@@ -171,7 +172,7 @@ export default function ClinicDetailPanel() {
                       : theme.colors.closed,
                     color: "white",
                     borderRadius: theme.borderRadius.sm,
-                    fontSize: theme.fonts.size.xs,
+                    fontSize: theme.fonts.size.sm,
                     fontWeight: theme.fonts.weight.medium,
                   }}
                 >
@@ -198,7 +199,7 @@ export default function ClinicDetailPanel() {
                   <span
                     style={{
                       marginLeft: theme.spacing[2],
-                      fontSize: theme.fonts.size.xs,
+                      fontSize: theme.fonts.size.sm,
                       color: theme.colors.textSecondary,
                       fontStyle: "italic",
                     }}
@@ -246,7 +247,7 @@ export default function ClinicDetailPanel() {
                   backgroundColor: bgColor,
                   color: textColor,
                   borderRadius: theme.borderRadius.sm,
-                  fontSize: theme.fonts.size.xs,
+                  fontSize: theme.fonts.size.sm,
                   fontWeight: theme.fonts.weight.medium,
                 }}
               >
@@ -257,25 +258,44 @@ export default function ClinicDetailPanel() {
         )}
 
         {/* Address + Actions */}
-        <div style={{ marginBottom: theme.spacing[3] }}>
-          <p
+        <div
+          style={{
+            marginBottom: theme.spacing[3],
+            display: "flex",
+            gap: theme.spacing[2],
+            alignItems: "flex-start",
+          }}
+        >
+          <div style={{ flex: 1 }}>
+            <div
+              style={{
+                color: theme.colors.textPrimary,
+                fontSize: theme.fonts.size.base,
+                lineHeight: 1.5,
+              }}
+            >
+              {selectedClinic.address}
+            </div>
+            <div
+              style={{
+                color: theme.colors.textPrimary,
+                fontSize: theme.fonts.size.base,
+                lineHeight: 1.5,
+              }}
+            >
+              {selectedClinic.borough &&
+              !selectedClinic.address.includes(", NY")
+                ? `${selectedClinic.borough === "Manhattan" ? "New York" : selectedClinic.borough}, NY`
+                : ""}
+            </div>
+          </div>
+          <div
             style={{
-              margin: `0 0 ${theme.spacing[2]} 0`,
-              color: theme.colors.textPrimary,
-              fontSize: theme.fonts.size.sm,
+              display: "flex",
+              flexDirection: "column",
+              gap: theme.spacing[1],
             }}
           >
-            {selectedClinic.address}
-            {selectedClinic.borough &&
-              !selectedClinic.address.includes(", NY") && (
-                <>
-                  ,{" "}
-                  {selectedClinic.borough === "Manhattan"
-                    ? "New York"
-                    : selectedClinic.borough}
-                  , NY
-                </>
-              )}
             <button
               onClick={() => {
                 let fullAddress = selectedClinic.address;
@@ -301,37 +321,70 @@ export default function ClinicDetailPanel() {
                 background: "none",
                 border: "none",
                 cursor: "pointer",
-                marginLeft: theme.spacing[1],
                 padding: 0,
                 color: copiedAddress ? theme.colors.open : theme.colors.primary,
-                fontSize: theme.fonts.size.xs,
-                verticalAlign: "middle",
+                fontSize: theme.fonts.size.sm,
+                textAlign: "left",
+                whiteSpace: "nowrap",
+                transition: `color ${theme.transitions.fast}`,
+                display: "flex",
+                alignItems: "center",
+                gap: "4px",
+              }}
+              onFocus={(e) => {
+                e.currentTarget.style.outline = theme.focus.outline;
+                e.currentTarget.style.outlineOffset = theme.focus.outlineOffset;
+              }}
+              onBlur={(e) => {
+                e.currentTarget.style.outline = "none";
               }}
             >
-              {copiedAddress ? "✓ copied" : "copy"}
+              {copiedAddress ? (
+                <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <CheckIcon style={{ width: "16px", height: "16px" }} />
+                  {t("actions:copied")}
+                </div>
+              ) : (
+                <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <ClipboardIcon style={{ width: "16px", height: "16px" }} />
+                  {t("actions:copyAddress")}
+                </div>
+              )}
             </button>
             <a
               href={`https://www.openstreetmap.org/directions?from=&to=${selectedClinic.latitude},${selectedClinic.longitude}#map=15/${selectedClinic.latitude}/${selectedClinic.longitude}`}
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                marginLeft: theme.spacing[2],
                 color: theme.colors.primary,
-                fontSize: theme.fonts.size.xs,
+                fontSize: theme.fonts.size.sm,
                 textDecoration: "none",
-                verticalAlign: "middle",
+                whiteSpace: "nowrap",
               }}
               title={t("actions:openInMaps")}
+              onFocus={(e) => {
+                e.currentTarget.style.outline = theme.focus.outline;
+                e.currentTarget.style.outlineOffset = theme.focus.outlineOffset;
+              }}
+              onBlur={(e) => {
+                e.currentTarget.style.outline = "none";
+              }}
             >
-              directions
+              <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                <MapIcon style={{ width: "16px", height: "16px" }} />
+                {t("actions:getDirections")}
+              </div>
             </a>
-          </p>
+          </div>
+        </div>
 
+        {/* Transit - compact */}
+        <div style={{ marginBottom: theme.spacing[3] }}>
           {/* Transit - compact */}
           {(selectedClinic.transit || selectedClinic.bus) && (
             <div
               style={{
-                fontSize: theme.fonts.size.xs,
+                fontSize: theme.fonts.size.sm,
                 color: theme.colors.textSecondary,
               }}
             >
@@ -353,7 +406,7 @@ export default function ClinicDetailPanel() {
               flexWrap: "wrap",
               gap: `${theme.spacing[1]} ${theme.spacing[3]}`,
               marginBottom: theme.spacing[3],
-              fontSize: theme.fonts.size.sm,
+              fontSize: theme.fonts.size.base,
               color: theme.colors.textPrimary,
             }}
           >
@@ -384,7 +437,7 @@ export default function ClinicDetailPanel() {
                   <p
                     style={{
                       margin: `0 0 ${theme.spacing[1]} 0`,
-                      fontSize: theme.fonts.size.xs,
+                      fontSize: theme.fonts.size.sm,
                       fontWeight: theme.fonts.weight.medium,
                       color: theme.colors.textSecondary,
                     }}
@@ -405,7 +458,7 @@ export default function ClinicDetailPanel() {
                       style={{
                         display: "flex",
                         justifyContent: "space-between",
-                        fontSize: theme.fonts.size.sm,
+                        fontSize: theme.fonts.size.base,
                       }}
                     >
                       <span style={{ color: theme.colors.textPrimary }}>
@@ -427,7 +480,7 @@ export default function ClinicDetailPanel() {
           <div
             style={{
               marginBottom: theme.spacing[3],
-              fontSize: theme.fonts.size.sm,
+              fontSize: theme.fonts.size.base,
             }}
           >
             {selectedClinic.phone && !selectedClinic.phone.includes("@") && (
@@ -491,7 +544,7 @@ export default function ClinicDetailPanel() {
               background: "none",
               border: "none",
               color: theme.colors.textSecondary,
-              fontSize: theme.fonts.size.xs,
+              fontSize: theme.fonts.size.sm,
               cursor: "pointer",
               padding: 0,
               textDecoration: "underline",
