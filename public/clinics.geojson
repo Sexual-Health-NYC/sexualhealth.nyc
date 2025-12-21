@@ -162,14 +162,14 @@
       },
       "properties": {
         "id": "rec9bbaqQDdNcvvKb",
-        "name": "Community Health Center of Richmond",
+        "name": "Community Health Center of Richmond - Port Richmond",
         "address": "439 Port Richmond Avenue",
         "borough": "Staten Island",
         "phone": "(718) 876-1732",
         "website": "chcrichmond.org",
         "hours": "Monday: 8am-5pm; Tuesday: 8am-5pm; Wednesday: 8am-5pm; Thursday: 8am-5pm; Friday: 8am-5pm",
         "organization": "",
-        "clinic_type": "",
+        "clinic_type": "FQHC",
         "has_sti_testing": true,
         "has_hiv_testing": true,
         "has_prep": false,
@@ -512,7 +512,7 @@
       },
       "properties": {
         "id": "recPQokMr5u9Md6z6",
-        "name": "Corona Sexual Health Clinic",
+        "name": "NYC DOH - Corona Sexual Health Clinic",
         "address": "34-33 Junction Boulevard, First Floor, Queens, NY 11372",
         "borough": "Queens",
         "phone": "",
@@ -569,7 +569,7 @@
         "website": "http://destinationtomorrow.org/",
         "hours": "",
         "organization": "",
-        "clinic_type": "",
+        "clinic_type": "LGBTQ+ Center",
         "has_sti_testing": true,
         "has_hiv_testing": true,
         "has_prep": false,
@@ -619,7 +619,7 @@
         "website": "https://www.apicha.org",
         "hours": "Mon-Fri 9:00 AM - 5:30 PM",
         "organization": "",
-        "clinic_type": "",
+        "clinic_type": "FQHC",
         "has_sti_testing": true,
         "has_hiv_testing": true,
         "has_prep": true,
@@ -862,14 +862,14 @@
       },
       "properties": {
         "id": "recZQuUmvW84BYJY7",
-        "name": "Community Health Center of Richmond",
+        "name": "Community Health Center of Richmond - South Avenue",
         "address": "235 Port Richmond Avenue",
         "borough": "Staten Island",
         "phone": "",
         "website": "www.chcrichmond.org",
         "hours": "",
         "organization": "",
-        "clinic_type": "",
+        "clinic_type": "FQHC",
         "has_sti_testing": false,
         "has_hiv_testing": true,
         "has_prep": false,
@@ -968,8 +968,8 @@
         "phone": "",
         "website": "callen-lorde.org/",
         "hours": "",
-        "organization": "",
-        "clinic_type": "",
+        "organization": "Callen-Lorde",
+        "clinic_type": "LGBTQ+ Center",
         "has_sti_testing": false,
         "has_hiv_testing": true,
         "has_prep": false,
@@ -1019,7 +1019,7 @@
         "website": "https://www.door.org/health/",
         "hours": "Mon/Tue/Thu/Fri 10am-6pm; Wed 10am-6:30pm",
         "organization": "",
-        "clinic_type": "",
+        "clinic_type": "FQHC",
         "has_sti_testing": true,
         "has_hiv_testing": true,
         "has_prep": true,
@@ -1062,7 +1062,7 @@
       },
       "properties": {
         "id": "recf9MRC2L9ziM18A",
-        "name": "Morrisania Sexual Health Clinic",
+        "name": "NYC DOH - Morrisania Sexual Health Clinic",
         "address": "1309 Fulton Avenue, Second Floor, Bronx, NY 10456",
         "borough": "Bronx",
         "phone": "",
@@ -1162,7 +1162,7 @@
       },
       "properties": {
         "id": "recfmyUTBhDlkrzHs",
-        "name": "Fort Greene Sexual Health Clinic",
+        "name": "NYC DOH - Fort Greene Sexual Health Clinic",
         "address": "295 Flatbush Avenue Ext, 2nd Floor, Brooklyn, NY 11201",
         "borough": "Brooklyn",
         "phone": "(347) 396-7959",
@@ -1312,7 +1312,7 @@
       },
       "properties": {
         "id": "reciR3nVQkl31xHxy",
-        "name": "Chelsea Sexual Health Clinic",
+        "name": "NYC DOH - Chelsea Sexual Health Clinic",
         "address": "303 Ninth Ave, New York, NY 10001",
         "borough": "Manhattan",
         "phone": "(347) 396-7959",
@@ -1502,63 +1502,13 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.982058,
-          40.691771
-        ]
-      },
-      "properties": {
-        "id": "recjy2MHCuwyDWBh6",
-        "name": "Fort Greene Sexual Health Clinic",
-        "address": "295 Flatbush Avenue Extension, Second Floor, Brooklyn, NY 11201",
-        "borough": "Brooklyn",
-        "phone": "",
-        "website": "https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",
-        "hours": "",
-        "organization": "NYC Health Dept (DOH)",
-        "clinic_type": "DOH",
-        "has_sti_testing": true,
-        "has_hiv_testing": true,
-        "has_prep": true,
-        "has_pep": true,
-        "has_contraception": false,
-        "has_abortion": false,
-        "has_gender_affirming": false,
-        "has_vaccines": false,
-        "medication_abortion": false,
-        "in_clinic_abortion": false,
-        "abortion_medication_limit": "",
-        "abortion_procedure_limit": "",
-        "abortion_medication_max_weeks": 11,
-        "abortion_procedure_max_weeks": null,
-        "offers_late_term": false,
-        "accepts_medicaid": false,
-        "accepts_medicare": false,
-        "sliding_scale": false,
-        "no_insurance_ok": false,
-        "insurance_plans": [],
-        "walk_in": true,
-        "appointment_only": false,
-        "lgbtq_focused": false,
-        "youth_friendly": false,
-        "anonymous_testing": false,
-        "nearest_subway": "",
-        "nearest_bus": "",
-        "last_verified": "",
-        "data_sources": "NYC Health Department Website"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -73.993488,
           40.725564
         ]
       },
       "properties": {
         "id": "reckQajBbifRBQrVq",
-        "name": "Planned Parenthood of Greater New York",
+        "name": "Planned Parenthood - Manhattan (Margaret Sanger Center)",
         "address": "26 Bleecker Street",
         "borough": "Manhattan",
         "phone": "",
@@ -1954,7 +1904,7 @@
       },
       "properties": {
         "id": "recpEeyxjEfU78kN2",
-        "name": "Morrisania Sexual Health Clinic (NYC DOHMH)",
+        "name": "NYC DOH - Morrisania Sexual Health Clinic",
         "address": "1309 Fulton Ave, 2nd Floor, Bronx, NY 10456",
         "borough": "Bronx",
         "phone": "(347) 396-7959",
@@ -2004,7 +1954,7 @@
       },
       "properties": {
         "id": "recqMrpdeLtmGQHm3",
-        "name": "Central Harlem Sexual Health Clinic",
+        "name": "NYC DOH - Central Harlem Sexual Health Clinic",
         "address": "2238 Fifth Ave, New York, NY 10037",
         "borough": "Manhattan",
         "phone": "(347) 396-7959",
@@ -2261,7 +2211,7 @@
         "website": "www.chasiny.org",
         "hours": "",
         "organization": "",
-        "clinic_type": "",
+        "clinic_type": "FQHC",
         "has_sti_testing": false,
         "has_hiv_testing": true,
         "has_prep": false,
@@ -2304,7 +2254,7 @@
       },
       "properties": {
         "id": "recwdhZz5RP5PihkY",
-        "name": "Chelsea Express Clinic",
+        "name": "NYC DOH - Chelsea Express Clinic",
         "address": "303 9th Avenue, First Floor, Manhattan, NY 10001",
         "borough": "Manhattan",
         "phone": "",
@@ -2404,7 +2354,7 @@
       },
       "properties": {
         "id": "recxwosFMcIZvTQgQ",
-        "name": "Jamaica Sexual Health Clinic",
+        "name": "NYC DOH - Jamaica Sexual Health Clinic",
         "address": "90-37 Parsons Blvd, 1st Floor, Jamaica, NY 11432",
         "borough": "Queens",
         "phone": "(347) 396-7959",
@@ -2445,9 +2395,9 @@
     }
   ],
   "metadata": {
-    "generated": "2025-12-20T23:52:34.134Z",
+    "generated": "2025-12-21T00:14:02.388Z",
     "source": "Airtable",
-    "total_records": 68,
-    "records_with_coords": 47
+    "total_records": 61,
+    "records_with_coords": 46
   }
 }
