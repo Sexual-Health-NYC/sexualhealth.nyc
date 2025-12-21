@@ -1,0 +1,18 @@
+{
+  "reportCorrection": "تصحیح کی رپورٹ کریں",
+  "closeCorrectionForm": "تصحیح فارم بند کریں",
+  "correctionFormDescription": "معلومات کو درست رکھنے میں ہماری مدد کریں۔ کسی بھی غلطی یا پرانی معلومات کی اطلاع دیں برائے",
+  "whatNeedsCorrection": "کیا درست کرنے کی ضرورت ہے؟",
+  "required": "لازمی",
+  "correctionPlaceholder": "مثال: فون نمبر غلط ہے، اوقات بدل گئے ہیں، یہ کلینک بند ہو گیا ہے، وغیرہ۔",
+  "yourEmail": "آپ کا ای میل (اختیاری)",
+  "emailPlaceholder": "your@email.com",
+  "emailDisclaimer": "ہم اسے صرف ضرورت پڑنے پر فالو اپ کے لیے استعمال کریں گے۔",
+  "cancel": "منسوخ کریں",
+  "submitCorrection": "تصحیح جمع کروائیں",
+  "submitting": "جمع کرایا جا رہا ہے...",
+  "submitted": "جمع کر دیا گیا!",
+  "correctionRequired": "براہ کرم درکار تصحیح بیان کریں۔",
+  "correctionSuccess": "شکریہ! آپ کی تصحیح جمع کر دی گئی ہے اور جلد ہی اس کا جائزہ لیا جائے گا۔",
+  "correctionError": "تصحیح جمع کرانے میں ناکامی۔ براہ کرم دوبارہ کوشش کریں یا براہ راست hello@sexualhealth.nyc پر ای میل کریں۔"
+}

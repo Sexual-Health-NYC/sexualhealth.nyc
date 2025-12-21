@@ -1,0 +1,18 @@
+{
+  "reportCorrection": "מעלדונג אַ פאַרריכטונג",
+  "closeCorrectionForm": "שליסן פאָרעם",
+  "correctionFormDescription": "העלף אונדז האַלטן די אינפֿאָרמאַציע פּינקטלעך. מעלדונג קיין ערראָרס אָדער אַלט אינפֿאָרמאַציע פֿאַר",
+  "whatNeedsCorrection": "וואָס דאַרף ווערן פאַרריכט?",
+  "required": "נייטיק",
+  "correctionPlaceholder": "למשל, דער טעלעפאָן נומער איז פאַלש, שעה האָבן געביטן, די קליניק איז פארמאכט, אאז\"ו.",
+  "yourEmail": "דיין אימעיל (אָפּטיאָנאַל)",
+  "emailPlaceholder": "your@email.com",
+  "emailDisclaimer": "מיר וועלן עס נאָר נוצן פֿאַר נאָכפאָלגן אויב נויטיק.",
+  "cancel": "אַבאָלירן",
+  "submitCorrection": "שיקן פאַרריכטונג",
+  "submitting": "שיקט...",
+  "submitted": "געשיקט!",
+  "correctionRequired": "ביטע באַשרייַבן די נויטיק פאַרריכטונג.",
+  "correctionSuccess": "אַ דאַנק! דיין פאַרריכטונג איז געשיקט און וועט זיין איבערגעקוקט באַלד.",
+  "correctionError": "דורכפאַל צו שיקן פאַרריכטונג. ביטע פּרוּווט ווידער אָדער אימעיל hello@sexualhealth.nyc."
+}

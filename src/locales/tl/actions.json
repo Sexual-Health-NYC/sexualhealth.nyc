@@ -1,0 +1,23 @@
+{
+  "openInMaps": "Buksan sa Maps",
+  "copyAddress": "Kopyahin ang address",
+  "copied": "Nakopya na!",
+  "callNow": "Tumawag Ngayon",
+  "visitWebsite": "Bisitahin ang Website",
+  "getDirections": "Kumuha ng Direksyon",
+  "apply": "Ilapat",
+  "clearAll": "Burahin Lahat",
+  "map": "Mapa",
+  "list": "Listahan",
+  "filters": "Mga Filter",
+  "clickForInfo": "I-click para sa impormasyon",
+  "zoomIn": "i-click para mag-zoom in",
+  "close": "Isara",
+  "reportCorrection": "Mag-ulat ng pagwawasto",
+  "copyAddressToClipboard": "Kopyahin ang address sa clipboard",
+  "nearMe": "Malapit sa Akin",
+  "finding": "Naghahanap...",
+  "resetView": "I-reset ang View",
+  "geolocationNotSupported": "Hindi suportado ng iyong browser ang geolocation",
+  "unableToGetLocation": "Hindi makuha ang iyong lokasyon"
+}

@@ -1,0 +1,18 @@
+{
+  "unknownContactClinic": "Desconhecido - contacte a clínica",
+  "walkInsAccepted": "Aceita sem marcação",
+  "open": "Aberto",
+  "openNow": "Aberto agora",
+  "closed": "Fechado",
+  "opensAt": "Abre às {{time}}",
+  "closesAt": "Fecha às {{time}}",
+  "clinicsFound": "{{count}} clínicas encontradas",
+  "clinicsFound_one": "{{count}} clínica encontrada",
+  "clinicsFound_other": "{{count}} clínicas encontradas",
+  "noMatches": "Nenhuma clínica corresponde aos seus filtros",
+  "tryAdjustingFilters": "Tente ajustar os seus filtros.",
+  "walkIns": "Sem marcação",
+  "viewDetails": "Ver detalhes para {{name}}",
+  "cluster": "Grupo de {{count}} clínicas. Aproxime para ver clínicas individuais.",
+  "skipToMain": "Saltar para o conteúdo principal"
+}

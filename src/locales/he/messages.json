@@ -1,0 +1,18 @@
+{
+  "unknownContactClinic": "לא ידוע - צור קשר עם הקליניקה",
+  "walkInsAccepted": "מקבלים ללא תור",
+  "open": "פתוח",
+  "openNow": "פתוח עכשיו",
+  "closed": "סגור",
+  "opensAt": "נפתח ב-{{time}}",
+  "closesAt": "נסגר ב-{{time}}",
+  "clinicsFound": "נמצאו {{count}} קליניקות",
+  "clinicsFound_one": "נמצאה קליניקה אחת",
+  "clinicsFound_other": "נמצאו {{count}} קליניקות",
+  "noMatches": "אין קליניקות התואמות את המסננים שלך",
+  "tryAdjustingFilters": "נסה לשנות את המסננים.",
+  "walkIns": "ללא תור",
+  "viewDetails": "צפה בפרטים עבור {{name}}",
+  "cluster": "קבוצה של {{count}} קליניקות. התקרב כדי לראות קליניקות בודדות.",
+  "skipToMain": "דלג לתוכן העיקרי"
+}

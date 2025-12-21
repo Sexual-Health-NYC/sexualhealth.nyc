@@ -1,0 +1,23 @@
+{
+  "openInMaps": "Mở trong Bản đồ",
+  "copyAddress": "Sao chép địa chỉ",
+  "copied": "Đã sao chép!",
+  "callNow": "Gọi ngay",
+  "visitWebsite": "Truy cập trang web",
+  "getDirections": "Chỉ đường",
+  "apply": "Áp dụng",
+  "clearAll": "Xóa tất cả",
+  "map": "Bản đồ",
+  "list": "Danh sách",
+  "filters": "Bộ lọc",
+  "clickForInfo": "Nhấp để xem thông tin",
+  "zoomIn": "nhấp để phóng to",
+  "close": "Đóng",
+  "reportCorrection": "Báo cáo lỗi",
+  "copyAddressToClipboard": "Sao chép địa chỉ vào bộ nhớ tạm",
+  "nearMe": "Gần tôi",
+  "finding": "Đang tìm...",
+  "resetView": "Đặt lại chế độ xem",
+  "geolocationNotSupported": "Trình duyệt của bạn không hỗ trợ định vị",
+  "unableToGetLocation": "Không thể lấy vị trí của bạn"
+}

@@ -92,6 +92,116 @@ import koLocations from "./locales/ko/locations.json";
 import koGestational from "./locales/ko/gestational.json";
 import koForms from "./locales/ko/forms.json";
 
+// Import Italian translations
+import itServices from "./locales/it/services.json";
+import itInsurance from "./locales/it/insurance.json";
+import itSections from "./locales/it/sections.json";
+import itActions from "./locales/it/actions.json";
+import itMessages from "./locales/it/messages.json";
+import itLocations from "./locales/it/locations.json";
+import itGestational from "./locales/it/gestational.json";
+import itForms from "./locales/it/forms.json";
+
+// Import Tagalog translations
+import tlServices from "./locales/tl/services.json";
+import tlInsurance from "./locales/tl/insurance.json";
+import tlSections from "./locales/tl/sections.json";
+import tlActions from "./locales/tl/actions.json";
+import tlMessages from "./locales/tl/messages.json";
+import tlLocations from "./locales/tl/locations.json";
+import tlGestational from "./locales/tl/gestational.json";
+import tlForms from "./locales/tl/forms.json";
+
+// Import Polish translations
+import plServices from "./locales/pl/services.json";
+import plInsurance from "./locales/pl/insurance.json";
+import plSections from "./locales/pl/sections.json";
+import plActions from "./locales/pl/actions.json";
+import plMessages from "./locales/pl/messages.json";
+import plLocations from "./locales/pl/locations.json";
+import plGestational from "./locales/pl/gestational.json";
+import plForms from "./locales/pl/forms.json";
+
+// Import Urdu translations
+import urServices from "./locales/ur/services.json";
+import urInsurance from "./locales/ur/insurance.json";
+import urSections from "./locales/ur/sections.json";
+import urActions from "./locales/ur/actions.json";
+import urMessages from "./locales/ur/messages.json";
+import urLocations from "./locales/ur/locations.json";
+import urGestational from "./locales/ur/gestational.json";
+import urForms from "./locales/ur/forms.json";
+
+// Import Greek translations
+import elServices from "./locales/el/services.json";
+import elInsurance from "./locales/el/insurance.json";
+import elSections from "./locales/el/sections.json";
+import elActions from "./locales/el/actions.json";
+import elMessages from "./locales/el/messages.json";
+import elLocations from "./locales/el/locations.json";
+import elGestational from "./locales/el/gestational.json";
+import elForms from "./locales/el/forms.json";
+
+// Import Hebrew translations
+import heServices from "./locales/he/services.json";
+import heInsurance from "./locales/he/insurance.json";
+import heSections from "./locales/he/sections.json";
+import heActions from "./locales/he/actions.json";
+import heMessages from "./locales/he/messages.json";
+import heLocations from "./locales/he/locations.json";
+import heGestational from "./locales/he/gestational.json";
+import heForms from "./locales/he/forms.json";
+
+// Import Hindi translations
+import hiServices from "./locales/hi/services.json";
+import hiInsurance from "./locales/hi/insurance.json";
+import hiSections from "./locales/hi/sections.json";
+import hiActions from "./locales/hi/actions.json";
+import hiMessages from "./locales/hi/messages.json";
+import hiLocations from "./locales/hi/locations.json";
+import hiGestational from "./locales/hi/gestational.json";
+import hiForms from "./locales/hi/forms.json";
+
+// Import Japanese translations
+import jaServices from "./locales/ja/services.json";
+import jaInsurance from "./locales/ja/insurance.json";
+import jaSections from "./locales/ja/sections.json";
+import jaActions from "./locales/ja/actions.json";
+import jaMessages from "./locales/ja/messages.json";
+import jaLocations from "./locales/ja/locations.json";
+import jaGestational from "./locales/ja/gestational.json";
+import jaForms from "./locales/ja/forms.json";
+
+// Import Yiddish translations
+import yiServices from "./locales/yi/services.json";
+import yiInsurance from "./locales/yi/insurance.json";
+import yiSections from "./locales/yi/sections.json";
+import yiActions from "./locales/yi/actions.json";
+import yiMessages from "./locales/yi/messages.json";
+import yiLocations from "./locales/yi/locations.json";
+import yiGestational from "./locales/yi/gestational.json";
+import yiForms from "./locales/yi/forms.json";
+
+// Import Portuguese translations
+import ptServices from "./locales/pt/services.json";
+import ptInsurance from "./locales/pt/insurance.json";
+import ptSections from "./locales/pt/sections.json";
+import ptActions from "./locales/pt/actions.json";
+import ptMessages from "./locales/pt/messages.json";
+import ptLocations from "./locales/pt/locations.json";
+import ptGestational from "./locales/pt/gestational.json";
+import ptForms from "./locales/pt/forms.json";
+
+// Import Vietnamese translations
+import viServices from "./locales/vi/services.json";
+import viInsurance from "./locales/vi/insurance.json";
+import viSections from "./locales/vi/sections.json";
+import viActions from "./locales/vi/actions.json";
+import viMessages from "./locales/vi/messages.json";
+import viLocations from "./locales/vi/locations.json";
+import viGestational from "./locales/vi/gestational.json";
+import viForms from "./locales/vi/forms.json";
+
 const resources = {
   en: {
     services: enServices,
@@ -183,6 +293,116 @@ const resources = {
     gestational: koGestational,
     forms: koForms,
   },
+  it: {
+    services: itServices,
+    insurance: itInsurance,
+    sections: itSections,
+    actions: itActions,
+    messages: itMessages,
+    locations: itLocations,
+    gestational: itGestational,
+    forms: itForms,
+  },
+  tl: {
+    services: tlServices,
+    insurance: tlInsurance,
+    sections: tlSections,
+    actions: tlActions,
+    messages: tlMessages,
+    locations: tlLocations,
+    gestational: tlGestational,
+    forms: tlForms,
+  },
+  pl: {
+    services: plServices,
+    insurance: plInsurance,
+    sections: plSections,
+    actions: plActions,
+    messages: plMessages,
+    locations: plLocations,
+    gestational: plGestational,
+    forms: plForms,
+  },
+  ur: {
+    services: urServices,
+    insurance: urInsurance,
+    sections: urSections,
+    actions: urActions,
+    messages: urMessages,
+    locations: urLocations,
+    gestational: urGestational,
+    forms: urForms,
+  },
+  el: {
+    services: elServices,
+    insurance: elInsurance,
+    sections: elSections,
+    actions: elActions,
+    messages: elMessages,
+    locations: elLocations,
+    gestational: elGestational,
+    forms: elForms,
+  },
+  he: {
+    services: heServices,
+    insurance: heInsurance,
+    sections: heSections,
+    actions: heActions,
+    messages: heMessages,
+    locations: heLocations,
+    gestational: heGestational,
+    forms: heForms,
+  },
+  hi: {
+    services: hiServices,
+    insurance: hiInsurance,
+    sections: hiSections,
+    actions: hiActions,
+    messages: hiMessages,
+    locations: hiLocations,
+    gestational: hiGestational,
+    forms: hiForms,
+  },
+  ja: {
+    services: jaServices,
+    insurance: jaInsurance,
+    sections: jaSections,
+    actions: jaActions,
+    messages: jaMessages,
+    locations: jaLocations,
+    gestational: jaGestational,
+    forms: jaForms,
+  },
+  yi: {
+    services: yiServices,
+    insurance: yiInsurance,
+    sections: yiSections,
+    actions: yiActions,
+    messages: yiMessages,
+    locations: yiLocations,
+    gestational: yiGestational,
+    forms: yiForms,
+  },
+  pt: {
+    services: ptServices,
+    insurance: ptInsurance,
+    sections: ptSections,
+    actions: ptActions,
+    messages: ptMessages,
+    locations: ptLocations,
+    gestational: ptGestational,
+    forms: ptForms,
+  },
+  vi: {
+    services: viServices,
+    insurance: viInsurance,
+    sections: viSections,
+    actions: viActions,
+    messages: viMessages,
+    locations: viLocations,
+    gestational: viGestational,
+    forms: viForms,
+  },
 };
 
 i18n
@@ -191,7 +411,7 @@ i18n
   .init({
     resources,
     fallbackLng: "en",
-    supportedLngs: ["en", "es", "zh", "ru", "bn", "ht", "fr", "ar", "ko"],
+    supportedLngs: ["en", "es", "zh", "ru", "bn", "ht", "fr", "ar", "ko", "it", "tl", "pl", "ur", "el", "he", "hi", "ja", "yi", "pt", "vi"],
     detection: {
       order: ["localStorage", "navigator"],
       caches: ["localStorage"],

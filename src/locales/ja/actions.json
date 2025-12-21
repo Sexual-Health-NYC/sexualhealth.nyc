@@ -1,0 +1,23 @@
+{
+  "openInMaps": "マップで開く",
+  "copyAddress": "住所をコピー",
+  "copied": "コピーしました！",
+  "callNow": "電話する",
+  "visitWebsite": "ウェブサイトを表示",
+  "getDirections": "経路を検索",
+  "apply": "適用",
+  "clearAll": "すべてクリア",
+  "map": "地図",
+  "list": "リスト",
+  "filters": "フィルター",
+  "clickForInfo": "クリックして詳細を表示",
+  "zoomIn": "クリックして拡大",
+  "close": "閉じる",
+  "reportCorrection": "情報の修正を報告",
+  "copyAddressToClipboard": "住所をクリップボードにコピー",
+  "nearMe": "現在地周辺",
+  "finding": "検索中...",
+  "resetView": "ビューをリセット",
+  "geolocationNotSupported": "お使いのブラウザは位置情報をサポートしていません",
+  "unableToGetLocation": "現在地を取得できません"
+}

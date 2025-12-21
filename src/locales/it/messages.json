@@ -1,0 +1,18 @@
+{
+  "unknownContactClinic": "Sconosciuto - contatta la clinica",
+  "walkInsAccepted": "Accesso diretto accettato",
+  "open": "Aperto",
+  "openNow": "Aperto ora",
+  "closed": "Chiuso",
+  "opensAt": "Apre alle {{time}}",
+  "closesAt": "Chiude alle {{time}}",
+  "clinicsFound": "{{count}} cliniche trovate",
+  "clinicsFound_one": "{{count}} clinica trovata",
+  "clinicsFound_other": "{{count}} cliniche trovate",
+  "noMatches": "Nessuna clinica corrisponde ai tuoi filtri",
+  "tryAdjustingFilters": "Prova a modificare i filtri.",
+  "walkIns": "Senza appuntamento",
+  "viewDetails": "Vedi dettagli per {{name}}",
+  "cluster": "Gruppo di {{count}} cliniche. Zooma per vedere le singole cliniche.",
+  "skipToMain": "Vai al contenuto principale"
+}

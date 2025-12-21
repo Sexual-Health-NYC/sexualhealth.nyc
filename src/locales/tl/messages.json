@@ -1,0 +1,18 @@
+{
+  "unknownContactClinic": "Hindi alam - makipag-ugnayan sa klinika para i-verify",
+  "walkInsAccepted": "Tumatanggap ng walk-in",
+  "open": "Bukas",
+  "openNow": "Bukas Ngayon",
+  "closed": "Sarado",
+  "opensAt": "Magbubukas sa {{time}}",
+  "closesAt": "Magsasara sa {{time}}",
+  "clinicsFound": "{{count}} klinika ang natagpuan",
+  "clinicsFound_one": "{{count}} klinika ang natagpuan",
+  "clinicsFound_other": "{{count}} klinika ang natagpuan",
+  "noMatches": "Walang klinika na tumutugma sa iyong mga filter",
+  "tryAdjustingFilters": "Subukang ayusin ang iyong mga napiling filter.",
+  "walkIns": "Walk-ins",
+  "viewDetails": "Tingnan ang mga detalye para sa {{name}}",
+  "cluster": "Kumpol ng {{count}} na klinika. Mag-zoom in upang makita ang mga indibidwal na klinika.",
+  "skipToMain": "Lumaktaw sa pangunahing nilalaman"
+}

@@ -1,0 +1,18 @@
+{
+  "unknownContactClinic": "نامعلوم - تصدیق کے لیے کلینک سے رابطہ کریں",
+  "walkInsAccepted": "واک ان قبول ہیں",
+  "open": "کھلا ہے",
+  "openNow": "ابھی کھلا ہے",
+  "closed": "بند ہے",
+  "opensAt": "{{time}} پر کھلتا ہے",
+  "closesAt": "{{time}} پر بند ہوتا ہے",
+  "clinicsFound": "{{count}} کلینک ملے",
+  "clinicsFound_one": "{{count}} کلینک ملا",
+  "clinicsFound_other": "{{count}} کلینک ملے",
+  "noMatches": "آپ کے فلٹرز سے کوئی کلینک نہیں ملتا",
+  "tryAdjustingFilters": "اپنے فلٹر کے انتخاب کو ایڈجسٹ کرنے کی کوشش کریں۔",
+  "walkIns": "واک ان",
+  "viewDetails": "{{name}} کی تفصیلات دیکھیں",
+  "cluster": "{{count}} کلینکس کا گروپ۔ انفرادی کلینکس دیکھنے کے لیے زوم ان کریں۔",
+  "skipToMain": "مرکزی مواد پر جائیں"
+}
