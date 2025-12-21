@@ -267,6 +267,10 @@ function consolidateSchedules(schedules) {
   const byTime = {};
 
   for (const s of schedules) {
+    // Skip invalid entries (no days or no times unless allDay)
+    if (!s.days || s.days.length === 0) continue;
+    if (!s.allDay && (!s.open || !s.close)) continue;
+
     const timeKey = s.allDay ? "allDay" : `${s.open}-${s.close}`;
     if (!byTime[timeKey]) {
       byTime[timeKey] = { ...s, days: [...(s.days || [])] };
