@@ -121,6 +121,7 @@ export default function FilterBar() {
           aria-expanded={isOpen}
           aria-haspopup="true"
           aria-label={`${title} filter${activeCount > 0 ? `, ${activeCount} selected` : ""}`}
+          className={`filter-pill${activeCount > 0 ? " active" : ""}`}
           style={{
             padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
             backgroundColor: activeCount > 0 ? theme.colors.primary : "white",
@@ -258,6 +259,7 @@ export default function FilterBar() {
           aria-expanded={isOpen}
           aria-haspopup="true"
           aria-label={`Gestational age filter${hasFilter ? `, ${currentLabel}` : ""}`}
+          className={`filter-pill${hasFilter ? " active" : ""}`}
           style={{
             padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
             backgroundColor: hasFilter ? theme.colors.accent : "white",
@@ -478,6 +480,7 @@ export default function FilterBar() {
           {getActiveFilterCount() > 0 && (
             <button
               onClick={clearFilters}
+              className="btn-interactive"
               style={{
                 padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
                 backgroundColor: "white",
@@ -620,6 +623,7 @@ export default function FilterBar() {
             onClick={() => setIsModalOpen(true)}
             aria-expanded={isModalOpen}
             aria-label={`${t("actions:filters")}${getActiveFilterCount() > 0 ? `, ${getActiveFilterCount()} active` : ""}`}
+            className="btn-interactive"
             style={{
               flex: 1,
               padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
@@ -837,6 +841,7 @@ export default function FilterBar() {
               )}
               <button
                 onClick={() => setIsModalOpen(false)}
+                className="btn-interactive"
                 style={{
                   flex: 1,
                   padding: theme.spacing[3],

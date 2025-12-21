@@ -27,6 +27,10 @@ export default function ClinicDetailPanel() {
   if (!selectedClinic) return null;
 
   const openStatus = getOpenStatus(selectedClinic.hours);
+  const holidayToday = isHoliday(new Date());
+  const holidayName = holidayToday
+    ? getUpcomingHoliday()?.name || "Holiday"
+    : null;
 
   const formattedHours =
     Array.isArray(selectedClinic.hours) && selectedClinic.hours.length > 0
@@ -83,6 +87,7 @@ export default function ClinicDetailPanel() {
         boxShadow: theme.shadows.lg,
         overflowY: "auto",
         zIndex: 10,
+        animation: `slideInRight ${theme.motion.duration.slow} ${theme.motion.easing.gentle}`,
       }}
     >
       <div style={{ padding: theme.spacing[6] }}>

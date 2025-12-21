@@ -90,6 +90,7 @@ export default function ClinicMarkers({ clinics }) {
                     });
                   }
                 }}
+                className="animate-scale-in"
                 style={{
                   width: `${30 + (pointCount / points.length) * 40}px`,
                   height: `${30 + (pointCount / points.length) * 40}px`,
@@ -104,6 +105,7 @@ export default function ClinicMarkers({ clinics }) {
                   fontSize: theme.fonts.size.sm,
                   cursor: "pointer",
                   boxShadow: theme.shadows.lg,
+                  transition: `transform ${theme.motion.duration.fast} ${theme.motion.easing.bounce}`,
                 }}
                 onFocus={(e) => {
                   e.currentTarget.style.outline = theme.focus.outline;
@@ -137,6 +139,9 @@ export default function ClinicMarkers({ clinics }) {
               title={`${clinic.name} - ${t("actions:clickForInfo")}`}
               aria-label={t("messages:viewDetails", { name: clinic.name })}
               aria-pressed={selectedClinic?.id === clinic.id}
+              className={
+                selectedClinic?.id === clinic.id ? "marker-bounce" : ""
+              }
               style={{
                 width: selectedClinic?.id === clinic.id ? "48px" : "32px",
                 height: selectedClinic?.id === clinic.id ? "48px" : "32px",
@@ -147,8 +152,11 @@ export default function ClinicMarkers({ clinics }) {
                 border: `3px solid ${theme.colors.markerBorder}`,
                 borderRadius: theme.borderRadius.full,
                 cursor: "pointer",
-                transition: `all ${theme.transitions.base}`,
-                boxShadow: theme.shadows.md,
+                transition: `all ${theme.motion.duration.normal} ${theme.motion.easing.bounce}`,
+                boxShadow:
+                  selectedClinic?.id === clinic.id
+                    ? theme.shadows.lg
+                    : theme.shadows.md,
                 padding: 0,
               }}
               onMouseEnter={(e) => {

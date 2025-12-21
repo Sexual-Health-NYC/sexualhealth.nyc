@@ -92,6 +92,22 @@ export const theme = {
     slow: "0.3s",
   },
 
+  // Motion - warm & welcoming, gentle presence
+  motion: {
+    duration: {
+      fast: "150ms",
+      normal: "250ms",
+      slow: "350ms",
+      stagger: "50ms", // delay between sequential items
+    },
+    easing: {
+      gentle: "cubic-bezier(0.4, 0, 0.2, 1)", // smooth deceleration
+      bounce: "cubic-bezier(0.34, 1.56, 0.64, 1)", // subtle overshoot
+      enter: "cubic-bezier(0, 0, 0.2, 1)", // coming in
+      exit: "cubic-bezier(0.4, 0, 1, 1)", // going out
+    },
+  },
+
   // Accessibility
   focus: {
     outline: `2px solid #7b2cbf`,

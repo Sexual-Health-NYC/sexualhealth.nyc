@@ -78,6 +78,7 @@ export default function App() {
 
   return (
     <div
+      className="animate-fade-in"
       style={{
         width: "100vw",
         height: "100vh",
@@ -159,6 +160,7 @@ export default function App() {
           <button
             onClick={() => setViewMode("map")}
             aria-pressed={viewMode === "map"}
+            className="btn-interactive"
             style={{
               padding: `${theme.spacing[2]} ${theme.spacing[3]}`,
               backgroundColor:
@@ -188,6 +190,7 @@ export default function App() {
           <button
             onClick={() => setViewMode("list")}
             aria-pressed={viewMode === "list"}
+            className="btn-interactive"
             style={{
               padding: `${theme.spacing[2]} ${theme.spacing[3]}`,
               backgroundColor:

@@ -120,6 +120,7 @@ export default function ClinicBottomSheet() {
         overflowY: "auto",
         zIndex: 20,
         transition: `transform ${theme.transitions.base}`,
+        animation: `slideInUp ${theme.motion.duration.slow} ${theme.motion.easing.gentle}`,
       }}
     >
       {/* Drag handle */}
