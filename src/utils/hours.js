@@ -1,104 +1,323 @@
 /**
- * Parse hours string and determine if clinic is open now
- * Expected formats:
- * - "Mon-Fri 9am-5pm"
- * - "24/7"
- * - "Mon-Wed 9am-5pm, Thu-Fri 10am-6pm"
- * - "By appointment only"
+ * Hours utilities for structured hours data
+ *
+ * Hours format (from GeoJSON):
+ * [
+ *   { department: "General", days: ["Mon", "Tue", "Wed"], open: "09:00", close: "17:00", allDay: false, notes: "" },
+ *   { department: "Abortion", days: ["Thu"], open: "", close: "", allDay: true, notes: "" }
+ * ]
  */
-export function isOpenNow(hoursString) {
-  if (!hoursString) return null;
 
-  // Handle special cases
-  if (hoursString.toLowerCase().includes("24/7")) return true;
-  if (hoursString.toLowerCase().includes("by appointment")) return null;
+const DAY_ORDER = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const DAY_INDEX = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
 
-  try {
-    const now = new Date();
-    const currentDay = now.getDay(); // 0 = Sunday, 1 = Monday, etc.
-    const currentTime = now.getHours() * 60 + now.getMinutes(); // Minutes since midnight
+// Major US holidays when clinics are likely closed
+const HOLIDAYS_2024_2025 = [
+  "2024-12-25", // Christmas
+  "2025-01-01", // New Year's Day
+  "2025-01-20", // MLK Day
+  "2025-02-17", // Presidents Day
+  "2025-05-26", // Memorial Day
+  "2025-07-04", // Independence Day
+  "2025-09-01", // Labor Day
+  "2025-11-27", // Thanksgiving
+  "2025-12-25", // Christmas
+  "2026-01-01", // New Year's Day
+];
 
-    // Simple parser for "Mon-Fri 9am-5pm" format
-    const dayMap = {
-      sun: 0,
-      mon: 1,
-      tue: 2,
-      wed: 3,
-      thu: 4,
-      fri: 5,
-      sat: 6,
-    };
-
-    // Split by comma for multiple hour ranges
-    const ranges = hoursString.split(",");
-
-    for (const range of ranges) {
-      // Match patterns like "Mon-Fri 9am-5pm" or "Monday 9:00am-5:00pm"
-      const match = range.match(
-        /(\w+)(?:-(\w+))?\s+(\d{1,2}):?(\d{2})?\s*(am|pm)\s*-\s*(\d{1,2}):?(\d{2})?\s*(am|pm)/i,
-      );
-
-      if (!match) continue;
-
-      const [
-        ,
-        startDay,
-        endDay,
-        startHour,
-        startMin,
-        startPeriod,
-        endHour,
-        endMin,
-        endPeriod,
-      ] = match;
-
-      // Convert day names to numbers
-      const startDayNum = dayMap[startDay.toLowerCase().slice(0, 3)];
-      const endDayNum = endDay
-        ? dayMap[endDay.toLowerCase().slice(0, 3)]
-        : startDayNum;
-
-      // Check if current day is in range
-      const isDayInRange = currentDay >= startDayNum && currentDay <= endDayNum;
-
-      if (!isDayInRange) continue;
-
-      // Convert times to minutes since midnight
-      const start =
-        (parseInt(startHour) % 12) * 60 +
-        parseInt(startMin || 0) +
-        (startPeriod.toLowerCase() === "pm" ? 12 * 60 : 0);
-
-      const end =
-        (parseInt(endHour) % 12) * 60 +
-        parseInt(endMin || 0) +
-        (endPeriod.toLowerCase() === "pm" ? 12 * 60 : 0);
-
-      // Check if current time is in range
-      if (currentTime >= start && currentTime <= end) {
-        return true;
-      }
-    }
-
-    return false;
-  } catch (error) {
-    console.error("Error parsing hours:", error);
-    return null; // Unable to determine
-  }
+/**
+ * Get current time in NYC timezone
+ */
+function getNYCTime() {
+  return new Date(
+    new Date().toLocaleString("en-US", { timeZone: "America/New_York" }),
+  );
 }
 
 /**
- * Get status badge info (without label - component should translate)
+ * Check if today is a major holiday
  */
-export function getOpenStatus(hoursString) {
-  const isOpen = isOpenNow(hoursString);
+export function isHoliday(date = getNYCTime()) {
+  const dateStr = date.toISOString().split("T")[0];
+  return HOLIDAYS_2024_2025.includes(dateStr);
+}
 
-  if (isOpen === null) {
-    return null; // Don't show badge if we can't determine
+/**
+ * Get next upcoming holiday name
+ */
+export function getUpcomingHoliday() {
+  const now = getNYCTime();
+  const todayStr = now.toISOString().split("T")[0];
+
+  const holidayNames = {
+    "2024-12-25": "Christmas",
+    "2025-01-01": "New Year's Day",
+    "2025-01-20": "MLK Day",
+    "2025-02-17": "Presidents Day",
+    "2025-05-26": "Memorial Day",
+    "2025-07-04": "Independence Day",
+    "2025-09-01": "Labor Day",
+    "2025-11-27": "Thanksgiving",
+    "2025-12-25": "Christmas",
+    "2026-01-01": "New Year's Day",
+  };
+
+  if (holidayNames[todayStr]) {
+    return holidayNames[todayStr];
+  }
+  return null;
+}
+
+/**
+ * Parse time string "09:00" or "17:30" to minutes since midnight
+ */
+function parseTime(timeStr) {
+  if (!timeStr) return null;
+  const [hours, mins] = timeStr.split(":").map(Number);
+  return hours * 60 + (mins || 0);
+}
+
+/**
+ * Format minutes since midnight to display time "9:00 AM"
+ */
+function formatTime(minutes) {
+  const hours = Math.floor(minutes / 60);
+  const mins = minutes % 60;
+  const period = hours >= 12 ? "PM" : "AM";
+  const displayHours = hours % 12 || 12;
+  return mins === 0
+    ? `${displayHours} ${period}`
+    : `${displayHours}:${mins.toString().padStart(2, "0")} ${period}`;
+}
+
+/**
+ * Check if clinic is currently open based on structured hours
+ * Returns: { isOpen, currentSchedule, closesAt, opensAt, nextOpen }
+ */
+export function getOpenStatus(hours, hoursText = "") {
+  // Handle legacy text format for clinics without structured hours
+  if (!hours || hours.length === 0) {
+    if (hoursText) {
+      return getLegacyOpenStatus(hoursText);
+    }
+    return null;
   }
 
+  const now = getNYCTime();
+  const currentDayName = DAY_ORDER[now.getDay()];
+  const currentMinutes = now.getHours() * 60 + now.getMinutes();
+
+  // Find schedules that apply to today
+  const todaySchedules = hours.filter(
+    (h) => h.days && h.days.includes(currentDayName),
+  );
+
+  // Check if currently open
+  for (const schedule of todaySchedules) {
+    if (schedule.allDay) {
+      return {
+        isOpen: true,
+        status: "open",
+        department: schedule.department,
+        closesAt: null,
+        note: schedule.notes,
+      };
+    }
+
+    const openTime = parseTime(schedule.open);
+    const closeTime = parseTime(schedule.close);
+
+    if (openTime !== null && closeTime !== null) {
+      if (currentMinutes >= openTime && currentMinutes < closeTime) {
+        return {
+          isOpen: true,
+          status: "open",
+          department: schedule.department,
+          closesAt: formatTime(closeTime),
+          note: schedule.notes,
+        };
+      }
+
+      // Opens later today
+      if (currentMinutes < openTime) {
+        return {
+          isOpen: false,
+          status: "opensLater",
+          department: schedule.department,
+          opensAt: formatTime(openTime),
+          closesAt: formatTime(closeTime),
+          note: schedule.notes,
+        };
+      }
+    }
+  }
+
+  // Closed today - find next open
+  const nextOpen = findNextOpen(hours, now);
+
   return {
-    isOpen,
-    color: isOpen ? "#10b981" : "#94a3b8",
+    isOpen: false,
+    status: "closed",
+    nextOpen,
   };
+}
+
+/**
+ * Find when the clinic next opens
+ */
+function findNextOpen(hours, fromDate) {
+  const startDayIndex = fromDate.getDay();
+
+  // Check next 7 days
+  for (let offset = 1; offset <= 7; offset++) {
+    const checkDayIndex = (startDayIndex + offset) % 7;
+    const checkDayName = DAY_ORDER[checkDayIndex];
+
+    const daySchedules = hours.filter(
+      (h) => h.days && h.days.includes(checkDayName),
+    );
+
+    if (daySchedules.length > 0) {
+      // Find earliest opening
+      let earliestOpen = null;
+      let earliestSchedule = null;
+
+      for (const schedule of daySchedules) {
+        if (schedule.allDay) {
+          return {
+            day: checkDayName,
+            time: null,
+            department: schedule.department,
+          };
+        }
+
+        const openTime = parseTime(schedule.open);
+        if (
+          openTime !== null &&
+          (earliestOpen === null || openTime < earliestOpen)
+        ) {
+          earliestOpen = openTime;
+          earliestSchedule = schedule;
+        }
+      }
+
+      if (earliestOpen !== null) {
+        return {
+          day: checkDayName,
+          time: formatTime(earliestOpen),
+          department: earliestSchedule.department,
+        };
+      }
+    }
+  }
+
+  return null;
+}
+
+/**
+ * Legacy parser for text-based hours (fallback)
+ */
+function getLegacyOpenStatus(hoursText) {
+  if (!hoursText) return null;
+  if (hoursText.toLowerCase().includes("24/7")) {
+    return { isOpen: true, status: "open" };
+  }
+  if (hoursText.toLowerCase().includes("by appointment")) {
+    return null;
+  }
+  // Can't reliably parse - return null
+  return null;
+}
+
+/**
+ * Format hours array for display in UI
+ * Groups by department and consolidates days
+ */
+export function formatHoursForDisplay(hours) {
+  if (!hours || hours.length === 0) return [];
+
+  // Group by department
+  const byDept = {};
+  for (const h of hours) {
+    const dept = h.department || "General";
+    if (!byDept[dept]) byDept[dept] = [];
+    byDept[dept].push(h);
+  }
+
+  const result = [];
+
+  for (const [dept, schedules] of Object.entries(byDept)) {
+    // Try to consolidate schedules with same times
+    const consolidated = consolidateSchedules(schedules);
+
+    result.push({
+      department: dept,
+      schedules: consolidated,
+    });
+  }
+
+  return result;
+}
+
+/**
+ * Consolidate schedules with same times into single entries
+ */
+function consolidateSchedules(schedules) {
+  // Group by time signature
+  const byTime = {};
+
+  for (const s of schedules) {
+    const timeKey = s.allDay ? "allDay" : `${s.open}-${s.close}`;
+    if (!byTime[timeKey]) {
+      byTime[timeKey] = { ...s, days: [...(s.days || [])] };
+    } else {
+      // Merge days
+      for (const day of s.days || []) {
+        if (!byTime[timeKey].days.includes(day)) {
+          byTime[timeKey].days.push(day);
+        }
+      }
+    }
+  }
+
+  // Sort days and format
+  return Object.values(byTime).map((s) => {
+    // Sort days by day order
+    s.days.sort((a, b) => DAY_INDEX[a] - DAY_INDEX[b]);
+    return {
+      days: formatDayRange(s.days),
+      time: s.allDay
+        ? null
+        : `${formatTime(parseTime(s.open))} - ${formatTime(parseTime(s.close))}`,
+      isAllDay: s.allDay || false,
+      notes: s.notes,
+    };
+  });
+}
+
+/**
+ * Format day array into readable range
+ * ["Mon", "Tue", "Wed", "Thu", "Fri"] -> "Mon - Fri"
+ * ["Mon", "Wed", "Fri"] -> "Mon, Wed, Fri"
+ * ["Sat", "Sun"] -> "Sat - Sun"
+ */
+function formatDayRange(days) {
+  if (days.length === 0) return "";
+  if (days.length === 1) return days[0];
+
+  // Check if consecutive
+  const indices = days.map((d) => DAY_INDEX[d]).sort((a, b) => a - b);
+  let isConsecutive = true;
+  for (let i = 1; i < indices.length; i++) {
+    if (indices[i] !== indices[i - 1] + 1) {
+      isConsecutive = false;
+      break;
+    }
+  }
+
+  if (isConsecutive && days.length > 2) {
+    return `${days[0]} - ${days[days.length - 1]}`;
+  }
+
+  return days.join(", ");
 }

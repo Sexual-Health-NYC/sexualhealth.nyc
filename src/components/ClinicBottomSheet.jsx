@@ -2,7 +2,12 @@ import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import useAppStore from "../store/useAppStore";
 import theme from "../theme";
-import { getOpenStatus } from "../utils/hours";
+import {
+  getOpenStatus,
+  formatHoursForDisplay,
+  isHoliday,
+  getUpcomingHoliday,
+} from "../utils/hours";
 import CorrectionFormModal from "./CorrectionFormModal";
 
 export default function ClinicBottomSheet() {
@@ -22,7 +27,13 @@ export default function ClinicBottomSheet() {
 
   if (!selectedClinic) return null;
 
-  const openStatus = getOpenStatus(selectedClinic.hours);
+  const openStatus = getOpenStatus(
+    selectedClinic.hours,
+    selectedClinic.hours_text,
+  );
+  const formattedHours = formatHoursForDisplay(selectedClinic.hours);
+  const holidayToday = isHoliday();
+  const holidayName = getUpcomingHoliday();
 
   const services = [];
   if (selectedClinic.has_sti_testing)
@@ -144,19 +155,57 @@ export default function ClinicBottomSheet() {
               {selectedClinic.name}
             </h2>
             {openStatus && (
-              <span
+              <div
                 style={{
-                  display: "inline-block",
-                  padding: `${theme.spacing[1]} ${theme.spacing[2]}`,
-                  backgroundColor: openStatus.color,
-                  color: "white",
-                  borderRadius: theme.borderRadius.sm,
-                  fontSize: theme.fonts.size.xs,
-                  fontWeight: theme.fonts.weight.medium,
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: theme.spacing[1],
                 }}
               >
-                {t(openStatus.isOpen ? "messages:openNow" : "messages:closed")}
-              </span>
+                <span
+                  style={{
+                    display: "inline-block",
+                    padding: `${theme.spacing[1]} ${theme.spacing[2]}`,
+                    backgroundColor: openStatus.isOpen ? "#10b981" : "#94a3b8",
+                    color: "white",
+                    borderRadius: theme.borderRadius.sm,
+                    fontSize: theme.fonts.size.xs,
+                    fontWeight: theme.fonts.weight.medium,
+                  }}
+                >
+                  {openStatus.isOpen
+                    ? openStatus.closesAt
+                      ? t("messages:openClosesAt", {
+                          time: openStatus.closesAt,
+                        })
+                      : t("messages:openNow")
+                    : openStatus.status === "opensLater"
+                      ? t("messages:opensToday", { time: openStatus.opensAt })
+                      : openStatus.nextOpen
+                        ? openStatus.nextOpen.time
+                          ? t("messages:closedOpensDay", {
+                              day: openStatus.nextOpen.day,
+                              time: openStatus.nextOpen.time,
+                            })
+                          : t("messages:closedOpens", {
+                              day: openStatus.nextOpen.day,
+                            })
+                        : t("messages:closed")}
+                </span>
+                {holidayToday && (
+                  <span
+                    style={{
+                      fontSize: theme.fonts.size.xs,
+                      color: theme.colors.textSecondary,
+                      fontStyle: "italic",
+                    }}
+                  >
+                    {t("messages:holidayHoursWarning", {
+                      holiday: holidayName,
+                    })}
+                  </span>
+                )}
+              </div>
             )}
           </div>
           <button
@@ -307,17 +356,69 @@ export default function ClinicBottomSheet() {
         </Section>
 
         {/* Hours */}
-        {selectedClinic.hours && (
+        {(formattedHours.length > 0 || selectedClinic.hours_text) && (
           <Section title={t("sections:hours")}>
-            <p
-              style={{
-                margin: 0,
-                color: theme.colors.textPrimary,
-                fontSize: theme.fonts.size.base,
-              }}
-            >
-              {selectedClinic.hours}
-            </p>
+            {formattedHours.length > 0 ? (
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: theme.spacing[3],
+                }}
+              >
+                {formattedHours.map((dept, i) => (
+                  <div key={i}>
+                    {formattedHours.length > 1 && (
+                      <p
+                        style={{
+                          margin: `0 0 ${theme.spacing[1]} 0`,
+                          fontSize: theme.fonts.size.sm,
+                          fontWeight: theme.fonts.weight.medium,
+                          color: theme.colors.textSecondary,
+                        }}
+                      >
+                        {dept.department}
+                      </p>
+                    )}
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: theme.spacing[1],
+                      }}
+                    >
+                      {dept.schedules.map((sched, j) => (
+                        <div
+                          key={j}
+                          style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            fontSize: theme.fonts.size.sm,
+                          }}
+                        >
+                          <span style={{ color: theme.colors.textPrimary }}>
+                            {sched.days}
+                          </span>
+                          <span style={{ color: theme.colors.textSecondary }}>
+                            {sched.isAllDay ? t("messages:allDay") : sched.time}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p
+                style={{
+                  margin: 0,
+                  color: theme.colors.textPrimary,
+                  fontSize: theme.fonts.size.base,
+                }}
+              >
+                {selectedClinic.hours_text}
+              </p>
+            )}
           </Section>
         )}
 

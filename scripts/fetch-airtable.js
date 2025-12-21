@@ -22,14 +22,15 @@ const envContent = fs.readFileSync(envPath, "utf-8");
 const TOKEN = envContent.split("=")[1].trim();
 
 const BASE_ID = "app2GMlVxnjw6ifzz";
-const TABLE_ID = "tblx7sVpDo17Hkmmr";
+const CLINICS_TABLE = "tblx7sVpDo17Hkmmr";
+const HOURS_TABLE = "tblp2gxzk6xGeDtnI";
 
-async function fetchAllRecords() {
+async function fetchAllRecords(tableId) {
   const records = [];
   let offset = null;
 
   do {
-    const url = new URL(`https://api.airtable.com/v0/${BASE_ID}/${TABLE_ID}`);
+    const url = new URL(`https://api.airtable.com/v0/${BASE_ID}/${tableId}`);
     url.searchParams.set("pageSize", "100");
     if (offset) url.searchParams.set("offset", offset);
 
@@ -49,7 +50,21 @@ async function fetchAllRecords() {
   return records;
 }
 
-function recordToFeature(record) {
+function formatHours(clinicId, hoursMap) {
+  const hoursRecords = hoursMap.get(clinicId) || [];
+  if (hoursRecords.length === 0) return [];
+
+  return hoursRecords.map((h) => ({
+    department: h.Department || "General",
+    days: h["Days of Week"] || [],
+    open: h["Open Time"] || "",
+    close: h["Close Time"] || "",
+    allDay: h["All Day"] || false,
+    notes: h.Notes || "",
+  }));
+}
+
+function recordToFeature(record, hoursMap) {
   const f = record.fields;
 
   // Skip records without coordinates
@@ -70,7 +85,8 @@ function recordToFeature(record) {
       borough: f.Borough || "",
       phone: f.Phone || "",
       website: f.Website || "",
-      hours: f.Hours || "",
+      hours: formatHours(record.id, hoursMap),
+      hours_text: f.Hours || "", // Legacy fallback
 
       // Organization
       organization: f.Organization || "",
@@ -123,11 +139,29 @@ function recordToFeature(record) {
 }
 
 async function main() {
-  console.log("Fetching records from Airtable...");
-  const records = await fetchAllRecords();
-  console.log(`Fetched ${records.length} records`);
+  console.log("Fetching clinics from Airtable...");
+  const clinics = await fetchAllRecords(CLINICS_TABLE);
+  console.log(`Fetched ${clinics.length} clinics`);
 
-  const features = records.map(recordToFeature).filter((f) => f !== null);
+  console.log("Fetching hours from Airtable...");
+  const hoursRecords = await fetchAllRecords(HOURS_TABLE);
+  console.log(`Fetched ${hoursRecords.length} hours records`);
+
+  // Build a map of clinicId -> hours records
+  const hoursMap = new Map();
+  for (const hr of hoursRecords) {
+    const clinicLinks = hr.fields.Clinic || [];
+    for (const clinicId of clinicLinks) {
+      if (!hoursMap.has(clinicId)) {
+        hoursMap.set(clinicId, []);
+      }
+      hoursMap.get(clinicId).push(hr.fields);
+    }
+  }
+
+  const features = clinics
+    .map((r) => recordToFeature(r, hoursMap))
+    .filter((f) => f !== null);
 
   console.log(`${features.length} records have coordinates`);
 
@@ -137,7 +171,7 @@ async function main() {
     metadata: {
       generated: new Date().toISOString(),
       source: "Airtable",
-      total_records: records.length,
+      total_records: clinics.length,
       records_with_coords: features.length,
     },
   };

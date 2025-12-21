@@ -17,7 +17,32 @@
         "borough": "Manhattan",
         "phone": "(212) 271-7200",
         "website": "https://callen-lorde.org/chelsea/",
-        "hours": "Mon/Wed/Fri 8am-5:30pm; Tue/Thu 8am-8:30pm",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Tue",
+              "Thu"
+            ],
+            "open": "08:00",
+            "close": "20:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Wed",
+              "Fri"
+            ],
+            "open": "08:00",
+            "close": "17:30",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon/Wed/Fri 8am-5:30pm; Tue/Thu 8am-8:30pm",
         "organization": "Callen-Lorde",
         "clinic_type": "",
         "has_sti_testing": true,
@@ -67,7 +92,8 @@
         "borough": "Manhattan",
         "phone": "(212) 604-1701",
         "website": "",
-        "hours": "",
+        "hours": [],
+        "hours_text": "",
         "organization": "Mount Sinai",
         "clinic_type": "Hospital",
         "has_sti_testing": false,
@@ -117,7 +143,8 @@
         "borough": "Queens",
         "phone": "(718) 793-1943",
         "website": "",
-        "hours": "",
+        "hours": [],
+        "hours_text": "",
         "organization": "",
         "clinic_type": "",
         "has_sti_testing": false,
@@ -167,7 +194,32 @@
         "borough": "Brooklyn",
         "phone": "(718) 388-0390",
         "website": "https://www.chnnyc.org/center/chn-williamsburg/",
-        "hours": "Mon/Tue/Thu/Fri 9am-5pm; Wed 8am-7pm",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Wed"
+            ],
+            "open": "08:00",
+            "close": "19:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Thu",
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon/Tue/Thu/Fri 9am-5pm; Wed 8am-7pm",
         "organization": "Community Healthcare Network",
         "clinic_type": "FQHC",
         "has_sti_testing": true,
@@ -217,7 +269,24 @@
         "borough": "Queens",
         "phone": "(718) 793-1943",
         "website": "https://nyabortion.com/",
-        "hours": "Mon-Sat 8:30am-6:00pm",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri",
+              "Sat"
+            ],
+            "open": "08:30",
+            "close": "18:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon-Sat 8:30am-6:00pm",
         "organization": "",
         "clinic_type": "Private",
         "has_sti_testing": false,
@@ -267,7 +336,46 @@
         "borough": "Queens",
         "phone": "(718) 883-3244",
         "website": "https://www.nychealthandhospitals.org/queens/",
-        "hours": "Women's Health: Mon-Fri 9am-5pm; Adult Primary Care: Mon-Thu 8am-8pm, Fri 8am-5pm, Sat 8am-4pm; Abortion: Wednesdays",
+        "hours": [
+          {
+            "department": "Adult Primary Care",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu"
+            ],
+            "open": "08:00",
+            "close": "20:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "Women's Health",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "Abortion",
+            "days": [
+              "Wed"
+            ],
+            "open": "",
+            "close": "",
+            "allDay": true,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Women's Health: Mon-Fri 9am-5pm; Adult Primary Care: Mon-Thu 8am-8pm, Fri 8am-5pm, Sat 8am-4pm; Abortion: Wednesdays",
         "organization": "NYC Health + Hospitals",
         "clinic_type": "Hospital",
         "has_sti_testing": true,
@@ -317,7 +425,23 @@
         "borough": "Bronx",
         "phone": "(718) 294-5891",
         "website": "https://www.chnnyc.org/center/chn-tremont/",
-        "hours": "Mon-Fri 9am-5pm (Check for late nights)",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon-Fri 9am-5pm (Check for late nights)",
         "organization": "Community Healthcare Network",
         "clinic_type": "FQHC",
         "has_sti_testing": true,
@@ -367,7 +491,23 @@
         "borough": "Bronx",
         "phone": "(718) 519-3310",
         "website": "https://www.nychealthandhospitals.org/north-central-bronx/",
-        "hours": "Mon-Fri 8am-4pm",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "08:00",
+            "close": "16:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon-Fri 8am-4pm",
         "organization": "NYC Health + Hospitals",
         "clinic_type": "Hospital",
         "has_sti_testing": true,
@@ -417,7 +557,59 @@
         "borough": "Staten Island",
         "phone": "(718) 876-1732",
         "website": "chcrichmond.org",
-        "hours": "Monday: 8am-5pm; Tuesday: 8am-5pm; Wednesday: 8am-5pm; Thursday: 8am-5pm; Friday: 8am-5pm",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Fri"
+            ],
+            "open": "08:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon"
+            ],
+            "open": "08:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Thu"
+            ],
+            "open": "08:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Tue"
+            ],
+            "open": "08:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Wed"
+            ],
+            "open": "08:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Monday: 8am-5pm; Tuesday: 8am-5pm; Wednesday: 8am-5pm; Thursday: 8am-5pm; Friday: 8am-5pm",
         "organization": "",
         "clinic_type": "FQHC",
         "has_sti_testing": true,
@@ -467,7 +659,8 @@
         "borough": "Manhattan",
         "phone": "(844) 434-2778",
         "website": "https://www.institute.org/",
-        "hours": "",
+        "hours": [],
+        "hours_text": "",
         "organization": "",
         "clinic_type": "",
         "has_sti_testing": true,
@@ -517,7 +710,8 @@
         "borough": "Manhattan",
         "phone": "(212) 431-8533",
         "website": "",
-        "hours": "",
+        "hours": [],
+        "hours_text": "",
         "organization": "",
         "clinic_type": "",
         "has_sti_testing": false,
@@ -567,7 +761,41 @@
         "borough": "Brooklyn",
         "phone": "(718) 215-1818",
         "website": "https://callen-lorde.org/brooklyn/",
-        "hours": "Mon/Tue 8:30am-8pm; Wed/Thu 9am-5pm; Fri 10am-4:45pm",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue"
+            ],
+            "open": "08:30",
+            "close": "20:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Fri"
+            ],
+            "open": "10:00",
+            "close": "16:45",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Wed",
+              "Thu"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon/Tue 8:30am-8pm; Wed/Thu 9am-5pm; Fri 10am-4:45pm",
         "organization": "Callen-Lorde",
         "clinic_type": "",
         "has_sti_testing": true,
@@ -617,7 +845,34 @@
         "borough": "Manhattan",
         "phone": "(212) 686-6066",
         "website": "https://parkmed.com",
-        "hours": "Mon-Sat 7:00 AM - 8:00 PM; Sun 9:00 AM - 5:00 PM",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Sun"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri",
+              "Sat"
+            ],
+            "open": "07:00",
+            "close": "20:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon-Sat 7:00 AM - 8:00 PM; Sun 9:00 AM - 5:00 PM",
         "organization": "",
         "clinic_type": "Private",
         "has_sti_testing": true,
@@ -667,7 +922,8 @@
         "borough": "Brooklyn",
         "phone": "(718) 875-4848",
         "website": "",
-        "hours": "",
+        "hours": [],
+        "hours_text": "",
         "organization": "",
         "clinic_type": "",
         "has_sti_testing": false,
@@ -717,7 +973,23 @@
         "borough": "Bronx",
         "phone": "(718) 918-5000",
         "website": "https://www.nychealthandhospitals.org/jacobi/services/lgbtq-health-care-services/",
-        "hours": "Mon-Fri 9:00 AM - 5:00 PM (Pride Center hours vary)",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon-Fri 9:00 AM - 5:00 PM (Pride Center hours vary)",
         "organization": "NYC Health + Hospitals",
         "clinic_type": "Hospital",
         "has_sti_testing": true,
@@ -767,7 +1039,32 @@
         "borough": "Manhattan",
         "phone": "(212) 426-0088",
         "website": "https://www.chnnyc.org/center/harlem-health-center/",
-        "hours": "Mon/Tue/Thu/Fri 9am-5pm; Wed 8am-7pm",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Wed"
+            ],
+            "open": "08:00",
+            "close": "19:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Thu",
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon/Tue/Thu/Fri 9am-5pm; Wed 8am-7pm",
         "organization": "Community Healthcare Network",
         "clinic_type": "FQHC",
         "has_sti_testing": true,
@@ -817,7 +1114,8 @@
         "borough": "Manhattan",
         "phone": "(212) 562-5555",
         "website": "",
-        "hours": "",
+        "hours": [],
+        "hours_text": "",
         "organization": "NYC Health + Hospitals",
         "clinic_type": "Hospital",
         "has_sti_testing": false,
@@ -867,7 +1165,32 @@
         "borough": "Brooklyn",
         "phone": "(718) 778-0198",
         "website": "https://www.chnnyc.org/center/chn-crown-heights/",
-        "hours": "Mon/Tue/Thu/Fri 9am-5pm; Wed 8am-7pm",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Thu",
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Wed"
+            ],
+            "open": "08:00",
+            "close": "19:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon/Tue/Thu/Fri 9am-5pm; Wed 8am-7pm",
         "organization": "Community Healthcare Network",
         "clinic_type": "FQHC",
         "has_sti_testing": true,
@@ -917,7 +1240,8 @@
         "borough": "Manhattan",
         "phone": "(212) 423-6262",
         "website": "",
-        "hours": "",
+        "hours": [],
+        "hours_text": "",
         "organization": "NYC Health + Hospitals",
         "clinic_type": "Hospital",
         "has_sti_testing": false,
@@ -967,7 +1291,8 @@
         "borough": "Manhattan",
         "phone": "(212) 308-4988",
         "website": "",
-        "hours": "",
+        "hours": [],
+        "hours_text": "",
         "organization": "",
         "clinic_type": "",
         "has_sti_testing": false,
@@ -1017,7 +1342,31 @@
         "borough": "Manhattan",
         "phone": "(212) 939-8273",
         "website": "https://www.nychealthandhospitals.org/harlem/",
-        "hours": "Women's Health: Mon 9am-7pm, Tue-Fri 9am-5pm; Abortion: Mon, Tue, Fri",
+        "hours": [
+          {
+            "department": "Women's Health",
+            "days": [
+              "Mon"
+            ],
+            "open": "09:00",
+            "close": "19:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "Abortion",
+            "days": [
+              "Mon",
+              "Tue",
+              "Fri"
+            ],
+            "open": "",
+            "close": "",
+            "allDay": true,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Women's Health: Mon 9am-7pm, Tue-Fri 9am-5pm; Abortion: Mon, Tue, Fri",
         "organization": "NYC Health + Hospitals",
         "clinic_type": "Hospital",
         "has_sti_testing": true,
@@ -1067,7 +1416,8 @@
         "borough": "Queens",
         "phone": "(347) 396-7959",
         "website": "https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",
-        "hours": "",
+        "hours": [],
+        "hours_text": "",
         "organization": "NYC Health Dept (DOH)",
         "clinic_type": "DOH",
         "has_sti_testing": true,
@@ -1117,7 +1467,8 @@
         "borough": "Bronx",
         "phone": "(646) 723-3325",
         "website": "http://destinationtomorrow.org/",
-        "hours": "",
+        "hours": [],
+        "hours_text": "",
         "organization": "",
         "clinic_type": "LGBTQ+ Center",
         "has_sti_testing": true,
@@ -1167,7 +1518,23 @@
         "borough": "Manhattan",
         "phone": "(212) 334-6029",
         "website": "https://www.apicha.org",
-        "hours": "Mon-Fri 9:00 AM - 5:30 PM",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "17:30",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon-Fri 9:00 AM - 5:30 PM",
         "organization": "",
         "clinic_type": "FQHC",
         "has_sti_testing": true,
@@ -1217,7 +1584,8 @@
         "borough": "Queens",
         "phone": "(212) 965-7000",
         "website": "",
-        "hours": "",
+        "hours": [],
+        "hours_text": "",
         "organization": "Planned Parenthood",
         "clinic_type": "",
         "has_sti_testing": true,
@@ -1313,7 +1681,8 @@
         "borough": "Manhattan",
         "phone": "",
         "website": "https://mobilizationforjustice.org/",
-        "hours": "",
+        "hours": [],
+        "hours_text": "",
         "organization": "",
         "clinic_type": "",
         "has_sti_testing": true,
@@ -1363,7 +1732,32 @@
         "borough": "Bronx",
         "phone": "(718) 320-4466",
         "website": "https://www.chnnyc.org/center/south-bronx/",
-        "hours": "Mon/Tue/Thu/Fri: 9am-5pm; Wed: 9am-7pm",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Thu",
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Wed"
+            ],
+            "open": "09:00",
+            "close": "19:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon/Tue/Thu/Fri: 9am-5pm; Wed: 9am-7pm",
         "organization": "Community Healthcare Network",
         "clinic_type": "FQHC",
         "has_sti_testing": true,
@@ -1413,7 +1807,8 @@
         "borough": "Brooklyn",
         "phone": "(347) 396-7959",
         "website": "",
-        "hours": "",
+        "hours": [],
+        "hours_text": "",
         "organization": "NYC Health Dept (DOH)",
         "clinic_type": "FQHC",
         "has_sti_testing": false,
@@ -1463,7 +1858,23 @@
         "borough": "Brooklyn",
         "phone": "(718) 277-0386",
         "website": "https://healthcare.housingworks.org",
-        "hours": "Mon-Fri Business Hours",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "",
+            "close": "",
+            "allDay": true,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon-Fri Business Hours",
         "organization": "",
         "clinic_type": "FQHC",
         "has_sti_testing": true,
@@ -1513,7 +1924,23 @@
         "borough": "Manhattan",
         "phone": "(212) 971-0428 (Verify)",
         "website": "https://healthcare.housingworks.org/locations/ginny-shubert",
-        "hours": "Mon-Fri Business Hours",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "",
+            "close": "",
+            "allDay": true,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon-Fri Business Hours",
         "organization": "",
         "clinic_type": "FQHC",
         "has_sti_testing": true,
@@ -1563,7 +1990,32 @@
         "borough": "Brooklyn",
         "phone": "(718) 245-3131",
         "website": "https://www.nychealthandhospitals.org/kings-county/",
-        "hours": "Adult Medicine: Mon-Thu 8am-8pm, Fri 8am-6pm, Sat 8am-4pm; STD Clinic: Tue & Fri 1pm-4pm, Wed 9am-12pm",
+        "hours": [
+          {
+            "department": "Adult Medicine",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu"
+            ],
+            "open": "08:00",
+            "close": "20:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "STD Clinic",
+            "days": [
+              "Tue"
+            ],
+            "open": "",
+            "close": "",
+            "allDay": true,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Adult Medicine: Mon-Thu 8am-8pm, Fri 8am-6pm, Sat 8am-4pm; STD Clinic: Tue & Fri 1pm-4pm, Wed 9am-12pm",
         "organization": "NYC Health + Hospitals",
         "clinic_type": "Hospital",
         "has_sti_testing": true,
@@ -1613,7 +2065,8 @@
         "borough": "Staten Island",
         "phone": "(718) 924-2254",
         "website": "www.chcrichmond.org",
-        "hours": "",
+        "hours": [],
+        "hours_text": "",
         "organization": "",
         "clinic_type": "FQHC",
         "has_sti_testing": false,
@@ -1663,7 +2116,41 @@
         "borough": "Brooklyn",
         "phone": "(718) 963-8068",
         "website": "https://www.nychealthandhospitals.org/woodhull/services/the-pride-health-center/",
-        "hours": "Mon 8am-7pm; Tue-Thu 8am-5pm; Fri 8am-12pm",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon"
+            ],
+            "open": "08:00",
+            "close": "19:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Fri"
+            ],
+            "open": "08:00",
+            "close": "12:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Tue",
+              "Wed",
+              "Thu"
+            ],
+            "open": "08:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon 8am-7pm; Tue-Thu 8am-5pm; Fri 8am-12pm",
         "organization": "NYC Health + Hospitals",
         "clinic_type": "Hospital",
         "has_sti_testing": true,
@@ -1713,7 +2200,23 @@
         "borough": "Manhattan",
         "phone": "(212) 741-2247",
         "website": "https://sageserves.org/",
-        "hours": "Mon-Fri 9am-5pm",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon-Fri 9am-5pm",
         "organization": "",
         "clinic_type": "LGBTQ+ Center",
         "has_sti_testing": true,
@@ -1763,7 +2266,8 @@
         "borough": "Manhattan",
         "phone": "(212) 271-7200",
         "website": "callen-lorde.org/",
-        "hours": "",
+        "hours": [],
+        "hours_text": "",
         "organization": "Callen-Lorde",
         "clinic_type": "LGBTQ+ Center",
         "has_sti_testing": false,
@@ -1813,7 +2317,8 @@
         "borough": "Brooklyn",
         "phone": "(718) 369-1900",
         "website": "",
-        "hours": "",
+        "hours": [],
+        "hours_text": "",
         "organization": "",
         "clinic_type": "",
         "has_sti_testing": false,
@@ -1863,7 +2368,32 @@
         "borough": "Manhattan",
         "phone": "(212) 453-0222",
         "website": "https://www.door.org/health/",
-        "hours": "Mon/Tue/Thu/Fri 10am-6pm; Wed 10am-6:30pm",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Thu",
+              "Fri"
+            ],
+            "open": "10:00",
+            "close": "18:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Wed"
+            ],
+            "open": "10:00",
+            "close": "18:30",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon/Tue/Thu/Fri 10am-6pm; Wed 10am-6:30pm",
         "organization": "",
         "clinic_type": "FQHC",
         "has_sti_testing": true,
@@ -1913,7 +2443,8 @@
         "borough": "Bronx",
         "phone": "(347) 396-7959",
         "website": "https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",
-        "hours": "",
+        "hours": [],
+        "hours_text": "",
         "organization": "NYC Health Dept (DOH)",
         "clinic_type": "DOH",
         "has_sti_testing": true,
@@ -1963,7 +2494,32 @@
         "borough": "Bronx",
         "phone": "(718) 215-1800",
         "website": "https://callen-lorde.org/bronx/",
-        "hours": "Mon/Tue/Thu/Fri: 9:00 AM - 5:00 PM; Wed: 11:00 AM - 7:00 PM",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Wed"
+            ],
+            "open": "11:00",
+            "close": "19:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Thu",
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon/Tue/Thu/Fri: 9:00 AM - 5:00 PM; Wed: 11:00 AM - 7:00 PM",
         "organization": "Callen-Lorde",
         "clinic_type": "",
         "has_sti_testing": true,
@@ -2013,7 +2569,33 @@
         "borough": "Brooklyn",
         "phone": "(347) 396-7959",
         "website": "https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",
-        "hours": "Mon-Fri 8:30 AM - 3:30 PM; Tue Express until 7:00 PM",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Tue"
+            ],
+            "open": "",
+            "close": "",
+            "allDay": true,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "08:30",
+            "close": "15:30",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon-Fri 8:30 AM - 3:30 PM; Tue Express until 7:00 PM",
         "organization": "NYC Health Dept (DOH)",
         "clinic_type": "DOH",
         "has_sti_testing": true,
@@ -2063,7 +2645,23 @@
         "borough": "Bronx",
         "phone": "(718) 579-6133",
         "website": "https://www.nychealthandhospitals.org/lincoln/services/teen-health-center/",
-        "hours": "Mon-Fri: 9:00 AM - 4:30 PM",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "16:30",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon-Fri: 9:00 AM - 4:30 PM",
         "organization": "NYC Health + Hospitals",
         "clinic_type": "Hospital",
         "has_sti_testing": true,
@@ -2113,7 +2711,42 @@
         "borough": "Bronx",
         "phone": "(844) 692-4692",
         "website": "https://www.nychealthandhospitals.org/locations/gotham-health-morrisania/",
-        "hours": "Mon-Thu 7:30 AM - 8:00 PM; Fri 7:30 AM - 5:00 PM; Sat 8:30 AM - 5:00 PM",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Fri"
+            ],
+            "open": "07:30",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Sat"
+            ],
+            "open": "08:30",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu"
+            ],
+            "open": "07:30",
+            "close": "20:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon-Thu 7:30 AM - 8:00 PM; Fri 7:30 AM - 5:00 PM; Sat 8:30 AM - 5:00 PM",
         "organization": "NYC Health + Hospitals",
         "clinic_type": "",
         "has_sti_testing": true,
@@ -2163,7 +2796,33 @@
         "borough": "Manhattan",
         "phone": "(347) 396-7959",
         "website": "https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",
-        "hours": "Mon-Fri 8:30 AM - 3:30 PM; Tue Express 5:00 PM - 7:00 PM",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "08:30",
+            "close": "15:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Tue"
+            ],
+            "open": "17:00",
+            "close": "19:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon-Fri 8:30 AM - 3:30 PM; Tue Express 5:00 PM - 7:00 PM",
         "organization": "NYC Health Dept (DOH)",
         "clinic_type": "DOH",
         "has_sti_testing": true,
@@ -2213,7 +2872,23 @@
         "borough": "Staten Island",
         "phone": "(844) 692-4692",
         "website": "https://www.nychealthandhospitals.org/locations/gotham-health-vanderbilt/",
-        "hours": "Mon-Fri 8:30 AM - 4:30 PM",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "08:30",
+            "close": "16:30",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon-Fri 8:30 AM - 4:30 PM",
         "organization": "NYC Health + Hospitals",
         "clinic_type": "",
         "has_sti_testing": true,
@@ -2263,7 +2938,31 @@
         "borough": "Bronx",
         "phone": "(212) 965-7000",
         "website": "https://www.plannedparenthood.org/planned-parenthood-greater-new-york",
-        "hours": "Mon-Fri 8:00 AM - 4:30 PM (Varies; check portal)",
+        "hours": [
+          {
+            "department": "General",
+            "days": [],
+            "open": "",
+            "close": "",
+            "allDay": false,
+            "notes": "check portal)"
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "08:00",
+            "close": "16:30",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon-Fri 8:00 AM - 4:30 PM (Varies; check portal)",
         "organization": "Planned Parenthood",
         "clinic_type": "Planned Parenthood",
         "has_sti_testing": true,
@@ -2359,7 +3058,8 @@
         "borough": "Bronx",
         "phone": "(718) 585-1010",
         "website": "",
-        "hours": "",
+        "hours": [],
+        "hours_text": "",
         "organization": "",
         "clinic_type": "",
         "has_sti_testing": false,
@@ -2409,7 +3109,46 @@
         "borough": "Queens",
         "phone": "(718) 334-4000",
         "website": "https://www.nychealthandhospitals.org/elmhurst/",
-        "hours": "Infectious Disease (Pride): Mon/Tue/Thu/Fri 8am-5pm, Wed 8am-6pm; Women's Health: Mon-Fri 8am-5pm; Abortion: Thu & Fri",
+        "hours": [
+          {
+            "department": "Abortion",
+            "days": [
+              "Thu"
+            ],
+            "open": "",
+            "close": "",
+            "allDay": true,
+            "notes": ""
+          },
+          {
+            "department": "Infectious Disease (Pride)",
+            "days": [
+              "Mon",
+              "Tue",
+              "Thu",
+              "Fri"
+            ],
+            "open": "08:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "Women's Health",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "08:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Infectious Disease (Pride): Mon/Tue/Thu/Fri 8am-5pm, Wed 8am-6pm; Women's Health: Mon-Fri 8am-5pm; Abortion: Thu & Fri",
         "organization": "NYC Health + Hospitals",
         "clinic_type": "Hospital",
         "has_sti_testing": true,
@@ -2459,7 +3198,31 @@
         "borough": "Manhattan",
         "phone": "(212) 674-2400",
         "website": "https://hmi.org/",
-        "hours": "Mon-Fri 10am-8pm; Intake 4-7pm",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "10:00",
+            "close": "20:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [],
+            "open": "04:00",
+            "close": "19:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon-Fri 10am-8pm; Intake 4-7pm",
         "organization": "",
         "clinic_type": "LGBTQ+ Center",
         "has_sti_testing": true,
@@ -2509,7 +3272,32 @@
         "borough": "Manhattan",
         "phone": "(212) 781-7979",
         "website": "https://www.chnnyc.org/center/chn-washington-heights/",
-        "hours": "Mon/Wed/Thu/Fri 9am-5pm; Tue 9am-7pm",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Tue"
+            ],
+            "open": "09:00",
+            "close": "19:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon/Wed/Thu/Fri 9am-5pm; Tue 9am-7pm",
         "organization": "Community Healthcare Network",
         "clinic_type": "FQHC",
         "has_sti_testing": true,
@@ -2559,7 +3347,23 @@
         "borough": "Brooklyn",
         "phone": "(212) 965-7000",
         "website": "https://www.plannedparenthood.org/planned-parenthood-greater-new-york",
-        "hours": "Mon-Fri (Check portal)",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "",
+            "close": "",
+            "allDay": true,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon-Fri (Check portal)",
         "organization": "Planned Parenthood",
         "clinic_type": "Planned Parenthood",
         "has_sti_testing": true,
@@ -2655,7 +3459,23 @@
         "borough": "Manhattan",
         "phone": "(212) 367-1000",
         "website": "https://gmhc.org",
-        "hours": "Mon-Fri (Check website)",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "",
+            "close": "",
+            "allDay": true,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon-Fri (Check website)",
         "organization": "GMHC",
         "clinic_type": "",
         "has_sti_testing": true,
@@ -2705,7 +3525,41 @@
         "borough": "Queens",
         "phone": "(718) 523-2123",
         "website": "https://www.chnnyc.org/center/chn-jamaica/",
-        "hours": "Mon 9am-5pm; Tue 8am-7pm; Wed-Fri 9am-5pm",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Tue"
+            ],
+            "open": "08:00",
+            "close": "19:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon 9am-5pm; Tue 8am-7pm; Wed-Fri 9am-5pm",
         "organization": "Community Healthcare Network",
         "clinic_type": "FQHC",
         "has_sti_testing": true,
@@ -2755,7 +3609,32 @@
         "borough": "Queens",
         "phone": "(718) 786-5000",
         "website": "https://choicesmedical.com",
-        "hours": "Tue/Wed/Fri/Sat 7am-5pm; Thu 8am-5pm",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Tue",
+              "Wed",
+              "Fri",
+              "Sat"
+            ],
+            "open": "07:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Thu"
+            ],
+            "open": "08:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Tue/Wed/Fri/Sat 7am-5pm; Thu 8am-5pm",
         "organization": "",
         "clinic_type": "Private",
         "has_sti_testing": true,
@@ -2805,7 +3684,23 @@
         "borough": "Queens",
         "phone": "(718) 657-7088",
         "website": "https://www.chnnyc.org/center/chn-sutphin-blvd/",
-        "hours": "Mon-Fri 9am-5pm",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon-Fri 9am-5pm",
         "organization": "Community Healthcare Network",
         "clinic_type": "FQHC",
         "has_sti_testing": true,
@@ -2855,7 +3750,23 @@
         "borough": "Bronx",
         "phone": "(347) 396-7959",
         "website": "https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",
-        "hours": "Mon-Fri: 8:30 AM - 3:30 PM (Closes early if capacity reached)",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "08:30",
+            "close": "15:30",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon-Fri: 8:30 AM - 3:30 PM (Closes early if capacity reached)",
         "organization": "NYC Health Dept (DOH)",
         "clinic_type": "DOH",
         "has_sti_testing": true,
@@ -2905,7 +3816,8 @@
         "borough": "Manhattan",
         "phone": "(888) 510-3132",
         "website": "",
-        "hours": "",
+        "hours": [],
+        "hours_text": "",
         "organization": "",
         "clinic_type": "",
         "has_sti_testing": false,
@@ -2955,7 +3867,23 @@
         "borough": "Brooklyn",
         "phone": "(718) 616-3000",
         "website": "https://www.nychealthandhospitals.org/southbrooklynhealth/",
-        "hours": "Mon-Fri 8am-4pm",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "08:00",
+            "close": "16:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon-Fri 8am-4pm",
         "organization": "NYC Health + Hospitals",
         "clinic_type": "Hospital",
         "has_sti_testing": true,
@@ -3005,7 +3933,23 @@
         "borough": "Manhattan",
         "phone": "(347) 396-7959",
         "website": "https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",
-        "hours": "Mon-Fri 8:30 AM - 3:30 PM",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "08:30",
+            "close": "15:30",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon-Fri 8:30 AM - 3:30 PM",
         "organization": "NYC Health Dept (DOH)",
         "clinic_type": "DOH",
         "has_sti_testing": true,
@@ -3055,7 +3999,23 @@
         "borough": "Brooklyn",
         "phone": "(718) 495-6700",
         "website": "https://www.chnnyc.org/center/chn-east-new-york-health-hub/",
-        "hours": "Mon-Fri Business Hours (Call to confirm)",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "",
+            "close": "",
+            "allDay": true,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon-Fri Business Hours (Call to confirm)",
         "organization": "Community Healthcare Network",
         "clinic_type": "FQHC",
         "has_sti_testing": true,
@@ -3105,7 +4065,27 @@
         "borough": "Manhattan",
         "phone": "(212) 206-0574",
         "website": "https://www.aliforneycenter.org/",
-        "hours": "24/7 Drop-in; Medical: Mon 9-12:30, Tue 9-4, Thu 9-5",
+        "hours": [
+          {
+            "department": "General",
+            "days": [],
+            "open": "",
+            "close": "",
+            "allDay": false,
+            "notes": "24/7 Drop-in"
+          },
+          {
+            "department": "Medical",
+            "days": [
+              "Mon"
+            ],
+            "open": "09:00",
+            "close": "12:30",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "24/7 Drop-in; Medical: Mon 9-12:30, Tue 9-4, Thu 9-5",
         "organization": "",
         "clinic_type": "LGBTQ+ Center",
         "has_sti_testing": true,
@@ -3155,7 +4135,32 @@
         "borough": "Queens",
         "phone": "(718) 482-7772",
         "website": "https://www.chnnyc.org/center/chn-long-island-city/",
-        "hours": "Mon/Tue/Thu/Fri 9am-5pm; Wed 8am-7pm",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Thu",
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Wed"
+            ],
+            "open": "08:00",
+            "close": "19:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon/Tue/Thu/Fri 9am-5pm; Wed 8am-7pm",
         "organization": "Community Healthcare Network",
         "clinic_type": "FQHC",
         "has_sti_testing": true,
@@ -3205,7 +4210,8 @@
         "borough": "Manhattan",
         "phone": "(212) 686-9015",
         "website": "",
-        "hours": "",
+        "hours": [],
+        "hours_text": "",
         "organization": "",
         "clinic_type": "",
         "has_sti_testing": false,
@@ -3255,7 +4261,21 @@
         "borough": "Staten Island",
         "phone": "(212) 965-7000",
         "website": "https://www.plannedparenthood.org/planned-parenthood-greater-new-york",
-        "hours": "Tue-Thu 8:00 AM - 7:00 PM",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Tue",
+              "Wed",
+              "Thu"
+            ],
+            "open": "08:00",
+            "close": "19:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Tue-Thu 8:00 AM - 7:00 PM",
         "organization": "Planned Parenthood",
         "clinic_type": "Planned Parenthood",
         "has_sti_testing": true,
@@ -3305,7 +4325,24 @@
         "borough": "Manhattan",
         "phone": "(212) 423-3000",
         "website": "https://www.mountsinai.org/locations/adolescent-health-center",
-        "hours": "Mon-Sat (Check schedule)",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri",
+              "Sat"
+            ],
+            "open": "",
+            "close": "",
+            "allDay": true,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon-Sat (Check schedule)",
         "organization": "Mount Sinai",
         "clinic_type": "",
         "has_sti_testing": true,
@@ -3355,7 +4392,8 @@
         "borough": "Staten Island",
         "phone": "(718) 808-1300",
         "website": "www.chasiny.org",
-        "hours": "",
+        "hours": [],
+        "hours_text": "",
         "organization": "",
         "clinic_type": "FQHC",
         "has_sti_testing": false,
@@ -3405,7 +4443,8 @@
         "borough": "Manhattan",
         "phone": "(347) 396-7959",
         "website": "https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",
-        "hours": "",
+        "hours": [],
+        "hours_text": "",
         "organization": "NYC Health Dept (DOH)",
         "clinic_type": "DOH",
         "has_sti_testing": true,
@@ -3455,7 +4494,32 @@
         "borough": "Manhattan",
         "phone": "(212) 477-1120",
         "website": "https://www.chnnyc.org/center/chn-lower-east-side/",
-        "hours": "Mon/Tue/Thu/Fri 9am-5pm; Wed 8am-7pm",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Thu",
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Wed"
+            ],
+            "open": "08:00",
+            "close": "19:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon/Tue/Thu/Fri 9am-5pm; Wed 8am-7pm",
         "organization": "Community Healthcare Network",
         "clinic_type": "FQHC",
         "has_sti_testing": true,
@@ -3505,7 +4569,23 @@
         "borough": "Queens",
         "phone": "(347) 396-7959",
         "website": "https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",
-        "hours": "Mon-Fri 8:30 AM - 3:30 PM",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "08:30",
+            "close": "15:30",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
+        "hours_text": "Mon-Fri 8:30 AM - 3:30 PM",
         "organization": "NYC Health Dept (DOH)",
         "clinic_type": "DOH",
         "has_sti_testing": true,
@@ -3541,7 +4621,7 @@
     }
   ],
   "metadata": {
-    "generated": "2025-12-21T00:38:44.660Z",
+    "generated": "2025-12-21T01:22:48.027Z",
     "source": "Airtable",
     "total_records": 70,
     "records_with_coords": 68
