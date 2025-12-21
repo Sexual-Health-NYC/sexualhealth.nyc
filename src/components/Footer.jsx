@@ -5,6 +5,7 @@ import { GlobeIcon } from "./Icons";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 function FooterModal({ isOpen, onClose, title, children }) {
+  const { t } = useTranslation(["actions"]);
   if (!isOpen) return null;
 
   return (
@@ -63,7 +64,7 @@ function FooterModal({ isOpen, onClose, title, children }) {
               padding: 0,
               lineHeight: 1,
             }}
-            aria-label="Close"
+            aria-label={t("actions:close")}
           >
             ×
           </button>
