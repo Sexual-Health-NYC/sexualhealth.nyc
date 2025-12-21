@@ -7,6 +7,7 @@ import ClinicBottomSheet from "./components/ClinicBottomSheet";
 import ClinicListView from "./components/ClinicListView";
 import useAppStore from "./store/useAppStore";
 import theme from "./theme";
+import { getOpenStatus, isOpenAfter } from "./utils/hours";
 
 export default function App() {
   const { t } = useTranslation(["messages", "actions"]);
@@ -61,6 +62,49 @@ export default function App() {
             (procMax && procMax >= filters.gestationalWeeks);
           if (!canServe) return false;
         }
+      }
+
+      // Open now filter
+      if (filters.openNow) {
+        const status = getOpenStatus(clinic.hours);
+        if (!status || !status.isOpen) return false;
+      }
+
+      // Open after 5pm filter
+      if (filters.openAfter5pm) {
+        if (!isOpenAfter(clinic.hours, 17)) return false;
+      }
+
+      // Subway lines filter (OR logic - clinic near ANY selected line)
+      if (filters.subwayLines.size > 0 && clinic.transit) {
+        const clinicLines = clinic.transit
+          .split(",")
+          .map((t) => {
+            const match = t.trim().match(/^([A-Z0-9\/]+)\s+at/i);
+            return match ? match[1].toUpperCase().split("/") : [];
+          })
+          .flat();
+        const hasMatchingLine = Array.from(filters.subwayLines).some((line) =>
+          clinicLines.includes(line),
+        );
+        if (!hasMatchingLine) return false;
+      } else if (filters.subwayLines.size > 0) {
+        return false; // No transit data but filter is active
+      }
+
+      // Bus routes filter (OR logic)
+      if (filters.busRoutes.size > 0 && clinic.bus) {
+        const clinicBuses = clinic.bus
+          .split(",")
+          .map((b) =>
+            b.trim().split(" at ")[0].split("...")[0].trim().toUpperCase(),
+          );
+        const hasMatchingBus = Array.from(filters.busRoutes).some((route) =>
+          clinicBuses.includes(route),
+        );
+        if (!hasMatchingBus) return false;
+      } else if (filters.busRoutes.size > 0) {
+        return false; // No bus data but filter is active
       }
 
       return true;

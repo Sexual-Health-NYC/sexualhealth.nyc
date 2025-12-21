@@ -1,8 +1,11 @@
 import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import Select from "react-select";
 import useAppStore from "../store/useAppStore";
 import theme from "../theme";
 import LanguageSwitcher from "./LanguageSwitcher";
+import SubwayBullet from "./SubwayBullet";
+import transitData from "../data/transitLines.json";
 
 export default function FilterBar() {
   const { t } = useTranslation([
@@ -60,7 +63,11 @@ export default function FilterBar() {
       filters.insurance.size +
       filters.access.size +
       filters.boroughs.size +
-      (filters.gestationalWeeks !== null ? 1 : 0)
+      (filters.gestationalWeeks !== null ? 1 : 0) +
+      (filters.openNow ? 1 : 0) +
+      (filters.openAfter5pm ? 1 : 0) +
+      filters.subwayLines.size +
+      filters.busRoutes.size
     );
   };
 
@@ -478,6 +485,130 @@ export default function FilterBar() {
               category="boroughs"
             />
             {filters.services.has("abortion") && <GestationalDropdown />}
+
+            {/* Time filters */}
+            <button
+              onClick={() => setFilter("openNow", !filters.openNow)}
+              className={`filter-pill${filters.openNow ? " active" : ""}`}
+              style={{
+                padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
+                backgroundColor: filters.openNow ? theme.colors.open : "white",
+                color: filters.openNow ? "white" : theme.colors.textPrimary,
+                border: `2px solid ${filters.openNow ? theme.colors.open : theme.colors.border}`,
+                borderRadius: theme.borderRadius.md,
+                fontSize: theme.fonts.size.sm,
+                fontWeight: theme.fonts.weight.medium,
+                cursor: "pointer",
+              }}
+            >
+              {t("messages:openNow")}
+            </button>
+            <button
+              onClick={() => setFilter("openAfter5pm", !filters.openAfter5pm)}
+              className={`filter-pill${filters.openAfter5pm ? " active" : ""}`}
+              style={{
+                padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
+                backgroundColor: filters.openAfter5pm
+                  ? theme.colors.primary
+                  : "white",
+                color: filters.openAfter5pm
+                  ? "white"
+                  : theme.colors.textPrimary,
+                border: `2px solid ${filters.openAfter5pm ? theme.colors.primary : theme.colors.border}`,
+                borderRadius: theme.borderRadius.md,
+                fontSize: theme.fonts.size.sm,
+                fontWeight: theme.fonts.weight.medium,
+                cursor: "pointer",
+              }}
+            >
+              {t("messages:openAfter5pm")}
+            </button>
+
+            {/* Subway filter */}
+            <div style={{ minWidth: "180px" }}>
+              <Select
+                isMulti
+                placeholder={t("messages:subway")}
+                value={Array.from(filters.subwayLines).map((line) => ({
+                  value: line,
+                  label: line,
+                }))}
+                onChange={(selected) => {
+                  setFilter(
+                    "subwayLines",
+                    new Set(selected?.map((s) => s.value) || []),
+                  );
+                }}
+                options={transitData.subwayLines.map((line) => ({
+                  value: line,
+                  label: line,
+                }))}
+                formatOptionLabel={({ value }) => (
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "8px",
+                    }}
+                  >
+                    <SubwayBullet line={value} />
+                    <span>{value} train</span>
+                  </div>
+                )}
+                styles={{
+                  control: (base) => ({
+                    ...base,
+                    borderColor:
+                      filters.subwayLines.size > 0
+                        ? theme.colors.primary
+                        : theme.colors.border,
+                    borderWidth: "2px",
+                    "&:hover": { borderColor: theme.colors.primaryLight },
+                  }),
+                  multiValue: (base) => ({
+                    ...base,
+                    backgroundColor: `${theme.colors.primary}20`,
+                  }),
+                }}
+              />
+            </div>
+
+            {/* Bus filter */}
+            <div style={{ minWidth: "180px" }}>
+              <Select
+                isMulti
+                placeholder={t("messages:bus")}
+                value={Array.from(filters.busRoutes).map((route) => ({
+                  value: route,
+                  label: route,
+                }))}
+                onChange={(selected) => {
+                  setFilter(
+                    "busRoutes",
+                    new Set(selected?.map((s) => s.value) || []),
+                  );
+                }}
+                options={transitData.busRoutes.map((route) => ({
+                  value: route,
+                  label: route,
+                }))}
+                styles={{
+                  control: (base) => ({
+                    ...base,
+                    borderColor:
+                      filters.busRoutes.size > 0
+                        ? theme.colors.primary
+                        : theme.colors.border,
+                    borderWidth: "2px",
+                    "&:hover": { borderColor: theme.colors.primaryLight },
+                  }),
+                  multiValue: (base) => ({
+                    ...base,
+                    backgroundColor: `${theme.colors.primary}20`,
+                  }),
+                }}
+              />
+            </div>
           </div>
 
           {getActiveFilterCount() > 0 && (

@@ -20,5 +20,8 @@
   "walkIns": "Walk-ins",
   "viewDetails": "View details for {{name}}",
   "cluster": "Cluster of {{count}} clinics. Zoom in to see individual clinics.",
-  "skipToMain": "Skip to main content"
+  "skipToMain": "Skip to main content",
+  "openAfter5pm": "Open after 5pm",
+  "subway": "Subway line",
+  "bus": "Bus route"
 }

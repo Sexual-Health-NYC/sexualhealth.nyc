@@ -11,6 +11,10 @@ const useAppStore = create((set) => ({
     access: new Set(),
     boroughs: new Set(),
     gestationalWeeks: null, // null = no filter, number = weeks pregnant
+    openNow: false,
+    openAfter5pm: false,
+    subwayLines: new Set(),
+    busRoutes: new Set(),
   },
 
   // UI State
@@ -37,6 +41,10 @@ const useAppStore = create((set) => ({
         access: new Set(),
         boroughs: new Set(),
         gestationalWeeks: null,
+        openNow: false,
+        openAfter5pm: false,
+        subwayLines: new Set(),
+        busRoutes: new Set(),
       },
     }),
   setGestationalWeeks: (weeks) =>

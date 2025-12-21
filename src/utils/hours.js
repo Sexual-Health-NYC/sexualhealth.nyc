@@ -321,3 +321,32 @@ function formatDayRange(days) {
 
   return days.join(", ");
 }
+
+/**
+ * Check if clinic is open after a specific hour today (e.g., 17 for 5 PM)
+ */
+export function isOpenAfter(hours, afterHour = 17) {
+  if (!hours || hours.length === 0) return false;
+
+  const now = getNYCTime();
+  const currentDayName = DAY_ORDER[now.getDay()];
+  const afterMinutes = afterHour * 60;
+
+  // Find schedules that apply to today
+  const todaySchedules = hours.filter(
+    (h) => h.days && h.days.includes(currentDayName),
+  );
+
+  for (const schedule of todaySchedules) {
+    // All day means open after 5pm
+    if (schedule.allDay) return true;
+
+    const closeTime = parseTime(schedule.close);
+    // If clinic closes after the target hour, it's open after that hour
+    if (closeTime !== null && closeTime > afterMinutes) {
+      return true;
+    }
+  }
+
+  return false;
+}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import useAppStore from "../store/useAppStore";
 import theme from "../theme";
@@ -9,6 +9,7 @@ import {
   getUpcomingHoliday,
 } from "../utils/hours";
 import { TransitInfo, BusInfo } from "./SubwayBullet";
+import CorrectionFormModal from "./CorrectionFormModal";
 
 export default function ClinicListView({ clinics, onShowMap }) {
   const { t } = useTranslation([
@@ -80,11 +81,16 @@ export default function ClinicListView({ clinics, onShowMap }) {
 
 function ClinicCard({ clinic, expanded, onToggle, onShowOnMap, t }) {
   const [copiedAddress, setCopiedAddress] = useState(false);
+  const [showCorrectionForm, setShowCorrectionForm] = useState(false);
   const openStatus = getOpenStatus(clinic.hours);
   const holidayToday = isHoliday(new Date());
   const holidayName = holidayToday
     ? getUpcomingHoliday()?.name || "Holiday"
     : null;
+
+  useEffect(() => {
+    setShowCorrectionForm(false);
+  }, [expanded]);
 
   const services = [];
   if (clinic.has_sti_testing)
@@ -542,6 +548,42 @@ function ClinicCard({ clinic, expanded, onToggle, onShowOnMap, t }) {
               )}
             </div>
           )}
+
+          {/* Report Correction */}
+          <div
+            style={{
+              paddingBottom: theme.spacing[3],
+              marginBottom: theme.spacing[3],
+              borderBottom: `1px solid ${theme.colors.border}`,
+            }}
+          >
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setShowCorrectionForm(!showCorrectionForm);
+              }}
+              style={{
+                background: "none",
+                border: "none",
+                color: theme.colors.textSecondary,
+                fontSize: theme.fonts.size.xs,
+                cursor: "pointer",
+                padding: 0,
+                textDecoration: "underline",
+              }}
+              aria-expanded={showCorrectionForm}
+            >
+              {showCorrectionForm
+                ? "Cancel correction"
+                : t("actions:reportCorrection")}
+            </button>
+
+            <CorrectionFormModal
+              clinicName={clinic.name}
+              onClose={() => setShowCorrectionForm(false)}
+              isExpanded={showCorrectionForm}
+            />
+          </div>
 
           {/* Show on map button */}
           <button

@@ -20,5 +20,8 @@
   "walkIns": "Sin cita",
   "viewDetails": "Ver detalles de {{name}}",
   "cluster": "Grupo de {{count}} clínicas. Acerque para ver clínicas individuales.",
-  "skipToMain": "Saltar al contenido principal"
+  "skipToMain": "Saltar al contenido principal",
+  "openAfter5pm": "Abierto después de 5pm",
+  "subway": "Línea de metro",
+  "bus": "Ruta de autobús"
 }

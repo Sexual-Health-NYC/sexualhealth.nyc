@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import useAppStore from "../store/useAppStore";
 import theme from "../theme";
@@ -23,6 +23,10 @@ export default function ClinicDetailPanel() {
   const { selectedClinic, selectClinic } = useAppStore();
   const [copiedAddress, setCopiedAddress] = useState(false);
   const [showCorrectionForm, setShowCorrectionForm] = useState(false);
+
+  useEffect(() => {
+    setShowCorrectionForm(false);
+  }, [selectedClinic]);
 
   if (!selectedClinic) return null;
 
@@ -469,7 +473,7 @@ export default function ClinicDetailPanel() {
           }}
         >
           <button
-            onClick={() => setShowCorrectionForm(true)}
+            onClick={() => setShowCorrectionForm(!showCorrectionForm)}
             style={{
               background: "none",
               border: "none",
@@ -486,19 +490,20 @@ export default function ClinicDetailPanel() {
             onBlur={(e) => {
               e.currentTarget.style.outline = "none";
             }}
+            aria-expanded={showCorrectionForm}
           >
-            {t("actions:reportCorrection")}
+            {showCorrectionForm
+              ? "Cancel correction"
+              : t("actions:reportCorrection")}
           </button>
+
+          <CorrectionFormModal
+            clinicName={selectedClinic.name}
+            onClose={() => setShowCorrectionForm(false)}
+            isExpanded={showCorrectionForm}
+          />
         </div>
       </div>
-
-      {/* Correction Form Modal */}
-      {showCorrectionForm && (
-        <CorrectionFormModal
-          clinicName={selectedClinic.name}
-          onClose={() => setShowCorrectionForm(false)}
-        />
-      )}
     </div>
   );
 }
