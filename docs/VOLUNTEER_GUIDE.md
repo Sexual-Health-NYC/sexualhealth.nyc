@@ -1,35 +1,75 @@
-# Volunteer Data Verification & Outreach Guide
+# Volunteer Data Verification Guide
 
-Thank you for helping us build the most accurate sexual health resource for NYC! Your calls serve two purposes: **verifying critical data** and **introducing clinics to this free resource**.
+Thanks for helping build the most accurate sexual health resource for NYC!
 
-## 🎯 Current Goal: Fill the Gaps
-We have 75 clinics in our database, but **26 of them are missing operating hours**. This is our top priority.
+## Current Gaps
 
-## 📋 Your Task
-1.  **Pick a clinic** from the [Call List](VOLUNTEER_CALL_LIST.md).
-2.  **Call them** during business hours.
-3.  **Verify** the information below.
-4.  **Submit** your findings via our [Correction Form](https://sexualhealth.nyc/contact) (or the Airtable form if you have access).
+| Gap                           | Count | Priority |
+| ----------------------------- | ----- | -------- |
+| Missing hours                 | 4     | High     |
+| Missing Medicaid plan details | 43    | Medium   |
 
-## 📞 Script
+## The Call
 
-### 1. Introduction
-> "Hi, I'm calling from **sexualhealth.nyc** — we're building a free, non-profit directory to help New Yorkers find sexual health services. I just wanted to verify your current operating hours to make sure we're sending patients to you at the right times."
+When you reach someone, verify as much as you can. Start with the highest priority gaps for that clinic.
 
-### 2. Verification Questions
-*   "What are your specific hours for **[STI testing / PrEP / Abortion services]**?" (Many clinics have general hospital hours that differ from specific service hours).
-*   "Do you accept walk-ins, or is it appointment only?"
-*   "Are there specific hours for walk-ins?"
+### Script
 
-### 3. Closing & Future Contact (Important!)
-> "Thank you! One last thing — if your hours or services ever change, is there a specific email address we can contact to update our listing? We want to keep your page accurate."
+**Intro:**
 
-*(Record this email if given — it's gold for future maintenance!)*
+> "Hi, I'm calling from sexualhealth.nyc — we're a free non-profit directory helping New Yorkers find sexual health services. I'm verifying your listing to make sure we're sending people to you correctly."
 
-## 📝 What to Watch Out For
-*   **Department Hours vs. General Hours:** Hospitals often have a main line open 24/7, but the *Sexual Health Clinic* might only be open Mon-Fri 9-5. **Always ask for the specific clinic hours.**
-*   **Lunch Breaks:** Some clinics close from 12-1pm. Ask if they close for lunch.
-*   **Registration Cut-off:** "We close at 5pm, but stop taking patients at 4pm." Record the 4pm time if possible, or note it.
+**If missing hours:**
 
-## 🚀 Ready?
-Go to **[VOLUNTEER_CALL_LIST.md](VOLUNTEER_CALL_LIST.md)** to see which clinics need help!
+> "What are your hours for sexual health services like STI testing or PrEP?"
+
+_(Watch for: department hours vs general hospital hours, lunch breaks, registration cut-offs)_
+
+**If they accept Medicaid:**
+
+> "I see you accept Medicaid. Is that straight Medicaid, managed care plans, or both? Which plans specifically?"
+
+_(Common MCOs: Healthfirst, MetroPlus, Fidelis, UHC, Emblem, Wellcare, Molina)_
+
+**Always ask:**
+
+> "If anything changes, is there an email we can contact to update your listing?"
+
+### Recording Answers
+
+Update directly in Airtable. If you don't have access, email your findings to the project maintainer.
+
+Note:
+
+- Clinic name
+- Hours (by day, note any lunch breaks)
+- Medicaid type: straight / managed / both
+- Specific MCOs accepted
+- Contact email for updates
+
+---
+
+## Email Outreach
+
+Some clinics respond better to email. Template:
+
+**Subject:** Verifying your listing on sexualhealth.nyc
+
+> Hi,
+>
+> I'm reaching out from sexualhealth.nyc, a free non-profit directory helping New Yorkers find sexual health services.
+>
+> We have your clinic listed and want to make sure the information is accurate. Could you confirm:
+>
+> 1. Your current hours for sexual health services (STI testing, PrEP, etc.)
+> 2. Which Medicaid plans you accept (straight Medicaid, managed care plans like Healthfirst/Fidelis/MetroPlus, etc.)
+>
+> We want to make sure we're directing patients to you correctly.
+>
+> Thanks!
+
+---
+
+## Call List
+
+See **[VOLUNTEER_CALL_LIST.md](VOLUNTEER_CALL_LIST.md)** for the full list sorted by priority.

@@ -2,5 +2,10 @@
   "acceptsMedicaid": "Accepts Medicaid",
   "acceptsMedicare": "Accepts Medicare",
   "noInsuranceOk": "No Insurance Required",
-  "slidingScale": "Sliding Scale"
+  "slidingScale": "Sliding Scale",
+  "medicaidStraight": "Straight Medicaid",
+  "medicaidManaged": "Medicaid Managed Care",
+  "medicaidBoth": "Straight & Managed Medicaid",
+  "medicaidMcos": "Plans: {{mcos}}",
+  "medicaidCallToVerify": "(call to verify specific plans)"
 }

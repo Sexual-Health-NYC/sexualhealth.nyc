@@ -64,6 +64,70 @@ function formatHours(clinicId, hoursMap) {
   }));
 }
 
+// Known Medicaid MCOs in NYC
+const MEDICAID_MCOS = [
+  "Healthfirst",
+  "MetroPlus",
+  "Fidelis Care",
+  "UHC", // UnitedHealthcare
+  "Emblem Health",
+  "Wellcare",
+  "Molina",
+  "Affinity",
+  "Amerigroup",
+  "Healthplus",
+];
+
+function extractMedicaidInfo(insurancePlans) {
+  if (
+    !insurancePlans ||
+    !Array.isArray(insurancePlans) ||
+    insurancePlans.length === 0
+  ) {
+    return { medicaid_mcos: [], medicaid_type: null };
+  }
+
+  const mcos = [];
+  let hasStraightMedicaid = false;
+
+  for (const plan of insurancePlans) {
+    const planLower = plan.toLowerCase();
+
+    // Check for straight Medicaid
+    if (
+      planLower === "medicaid" ||
+      planLower === "medicaid family planning" ||
+      planLower === "medicaid for pregnant women" ||
+      planLower === "nys emergency medicaid"
+    ) {
+      hasStraightMedicaid = true;
+    }
+
+    // Check for MCO-specific Medicaid plans
+    for (const mco of MEDICAID_MCOS) {
+      if (
+        planLower.includes(mco.toLowerCase()) &&
+        planLower.includes("medicaid")
+      ) {
+        if (!mcos.includes(mco)) {
+          mcos.push(mco);
+        }
+      }
+    }
+  }
+
+  let medicaidType = null;
+  if (hasStraightMedicaid && mcos.length > 0) {
+    medicaidType = "both";
+  } else if (hasStraightMedicaid) {
+    medicaidType = "straight";
+  } else if (mcos.length > 0) {
+    medicaidType = "managed";
+  }
+
+  return { medicaid_mcos: mcos, medicaid_type: medicaidType };
+}
+
 function recordToFeature(record, hoursMap) {
   const f = record.fields;
 
@@ -71,6 +135,9 @@ function recordToFeature(record, hoursMap) {
   if (!f.Latitude || !f.Longitude) {
     return null;
   }
+
+  const insurancePlans = f["Insurance Plans Accepted"] || [];
+  const { medicaid_mcos, medicaid_type } = extractMedicaidInfo(insurancePlans);
 
   return {
     type: "Feature",
@@ -115,7 +182,9 @@ function recordToFeature(record, hoursMap) {
       accepts_medicare: f["Accepts Medicare"] || false,
       sliding_scale: f["Sliding Scale"] || false,
       no_insurance_ok: f["No Insurance OK"] || false,
-      insurance_plans: f["Insurance Plans Accepted"] || [],
+      insurance_plans: insurancePlans,
+      medicaid_mcos: medicaid_mcos,
+      medicaid_type: medicaid_type,
 
       // Access
       walk_in: f["Walk-ins OK"] || false,

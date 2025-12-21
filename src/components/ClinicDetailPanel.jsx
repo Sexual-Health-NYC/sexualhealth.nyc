@@ -80,8 +80,27 @@ export default function ClinicDetailPanel() {
   if (selectedClinic.walk_in) quickFacts.push(t("messages:walkIns"));
   if (selectedClinic.no_insurance_ok)
     quickFacts.push(t("insurance:noInsuranceOk"));
-  if (selectedClinic.accepts_medicaid)
-    quickFacts.push(t("insurance:acceptsMedicaid"));
+
+  // Medicaid - show granular info if available
+  if (selectedClinic.accepts_medicaid) {
+    const mcos = selectedClinic.medicaid_mcos;
+    const mtype = selectedClinic.medicaid_type;
+
+    if (mcos && mcos.length > 0) {
+      // We have specific MCO data
+      quickFacts.push(`Medicaid: ${mcos.join(", ")}`);
+    } else if (mtype === "straight") {
+      quickFacts.push(t("insurance:medicaidStraight"));
+    } else if (mtype === "managed") {
+      quickFacts.push(t("insurance:medicaidManaged"));
+    } else if (mtype === "both") {
+      quickFacts.push(t("insurance:medicaidBoth"));
+    } else {
+      // Just the boolean, no granular data
+      quickFacts.push(t("insurance:acceptsMedicaid"));
+    }
+  }
+
   if (selectedClinic.accepts_medicare)
     quickFacts.push(t("insurance:acceptsMedicare"));
   if (selectedClinic.sliding_scale)

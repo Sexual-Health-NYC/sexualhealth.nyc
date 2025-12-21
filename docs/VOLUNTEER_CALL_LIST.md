@@ -1,213 +1,219 @@
 # Volunteer Call List
 
-The following clinics have missing critical information (Hours or Phone). Please prioritize verifying these.
+Clinics sorted by priority, then borough.
 
-## 🚨 Missing Hours or Phone
-### Apicha Community Health Center (Jackson Heights)
-- **Phone:** (718) 567-5200
-- **Website:** https://www.apicha.org/locations/jackson-heights-clinic/
-- **Missing:** Hours
+## Priority 1: Missing Hours (4 clinics)
 
-**Script:** "Hi, I'm verifying information for a free NYC health directory. Could you please confirm your current operating hours?"
+These clinics have no hours data at all.
 
----
-### Bellevue Hospital Center Obg
-- **Phone:** (212) 562-5555
-- **Website:** 
-- **Missing:** Hours
-
-**Script:** "Hi, I'm verifying information for a free NYC health directory. Could you please confirm your current operating hours?"
-
----
-### Brooklyn Abortion Clinic
-- **Phone:** (718) 369-1900
-- **Website:** 
-- **Missing:** Hours
-
-**Script:** "Hi, I'm verifying information for a free NYC health directory. Could you please confirm your current operating hours?"
-
----
-### Callen-Lorde Community Health Center
-- **Phone:** (212) 271-7200
-- **Website:** callen-lorde.org/
-- **Missing:** Hours
-
-**Script:** "Hi, I'm verifying information for a free NYC health directory. Could you please confirm your current operating hours?"
-
----
-### Community Health Action of Staten Island (CHASI)
-- **Phone:** (718) 808-1300
-- **Website:** www.chasiny.org
-- **Missing:** Hours
-
-**Script:** "Hi, I'm verifying information for a free NYC health directory. Could you please confirm your current operating hours?"
-
----
-### Community Health Center of Richmond - Canal Street
-- **Phone:** (718) 924-2254
-- **Website:** https://chcrichmond.org
-- **Missing:** Hours
-
-**Script:** "Hi, I'm verifying information for a free NYC health directory. Could you please confirm your current operating hours?"
-
----
-### Community Health Center of Richmond - South Avenue
-- **Phone:** (718) 924-2254
-- **Website:** www.chcrichmond.org
-- **Missing:** Hours
-
-**Script:** "Hi, I'm verifying information for a free NYC health directory. Could you please confirm your current operating hours?"
-
----
 ### Destination Tomorrow
 - **Phone:** (646) 723-3325
 - **Website:** http://destinationtomorrow.org/
-- **Missing:** Hours
+- **Borough:** Bronx
+- **Needs:** Hours
 
-**Script:** "Hi, I'm verifying information for a free NYC health directory. Could you please confirm your current operating hours?"
-
----
-### Dr. Emily Women's Health Center
-- **Phone:** (718) 585-1010
-- **Website:** 
-- **Missing:** Hours
-
-**Script:** "Hi, I'm verifying information for a free NYC health directory. Could you please confirm your current operating hours?"
-
----
-### Early Options
-- **Phone:** (212) 431-8533
-- **Website:** 
-- **Missing:** Hours
-
-**Script:** "Hi, I'm verifying information for a free NYC health directory. Could you please confirm your current operating hours?"
-
----
-### Eastside Gynecology
-- **Phone:** (212) 308-4988
-- **Website:** 
-- **Missing:** Hours
-
-**Script:** "Hi, I'm verifying information for a free NYC health directory. Could you please confirm your current operating hours?"
-
----
-### Labtek STD Testing Centers
-- **Phone:** (888) 510-3132
-- **Website:** 
-- **Missing:** Hours
-
-**Script:** "Hi, I'm verifying information for a free NYC health directory. Could you please confirm your current operating hours?"
-
----
 ### Manhattan Sexual Health and Wellness
 - **Phone:** (212) 686-9015
-- **Website:** 
-- **Missing:** Hours
+- **Borough:** Manhattan
+- **Needs:** Hours
 
-**Script:** "Hi, I'm verifying information for a free NYC health directory. Could you please confirm your current operating hours?"
-
----
-### Maze Women’s Sexual Health - NYC
-- **Phone:** 
-- **Website:** 
-- **Missing:** Hours, Phone Number
-
-**Script:** "Hi, I'm verifying information for a free NYC health directory. Could you please confirm your current operating hours?"
-
----
-### NYC DOH - Chelsea Express Clinic
-- **Phone:** (347) 396-7959
-- **Website:** https://www.nyc.gov/site/doh/services/sexual-health-clinics.page
-- **Missing:** Hours
-
-**Script:** "Hi, I'm verifying information for a free NYC health directory. Could you please confirm your current operating hours?"
-
----
 ### NYC DOH - Corona Sexual Health Clinic
 - **Phone:** (347) 396-7959
 - **Website:** https://www.nyc.gov/site/doh/services/sexual-health-clinics.page
-- **Missing:** Hours
+- **Borough:** Queens
+- **Needs:** Hours
 
-**Script:** "Hi, I'm verifying information for a free NYC health directory. Could you please confirm your current operating hours?"
-
----
-### NYC DOH - Fort Greene Express Clinic
-- **Phone:** (347) 396-7959
-- **Website:** 
-- **Missing:** Hours
-
-**Script:** "Hi, I'm verifying information for a free NYC health directory. Could you please confirm your current operating hours?"
+### Community Health Action of Staten Island (CHASI)
+- **Phone:** (718) 808-1300
+- **Website:** www.chasiny.org
+- **Borough:** Staten Island
+- **Needs:** Hours
 
 ---
-### NYC DOH - Morrisania Sexual Health Clinic
-- **Phone:** (347) 396-7959
-- **Website:** https://www.nyc.gov/site/doh/services/sexual-health-clinics.page
-- **Missing:** Hours
 
-**Script:** "Hi, I'm verifying information for a free NYC health directory. Could you please confirm your current operating hours?"
+## Priority 2: Needs Medicaid Plan Details (43 clinics)
 
----
-### NYC Health + Hospitals / Harlem
-- **Phone:** (212) 939-8095
-- **Website:** 
-- **Missing:** Hours
+These clinics accept Medicaid but we don't know which specific plans.
 
-**Script:** "Hi, I'm verifying information for a free NYC health directory. Could you please confirm your current operating hours?"
+### Bronx
 
----
-### NYC Health + Hospitals / Queens
-- **Phone:** (718) 883-3244
-- **Website:** 
-- **Missing:** Hours
+**Callen-Lorde Bronx**
+- Phone: (718) 215-1800
+- Website: https://callen-lorde.org/bronx/
 
-**Script:** "Hi, I'm verifying information for a free NYC health directory. Could you please confirm your current operating hours?"
+**CHN South Bronx Health Center**
+- Phone: (718) 320-4466
+- Website: https://www.chnnyc.org/center/south-bronx/
 
----
-### NYC Health + Hospitals/Metropolitan
-- **Phone:** (212) 423-6262
-- **Website:** 
-- **Missing:** Hours
+**CHN Tremont Health Center**
+- Phone: (718) 294-5891
+- Website: https://www.chnnyc.org/center/chn-tremont/
 
-**Script:** "Hi, I'm verifying information for a free NYC health directory. Could you please confirm your current operating hours?"
+**NYC DOH - Morrisania Sexual Health Clinic**
+- Phone: (347) 396-7959
+- Website: https://www.nyc.gov/site/doh/services/sexual-health-clinics.page
 
----
-### Planned Parenthood - Queens (Diane L. Max)
-- **Phone:** (212) 965-7000
-- **Website:** 
-- **Missing:** Hours
+**NYC Health + Hospitals/Gotham Health, Morrisania**
+- Phone: (844) 692-4692
+- Website: https://www.nychealthandhospitals.org/locations/gotham-health-morrisania/
 
-**Script:** "Hi, I'm verifying information for a free NYC health directory. Could you please confirm your current operating hours?"
+**NYC Health + Hospitals/Jacobi (Pride Health Center)**
+- Phone: (718) 918-5000
+- Website: https://www.nychealthandhospitals.org/jacobi/services/lgbtq-health-care-services/
 
----
-### Professional Gynecological Services
-- **Phone:** (718) 875-4848
-- **Website:** 
-- **Missing:** Hours
+**NYC Health + Hospitals/Lincoln (Teen Health Center)**
+- Phone: (718) 579-6133
+- Website: https://www.nychealthandhospitals.org/lincoln/services/teen-health-center/
 
-**Script:** "Hi, I'm verifying information for a free NYC health directory. Could you please confirm your current operating hours?"
+**NYC Health + Hospitals/North Central Bronx**
+- Phone: (718) 519-3310
+- Website: https://www.nychealthandhospitals.org/north-central-bronx/
 
----
-### Queens Abortion Pill
-- **Phone:** (718) 793-1943
-- **Website:** 
-- **Missing:** Hours
+### Brooklyn
 
-**Script:** "Hi, I'm verifying information for a free NYC health directory. Could you please confirm your current operating hours?"
+**Callen-Lorde Brooklyn**
+- Phone: (718) 215-1818
+- Website: https://callen-lorde.org/brooklyn/
 
----
-### The Institute for Family Health
-- **Phone:** (844) 434-2778
-- **Website:** https://www.institute.org/
-- **Missing:** Hours
+**CHN Crown Heights Health Center**
+- Phone: (718) 778-0198
+- Website: https://www.chnnyc.org/center/chn-crown-heights/
 
-**Script:** "Hi, I'm verifying information for a free NYC health directory. Could you please confirm your current operating hours?"
+**CHN East New York Health Hub**
+- Phone: (718) 495-6700
+- Website: https://www.chnnyc.org/center/chn-east-new-york-health-hub/
 
----
-### The Mount Sinai Comprehensive Health – Downtown
-- **Phone:** (212) 604-1701
-- **Website:** 
-- **Missing:** Hours
+**CHN Williamsburg Health Center**
+- Phone: (718) 388-0390
+- Website: https://www.chnnyc.org/center/chn-williamsburg/
 
-**Script:** "Hi, I'm verifying information for a free NYC health directory. Could you please confirm your current operating hours?"
+**Housing Works - Downtown Brooklyn Health Center**
+- Phone: (718) 277-0386
+- Website: https://healthcare.housingworks.org
 
----
+**NYC DOH - Fort Greene Sexual Health Clinic**
+- Phone: (347) 396-7959
+- Website: https://www.nyc.gov/site/doh/services/sexual-health-clinics.page
+
+**NYC Health + Hospitals/Kings County**
+- Phone: (718) 245-3131
+- Website: https://www.nychealthandhospitals.org/kings-county/
+
+**NYC Health + Hospitals/South Brooklyn Health**
+- Phone: (718) 616-3000
+- Website: https://www.nychealthandhospitals.org/southbrooklynhealth/
+
+**NYC Health + Hospitals/Woodhull (Pride Health Center)**
+- Phone: (718) 963-8068
+- Website: https://www.nychealthandhospitals.org/woodhull/services/the-pride-health-center/
+
+### Manhattan
+
+**Ali Forney Center**
+- Phone: (212) 206-0574
+- Website: https://www.aliforneycenter.org/
+
+**Apicha Community Health Center (Manhattan)**
+- Phone: (212) 334-6029
+- Website: https://www.apicha.org
+
+**Callen-Lorde Chelsea**
+- Phone: (212) 271-7200
+- Website: https://callen-lorde.org/chelsea/
+
+**Charles B. Wang Community Health Center (Chinatown)**
+- Phone: (212) 379-6988
+- Website: https://www.cbwchc.org
+
+**CHN Harlem Health Center**
+- Phone: (212) 426-0088
+- Website: https://www.chnnyc.org/center/harlem-health-center/
+
+**CHN Lower East Side Health Center**
+- Phone: (212) 477-1120
+- Website: https://www.chnnyc.org/center/chn-lower-east-side/
+
+**CHN Washington Heights Health Center**
+- Phone: (212) 781-7979
+- Website: https://www.chnnyc.org/center/chn-washington-heights/
+
+**Housing Works - Ginny Shubert Center**
+- Phone: (212) 971-0428 (Verify)
+- Website: https://healthcare.housingworks.org/locations/ginny-shubert
+
+**Mount Sinai Adolescent Health Center**
+- Phone: (212) 423-3000
+- Website: https://www.mountsinai.org/locations/adolescent-health-center
+
+**NYC DOH - Central Harlem Sexual Health Clinic**
+- Phone: (347) 396-7959
+- Website: https://www.nyc.gov/site/doh/services/sexual-health-clinics.page
+
+**NYC DOH - Chelsea Sexual Health Clinic**
+- Phone: (347) 396-7959
+- Website: https://www.nyc.gov/site/doh/services/sexual-health-clinics.page
+
+**NYC Health + Hospitals/Harlem**
+- Phone: (212) 939-8273
+- Website: https://www.nychealthandhospitals.org/harlem/
+
+**Parkmed NYC**
+- Phone: (212) 686-6066
+- Website: https://parkmed.com
+
+**Ryan Chelsea-Clinton Community Health Center**
+- Phone: (212) 749-1820
+- Website: https://ryanhealth.org/locations/ryan-chelsea-clinton-community-health-center
+
+**The Door - Adolescent Health Center**
+- Phone: (212) 453-0222
+- Website: https://www.door.org/health/
+
+### Queens
+
+**All Women's Medical of Queens**
+- Phone: (718) 793-1943
+- Website: https://nyabortion.com/
+
+**Charles B. Wang Community Health Center (Flushing)**
+- Phone: (718) 886-1200
+- Website: https://www.cbwchc.org
+
+**CHN Jamaica Health Center**
+- Phone: (718) 523-2123
+- Website: https://www.chnnyc.org/center/chn-jamaica/
+
+**CHN Long Island City Health Center**
+- Phone: (718) 482-7772
+- Website: https://www.chnnyc.org/center/chn-long-island-city/
+
+**CHN Sutphin Blvd Health Center**
+- Phone: (718) 657-7088
+- Website: https://www.chnnyc.org/center/chn-sutphin-blvd/
+
+**Choices Women's Medical Center**
+- Phone: (718) 786-5000
+- Website: https://choicesmedical.com
+
+**NYC DOH - Jamaica Sexual Health Clinic**
+- Phone: (347) 396-7959
+- Website: https://www.nyc.gov/site/doh/services/sexual-health-clinics.page
+
+**NYC Health + Hospitals/Elmhurst**
+- Phone: (718) 334-4000
+- Website: https://www.nychealthandhospitals.org/elmhurst/
+
+**NYC Health + Hospitals/Queens**
+- Phone: (718) 883-3244
+- Website: https://www.nychealthandhospitals.org/queens/
+
+### Staten Island
+
+**NYC Health + Hospitals/Gotham Health, Vanderbilt**
+- Phone: (844) 692-4692
+- Website: https://www.nychealthandhospitals.org/locations/gotham-health-vanderbilt/
+
+**Planned Parenthood - Staten Island Center**
+- Phone: (212) 965-7000
+- Website: https://www.plannedparenthood.org/planned-parenthood-greater-new-york
+
