@@ -36,6 +36,7 @@ export default function ClinicDetailPanel() {
 
   return (
     <div
+      onClick={(e) => e.stopPropagation()}
       style={{
         position: "absolute",
         top: 0,

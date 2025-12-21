@@ -70,6 +70,7 @@ export default function ClinicBottomSheet() {
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
+      onClick={(e) => e.stopPropagation()}
       style={{
         position: "fixed",
         bottom: 0,
