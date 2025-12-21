@@ -525,6 +525,7 @@ export default function FilterBar() {
             options={serviceOptions}
             category="services"
           />
+          {filters.services.has("abortion") && <GestationalDropdown />}
           <FilterDropdown
             name="insurance"
             title={t("sections:insuranceAndCost")}
@@ -537,7 +538,6 @@ export default function FilterBar() {
             options={boroughOptions}
             category="boroughs"
           />
-          {filters.services.has("abortion") && <GestationalDropdown />}
 
           {/* Time filters */}
           <button
