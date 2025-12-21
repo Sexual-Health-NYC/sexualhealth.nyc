@@ -24,6 +24,7 @@ export default function FilterBar() {
     clearFilters,
     setGestationalWeeks,
     selectedClinic,
+    clinics,
   } = useAppStore();
   const {
     serviceOptions,
@@ -36,6 +37,10 @@ export default function FilterBar() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
+  const [showAutocomplete, setShowAutocomplete] = useState(false);
+  const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(-1);
+  const searchInputRef = useRef(null);
+  const autocompleteRef = useRef(null);
   const dropdownRefs = {
     services: useRef(null),
     genderAffirming: useRef(null),
@@ -44,6 +49,17 @@ export default function FilterBar() {
     boroughs: useRef(null),
     gestational: useRef(null),
   };
+
+  // Get matching clinic suggestions
+  const suggestions = filters.searchQuery.trim()
+    ? clinics
+        .filter((clinic) =>
+          clinic.name
+            .toLowerCase()
+            .includes(filters.searchQuery.toLowerCase().trim()),
+        )
+        .slice(0, 10)
+    : [];
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
@@ -59,10 +75,21 @@ export default function FilterBar() {
           setOpenDropdown(null);
         }
       }
+
+      if (
+        showAutocomplete &&
+        autocompleteRef.current &&
+        searchInputRef.current &&
+        !autocompleteRef.current.contains(event.target) &&
+        !searchInputRef.current.contains(event.target)
+      ) {
+        setShowAutocomplete(false);
+        setSelectedSuggestionIndex(-1);
+      }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [openDropdown]);
+  }, [openDropdown, showAutocomplete]);
 
   // Close mobile filter modal when a clinic is selected
   useEffect(() => {
@@ -456,13 +483,47 @@ export default function FilterBar() {
             }}
           />
 
-          <div style={{ flex: 1, maxWidth: "400px" }}>
+          <div style={{ flex: 1, maxWidth: "400px", position: "relative" }}>
             <input
+              ref={searchInputRef}
               type="search"
               placeholder={t("messages:searchByName")}
               value={filters.searchQuery}
-              onChange={(e) => setFilter("searchQuery", e.target.value)}
+              onChange={(e) => {
+                setFilter("searchQuery", e.target.value);
+                setShowAutocomplete(true);
+                setSelectedSuggestionIndex(-1);
+              }}
+              onKeyDown={(e) => {
+                if (!showAutocomplete || suggestions.length === 0) return;
+
+                if (e.key === "ArrowDown") {
+                  e.preventDefault();
+                  setSelectedSuggestionIndex((prev) =>
+                    prev < suggestions.length - 1 ? prev + 1 : prev,
+                  );
+                } else if (e.key === "ArrowUp") {
+                  e.preventDefault();
+                  setSelectedSuggestionIndex((prev) =>
+                    prev > 0 ? prev - 1 : -1,
+                  );
+                } else if (e.key === "Enter" && selectedSuggestionIndex >= 0) {
+                  e.preventDefault();
+                  setFilter(
+                    "searchQuery",
+                    suggestions[selectedSuggestionIndex].name,
+                  );
+                  setShowAutocomplete(false);
+                  setSelectedSuggestionIndex(-1);
+                } else if (e.key === "Escape") {
+                  setShowAutocomplete(false);
+                  setSelectedSuggestionIndex(-1);
+                }
+              }}
               aria-label="Search clinics by name"
+              aria-autocomplete="list"
+              aria-controls="search-autocomplete"
+              aria-expanded={showAutocomplete && suggestions.length > 0}
               spellCheck="false"
               autoComplete="off"
               autoCorrect="off"
@@ -479,6 +540,9 @@ export default function FilterBar() {
                 e.currentTarget.style.outline = theme.focus.outline;
                 e.currentTarget.style.outlineOffset = theme.focus.outlineOffset;
                 e.currentTarget.style.borderColor = theme.colors.primary;
+                if (filters.searchQuery.trim()) {
+                  setShowAutocomplete(true);
+                }
               }}
               onBlur={(e) => {
                 e.currentTarget.style.outline = "none";
@@ -487,6 +551,75 @@ export default function FilterBar() {
                   : theme.colors.border;
               }}
             />
+
+            {showAutocomplete && suggestions.length > 0 && (
+              <div
+                ref={autocompleteRef}
+                id="search-autocomplete"
+                role="listbox"
+                style={{
+                  position: "absolute",
+                  top: "100%",
+                  insetInlineStart: 0,
+                  insetInlineEnd: 0,
+                  marginTop: "4px",
+                  backgroundColor: "white",
+                  border: `1px solid ${theme.colors.border}`,
+                  borderRadius: theme.borderRadius.md,
+                  boxShadow: theme.shadows.lg,
+                  maxHeight: "300px",
+                  overflowY: "auto",
+                  zIndex: 1001,
+                }}
+              >
+                {suggestions.map((clinic, index) => (
+                  <div
+                    key={clinic.id}
+                    role="option"
+                    aria-selected={index === selectedSuggestionIndex}
+                    onClick={() => {
+                      setFilter("searchQuery", clinic.name);
+                      setShowAutocomplete(false);
+                      setSelectedSuggestionIndex(-1);
+                    }}
+                    onMouseEnter={() => setSelectedSuggestionIndex(index)}
+                    style={{
+                      padding: `${theme.spacing[2]} ${theme.spacing[3]}`,
+                      cursor: "pointer",
+                      backgroundColor:
+                        index === selectedSuggestionIndex
+                          ? theme.colors.surface
+                          : "white",
+                      borderBottom:
+                        index < suggestions.length - 1
+                          ? `1px solid ${theme.colors.border}`
+                          : "none",
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontSize: theme.fonts.size.sm,
+                        fontWeight: theme.fonts.weight.medium,
+                        color: theme.colors.textPrimary,
+                      }}
+                    >
+                      {clinic.name}
+                    </div>
+                    {clinic.borough && (
+                      <div
+                        style={{
+                          fontSize: theme.fonts.size.xs,
+                          color: theme.colors.textSecondary,
+                          marginTop: "2px",
+                        }}
+                      >
+                        {clinic.borough}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
           {getActiveFilterCount() > 0 && (
