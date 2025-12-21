@@ -31,12 +31,14 @@ export default function ClinicDetailPanel() {
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === "Escape" && selectedClinic) {
+        e.preventDefault();
+        e.stopPropagation();
         selectClinic(null);
       }
     };
 
-    document.addEventListener("keydown", handleEscape);
-    return () => document.removeEventListener("keydown", handleEscape);
+    window.addEventListener("keydown", handleEscape, true);
+    return () => window.removeEventListener("keydown", handleEscape, true);
   }, [selectedClinic, selectClinic]);
 
   if (!selectedClinic) return null;

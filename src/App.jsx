@@ -13,11 +13,18 @@ export default function App() {
   const { t } = useTranslation(["messages", "actions"]);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [viewMode, setViewMode] = useState("map"); // "map" or "list"
-  const { clinics, filters } = useAppStore();
+  const { clinics, filters, selectedClinic, selectClinic } = useAppStore();
 
   // Filter clinics based on active filters (shared between map and list views)
   const filteredClinics = useMemo(() => {
     return clinics.filter((clinic) => {
+      // Search query: filter by clinic name
+      if (filters.searchQuery.trim()) {
+        const query = filters.searchQuery.toLowerCase().trim();
+        const clinicName = clinic.name.toLowerCase();
+        if (!clinicName.includes(query)) return false;
+      }
+
       // Services: must have ALL selected services (AND logic)
       if (filters.services.size > 0) {
         const hasAllServices = Array.from(filters.services).every(
@@ -119,6 +126,24 @@ export default function App() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  // Global Escape key handler
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === "Escape" && selectedClinic) {
+        e.preventDefault();
+        e.stopPropagation();
+        selectClinic(null);
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+    window.addEventListener("keydown", handleEscape, true);
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+      window.removeEventListener("keydown", handleEscape, true);
+    };
+  }, [selectedClinic, selectClinic]);
 
   return (
     <div

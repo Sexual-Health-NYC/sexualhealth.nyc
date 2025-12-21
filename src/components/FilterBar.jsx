@@ -72,7 +72,8 @@ export default function FilterBar() {
       (filters.openNow ? 1 : 0) +
       (filters.openAfter5pm ? 1 : 0) +
       filters.subwayLines.size +
-      filters.busRoutes.size
+      filters.busRoutes.size +
+      (filters.searchQuery.trim() ? 1 : 0)
     );
   };
 
@@ -439,12 +440,12 @@ export default function FilterBar() {
           padding: `${theme.spacing[3]} ${theme.spacing[6]}`,
         }}
       >
-        {/* Top row: Logo, Clear All, and Language */}
+        {/* Top row: Logo, Search, Clear All, and Language */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
-            justifyContent: "space-between",
+            gap: theme.spacing[3],
             marginBottom: theme.spacing[3],
           }}
         >
@@ -454,18 +455,53 @@ export default function FilterBar() {
             alt="sexualhealth.nyc"
             width={187}
             height={40}
-            fetchpriority="high"
+            fetchPriority="high"
             style={{
               height: "40px",
               width: "auto",
+              flexShrink: 0,
             }}
           />
+
+          <div style={{ flex: 1, maxWidth: "400px" }}>
+            <input
+              type="search"
+              placeholder={t("messages:searchByName")}
+              value={filters.searchQuery}
+              onChange={(e) => setFilter("searchQuery", e.target.value)}
+              aria-label="Search clinics by name"
+              spellCheck="false"
+              autoComplete="off"
+              autoCorrect="off"
+              autoCapitalize="off"
+              style={{
+                width: "100%",
+                padding: `${theme.spacing[2]} ${theme.spacing[3]}`,
+                border: `2px solid ${filters.searchQuery.trim() ? theme.colors.primary : theme.colors.border}`,
+                borderRadius: theme.borderRadius.md,
+                fontSize: theme.fonts.size.sm,
+                fontFamily: theme.fonts.family,
+              }}
+              onFocus={(e) => {
+                e.currentTarget.style.outline = theme.focus.outline;
+                e.currentTarget.style.outlineOffset = theme.focus.outlineOffset;
+                e.currentTarget.style.borderColor = theme.colors.primary;
+              }}
+              onBlur={(e) => {
+                e.currentTarget.style.outline = "none";
+                e.currentTarget.style.borderColor = filters.searchQuery.trim()
+                  ? theme.colors.primary
+                  : theme.colors.border;
+              }}
+            />
+          </div>
 
           <div
             style={{
               display: "flex",
               gap: theme.spacing[3],
               alignItems: "center",
+              marginLeft: "auto",
             }}
           >
             {getActiveFilterCount() > 0 && (
@@ -760,7 +796,7 @@ export default function FilterBar() {
             alt="sexualhealth.nyc"
             width={140}
             height={30}
-            fetchpriority="high"
+            fetchPriority="high"
             style={{
               height: "30px",
               width: "auto",

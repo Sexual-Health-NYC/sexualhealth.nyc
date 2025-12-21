@@ -15,6 +15,7 @@ const useAppStore = create((set) => ({
     openAfter5pm: false,
     subwayLines: new Set(),
     busRoutes: new Set(),
+    searchQuery: "",
   },
 
   // UI State
@@ -45,6 +46,7 @@ const useAppStore = create((set) => ({
         openAfter5pm: false,
         subwayLines: new Set(),
         busRoutes: new Set(),
+        searchQuery: "",
       },
     }),
   setGestationalWeeks: (weeks) =>

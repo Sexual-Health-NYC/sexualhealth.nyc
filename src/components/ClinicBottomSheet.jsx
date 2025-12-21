@@ -31,6 +31,19 @@ export default function ClinicBottomSheet() {
     setShowCorrectionForm(false);
   }, [selectedClinic]);
 
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === "Escape" && selectedClinic) {
+        e.preventDefault();
+        e.stopPropagation();
+        selectClinic(null);
+      }
+    };
+
+    window.addEventListener("keydown", handleEscape, true);
+    return () => window.removeEventListener("keydown", handleEscape, true);
+  }, [selectedClinic, selectClinic]);
+
   if (!selectedClinic) return null;
 
   const openStatus = getOpenStatus(

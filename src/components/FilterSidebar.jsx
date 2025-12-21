@@ -106,7 +106,7 @@ export default function FilterSidebar() {
             alt="sexualhealth.nyc"
             width={280}
             height={60}
-            fetchpriority="high"
+            fetchPriority="high"
             style={{
               width: "280px",
               height: "60px",

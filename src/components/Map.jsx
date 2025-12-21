@@ -6,11 +6,11 @@ import useAppStore from "../store/useAppStore";
 import ClinicMarkers from "./ClinicMarkers";
 
 // Enable RTL text support
-if (mapboxgl.getRTLTextPluginStatus() === 'unavailable') {
+if (mapboxgl.getRTLTextPluginStatus() === "unavailable") {
   mapboxgl.setRTLTextPlugin(
-    'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.2.3/mapbox-gl-rtl-text.js',
+    "https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.2.3/mapbox-gl-rtl-text.js",
     null,
-    true // Lazy load
+    true, // Lazy load
   );
 }
 
@@ -74,6 +74,7 @@ export default function Map({ filteredClinics }) {
         mapStyle="mapbox://styles/mapbox/streets-v12"
         mapboxAccessToken={MAPBOX_TOKEN}
         style={{ width: "100%", height: "100%" }}
+        keyboard={false}
       >
         <NavigationControl position="top-right" />
         <ClinicMarkers clinics={filteredClinics} />
