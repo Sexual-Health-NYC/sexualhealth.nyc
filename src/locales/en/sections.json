@@ -7,5 +7,6 @@
   "address": "Address",
   "phone": "Phone",
   "website": "Website",
-  "borough": "Borough"
+  "borough": "Borough",
+  "access": "Access"
 }

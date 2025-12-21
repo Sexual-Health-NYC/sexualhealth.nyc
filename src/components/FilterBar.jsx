@@ -10,6 +10,7 @@ export default function FilterBar() {
     "insurance",
     "locations",
     "actions",
+    "gestational",
   ]);
   const { filters, setFilter, clearFilters, setGestationalWeeks } =
     useAppStore();
@@ -93,12 +94,12 @@ export default function FilterBar() {
   ];
 
   const gestationalOptions = [
-    { value: null, label: "Any" },
-    { value: 10, label: "Up to 10 weeks" },
-    { value: 12, label: "Up to 12 weeks" },
-    { value: 20, label: "Up to 20 weeks" },
-    { value: 24, label: "Up to 24 weeks" },
-    { value: 99, label: "20+ weeks (late-term)" },
+    { value: null, label: t("gestational:any") },
+    { value: 10, label: t("gestational:upTo10") },
+    { value: 12, label: t("gestational:upTo12") },
+    { value: 20, label: t("gestational:upTo20") },
+    { value: 24, label: t("gestational:upTo24") },
+    { value: 99, label: t("gestational:lateTerm") },
   ];
 
   const FilterDropdown = ({ name, title, options, category }) => {
@@ -236,7 +237,7 @@ export default function FilterBar() {
     const hasFilter = filters.gestationalWeeks !== null;
     const currentLabel =
       gestationalOptions.find((o) => o.value === filters.gestationalWeeks)
-        ?.label || "Weeks Pregnant";
+        ?.label || t("gestational:weeksPregnant");
 
     return (
       <div
@@ -269,7 +270,7 @@ export default function FilterBar() {
             e.currentTarget.style.outline = "none";
           }}
         >
-          {hasFilter ? currentLabel : "Weeks Pregnant"}
+          {hasFilter ? currentLabel : t("gestational:weeksPregnant")}
           <span aria-hidden="true">{isOpen ? "▲" : "▼"}</span>
         </button>
 
@@ -752,7 +753,7 @@ export default function FilterBar() {
             </FilterSection>
 
             {filters.services.has("abortion") && (
-              <FilterSection title="Abortion Options">
+              <FilterSection title={t("services:abortion")}>
                 <div style={{ marginBottom: theme.spacing[2] }}>
                   <label
                     style={{
@@ -763,7 +764,7 @@ export default function FilterBar() {
                       display: "block",
                     }}
                   >
-                    Weeks Pregnant
+                    {t("gestational:weeksPregnant")}
                   </label>
                   <select
                     value={filters.gestationalWeeks ?? ""}

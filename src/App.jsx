@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import Map from "./components/Map";
 import FilterBar from "./components/FilterBar";
 import ClinicDetailPanel from "./components/ClinicDetailPanel";
@@ -8,6 +9,7 @@ import useAppStore from "./store/useAppStore";
 import theme from "./theme";
 
 export default function App() {
+  const { t } = useTranslation(["messages", "actions"]);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [viewMode, setViewMode] = useState("map"); // "map" or "list"
   const { clinics, filters } = useAppStore();
@@ -103,7 +105,7 @@ export default function App() {
           e.currentTarget.style.left = "-9999px";
         }}
       >
-        Skip to main content
+        {t("messages:skipToMain")}
       </a>
 
       {/* Visually hidden page title for screen readers */}
@@ -133,7 +135,9 @@ export default function App() {
           overflow: "hidden",
         }}
       >
-        {filteredClinics ? `${filteredClinics.length} clinics found` : ""}
+        {filteredClinics
+          ? t("messages:clinicsFound", { count: filteredClinics.length })
+          : ""}
       </div>
 
       <main
@@ -179,7 +183,7 @@ export default function App() {
               e.currentTarget.style.outline = "none";
             }}
           >
-            Map
+            {t("actions:map")}
           </button>
           <button
             onClick={() => setViewMode("list")}
@@ -208,7 +212,7 @@ export default function App() {
               e.currentTarget.style.outline = "none";
             }}
           >
-            List
+            {t("actions:list")}
           </button>
         </div>
 

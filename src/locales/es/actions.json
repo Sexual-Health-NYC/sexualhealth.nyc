@@ -11,5 +11,8 @@
   "list": "Lista",
   "filters": "Filtros",
   "clickForInfo": "Haga clic para más información",
-  "zoomIn": "haga clic para acercar"
+  "zoomIn": "haga clic para acercar",
+  "close": "Cerrar",
+  "reportCorrection": "Reportar una corrección",
+  "copyAddressToClipboard": "Copiar dirección al portapapeles"
 }

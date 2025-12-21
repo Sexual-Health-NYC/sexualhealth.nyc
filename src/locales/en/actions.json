@@ -11,5 +11,8 @@
   "list": "List",
   "filters": "Filters",
   "clickForInfo": "Click for info",
-  "zoomIn": "click to zoom in"
+  "zoomIn": "click to zoom in",
+  "close": "Close",
+  "reportCorrection": "Report a correction",
+  "copyAddressToClipboard": "Copy address to clipboard"
 }

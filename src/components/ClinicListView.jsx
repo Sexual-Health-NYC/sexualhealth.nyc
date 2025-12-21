@@ -1,8 +1,10 @@
+import { useTranslation } from "react-i18next";
 import useAppStore from "../store/useAppStore";
 import theme from "../theme";
 import { getOpenStatus } from "../utils/hours";
 
 export default function ClinicListView({ clinics }) {
+  const { t } = useTranslation(["messages", "services", "insurance"]);
   const { selectClinic } = useAppStore();
 
   if (clinics.length === 0) {
@@ -15,9 +17,9 @@ export default function ClinicListView({ clinics }) {
           fontSize: theme.fonts.size.lg,
         }}
       >
-        <p style={{ margin: 0 }}>No clinics match your filters.</p>
+        <p style={{ margin: 0 }}>{t("messages:noMatches")}</p>
         <p style={{ margin: theme.spacing[2], fontSize: theme.fonts.size.sm }}>
-          Try adjusting your filter selections.
+          {t("messages:tryAdjustingFilters")}
         </p>
       </div>
     );
@@ -45,6 +47,7 @@ export default function ClinicListView({ clinics }) {
             key={clinic.id}
             clinic={clinic}
             onClick={() => selectClinic(clinic)}
+            t={t}
           />
         ))}
       </div>
@@ -52,16 +55,16 @@ export default function ClinicListView({ clinics }) {
   );
 }
 
-function ClinicCard({ clinic, onClick }) {
+function ClinicCard({ clinic, onClick, t }) {
   const openStatus = getOpenStatus(clinic.hours);
 
   const services = [];
-  if (clinic.has_sti_testing) services.push("STI Testing");
-  if (clinic.has_hiv_testing) services.push("HIV Testing");
-  if (clinic.has_prep) services.push("PrEP");
-  if (clinic.has_pep) services.push("PEP");
-  if (clinic.has_contraception) services.push("Contraception");
-  if (clinic.has_abortion) services.push("Abortion");
+  if (clinic.has_sti_testing) services.push(t("services:stiTesting"));
+  if (clinic.has_hiv_testing) services.push(t("services:hivTesting"));
+  if (clinic.has_prep) services.push(t("services:prep"));
+  if (clinic.has_pep) services.push(t("services:pep"));
+  if (clinic.has_contraception) services.push(t("services:contraception"));
+  if (clinic.has_abortion) services.push(t("services:abortion"));
 
   return (
     <div
@@ -74,7 +77,7 @@ function ClinicCard({ clinic, onClick }) {
           onClick();
         }
       }}
-      aria-label={`View details for ${clinic.name}`}
+      aria-label={t("messages:viewDetails", { name: clinic.name })}
       style={{
         backgroundColor: "white",
         borderRadius: theme.borderRadius.lg,
@@ -191,12 +194,14 @@ function ClinicCard({ clinic, onClick }) {
       >
         {clinic.walk_in && (
           <span>
-            <span aria-hidden="true">✓ </span>Walk-ins
+            <span aria-hidden="true">✓ </span>
+            {t("messages:walkIns")}
           </span>
         )}
         {clinic.no_insurance_ok && (
           <span>
-            <span aria-hidden="true">✓ </span>No insurance required
+            <span aria-hidden="true">✓ </span>
+            {t("insurance:noInsuranceOk")}
           </span>
         )}
       </div>

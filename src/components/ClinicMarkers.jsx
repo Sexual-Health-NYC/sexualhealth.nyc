@@ -1,10 +1,12 @@
 import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { Marker } from "react-map-gl/mapbox";
 import useSupercluster from "use-supercluster";
 import useAppStore from "../store/useAppStore";
 import theme from "../theme";
 
 export default function ClinicMarkers({ clinics }) {
+  const { t } = useTranslation(["messages", "actions"]);
   const { selectedClinic, selectClinic, mapViewport, setMapViewport, mapRef } =
     useAppStore();
 
@@ -63,8 +65,8 @@ export default function ClinicMarkers({ clinics }) {
               <button
                 role="button"
                 tabIndex={0}
-                title={`${pointCount} clinics - click to zoom in`}
-                aria-label={`Cluster of ${pointCount} clinics. Zoom in to see individual clinics.`}
+                title={`${pointCount} clinics - ${t("actions:zoomIn")}`}
+                aria-label={t("messages:cluster", { count: pointCount })}
                 onClick={() => {
                   const expansionZoom = Math.min(
                     supercluster.getClusterExpansionZoom(cluster.id),
@@ -132,8 +134,8 @@ export default function ClinicMarkers({ clinics }) {
             <button
               role="button"
               tabIndex={0}
-              title={`${clinic.name} - Click for info`}
-              aria-label={`View details for ${clinic.name}`}
+              title={`${clinic.name} - ${t("actions:clickForInfo")}`}
+              aria-label={t("messages:viewDetails", { name: clinic.name })}
               aria-pressed={selectedClinic?.id === clinic.id}
               style={{
                 width: selectedClinic?.id === clinic.id ? "48px" : "32px",

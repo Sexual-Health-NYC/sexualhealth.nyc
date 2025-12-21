@@ -9,6 +9,8 @@
   "clinicsFound_one": "{{count}} clinic found",
   "clinicsFound_other": "{{count}} clinics found",
   "noMatches": "No clinics match your filters",
+  "tryAdjustingFilters": "Try adjusting your filter selections.",
+  "walkIns": "Walk-ins",
   "viewDetails": "View details for {{name}}",
   "cluster": "Cluster of {{count}} clinics. Zoom in to see individual clinics.",
   "skipToMain": "Skip to main content"

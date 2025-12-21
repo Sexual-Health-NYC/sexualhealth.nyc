@@ -1,10 +1,18 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import useAppStore from "../store/useAppStore";
 import theme from "../theme";
 import { getOpenStatus } from "../utils/hours";
 import CorrectionFormModal from "./CorrectionFormModal";
 
 export default function ClinicDetailPanel() {
+  const { t } = useTranslation([
+    "services",
+    "sections",
+    "actions",
+    "messages",
+    "insurance",
+  ]);
   const { selectedClinic, selectClinic } = useAppStore();
   const [copiedAddress, setCopiedAddress] = useState(false);
   const [showCorrectionForm, setShowCorrectionForm] = useState(false);
@@ -16,37 +24,37 @@ export default function ClinicDetailPanel() {
   const services = [];
   if (selectedClinic.has_sti_testing)
     services.push({
-      label: "STI Testing",
+      label: t("services:stiTesting"),
       bgColor: theme.colors.stiTestingBg,
       textColor: theme.colors.stiTestingText,
     });
   if (selectedClinic.has_hiv_testing)
     services.push({
-      label: "HIV Testing",
+      label: t("services:hivTesting"),
       bgColor: theme.colors.hivTestingBg,
       textColor: theme.colors.hivTestingText,
     });
   if (selectedClinic.has_prep)
     services.push({
-      label: "PrEP",
+      label: t("services:prep"),
       bgColor: theme.colors.prepBg,
       textColor: theme.colors.prepText,
     });
   if (selectedClinic.has_pep)
     services.push({
-      label: "PEP",
+      label: t("services:pep"),
       bgColor: theme.colors.pepBg,
       textColor: theme.colors.pepText,
     });
   if (selectedClinic.has_contraception)
     services.push({
-      label: "Contraception",
+      label: t("services:contraception"),
       bgColor: theme.colors.contraceptionBg,
       textColor: theme.colors.contraceptionText,
     });
   if (selectedClinic.has_abortion)
     services.push({
-      label: "Abortion",
+      label: t("services:abortion"),
       bgColor: theme.colors.abortionBg,
       textColor: theme.colors.abortionText,
     });
@@ -114,7 +122,7 @@ export default function ClinicDetailPanel() {
               padding: 0,
               marginLeft: theme.spacing[2],
             }}
-            aria-label="Close"
+            aria-label={t("actions:close")}
           >
             ×
           </button>
@@ -122,7 +130,7 @@ export default function ClinicDetailPanel() {
 
         {/* Services */}
         {services.length > 0 && (
-          <Section title="Services">
+          <Section title={t("sections:services")}>
             <div
               style={{
                 display: "flex",
@@ -190,8 +198,10 @@ export default function ClinicDetailPanel() {
                 setCopiedAddress(true);
                 setTimeout(() => setCopiedAddress(false), 2000);
               }}
-              title={copiedAddress ? "Copied!" : "Copy address"}
-              aria-label="Copy address to clipboard"
+              title={
+                copiedAddress ? t("actions:copied") : t("actions:copyAddress")
+              }
+              aria-label={t("actions:copyAddressToClipboard")}
               style={{
                 background: "none",
                 border: "none",
@@ -203,7 +213,7 @@ export default function ClinicDetailPanel() {
                 transition: `color ${theme.transitions.fast}`,
               }}
             >
-              {copiedAddress ? "✓ Copied" : "📋"}
+              {copiedAddress ? `✓ ${t("actions:copied")}` : "📋"}
             </button>
           </div>
           <a
@@ -220,7 +230,7 @@ export default function ClinicDetailPanel() {
               fontWeight: theme.fonts.weight.medium,
             }}
           >
-            Open in Maps
+            {t("actions:openInMaps")}
           </a>
           {selectedClinic.transit && (
             <div
@@ -250,7 +260,7 @@ export default function ClinicDetailPanel() {
 
         {/* Hours */}
         {selectedClinic.hours && (
-          <Section title="Hours">
+          <Section title={t("sections:hours")}>
             <p
               style={{
                 margin: 0,
@@ -264,7 +274,7 @@ export default function ClinicDetailPanel() {
         )}
 
         {/* Insurance */}
-        <Section title="Insurance & Cost">
+        <Section title={t("sections:insuranceAndCost")}>
           {!selectedClinic.accepts_medicaid &&
           !selectedClinic.accepts_medicare &&
           !selectedClinic.no_insurance_ok &&
@@ -277,7 +287,7 @@ export default function ClinicDetailPanel() {
                 fontStyle: "italic",
               }}
             >
-              Unknown - contact clinic to verify
+              {t("messages:unknownContactClinic")}
             </p>
           ) : (
             <div
@@ -288,16 +298,16 @@ export default function ClinicDetailPanel() {
               }}
             >
               {selectedClinic.accepts_medicaid && (
-                <InfoItem text="Accepts Medicaid" />
+                <InfoItem text={t("insurance:acceptsMedicaid")} />
               )}
               {selectedClinic.accepts_medicare && (
-                <InfoItem text="Accepts Medicare" />
+                <InfoItem text={t("insurance:acceptsMedicare")} />
               )}
               {selectedClinic.no_insurance_ok && (
-                <InfoItem text="No insurance required" highlight />
+                <InfoItem text={t("insurance:noInsuranceOk")} highlight />
               )}
               {selectedClinic.sliding_scale && (
-                <InfoItem text="Sliding scale available" />
+                <InfoItem text={t("insurance:slidingScale")} />
               )}
             </div>
           )}
@@ -305,14 +315,14 @@ export default function ClinicDetailPanel() {
 
         {/* Access */}
         {selectedClinic.walk_in && (
-          <Section title="Walk-ins">
-            <InfoItem text="Walk-ins accepted" />
+          <Section title={t("sections:walkIns")}>
+            <InfoItem text={t("messages:walkInsAccepted")} />
           </Section>
         )}
 
         {/* Contact Info */}
         {(selectedClinic.phone || selectedClinic.website) && (
-          <Section title="Contact">
+          <Section title={t("sections:contact")}>
             {selectedClinic.phone && !selectedClinic.phone.includes("@") && (
               <div style={{ marginBottom: theme.spacing[2] }}>
                 <p
@@ -323,7 +333,7 @@ export default function ClinicDetailPanel() {
                     fontWeight: theme.fonts.weight.medium,
                   }}
                 >
-                  Phone
+                  {t("sections:phone")}
                 </p>
                 <p
                   style={{
@@ -347,7 +357,7 @@ export default function ClinicDetailPanel() {
                     fontWeight: theme.fonts.weight.medium,
                   }}
                 >
-                  Website
+                  {t("sections:website")}
                 </p>
                 <a
                   href={
@@ -398,7 +408,7 @@ export default function ClinicDetailPanel() {
               e.currentTarget.style.outline = "none";
             }}
           >
-            Report a correction
+            {t("actions:reportCorrection")}
           </button>
         </div>
       </div>

@@ -7,5 +7,6 @@
   "address": "Dirección",
   "phone": "Teléfono",
   "website": "Sitio web",
-  "borough": "Municipio"
+  "borough": "Municipio",
+  "access": "Acceso"
 }

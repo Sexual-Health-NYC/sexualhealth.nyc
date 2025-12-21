@@ -9,6 +9,8 @@
   "clinicsFound_one": "{{count}} clínica encontrada",
   "clinicsFound_other": "{{count}} clínicas encontradas",
   "noMatches": "Ninguna clínica coincide con sus filtros",
+  "tryAdjustingFilters": "Intente ajustar sus selecciones de filtro.",
+  "walkIns": "Sin cita",
   "viewDetails": "Ver detalles de {{name}}",
   "cluster": "Grupo de {{count}} clínicas. Acerque para ver clínicas individuales.",
   "skipToMain": "Saltar al contenido principal"
