@@ -14,5 +14,11 @@
   "walkIns": "واک ان",
   "viewDetails": "{{name}} کی تفصیلات دیکھیں",
   "cluster": "{{count}} کلینکس کا گروپ۔ انفرادی کلینکس دیکھنے کے لیے زوم ان کریں۔",
-  "skipToMain": "مرکزی مواد پر جائیں"
+  "skipToMain": "مرکزی مواد پر جائیں",
+  "openClosesAt": "کھلا ہے · {{time}} پر بند ہوگا",
+  "opensToday": "آج {{time}} پر کھلے گا",
+  "closedOpensDay": "بند ہے · {{day}} کو {{time}} پر کھلے گا",
+  "closedOpens": "بند ہے · {{day}} کو کھلے گا",
+  "holidayHoursWarning": "{{holiday}} - اوقات مختلف ہو سکتے ہیں",
+  "allDay": "پورا دن"
 }

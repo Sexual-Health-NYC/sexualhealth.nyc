@@ -14,5 +14,11 @@
   "walkIns": "免预约",
   "viewDetails": "查看 {{name}} 的详情",
   "cluster": "{{count}} 家诊所聚集。放大以查看个别诊所。",
-  "skipToMain": "跳转到主要内容"
+  "skipToMain": "跳转到主要内容",
+  "openClosesAt": "营业中 · {{time}} 关闭",
+  "opensToday": "今天 {{time}} 开门",
+  "closedOpensDay": "已关闭 · {{day}} {{time}} 开门",
+  "closedOpens": "已关闭 · {{day}} 开门",
+  "holidayHoursWarning": "{{holiday}} - 营业时间可能有所不同",
+  "allDay": "全天"
 }

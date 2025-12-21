@@ -14,5 +14,11 @@
   "walkIns": "Bez umówienia",
   "viewDetails": "Zobacz szczegóły dla {{name}}",
   "cluster": "Grupa {{count}} klinik. Powiększ, aby zobaczyć poszczególne kliniki.",
-  "skipToMain": "Przejdź do treści głównej"
+  "skipToMain": "Przejdź do treści głównej",
+  "openClosesAt": "Otwarte · Zamyka się o {{time}}",
+  "opensToday": "Otwiera się dzisiaj o {{time}}",
+  "closedOpensDay": "Zamknięte · Otwiera się {{day}} o {{time}}",
+  "closedOpens": "Zamknięte · Otwiera się {{day}}",
+  "holidayHoursWarning": "{{holiday}} - godziny mogą się różnić",
+  "allDay": "Cały dzień"
 }

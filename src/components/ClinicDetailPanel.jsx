@@ -329,7 +329,7 @@ export default function ClinicDetailPanel() {
                           color: theme.colors.textSecondary,
                         }}
                       >
-                        {dept.department}
+                        {t(dept.department, { ns: "dynamic" })}
                       </p>
                     )}
                     <div

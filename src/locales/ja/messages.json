@@ -14,5 +14,11 @@
   "walkIns": "予約なし",
   "viewDetails": "{{name}} の詳細を見る",
   "cluster": "{{count}} 件のクリニックのクラスター。拡大して個々のクリニックを表示。",
-  "skipToMain": "メインコンテンツへスキップ"
+  "skipToMain": "メインコンテンツへスキップ",
+  "openClosesAt": "営業中 · {{time}} 閉店",
+  "opensToday": "本日 {{time}} 開店",
+  "closedOpensDay": "閉店 · {{day}} {{time}} 開店",
+  "closedOpens": "閉店 · {{day}} 開店",
+  "holidayHoursWarning": "{{holiday}} - 時間が変更される可能性があります",
+  "allDay": "終日"
 }

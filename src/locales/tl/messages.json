@@ -14,5 +14,11 @@
   "walkIns": "Walk-ins",
   "viewDetails": "Tingnan ang mga detalye para sa {{name}}",
   "cluster": "Kumpol ng {{count}} na klinika. Mag-zoom in upang makita ang mga indibidwal na klinika.",
-  "skipToMain": "Lumaktaw sa pangunahing nilalaman"
+  "skipToMain": "Lumaktaw sa pangunahing nilalaman",
+  "openClosesAt": "Bukas · Magsasara sa {{time}}",
+  "opensToday": "Magbubukas ngayong {{time}}",
+  "closedOpensDay": "Sarado · Magbubukas sa {{day}} nang {{time}}",
+  "closedOpens": "Sarado · Magbubukas sa {{day}}",
+  "holidayHoursWarning": "{{holiday}} - maaaring mag-iba ang oras",
+  "allDay": "Buong araw"
 }

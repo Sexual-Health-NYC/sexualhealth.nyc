@@ -14,5 +14,11 @@
   "walkIns": "वॉक-इन",
   "viewDetails": "{{name}} के लिए विवरण देखें",
   "cluster": "{{count}} क्लीनिकों का समूह। अलग-अलग क्लीनिक देखने के लिए ज़ूम इन करें।",
-  "skipToMain": "मुख्य सामग्री पर जाएं"
+  "skipToMain": "मुख्य सामग्री पर जाएं",
+  "openClosesAt": "खुला है · {{time}} पर बंद होगा",
+  "opensToday": "आज {{time}} पर खुलेगा",
+  "closedOpensDay": "बंद है · {{day}} को {{time}} पर खुलेगा",
+  "closedOpens": "बंद है · {{day}} को खुलेगा",
+  "holidayHoursWarning": "{{holiday}} - समय अलग हो सकता है",
+  "allDay": "पूरे दिन"
 }

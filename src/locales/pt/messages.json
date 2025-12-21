@@ -14,5 +14,11 @@
   "walkIns": "Sem marcação",
   "viewDetails": "Ver detalhes para {{name}}",
   "cluster": "Grupo de {{count}} clínicas. Aproxime para ver clínicas individuais.",
-  "skipToMain": "Saltar para o conteúdo principal"
+  "skipToMain": "Saltar para o conteúdo principal",
+  "openClosesAt": "Aberto · Fecha às {{time}}",
+  "opensToday": "Abre hoje às {{time}}",
+  "closedOpensDay": "Fechado · Abre {{day}} às {{time}}",
+  "closedOpens": "Fechado · Abre {{day}}",
+  "holidayHoursWarning": "{{holiday}} - horário pode variar",
+  "allDay": "Todo o dia"
 }

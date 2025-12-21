@@ -14,5 +14,11 @@
   "walkIns": "ללא תור",
   "viewDetails": "צפה בפרטים עבור {{name}}",
   "cluster": "קבוצה של {{count}} קליניקות. התקרב כדי לראות קליניקות בודדות.",
-  "skipToMain": "דלג לתוכן העיקרי"
+  "skipToMain": "דלג לתוכן העיקרי",
+  "openClosesAt": "פתוח · נסגר ב-{{time}}",
+  "opensToday": "נפתח היום ב-{{time}}",
+  "closedOpensDay": "סגור · נפתח ב-{{day}} ב-{{time}}",
+  "closedOpens": "סגור · נפתח ב-{{day}}",
+  "holidayHoursWarning": "{{holiday}} - השעות עשויות להשתנות",
+  "allDay": "כל היום"
 }

@@ -14,5 +14,11 @@
   "walkIns": "Sans rdv",
   "viewDetails": "Voir les détails pour {{name}}",
   "cluster": "Groupe de {{count}} cliniques. Zoomez pour voir les détails.",
-  "skipToMain": "Aller au contenu principal"
+  "skipToMain": "Aller au contenu principal",
+  "openClosesAt": "Ouvert · Ferme à {{time}}",
+  "opensToday": "Ouvre aujourd'hui à {{time}}",
+  "closedOpensDay": "Fermé · Ouvre {{day}} à {{time}}",
+  "closedOpens": "Fermé · Ouvre {{day}}",
+  "holidayHoursWarning": "{{holiday}} - les horaires peuvent varier",
+  "allDay": "Toute la journée"
 }

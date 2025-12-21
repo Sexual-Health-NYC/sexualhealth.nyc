@@ -14,5 +14,11 @@
   "walkIns": "Không hẹn trước",
   "viewDetails": "Xem chi tiết cho {{name}}",
   "cluster": "Nhóm {{count}} phòng khám. Phóng to để xem từng phòng khám.",
-  "skipToMain": "Chuyển đến nội dung chính"
+  "skipToMain": "Chuyển đến nội dung chính",
+  "openClosesAt": "Mở cửa · Đóng lúc {{time}}",
+  "opensToday": "Mở cửa hôm nay lúc {{time}}",
+  "closedOpensDay": "Đóng cửa · Mở {{day}} lúc {{time}}",
+  "closedOpens": "Đóng cửa · Mở {{day}}",
+  "holidayHoursWarning": "{{holiday}} - giờ có thể thay đổi",
+  "allDay": "Cả ngày"
 }

@@ -14,5 +14,11 @@
   "walkIns": "San Randevou",
   "viewDetails": "Gade detay pou {{name}}",
   "cluster": "Gwoup {{count}} klinik. Rale pou wè klinik endividyèl yo.",
-  "skipToMain": "Ale nan kontni prensipal la"
+  "skipToMain": "Ale nan kontni prensipal la",
+  "openClosesAt": "Louvri · Fèmen a {{time}}",
+  "opensToday": "Louvri jodi a a {{time}}",
+  "closedOpensDay": "Fèmen · Louvri {{day}} a {{time}}",
+  "closedOpens": "Fèmen · Louvri {{day}}",
+  "holidayHoursWarning": "{{holiday}} - lè yo ka varye",
+  "allDay": "Tout jounen"
 }

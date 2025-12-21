@@ -14,5 +14,11 @@
   "walkIns": "워크인",
   "viewDetails": "{{name}} 상세 정보 보기",
   "cluster": "{{count}}개의 병원 그룹. 개별 병원을 보려면 확대하세요.",
-  "skipToMain": "메인 콘텐츠로 건너뛰기"
+  "skipToMain": "메인 콘텐츠로 건너뛰기",
+  "openClosesAt": "영업 중 · {{time}}에 종료",
+  "opensToday": "오늘 {{time}}에 개점",
+  "closedOpensDay": "영업 종료 · {{day}} {{time}}에 개점",
+  "closedOpens": "영업 종료 · {{day}}에 개점",
+  "holidayHoursWarning": "{{holiday}} - 운영 시간이 다를 수 있음",
+  "allDay": "하루 종일"
 }

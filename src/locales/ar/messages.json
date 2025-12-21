@@ -14,5 +14,11 @@
   "walkIns": "بدون موعد",
   "viewDetails": "عرض التفاصيل لـ {{name}}",
   "cluster": "مجموعة من {{count}} عيادة. قم بالتكبير لرؤية العيادات الفردية.",
-  "skipToMain": "الانتقال إلى المحتوى الرئيسي"
+  "skipToMain": "الانتقال إلى المحتوى الرئيسي",
+  "openClosesAt": "مفتوح · يغلق في {{time}}",
+  "opensToday": "يفتح اليوم في {{time}}",
+  "closedOpensDay": "مغلق · يفتح {{day}} في {{time}}",
+  "closedOpens": "مغلق · يفتح {{day}}",
+  "holidayHoursWarning": "{{holiday}} - قد تختلف الساعات",
+  "allDay": "طوال اليوم"
 }

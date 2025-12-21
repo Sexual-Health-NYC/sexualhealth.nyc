@@ -377,7 +377,7 @@ export default function ClinicBottomSheet() {
                           color: theme.colors.textSecondary,
                         }}
                       >
-                        {dept.department}
+                        {t(dept.department, { ns: "dynamic" })}
                       </p>
                     )}
                     <div

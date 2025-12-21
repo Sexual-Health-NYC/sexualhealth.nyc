@@ -2,12 +2,18 @@ import { Popup } from "react-map-gl";
 import { useTranslation } from "react-i18next";
 import useAppStore from "../store/useAppStore";
 import theme from "../theme";
+import { getOpenStatus } from "../utils/hours";
 
 export default function ClinicPopup() {
-  const { t } = useTranslation(["services"]);
+  const { t } = useTranslation(["services", "sections", "messages", "dynamic"]);
   const { selectedClinic, selectClinic } = useAppStore();
 
   if (!selectedClinic) return null;
+
+  const openStatus = getOpenStatus(
+    selectedClinic.hours,
+    selectedClinic.hours_text,
+  );
 
   const services = [];
   if (selectedClinic.has_sti_testing) services.push(t("services:stiTesting"));
@@ -85,14 +91,37 @@ export default function ClinicPopup() {
           </p>
         )}
 
-        {selectedClinic.hours && (
+        {openStatus && (
           <p
             style={{
               margin: `0 0 ${theme.spacing[2]} 0`,
               fontSize: theme.fonts.size.sm,
             }}
           >
-            <strong>Hours:</strong> {selectedClinic.hours}
+            <strong>{t("sections:hours")}:</strong>{" "}
+            <span
+              style={{
+                color: openStatus.isOpen ? "#10b981" : "#64748b",
+                fontWeight: theme.fonts.weight.medium,
+              }}
+            >
+              {openStatus.isOpen
+                ? openStatus.closesAt
+                  ? t("messages:openClosesAt", { time: openStatus.closesAt })
+                  : t("messages:openNow")
+                : openStatus.status === "opensLater"
+                  ? t("messages:opensToday", { time: openStatus.opensAt })
+                  : openStatus.nextOpen
+                    ? openStatus.nextOpen.time
+                      ? t("messages:closedOpensDay", {
+                          day: openStatus.nextOpen.day,
+                          time: openStatus.nextOpen.time,
+                        })
+                      : t("messages:closedOpens", {
+                          day: openStatus.nextOpen.day,
+                        })
+                    : t("messages:closed")}
+            </span>
           </p>
         )}
 
