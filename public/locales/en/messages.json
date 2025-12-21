@@ -23,5 +23,6 @@
   "skipToMain": "Skip to main content",
   "openAfter5pm": "Open after 5pm",
   "subway": "Subway line",
-  "bus": "Bus route"
+  "bus": "Bus route",
+  "searchByName": "Search by clinic name..."
 }

@@ -4,6 +4,6 @@
   "upTo10": "Do 10 tygodni",
   "upTo12": "Do 12 tygodni",
   "upTo20": "Do 20 tygodni",
-  "upTo24": "Do 24 tygodni",
-  "lateTerm": "20+ tygodni (późna ciąża)"
+  "upTo24": "Do 24 tygodni (limit NY)",
+  "lateTerm": "Powyżej 24 tygodni"
 }
