@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import MapGL, { NavigationControl } from "react-map-gl/mapbox";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
@@ -27,6 +27,15 @@ export default function Map({ filteredClinics }) {
     setMapRef,
   } = useAppStore();
   const mapRef = useRef();
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const previousFilteredClinicsRef = useRef(filteredClinics);
+
+  // Track window resize for mobile detection
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // Store map ref globally for cluster zoom animations
   useEffect(() => {
@@ -54,9 +63,32 @@ export default function Map({ filteredClinics }) {
       });
   }, [setClinics]);
 
-  // Recenter map when filters change to fit visible clinics
+  // Pan map when a clinic is selected to ensure marker is visible
   useEffect(() => {
-    if (filteredClinics.length > 0 && mapRef.current) {
+    if (selectedClinic && mapRef.current) {
+      const map = mapRef.current;
+
+      // Define padding based on device and where the sidebar/bottom sheet appears
+      const padding = isMobile
+        ? { top: 50, bottom: 350, left: 50, right: 50 } // Bottom sheet on mobile
+        : { top: 50, bottom: 50, left: 50, right: 450 }; // Sidebar on desktop (right side)
+
+      // Pan to the selected clinic with smooth animation
+      map.easeTo({
+        center: [selectedClinic.longitude, selectedClinic.latitude],
+        padding,
+        duration: 500,
+      });
+    }
+  }, [selectedClinic, isMobile]);
+
+  // Recenter map when filters change to fit visible clinics
+  // Only auto-fit when the actual filter results change, not when selecting/deselecting clinics
+  useEffect(() => {
+    const filtersChanged =
+      filteredClinics !== previousFilteredClinicsRef.current;
+
+    if (filteredClinics.length > 0 && mapRef.current && filtersChanged) {
       // Calculate bounds of filtered clinics
       const lngs = filteredClinics.map((c) => c.longitude);
       const lats = filteredClinics.map((c) => c.latitude);
@@ -72,6 +104,8 @@ export default function Map({ filteredClinics }) {
         duration: 1000,
         maxZoom: 14,
       });
+
+      previousFilteredClinicsRef.current = filteredClinics;
     }
   }, [filteredClinics]);
 
