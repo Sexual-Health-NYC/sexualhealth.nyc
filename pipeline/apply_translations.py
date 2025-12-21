@@ -23,7 +23,8 @@ TRANSLATIONS = {
             "selectSubway": "Seleccionar líneas de metro",
             "hours": "Horario",
             "searchByName": "Buscar por nombre de clínica...",
-            "siteTitle": "Sexual Health NYC - Encuentre clínicas para pruebas de ITS, pruebas de VIH, PrEP, PEP, anticoncepción y servicios de aborto"
+            "siteTitle": "Sexual Health NYC - Encuentre clínicas para pruebas de ITS, pruebas de VIH, PrEP, PEP, anticoncepción y servicios de aborto",
+            "verifiedUnknown": "Aún no verificado"
         },
         "sections": {
             "telehealthDescription": "Reciba píldoras abortivas por correo — no se requiere visita en persona",
@@ -66,7 +67,8 @@ TRANSLATIONS = {
             "selectSubway": "选择地铁线路",
             "hours": "营业时间",
             "searchByName": "按诊所名称搜索...",
-            "siteTitle": "Sexual Health NYC - 查找性传播感染检测、艾滋病检测、PrEP、PEP、避孕和堕胎服务的诊所"
+            "siteTitle": "Sexual Health NYC - 查找性传播感染检测、艾滋病检测、PrEP、PEP、避孕和堕胎服务的诊所",
+            "verifiedUnknown": "尚未验证"
         },
         "sections": {
             "telehealthDescription": "邮寄堕胎药给您 — 无需亲自就诊",
@@ -109,7 +111,8 @@ TRANSLATIONS = {
             "selectSubway": "Выберите линии метро",
             "hours": "Часы работы",
             "searchByName": "Поиск по названию клиники...",
-            "siteTitle": "Sexual Health NYC - Найдите клиники для тестирования на ИППП, ВИЧ, PrEP, PEP, контрацепции и услуг по прерыванию беременности"
+            "siteTitle": "Sexual Health NYC - Найдите клиники для тестирования на ИППП, ВИЧ, PrEP, PEP, контрацепции и услуг по прерыванию беременности",
+            "verifiedUnknown": "Ещё не проверено"
         },
         "sections": {
             "telehealthDescription": "Получите таблетки для прерывания беременности по почте — личный визит не требуется",
@@ -152,7 +155,8 @@ TRANSLATIONS = {
             "selectSubway": "Sélectionner les lignes de métro",
             "hours": "Horaires",
             "searchByName": "Rechercher par nom de clinique...",
-            "siteTitle": "Sexual Health NYC - Trouvez des cliniques pour le dépistage des IST, le dépistage du VIH, la PrEP, la PEP, la contraception et les services d'avortement"
+            "siteTitle": "Sexual Health NYC - Trouvez des cliniques pour le dépistage des IST, le dépistage du VIH, la PrEP, la PEP, la contraception et les services d'avortement",
+            "verifiedUnknown": "Pas encore vérifié"
         },
         "sections": {
             "telehealthDescription": "Recevez des pilules abortives par courrier — aucune visite en personne requise",
@@ -195,7 +199,8 @@ TRANSLATIONS = {
             "selectSubway": "Chwazi liy tren yo",
             "hours": "Lè travay",
             "searchByName": "Chèche pa non klinik...",
-            "siteTitle": "Sexual Health NYC - Jwenn klinik pou tès STI, tès HIV, PrEP, PEP, kontrasepsyon, ak sèvis avòtman"
+            "siteTitle": "Sexual Health NYC - Jwenn klinik pou tès STI, tès HIV, PrEP, PEP, kontrasepsyon, ak sèvis avòtman",
+            "verifiedUnknown": "Pokò verifye"
         },
         "sections": {
             "telehealthDescription": "Resevwa grenn avòtman pa lapòs — pa bezwen vizit an pèsòn",
@@ -238,7 +243,8 @@ TRANSLATIONS = {
             "selectSubway": "সাবওয়ে লাইন নির্বাচন করুন",
             "hours": "সময়সূচী",
             "searchByName": "ক্লিনিকের নাম দিয়ে অনুসন্ধান করুন...",
-            "siteTitle": "Sexual Health NYC - STI পরীক্ষা, HIV পরীক্ষা, PrEP, PEP, গর্ভনিরোধক, এবং গর্ভপাত পরিষেবার জন্য ক্লিনিক খুঁজুন"
+            "siteTitle": "Sexual Health NYC - STI পরীক্ষা, HIV পরীক্ষা, PrEP, PEP, গর্ভनिरোধक, এবং গর্ভপাত পরিষেবার জন্য ক্লিনিক খুঁজুন",
+            "verifiedUnknown": "এখনও যাচাই করা হয়নি"
         },
         "sections": {
             "telehealthDescription": "ডাকে গর্ভপাতের বড়ি পান — সশরীরে উপস্থিত হওয়ার প্রয়োজন নেই",
@@ -281,7 +287,8 @@ TRANSLATIONS = {
             "selectSubway": "اختر خطوط المترو",
             "hours": "ساعات العمل",
             "searchByName": "البحث حسب اسم العيادة...",
-            "siteTitle": "Sexual Health NYC - اعثر على عيادات لفحص الأمراض المنقولة جنسياً، وفحص فيروس نقص المناعة البشرية، وPrEP، وPEP، ومنع الحمل، وخدمات الإجهاض"
+            "siteTitle": "Sexual Health NYC - اعثر على عيادات لفحص الأمراض المنقولة جنسياً، وفحص فيروس نقص المناعة البشرية، وPrEP، وPEP، ومنع الحمل، وخدمات الإجهاض",
+            "verifiedUnknown": "لم يتم التحقق بعد"
         },
         "sections": {
             "telehealthDescription": "احصل على حبوب الإجهاض بالبريد — لا حاجة لزيارة شخصية",
@@ -324,7 +331,8 @@ TRANSLATIONS = {
             "selectSubway": "지하철 노선 선택",
             "hours": "운영 시간",
             "searchByName": "병원 이름으로 검색...",
-            "siteTitle": "Sexual Health NYC - STI 검사, HIV 검사, PrEP, PEP, 피임 및 낙태 서비스를 위한 클리닉 찾기"
+            "siteTitle": "Sexual Health NYC - STI 검사, HIV 검사, PrEP, PEP, 피임 및 낙태 서비스를 위한 클리닉 찾기",
+            "verifiedUnknown": "아직 확인되지 않음"
         },
         "sections": {
             "telehealthDescription": "우편으로 낙태약을 받으세요 — 직접 방문할 필요 없음",
@@ -367,7 +375,8 @@ TRANSLATIONS = {
             "selectSubway": "Seleziona linee metropolitana",
             "hours": "Orari",
             "searchByName": "Cerca per nome della clinica...",
-            "siteTitle": "Sexual Health NYC - Trova cliniche per test STI, test HIV, PrEP, PEP, contraccezione e servizi di aborto"
+            "siteTitle": "Sexual Health NYC - Trova cliniche per test STI, test HIV, PrEP, PEP, contraccezione e servizi di aborto",
+            "verifiedUnknown": "Non ancora verificato"
         },
         "sections": {
             "telehealthDescription": "Ricevi pillole abortive per posta — nessuna visita di persona richiesta",
@@ -410,7 +419,8 @@ TRANSLATIONS = {
             "selectSubway": "Pumili ng mga linya ng tren",
             "hours": "Oras",
             "searchByName": "Maghanap gamit ang pangalan ng klinika...",
-            "siteTitle": "Sexual Health NYC - Maghanap ng mga Klinika para sa STI Testing, HIV Testing, PrEP, PEP, Contraception, at Abortion Services"
+            "siteTitle": "Sexual Health NYC - Maghanap ng mga Klinika para sa STI Testing, HIV Testing, PrEP, PEP, Contraception, at Abortion Services",
+            "verifiedUnknown": "Hindi pa na-verify"
         },
         "sections": {
             "telehealthDescription": "Tumanggap ng mga tableta sa pagpapalaglag sa pamamagitan ng koreo — hindi kailangan ng personal na pagbisita",
@@ -453,7 +463,8 @@ TRANSLATIONS = {
             "selectSubway": "Wybierz linie metra",
             "hours": "Godziny otwarcia",
             "searchByName": "Szukaj według nazwy kliniki...",
-            "siteTitle": "Sexual Health NYC - Znajdź kliniki oferujące testy na STI, testy na HIV, PrEP, PEP, antykoncepcję i usługi aborcyjne"
+            "siteTitle": "Sexual Health NYC - Znajdź kliniki oferujące testy na STI, testy na HIV, PrEP, PEP, antykoncepcję i usługi aborcyjne",
+            "verifiedUnknown": "Jeszcze nie zweryfikowano"
         },
         "sections": {
             "telehealthDescription": "Otrzymaj tabletki poronne pocztą — wizyta osobista nie jest wymagana",
@@ -496,7 +507,8 @@ TRANSLATIONS = {
             "selectSubway": "سب وے لائنیں منتخب کریں",
             "hours": "اوقات",
             "searchByName": "کلینک کے نام سے تلاش کریں...",
-            "siteTitle": "Sexual Health NYC - STI ٹیسٹنگ، HIV ٹیسٹنگ، PrEP، PEP، مانع حمل، اور اسقاط حمل کی خدمات کے لیے کلینک تلاش کریں"
+            "siteTitle": "Sexual Health NYC - STI ٹیسٹنگ، HIV ٹیسٹنگ، PrEP، PEP، مانع حمل، اور اسقاط حمل کی خدمات کے لیے کلینک تلاش کریں",
+            "verifiedUnknown": "ابھی تک تصدیق نہیں ہوئی"
         },
         "sections": {
             "telehealthDescription": "اسقاط حمل کی گولیاں بذریعہ ڈاک حاصل کریں — ذاتی دورے کی ضرورت نہیں",
@@ -539,7 +551,8 @@ TRANSLATIONS = {
             "selectSubway": "Επιλέξτε γραμμές μετρό",
             "hours": "Ώρες λειτουργίας",
             "searchByName": "Αναζήτηση με όνομα κλινικής...",
-            "siteTitle": "Sexual Health NYC - Βρείτε κλινικές για εξετάσεις ΣΜΝ, εξετάσεις HIV, PrEP, PEP, αντισύλληψη και υπηρεσίες άμβλωσης"
+            "siteTitle": "Sexual Health NYC - Βρείτε κλινικές για εξετάσεις ΣΜΝ, εξετάσεις HIV, PrEP, PEP, αντισύλληψη και υπηρεσίες άμβλωσης",
+            "verifiedUnknown": "Δεν έχει επαληθευτεί ακόμα"
         },
         "sections": {
             "telehealthDescription": "Λάβετε χάπια άμβλωσης ταχυδρομικώς — δεν απαιτείται επίσκεψη",
@@ -582,7 +595,8 @@ TRANSLATIONS = {
             "selectSubway": "בחר קווי רכבת תחתית",
             "hours": "שעות פעילות",
             "searchByName": "חפש לפי שם המרפאה...",
-            "siteTitle": "Sexual Health NYC - מצא מרפאות לבדיקות STI, בדיקות HIV, PrEP, PEP, אמצעי מניעה ושירותי הפלה"
+            "siteTitle": "Sexual Health NYC - מצא מרפאות לבדיקות STI, בדיקות HIV, PrEP, PEP, אמצעי מניעה ושירותי הפלה",
+            "verifiedUnknown": "טרם אומת"
         },
         "sections": {
             "telehealthDescription": "קבלי כדורי הפלה בדואר — אין צורך בביקור אישי",
@@ -625,7 +639,8 @@ TRANSLATIONS = {
             "selectSubway": "सबवे लाइनें चुनें",
             "hours": "समय",
             "searchByName": "क्लिनिक के नाम से खोजें...",
-            "siteTitle": "Sexual Health NYC - STI परीक्षण, HIV परीक्षण, PrEP, PEP, गर्भनिरोधक और गर्भपात सेवाओं के लिए क्लीनिक खोजें"
+            "siteTitle": "Sexual Health NYC - STI परीक्षण, HIV परीक्षण, PrEP, PEP, गर्भनिरोधक और गर्भपात सेवाओं के लिए क्लीनिक खोजें",
+            "verifiedUnknown": "अभी सत्यापित नहीं हुआ"
         },
         "sections": {
             "telehealthDescription": "डाक द्वारा गर्भपात की गोलियां प्राप्त करें — व्यक्तिगत रूप से जाने की आवश्यकता नहीं",
@@ -668,7 +683,8 @@ TRANSLATIONS = {
             "selectSubway": "地下鉄路線を選択",
             "hours": "営業時間",
             "searchByName": "クリニック名で検索...",
-            "siteTitle": "Sexual Health NYC - STI検査、HIV検査、PrEP、PEP、避妊、中絶サービスのためのクリニックを探す"
+            "siteTitle": "Sexual Health NYC - STI検査、HIV検査、PrEP、PEP、避妊、中絶サービスのためのクリニックを探す",
+            "verifiedUnknown": "まだ確認されていません"
         },
         "sections": {
             "telehealthDescription": "経口中絶薬を郵送で受け取る — 来院不要",
@@ -711,7 +727,8 @@ TRANSLATIONS = {
             "selectSubway": "קלייַבן סאַבוויי ליינס",
             "hours": "שעהן",
             "searchByName": "זוכן דורך קליניק נאָמען...",
-            "siteTitle": "Sexual Health NYC - געפֿינען קליניקס פֿאַר STI טעסטינג, היוו טעסטינג, PrEP, PEP, קאַנטראַסעפּשאַן און אַבאָרשאַן באַדינונגס"
+            "siteTitle": "Sexual Health NYC - געפֿינען קליניקס פֿאַר STI טעסטינג, היוו טעסטינג, PrEP, PEP, קאַנטראַסעפּשאַן און אַבאָרשאַן באַדינונגס",
+            "verifiedUnknown": "נאָך נישט וועריפייד"
         },
         "sections": {
             "telehealthDescription": "באַקומען אַבאָרשאַן פּילז דורך פּאָסט — קיין פערזענלעכע באַזוכן נייטיק",
@@ -754,7 +771,8 @@ TRANSLATIONS = {
             "selectSubway": "Selecionar linhas de metrô",
             "hours": "Horário",
             "searchByName": "Pesquisar por nome da clínica...",
-            "siteTitle": "Sexual Health NYC - Encontre clínicas para testes de IST, testes de HIV, PrEP, PEP, contracepção e serviços de aborto"
+            "siteTitle": "Sexual Health NYC - Encontre clínicas para testes de IST, testes de HIV, PrEP, PEP, contracepção e serviços de aborto",
+            "verifiedUnknown": "Ainda não verificado"
         },
         "sections": {
             "telehealthDescription": "Receba pílulas abortivas pelo correio — não é necessária visita presencial",
@@ -797,7 +815,8 @@ TRANSLATIONS = {
             "selectSubway": "Chọn tuyến tàu điện ngầm",
             "hours": "Giờ làm việc",
             "searchByName": "Tìm kiếm theo tên phòng khám...",
-            "siteTitle": "Sexual Health NYC - Tìm phòng khám xét nghiệm STI, xét nghiệm HIV, PrEP, PEP, tránh thai và dịch vụ phá thai"
+            "siteTitle": "Sexual Health NYC - Tìm phòng khám xét nghiệm STI, xét nghiệm HIV, PrEP, PEP, tránh thai và dịch vụ phá thai",
+            "verifiedUnknown": "Chưa được xác minh"
         },
         "sections": {
             "telehealthDescription": "Nhận thuốc phá thai qua đường bưu điện — không cần đến trực tiếp",

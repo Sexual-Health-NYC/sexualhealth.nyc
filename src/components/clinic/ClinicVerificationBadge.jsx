@@ -66,7 +66,7 @@ function getVerificationStatus(clinic) {
     (now.getFullYear() - verifiedDate.getFullYear()) * 12 +
     (now.getMonth() - verifiedDate.getMonth());
 
-  if (monthsAgo <= 3) {
+  if (monthsAgo <= 5) {
     return { status: "recent", monthsAgo, date: verifiedDate };
   } else if (monthsAgo <= 6) {
     return { status: "aging", monthsAgo, date: verifiedDate };
