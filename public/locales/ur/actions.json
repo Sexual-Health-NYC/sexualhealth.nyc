@@ -19,5 +19,6 @@
   "finding": "تلاش جاری ہے...",
   "resetView": "منظر دوبارہ ترتیب دیں",
   "geolocationNotSupported": "آپ کا براؤزر جغرافیائی محل وقوع کو سپورٹ نہیں کرتا",
-  "unableToGetLocation": "آپ کا مقام حاصل کرنے سے قاصر"
+  "unableToGetLocation": "آپ کا مقام حاصل کرنے سے قاصر",
+  "showOnMap": "نقشے پر دکھائیں"
 }

@@ -20,5 +20,5 @@
   "resetView": "Restablecer Vista",
   "geolocationNotSupported": "La geolocalización no es compatible con su navegador",
   "unableToGetLocation": "No se pudo obtener su ubicación",
-  "showOnMap": "Ver en Mapa"
+  "showOnMap": "Mostrar en el mapa"
 }

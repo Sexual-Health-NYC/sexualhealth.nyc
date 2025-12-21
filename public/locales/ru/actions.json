@@ -19,5 +19,6 @@
   "finding": "Поиск...",
   "resetView": "Сбросить вид",
   "geolocationNotSupported": "Ваш браузер не поддерживает геолокацию",
-  "unableToGetLocation": "Не удалось определить ваше местоположение"
+  "unableToGetLocation": "Не удалось определить ваше местоположение",
+  "showOnMap": "Показать на карте"
 }

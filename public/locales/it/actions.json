@@ -19,5 +19,6 @@
   "finding": "Ricerca...",
   "resetView": "Reimposta vista",
   "geolocationNotSupported": "Il tuo browser non supporta la geolocalizzazione",
-  "unableToGetLocation": "Impossibile ottenere la tua posizione"
+  "unableToGetLocation": "Impossibile ottenere la tua posizione",
+  "showOnMap": "Mostra su mappa"
 }

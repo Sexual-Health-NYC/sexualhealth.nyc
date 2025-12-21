@@ -19,5 +19,6 @@
   "finding": "Ap chèche...",
   "resetView": "Reyajiste Vizyon",
   "geolocationNotSupported": "Navigatè ou a pa sipòte jewolokalizasyon",
-  "unableToGetLocation": "Pa kapab jwenn pozisyon ou"
+  "unableToGetLocation": "Pa kapab jwenn pozisyon ou",
+  "showOnMap": "Montre sou kat la"
 }

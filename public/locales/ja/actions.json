@@ -19,5 +19,6 @@
   "finding": "検索中...",
   "resetView": "ビューをリセット",
   "geolocationNotSupported": "お使いのブラウザは位置情報をサポートしていません",
-  "unableToGetLocation": "現在地を取得できません"
+  "unableToGetLocation": "現在地を取得できません",
+  "showOnMap": "地図で表示"
 }

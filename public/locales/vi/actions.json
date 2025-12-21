@@ -19,5 +19,6 @@
   "finding": "Đang tìm...",
   "resetView": "Đặt lại chế độ xem",
   "geolocationNotSupported": "Trình duyệt của bạn không hỗ trợ định vị",
-  "unableToGetLocation": "Không thể lấy vị trí của bạn"
+  "unableToGetLocation": "Không thể lấy vị trí của bạn",
+  "showOnMap": "Hiển thị trên bản đồ"
 }

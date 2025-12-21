@@ -19,5 +19,6 @@
   "finding": "খোঁজা হচ্ছে...",
   "resetView": "ভিউ রিসেট করুন",
   "geolocationNotSupported": "আপনার ব্রাউজার জিওলোকেশন সমর্থন করে না",
-  "unableToGetLocation": "আপনার অবস্থান পাওয়া যায়নি"
+  "unableToGetLocation": "আপনার অবস্থান পাওয়া যায়নি",
+  "showOnMap": "মানচিত্রে দেখান"
 }

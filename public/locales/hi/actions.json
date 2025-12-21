@@ -19,5 +19,6 @@
   "finding": "खोज रहा है...",
   "resetView": "दृश्य रीसेट करें",
   "geolocationNotSupported": "आपका ब्राउज़र जियोलोकेशन का समर्थन नहीं करता है",
-  "unableToGetLocation": "आपका स्थान प्राप्त करने में असमर्थ"
+  "unableToGetLocation": "आपका स्थान प्राप्त करने में असमर्थ",
+  "showOnMap": "नक्शे पर दिखाएं"
 }

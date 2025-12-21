@@ -19,5 +19,6 @@
   "finding": "מחפש...",
   "resetView": "אפס תצוגה",
   "geolocationNotSupported": "הדפדפן שלך אינו תומך במיקום גיאוגרפי",
-  "unableToGetLocation": "לא ניתן לקבל את המיקום שלך"
+  "unableToGetLocation": "לא ניתן לקבל את המיקום שלך",
+  "showOnMap": "הצג על המפה"
 }

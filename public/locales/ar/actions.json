@@ -19,5 +19,6 @@
   "finding": "جاري البحث...",
   "resetView": "إعادة تعيين العرض",
   "geolocationNotSupported": "المتصفح لا يدعم تحديد الموقع",
-  "unableToGetLocation": "تعذر تحديد موقعك"
+  "unableToGetLocation": "تعذر تحديد موقعك",
+  "showOnMap": "عرض على الخريطة"
 }
