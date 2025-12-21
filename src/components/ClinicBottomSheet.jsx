@@ -81,7 +81,7 @@ export default function ClinicBottomSheet() {
         borderTopLeftRadius: theme.borderRadius.lg,
         borderTopRightRadius: theme.borderRadius.lg,
         boxShadow: theme.shadows.lg,
-        maxHeight: "85vh",
+        maxHeight: "50vh",
         overflowY: "auto",
         zIndex: 20,
         transition: `transform ${theme.transitions.base}`,
