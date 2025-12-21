@@ -100,7 +100,7 @@ export default function ClinicAddress({ clinic }) {
             )}
           </button>
           <a
-            href={`https://www.openstreetmap.org/directions?from=&to=${clinic.latitude},${clinic.longitude}#map=15/${clinic.latitude}/${clinic.longitude}`}
+            href={`https://www.openstreetmap.org/directions?to=${clinic.latitude},${clinic.longitude}`}
             target="_blank"
             rel="noopener noreferrer"
             style={{
