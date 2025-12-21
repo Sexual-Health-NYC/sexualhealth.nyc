@@ -1,17 +1,19 @@
 import { Popup } from "react-map-gl";
+import { useTranslation } from "react-i18next";
 import useAppStore from "../store/useAppStore";
 import theme from "../theme";
 
 export default function ClinicPopup() {
+  const { t } = useTranslation(["services"]);
   const { selectedClinic, selectClinic } = useAppStore();
 
   if (!selectedClinic) return null;
 
   const services = [];
-  if (selectedClinic.has_sti_testing) services.push("STI Testing");
-  if (selectedClinic.has_hiv_testing) services.push("HIV Testing");
-  if (selectedClinic.has_prep) services.push("PrEP");
-  if (selectedClinic.has_pep) services.push("PEP");
+  if (selectedClinic.has_sti_testing) services.push(t("services:stiTesting"));
+  if (selectedClinic.has_hiv_testing) services.push(t("services:hivTesting"));
+  if (selectedClinic.has_prep) services.push(t("services:prep"));
+  if (selectedClinic.has_pep) services.push(t("services:pep"));
 
   return (
     <Popup

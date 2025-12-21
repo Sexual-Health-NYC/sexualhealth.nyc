@@ -10,6 +10,7 @@ import enActions from "./locales/en/actions.json";
 import enMessages from "./locales/en/messages.json";
 import enLocations from "./locales/en/locations.json";
 import enGestational from "./locales/en/gestational.json";
+import enForms from "./locales/en/forms.json";
 
 // Import Spanish translations
 import esServices from "./locales/es/services.json";
@@ -19,6 +20,7 @@ import esActions from "./locales/es/actions.json";
 import esMessages from "./locales/es/messages.json";
 import esLocations from "./locales/es/locations.json";
 import esGestational from "./locales/es/gestational.json";
+import esForms from "./locales/es/forms.json";
 
 const resources = {
   en: {
@@ -29,6 +31,7 @@ const resources = {
     messages: enMessages,
     locations: enLocations,
     gestational: enGestational,
+    forms: enForms,
   },
   es: {
     services: esServices,
@@ -38,6 +41,7 @@ const resources = {
     messages: esMessages,
     locations: esLocations,
     gestational: esGestational,
+    forms: esForms,
   },
 };
 

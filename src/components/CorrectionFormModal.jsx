@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import theme from "../theme";
 
 export default function CorrectionFormModal({ clinicName, onClose }) {
+  const { t } = useTranslation(["forms"]);
   const [correction, setCorrection] = useState("");
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState("idle"); // idle, submitting, success, error
@@ -12,7 +14,7 @@ export default function CorrectionFormModal({ clinicName, onClose }) {
 
     if (!correction.trim()) {
       setStatus("error");
-      setMessage("Please describe the correction needed.");
+      setMessage(t("forms:correctionRequired"));
       return;
     }
 
@@ -33,25 +35,17 @@ export default function CorrectionFormModal({ clinicName, onClose }) {
 
       if (response.ok) {
         setStatus("success");
-        setMessage(
-          data.message ||
-            "Thank you! Your correction has been submitted and will be reviewed shortly.",
-        );
+        setMessage(data.message || t("forms:correctionSuccess"));
         setTimeout(() => {
           onClose();
         }, 3000);
       } else {
         setStatus("error");
-        setMessage(
-          data.error ||
-            "Failed to submit correction. Please try again or email hello@sexualhealth.nyc directly.",
-        );
+        setMessage(data.error || t("forms:correctionError"));
       }
     } catch (error) {
       setStatus("error");
-      setMessage(
-        "Failed to submit correction. Please try again or email hello@sexualhealth.nyc directly.",
-      );
+      setMessage(t("forms:correctionError"));
     }
   };
 
@@ -111,11 +105,11 @@ export default function CorrectionFormModal({ clinicName, onClose }) {
               margin: 0,
             }}
           >
-            Report a Correction
+            {t("forms:reportCorrection")}
           </h2>
           <button
             onClick={onClose}
-            aria-label="Close correction form"
+            aria-label={t("forms:closeCorrectionForm")}
             style={{
               background: "none",
               border: "none",
@@ -144,8 +138,7 @@ export default function CorrectionFormModal({ clinicName, onClose }) {
             marginBottom: theme.spacing[4],
           }}
         >
-          Help us keep this information accurate. Report any errors or outdated
-          information for <strong>{clinicName}</strong>.
+          {t("forms:correctionFormDescription")} <strong>{clinicName}</strong>.
         </p>
 
         <form onSubmit={handleSubmit}>
@@ -160,14 +153,15 @@ export default function CorrectionFormModal({ clinicName, onClose }) {
                 marginBottom: theme.spacing[2],
               }}
             >
-              What needs to be corrected? <span aria-label="required">*</span>
+              {t("forms:whatNeedsCorrection")}{" "}
+              <span aria-label={t("forms:required")}>*</span>
             </label>
             <textarea
               id="correction"
               required
               value={correction}
               onChange={(e) => setCorrection(e.target.value)}
-              placeholder="e.g., The phone number is incorrect, hours have changed, this clinic has closed, etc."
+              placeholder={t("forms:correctionPlaceholder")}
               rows={4}
               style={{
                 width: "100%",
@@ -201,14 +195,14 @@ export default function CorrectionFormModal({ clinicName, onClose }) {
                 marginBottom: theme.spacing[2],
               }}
             >
-              Your email (optional)
+              {t("forms:yourEmail")}
             </label>
             <input
               id="email"
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="your@email.com"
+              placeholder={t("forms:emailPlaceholder")}
               style={{
                 width: "100%",
                 padding: theme.spacing[3],
@@ -235,7 +229,7 @@ export default function CorrectionFormModal({ clinicName, onClose }) {
                 marginBottom: 0,
               }}
             >
-              We'll only use this to follow up if needed.
+              {t("forms:emailDisclaimer")}
             </p>
           </div>
 
@@ -297,7 +291,7 @@ export default function CorrectionFormModal({ clinicName, onClose }) {
                 e.currentTarget.style.outline = "none";
               }}
             >
-              Cancel
+              {t("forms:cancel")}
             </button>
             <button
               type="submit"
@@ -326,10 +320,10 @@ export default function CorrectionFormModal({ clinicName, onClose }) {
               }}
             >
               {status === "submitting"
-                ? "Submitting..."
+                ? t("forms:submitting")
                 : status === "success"
-                  ? "Submitted!"
-                  : "Submit Correction"}
+                  ? t("forms:submitted")
+                  : t("forms:submitCorrection")}
             </button>
           </div>
         </form>

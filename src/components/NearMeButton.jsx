@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import useAppStore from "../store/useAppStore";
 import theme from "../theme";
 
@@ -9,6 +10,7 @@ const DEFAULT_VIEWPORT = {
 };
 
 export default function NearMeButton() {
+  const { t } = useTranslation(["actions"]);
   const { setMapViewport } = useAppStore();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -19,7 +21,7 @@ export default function NearMeButton() {
 
   const handleNearMe = () => {
     if (!navigator.geolocation) {
-      setError("Geolocation is not supported by your browser");
+      setError(t("actions:geolocationNotSupported"));
       return;
     }
 
@@ -36,7 +38,7 @@ export default function NearMeButton() {
         setLoading(false);
       },
       (err) => {
-        setError("Unable to get your location");
+        setError(t("actions:unableToGetLocation"));
         setLoading(false);
         console.error("Geolocation error:", err);
       },
@@ -89,7 +91,7 @@ export default function NearMeButton() {
         <span style={{ fontSize: theme.fonts.size.lg }} aria-hidden="true">
           📍
         </span>
-        {loading ? "Finding..." : "Near Me"}
+        {loading ? t("actions:finding") : t("actions:nearMe")}
       </button>
       <button
         onClick={handleReset}
@@ -112,7 +114,7 @@ export default function NearMeButton() {
           e.currentTarget.style.outline = "none";
         }}
       >
-        Reset View
+        {t("actions:resetView")}
       </button>
       {error && (
         <div

@@ -14,5 +14,10 @@
   "zoomIn": "haga clic para acercar",
   "close": "Cerrar",
   "reportCorrection": "Reportar una corrección",
-  "copyAddressToClipboard": "Copiar dirección al portapapeles"
+  "copyAddressToClipboard": "Copiar dirección al portapapeles",
+  "nearMe": "Cerca de Mí",
+  "finding": "Buscando...",
+  "resetView": "Restablecer Vista",
+  "geolocationNotSupported": "La geolocalización no es compatible con su navegador",
+  "unableToGetLocation": "No se pudo obtener su ubicación"
 }

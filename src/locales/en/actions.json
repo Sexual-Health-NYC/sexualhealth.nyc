@@ -14,5 +14,10 @@
   "zoomIn": "click to zoom in",
   "close": "Close",
   "reportCorrection": "Report a correction",
-  "copyAddressToClipboard": "Copy address to clipboard"
+  "copyAddressToClipboard": "Copy address to clipboard",
+  "nearMe": "Near Me",
+  "finding": "Finding...",
+  "resetView": "Reset View",
+  "geolocationNotSupported": "Geolocation is not supported by your browser",
+  "unableToGetLocation": "Unable to get your location"
 }
