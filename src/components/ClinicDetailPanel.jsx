@@ -11,7 +11,7 @@ import ClinicContact from "./clinic/ClinicContact";
 import ClinicInsurance from "./clinic/ClinicInsurance";
 
 export default function ClinicDetailPanel() {
-  const { t } = useTranslation(["actions"]);
+  const { t } = useTranslation(["actions", "forms"]);
   const { selectedClinic, selectClinic } = useAppStore();
   const [showCorrectionForm, setShowCorrectionForm] = useState(false);
 
@@ -109,13 +109,12 @@ export default function ClinicDetailPanel() {
         {/* Report Correction */}
         <div
           style={{
-            marginTop: theme.spacing[4],
-            paddingTop: theme.spacing[4],
+            paddingTop: theme.spacing[3],
             borderTop: `1px solid ${theme.colors.border}`,
           }}
         >
           <button
-            onClick={() => setShowCorrectionForm(true)}
+            onClick={() => setShowCorrectionForm(!showCorrectionForm)}
             style={{
               background: "none",
               border: "none",
@@ -132,19 +131,20 @@ export default function ClinicDetailPanel() {
             onBlur={(e) => {
               e.currentTarget.style.outline = "none";
             }}
+            aria-expanded={showCorrectionForm}
           >
-            {t("actions:reportCorrection")}
+            {showCorrectionForm
+              ? t("forms:cancel")
+              : t("actions:reportCorrection")}
           </button>
+
+          <CorrectionFormModal
+            clinicName={selectedClinic.name}
+            onClose={() => setShowCorrectionForm(false)}
+            isExpanded={showCorrectionForm}
+          />
         </div>
       </div>
-
-      {/* Correction Form Modal */}
-      {showCorrectionForm && (
-        <CorrectionFormModal
-          clinicName={selectedClinic.name}
-          onClose={() => setShowCorrectionForm(false)}
-        />
-      )}
     </div>
   );
 }

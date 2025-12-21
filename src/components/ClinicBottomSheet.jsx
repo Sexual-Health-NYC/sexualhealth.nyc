@@ -11,7 +11,7 @@ import ClinicContact from "./clinic/ClinicContact";
 import ClinicInsurance from "./clinic/ClinicInsurance";
 
 export default function ClinicBottomSheet() {
-  const { t } = useTranslation(["actions"]);
+  const { t } = useTranslation(["actions", "forms"]);
   const { selectedClinic, selectClinic } = useAppStore();
   const sheetRef = useRef(null);
   const startY = useRef(0);
@@ -182,7 +182,7 @@ export default function ClinicBottomSheet() {
             aria-expanded={showCorrectionForm}
           >
             {showCorrectionForm
-              ? "Cancel correction"
+              ? t("forms:cancel")
               : t("actions:reportCorrection")}
           </button>
 
