@@ -10,6 +10,7 @@ import {
 } from "../utils/hours";
 import { TransitInfo, BusInfo } from "./SubwayBullet";
 import CorrectionFormModal from "./CorrectionFormModal";
+import { getDirectionsUrl } from "../utils/directions";
 
 export default function ClinicListView({ clinics, onShowMap }) {
   const { t } = useTranslation([
@@ -387,7 +388,7 @@ function ClinicCard({ clinic, expanded, onToggle, onShowOnMap, t }) {
               {copiedAddress ? "✓ copied" : "copy"}
             </button>
             <a
-              href={`https://www.openstreetmap.org/directions?from=&to=${clinic.latitude},${clinic.longitude}#map=15/${clinic.latitude}/${clinic.longitude}`}
+              href={getDirectionsUrl(clinic.latitude, clinic.longitude)}
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}

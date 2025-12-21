@@ -10,6 +10,7 @@ import {
 } from "../utils/hours";
 import CorrectionFormModal from "./CorrectionFormModal";
 import { TransitInfo, BusInfo } from "./SubwayBullet";
+import { getDirectionsUrl } from "../utils/directions";
 
 export default function ClinicBottomSheet() {
   const { t } = useTranslation([
@@ -362,7 +363,12 @@ export default function ClinicBottomSheet() {
             </button>
             {" · "}
             <a
-              href={`geo:${selectedClinic.latitude},${selectedClinic.longitude}?q=${encodeURIComponent(selectedClinic.address + (selectedClinic.borough ? `, ${selectedClinic.borough}, NY` : ""))}`}
+              href={getDirectionsUrl(
+                selectedClinic.latitude,
+                selectedClinic.longitude,
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 color: theme.colors.primary,
                 textDecoration: "underline",
