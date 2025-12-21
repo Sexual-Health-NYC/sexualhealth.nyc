@@ -4,6 +4,6 @@
   "upTo10": "Up to 10 weeks",
   "upTo12": "Up to 12 weeks",
   "upTo20": "Up to 20 weeks",
-  "upTo24": "Up to 24 weeks",
-  "lateTerm": "20+ weeks (late-term)"
+  "upTo24": "Up to 24 weeks (NY limit)",
+  "lateTerm": "Beyond 24 weeks"
 }

@@ -51,6 +51,11 @@ export default function FilterBar() {
     const newFilters = { ...filters };
     if (newFilters[category].has(value)) {
       newFilters[category].delete(value);
+
+      // Clear gestational weeks filter if abortion service is deselected
+      if (category === "services" && value === "abortion") {
+        setGestationalWeeks(null);
+      }
     } else {
       newFilters[category].add(value);
     }
@@ -434,12 +439,12 @@ export default function FilterBar() {
           padding: `${theme.spacing[3]} ${theme.spacing[6]}`,
         }}
       >
-        {/* Top row: Logo and filter dropdowns */}
+        {/* Top row: Logo, Clear All, and Language */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
-            gap: theme.spacing[4],
+            justifyContent: "space-between",
             marginBottom: theme.spacing[3],
           }}
         >
@@ -460,185 +465,190 @@ export default function FilterBar() {
             style={{
               display: "flex",
               gap: theme.spacing[3],
-              flex: 1,
-              flexWrap: "wrap",
               alignItems: "center",
-              transition: "all 0.2s ease-out",
             }}
           >
-            <FilterDropdown
-              name="services"
-              title={t("sections:services")}
-              options={serviceOptions}
-              category="services"
-            />
-            <FilterDropdown
-              name="insurance"
-              title={t("sections:insuranceAndCost")}
-              options={insuranceOptions}
-              category="insurance"
-            />
-            <FilterDropdown
-              name="boroughs"
-              title={t("sections:borough")}
-              options={boroughOptions}
-              category="boroughs"
-            />
-            {filters.services.has("abortion") && <GestationalDropdown />}
+            {getActiveFilterCount() > 0 && (
+              <button
+                onClick={clearFilters}
+                className="btn-interactive"
+                style={{
+                  padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
+                  backgroundColor: "white",
+                  color: theme.colors.textSecondary,
+                  border: `1px solid ${theme.colors.border}`,
+                  borderRadius: theme.borderRadius.md,
+                  fontSize: theme.fonts.size.sm,
+                  fontWeight: theme.fonts.weight.medium,
+                  cursor: "pointer",
+                }}
+                onFocus={(e) => {
+                  e.currentTarget.style.outline = theme.focus.outline;
+                  e.currentTarget.style.outlineOffset =
+                    theme.focus.outlineOffset;
+                }}
+                onBlur={(e) => {
+                  e.currentTarget.style.outline = "none";
+                }}
+              >
+                {t("actions:clearAll")}
+              </button>
+            )}
+            <LanguageSwitcher />
+          </div>
+        </div>
 
-            {/* Time filters */}
-            <button
-              onClick={() => setFilter("openNow", !filters.openNow)}
-              className={`filter-pill${filters.openNow ? " active" : ""}`}
-              style={{
-                padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
-                backgroundColor: filters.openNow ? theme.colors.open : "white",
-                color: filters.openNow ? "white" : theme.colors.textPrimary,
-                border: `2px solid ${filters.openNow ? theme.colors.open : theme.colors.border}`,
-                borderRadius: theme.borderRadius.md,
-                fontSize: theme.fonts.size.sm,
-                fontWeight: theme.fonts.weight.medium,
-                cursor: "pointer",
+        {/* Filter dropdowns row */}
+        <div
+          style={{
+            display: "flex",
+            gap: theme.spacing[3],
+            flexWrap: "wrap",
+            alignItems: "center",
+            marginBottom: getActiveFilterCount() > 0 ? theme.spacing[3] : 0,
+          }}
+        >
+          <FilterDropdown
+            name="services"
+            title={t("sections:services")}
+            options={serviceOptions}
+            category="services"
+          />
+          <FilterDropdown
+            name="insurance"
+            title={t("sections:insuranceAndCost")}
+            options={insuranceOptions}
+            category="insurance"
+          />
+          <FilterDropdown
+            name="boroughs"
+            title={t("sections:borough")}
+            options={boroughOptions}
+            category="boroughs"
+          />
+          {filters.services.has("abortion") && <GestationalDropdown />}
+
+          {/* Time filters */}
+          <button
+            onClick={() => setFilter("openNow", !filters.openNow)}
+            className={`filter-pill${filters.openNow ? " active" : ""}`}
+            style={{
+              padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
+              backgroundColor: filters.openNow ? theme.colors.open : "white",
+              color: filters.openNow ? "white" : theme.colors.textPrimary,
+              border: `2px solid ${filters.openNow ? theme.colors.open : theme.colors.border}`,
+              borderRadius: theme.borderRadius.md,
+              fontSize: theme.fonts.size.sm,
+              fontWeight: theme.fonts.weight.medium,
+              cursor: "pointer",
+            }}
+          >
+            {t("messages:openNow")}
+          </button>
+          <button
+            onClick={() => setFilter("openAfter5pm", !filters.openAfter5pm)}
+            className={`filter-pill${filters.openAfter5pm ? " active" : ""}`}
+            style={{
+              padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
+              backgroundColor: filters.openAfter5pm
+                ? theme.colors.primary
+                : "white",
+              color: filters.openAfter5pm ? "white" : theme.colors.textPrimary,
+              border: `2px solid ${filters.openAfter5pm ? theme.colors.primary : theme.colors.border}`,
+              borderRadius: theme.borderRadius.md,
+              fontSize: theme.fonts.size.sm,
+              fontWeight: theme.fonts.weight.medium,
+              cursor: "pointer",
+            }}
+          >
+            {t("messages:openAfter5pm")}
+          </button>
+
+          {/* Subway filter */}
+          <div style={{ minWidth: "180px" }}>
+            <Select
+              isMulti
+              placeholder={t("messages:subway")}
+              value={Array.from(filters.subwayLines).map((line) => ({
+                value: line,
+                label: line,
+              }))}
+              onChange={(selected) => {
+                setFilter(
+                  "subwayLines",
+                  new Set(selected?.map((s) => s.value) || []),
+                );
               }}
-            >
-              {t("messages:openNow")}
-            </button>
-            <button
-              onClick={() => setFilter("openAfter5pm", !filters.openAfter5pm)}
-              className={`filter-pill${filters.openAfter5pm ? " active" : ""}`}
-              style={{
-                padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
-                backgroundColor: filters.openAfter5pm
-                  ? theme.colors.primary
-                  : "white",
-                color: filters.openAfter5pm
-                  ? "white"
-                  : theme.colors.textPrimary,
-                border: `2px solid ${filters.openAfter5pm ? theme.colors.primary : theme.colors.border}`,
-                borderRadius: theme.borderRadius.md,
-                fontSize: theme.fonts.size.sm,
-                fontWeight: theme.fonts.weight.medium,
-                cursor: "pointer",
+              options={transitData.subwayLines.map((line) => ({
+                value: line,
+                label: line,
+              }))}
+              formatOptionLabel={({ value }) => (
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "8px",
+                  }}
+                >
+                  <SubwayBullet line={value} />
+                  <span>{value} train</span>
+                </div>
+              )}
+              styles={{
+                control: (base) => ({
+                  ...base,
+                  borderColor:
+                    filters.subwayLines.size > 0
+                      ? theme.colors.primary
+                      : theme.colors.border,
+                  borderWidth: "2px",
+                  "&:hover": { borderColor: theme.colors.primaryLight },
+                }),
+                multiValue: (base) => ({
+                  ...base,
+                  backgroundColor: `${theme.colors.primary}20`,
+                }),
               }}
-            >
-              {t("messages:openAfter5pm")}
-            </button>
-
-            {/* Subway filter */}
-            <div style={{ minWidth: "180px" }}>
-              <Select
-                isMulti
-                placeholder={t("messages:subway")}
-                value={Array.from(filters.subwayLines).map((line) => ({
-                  value: line,
-                  label: line,
-                }))}
-                onChange={(selected) => {
-                  setFilter(
-                    "subwayLines",
-                    new Set(selected?.map((s) => s.value) || []),
-                  );
-                }}
-                options={transitData.subwayLines.map((line) => ({
-                  value: line,
-                  label: line,
-                }))}
-                formatOptionLabel={({ value }) => (
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "8px",
-                    }}
-                  >
-                    <SubwayBullet line={value} />
-                    <span>{value} train</span>
-                  </div>
-                )}
-                styles={{
-                  control: (base) => ({
-                    ...base,
-                    borderColor:
-                      filters.subwayLines.size > 0
-                        ? theme.colors.primary
-                        : theme.colors.border,
-                    borderWidth: "2px",
-                    "&:hover": { borderColor: theme.colors.primaryLight },
-                  }),
-                  multiValue: (base) => ({
-                    ...base,
-                    backgroundColor: `${theme.colors.primary}20`,
-                  }),
-                }}
-              />
-            </div>
-
-            {/* Bus filter */}
-            <div style={{ minWidth: "180px" }}>
-              <Select
-                isMulti
-                placeholder={t("messages:bus")}
-                value={Array.from(filters.busRoutes).map((route) => ({
-                  value: route,
-                  label: route,
-                }))}
-                onChange={(selected) => {
-                  setFilter(
-                    "busRoutes",
-                    new Set(selected?.map((s) => s.value) || []),
-                  );
-                }}
-                options={transitData.busRoutes.map((route) => ({
-                  value: route,
-                  label: route,
-                }))}
-                styles={{
-                  control: (base) => ({
-                    ...base,
-                    borderColor:
-                      filters.busRoutes.size > 0
-                        ? theme.colors.primary
-                        : theme.colors.border,
-                    borderWidth: "2px",
-                    "&:hover": { borderColor: theme.colors.primaryLight },
-                  }),
-                  multiValue: (base) => ({
-                    ...base,
-                    backgroundColor: `${theme.colors.primary}20`,
-                  }),
-                }}
-              />
-            </div>
+            />
           </div>
 
-          {getActiveFilterCount() > 0 && (
-            <button
-              onClick={clearFilters}
-              className="btn-interactive"
-              style={{
-                padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
-                backgroundColor: "white",
-                color: theme.colors.textSecondary,
-                border: `1px solid ${theme.colors.border}`,
-                borderRadius: theme.borderRadius.md,
-                fontSize: theme.fonts.size.sm,
-                fontWeight: theme.fonts.weight.medium,
-                cursor: "pointer",
+          {/* Bus filter */}
+          <div style={{ minWidth: "180px" }}>
+            <Select
+              isMulti
+              placeholder={t("messages:bus")}
+              value={Array.from(filters.busRoutes).map((route) => ({
+                value: route,
+                label: route,
+              }))}
+              onChange={(selected) => {
+                setFilter(
+                  "busRoutes",
+                  new Set(selected?.map((s) => s.value) || []),
+                );
               }}
-              onFocus={(e) => {
-                e.currentTarget.style.outline = theme.focus.outline;
-                e.currentTarget.style.outlineOffset = theme.focus.outlineOffset;
+              options={transitData.busRoutes.map((route) => ({
+                value: route,
+                label: route,
+              }))}
+              styles={{
+                control: (base) => ({
+                  ...base,
+                  borderColor:
+                    filters.busRoutes.size > 0
+                      ? theme.colors.primary
+                      : theme.colors.border,
+                  borderWidth: "2px",
+                  "&:hover": { borderColor: theme.colors.primaryLight },
+                }),
+                multiValue: (base) => ({
+                  ...base,
+                  backgroundColor: `${theme.colors.primary}20`,
+                }),
               }}
-              onBlur={(e) => {
-                e.currentTarget.style.outline = "none";
-              }}
-            >
-              {t("actions:clearAll")}
-            </button>
-          )}
-
-          {/* Language Switcher */}
-          <LanguageSwitcher />
+            />
+          </div>
         </div>
 
         {/* Bottom row: Active filter pills */}
