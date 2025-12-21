@@ -1,0 +1,1296 @@
+[
+  {
+    "clinicName": "The Mount Sinai Comprehensive Health – Downtown",
+    "clinicId": "rec257F4MO1DVRvL0",
+    "googleName": "The Mount Sinai Comprehensive Health – Downtown",
+    "phone": "(212) 604-6513",
+    "website": "https://www.mountsinai.org/patient-care/service-areas/infectious-diseases/hiv-aids/mschp-downtown",
+    "googleMapsUrl": "https://maps.google.com/?cid=17518001870725536347",
+    "businessStatus": "OPERATIONAL",
+    "hours": [
+      {
+        "department": "General",
+        "schedule": [
+          {
+            "days": [
+              "Monday"
+            ],
+            "open": "9 AM",
+            "close": "3:30 PM"
+          },
+          {
+            "days": [
+              "Tuesday"
+            ],
+            "open": "9 AM",
+            "close": "4 PM"
+          },
+          {
+            "days": [
+              "Wednesday"
+            ],
+            "open": "9 AM",
+            "close": "4 PM"
+          },
+          {
+            "days": [
+              "Thursday"
+            ],
+            "open": "9 AM",
+            "close": "4 PM"
+          },
+          {
+            "days": [
+              "Friday"
+            ],
+            "open": "9 AM",
+            "close": "3:30 PM"
+          }
+        ]
+      }
+    ],
+    "hoursText": [
+      "Monday: 9:00 AM – 3:30 PM",
+      "Tuesday: 9:00 AM – 4:00 PM",
+      "Wednesday: 9:00 AM – 4:00 PM",
+      "Thursday: 9:00 AM – 4:00 PM",
+      "Friday: 9:00 AM – 3:30 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ]
+  },
+  {
+    "clinic": "Queens Abortion Pill",
+    "status": "not_found"
+  },
+  {
+    "clinicName": "The Institute for Family Health",
+    "clinicId": "recAsqaYOwyqhAi2p",
+    "googleName": "The Institute for Family Health at 17th St",
+    "phone": "(212) 206-5200",
+    "website": "http://www.institute.org/",
+    "googleMapsUrl": "https://maps.google.com/?cid=719787927011008690",
+    "businessStatus": "OPERATIONAL",
+    "hours": [
+      {
+        "department": "General",
+        "schedule": [
+          {
+            "days": [
+              "Monday"
+            ],
+            "open": "8 AM",
+            "close": "6 PM"
+          },
+          {
+            "days": [
+              "Tuesday"
+            ],
+            "open": "8 AM",
+            "close": "8 PM"
+          },
+          {
+            "days": [
+              "Wednesday"
+            ],
+            "open": "8 AM",
+            "close": "6 PM"
+          },
+          {
+            "days": [
+              "Thursday"
+            ],
+            "open": "8 AM",
+            "close": "8 PM"
+          },
+          {
+            "days": [
+              "Friday"
+            ],
+            "open": "8 AM",
+            "close": "6 PM"
+          }
+        ]
+      }
+    ],
+    "hoursText": [
+      "Monday: 8:00 AM – 6:00 PM",
+      "Tuesday: 8:00 AM – 8:00 PM",
+      "Wednesday: 8:00 AM – 6:00 PM",
+      "Thursday: 8:00 AM – 8:00 PM",
+      "Friday: 8:00 AM – 6:00 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ]
+  },
+  {
+    "clinicName": "Early Options",
+    "clinicId": "recBdfoUAgOXjPmB1",
+    "googleName": "Early Options",
+    "phone": "(212) 431-8533",
+    "website": "https://www.earlyabortionoptions.com/",
+    "googleMapsUrl": "https://maps.google.com/?cid=3558661580612909894",
+    "businessStatus": "OPERATIONAL",
+    "hours": [
+      {
+        "department": "General",
+        "schedule": [
+          {
+            "days": [
+              "Monday"
+            ],
+            "open": "7 AM",
+            "close": "6 PM"
+          },
+          {
+            "days": [
+              "Tuesday"
+            ],
+            "open": "7 AM",
+            "close": "6 PM"
+          },
+          {
+            "days": [
+              "Wednesday"
+            ],
+            "open": "7 AM",
+            "close": "6 PM"
+          },
+          {
+            "days": [
+              "Thursday"
+            ],
+            "open": "7 AM",
+            "close": "6 PM"
+          },
+          {
+            "days": [
+              "Friday"
+            ],
+            "open": "7 AM",
+            "close": "6 PM"
+          }
+        ]
+      }
+    ],
+    "hoursText": [
+      "Monday: 7:00 AM – 6:00 PM",
+      "Tuesday: 7:00 AM – 6:00 PM",
+      "Wednesday: 7:00 AM – 6:00 PM",
+      "Thursday: 7:00 AM – 6:00 PM",
+      "Friday: 7:00 AM – 6:00 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ]
+  },
+  {
+    "clinicName": "Professional Gynecological Services",
+    "clinicId": "recH9ew7NbKPDpwpz",
+    "googleName": "Professional Gynecological Services",
+    "phone": "(718) 875-4848",
+    "website": "https://www.thewomenschoice.com/",
+    "googleMapsUrl": "https://maps.google.com/?cid=17639114449926021755",
+    "businessStatus": "OPERATIONAL",
+    "hours": [
+      {
+        "department": "General",
+        "schedule": [
+          {
+            "days": [
+              "Monday"
+            ],
+            "open": "9 AM",
+            "close": "5:30 PM"
+          },
+          {
+            "days": [
+              "Tuesday"
+            ],
+            "open": "9 AM",
+            "close": "5:30 PM"
+          },
+          {
+            "days": [
+              "Wednesday"
+            ],
+            "open": "9 AM",
+            "close": "6:30 PM"
+          },
+          {
+            "days": [
+              "Thursday"
+            ],
+            "open": "9 AM",
+            "close": "6:30 PM"
+          },
+          {
+            "days": [
+              "Friday"
+            ],
+            "open": "9 AM",
+            "close": "5 PM"
+          },
+          {
+            "days": [
+              "Saturday"
+            ],
+            "open": "9 AM",
+            "close": "11:30 AM"
+          }
+        ]
+      }
+    ],
+    "hoursText": [
+      "Monday: 9:00 AM – 5:30 PM",
+      "Tuesday: 9:00 AM – 5:30 PM",
+      "Wednesday: 9:00 AM – 6:30 PM",
+      "Thursday: 9:00 AM – 6:30 PM",
+      "Friday: 9:00 AM – 5:00 PM",
+      "Saturday: 9:00 – 11:30 AM",
+      "Sunday: Closed"
+    ]
+  },
+  {
+    "clinicName": "Maze Women’s Sexual Health - NYC",
+    "clinicId": "recKA2a4p91pezFGM",
+    "googleName": "Maze Women’s Sexual Health - NYC",
+    "phone": "(646) 839-0700",
+    "website": "http://www.mazewomenshealth.com/?utm_source=GMB&utm_medium=Organic&utm_campaign=gmb&utm_id=NYC",
+    "googleMapsUrl": "https://maps.google.com/?cid=6369395899431266295",
+    "businessStatus": "OPERATIONAL",
+    "hours": [
+      {
+        "department": "General",
+        "schedule": [
+          {
+            "days": [
+              "Monday"
+            ],
+            "open": "11 AM",
+            "close": "7 PM"
+          },
+          {
+            "days": [
+              "Tuesday"
+            ],
+            "open": "9 AM",
+            "close": "5 PM"
+          },
+          {
+            "days": [
+              "Wednesday"
+            ],
+            "open": "9 AM",
+            "close": "5 PM"
+          },
+          {
+            "days": [
+              "Thursday"
+            ],
+            "open": "9 AM",
+            "close": "5 PM"
+          },
+          {
+            "days": [
+              "Friday"
+            ],
+            "open": "9 AM",
+            "close": "5 PM"
+          }
+        ]
+      }
+    ],
+    "hoursText": [
+      "Monday: 11:00 AM – 7:00 PM",
+      "Tuesday: 9:00 AM – 5:00 PM",
+      "Wednesday: 9:00 AM – 5:00 PM",
+      "Thursday: 9:00 AM – 5:00 PM",
+      "Friday: 9:00 AM – 5:00 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ]
+  },
+  {
+    "clinicName": "Bellevue Hospital Center Obg",
+    "clinicId": "recKMpppT6KaArvXg",
+    "googleName": "Bellevue Hospital Center Obg",
+    "phone": "(212) 562-5524",
+    "website": "https://www.nychealthandhospitals.org/locations/bellevue/",
+    "googleMapsUrl": "https://maps.google.com/?cid=5077140897344535793",
+    "businessStatus": "OPERATIONAL",
+    "hours": [
+      {
+        "department": "General",
+        "schedule": [
+          {
+            "days": [
+              "Monday"
+            ],
+            "open": "8 AM",
+            "close": "7 PM"
+          },
+          {
+            "days": [
+              "Tuesday"
+            ],
+            "open": "8 AM",
+            "close": "7 PM"
+          },
+          {
+            "days": [
+              "Wednesday"
+            ],
+            "open": "8 AM",
+            "close": "7 PM"
+          },
+          {
+            "days": [
+              "Thursday"
+            ],
+            "open": "8 AM",
+            "close": "7 PM"
+          }
+        ]
+      }
+    ],
+    "hoursText": [
+      "Monday: 8:00 AM – 7:00 PM",
+      "Tuesday: 8:00 AM – 7:00 PM",
+      "Wednesday: 8:00 AM – 7:00 PM",
+      "Thursday: 8:00 AM – 7:00 PM",
+      "Friday: Closed",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ]
+  },
+  {
+    "clinicName": "NYC Health + Hospitals/Metropolitan",
+    "clinicId": "recMDGPMYp7R08Mhg",
+    "googleName": "NYC Health + Hospitals/Metropolitan",
+    "phone": "(844) 692-4692",
+    "website": "http://www.nychealthandhospitals.org/metropolitan",
+    "googleMapsUrl": "https://maps.google.com/?cid=14364597163829492100",
+    "businessStatus": "OPERATIONAL",
+    "hours": [
+      {
+        "department": "General",
+        "schedule": [
+          {
+            "days": [
+              "Monday"
+            ],
+            "open": "8 AM",
+            "close": "8 PM"
+          },
+          {
+            "days": [
+              "Tuesday"
+            ],
+            "open": "8 AM",
+            "close": "8 PM"
+          },
+          {
+            "days": [
+              "Wednesday"
+            ],
+            "open": "8 AM",
+            "close": "8 PM"
+          },
+          {
+            "days": [
+              "Thursday"
+            ],
+            "open": "8 AM",
+            "close": "8 PM"
+          },
+          {
+            "days": [
+              "Friday"
+            ],
+            "open": "8 AM",
+            "close": "5 PM"
+          },
+          {
+            "days": [
+              "Saturday"
+            ],
+            "open": "9 AM",
+            "close": "5 PM"
+          }
+        ]
+      }
+    ],
+    "hoursText": [
+      "Monday: 8:00 AM – 8:00 PM",
+      "Tuesday: 8:00 AM – 8:00 PM",
+      "Wednesday: 8:00 AM – 8:00 PM",
+      "Thursday: 8:00 AM – 8:00 PM",
+      "Friday: 8:00 AM – 5:00 PM",
+      "Saturday: 9:00 AM – 5:00 PM",
+      "Sunday: Closed"
+    ]
+  },
+  {
+    "clinicName": "Eastside Gynecology",
+    "clinicId": "recNKmb7wQ6hTfO74",
+    "googleName": "Eastside Gynecology",
+    "phone": "(212) 308-4988",
+    "website": "http://www.eastsidegynecology.com/",
+    "googleMapsUrl": "https://maps.google.com/?cid=6674206744177316822",
+    "businessStatus": "OPERATIONAL",
+    "hours": [
+      {
+        "department": "General",
+        "schedule": [
+          {
+            "days": [
+              "Monday"
+            ],
+            "open": "7:30 AM",
+            "close": "5:30 PM"
+          },
+          {
+            "days": [
+              "Tuesday"
+            ],
+            "open": "7:30 AM",
+            "close": "5:30 PM"
+          },
+          {
+            "days": [
+              "Wednesday"
+            ],
+            "open": "7:30 AM",
+            "close": "5:30 PM"
+          },
+          {
+            "days": [
+              "Thursday"
+            ],
+            "open": "7:30 AM",
+            "close": "5:30 PM"
+          },
+          {
+            "days": [
+              "Friday"
+            ],
+            "open": "7:30 AM",
+            "close": "5:30 PM"
+          },
+          {
+            "days": [
+              "Saturday"
+            ],
+            "open": "7:30 AM",
+            "close": "3:30 PM"
+          }
+        ]
+      }
+    ],
+    "hoursText": [
+      "Monday: 7:30 AM – 5:30 PM",
+      "Tuesday: 7:30 AM – 5:30 PM",
+      "Wednesday: 7:30 AM – 5:30 PM",
+      "Thursday: 7:30 AM – 5:30 PM",
+      "Friday: 7:30 AM – 5:30 PM",
+      "Saturday: 7:30 AM – 3:30 PM",
+      "Sunday: Closed"
+    ]
+  },
+  {
+    "clinicName": "NYC DOH - Corona Sexual Health Clinic",
+    "clinicId": "recPQokMr5u9Md6z6",
+    "googleName": "Corona Sexual Health Clinic",
+    "phone": "(347) 396-7959",
+    "website": "http://www1.nyc.gov/site/doh/services/sexual-health-clinics.page",
+    "googleMapsUrl": "https://maps.google.com/?cid=17798385288694984810",
+    "businessStatus": "CLOSED_TEMPORARILY",
+    "hours": null,
+    "hoursText": null
+  },
+  {
+    "clinic": "Destination Tomorrow",
+    "status": "not_found"
+  },
+  {
+    "clinicName": "Planned Parenthood - Queens (Diane L. Max)",
+    "clinicId": "recTT5gfhIeQcwE0N",
+    "googleName": "Planned Parenthood - Diane L. Max Health Center",
+    "phone": "(212) 965-7000",
+    "website": "https://www.plannedparenthood.org/health-center/new-york/queens/11101/diane-l-max-health-center-4184-91110?utm_campaign=diane-l-max-health-center&utm_medium=organic&utm_source=local-listing",
+    "googleMapsUrl": "https://maps.google.com/?cid=3441177201868346494",
+    "businessStatus": "OPERATIONAL",
+    "hours": [
+      {
+        "department": "General",
+        "schedule": [
+          {
+            "days": [
+              "Monday"
+            ],
+            "open": "8 AM",
+            "close": "7 PM"
+          },
+          {
+            "days": [
+              "Tuesday"
+            ],
+            "open": "8 AM",
+            "close": "7 PM"
+          },
+          {
+            "days": [
+              "Wednesday"
+            ],
+            "open": "8 AM",
+            "close": "7 PM"
+          },
+          {
+            "days": [
+              "Thursday"
+            ],
+            "open": "8 AM",
+            "close": "7 PM"
+          },
+          {
+            "days": [
+              "Friday"
+            ],
+            "open": "8 AM",
+            "close": "6 PM"
+          },
+          {
+            "days": [
+              "Saturday"
+            ],
+            "open": "8 AM",
+            "close": "6 PM"
+          }
+        ]
+      }
+    ],
+    "hoursText": [
+      "Monday: 8:00 AM – 7:00 PM",
+      "Tuesday: 8:00 AM – 7:00 PM",
+      "Wednesday: 8:00 AM – 7:00 PM",
+      "Thursday: 8:00 AM – 7:00 PM",
+      "Friday: 8:00 AM – 6:00 PM",
+      "Saturday: 8:00 AM – 6:00 PM",
+      "Sunday: Closed"
+    ]
+  },
+  {
+    "clinicName": "NYC DOH - Fort Greene Express Clinic",
+    "clinicId": "recVNjCth6XEtOWuJ",
+    "googleName": "Fort Greene Sexual Health Clinic",
+    "phone": "(347) 396-7959",
+    "website": "http://www1.nyc.gov/site/doh/services/sexual-health-clinics.page",
+    "googleMapsUrl": "https://maps.google.com/?cid=15489063385848334456",
+    "businessStatus": "OPERATIONAL",
+    "hours": [
+      {
+        "department": "General",
+        "schedule": [
+          {
+            "days": [
+              "Monday"
+            ],
+            "open": "8:30 AM",
+            "close": "3:30 PM"
+          },
+          {
+            "days": [
+              "Tuesday"
+            ],
+            "open": "8:30 AM",
+            "close": "3:30 PM"
+          },
+          {
+            "days": [
+              "Wednesday"
+            ],
+            "open": "8:30 AM",
+            "close": "3:30 PM"
+          },
+          {
+            "days": [
+              "Thursday"
+            ],
+            "open": "8:30 AM",
+            "close": "3:30 PM"
+          },
+          {
+            "days": [
+              "Friday"
+            ],
+            "open": "8:30 AM",
+            "close": "3:30 PM"
+          }
+        ]
+      }
+    ],
+    "hoursText": [
+      "Monday: 8:30 AM – 3:30 PM",
+      "Tuesday: 8:30 AM – 3:30 PM",
+      "Wednesday: 8:30 AM – 3:30 PM",
+      "Thursday: 8:30 AM – 3:30 PM",
+      "Friday: 8:30 AM – 3:30 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ]
+  },
+  {
+    "clinicName": "Community Health Center of Richmond - South Avenue",
+    "clinicId": "recZQuUmvW84BYJY7",
+    "googleName": "Community Health Center of Richmond Port Richmond Health Center",
+    "phone": "(718) 876-1732",
+    "website": "http://www.chcrichmond.org/",
+    "googleMapsUrl": "https://maps.google.com/?cid=1337012749573474065",
+    "businessStatus": "OPERATIONAL",
+    "hours": [
+      {
+        "department": "General",
+        "schedule": [
+          {
+            "days": [
+              "Monday"
+            ],
+            "open": "8 AM",
+            "close": "8:30 PM"
+          },
+          {
+            "days": [
+              "Tuesday"
+            ],
+            "open": "8 AM",
+            "close": "10 PM"
+          },
+          {
+            "days": [
+              "Wednesday"
+            ],
+            "open": "8 AM",
+            "close": "8:30 PM"
+          },
+          {
+            "days": [
+              "Thursday"
+            ],
+            "open": "8 AM",
+            "close": "10 PM"
+          },
+          {
+            "days": [
+              "Friday"
+            ],
+            "open": "8 AM",
+            "close": "4:30 PM"
+          },
+          {
+            "days": [
+              "Saturday"
+            ],
+            "open": "8 AM",
+            "close": "12:30 PM"
+          }
+        ]
+      }
+    ],
+    "hoursText": [
+      "Monday: 8:00 AM – 8:30 PM",
+      "Tuesday: 8:00 AM – 10:00 PM",
+      "Wednesday: 8:00 AM – 8:30 PM",
+      "Thursday: 8:00 AM – 10:00 PM",
+      "Friday: 8:00 AM – 4:30 PM",
+      "Saturday: 8:00 AM – 12:30 PM",
+      "Sunday: Closed"
+    ]
+  },
+  {
+    "clinicName": "Callen-Lorde Community Health Center",
+    "clinicId": "recb0xPXmBYiKKE0n",
+    "googleName": "Callen-Lorde Chelsea",
+    "phone": "(212) 271-7200",
+    "website": "https://www.callen-lorde.org/?utm_source=gmb&utm_medium=gmb",
+    "googleMapsUrl": "https://maps.google.com/?cid=15630337017794722726",
+    "businessStatus": "OPERATIONAL",
+    "hours": [
+      {
+        "department": "General",
+        "schedule": [
+          {
+            "days": [
+              "Monday"
+            ],
+            "open": "8:15 AM",
+            "close": "8:15 PM"
+          },
+          {
+            "days": [
+              "Tuesday"
+            ],
+            "open": "8:15 AM",
+            "close": "8:15 PM"
+          },
+          {
+            "days": [
+              "Wednesday"
+            ],
+            "open": "8:15 AM",
+            "close": "8:15 PM"
+          },
+          {
+            "days": [
+              "Thursday"
+            ],
+            "open": "8:15 AM",
+            "close": "8:15 PM"
+          },
+          {
+            "days": [
+              "Friday"
+            ],
+            "open": "9:45 AM",
+            "close": "4:44 PM"
+          },
+          {
+            "days": [
+              "Saturday"
+            ],
+            "open": "9 AM",
+            "close": "3:15 PM"
+          }
+        ]
+      }
+    ],
+    "hoursText": [
+      "Monday: 8:15 AM – 8:15 PM",
+      "Tuesday: 8:15 AM – 8:15 PM",
+      "Wednesday: 8:15 AM – 8:15 PM",
+      "Thursday: 8:15 AM – 8:15 PM",
+      "Friday: 9:45 AM – 4:44 PM",
+      "Saturday: 9:00 AM – 3:15 PM",
+      "Sunday: Closed"
+    ]
+  },
+  {
+    "clinicName": "Brooklyn Abortion Clinic",
+    "clinicId": "recc2OD58PRS0ajNf",
+    "googleName": "Brooklyn Abortion Clinic",
+    "phone": "(718) 369-1900",
+    "website": "https://www.brooklynabortionclinic.nyc/",
+    "googleMapsUrl": "https://maps.google.com/?cid=7461234085299924905",
+    "businessStatus": "OPERATIONAL",
+    "hours": [
+      {
+        "department": "General",
+        "schedule": [
+          {
+            "days": [
+              "Sunday"
+            ],
+            "open": "7 AM",
+            "close": "10 PM"
+          },
+          {
+            "days": [
+              "Monday"
+            ],
+            "open": "7 AM",
+            "close": "10 PM"
+          },
+          {
+            "days": [
+              "Tuesday"
+            ],
+            "open": "7 AM",
+            "close": "10 PM"
+          },
+          {
+            "days": [
+              "Wednesday"
+            ],
+            "open": "7 AM",
+            "close": "10 PM"
+          },
+          {
+            "days": [
+              "Thursday"
+            ],
+            "open": "7 AM",
+            "close": "10 PM"
+          },
+          {
+            "days": [
+              "Friday"
+            ],
+            "open": "7 AM",
+            "close": "10 PM"
+          },
+          {
+            "days": [
+              "Saturday"
+            ],
+            "open": "7 AM",
+            "close": "10 PM"
+          }
+        ]
+      }
+    ],
+    "hoursText": [
+      "Monday: 7:00 AM – 10:00 PM",
+      "Tuesday: 7:00 AM – 10:00 PM",
+      "Wednesday: 7:00 AM – 10:00 PM",
+      "Thursday: 7:00 AM – 10:00 PM",
+      "Friday: 7:00 AM – 10:00 PM",
+      "Saturday: 7:00 AM – 10:00 PM",
+      "Sunday: 7:00 AM – 10:00 PM"
+    ]
+  },
+  {
+    "clinicName": "NYC DOH - Morrisania Sexual Health Clinic",
+    "clinicId": "recf9MRC2L9ziM18A",
+    "googleName": "Morrisania Sexual Health Clinic",
+    "phone": "(347) 396-7959",
+    "website": "http://www.nyc.gov/stdclinics",
+    "googleMapsUrl": "https://maps.google.com/?cid=6453591206380777961",
+    "businessStatus": "OPERATIONAL",
+    "hours": [
+      {
+        "department": "General",
+        "schedule": [
+          {
+            "days": [
+              "Monday"
+            ],
+            "open": "8:30 AM",
+            "close": "3:30 PM"
+          },
+          {
+            "days": [
+              "Tuesday"
+            ],
+            "open": "8:30 AM",
+            "close": "3:30 PM"
+          },
+          {
+            "days": [
+              "Wednesday"
+            ],
+            "open": "8:30 AM",
+            "close": "3:30 PM"
+          },
+          {
+            "days": [
+              "Thursday"
+            ],
+            "open": "8:30 AM",
+            "close": "3:30 PM"
+          },
+          {
+            "days": [
+              "Friday"
+            ],
+            "open": "8:30 AM",
+            "close": "3:30 PM"
+          }
+        ]
+      }
+    ],
+    "hoursText": [
+      "Monday: 8:30 AM – 3:30 PM",
+      "Tuesday: 8:30 AM – 3:30 PM",
+      "Wednesday: 8:30 AM – 3:30 PM",
+      "Thursday: 8:30 AM – 3:30 PM",
+      "Friday: 8:30 AM – 3:30 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ]
+  },
+  {
+    "clinicName": "Dr. Emily Women's Health Center",
+    "clinicId": "recjn3BArvNncZ5Hz",
+    "googleName": "Dr Emily Women's Health Center",
+    "phone": "(718) 585-1010",
+    "website": "https://www.dremily.net/",
+    "googleMapsUrl": "https://maps.google.com/?cid=2293242415060749291",
+    "businessStatus": "OPERATIONAL",
+    "hours": [
+      {
+        "department": "General",
+        "schedule": [
+          {
+            "days": [
+              "Monday"
+            ],
+            "open": "9:30 AM",
+            "close": "5 PM"
+          },
+          {
+            "days": [
+              "Tuesday"
+            ],
+            "open": "8 AM",
+            "close": "5 PM"
+          },
+          {
+            "days": [
+              "Wednesday"
+            ],
+            "open": "9:30 AM",
+            "close": "5 PM"
+          },
+          {
+            "days": [
+              "Thursday"
+            ],
+            "open": "8 AM",
+            "close": "5 PM"
+          },
+          {
+            "days": [
+              "Friday"
+            ],
+            "open": "9:30 AM",
+            "close": "5 PM"
+          },
+          {
+            "days": [
+              "Saturday"
+            ],
+            "open": "8 AM",
+            "close": "2 PM"
+          }
+        ]
+      }
+    ],
+    "hoursText": [
+      "Monday: 9:30 AM – 5:00 PM",
+      "Tuesday: 8:00 AM – 5:00 PM",
+      "Wednesday: 9:30 AM – 5:00 PM",
+      "Thursday: 8:00 AM – 5:00 PM",
+      "Friday: 9:30 AM – 5:00 PM",
+      "Saturday: 8:00 AM – 2:00 PM",
+      "Sunday: Closed"
+    ]
+  },
+  {
+    "clinicName": "NYC Health + Hospitals / Harlem",
+    "clinicId": "reclMEjJ8cGS07MTs",
+    "googleName": "NYC Health + Hospitals/Harlem",
+    "phone": "(844) 692-4692",
+    "website": "http://www.nychealthandhospitals.org/Harlem",
+    "googleMapsUrl": "https://maps.google.com/?cid=7393021118556017775",
+    "businessStatus": "OPERATIONAL",
+    "hours": [
+      {
+        "department": "General",
+        "schedule": [
+          {
+            "days": [
+              "Sunday"
+            ],
+            "open": "12 AM",
+            "close": "11:59 PM"
+          }
+        ]
+      }
+    ],
+    "hoursText": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ]
+  },
+  {
+    "clinicName": "Labtek STD Testing Centers",
+    "clinicId": "recpucVQCqk9gwYLl",
+    "googleName": "Labtek STD Testing Centers",
+    "phone": "(718) 790-4429",
+    "website": null,
+    "googleMapsUrl": "https://maps.google.com/?cid=15406746785685540572",
+    "businessStatus": "OPERATIONAL",
+    "hours": [
+      {
+        "department": "General",
+        "schedule": [
+          {
+            "days": [
+              "Monday"
+            ],
+            "open": "7 AM",
+            "close": "8 PM"
+          },
+          {
+            "days": [
+              "Tuesday"
+            ],
+            "open": "7 AM",
+            "close": "8 PM"
+          },
+          {
+            "days": [
+              "Wednesday"
+            ],
+            "open": "7 AM",
+            "close": "8 PM"
+          },
+          {
+            "days": [
+              "Thursday"
+            ],
+            "open": "7 AM",
+            "close": "8 PM"
+          },
+          {
+            "days": [
+              "Friday"
+            ],
+            "open": "7 AM",
+            "close": "8 PM"
+          },
+          {
+            "days": [
+              "Saturday"
+            ],
+            "open": "7 AM",
+            "close": "2 PM"
+          }
+        ]
+      }
+    ],
+    "hoursText": [
+      "Monday: 7:00 AM – 8:00 PM",
+      "Tuesday: 7:00 AM – 8:00 PM",
+      "Wednesday: 7:00 AM – 8:00 PM",
+      "Thursday: 7:00 AM – 8:00 PM",
+      "Friday: 7:00 AM – 8:00 PM",
+      "Saturday: 7:00 AM – 2:00 PM",
+      "Sunday: Closed"
+    ]
+  },
+  {
+    "clinicName": "NYC Health + Hospitals / Queens",
+    "clinicId": "rect3ECyWg4XcvaK9",
+    "googleName": "NYC Health + Hospitals / Queens",
+    "phone": "(844) 692-4692",
+    "website": "https://www.nychealthandhospitals.org/queens/",
+    "googleMapsUrl": "https://maps.google.com/?cid=4273140966266151312",
+    "businessStatus": "OPERATIONAL",
+    "hours": null,
+    "hoursText": null
+  },
+  {
+    "clinicName": "Manhattan Sexual Health and Wellness",
+    "clinicId": "recthv5JsVJPTsMvm",
+    "googleName": "Manhattan Sexual Health and Wellness",
+    "phone": "(212) 252-9100",
+    "website": null,
+    "googleMapsUrl": "https://maps.google.com/?cid=16299748581129528884",
+    "businessStatus": "OPERATIONAL",
+    "hours": null,
+    "hoursText": null
+  },
+  {
+    "clinicName": "Apicha Community Health Center (Jackson Heights)",
+    "clinicId": "recvaATCITzpbs5g5",
+    "googleName": "Apicha Community Health Center - Jackson Heights-Queens",
+    "phone": "(718) 567-5200",
+    "website": "https://www.apicha.org/locations/jackson-heights-clinic/",
+    "googleMapsUrl": "https://maps.google.com/?cid=18324274402083215110",
+    "businessStatus": "OPERATIONAL",
+    "hours": [
+      {
+        "department": "General",
+        "schedule": [
+          {
+            "days": [
+              "Monday"
+            ],
+            "open": "9 AM",
+            "close": "5:30 PM"
+          },
+          {
+            "days": [
+              "Tuesday"
+            ],
+            "open": "9 AM",
+            "close": "5:30 PM"
+          },
+          {
+            "days": [
+              "Wednesday"
+            ],
+            "open": "9 AM",
+            "close": "7 PM"
+          },
+          {
+            "days": [
+              "Thursday"
+            ],
+            "open": "9 AM",
+            "close": "7 PM"
+          },
+          {
+            "days": [
+              "Friday"
+            ],
+            "open": "9 AM",
+            "close": "5:30 PM"
+          },
+          {
+            "days": [
+              "Saturday"
+            ],
+            "open": "9 AM",
+            "close": "4 PM"
+          }
+        ]
+      }
+    ],
+    "hoursText": [
+      "Monday: 9:00 AM – 5:30 PM",
+      "Tuesday: 9:00 AM – 5:30 PM",
+      "Wednesday: 9:00 AM – 7:00 PM",
+      "Thursday: 9:00 AM – 7:00 PM",
+      "Friday: 9:00 AM – 5:30 PM",
+      "Saturday: 9:00 AM – 4:00 PM",
+      "Sunday: Closed"
+    ]
+  },
+  {
+    "clinicName": "Community Health Center of Richmond - Canal Street",
+    "clinicId": "recvtTblgl92vIKLo",
+    "googleName": "Community Health Center of Richmond",
+    "phone": "(917) 830-1200",
+    "website": "http://www.chcrichmond.org/",
+    "googleMapsUrl": "https://maps.google.com/?cid=14059702002319287856",
+    "businessStatus": "OPERATIONAL",
+    "hours": [
+      {
+        "department": "General",
+        "schedule": [
+          {
+            "days": [
+              "Monday"
+            ],
+            "open": "8:30 AM",
+            "close": "5 PM"
+          },
+          {
+            "days": [
+              "Tuesday"
+            ],
+            "open": "8:30 AM",
+            "close": "5 PM"
+          },
+          {
+            "days": [
+              "Wednesday"
+            ],
+            "open": "8:30 AM",
+            "close": "5 PM"
+          },
+          {
+            "days": [
+              "Thursday"
+            ],
+            "open": "8:30 AM",
+            "close": "5 PM"
+          },
+          {
+            "days": [
+              "Friday"
+            ],
+            "open": "8:30 AM",
+            "close": "5 PM"
+          }
+        ]
+      }
+    ],
+    "hoursText": [
+      "Monday: 8:30 AM – 5:00 PM",
+      "Tuesday: 8:30 AM – 5:00 PM",
+      "Wednesday: 8:30 AM – 5:00 PM",
+      "Thursday: 8:30 AM – 5:00 PM",
+      "Friday: 8:30 AM – 5:00 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ]
+  },
+  {
+    "clinicName": "Community Health Action of Staten Island (CHASI)",
+    "clinicId": "recwWwlA0l9e539Tw",
+    "googleName": "Community Health Action of Staten Island",
+    "phone": "(718) 808-1300",
+    "website": "https://chasiny.org/",
+    "googleMapsUrl": "https://maps.google.com/?cid=12598041494172125841",
+    "businessStatus": "OPERATIONAL",
+    "hours": null,
+    "hoursText": null
+  },
+  {
+    "clinicName": "NYC DOH - Chelsea Express Clinic",
+    "clinicId": "recwdhZz5RP5PihkY",
+    "googleName": "Chelsea Express Clinic",
+    "phone": "(347) 396-7959",
+    "website": "https://www1.nyc.gov/site/doh/services/chelsea-express.page",
+    "googleMapsUrl": "https://maps.google.com/?cid=13497070192815863872",
+    "businessStatus": "OPERATIONAL",
+    "hours": [
+      {
+        "department": "General",
+        "schedule": [
+          {
+            "days": [
+              "Monday"
+            ],
+            "open": "8:30 AM",
+            "close": "3:30 PM"
+          },
+          {
+            "days": [
+              "Tuesday"
+            ],
+            "open": "8:30 AM",
+            "close": "7 PM"
+          },
+          {
+            "days": [
+              "Wednesday"
+            ],
+            "open": "8:30 AM",
+            "close": "3:30 PM"
+          },
+          {
+            "days": [
+              "Thursday"
+            ],
+            "open": "8:30 AM",
+            "close": "3:30 PM"
+          },
+          {
+            "days": [
+              "Friday"
+            ],
+            "open": "8:30 AM",
+            "close": "3:30 PM"
+          }
+        ]
+      }
+    ],
+    "hoursText": [
+      "Monday: 8:30 AM – 3:30 PM",
+      "Tuesday: 8:30 AM – 7:00 PM",
+      "Wednesday: 8:30 AM – 3:30 PM",
+      "Thursday: 8:30 AM – 3:30 PM",
+      "Friday: 8:30 AM – 3:30 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ]
+  }
+]

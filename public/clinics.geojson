@@ -90,8 +90,59 @@
         "address": "275 7th Ave, New York, NY 10001",
         "borough": "Manhattan",
         "phone": "(212) 604-1701",
-        "website": "",
-        "hours": [],
+        "website": "https://www.mountsinai.org/patient-care/service-areas/infectious-diseases/hiv-aids/mschp-downtown",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "15:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Wed"
+            ],
+            "open": "09:00",
+            "close": "16:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Thu"
+            ],
+            "open": "09:00",
+            "close": "16:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon"
+            ],
+            "open": "09:00",
+            "close": "15:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Tue"
+            ],
+            "open": "09:00",
+            "close": "16:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
         "organization": "Mount Sinai",
         "clinic_type": "Hospital",
         "has_sti_testing": false,
@@ -717,7 +768,58 @@
         "borough": "Manhattan",
         "phone": "(844) 434-2778",
         "website": "https://www.institute.org/",
-        "hours": [],
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Wed"
+            ],
+            "open": "08:00",
+            "close": "18:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Thu"
+            ],
+            "open": "08:00",
+            "close": "20:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Fri"
+            ],
+            "open": "08:00",
+            "close": "18:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon"
+            ],
+            "open": "08:00",
+            "close": "18:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Tue"
+            ],
+            "open": "08:00",
+            "close": "20:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
         "organization": "",
         "clinic_type": "",
         "has_sti_testing": true,
@@ -766,8 +868,59 @@
         "address": "124 E 40th St #702, New York, NY 10016, Manhattan",
         "borough": "Manhattan",
         "phone": "(212) 431-8533",
-        "website": "",
-        "hours": [],
+        "website": "https://www.earlyabortionoptions.com/",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Tue"
+            ],
+            "open": "07:00",
+            "close": "18:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Wed"
+            ],
+            "open": "07:00",
+            "close": "18:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Fri"
+            ],
+            "open": "07:00",
+            "close": "18:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon"
+            ],
+            "open": "07:00",
+            "close": "18:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Thu"
+            ],
+            "open": "07:00",
+            "close": "18:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
         "organization": "",
         "clinic_type": "",
         "has_sti_testing": false,
@@ -975,8 +1128,69 @@
         "address": "14 DeKalb Ave 2nd Floor, Brooklyn, NY 11201",
         "borough": "Brooklyn",
         "phone": "(718) 875-4848",
-        "website": "",
-        "hours": [],
+        "website": "https://www.thewomenschoice.com/",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Tue"
+            ],
+            "open": "09:00",
+            "close": "17:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Thu"
+            ],
+            "open": "09:00",
+            "close": "18:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Sat"
+            ],
+            "open": "09:00",
+            "close": "11:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon"
+            ],
+            "open": "09:00",
+            "close": "17:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Wed"
+            ],
+            "open": "09:00",
+            "close": "18:30",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
         "organization": "",
         "clinic_type": "",
         "has_sti_testing": false,
@@ -1163,9 +1377,60 @@
         "name": "Maze Women’s Sexual Health - NYC",
         "address": "633 3rd Ave #9b, New York, NY 10017",
         "borough": "Manhattan",
-        "phone": "",
-        "website": "",
-        "hours": [],
+        "phone": "(646) 839-0700",
+        "website": "http://www.mazewomenshealth.com/?utm_source=GMB&utm_medium=Organic&utm_campaign=gmb&utm_id=NYC",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon"
+            ],
+            "open": "11:00",
+            "close": "19:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Thu"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Tue"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Wed"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
         "organization": "",
         "clinic_type": "",
         "has_sti_testing": false,
@@ -1214,8 +1479,49 @@
         "address": "462 1st Ave, New York, NY 10016, Manhattan",
         "borough": "Manhattan",
         "phone": "(212) 562-5555",
-        "website": "",
-        "hours": [],
+        "website": "https://www.nychealthandhospitals.org/locations/bellevue/",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Tue"
+            ],
+            "open": "08:00",
+            "close": "19:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Thu"
+            ],
+            "open": "08:00",
+            "close": "19:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Wed"
+            ],
+            "open": "08:00",
+            "close": "19:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon"
+            ],
+            "open": "08:00",
+            "close": "19:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
         "organization": "NYC Health + Hospitals",
         "clinic_type": "Hospital",
         "has_sti_testing": false,
@@ -1338,8 +1644,69 @@
         "address": "1901 1st Ave, New York, NY 10029",
         "borough": "Manhattan",
         "phone": "(212) 423-6262",
-        "website": "",
-        "hours": [],
+        "website": "http://www.nychealthandhospitals.org/metropolitan",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Sat"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Thu"
+            ],
+            "open": "08:00",
+            "close": "20:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Tue"
+            ],
+            "open": "08:00",
+            "close": "20:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Wed"
+            ],
+            "open": "08:00",
+            "close": "20:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Fri"
+            ],
+            "open": "08:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon"
+            ],
+            "open": "08:00",
+            "close": "20:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
         "organization": "NYC Health + Hospitals",
         "clinic_type": "Hospital",
         "has_sti_testing": false,
@@ -1455,8 +1822,69 @@
         "address": "635 Madison Ave #1200, New York, NY 10022",
         "borough": "Manhattan",
         "phone": "(212) 308-4988",
-        "website": "",
-        "hours": [],
+        "website": "http://www.eastsidegynecology.com/",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Tue"
+            ],
+            "open": "07:30",
+            "close": "17:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Thu"
+            ],
+            "open": "07:30",
+            "close": "17:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon"
+            ],
+            "open": "07:30",
+            "close": "17:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Sat"
+            ],
+            "open": "07:30",
+            "close": "15:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Fri"
+            ],
+            "open": "07:30",
+            "close": "17:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Wed"
+            ],
+            "open": "07:30",
+            "close": "17:30",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
         "organization": "",
         "clinic_type": "",
         "has_sti_testing": false,
@@ -1743,8 +2171,69 @@
         "address": "21-41 45th Rd, Queens, NY 11101",
         "borough": "Queens",
         "phone": "(212) 965-7000",
-        "website": "",
-        "hours": [],
+        "website": "https://www.plannedparenthood.org/health-center/new-york/queens/11101/diane-l-max-health-center-4184-91110?utm_campaign=diane-l-max-health-center&utm_medium=organic&utm_source=local-listing",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Tue"
+            ],
+            "open": "08:00",
+            "close": "19:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Wed"
+            ],
+            "open": "08:00",
+            "close": "19:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Fri"
+            ],
+            "open": "08:00",
+            "close": "18:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Sat"
+            ],
+            "open": "08:00",
+            "close": "18:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Thu"
+            ],
+            "open": "08:00",
+            "close": "19:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon"
+            ],
+            "open": "08:00",
+            "close": "19:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
         "organization": "Planned Parenthood",
         "clinic_type": "",
         "has_sti_testing": true,
@@ -1913,8 +2402,59 @@
         "address": "295 Flatbush Ave Ext First Floor, Brooklyn, NY 11201",
         "borough": "Brooklyn",
         "phone": "(347) 396-7959",
-        "website": "",
-        "hours": [],
+        "website": "http://www1.nyc.gov/site/doh/services/sexual-health-clinics.page",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon"
+            ],
+            "open": "08:30",
+            "close": "15:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Wed"
+            ],
+            "open": "08:30",
+            "close": "15:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Fri"
+            ],
+            "open": "08:30",
+            "close": "15:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Thu"
+            ],
+            "open": "08:30",
+            "close": "15:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Tue"
+            ],
+            "open": "08:30",
+            "close": "15:30",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
         "organization": "NYC Health Dept (DOH)",
         "clinic_type": "FQHC",
         "has_sti_testing": false,
@@ -2168,7 +2708,68 @@
         "borough": "Staten Island",
         "phone": "(718) 924-2254",
         "website": "www.chcrichmond.org",
-        "hours": [],
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Sat"
+            ],
+            "open": "08:00",
+            "close": "12:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Tue"
+            ],
+            "open": "08:00",
+            "close": "22:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Wed"
+            ],
+            "open": "08:00",
+            "close": "20:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Thu"
+            ],
+            "open": "08:00",
+            "close": "22:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon"
+            ],
+            "open": "08:00",
+            "close": "20:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Fri"
+            ],
+            "open": "08:00",
+            "close": "16:30",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
         "organization": "",
         "clinic_type": "FQHC",
         "has_sti_testing": false,
@@ -2366,7 +2967,68 @@
         "borough": "Manhattan",
         "phone": "(212) 271-7200",
         "website": "callen-lorde.org/",
-        "hours": [],
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Sat"
+            ],
+            "open": "09:00",
+            "close": "15:15",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Thu"
+            ],
+            "open": "08:15",
+            "close": "20:15",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon"
+            ],
+            "open": "08:15",
+            "close": "20:15",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Tue"
+            ],
+            "open": "08:15",
+            "close": "20:15",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Fri"
+            ],
+            "open": "09:45",
+            "close": "16:44",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Wed"
+            ],
+            "open": "08:15",
+            "close": "20:15",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
         "organization": "Callen-Lorde",
         "clinic_type": "LGBTQ+ Center",
         "has_sti_testing": false,
@@ -2415,8 +3077,79 @@
         "address": "14 DeKalb Ave 4th Floor, Brooklyn, NY 11201",
         "borough": "Brooklyn",
         "phone": "(718) 369-1900",
-        "website": "",
-        "hours": [],
+        "website": "https://www.brooklynabortionclinic.nyc/",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Thu"
+            ],
+            "open": "07:00",
+            "close": "22:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Fri"
+            ],
+            "open": "07:00",
+            "close": "22:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Wed"
+            ],
+            "open": "07:00",
+            "close": "22:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Sat"
+            ],
+            "open": "07:00",
+            "close": "22:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Sun"
+            ],
+            "open": "07:00",
+            "close": "22:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon"
+            ],
+            "open": "07:00",
+            "close": "22:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Tue"
+            ],
+            "open": "07:00",
+            "close": "22:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
         "organization": "",
         "clinic_type": "",
         "has_sti_testing": false,
@@ -2624,7 +3357,58 @@
         "borough": "Bronx",
         "phone": "(347) 396-7959",
         "website": "https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",
-        "hours": [],
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon"
+            ],
+            "open": "08:30",
+            "close": "15:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Tue"
+            ],
+            "open": "08:30",
+            "close": "15:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Wed"
+            ],
+            "open": "08:30",
+            "close": "15:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Fri"
+            ],
+            "open": "08:30",
+            "close": "15:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Thu"
+            ],
+            "open": "08:30",
+            "close": "15:30",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
         "organization": "NYC Health Dept (DOH)",
         "clinic_type": "DOH",
         "has_sti_testing": true,
@@ -3230,8 +4014,69 @@
         "address": "642 Southern Blvd, Bronx, NY 10455",
         "borough": "Bronx",
         "phone": "(718) 585-1010",
-        "website": "",
-        "hours": [],
+        "website": "https://www.dremily.net/",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Wed"
+            ],
+            "open": "09:30",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Fri"
+            ],
+            "open": "09:30",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Sat"
+            ],
+            "open": "08:00",
+            "close": "14:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon"
+            ],
+            "open": "09:30",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Tue"
+            ],
+            "open": "08:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Thu"
+            ],
+            "open": "08:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
         "organization": "",
         "clinic_type": "",
         "has_sti_testing": false,
@@ -3280,8 +4125,19 @@
         "address": "506 Lenox Ave, New York, NY 10037",
         "borough": "Manhattan",
         "phone": "(212) 939-8095",
-        "website": "",
-        "hours": [],
+        "website": "http://www.nychealthandhospitals.org/Harlem",
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Sun"
+            ],
+            "open": "00:00",
+            "close": "23:59",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
         "organization": "",
         "clinic_type": "",
         "has_sti_testing": false,
@@ -4029,7 +4885,68 @@
         "borough": "Manhattan",
         "phone": "(888) 510-3132",
         "website": "",
-        "hours": [],
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Thu"
+            ],
+            "open": "07:00",
+            "close": "20:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Tue"
+            ],
+            "open": "07:00",
+            "close": "20:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Fri"
+            ],
+            "open": "07:00",
+            "close": "20:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Sat"
+            ],
+            "open": "07:00",
+            "close": "14:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon"
+            ],
+            "open": "07:00",
+            "close": "20:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Wed"
+            ],
+            "open": "07:00",
+            "close": "20:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
         "organization": "",
         "clinic_type": "",
         "has_sti_testing": false,
@@ -4416,7 +5333,7 @@
         "address": "82-68 164th St, Jamaica, NY 11432",
         "borough": "Queens",
         "phone": "(718) 883-3244",
-        "website": "",
+        "website": "https://www.nychealthandhospitals.org/queens/",
         "hours": [],
         "organization": "",
         "clinic_type": "",
@@ -4580,7 +5497,68 @@
         "borough": "Queens",
         "phone": "(718) 567-5200",
         "website": "https://www.apicha.org/locations/jackson-heights-clinic/",
-        "hours": [],
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Thu"
+            ],
+            "open": "09:00",
+            "close": "19:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Sat"
+            ],
+            "open": "09:00",
+            "close": "16:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon"
+            ],
+            "open": "09:00",
+            "close": "17:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "17:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Wed"
+            ],
+            "open": "09:00",
+            "close": "19:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Tue"
+            ],
+            "open": "09:00",
+            "close": "17:30",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
         "organization": "",
         "clinic_type": "",
         "has_sti_testing": false,
@@ -4630,7 +5608,58 @@
         "borough": "Staten Island",
         "phone": "(718) 924-2254",
         "website": "https://chcrichmond.org",
-        "hours": [],
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Wed"
+            ],
+            "open": "08:30",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Thu"
+            ],
+            "open": "08:30",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon"
+            ],
+            "open": "08:30",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Tue"
+            ],
+            "open": "08:30",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Fri"
+            ],
+            "open": "08:30",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
         "organization": "",
         "clinic_type": "",
         "has_sti_testing": false,
@@ -4796,7 +5825,58 @@
         "borough": "Manhattan",
         "phone": "(347) 396-7959",
         "website": "https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",
-        "hours": [],
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Tue"
+            ],
+            "open": "08:30",
+            "close": "19:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Wed"
+            ],
+            "open": "08:30",
+            "close": "15:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Thu"
+            ],
+            "open": "08:30",
+            "close": "15:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon"
+            ],
+            "open": "08:30",
+            "close": "15:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Fri"
+            ],
+            "open": "08:30",
+            "close": "15:30",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
         "organization": "NYC Health Dept (DOH)",
         "clinic_type": "DOH",
         "has_sti_testing": true,
@@ -4971,7 +6051,7 @@
     }
   ],
   "metadata": {
-    "generated": "2025-12-21T03:15:21.649Z",
+    "generated": "2025-12-21T03:50:19.110Z",
     "source": "Airtable",
     "total_records": 75,
     "records_with_coords": 75

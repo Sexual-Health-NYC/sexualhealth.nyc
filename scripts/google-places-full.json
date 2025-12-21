@@ -1,0 +1,1776 @@
+[
+  {
+    "clinicName": "The Mount Sinai Comprehensive Health – Downtown",
+    "clinicId": "rec257F4MO1DVRvL0",
+    "google": {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "275 7th Ave, New York, NY 10001, USA",
+      "formatted_phone_number": "(212) 604-6513",
+      "international_phone_number": "+1 212-604-6513",
+      "name": "The Mount Sinai Comprehensive Health – Downtown",
+      "opening_hours": {
+        "open_now": false,
+        "periods": [
+          {
+            "close": {
+              "day": 1,
+              "time": "1530"
+            },
+            "open": {
+              "day": 1,
+              "time": "0900"
+            }
+          },
+          {
+            "close": {
+              "day": 2,
+              "time": "1600"
+            },
+            "open": {
+              "day": 2,
+              "time": "0900"
+            }
+          },
+          {
+            "close": {
+              "day": 3,
+              "time": "1600"
+            },
+            "open": {
+              "day": 3,
+              "time": "0900"
+            }
+          },
+          {
+            "close": {
+              "day": 4,
+              "time": "1600"
+            },
+            "open": {
+              "day": 4,
+              "time": "0900"
+            }
+          },
+          {
+            "close": {
+              "day": 5,
+              "time": "1530"
+            },
+            "open": {
+              "day": 5,
+              "time": "0900"
+            }
+          }
+        ],
+        "weekday_text": [
+          "Monday: 9:00 AM – 3:30 PM",
+          "Tuesday: 9:00 AM – 4:00 PM",
+          "Wednesday: 9:00 AM – 4:00 PM",
+          "Thursday: 9:00 AM – 4:00 PM",
+          "Friday: 9:00 AM – 3:30 PM",
+          "Saturday: Closed",
+          "Sunday: Closed"
+        ]
+      },
+      "types": [
+        "establishment",
+        "health",
+        "point_of_interest"
+      ],
+      "url": "https://maps.google.com/?cid=17518001870725536347",
+      "website": "https://www.mountsinai.org/patient-care/service-areas/infectious-diseases/hiv-aids/mschp-downtown"
+    }
+  },
+  {
+    "clinicName": "The Institute for Family Health",
+    "clinicId": "recAsqaYOwyqhAi2p",
+    "google": {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "230 W 17th St, New York, NY 10011, USA",
+      "formatted_phone_number": "(212) 206-5200",
+      "international_phone_number": "+1 212-206-5200",
+      "name": "The Institute for Family Health at 17th St",
+      "opening_hours": {
+        "open_now": false,
+        "periods": [
+          {
+            "close": {
+              "day": 1,
+              "time": "1800"
+            },
+            "open": {
+              "day": 1,
+              "time": "0800"
+            }
+          },
+          {
+            "close": {
+              "day": 2,
+              "time": "2000"
+            },
+            "open": {
+              "day": 2,
+              "time": "0800"
+            }
+          },
+          {
+            "close": {
+              "day": 3,
+              "time": "1800"
+            },
+            "open": {
+              "day": 3,
+              "time": "0800"
+            }
+          },
+          {
+            "close": {
+              "day": 4,
+              "time": "2000"
+            },
+            "open": {
+              "day": 4,
+              "time": "0800"
+            }
+          },
+          {
+            "close": {
+              "day": 5,
+              "time": "1800"
+            },
+            "open": {
+              "day": 5,
+              "time": "0800"
+            }
+          }
+        ],
+        "weekday_text": [
+          "Monday: 8:00 AM – 6:00 PM",
+          "Tuesday: 8:00 AM – 8:00 PM",
+          "Wednesday: 8:00 AM – 6:00 PM",
+          "Thursday: 8:00 AM – 8:00 PM",
+          "Friday: 8:00 AM – 6:00 PM",
+          "Saturday: Closed",
+          "Sunday: Closed"
+        ]
+      },
+      "types": [
+        "establishment",
+        "health",
+        "point_of_interest"
+      ],
+      "url": "https://maps.google.com/?cid=719787927011008690",
+      "website": "http://www.institute.org/"
+    }
+  },
+  {
+    "clinicName": "Early Options",
+    "clinicId": "recBdfoUAgOXjPmB1",
+    "google": {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "124 E 40th St #702, New York, NY 10016, USA",
+      "formatted_phone_number": "(212) 431-8533",
+      "international_phone_number": "+1 212-431-8533",
+      "name": "Early Options",
+      "opening_hours": {
+        "open_now": false,
+        "periods": [
+          {
+            "close": {
+              "day": 1,
+              "time": "1800"
+            },
+            "open": {
+              "day": 1,
+              "time": "0700"
+            }
+          },
+          {
+            "close": {
+              "day": 2,
+              "time": "1800"
+            },
+            "open": {
+              "day": 2,
+              "time": "0700"
+            }
+          },
+          {
+            "close": {
+              "day": 3,
+              "time": "1800"
+            },
+            "open": {
+              "day": 3,
+              "time": "0700"
+            }
+          },
+          {
+            "close": {
+              "day": 4,
+              "time": "1800"
+            },
+            "open": {
+              "day": 4,
+              "time": "0700"
+            }
+          },
+          {
+            "close": {
+              "day": 5,
+              "time": "1800"
+            },
+            "open": {
+              "day": 5,
+              "time": "0700"
+            }
+          }
+        ],
+        "weekday_text": [
+          "Monday: 7:00 AM – 6:00 PM",
+          "Tuesday: 7:00 AM – 6:00 PM",
+          "Wednesday: 7:00 AM – 6:00 PM",
+          "Thursday: 7:00 AM – 6:00 PM",
+          "Friday: 7:00 AM – 6:00 PM",
+          "Saturday: Closed",
+          "Sunday: Closed"
+        ]
+      },
+      "types": [
+        "establishment",
+        "health",
+        "point_of_interest"
+      ],
+      "url": "https://maps.google.com/?cid=3558661580612909894",
+      "website": "https://www.earlyabortionoptions.com/"
+    }
+  },
+  {
+    "clinicName": "Professional Gynecological Services",
+    "clinicId": "recH9ew7NbKPDpwpz",
+    "google": {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "14 DeKalb Ave 2nd Floor, Brooklyn, NY 11201, USA",
+      "formatted_phone_number": "(718) 875-4848",
+      "international_phone_number": "+1 718-875-4848",
+      "name": "Professional Gynecological Services",
+      "opening_hours": {
+        "open_now": false,
+        "periods": [
+          {
+            "close": {
+              "day": 1,
+              "time": "1730"
+            },
+            "open": {
+              "day": 1,
+              "time": "0900"
+            }
+          },
+          {
+            "close": {
+              "day": 2,
+              "time": "1730"
+            },
+            "open": {
+              "day": 2,
+              "time": "0900"
+            }
+          },
+          {
+            "close": {
+              "day": 3,
+              "time": "1830"
+            },
+            "open": {
+              "day": 3,
+              "time": "0900"
+            }
+          },
+          {
+            "close": {
+              "day": 4,
+              "time": "1830"
+            },
+            "open": {
+              "day": 4,
+              "time": "0900"
+            }
+          },
+          {
+            "close": {
+              "day": 5,
+              "time": "1700"
+            },
+            "open": {
+              "day": 5,
+              "time": "0900"
+            }
+          },
+          {
+            "close": {
+              "day": 6,
+              "time": "1130"
+            },
+            "open": {
+              "day": 6,
+              "time": "0900"
+            }
+          }
+        ],
+        "weekday_text": [
+          "Monday: 9:00 AM – 5:30 PM",
+          "Tuesday: 9:00 AM – 5:30 PM",
+          "Wednesday: 9:00 AM – 6:30 PM",
+          "Thursday: 9:00 AM – 6:30 PM",
+          "Friday: 9:00 AM – 5:00 PM",
+          "Saturday: 9:00 – 11:30 AM",
+          "Sunday: Closed"
+        ]
+      },
+      "types": [
+        "establishment",
+        "health",
+        "point_of_interest"
+      ],
+      "url": "https://maps.google.com/?cid=17639114449926021755",
+      "website": "https://www.thewomenschoice.com/"
+    }
+  },
+  {
+    "clinicName": "Maze Women’s Sexual Health - NYC",
+    "clinicId": "recKA2a4p91pezFGM",
+    "google": {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "633 3rd Ave #9b, New York, NY 10017, USA",
+      "formatted_phone_number": "(646) 839-0700",
+      "international_phone_number": "+1 646-839-0700",
+      "name": "Maze Women’s Sexual Health - NYC",
+      "opening_hours": {
+        "open_now": false,
+        "periods": [
+          {
+            "close": {
+              "day": 1,
+              "time": "1900"
+            },
+            "open": {
+              "day": 1,
+              "time": "1100"
+            }
+          },
+          {
+            "close": {
+              "day": 2,
+              "time": "1700"
+            },
+            "open": {
+              "day": 2,
+              "time": "0900"
+            }
+          },
+          {
+            "close": {
+              "day": 3,
+              "time": "1700"
+            },
+            "open": {
+              "day": 3,
+              "time": "0900"
+            }
+          },
+          {
+            "close": {
+              "day": 4,
+              "time": "1700"
+            },
+            "open": {
+              "day": 4,
+              "time": "0900"
+            }
+          },
+          {
+            "close": {
+              "day": 5,
+              "time": "1700"
+            },
+            "open": {
+              "day": 5,
+              "time": "0900"
+            }
+          }
+        ],
+        "weekday_text": [
+          "Monday: 11:00 AM – 7:00 PM",
+          "Tuesday: 9:00 AM – 5:00 PM",
+          "Wednesday: 9:00 AM – 5:00 PM",
+          "Thursday: 9:00 AM – 5:00 PM",
+          "Friday: 9:00 AM – 5:00 PM",
+          "Saturday: Closed",
+          "Sunday: Closed"
+        ]
+      },
+      "types": [
+        "doctor",
+        "establishment",
+        "health",
+        "point_of_interest"
+      ],
+      "url": "https://maps.google.com/?cid=6369395899431266295",
+      "website": "http://www.mazewomenshealth.com/?utm_source=GMB&utm_medium=Organic&utm_campaign=gmb&utm_id=NYC"
+    }
+  },
+  {
+    "clinicName": "Bellevue Hospital Center Obg",
+    "clinicId": "recKMpppT6KaArvXg",
+    "google": {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "462 1st Ave, New York, NY 10016, USA",
+      "formatted_phone_number": "(212) 562-5524",
+      "international_phone_number": "+1 212-562-5524",
+      "name": "Bellevue Hospital Center Obg",
+      "opening_hours": {
+        "open_now": false,
+        "periods": [
+          {
+            "close": {
+              "day": 1,
+              "time": "1900"
+            },
+            "open": {
+              "day": 1,
+              "time": "0800"
+            }
+          },
+          {
+            "close": {
+              "day": 2,
+              "time": "1900"
+            },
+            "open": {
+              "day": 2,
+              "time": "0800"
+            }
+          },
+          {
+            "close": {
+              "day": 3,
+              "time": "1900"
+            },
+            "open": {
+              "day": 3,
+              "time": "0800"
+            }
+          },
+          {
+            "close": {
+              "day": 4,
+              "time": "1900"
+            },
+            "open": {
+              "day": 4,
+              "time": "0800"
+            }
+          }
+        ],
+        "weekday_text": [
+          "Monday: 8:00 AM – 7:00 PM",
+          "Tuesday: 8:00 AM – 7:00 PM",
+          "Wednesday: 8:00 AM – 7:00 PM",
+          "Thursday: 8:00 AM – 7:00 PM",
+          "Friday: Closed",
+          "Saturday: Closed",
+          "Sunday: Closed"
+        ]
+      },
+      "types": [
+        "establishment",
+        "health",
+        "point_of_interest"
+      ],
+      "url": "https://maps.google.com/?cid=5077140897344535793",
+      "website": "https://www.nychealthandhospitals.org/locations/bellevue/"
+    }
+  },
+  {
+    "clinicName": "NYC Health + Hospitals/Metropolitan",
+    "clinicId": "recMDGPMYp7R08Mhg",
+    "google": {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "1901 1st Ave, New York, NY 10029, USA",
+      "formatted_phone_number": "(844) 692-4692",
+      "international_phone_number": "+1 844-692-4692",
+      "name": "NYC Health + Hospitals/Metropolitan",
+      "opening_hours": {
+        "open_now": false,
+        "periods": [
+          {
+            "close": {
+              "day": 1,
+              "time": "2000"
+            },
+            "open": {
+              "day": 1,
+              "time": "0800"
+            }
+          },
+          {
+            "close": {
+              "day": 2,
+              "time": "2000"
+            },
+            "open": {
+              "day": 2,
+              "time": "0800"
+            }
+          },
+          {
+            "close": {
+              "day": 3,
+              "time": "2000"
+            },
+            "open": {
+              "day": 3,
+              "time": "0800"
+            }
+          },
+          {
+            "close": {
+              "day": 4,
+              "time": "2000"
+            },
+            "open": {
+              "day": 4,
+              "time": "0800"
+            }
+          },
+          {
+            "close": {
+              "day": 5,
+              "time": "1700"
+            },
+            "open": {
+              "day": 5,
+              "time": "0800"
+            }
+          },
+          {
+            "close": {
+              "day": 6,
+              "time": "1700"
+            },
+            "open": {
+              "day": 6,
+              "time": "0900"
+            }
+          }
+        ],
+        "weekday_text": [
+          "Monday: 8:00 AM – 8:00 PM",
+          "Tuesday: 8:00 AM – 8:00 PM",
+          "Wednesday: 8:00 AM – 8:00 PM",
+          "Thursday: 8:00 AM – 8:00 PM",
+          "Friday: 8:00 AM – 5:00 PM",
+          "Saturday: 9:00 AM – 5:00 PM",
+          "Sunday: Closed"
+        ]
+      },
+      "types": [
+        "establishment",
+        "health",
+        "hospital",
+        "point_of_interest"
+      ],
+      "url": "https://maps.google.com/?cid=14364597163829492100",
+      "website": "http://www.nychealthandhospitals.org/metropolitan"
+    }
+  },
+  {
+    "clinicName": "Eastside Gynecology",
+    "clinicId": "recNKmb7wQ6hTfO74",
+    "google": {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "635 Madison Ave #1200, New York, NY 10022, USA",
+      "formatted_phone_number": "(212) 308-4988",
+      "international_phone_number": "+1 212-308-4988",
+      "name": "Eastside Gynecology",
+      "opening_hours": {
+        "open_now": false,
+        "periods": [
+          {
+            "close": {
+              "day": 1,
+              "time": "1730"
+            },
+            "open": {
+              "day": 1,
+              "time": "0730"
+            }
+          },
+          {
+            "close": {
+              "day": 2,
+              "time": "1730"
+            },
+            "open": {
+              "day": 2,
+              "time": "0730"
+            }
+          },
+          {
+            "close": {
+              "day": 3,
+              "time": "1730"
+            },
+            "open": {
+              "day": 3,
+              "time": "0730"
+            }
+          },
+          {
+            "close": {
+              "day": 4,
+              "time": "1730"
+            },
+            "open": {
+              "day": 4,
+              "time": "0730"
+            }
+          },
+          {
+            "close": {
+              "day": 5,
+              "time": "1730"
+            },
+            "open": {
+              "day": 5,
+              "time": "0730"
+            }
+          },
+          {
+            "close": {
+              "day": 6,
+              "time": "1530"
+            },
+            "open": {
+              "day": 6,
+              "time": "0730"
+            }
+          }
+        ],
+        "weekday_text": [
+          "Monday: 7:30 AM – 5:30 PM",
+          "Tuesday: 7:30 AM – 5:30 PM",
+          "Wednesday: 7:30 AM – 5:30 PM",
+          "Thursday: 7:30 AM – 5:30 PM",
+          "Friday: 7:30 AM – 5:30 PM",
+          "Saturday: 7:30 AM – 3:30 PM",
+          "Sunday: Closed"
+        ]
+      },
+      "types": [
+        "establishment",
+        "health",
+        "point_of_interest"
+      ],
+      "url": "https://maps.google.com/?cid=6674206744177316822",
+      "website": "http://www.eastsidegynecology.com/"
+    }
+  },
+  {
+    "clinicName": "NYC DOH - Corona Sexual Health Clinic",
+    "clinicId": "recPQokMr5u9Md6z6",
+    "google": {
+      "business_status": "CLOSED_TEMPORARILY",
+      "formatted_address": "34-33 Junction Blvd 1st floor, Jackson Heights, NY 11372, USA",
+      "formatted_phone_number": "(347) 396-7959",
+      "international_phone_number": "+1 347-396-7959",
+      "name": "Corona Sexual Health Clinic",
+      "types": [
+        "establishment",
+        "health",
+        "point_of_interest"
+      ],
+      "url": "https://maps.google.com/?cid=17798385288694984810",
+      "website": "http://www1.nyc.gov/site/doh/services/sexual-health-clinics.page"
+    }
+  },
+  {
+    "clinicName": "Planned Parenthood - Queens (Diane L. Max)",
+    "clinicId": "recTT5gfhIeQcwE0N",
+    "google": {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "21-41 45th Rd, Queens, NY 11101, USA",
+      "formatted_phone_number": "(212) 965-7000",
+      "international_phone_number": "+1 212-965-7000",
+      "name": "Planned Parenthood - Diane L. Max Health Center",
+      "opening_hours": {
+        "open_now": false,
+        "periods": [
+          {
+            "close": {
+              "day": 1,
+              "time": "1900"
+            },
+            "open": {
+              "day": 1,
+              "time": "0800"
+            }
+          },
+          {
+            "close": {
+              "day": 2,
+              "time": "1900"
+            },
+            "open": {
+              "day": 2,
+              "time": "0800"
+            }
+          },
+          {
+            "close": {
+              "day": 3,
+              "time": "1900"
+            },
+            "open": {
+              "day": 3,
+              "time": "0800"
+            }
+          },
+          {
+            "close": {
+              "day": 4,
+              "time": "1900"
+            },
+            "open": {
+              "day": 4,
+              "time": "0800"
+            }
+          },
+          {
+            "close": {
+              "day": 5,
+              "time": "1800"
+            },
+            "open": {
+              "day": 5,
+              "time": "0800"
+            }
+          },
+          {
+            "close": {
+              "day": 6,
+              "time": "1800"
+            },
+            "open": {
+              "day": 6,
+              "time": "0800"
+            }
+          }
+        ],
+        "weekday_text": [
+          "Monday: 8:00 AM – 7:00 PM",
+          "Tuesday: 8:00 AM – 7:00 PM",
+          "Wednesday: 8:00 AM – 7:00 PM",
+          "Thursday: 8:00 AM – 7:00 PM",
+          "Friday: 8:00 AM – 6:00 PM",
+          "Saturday: 8:00 AM – 6:00 PM",
+          "Sunday: Closed"
+        ]
+      },
+      "types": [
+        "establishment",
+        "health",
+        "point_of_interest"
+      ],
+      "url": "https://maps.google.com/?cid=3441177201868346494",
+      "website": "https://www.plannedparenthood.org/health-center/new-york/queens/11101/diane-l-max-health-center-4184-91110?utm_campaign=diane-l-max-health-center&utm_medium=organic&utm_source=local-listing"
+    }
+  },
+  {
+    "clinicName": "NYC DOH - Fort Greene Express Clinic",
+    "clinicId": "recVNjCth6XEtOWuJ",
+    "google": {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "295 Flatbush Ave Ext 2nd Floor, Brooklyn, NY 11201, USA",
+      "formatted_phone_number": "(347) 396-7959",
+      "international_phone_number": "+1 347-396-7959",
+      "name": "Fort Greene Sexual Health Clinic",
+      "opening_hours": {
+        "open_now": false,
+        "periods": [
+          {
+            "close": {
+              "day": 1,
+              "time": "1530"
+            },
+            "open": {
+              "day": 1,
+              "time": "0830"
+            }
+          },
+          {
+            "close": {
+              "day": 2,
+              "time": "1530"
+            },
+            "open": {
+              "day": 2,
+              "time": "0830"
+            }
+          },
+          {
+            "close": {
+              "day": 3,
+              "time": "1530"
+            },
+            "open": {
+              "day": 3,
+              "time": "0830"
+            }
+          },
+          {
+            "close": {
+              "day": 4,
+              "time": "1530"
+            },
+            "open": {
+              "day": 4,
+              "time": "0830"
+            }
+          },
+          {
+            "close": {
+              "day": 5,
+              "time": "1530"
+            },
+            "open": {
+              "day": 5,
+              "time": "0830"
+            }
+          }
+        ],
+        "weekday_text": [
+          "Monday: 8:30 AM – 3:30 PM",
+          "Tuesday: 8:30 AM – 3:30 PM",
+          "Wednesday: 8:30 AM – 3:30 PM",
+          "Thursday: 8:30 AM – 3:30 PM",
+          "Friday: 8:30 AM – 3:30 PM",
+          "Saturday: Closed",
+          "Sunday: Closed"
+        ]
+      },
+      "types": [
+        "establishment",
+        "health",
+        "point_of_interest"
+      ],
+      "url": "https://maps.google.com/?cid=15489063385848334456",
+      "website": "http://www1.nyc.gov/site/doh/services/sexual-health-clinics.page"
+    }
+  },
+  {
+    "clinicName": "Community Health Center of Richmond - South Avenue",
+    "clinicId": "recZQuUmvW84BYJY7",
+    "google": {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "235 Port Richmond Ave, Staten Island, NY 10302, USA",
+      "formatted_phone_number": "(718) 876-1732",
+      "international_phone_number": "+1 718-876-1732",
+      "name": "Community Health Center of Richmond Port Richmond Health Center",
+      "opening_hours": {
+        "open_now": false,
+        "periods": [
+          {
+            "close": {
+              "day": 1,
+              "time": "2030"
+            },
+            "open": {
+              "day": 1,
+              "time": "0800"
+            }
+          },
+          {
+            "close": {
+              "day": 2,
+              "time": "2200"
+            },
+            "open": {
+              "day": 2,
+              "time": "0800"
+            }
+          },
+          {
+            "close": {
+              "day": 3,
+              "time": "2030"
+            },
+            "open": {
+              "day": 3,
+              "time": "0800"
+            }
+          },
+          {
+            "close": {
+              "day": 4,
+              "time": "2200"
+            },
+            "open": {
+              "day": 4,
+              "time": "0800"
+            }
+          },
+          {
+            "close": {
+              "day": 5,
+              "time": "1630"
+            },
+            "open": {
+              "day": 5,
+              "time": "0800"
+            }
+          },
+          {
+            "close": {
+              "day": 6,
+              "time": "1230"
+            },
+            "open": {
+              "day": 6,
+              "time": "0800"
+            }
+          }
+        ],
+        "weekday_text": [
+          "Monday: 8:00 AM – 8:30 PM",
+          "Tuesday: 8:00 AM – 10:00 PM",
+          "Wednesday: 8:00 AM – 8:30 PM",
+          "Thursday: 8:00 AM – 10:00 PM",
+          "Friday: 8:00 AM – 4:30 PM",
+          "Saturday: 8:00 AM – 12:30 PM",
+          "Sunday: Closed"
+        ]
+      },
+      "types": [
+        "establishment",
+        "health",
+        "point_of_interest"
+      ],
+      "url": "https://maps.google.com/?cid=1337012749573474065",
+      "website": "http://www.chcrichmond.org/"
+    }
+  },
+  {
+    "clinicName": "Callen-Lorde Community Health Center",
+    "clinicId": "recb0xPXmBYiKKE0n",
+    "google": {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "356 W 18th St, New York, NY 10011, USA",
+      "formatted_phone_number": "(212) 271-7200",
+      "international_phone_number": "+1 212-271-7200",
+      "name": "Callen-Lorde Chelsea",
+      "opening_hours": {
+        "open_now": false,
+        "periods": [
+          {
+            "close": {
+              "day": 1,
+              "time": "2015"
+            },
+            "open": {
+              "day": 1,
+              "time": "0815"
+            }
+          },
+          {
+            "close": {
+              "day": 2,
+              "time": "2015"
+            },
+            "open": {
+              "day": 2,
+              "time": "0815"
+            }
+          },
+          {
+            "close": {
+              "day": 3,
+              "time": "2015"
+            },
+            "open": {
+              "day": 3,
+              "time": "0815"
+            }
+          },
+          {
+            "close": {
+              "day": 4,
+              "time": "2015"
+            },
+            "open": {
+              "day": 4,
+              "time": "0815"
+            }
+          },
+          {
+            "close": {
+              "day": 5,
+              "time": "1644"
+            },
+            "open": {
+              "day": 5,
+              "time": "0945"
+            }
+          },
+          {
+            "close": {
+              "day": 6,
+              "time": "1515"
+            },
+            "open": {
+              "day": 6,
+              "time": "0900"
+            }
+          }
+        ],
+        "weekday_text": [
+          "Monday: 8:15 AM – 8:15 PM",
+          "Tuesday: 8:15 AM – 8:15 PM",
+          "Wednesday: 8:15 AM – 8:15 PM",
+          "Thursday: 8:15 AM – 8:15 PM",
+          "Friday: 9:45 AM – 4:44 PM",
+          "Saturday: 9:00 AM – 3:15 PM",
+          "Sunday: Closed"
+        ]
+      },
+      "types": [
+        "establishment",
+        "health",
+        "point_of_interest"
+      ],
+      "url": "https://maps.google.com/?cid=15630337017794722726",
+      "website": "https://www.callen-lorde.org/?utm_source=gmb&utm_medium=gmb"
+    }
+  },
+  {
+    "clinicName": "Brooklyn Abortion Clinic",
+    "clinicId": "recc2OD58PRS0ajNf",
+    "google": {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "14 DeKalb Ave 4th Floor, Brooklyn, NY 11201, USA",
+      "formatted_phone_number": "(718) 369-1900",
+      "international_phone_number": "+1 718-369-1900",
+      "name": "Brooklyn Abortion Clinic",
+      "opening_hours": {
+        "open_now": false,
+        "periods": [
+          {
+            "close": {
+              "day": 0,
+              "time": "2200"
+            },
+            "open": {
+              "day": 0,
+              "time": "0700"
+            }
+          },
+          {
+            "close": {
+              "day": 1,
+              "time": "2200"
+            },
+            "open": {
+              "day": 1,
+              "time": "0700"
+            }
+          },
+          {
+            "close": {
+              "day": 2,
+              "time": "2200"
+            },
+            "open": {
+              "day": 2,
+              "time": "0700"
+            }
+          },
+          {
+            "close": {
+              "day": 3,
+              "time": "2200"
+            },
+            "open": {
+              "day": 3,
+              "time": "0700"
+            }
+          },
+          {
+            "close": {
+              "day": 4,
+              "time": "2200"
+            },
+            "open": {
+              "day": 4,
+              "time": "0700"
+            }
+          },
+          {
+            "close": {
+              "day": 5,
+              "time": "2200"
+            },
+            "open": {
+              "day": 5,
+              "time": "0700"
+            }
+          },
+          {
+            "close": {
+              "day": 6,
+              "time": "2200"
+            },
+            "open": {
+              "day": 6,
+              "time": "0700"
+            }
+          }
+        ],
+        "weekday_text": [
+          "Monday: 7:00 AM – 10:00 PM",
+          "Tuesday: 7:00 AM – 10:00 PM",
+          "Wednesday: 7:00 AM – 10:00 PM",
+          "Thursday: 7:00 AM – 10:00 PM",
+          "Friday: 7:00 AM – 10:00 PM",
+          "Saturday: 7:00 AM – 10:00 PM",
+          "Sunday: 7:00 AM – 10:00 PM"
+        ]
+      },
+      "types": [
+        "establishment",
+        "health",
+        "point_of_interest"
+      ],
+      "url": "https://maps.google.com/?cid=7461234085299924905",
+      "website": "https://www.brooklynabortionclinic.nyc/"
+    }
+  },
+  {
+    "clinicName": "NYC DOH - Morrisania Sexual Health Clinic",
+    "clinicId": "recf9MRC2L9ziM18A",
+    "google": {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "1309 Fulton Ave 2nd floor, Bronx, NY 10456, USA",
+      "formatted_phone_number": "(347) 396-7959",
+      "international_phone_number": "+1 347-396-7959",
+      "name": "Morrisania Sexual Health Clinic",
+      "opening_hours": {
+        "open_now": false,
+        "periods": [
+          {
+            "close": {
+              "day": 1,
+              "time": "1530"
+            },
+            "open": {
+              "day": 1,
+              "time": "0830"
+            }
+          },
+          {
+            "close": {
+              "day": 2,
+              "time": "1530"
+            },
+            "open": {
+              "day": 2,
+              "time": "0830"
+            }
+          },
+          {
+            "close": {
+              "day": 3,
+              "time": "1530"
+            },
+            "open": {
+              "day": 3,
+              "time": "0830"
+            }
+          },
+          {
+            "close": {
+              "day": 4,
+              "time": "1530"
+            },
+            "open": {
+              "day": 4,
+              "time": "0830"
+            }
+          },
+          {
+            "close": {
+              "day": 5,
+              "time": "1530"
+            },
+            "open": {
+              "day": 5,
+              "time": "0830"
+            }
+          }
+        ],
+        "weekday_text": [
+          "Monday: 8:30 AM – 3:30 PM",
+          "Tuesday: 8:30 AM – 3:30 PM",
+          "Wednesday: 8:30 AM – 3:30 PM",
+          "Thursday: 8:30 AM – 3:30 PM",
+          "Friday: 8:30 AM – 3:30 PM",
+          "Saturday: Closed",
+          "Sunday: Closed"
+        ]
+      },
+      "types": [
+        "establishment",
+        "health",
+        "point_of_interest"
+      ],
+      "url": "https://maps.google.com/?cid=6453591206380777961",
+      "website": "http://www.nyc.gov/stdclinics"
+    }
+  },
+  {
+    "clinicName": "Dr. Emily Women's Health Center",
+    "clinicId": "recjn3BArvNncZ5Hz",
+    "google": {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "642 Southern Blvd, Bronx, NY 10455, USA",
+      "formatted_phone_number": "(718) 585-1010",
+      "international_phone_number": "+1 718-585-1010",
+      "name": "Dr Emily Women's Health Center",
+      "opening_hours": {
+        "open_now": false,
+        "periods": [
+          {
+            "close": {
+              "day": 1,
+              "time": "1700"
+            },
+            "open": {
+              "day": 1,
+              "time": "0930"
+            }
+          },
+          {
+            "close": {
+              "day": 2,
+              "time": "1700"
+            },
+            "open": {
+              "day": 2,
+              "time": "0800"
+            }
+          },
+          {
+            "close": {
+              "day": 3,
+              "time": "1700"
+            },
+            "open": {
+              "day": 3,
+              "time": "0930"
+            }
+          },
+          {
+            "close": {
+              "day": 4,
+              "time": "1700"
+            },
+            "open": {
+              "day": 4,
+              "time": "0800"
+            }
+          },
+          {
+            "close": {
+              "day": 5,
+              "time": "1700"
+            },
+            "open": {
+              "day": 5,
+              "time": "0930"
+            }
+          },
+          {
+            "close": {
+              "day": 6,
+              "time": "1400"
+            },
+            "open": {
+              "day": 6,
+              "time": "0800"
+            }
+          }
+        ],
+        "weekday_text": [
+          "Monday: 9:30 AM – 5:00 PM",
+          "Tuesday: 8:00 AM – 5:00 PM",
+          "Wednesday: 9:30 AM – 5:00 PM",
+          "Thursday: 8:00 AM – 5:00 PM",
+          "Friday: 9:30 AM – 5:00 PM",
+          "Saturday: 8:00 AM – 2:00 PM",
+          "Sunday: Closed"
+        ]
+      },
+      "types": [
+        "establishment",
+        "health",
+        "point_of_interest"
+      ],
+      "url": "https://maps.google.com/?cid=2293242415060749291",
+      "website": "https://www.dremily.net/"
+    }
+  },
+  {
+    "clinicName": "NYC Health + Hospitals / Harlem",
+    "clinicId": "reclMEjJ8cGS07MTs",
+    "google": {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "506 Lenox Ave, New York, NY 10037, USA",
+      "formatted_phone_number": "(844) 692-4692",
+      "international_phone_number": "+1 844-692-4692",
+      "name": "NYC Health + Hospitals/Harlem",
+      "opening_hours": {
+        "open_now": true,
+        "periods": [
+          {
+            "open": {
+              "day": 0,
+              "time": "0000"
+            }
+          }
+        ],
+        "weekday_text": [
+          "Monday: Open 24 hours",
+          "Tuesday: Open 24 hours",
+          "Wednesday: Open 24 hours",
+          "Thursday: Open 24 hours",
+          "Friday: Open 24 hours",
+          "Saturday: Open 24 hours",
+          "Sunday: Open 24 hours"
+        ]
+      },
+      "types": [
+        "establishment",
+        "health",
+        "hospital",
+        "point_of_interest"
+      ],
+      "url": "https://maps.google.com/?cid=7393021118556017775",
+      "website": "http://www.nychealthandhospitals.org/Harlem"
+    }
+  },
+  {
+    "clinicName": "Labtek STD Testing Centers",
+    "clinicId": "recpucVQCqk9gwYLl",
+    "google": {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "41 Elizabeth St, New York, NY 10013, USA",
+      "formatted_phone_number": "(718) 790-4429",
+      "international_phone_number": "+1 718-790-4429",
+      "name": "Labtek STD Testing Centers",
+      "opening_hours": {
+        "open_now": false,
+        "periods": [
+          {
+            "close": {
+              "day": 1,
+              "time": "2000"
+            },
+            "open": {
+              "day": 1,
+              "time": "0700"
+            }
+          },
+          {
+            "close": {
+              "day": 2,
+              "time": "2000"
+            },
+            "open": {
+              "day": 2,
+              "time": "0700"
+            }
+          },
+          {
+            "close": {
+              "day": 3,
+              "time": "2000"
+            },
+            "open": {
+              "day": 3,
+              "time": "0700"
+            }
+          },
+          {
+            "close": {
+              "day": 4,
+              "time": "2000"
+            },
+            "open": {
+              "day": 4,
+              "time": "0700"
+            }
+          },
+          {
+            "close": {
+              "day": 5,
+              "time": "2000"
+            },
+            "open": {
+              "day": 5,
+              "time": "0700"
+            }
+          },
+          {
+            "close": {
+              "day": 6,
+              "time": "1400"
+            },
+            "open": {
+              "day": 6,
+              "time": "0700"
+            }
+          }
+        ],
+        "weekday_text": [
+          "Monday: 7:00 AM – 8:00 PM",
+          "Tuesday: 7:00 AM – 8:00 PM",
+          "Wednesday: 7:00 AM – 8:00 PM",
+          "Thursday: 7:00 AM – 8:00 PM",
+          "Friday: 7:00 AM – 8:00 PM",
+          "Saturday: 7:00 AM – 2:00 PM",
+          "Sunday: Closed"
+        ]
+      },
+      "types": [
+        "establishment",
+        "health",
+        "point_of_interest"
+      ],
+      "url": "https://maps.google.com/?cid=15406746785685540572"
+    }
+  },
+  {
+    "clinicName": "NYC Health + Hospitals / Queens",
+    "clinicId": "rect3ECyWg4XcvaK9",
+    "google": {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "82-68 164th St, Jamaica, NY 11432, USA",
+      "formatted_phone_number": "(844) 692-4692",
+      "international_phone_number": "+1 844-692-4692",
+      "name": "NYC Health + Hospitals / Queens",
+      "types": [
+        "establishment",
+        "health",
+        "hospital",
+        "point_of_interest"
+      ],
+      "url": "https://maps.google.com/?cid=4273140966266151312",
+      "website": "https://www.nychealthandhospitals.org/queens/"
+    }
+  },
+  {
+    "clinicName": "Manhattan Sexual Health and Wellness",
+    "clinicId": "recthv5JsVJPTsMvm",
+    "google": {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "215 Lexington Ave, New York, NY 10016, USA",
+      "formatted_phone_number": "(212) 252-9100",
+      "international_phone_number": "+1 212-252-9100",
+      "name": "Manhattan Sexual Health and Wellness",
+      "types": [
+        "establishment",
+        "health",
+        "point_of_interest"
+      ],
+      "url": "https://maps.google.com/?cid=16299748581129528884"
+    }
+  },
+  {
+    "clinicName": "Apicha Community Health Center (Jackson Heights)",
+    "clinicId": "recvaATCITzpbs5g5",
+    "google": {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "82-11 37th Ave, Jackson Heights, NY 11372, USA",
+      "formatted_phone_number": "(718) 567-5200",
+      "international_phone_number": "+1 718-567-5200",
+      "name": "Apicha Community Health Center - Jackson Heights-Queens",
+      "opening_hours": {
+        "open_now": false,
+        "periods": [
+          {
+            "close": {
+              "day": 1,
+              "time": "1730"
+            },
+            "open": {
+              "day": 1,
+              "time": "0900"
+            }
+          },
+          {
+            "close": {
+              "day": 2,
+              "time": "1730"
+            },
+            "open": {
+              "day": 2,
+              "time": "0900"
+            }
+          },
+          {
+            "close": {
+              "day": 3,
+              "time": "1900"
+            },
+            "open": {
+              "day": 3,
+              "time": "0900"
+            }
+          },
+          {
+            "close": {
+              "day": 4,
+              "time": "1900"
+            },
+            "open": {
+              "day": 4,
+              "time": "0900"
+            }
+          },
+          {
+            "close": {
+              "day": 5,
+              "time": "1730"
+            },
+            "open": {
+              "day": 5,
+              "time": "0900"
+            }
+          },
+          {
+            "close": {
+              "day": 6,
+              "time": "1600"
+            },
+            "open": {
+              "day": 6,
+              "time": "0900"
+            }
+          }
+        ],
+        "weekday_text": [
+          "Monday: 9:00 AM – 5:30 PM",
+          "Tuesday: 9:00 AM – 5:30 PM",
+          "Wednesday: 9:00 AM – 7:00 PM",
+          "Thursday: 9:00 AM – 7:00 PM",
+          "Friday: 9:00 AM – 5:30 PM",
+          "Saturday: 9:00 AM – 4:00 PM",
+          "Sunday: Closed"
+        ]
+      },
+      "types": [
+        "dentist",
+        "doctor",
+        "establishment",
+        "health",
+        "hospital",
+        "point_of_interest"
+      ],
+      "url": "https://maps.google.com/?cid=18324274402083215110",
+      "website": "https://www.apicha.org/locations/jackson-heights-clinic/"
+    }
+  },
+  {
+    "clinicName": "Community Health Center of Richmond - Canal Street",
+    "clinicId": "recvtTblgl92vIKLo",
+    "google": {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "135 Canal St Suite #300, Staten Island, NY 10304, USA",
+      "formatted_phone_number": "(917) 830-1200",
+      "international_phone_number": "+1 917-830-1200",
+      "name": "Community Health Center of Richmond",
+      "opening_hours": {
+        "open_now": false,
+        "periods": [
+          {
+            "close": {
+              "day": 1,
+              "time": "1700"
+            },
+            "open": {
+              "day": 1,
+              "time": "0830"
+            }
+          },
+          {
+            "close": {
+              "day": 2,
+              "time": "1700"
+            },
+            "open": {
+              "day": 2,
+              "time": "0830"
+            }
+          },
+          {
+            "close": {
+              "day": 3,
+              "time": "1700"
+            },
+            "open": {
+              "day": 3,
+              "time": "0830"
+            }
+          },
+          {
+            "close": {
+              "day": 4,
+              "time": "1700"
+            },
+            "open": {
+              "day": 4,
+              "time": "0830"
+            }
+          },
+          {
+            "close": {
+              "day": 5,
+              "time": "1700"
+            },
+            "open": {
+              "day": 5,
+              "time": "0830"
+            }
+          }
+        ],
+        "weekday_text": [
+          "Monday: 8:30 AM – 5:00 PM",
+          "Tuesday: 8:30 AM – 5:00 PM",
+          "Wednesday: 8:30 AM – 5:00 PM",
+          "Thursday: 8:30 AM – 5:00 PM",
+          "Friday: 8:30 AM – 5:00 PM",
+          "Saturday: Closed",
+          "Sunday: Closed"
+        ]
+      },
+      "types": [
+        "establishment",
+        "health",
+        "hospital",
+        "point_of_interest"
+      ],
+      "url": "https://maps.google.com/?cid=14059702002319287856",
+      "website": "http://www.chcrichmond.org/"
+    }
+  },
+  {
+    "clinicName": "Community Health Action of Staten Island (CHASI)",
+    "clinicId": "recwWwlA0l9e539Tw",
+    "google": {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "56 Bay St, Staten Island, NY 10301, USA",
+      "formatted_phone_number": "(718) 808-1300",
+      "international_phone_number": "+1 718-808-1300",
+      "name": "Community Health Action of Staten Island",
+      "types": [
+        "establishment",
+        "health",
+        "point_of_interest"
+      ],
+      "url": "https://maps.google.com/?cid=12598041494172125841",
+      "website": "https://chasiny.org/"
+    }
+  },
+  {
+    "clinicName": "NYC DOH - Chelsea Express Clinic",
+    "clinicId": "recwdhZz5RP5PihkY",
+    "google": {
+      "business_status": "OPERATIONAL",
+      "formatted_address": "303 9th Ave 1st floor, New York, NY 10001, USA",
+      "formatted_phone_number": "(347) 396-7959",
+      "international_phone_number": "+1 347-396-7959",
+      "name": "Chelsea Express Clinic",
+      "opening_hours": {
+        "open_now": false,
+        "periods": [
+          {
+            "close": {
+              "day": 1,
+              "time": "1530"
+            },
+            "open": {
+              "day": 1,
+              "time": "0830"
+            }
+          },
+          {
+            "close": {
+              "day": 2,
+              "time": "1900"
+            },
+            "open": {
+              "day": 2,
+              "time": "0830"
+            }
+          },
+          {
+            "close": {
+              "day": 3,
+              "time": "1530"
+            },
+            "open": {
+              "day": 3,
+              "time": "0830"
+            }
+          },
+          {
+            "close": {
+              "day": 4,
+              "time": "1530"
+            },
+            "open": {
+              "day": 4,
+              "time": "0830"
+            }
+          },
+          {
+            "close": {
+              "day": 5,
+              "time": "1530"
+            },
+            "open": {
+              "day": 5,
+              "time": "0830"
+            }
+          }
+        ],
+        "weekday_text": [
+          "Monday: 8:30 AM – 3:30 PM",
+          "Tuesday: 8:30 AM – 7:00 PM",
+          "Wednesday: 8:30 AM – 3:30 PM",
+          "Thursday: 8:30 AM – 3:30 PM",
+          "Friday: 8:30 AM – 3:30 PM",
+          "Saturday: Closed",
+          "Sunday: Closed"
+        ]
+      },
+      "types": [
+        "establishment",
+        "health",
+        "point_of_interest"
+      ],
+      "url": "https://maps.google.com/?cid=13497070192815863872",
+      "website": "https://www1.nyc.gov/site/doh/services/chelsea-express.page"
+    }
+  }
+]
