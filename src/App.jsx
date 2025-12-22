@@ -193,19 +193,40 @@ export default function App() {
         href="#main-content"
         style={{
           position: "absolute",
-          left: "-9999px",
-          zIndex: 100,
-          padding: theme.spacing[2],
-          backgroundColor: theme.colors.primary,
-          color: "white",
-          textDecoration: "none",
+          width: "1px",
+          height: "1px",
+          padding: 0,
+          margin: "-1px",
+          overflow: "hidden",
+          clip: "rect(0, 0, 0, 0)",
+          whiteSpace: "nowrap",
+          border: 0,
         }}
         onFocus={(e) => {
-          e.currentTarget.style.left = theme.spacing[2];
+          e.currentTarget.style.position = "absolute";
+          e.currentTarget.style.width = "auto";
+          e.currentTarget.style.height = "auto";
+          e.currentTarget.style.padding = theme.spacing[2];
+          e.currentTarget.style.margin = "0";
+          e.currentTarget.style.overflow = "visible";
+          e.currentTarget.style.clip = "auto";
+          e.currentTarget.style.whiteSpace = "normal";
+          e.currentTarget.style.insetInlineStart = theme.spacing[2];
           e.currentTarget.style.top = theme.spacing[2];
+          e.currentTarget.style.zIndex = "100";
+          e.currentTarget.style.backgroundColor = theme.colors.primary;
+          e.currentTarget.style.color = "white";
+          e.currentTarget.style.textDecoration = "none";
         }}
         onBlur={(e) => {
-          e.currentTarget.style.left = "-9999px";
+          e.currentTarget.style.position = "absolute";
+          e.currentTarget.style.width = "1px";
+          e.currentTarget.style.height = "1px";
+          e.currentTarget.style.padding = "0";
+          e.currentTarget.style.margin = "-1px";
+          e.currentTarget.style.overflow = "hidden";
+          e.currentTarget.style.clip = "rect(0, 0, 0, 0)";
+          e.currentTarget.style.whiteSpace = "nowrap";
         }}
       >
         {t("messages:skipToMain")}
@@ -215,10 +236,14 @@ export default function App() {
       <h1
         style={{
           position: "absolute",
-          left: "-10000px",
           width: "1px",
           height: "1px",
+          padding: 0,
+          margin: "-1px",
           overflow: "hidden",
+          clip: "rect(0, 0, 0, 0)",
+          whiteSpace: "nowrap",
+          border: 0,
         }}
       >
         {t("messages:siteTitle")}
@@ -231,10 +256,14 @@ export default function App() {
         aria-atomic="true"
         style={{
           position: "absolute",
-          left: "-10000px",
           width: "1px",
           height: "1px",
+          padding: 0,
+          margin: "-1px",
           overflow: "hidden",
+          clip: "rect(0, 0, 0, 0)",
+          whiteSpace: "nowrap",
+          border: 0,
         }}
       >
         {filteredClinics
