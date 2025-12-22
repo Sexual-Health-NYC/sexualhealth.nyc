@@ -41,7 +41,7 @@ export default function ClinicHours({ clinic }) {
             backgroundColor: theme.colors.warningBg || "#FEF3C7",
             color: theme.colors.warningText || "#92400E",
             padding: `${theme.spacing[1]} ${theme.spacing[2]}`,
-            borderRadius: theme.radii.sm,
+            borderRadius: theme.borderRadius.sm,
             fontSize: theme.fonts.size.sm,
             fontWeight: theme.fonts.weight.medium,
             marginBottom: theme.spacing[2],
