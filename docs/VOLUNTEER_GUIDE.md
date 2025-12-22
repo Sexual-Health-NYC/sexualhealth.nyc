@@ -1,6 +1,6 @@
 # Volunteer Guide
 
-Help us build the most accurate sexual health directory for NYC.
+Help us build the most accurate sexual health directory for NYC. We now have **184 clinics** listed (up from 75), including 102 new PrEP providers from the NYS AIDS Institute directory. **117 clinics are missing hours data** — this is where we need the most help.
 
 ## Before you call
 

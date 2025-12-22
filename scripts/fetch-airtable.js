@@ -19,7 +19,14 @@ const rootDir = path.join(__dirname, "..");
 // Load token from .env
 const envPath = path.join(rootDir, ".env");
 const envContent = fs.readFileSync(envPath, "utf-8");
-const TOKEN = envContent.split("=")[1].trim();
+const envVars = {};
+envContent.split("\n").forEach((line) => {
+  const idx = line.indexOf("=");
+  if (idx > 0) {
+    envVars[line.slice(0, idx).trim()] = line.slice(idx + 1).trim();
+  }
+});
+const TOKEN = envVars.AIRTABLE_TOKEN;
 
 const BASE_ID = "app2GMlVxnjw6ifzz";
 const CLINICS_TABLE = "tblx7sVpDo17Hkmmr";
@@ -143,16 +150,28 @@ function recordToVirtualClinic(record) {
     website: f.Website || "",
     email: f["Public Email"] || "",
 
-    // Services
+    // Services - Abortion
     has_abortion: f.Abortion || false,
     medication_abortion: f["Medication Abortion"] || false,
     abortion_medication_max_weeks: f["Abortion Medication Max Weeks"] || null,
+
+    // Services - General
     has_contraception: f.Contraception || false,
+    has_prep: f.PrEP || false,
+    has_sti_testing: f["STI Testing"] || false,
+
+    // Services - Gender Affirming Care
+    has_gender_affirming: f["Gender-Affirming Care"] || false,
+    gender_affirming_hormones: f["Gender Affirming Hormones"] || false,
+    gender_affirming_informed_consent: f["Informed Consent HRT"] || false,
 
     // Insurance
     accepts_medicaid: f["Accepts Medicaid"] || false,
     sliding_scale: f["Sliding Scale"] || false,
     no_insurance_ok: f["No Insurance OK"] || false,
+
+    // Populations
+    lgbtq_focused: f["LGBTQ+ Focused"] || false,
 
     // Metadata
     data_sources: f["Data Sources"] || "",
@@ -238,6 +257,7 @@ function recordToFeature(record, hoursMap) {
       // Access
       walk_in: f["Walk-ins OK"] || false,
       appointment_only: f["Appointment Only"] || false,
+      express_testing: f["Express Testing Available"] || false,
 
       // Special populations
       lgbtq_focused: f["LGBTQ+ Focused"] || false,

@@ -7,7 +7,14 @@
 import fs from "fs";
 
 const envContent = fs.readFileSync(".env", "utf-8");
-const TOKEN = envContent.split("=")[1].trim();
+const envVars = {};
+envContent.split("\n").forEach((line) => {
+  const idx = line.indexOf("=");
+  if (idx > 0) {
+    envVars[line.slice(0, idx).trim()] = line.slice(idx + 1).trim();
+  }
+});
+const TOKEN = envVars.AIRTABLE_TOKEN;
 
 const BASE_ID = "app2GMlVxnjw6ifzz";
 const TABLE_ID = "tblx7sVpDo17Hkmmr";

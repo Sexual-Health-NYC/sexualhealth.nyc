@@ -273,6 +273,18 @@ export default function Footer({ isMobile, isMapMode }) {
         <p style={{ margin: 0, fontStyle: "italic" }}>
           {t("footer:aboutDisclaimer")}
         </p>
+        <div
+          style={{
+            marginTop: theme.spacing[4],
+            paddingTop: theme.spacing[2],
+            borderTop: `1px solid ${theme.colors.border}`,
+            fontSize: "10px",
+            color: theme.colors.textSecondary,
+            fontFamily: "monospace",
+          }}
+        >
+          v.{__COMMIT_HASH__}
+        </div>
       </FooterModal>
 
       <FooterModal

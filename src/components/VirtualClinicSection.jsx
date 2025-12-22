@@ -2,13 +2,44 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import theme from "../theme";
 
-export default function VirtualClinicSection({ clinics }) {
-  const { t } = useTranslation(["sections", "actions"]);
+// Generate description based on which services are being filtered
+function getDescription(activeServices, t) {
+  const services = Array.from(activeServices || []);
+
+  if (services.includes("gender_affirming")) {
+    return t(
+      "sections:telehealthDescriptionGAC",
+      "Access gender-affirming hormone therapy from home — informed consent, no gatekeeping",
+    );
+  }
+  if (services.includes("abortion")) {
+    return t(
+      "sections:telehealthDescription",
+      "Get abortion pills mailed to you — no in-person visit required",
+    );
+  }
+  if (services.includes("prep")) {
+    return t(
+      "sections:telehealthDescriptionPrEP",
+      "Start or continue PrEP from home with telehealth providers",
+    );
+  }
+  // Default
+  return t(
+    "sections:telehealthDescriptionDefault",
+    "Access care from home — no in-person visit required",
+  );
+}
+
+export default function VirtualClinicSection({ clinics, activeServices }) {
+  const { t } = useTranslation(["sections", "actions", "services"]);
   const [expanded, setExpanded] = useState(true);
 
   if (!clinics || clinics.length === 0) {
     return null;
   }
+
+  const description = getDescription(activeServices, t);
 
   return (
     <div
@@ -62,10 +93,7 @@ export default function VirtualClinicSection({ clinics }) {
                 color: theme.colors.textSecondary,
               }}
             >
-              {t(
-                "sections:telehealthDescription",
-                "Get abortion pills mailed to you — no in-person visit required",
-              )}
+              {description}
             </p>
           </div>
         </div>
@@ -139,6 +167,47 @@ function VirtualClinicCard({ clinic }) {
           marginBottom: theme.spacing[3],
         }}
       >
+        {/* Gender Affirming Care badges */}
+        {clinic.has_gender_affirming && (
+          <span
+            style={{
+              fontSize: theme.fonts.size.xs,
+              padding: `${theme.spacing[1]} ${theme.spacing[2]}`,
+              backgroundColor: theme.colors.gacBg || "#e8f5e9",
+              color: theme.colors.gacText || "#2e7d32",
+              borderRadius: theme.borderRadius.sm,
+            }}
+          >
+            {t("services:genderAffirmingCare", "Gender-Affirming Care")}
+          </span>
+        )}
+        {clinic.gender_affirming_hormones && (
+          <span
+            style={{
+              fontSize: theme.fonts.size.xs,
+              padding: `${theme.spacing[1]} ${theme.spacing[2]}`,
+              backgroundColor: theme.colors.gacBg || "#e8f5e9",
+              color: theme.colors.gacText || "#2e7d32",
+              borderRadius: theme.borderRadius.sm,
+            }}
+          >
+            {t("services:hormoneTherapy", "Hormone Therapy")}
+          </span>
+        )}
+        {clinic.gender_affirming_informed_consent && (
+          <span
+            style={{
+              fontSize: theme.fonts.size.xs,
+              padding: `${theme.spacing[1]} ${theme.spacing[2]}`,
+              backgroundColor: "#fff3e0",
+              color: "#e65100",
+              borderRadius: theme.borderRadius.sm,
+            }}
+          >
+            {t("services:informedConsent", "Informed Consent")}
+          </span>
+        )}
+        {/* Abortion badges */}
         {clinic.medication_abortion && (
           <span
             style={{
@@ -149,7 +218,7 @@ function VirtualClinicCard({ clinic }) {
               borderRadius: theme.borderRadius.sm,
             }}
           >
-            Abortion Pills
+            {t("services:abortionPills", "Abortion Pills")}
           </span>
         )}
         {clinic.abortion_medication_max_weeks && (
@@ -162,9 +231,26 @@ function VirtualClinicCard({ clinic }) {
               borderRadius: theme.borderRadius.sm,
             }}
           >
-            Up to {clinic.abortion_medication_max_weeks} weeks
+            {t("services:upToWeeks", "Up to {{weeks}} weeks", {
+              weeks: clinic.abortion_medication_max_weeks,
+            })}
           </span>
         )}
+        {/* PrEP badge */}
+        {clinic.has_prep && (
+          <span
+            style={{
+              fontSize: theme.fonts.size.xs,
+              padding: `${theme.spacing[1]} ${theme.spacing[2]}`,
+              backgroundColor: theme.colors.prepBg || "#e3f2fd",
+              color: theme.colors.prepText || "#1565c0",
+              borderRadius: theme.borderRadius.sm,
+            }}
+          >
+            {t("services:prep", "PrEP")}
+          </span>
+        )}
+        {/* Insurance/cost badges */}
         {clinic.sliding_scale && (
           <span
             style={{
@@ -175,7 +261,7 @@ function VirtualClinicCard({ clinic }) {
               borderRadius: theme.borderRadius.sm,
             }}
           >
-            Sliding scale
+            {t("services:slidingScale", "Sliding scale")}
           </span>
         )}
         {clinic.has_contraception && (
@@ -188,7 +274,21 @@ function VirtualClinicCard({ clinic }) {
               borderRadius: theme.borderRadius.sm,
             }}
           >
-            Contraception
+            {t("services:contraception", "Contraception")}
+          </span>
+        )}
+        {/* LGBTQ+ focused badge */}
+        {clinic.lgbtq_focused && (
+          <span
+            style={{
+              fontSize: theme.fonts.size.xs,
+              padding: `${theme.spacing[1]} ${theme.spacing[2]}`,
+              backgroundColor: "#f3e5f5",
+              color: "#7b1fa2",
+              borderRadius: theme.borderRadius.sm,
+            }}
+          >
+            {t("services:lgbtqFocused", "LGBTQ+ Focused")}
           </span>
         )}
       </div>

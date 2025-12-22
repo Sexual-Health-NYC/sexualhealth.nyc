@@ -17,12 +17,28 @@ export default function ClinicListView({ clinics, onShowMap }) {
     useAppStore();
   const [expandedId, setExpandedId] = useState(null);
 
-  // Show virtual clinics when abortion is in the filter
-  const showVirtualClinics = filters.services.has("abortion");
+  // Filter virtual clinics based on selected service filters
+  // Show virtual clinics section if any filtered service has virtual providers
+  const filteredVirtualClinics = virtualClinics.filter((clinic) => {
+    // If no service filters, don't show virtual section
+    if (filters.services.size === 0) return false;
+
+    // Check if virtual clinic offers any of the selected services
+    return Array.from(filters.services).some((service) => {
+      if (service === "abortion") return clinic.has_abortion;
+      if (service === "gender_affirming") return clinic.has_gender_affirming;
+      if (service === "prep") return clinic.has_prep;
+      if (service === "contraception") return clinic.has_contraception;
+      if (service === "sti_testing") return clinic.has_sti_testing;
+      return false;
+    });
+  });
+
+  const showVirtualClinics = filteredVirtualClinics.length > 0;
 
   if (
     clinics.length === 0 &&
-    !(showVirtualClinics && virtualClinics.length > 0)
+    !(showVirtualClinics && filteredVirtualClinics.length > 0)
   ) {
     return (
       <div
@@ -51,9 +67,12 @@ export default function ClinicListView({ clinics, onShowMap }) {
         backgroundColor: theme.colors.surface,
       }}
     >
-      {/* Virtual/Telehealth clinics section - shown when abortion is filtered */}
-      {showVirtualClinics && virtualClinics.length > 0 && (
-        <VirtualClinicSection clinics={virtualClinics} />
+      {/* Virtual/Telehealth clinics section - shown when any matching service is filtered */}
+      {showVirtualClinics && (
+        <VirtualClinicSection
+          clinics={filteredVirtualClinics}
+          activeServices={filters.services}
+        />
       )}
 
       <div
