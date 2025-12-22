@@ -43,7 +43,7 @@ This document covers manual QA testing procedures for sexualhealth.nyc. The most
 #table(
   columns: (auto, 1fr, auto),
   inset: 6pt,
-  [*#*], [*Test as Maria*], [*Pass*],
+  [*\#*], [*Test as Maria*], [*Pass*],
   [P1.1], [Filter for STI testing — results appear quickly], [☐],
   [P1.2], [Filter for "Open now" — see which clinics she can visit immediately], [☐],
   [P1.3], [Filter Brooklyn / Crown Heights area — relevant results], [☐],
@@ -64,7 +64,7 @@ This document covers manual QA testing procedures for sexualhealth.nyc. The most
 #table(
   columns: (auto, 1fr, auto),
   inset: 6pt,
-  [*#*], [*Test as Alex*], [*Pass*],
+  [*\#*], [*Test as Alex*], [*Pass*],
   [P2.1], [Filter for PrEP — sees all PrEP providers], [☐],
   [P2.2], [Notices LGBTQ-focused clinics (Callen-Lorde, etc.)], [☐],
   [P2.3], [Can identify informed consent providers], [☐],
@@ -84,7 +84,7 @@ This document covers manual QA testing procedures for sexualhealth.nyc. The most
 #table(
   columns: (auto, 1fr, auto),
   inset: 6pt,
-  [*#*], [*Test as Jamie*], [*Pass*],
+  [*\#*], [*Test as Jamie*], [*Pass*],
   [P3.1], [Filter for Abortion — sees providers], [☐],
   [P3.2], [Gestational weeks filter (8 weeks) — shows eligible clinics], [☐],
   [P3.3], [Can distinguish medication vs procedural abortion limits], [☐],
@@ -104,7 +104,7 @@ This document covers manual QA testing procedures for sexualhealth.nyc. The most
 #table(
   columns: (auto, 1fr, auto),
   inset: 6pt,
-  [*#*], [*Test as Sam*], [*Pass*],
+  [*\#*], [*Test as Sam*], [*Pass*],
   [P4.1], [Filter Gender-Affirming Care — sees providers], [☐],
   [P4.2], [Filter for Hormones — narrows results], [☐],
   [P4.3], [Filter for Informed Consent — finds the right clinics], [☐],
@@ -125,7 +125,7 @@ This document covers manual QA testing procedures for sexualhealth.nyc. The most
 #table(
   columns: (auto, 1fr, auto),
   inset: 6pt,
-  [*#*], [*Test as Grandma Chen*], [*Pass*],
+  [*\#*], [*Test as Grandma Chen*], [*Pass*],
   [P5.1], [Find language switcher (globe icon in footer)], [☐],
   [P5.2], [Switch to Chinese — all text updates], [☐],
   [P5.3], [Interface still makes sense in Chinese], [☐],
@@ -145,7 +145,7 @@ This document covers manual QA testing procedures for sexualhealth.nyc. The most
 #table(
   columns: (auto, 1fr, auto),
   inset: 6pt,
-  [*#*], [*Test as David (with screen reader)*], [*Pass*],
+  [*\#*], [*Test as David (with screen reader)*], [*Pass*],
   [P6.1], [Page announces meaningful title on load], [☐],
   [P6.2], ["Skip to main content" link works], [☐],
   [P6.3], [Filter buttons are properly labeled], [☐],
@@ -166,7 +166,7 @@ This document covers manual QA testing procedures for sexualhealth.nyc. The most
 #table(
   columns: (auto, 1fr, auto),
   inset: 6pt,
-  [*#*], [*Test as Night Shift Worker*], [*Pass*],
+  [*\#*], [*Test as Night Shift Worker*], [*Pass*],
   [P7.1], [Filter for Contraception], [☐],
   [P7.2], ["Open after 5pm" filter shows evening options], [☐],
   [P7.3], [Clinic hours clearly show days/times], [☐],
@@ -188,7 +188,7 @@ This document covers manual QA testing procedures for sexualhealth.nyc. The most
 #table(
   columns: (auto, 1fr, auto, auto),
   inset: 6pt,
-  [*#*], [*Test*], [*Desktop*], [*Mobile*],
+  [*\#*], [*Test*], [*Desktop*], [*Mobile*],
   [1.1], [Page loads without errors (check console)], [☐], [☐],
   [1.2], [Map renders with clinic markers], [☐], [☐],
   [1.3], [FilterBar appears at top], [☐], [☐],
@@ -205,7 +205,7 @@ This document covers manual QA testing procedures for sexualhealth.nyc. The most
 #table(
   columns: (auto, 1fr, auto, auto),
   inset: 6pt,
-  [*#*], [*Test*], [*Desktop*], [*Mobile*],
+  [*\#*], [*Test*], [*Desktop*], [*Mobile*],
   [2.1], [Footer visible on map view], [☐], [☐],
   [2.2], [Footer visible on list view], [☐], [☐],
   [2.3], [Footer visible when bottom sheet is open (mobile)], [—], [☐],
@@ -221,7 +221,7 @@ This document covers manual QA testing procedures for sexualhealth.nyc. The most
 #table(
   columns: (auto, 1fr, auto, auto),
   inset: 6pt,
-  [*#*], [*Test*], [*Desktop*], [*Mobile*],
+  [*\#*], [*Test*], [*Desktop*], [*Mobile*],
   [3.1], [Hard refresh (Cmd+Shift+R) loads new assets], [☐], [☐],
   [3.2], [Check Network tab: JS files have hash in filename], [☐], [☐],
   [3.3], [After deploy: new commit hash shows in About modal], [☐], [☐],
@@ -232,7 +232,7 @@ This document covers manual QA testing procedures for sexualhealth.nyc. The most
 #table(
   columns: (auto, 1fr, auto, auto),
   inset: 6pt,
-  [*#*], [*Test*], [*Desktop*], [*Mobile*],
+  [*\#*], [*Test*], [*Desktop*], [*Mobile*],
   [4.1], [Map pans and zooms], [☐], [☐],
   [4.2], [Clicking marker opens detail panel/sheet], [☐], [☐],
   [4.3], [Marker clusters expand on zoom], [☐], [☐],
@@ -245,7 +245,7 @@ This document covers manual QA testing procedures for sexualhealth.nyc. The most
 #table(
   columns: (auto, 1fr, auto, auto),
   inset: 6pt,
-  [*#*], [*Test*], [*Desktop*], [*Mobile*],
+  [*\#*], [*Test*], [*Desktop*], [*Mobile*],
   [5.1], [Service filters (STI, PrEP, Abortion, etc.) work], [☐], [☐],
   [5.2], [Borough filter works], [☐], [☐],
   [5.3], [Insurance filters work], [☐], [☐],
@@ -263,7 +263,7 @@ This document covers manual QA testing procedures for sexualhealth.nyc. The most
 #table(
   columns: (auto, 1fr, auto, auto),
   inset: 6pt,
-  [*#*], [*Test*], [*Desktop*], [*Mobile*],
+  [*\#*], [*Test*], [*Desktop*], [*Mobile*],
   [6.1], [Clinic name and address display], [☐], [☐],
   [6.2], [Hours display correctly (or "Appointment only")], [☐], [☐],
   [6.3], [Phone number is clickable (tel: link)], [☐], [☐],
@@ -278,7 +278,7 @@ This document covers manual QA testing procedures for sexualhealth.nyc. The most
 #table(
   columns: (auto, 1fr, auto, auto),
   inset: 6pt,
-  [*#*], [*Test*], [*Desktop*], [*Mobile*],
+  [*\#*], [*Test*], [*Desktop*], [*Mobile*],
   [7.1], [List/Map toggle works], [☐], [☐],
   [7.2], [Clinic cards display correctly], [☐], [☐],
   [7.3], [Clicking card expands details], [☐], [☐],
@@ -292,7 +292,7 @@ This document covers manual QA testing procedures for sexualhealth.nyc. The most
 #table(
   columns: (auto, 1fr, auto, auto),
   inset: 6pt,
-  [*#*], [*Test*], [*Desktop*], [*Mobile*],
+  [*\#*], [*Test*], [*Desktop*], [*Mobile*],
   [8.1], [Language switcher opens from footer], [☐], [☐],
   [8.2], [Changing language updates all UI text], [☐], [☐],
   [8.3], [RTL languages (Arabic, Hebrew) display correctly], [☐], [☐],
@@ -305,7 +305,7 @@ This document covers manual QA testing procedures for sexualhealth.nyc. The most
 #table(
   columns: (auto, 1fr, auto),
   inset: 6pt,
-  [*#*], [*Test*], [*Pass*],
+  [*\#*], [*Test*], [*Pass*],
   [M.1], [Bottom sheet swipes up/down smoothly], [☐],
   [M.2], [Bottom sheet doesn't overlap footer], [☐],
   [M.3], [Touch targets are ≥44px], [☐],
@@ -319,7 +319,7 @@ This document covers manual QA testing procedures for sexualhealth.nyc. The most
 #table(
   columns: (auto, 1fr, 1fr, auto),
   inset: 6pt,
-  [*#*], [*Issue*], [*Fix Applied*], [*Verified*],
+  [*\#*], [*Issue*], [*Fix Applied*], [*Verified*],
   [K.1], [Footer hidden on mobile], [CSS z-index + position], [☐],
   [K.2], [RTL horizontal overflow], [Clip-based sr-only CSS], [☐],
   [K.3], [Language modal too wide], [Removed fixed width], [☐],
