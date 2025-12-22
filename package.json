@@ -12,7 +12,8 @@
     "preview": "vite preview",
     "fetch-data": "node scripts/fetch-airtable.js",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "deploy": "npx vercel --prod --yes"
   },
   "repository": {
     "type": "git",

@@ -3,13 +3,16 @@ import react from "@vitejs/plugin-react";
 import tidewave from "tidewave/vite-plugin";
 import { execSync } from "child_process";
 
-// Get git hash
-let commitHash = "dev";
-try {
-  commitHash = execSync("git rev-parse --short HEAD").toString().trim();
-} catch (e) {
-  console.warn("Could not get git hash", e);
-}
+// Get git hash - prefer Vercel's env var, fallback to git command
+let commitHash =
+  process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7) || // Vercel provides full SHA
+  (() => {
+    try {
+      return execSync("git rev-parse --short HEAD").toString().trim();
+    } catch {
+      return "dev";
+    }
+  })();
 
 export default defineConfig({
   plugins: [react(), tidewave()],

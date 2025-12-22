@@ -18,3 +18,5 @@ node_modules/
 # Editor
 ~$*
 __pycache__/
+.vercel
+.env*.local

@@ -12,7 +12,7 @@
       ]
     },
     {
-      "source": "/(.*\\.(json|geojson))",
+      "source": "/(.*).(json|geojson)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -21,7 +21,7 @@
       ]
     },
     {
-      "source": "/(.*\\.html)",
+      "source": "/(.*).html",
       "headers": [
         {
           "key": "Cache-Control",
