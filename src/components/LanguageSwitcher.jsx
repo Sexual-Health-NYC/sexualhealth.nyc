@@ -24,6 +24,7 @@ export default function LanguageSwitcher({ onLanguageChange }) {
       onChange={handleChange}
       aria-label="Select language"
       style={{
+        width: "100%",
         padding: `${theme.spacing[2]} ${theme.spacing[3]}`,
         backgroundColor: theme.colors.surface,
         color: theme.colors.textPrimary,
