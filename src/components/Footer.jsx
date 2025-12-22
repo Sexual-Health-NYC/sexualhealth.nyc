@@ -140,6 +140,8 @@ function LanguageModal({ isOpen, onClose }) {
           borderRadius: theme.borderRadius.lg,
           padding: theme.spacing[4],
           boxShadow: theme.shadows.lg,
+          maxWidth: "400px",
+          width: "100%",
         }}
         onClick={(e) => e.stopPropagation()}
       >
@@ -183,8 +185,13 @@ function LanguageModal({ isOpen, onClose }) {
 }
 
 export default function Footer() {
-  const { t } = useTranslation(["footer"]);
+  const { t, i18n } = useTranslation(["footer"]);
   const [activeModal, setActiveModal] = useState(null);
+
+  // Reset modal state when language changes to prevent stuck modals
+  useEffect(() => {
+    setActiveModal(null);
+  }, [i18n.language]);
 
   return (
     <>

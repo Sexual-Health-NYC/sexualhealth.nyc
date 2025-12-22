@@ -182,7 +182,7 @@ export default function App() {
     <div
       className="animate-fade-in"
       style={{
-        width: "100vw",
+        width: "100%",
         height: "100vh",
         display: "flex",
         flexDirection: "column",
