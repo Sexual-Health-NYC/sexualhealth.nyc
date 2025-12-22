@@ -83,7 +83,12 @@ export default function Map({ filteredClinics }) {
 
       // Define padding based on device and where the sidebar/bottom sheet appears
       const padding = isMobile
-        ? { top: 50, bottom: 350, left: 50, right: 50 } // Bottom sheet on mobile
+        ? {
+            top: 50,
+            bottom: window.innerHeight * 0.5 + 50,
+            left: 50,
+            right: 50,
+          } // Bottom sheet on mobile (50vh + margin)
         : { top: 50, bottom: 50, left: 50, right: 450 }; // Sidebar on desktop (right side)
 
       // Pan to the selected clinic with smooth animation
