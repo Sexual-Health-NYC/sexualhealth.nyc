@@ -15,7 +15,7 @@
 
 = Overview
 
-This document covers manual QA testing procedures for sexualhealth.nyc. All features must be tested on *both desktop and mobile* viewports.
+This document covers manual QA testing procedures for sexualhealth.nyc. The most effective testing comes from *embodying real user personas* — people with specific needs, constraints, and contexts.
 
 #table(
   columns: (1fr, 1fr),
@@ -26,6 +26,154 @@ This document covers manual QA testing procedures for sexualhealth.nyc. All feat
   [Detail panel (right side)], [Bottom sheet (swipeable)],
 )
 
+= Persona-Based Testing
+
+#block(fill: rgb("#e8f4fd"), inset: 12pt, radius: 4pt)[
+  *Testing Philosophy:* Don't just click through features mechanically. Inhabit each persona below. What are they feeling? What do they need to find quickly? What might confuse or frustrate them?
+]
+
+== Persona 1: Maria — Urgent STI Concern
+
+#block(fill: rgb("#fff8e1"), inset: 10pt, radius: 4pt)[
+  *Context:* 28-year-old woman, noticed symptoms this morning. Anxious, wants to get tested TODAY. Has Medicaid. Takes the subway from Crown Heights.
+
+  *Mindset:* Worried, wants answers fast. Doesn't want to call ahead or make appointments. Needs to know: "Can I walk in right now?"
+]
+
+#table(
+  columns: (auto, 1fr, auto),
+  inset: 6pt,
+  [*#*], [*Test as Maria*], [*Pass*],
+  [P1.1], [Filter for STI testing — results appear quickly], [☐],
+  [P1.2], [Filter for "Open now" — see which clinics she can visit immediately], [☐],
+  [P1.3], [Filter Brooklyn / Crown Heights area — relevant results], [☐],
+  [P1.4], [Filter Medicaid — confirms coverage], [☐],
+  [P1.5], [Check clinic hours — clearly shows walk-in vs appointment], [☐],
+  [P1.6], [Tap phone number — calls directly from mobile], [☐],
+  [P1.7], [Get directions — opens maps app with transit directions], [☐],
+)
+
+== Persona 2: Alex — Starting PrEP
+
+#block(fill: rgb("#e8f5e9"), inset: 10pt, radius: 4pt)[
+  *Context:* 24-year-old gay man, just moved to NYC. Heard about PrEP, wants to start but doesn't know where to go. No primary care doctor yet. Has insurance through work but unsure if it covers PrEP.
+
+  *Mindset:* Curious but slightly nervous. Wants somewhere LGBTQ-friendly. Prefers informed consent (no hoops to jump through).
+]
+
+#table(
+  columns: (auto, 1fr, auto),
+  inset: 6pt,
+  [*#*], [*Test as Alex*], [*Pass*],
+  [P2.1], [Filter for PrEP — sees all PrEP providers], [☐],
+  [P2.2], [Notices LGBTQ-focused clinics (Callen-Lorde, etc.)], [☐],
+  [P2.3], [Can identify informed consent providers], [☐],
+  [P2.4], [Virtual/telehealth options appear (Folx, Plume)], [☐],
+  [P2.5], [Clinic details show what to expect (labs, timeline)], [☐],
+  [P2.6], [Can filter by subway line near his new apartment], [☐],
+)
+
+== Persona 3: Jamie — Needs Abortion Care
+
+#block(fill: rgb("#fce4ec"), inset: 10pt, radius: 4pt)[
+  *Context:* 32-year-old woman, 8 weeks pregnant, decided to terminate. Has limited time off work. Wants to understand medication vs procedural options. Uninsured but heard about financial assistance.
+
+  *Mindset:* Has made her decision, now needs logistics. Time-sensitive. Wants clear, non-judgmental information.
+]
+
+#table(
+  columns: (auto, 1fr, auto),
+  inset: 6pt,
+  [*#*], [*Test as Jamie*], [*Pass*],
+  [P3.1], [Filter for Abortion — sees providers], [☐],
+  [P3.2], [Gestational weeks filter (8 weeks) — shows eligible clinics], [☐],
+  [P3.3], [Can distinguish medication vs procedural abortion limits], [☐],
+  [P3.4], [Sees "sliding scale" or financial assistance options], [☐],
+  [P3.5], [Virtual options appear (Hey Jane, Abortion on Demand)], [☐],
+  [P3.6], [Phone numbers work to schedule quickly], [☐],
+)
+
+== Persona 4: Sam — Trans Healthcare
+
+#block(fill: rgb("#f3e5f5"), inset: 10pt, radius: 4pt)[
+  *Context:* 19-year-old trans man, wants to start testosterone. Lives with unsupportive family in Staten Island. Looking for informed consent HRT — doesn't want to wait months for letters.
+
+  *Mindset:* Hopeful but wary. Has been turned away before. Needs to know he'll be treated with respect. May need to travel to Manhattan for the right care.
+]
+
+#table(
+  columns: (auto, 1fr, auto),
+  inset: 6pt,
+  [*#*], [*Test as Sam*], [*Pass*],
+  [P4.1], [Filter Gender-Affirming Care — sees providers], [☐],
+  [P4.2], [Filter for Hormones — narrows results], [☐],
+  [P4.3], [Filter for Informed Consent — finds the right clinics], [☐],
+  [P4.4], [Can see which clinics serve patients under 21], [☐],
+  [P4.5], [Virtual options (Plume, Folx) appear as alternatives], [☐],
+  [P4.6], [Transit filters help plan trip from Staten Island], [☐],
+  [P4.7], [Clinic details feel welcoming (LGBTQ-focused badges)], [☐],
+)
+
+== Persona 5: Grandma Chen — Helping Grandson
+
+#block(fill: rgb("#fff3e0"), inset: 10pt, radius: 4pt)[
+  *Context:* 68-year-old Chinese grandmother. Grandson mentioned he needs "health services" but is too embarrassed to look himself. She wants to help but isn't tech-savvy. Prefers Chinese language.
+
+  *Mindset:* Loving, wants to help. Unfamiliar with these topics. Needs simple, clear interface. Language barrier.
+]
+
+#table(
+  columns: (auto, 1fr, auto),
+  inset: 6pt,
+  [*#*], [*Test as Grandma Chen*], [*Pass*],
+  [P5.1], [Find language switcher (globe icon in footer)], [☐],
+  [P5.2], [Switch to Chinese — all text updates], [☐],
+  [P5.3], [Interface still makes sense in Chinese], [☐],
+  [P5.4], [Can find Charles B. Wang Community Health Center], [☐],
+  [P5.5], [Search works with clinic name], [☐],
+  [P5.6], [Phone number clearly visible to write down for grandson], [☐],
+)
+
+== Persona 6: David — Screen Reader User
+
+#block(fill: rgb("#e3f2fd"), inset: 10pt, radius: 4pt)[
+  *Context:* 35-year-old blind man using VoiceOver on iPhone. Needs to find HIV testing. Relies entirely on audio feedback and proper semantic HTML.
+
+  *Mindset:* Experienced with accessibility issues. Expects frustration but hopes this site is different.
+]
+
+#table(
+  columns: (auto, 1fr, auto),
+  inset: 6pt,
+  [*#*], [*Test as David (with screen reader)*], [*Pass*],
+  [P6.1], [Page announces meaningful title on load], [☐],
+  [P6.2], ["Skip to main content" link works], [☐],
+  [P6.3], [Filter buttons are properly labeled], [☐],
+  [P6.4], [Clinic count announced when filters change], [☐],
+  [P6.5], [Can navigate to clinic details via list view], [☐],
+  [P6.6], [Phone numbers and links are clearly announced], [☐],
+  [P6.7], [Modal dialogs trap focus correctly], [☐],
+)
+
+== Persona 7: Night Shift Worker
+
+#block(fill: rgb("#eceff1"), inset: 10pt, radius: 4pt)[
+  *Context:* 40-year-old nurse working 7pm-7am shifts. Needs contraception refill but is always asleep during normal clinic hours. Looking for evening or weekend availability.
+
+  *Mindset:* Frustrated by "9-5 only" healthcare. Needs to find clinics open when she's awake.
+]
+
+#table(
+  columns: (auto, 1fr, auto),
+  inset: 6pt,
+  [*#*], [*Test as Night Shift Worker*], [*Pass*],
+  [P7.1], [Filter for Contraception], [☐],
+  [P7.2], ["Open after 5pm" filter shows evening options], [☐],
+  [P7.3], [Clinic hours clearly show days/times], [☐],
+  [P7.4], [Can identify Saturday availability from hours], [☐],
+  [P7.5], [Virtual/telehealth options offer flexibility], [☐],
+)
+
 = Pre-Test Setup
 
 + Clear browser cache and localStorage
@@ -33,7 +181,7 @@ This document covers manual QA testing procedures for sexualhealth.nyc. All feat
 + For mobile: Use real devices OR Chrome DevTools device emulation
 + Note the commit hash shown in About modal (footer) for bug reports
 
-= Critical Path Tests
+= Technical Verification Tests
 
 == 1. Initial Load
 
@@ -51,7 +199,7 @@ This document covers manual QA testing procedures for sexualhealth.nyc. All feat
 == 2. Footer Visibility (Known Issue Area)
 
 #block(fill: rgb("#fff3cd"), inset: 8pt, radius: 4pt)[
-  *Note:* Recent changes to ensure footer always shows on mobile. Verify this works after clearing cache. If footer is hidden, cache busting may not be working.
+  *Note:* Recent changes to ensure footer always shows on mobile. Verify this works after clearing cache.
 ]
 
 #table(
@@ -139,44 +287,17 @@ This document covers manual QA testing procedures for sexualhealth.nyc. All feat
   [7.6], [Virtual/telehealth section appears when filtering GAC/abortion], [☐], [☐],
 )
 
-== 8. Virtual Clinics Section
+== 8. Internationalization (i18n)
 
 #table(
   columns: (auto, 1fr, auto, auto),
   inset: 6pt,
   [*#*], [*Test*], [*Desktop*], [*Mobile*],
-  [8.1], [Section appears when filtering abortion services], [☐], [☐],
-  [8.2], [Section appears when filtering gender-affirming care], [☐], [☐],
-  [8.3], [Section appears when filtering PrEP], [☐], [☐],
-  [8.4], [Folx Health shows with GAC badges], [☐], [☐],
-  [8.5], [Plume shows with GAC badges], [☐], [☐],
-  [8.6], [Website links work for virtual clinics], [☐], [☐],
-)
-
-== 9. Internationalization (i18n)
-
-#table(
-  columns: (auto, 1fr, auto, auto),
-  inset: 6pt,
-  [*#*], [*Test*], [*Desktop*], [*Mobile*],
-  [9.1], [Language switcher opens from footer], [☐], [☐],
-  [9.2], [Changing language updates all UI text], [☐], [☐],
-  [9.3], [RTL languages (Arabic, Hebrew) display correctly], [☐], [☐],
-  [9.4], [Language preference persists after refresh], [☐], [☐],
-  [9.5], [No missing translation keys (check console)], [☐], [☐],
-)
-
-== 10. Accessibility
-
-#table(
-  columns: (auto, 1fr, auto, auto),
-  inset: 6pt,
-  [*#*], [*Test*], [*Desktop*], [*Mobile*],
-  [10.1], [Tab navigation works through all interactive elements], [☐], [☐],
-  [10.2], [Focus indicators visible], [☐], [☐],
-  [10.3], ["Skip to main content" link works], [☐], [—],
-  [10.4], [Screen reader announces clinic count on filter change], [☐], [☐],
-  [10.5], [Color contrast passes (use axe DevTools)], [☐], [☐],
+  [8.1], [Language switcher opens from footer], [☐], [☐],
+  [8.2], [Changing language updates all UI text], [☐], [☐],
+  [8.3], [RTL languages (Arabic, Hebrew) display correctly], [☐], [☐],
+  [8.4], [Language preference persists after refresh], [☐], [☐],
+  [8.5], [No missing translation keys (check console)], [☐], [☐],
 )
 
 = Mobile-Specific Tests
@@ -212,6 +333,7 @@ When filing bugs, include:
 **Device:** [Desktop Chrome / iPhone 14 Safari / etc.]
 **Viewport:** [Desktop / Mobile]
 **Commit:** [from About modal]
+**Persona:** [Which persona were you testing as?]
 **Steps to reproduce:**
 1. ...
 2. ...
