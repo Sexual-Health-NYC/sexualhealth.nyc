@@ -140,8 +140,6 @@ function LanguageModal({ isOpen, onClose }) {
           borderRadius: theme.borderRadius.lg,
           padding: theme.spacing[4],
           boxShadow: theme.shadows.lg,
-          maxWidth: "400px",
-          width: "100%",
         }}
         onClick={(e) => e.stopPropagation()}
       >
