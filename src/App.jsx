@@ -362,7 +362,7 @@ export default function App() {
           />
         )}
       </main>
-      <Footer />
+      <Footer isMobile={isMobile} isMapMode={viewMode === "map"} />
     </div>
   );
 }

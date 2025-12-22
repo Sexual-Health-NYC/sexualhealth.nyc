@@ -182,7 +182,7 @@ function LanguageModal({ isOpen, onClose }) {
   );
 }
 
-export default function Footer() {
+export default function Footer({ isMobile, isMapMode }) {
   const { t, i18n } = useTranslation(["footer"]);
   const [activeModal, setActiveModal] = useState(null);
 
@@ -190,6 +190,9 @@ export default function Footer() {
   useEffect(() => {
     setActiveModal(null);
   }, [i18n.language]);
+
+  // On mobile in map mode, position fixed at bottom so it's always accessible
+  const isFixed = isMobile && isMapMode;
 
   return (
     <>
@@ -204,7 +207,10 @@ export default function Footer() {
           gap: theme.spacing[4],
           flexWrap: "wrap",
           fontSize: theme.fonts.size.xs,
-          position: "relative",
+          position: isFixed ? "fixed" : "relative",
+          bottom: isFixed ? 0 : "auto",
+          left: isFixed ? 0 : "auto",
+          right: isFixed ? 0 : "auto",
           zIndex: 30,
         }}
       >
