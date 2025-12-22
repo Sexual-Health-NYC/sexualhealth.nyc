@@ -75,14 +75,16 @@ def add_clinic(clinic_data):
 
     try:
         response = requests.post(AIRTABLE_API_URL, headers=HEADERS, json=payload)
-        response.raise_for_status()
+        if response.status_code != 200:
+            print(f"  ❌ Error {response.status_code}: {response.text}")
+            import json
+            print(f"     Payload sent: {json.dumps(payload, indent=2)}")
+            return None
         record_id = response.json()['records'][0]['id']
         print(f"  ✅ Added with ID: {record_id}")
         return record_id
-    except requests.exceptions.RequestException as e:
-        print(f"  ❌ Error: {e}")
-        if hasattr(e, 'response') and e.response:
-            print(f"     Response: {e.response.text}")
+    except Exception as e:
+        print(f"  ❌ Exception: {e}")
         return None
 
 
@@ -99,72 +101,42 @@ def main():
             "Address": "315 W 57th Street, Suite 308, New York, NY 10019",
             "Borough": "Manhattan",
             "Phone": "(212) 863-9058",
-            "Email": "concierge@niosspa.com",
             "Website": "https://www.niosspa.com",
-            "Organization": "Nios Spa",
-            "Clinic Type": "Specialty Provider",
-            # Services - This is a specialty provider, not a clinic
+            # Services
             "Gender-Affirming Care": True,
-            "Gender Affirming Electrolysis": True,
             # Insurance
-            "Accepts Medicaid": True,  # Listed in Amida GIST = accepts Medicaid
-            # Notes
-            "Data Sources": "AMIDA Care GIST Provider Listing (May 2025); Electrolysis Guide 2024",
-            "Notes": "Electrolysis for pre-surgical hair removal. Insurance support letters: insurance@niosspa.com"
+            "Accepts Medicaid": True,
         },
         {
             "Clinic Name": "Nios Spa - Brooklyn",
             "Address": "567 Pacific Street, Retail Level, Brooklyn, NY 11217",
             "Borough": "Brooklyn",
             "Phone": "(212) 863-9058",
-            "Email": "concierge@niosspa.com",
             "Website": "https://www.niosspa.com",
-            "Organization": "Nios Spa",
-            "Clinic Type": "Specialty Provider",
             # Services
             "Gender-Affirming Care": True,
-            "Gender Affirming Electrolysis": True,
             # Insurance
             "Accepts Medicaid": True,
-            # Notes
-            "Data Sources": "AMIDA Care GIST Provider Listing (May 2025); Electrolysis Guide 2024",
-            "Notes": "Electrolysis for pre-surgical hair removal. Insurance support letters: insurance@niosspa.com"
         },
         {
             "Clinic Name": "New York Electrolysis",
             "Address": "119 West 23rd Street, Suite 610, New York, NY 10011",
             "Borough": "Manhattan",
             "Phone": "(212) 673-4358",
-            "Email": "nyelectrolysis@gmail.com",
-            "Organization": "New York Electrolysis Office",
-            "Clinic Type": "Specialty Provider",
             # Services
             "Gender-Affirming Care": True,
-            "Gender Affirming Electrolysis": True,
             # Insurance
             "Accepts Medicaid": True,
-            # Notes
-            "Data Sources": "AMIDA Care GIST Provider Listing (May 2025); Electrolysis Guide 2024",
-            "Notes": "Electrolysis for pre-surgical hair removal. Support letters: Send to GIST@amidacareny.org"
         },
         {
             "Clinic Name": "L'Elite Medispa and Wellness",
             "Address": "754 Nostrand Avenue, Brooklyn, NY 11216",
             "Borough": "Brooklyn",
             "Phone": "(347) 627-3374",
-            "Fax": "(631) 824-9039",
-            "Email": "info@lelitemedispa.com",
-            "Organization": "L'Elite Medispa",
-            "Clinic Type": "Specialty Provider",
             # Services
             "Gender-Affirming Care": True,
-            "Gender Affirming Electrolysis": True,
-            "Gender Affirming Laser": True,
             # Insurance
             "Accepts Medicaid": True,
-            # Notes
-            "Data Sources": "AMIDA Care GIST Provider Listing (May 2025); Electrolysis Guide 2024",
-            "Notes": "Electrolysis and laser hair removal. Support letters: info@lelitemedispa.com"
         },
 
         # VOICE THERAPY
@@ -174,18 +146,11 @@ def main():
             "Borough": "Manhattan",
             "Phone": "(212) 241-9112",
             "Website": "https://www.mountsinai.org",
-            "Organization": "Mount Sinai Health System",
-            "Clinic Type": "Hospital",
             # Services
             "Gender-Affirming Care": True,
-            "Gender Affirming Voice": True,
             # Insurance
             "Accepts Medicaid": True,
             "Accepts Medicare": True,
-            # Notes
-            "Data Sources": "AMIDA Care GIST Provider Listing (May 2025)",
-            "Provider": "Mark Courey, MD - Speech Therapy / Voice Modification",
-            "Notes": "Voice therapy and modification for gender affirmation. Part of Mount Sinai ENT department."
         }
     ]
 
