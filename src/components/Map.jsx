@@ -69,7 +69,11 @@ export default function Map({ filteredClinics, onShowList }) {
           right: selectedClinic ? 400 : 0,
         };
 
-    map.setPadding(padding);
+    // Animate padding change smoothly
+    map.easeTo({
+      padding,
+      duration: 300,
+    });
   }, [isMobile, selectedClinic]);
 
   useEffect(() => {
