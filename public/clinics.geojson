@@ -7432,98 +7432,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.9936086,
-          40.7253719
-        ]
-      },
-      "properties": {
-        "id": "recR3f0pNv4kj0n6g",
-        "name": "Planned Parenthood of New York City Margaret Sanger Center",
-        "address": "26 Bleecker Street, New York, NY, 10012",
-        "borough": "Manhattan",
-        "phone": "(212) 965-7000",
-        "website": "https://www.ppnyc.org",
-        "hours": [
-          {
-            "department": "General",
-            "days": [
-              "Mon",
-              "Tue",
-              "Wed",
-              "Thu",
-              "Fri"
-            ],
-            "open": "09:00",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Sat"
-            ],
-            "open": "09:00",
-            "close": "15:00",
-            "allDay": false,
-            "notes": ""
-          }
-        ],
-        "organization": "",
-        "clinic_type": "",
-        "has_sti_testing": false,
-        "has_hiv_testing": false,
-        "has_prep": true,
-        "has_pep": true,
-        "prep_ap_registered": false,
-        "has_contraception": false,
-        "has_abortion": false,
-        "has_gender_affirming": false,
-        "has_vaccines": false,
-        "gender_affirming_youth": false,
-        "gender_affirming_hormones": false,
-        "gender_affirming_surgery": false,
-        "gender_affirming_youth_policy": "",
-        "gender_affirming_ffs": false,
-        "gender_affirming_fms": false,
-        "gender_affirming_voice": false,
-        "gender_affirming_electrolysis": false,
-        "gender_affirming_laser": false,
-        "gender_affirming_top_surgery": false,
-        "gender_affirming_bottom_surgery": false,
-        "gender_affirming_informed_consent": true,
-        "medication_abortion": false,
-        "in_clinic_abortion": false,
-        "abortion_medication_limit": "",
-        "abortion_procedure_limit": "",
-        "abortion_medication_max_weeks": null,
-        "abortion_procedure_max_weeks": null,
-        "offers_late_term": false,
-        "accepts_medicaid": false,
-        "accepts_medicare": false,
-        "sliding_scale": false,
-        "no_insurance_ok": false,
-        "insurance_plans": [],
-        "medicaid_mcos": [],
-        "medicaid_type": null,
-        "walk_in": false,
-        "appointment_only": true,
-        "express_testing": false,
-        "lgbtq_focused": false,
-        "youth_friendly": false,
-        "anonymous_testing": false,
-        "transit": "6 at Bleecker St (352 ft)",
-        "bus": "M21 at E HOUSTON ST/MOTT ST (315 ft)",
-        "last_verified": "",
-        "data_sources": "NYS AIDS Institute Provider Directory Dec 2025",
-        "is_virtual": false
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -73.8903059,
           40.8420226
         ]
@@ -14802,100 +14710,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -74.077327,
-          40.642059
-        ]
-      },
-      "properties": {
-        "id": "recv4LEPTRsb3yttd",
-        "name": "Planned Parenthood - Staten Island Center",
-        "address": "23 Hyatt St, Staten Island, NY 10301",
-        "borough": "Staten Island",
-        "phone": "(212) 965-7000",
-        "website": "https://www.plannedparenthood.org/planned-parenthood-greater-new-york",
-        "hours": [
-          {
-            "department": "General",
-            "days": [
-              "Tue",
-              "Wed",
-              "Thu"
-            ],
-            "open": "08:00",
-            "close": "19:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Mon",
-              "Tue",
-              "Wed",
-              "Thu",
-              "Fri"
-            ],
-            "open": "09:00",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          }
-        ],
-        "organization": "Planned Parenthood",
-        "clinic_type": "Planned Parenthood",
-        "has_sti_testing": true,
-        "has_hiv_testing": true,
-        "has_prep": true,
-        "has_pep": false,
-        "prep_ap_registered": true,
-        "has_contraception": true,
-        "has_abortion": true,
-        "has_gender_affirming": false,
-        "has_vaccines": false,
-        "gender_affirming_youth": false,
-        "gender_affirming_hormones": false,
-        "gender_affirming_surgery": false,
-        "gender_affirming_youth_policy": "",
-        "gender_affirming_ffs": false,
-        "gender_affirming_fms": false,
-        "gender_affirming_voice": false,
-        "gender_affirming_electrolysis": false,
-        "gender_affirming_laser": false,
-        "gender_affirming_top_surgery": false,
-        "gender_affirming_bottom_surgery": false,
-        "gender_affirming_informed_consent": true,
-        "medication_abortion": false,
-        "in_clinic_abortion": false,
-        "abortion_medication_limit": "",
-        "abortion_procedure_limit": "",
-        "abortion_medication_max_weeks": 11,
-        "abortion_procedure_max_weeks": null,
-        "offers_late_term": false,
-        "accepts_medicaid": true,
-        "accepts_medicare": false,
-        "sliding_scale": false,
-        "no_insurance_ok": false,
-        "insurance_plans": [],
-        "medicaid_mcos": [],
-        "medicaid_type": null,
-        "walk_in": false,
-        "appointment_only": true,
-        "express_testing": false,
-        "lgbtq_focused": true,
-        "youth_friendly": false,
-        "anonymous_testing": false,
-        "transit": "SIR at St George (0.23 mi)",
-        "bus": "S42, S52 at HYATT ST/CENTRAL AV (103 ft)",
-        "last_verified": "",
-        "data_sources": "Gemini Deep Research Dec 2025",
-        "is_virtual": false
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -74.0981872,
           40.5945589
         ]
@@ -16062,9 +15876,9 @@
     }
   ],
   "metadata": {
-    "generated": "2025-12-23T14:25:58.424Z",
+    "generated": "2025-12-23T17:48:21.442Z",
     "source": "Airtable",
-    "total_records": 186,
-    "records_with_coords": 175
+    "total_records": 184,
+    "records_with_coords": 173
   }
 }
