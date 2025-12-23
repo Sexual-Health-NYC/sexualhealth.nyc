@@ -31,5 +31,6 @@
   "searchByName": "ক্লিনিকের নাম দিয়ে অনুসন্ধান করুন...",
   "siteTitle": "Sexual Health NYC - STI পরীক্ষা, HIV পরীক্ষা, PrEP, PEP, গর্ভনিরোধক, এবং গর্ভপাত পরিষেবার জন্য ক্লিনিক খুঁজুন",
   "verifiedUnknown": "এখনও যাচাই করা হয়নি",
-  "appointmentOnly": "শুধুমাত্র অ্যাপয়েন্টমেন্টের মাধ্যমে"
+  "appointmentOnly": "শুধুমাত্র অ্যাপয়েন্টমেন্টের মাধ্যমে",
+  "telehealthBanner": "{{count}} টি টেলিহেলথ বিকল্প — তালিকায় দেখুন"
 }

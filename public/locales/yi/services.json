@@ -5,5 +5,11 @@
   "pep": "PEP",
   "contraception": "פאַרהיטונג",
   "abortion": "אַבאָרשאַן",
-  "genderAffirmingCare": "דזשענדער אַפערמינג קער"
+  "genderAffirmingCare": "דזשענדער אַפערמינג קער",
+  "abortionPills": "אָפּוואַרפֿן פּילן",
+  "hormoneTherapy": "האָרמאָן טעראַפּיע",
+  "informedConsent": "אינפאָרמירט צושטימונג",
+  "lgbtqFocused": "LGBTQ+ פאָוקיסט",
+  "slidingScale": "גליטשיק וואָג (פרייז לויט האַכנאָסע)",
+  "upToWeeks": "ביז {{weeks}} וואָכן"
 }

@@ -5,5 +5,11 @@
   "pep": "ПКП (PEP)",
   "contraception": "Контрацепция",
   "abortion": "Аборт",
-  "genderAffirmingCare": "Гендерно-аффирмативная помощь"
+  "genderAffirmingCare": "Гендерно-аффирмативная помощь",
+  "abortionPills": "Таблетки для аборта",
+  "hormoneTherapy": "Гормональная терапия",
+  "informedConsent": "Информированное согласие",
+  "lgbtqFocused": "Ориентировано на ЛГБТК+",
+  "slidingScale": "Скользящая шкала (оплата по доходам)",
+  "upToWeeks": "До {{weeks}} недель"
 }

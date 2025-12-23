@@ -5,5 +5,11 @@
   "pep": "PEP",
   "contraception": "وسائل منع الحمل",
   "abortion": "الإجهاض",
-  "genderAffirmingCare": "الرعاية المؤكدة للجنس"
+  "genderAffirmingCare": "الرعاية المؤكدة للجنس",
+  "abortionPills": "حبوب الإجهاض",
+  "hormoneTherapy": "العلاج الهرموني",
+  "informedConsent": "الموافقة المستنيرة",
+  "lgbtqFocused": "يركز على LGBTQ+",
+  "slidingScale": "مقياس متدرج (رسوم حسب الدخل)",
+  "upToWeeks": "حتى {{weeks}} أسبوعًا"
 }

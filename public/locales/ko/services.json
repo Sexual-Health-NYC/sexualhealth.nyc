@@ -5,5 +5,11 @@
   "pep": "PEP(노출 후 예방요법)",
   "contraception": "피임",
   "abortion": "낙태 서비스",
-  "genderAffirmingCare": "성별 긍정 치료"
+  "genderAffirmingCare": "성별 긍정 치료",
+  "abortionPills": "유산 유도제",
+  "hormoneTherapy": "호르몬 요법",
+  "informedConsent": "고지 후 동의",
+  "lgbtqFocused": "LGBTQ+ 중심",
+  "slidingScale": "소득에 따른 차등 요금제",
+  "upToWeeks": "최대 {{weeks}}주"
 }

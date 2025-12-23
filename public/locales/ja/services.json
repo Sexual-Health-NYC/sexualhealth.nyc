@@ -5,5 +5,11 @@
   "pep": "PEP（暴露後予防内服）",
   "contraception": "避妊",
   "abortion": "中絶",
-  "genderAffirmingCare": "ジェンダーアファミングケア"
+  "genderAffirmingCare": "ジェンダーアファミングケア",
+  "abortionPills": "経口中絶薬",
+  "hormoneTherapy": "ホルモン療法",
+  "informedConsent": "インフォームド・コンセント",
+  "lgbtqFocused": "LGBTQ+ に重点",
+  "slidingScale": "スライディングスケール (所得に応じた料金)",
+  "upToWeeks": "{{weeks}} 週まで"
 }

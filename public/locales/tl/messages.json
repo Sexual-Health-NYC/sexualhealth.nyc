@@ -31,5 +31,6 @@
   "searchByName": "Maghanap gamit ang pangalan ng klinika...",
   "siteTitle": "Sexual Health NYC - Maghanap ng mga Klinika para sa STI Testing, HIV Testing, PrEP, PEP, Contraception, at Abortion Services",
   "verifiedUnknown": "Hindi pa na-verify",
-  "appointmentOnly": "Sa pamamagitan ng appointment lamang"
+  "appointmentOnly": "Sa pamamagitan ng appointment lamang",
+  "telehealthBanner": "{{count}} opsyon sa telehealth — tingnan sa listahan"
 }

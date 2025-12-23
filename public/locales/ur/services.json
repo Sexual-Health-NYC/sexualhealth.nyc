@@ -5,5 +5,11 @@
   "pep": "PEP (پیپ)",
   "contraception": "مانع حمل",
   "abortion": "اسقاط حمل",
-  "genderAffirmingCare": "صنفی اثبات کی دیکھ بھال"
+  "genderAffirmingCare": "صنفی اثبات کی دیکھ بھال",
+  "abortionPills": "اسقاط حمل کی گولیاں",
+  "hormoneTherapy": "ہارمون تھراپی",
+  "informedConsent": "باخبر رضامندی",
+  "lgbtqFocused": "LGBTQ+ پر مرکوز",
+  "slidingScale": "سلائڈنگ اسکیل (آمدنی کے مطابق فیس)",
+  "upToWeeks": "{{weeks}} ہفتوں تک"
 }

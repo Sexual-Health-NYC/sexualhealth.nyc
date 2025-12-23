@@ -5,5 +5,11 @@
   "pep": "PEP",
   "contraception": "Contraception",
   "abortion": "Abortion",
-  "genderAffirmingCare": "Gender Affirming Care"
+  "genderAffirmingCare": "Gender Affirming Care",
+  "abortionPills": "Abortion Pills",
+  "hormoneTherapy": "Hormone Therapy",
+  "informedConsent": "Informed Consent",
+  "lgbtqFocused": "LGBTQ+ Focused",
+  "slidingScale": "Sliding scale",
+  "upToWeeks": "Up to {{weeks}} weeks"
 }

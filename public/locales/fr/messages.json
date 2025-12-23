@@ -31,5 +31,6 @@
   "searchByName": "Rechercher par nom de clinique...",
   "siteTitle": "Sexual Health NYC - Trouvez des cliniques pour le dépistage des IST, le dépistage du VIH, la PrEP, la PEP, la contraception et les services d'avortement",
   "verifiedUnknown": "Pas encore vérifié",
-  "appointmentOnly": "Sur rendez-vous uniquement"
+  "appointmentOnly": "Sur rendez-vous uniquement",
+  "telehealthBanner": "{{count}} options de télésanté — voir dans la liste"
 }

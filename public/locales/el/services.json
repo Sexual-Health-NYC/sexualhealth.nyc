@@ -5,5 +5,11 @@
   "pep": "PEP",
   "contraception": "Αντισύλληψη",
   "abortion": "Άμβλωση",
-  "genderAffirmingCare": "Φροντίδα Επιβεβαίωσης Φύλου"
+  "genderAffirmingCare": "Φροντίδα Επιβεβαίωσης Φύλου",
+  "abortionPills": "Χάπια άμβλωσης",
+  "hormoneTherapy": "Ορμονοθεραπεία",
+  "informedConsent": "Ενήμερη συγκατάθεση",
+  "lgbtqFocused": "Εστιασμένο σε LGBTQ+",
+  "slidingScale": "Κυμαινόμενη κλίμακα (χρεώσεις βάσει εισοδήματος)",
+  "upToWeeks": "Έως {{weeks}} εβδομάδες"
 }

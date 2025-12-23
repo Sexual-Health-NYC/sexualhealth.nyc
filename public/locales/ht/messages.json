@@ -31,5 +31,6 @@
   "searchByName": "Chèche pa non klinik...",
   "siteTitle": "Sexual Health NYC - Jwenn klinik pou tès STI, tès HIV, PrEP, PEP, kontrasepsyon, ak sèvis avòtman",
   "verifiedUnknown": "Pokò verifye",
-  "appointmentOnly": "Sou randevou sèlman"
+  "appointmentOnly": "Sou randevou sèlman",
+  "telehealthBanner": "{{count}} opsyon telesante — gade nan lis la"
 }

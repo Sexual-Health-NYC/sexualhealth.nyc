@@ -31,5 +31,6 @@
   "searchByName": "البحث حسب اسم العيادة...",
   "siteTitle": "Sexual Health NYC - اعثر على عيادات لفحص الأمراض المنقولة جنسياً، وفحص فيروس نقص المناعة البشرية، وPrEP، وPEP، ومنع الحمل، وخدمات الإجهاض",
   "verifiedUnknown": "لم يتم التحقق بعد",
-  "appointmentOnly": "بموعد مسبق فقط"
+  "appointmentOnly": "بموعد مسبق فقط",
+  "telehealthBanner": "{{count}} خيارات الرعاية عن بعد — عرض في القائمة"
 }

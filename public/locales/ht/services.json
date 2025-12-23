@@ -5,5 +5,11 @@
   "pep": "PEP",
   "contraception": "Kontrasepsyon",
   "abortion": "Sèvis Avòtman",
-  "genderAffirmingCare": "Swen Afimasyon Sèks"
+  "genderAffirmingCare": "Swen Afimasyon Sèks",
+  "abortionPills": "Grenn pou jete pitit",
+  "hormoneTherapy": "Terapi òmòn",
+  "informedConsent": "Konsantman enfòme",
+  "lgbtqFocused": "Konsantre sou LGBTQ+",
+  "slidingScale": "Echèl glisman (pri selon revni)",
+  "upToWeeks": "Jiska {{weeks}} semèn"
 }

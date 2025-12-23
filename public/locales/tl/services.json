@@ -5,5 +5,11 @@
   "pep": "PEP",
   "contraception": "Kontrasepsiyon",
   "abortion": "Aborsyon",
-  "genderAffirmingCare": "Pangangalagang Nagpapatibay ng Kasarian"
+  "genderAffirmingCare": "Pangangalagang Nagpapatibay ng Kasarian",
+  "abortionPills": "Mga tableta sa pagpapalaglag",
+  "hormoneTherapy": "Hormone therapy",
+  "informedConsent": "May kaalamang pahintulot",
+  "lgbtqFocused": "Nakatuon sa LGBTQ+",
+  "slidingScale": "Sliding scale (naaayon sa kita)",
+  "upToWeeks": "Hanggang {{weeks}} na linggo"
 }

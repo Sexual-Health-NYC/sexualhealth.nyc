@@ -31,5 +31,6 @@
   "searchByName": "병원 이름으로 검색...",
   "siteTitle": "Sexual Health NYC - STI 검사, HIV 검사, PrEP, PEP, 피임 및 낙태 서비스를 위한 클리닉 찾기",
   "verifiedUnknown": "아직 확인되지 않음",
-  "appointmentOnly": "예약 전용"
+  "appointmentOnly": "예약 전용",
+  "telehealthBanner": "{{count}} 개의 원격 진료 옵션 — 목록에서 보기"
 }

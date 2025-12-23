@@ -5,5 +5,11 @@
   "pep": "PEP",
   "contraception": "Antykoncepcja",
   "abortion": "Aborcja",
-  "genderAffirmingCare": "Opieka afirmująca płeć"
+  "genderAffirmingCare": "Opieka afirmująca płeć",
+  "abortionPills": "Tabletki poronne",
+  "hormoneTherapy": "Terapia hormonalna",
+  "informedConsent": "Świadoma zgoda",
+  "lgbtqFocused": "Skupione na LGBTQ+",
+  "slidingScale": "Skala przesuwna (opłaty zależne od dochodu)",
+  "upToWeeks": "Do {{weeks}} tygodni"
 }

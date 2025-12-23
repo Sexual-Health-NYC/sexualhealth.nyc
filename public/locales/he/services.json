@@ -5,5 +5,11 @@
   "pep": "PEP",
   "contraception": "אמצעי מניעה",
   "abortion": "הפלה",
-  "genderAffirmingCare": "טיפול לאישוש מגדרי"
+  "genderAffirmingCare": "טיפול לאישוש מגדרי",
+  "abortionPills": "כדורים להפלה",
+  "hormoneTherapy": "טיפול הורמונלי",
+  "informedConsent": "הסכמה מדעת",
+  "lgbtqFocused": "ממוקד להט\"ב",
+  "slidingScale": "מחיר מדורג (לפי הכנסה)",
+  "upToWeeks": "עד {{weeks}} שבועות"
 }

@@ -31,5 +31,6 @@
   "searchByName": "Szukaj według nazwy kliniki...",
   "siteTitle": "Sexual Health NYC - Znajdź kliniki oferujące testy na STI, testy na HIV, PrEP, PEP, antykoncepcję i usługi aborcyjne",
   "verifiedUnknown": "Jeszcze nie zweryfikowano",
-  "appointmentOnly": "Tylko po umówieniu"
+  "appointmentOnly": "Tylko po umówieniu",
+  "telehealthBanner": "{{count}} opcji telemedycyny — zobacz na liście"
 }

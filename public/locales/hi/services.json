@@ -5,5 +5,11 @@
   "pep": "PEP",
   "contraception": "गर्भनिरोधक",
   "abortion": "गर्भपात सेवाएं",
-  "genderAffirmingCare": "लिंग पुष्टि देखभाल"
+  "genderAffirmingCare": "लिंग पुष्टि देखभाल",
+  "abortionPills": "गर्भपात की गोलियां",
+  "hormoneTherapy": "हार्मोन थेरेपी",
+  "informedConsent": "सूचित सहमति",
+  "lgbtqFocused": "LGBTQ+ केंद्रित",
+  "slidingScale": "स्लाइडिंग स्केल (आय के अनुसार शुल्क)",
+  "upToWeeks": "{{weeks}} सप्ताह तक"
 }

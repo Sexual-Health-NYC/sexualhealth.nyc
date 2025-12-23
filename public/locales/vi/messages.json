@@ -31,5 +31,6 @@
   "searchByName": "Tìm kiếm theo tên phòng khám...",
   "siteTitle": "Sexual Health NYC - Tìm phòng khám xét nghiệm STI, xét nghiệm HIV, PrEP, PEP, tránh thai và dịch vụ phá thai",
   "verifiedUnknown": "Chưa được xác minh",
-  "appointmentOnly": "Chỉ nhận lịch hẹn"
+  "appointmentOnly": "Chỉ nhận lịch hẹn",
+  "telehealthBanner": "{{count}} lựa chọn khám từ xa — xem trong Danh sách"
 }

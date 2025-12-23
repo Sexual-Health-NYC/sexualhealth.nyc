@@ -39,7 +39,8 @@ def find_keys_in_code(src_dir):
     # Also handles t('ns:key')
     # Use simple capture group for quote to ensure matching
     # Matches t("...") or t('...')
-    regex = re.compile(r'''\bt\((['"])([a-zA-Z0-9_.:\-]+)\1\)''')
+    # CHANGED: Now matches even if arguments follow (removed trailing \))
+    regex = re.compile(r'''\bt\((['"])([a-zA-Z0-9_.:\-]+)\1''')
     
     found_keys = set()
     file_count = 0

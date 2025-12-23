@@ -5,5 +5,11 @@
   "pep": "PEP",
   "contraception": "গর্ভনিরোধক",
   "abortion": "গর্ভপাত পরিষেবা",
-  "genderAffirmingCare": "লিঙ্গ নিশ্চিতকরণ সেবা"
+  "genderAffirmingCare": "লিঙ্গ নিশ্চিতকরণ সেবা",
+  "abortionPills": "গর্ভপাতের বড়ি",
+  "hormoneTherapy": "হরমোন থেরাপি",
+  "informedConsent": "অবহিত সম্মতি",
+  "lgbtqFocused": "LGBTQ+ কেন্দ্রিক",
+  "slidingScale": "স্লাইডিং স্কেল (সামর্থ্য অনুযায়ী ফি)",
+  "upToWeeks": "{{weeks}} সপ্তাহ পর্যন্ত"
 }

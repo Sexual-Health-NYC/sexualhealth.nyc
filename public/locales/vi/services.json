@@ -5,5 +5,11 @@
   "pep": "PEP",
   "contraception": "Tránh thai",
   "abortion": "Phá thai",
-  "genderAffirmingCare": "Chăm sóc khẳng định giới tính"
+  "genderAffirmingCare": "Chăm sóc khẳng định giới tính",
+  "abortionPills": "Thuốc phá thai",
+  "hormoneTherapy": "Liệu pháp hormone",
+  "informedConsent": "Đồng thuận sau khi được thông báo",
+  "lgbtqFocused": "Tập trung vào LGBTQ+",
+  "slidingScale": "Mức phí linh hoạt (theo thu nhập)",
+  "upToWeeks": "Tối đa {{weeks}} tuần"
 }

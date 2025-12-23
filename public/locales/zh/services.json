@@ -5,5 +5,11 @@
   "pep": "暴露后预防 (PEP)",
   "contraception": "避孕措施",
   "abortion": "人工流产服务 (堕胎)",
-  "genderAffirmingCare": "性别肯定护理"
+  "genderAffirmingCare": "性别肯定护理",
+  "abortionPills": "堕胎药",
+  "hormoneTherapy": "激素治疗",
+  "informedConsent": "知情同意",
+  "lgbtqFocused": "专注于 LGBTQ+",
+  "slidingScale": "滑动费率 (按需收费)",
+  "upToWeeks": "最多 {{weeks}} 周"
 }

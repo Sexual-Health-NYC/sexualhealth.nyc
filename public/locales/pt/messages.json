@@ -31,5 +31,6 @@
   "searchByName": "Pesquisar por nome da clínica...",
   "siteTitle": "Sexual Health NYC - Encontre clínicas para testes de IST, testes de HIV, PrEP, PEP, contracepção e serviços de aborto",
   "verifiedUnknown": "Ainda não verificado",
-  "appointmentOnly": "Apenas com hora marcada"
+  "appointmentOnly": "Apenas com hora marcada",
+  "telehealthBanner": "{{count}} opções de telessaúde — ver na lista"
 }
