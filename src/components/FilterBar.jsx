@@ -4,7 +4,7 @@ import Select from "react-select";
 import useAppStore from "../store/useAppStore";
 import useFilterOptions from "../hooks/useFilterOptions";
 import theme from "../theme";
-import SubwayBullet from "./SubwayBullet";
+import SubwayBullet, { BusBullet } from "./SubwayBullet";
 import transitData from "../data/transitLines.json";
 import FilterControls from "./FilterControls";
 
@@ -828,6 +828,7 @@ export default function FilterBar() {
                 value: route,
                 label: route,
               }))}
+              formatOptionLabel={({ value }) => <BusBullet route={value} />}
               styles={{
                 control: (base) => ({
                   ...base,
