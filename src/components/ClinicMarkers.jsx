@@ -143,13 +143,13 @@ export default function ClinicMarkers({ clinics }) {
                 selectedClinic?.id === clinic.id ? "marker-bounce" : ""
               }
               style={{
-                width: selectedClinic?.id === clinic.id ? "48px" : "32px",
-                height: selectedClinic?.id === clinic.id ? "48px" : "32px",
+                width: selectedClinic?.id === clinic.id ? "36px" : "24px",
+                height: selectedClinic?.id === clinic.id ? "36px" : "24px",
                 backgroundColor:
                   selectedClinic?.id === clinic.id
                     ? theme.colors.markerSelected
                     : theme.colors.markerDefault,
-                border: `3px solid ${theme.colors.markerBorder}`,
+                border: `2px solid ${theme.colors.markerBorder}`,
                 borderRadius: theme.borderRadius.full,
                 cursor: "pointer",
                 transition: `all ${theme.motion.duration.normal} ${theme.motion.easing.bounce}`,
