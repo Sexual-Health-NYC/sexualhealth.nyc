@@ -1,63 +1,13 @@
 import { useTranslation } from "react-i18next";
 import theme from "../../theme";
 
-// Parse date from data_sources string like "Gemini Deep Research Dec 2025"
-function parseVerificationDate(dataSource) {
-  if (!dataSource) return null;
-
-  // Match patterns like "Dec 2025", "December 2024", "(Dec 2024)"
-  const monthMap = {
-    jan: 0,
-    january: 0,
-    feb: 1,
-    february: 1,
-    mar: 2,
-    march: 2,
-    apr: 3,
-    april: 3,
-    may: 4,
-    jun: 5,
-    june: 5,
-    jul: 6,
-    july: 6,
-    aug: 7,
-    august: 7,
-    sep: 8,
-    september: 8,
-    oct: 9,
-    october: 9,
-    nov: 10,
-    november: 10,
-    dec: 11,
-    december: 11,
-  };
-
-  const regex =
-    /\b(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\s+(\d{4})\b/i;
-  const match = dataSource.match(regex);
-
-  if (match) {
-    const month = monthMap[match[1].toLowerCase()];
-    const year = parseInt(match[2], 10);
-    // Use middle of month as approximate date
-    return new Date(year, month, 15);
-  }
-
-  return null;
-}
-
 function getVerificationStatus(clinic) {
-  // First try last_verified field
-  let verifiedDate = clinic.last_verified
+  // Only use explicit last_verified field - data_sources date is NOT verification
+  const verifiedDate = clinic.last_verified
     ? new Date(clinic.last_verified)
     : null;
 
-  // Fall back to parsing data_sources
   if (!verifiedDate || isNaN(verifiedDate.getTime())) {
-    verifiedDate = parseVerificationDate(clinic.data_sources);
-  }
-
-  if (!verifiedDate) {
     return { status: "unknown", monthsAgo: null, date: null };
   }
 
