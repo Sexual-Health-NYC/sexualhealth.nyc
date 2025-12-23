@@ -184,6 +184,54 @@ async function renderLogo() {
     await page.close();
   }
 
+  // Generate OG image for social media sharing (1200x630 is recommended)
+  const ogPage = await browser.newPage();
+  await ogPage.setViewportSize({ width: 1200, height: 630 });
+
+  const ogImageSvg = `
+    <svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+      <!-- Background -->
+      <rect width="1200" height="630" fill="#f8f9fa"/>
+
+      <!-- Apple/heart icon centered -->
+      <g transform="translate(450, 120) scale(1.5)">
+        <path d="M100 40 C 80 40, 50 50, 50 90 C 50 140, 80 160, 100 160 C 120 160, 150 140, 150 90 C 150 50, 120 40, 100 40" fill="#FF6B6B" />
+        <path d="M100 40 Q 90 10, 120 10 Q 130 30, 100 40" fill="#4ECDC4" />
+        <path d="M100 65 C 85 65, 75 75, 75 90 C 75 110, 100 135, 100 135 C 100 135, 125 110, 125 90 C 125 75, 115 65, 100 65 Z" fill="white" />
+        <rect x="96" y="78" width="8" height="24" rx="2" fill="#FF6B6B" />
+        <rect x="88" y="86" width="24" height="8" rx="2" fill="#FF6B6B" />
+      </g>
+
+      <!-- Text below -->
+      <text x="600" y="480" text-anchor="middle" font-family="Montserrat" font-size="64" font-weight="700" fill="#0D8078">sexualhealth.nyc</text>
+      <text x="600" y="550" text-anchor="middle" font-family="Montserrat" font-size="32" font-weight="500" fill="#5a6570">Find Free &amp; Low-Cost Clinics</text>
+    </svg>
+  `;
+
+  await ogPage.setContent(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet" />
+      <style>
+        body { margin: 0; padding: 0; }
+        text { font-family: 'Montserrat', sans-serif; }
+      </style>
+    </head>
+    <body>${ogImageSvg}</body>
+    </html>
+  `);
+
+  await ogPage.waitForTimeout(500);
+  await ogPage.screenshot({
+    path: path.join(publicDir, "og-image.png"),
+    clip: { x: 0, y: 0, width: 1200, height: 630 },
+  });
+  console.log("Created og-image.png");
+  await ogPage.close();
+
   await browser.close();
 
   // Convert favicon.png to favicon.ico
