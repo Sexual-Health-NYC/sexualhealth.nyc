@@ -1,2 +1,4 @@
 User-agent: *
 Disallow: /test-embed.html
+
+Sitemap: https://sexualhealth.nyc/sitemap.xml
