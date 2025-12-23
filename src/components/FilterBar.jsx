@@ -332,10 +332,10 @@ export default function FilterBar() {
           style={{
             padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
             backgroundColor: hasFilter
-              ? theme.colors.accent
+              ? theme.colors.primary
               : theme.colors.childFilterBg,
             color: hasFilter ? "white" : theme.colors.textPrimary,
-            border: `2px solid ${hasFilter ? theme.colors.accent : theme.colors.childFilterBorder}`,
+            border: `2px solid ${hasFilter ? theme.colors.primary : theme.colors.childFilterBorder}`,
             borderRadius: theme.borderRadius.md,
             fontSize: theme.fonts.size.sm,
             fontWeight: theme.fonts.weight.medium,

@@ -50,6 +50,28 @@ export default function Map({ filteredClinics, onShowList }) {
     }
   }, [mapRef.current, setMapRef]);
 
+  // Set map padding based on device to account for UI overlays
+  useEffect(() => {
+    if (!mapRef.current) return;
+
+    const map = mapRef.current;
+    const padding = isMobile
+      ? {
+          top: 0,
+          bottom: selectedClinic ? window.innerHeight * 0.5 : 0,
+          left: 0,
+          right: 0,
+        }
+      : {
+          top: 0,
+          bottom: 0,
+          left: 0,
+          right: selectedClinic ? 400 : 0,
+        };
+
+    map.setPadding(padding);
+  }, [isMobile, selectedClinic]);
+
   useEffect(() => {
     // Load clinics data
     fetch("/clinics.geojson")
@@ -132,16 +154,20 @@ export default function Map({ filteredClinics, onShowList }) {
         [Math.max(...lngs), Math.max(...lats)], // Northeast
       ];
 
-      // Fit map to bounds with padding
+      // Fit map to bounds with padding that accounts for potential UI overlays
+      const padding = isMobile
+        ? { top: 80, bottom: 80, left: 50, right: 50 }
+        : { top: 80, bottom: 80, left: 80, right: 480 };
+
       mapRef.current.fitBounds(bounds, {
-        padding: { top: 100, bottom: 100, left: 100, right: 100 },
+        padding,
         duration: 1000,
         maxZoom: 14,
       });
 
       previousFilteredClinicsRef.current = filteredClinics;
     }
-  }, [filteredClinics]);
+  }, [filteredClinics, isMobile]);
 
   return (
     <div
