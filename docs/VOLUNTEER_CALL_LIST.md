@@ -1,6 +1,6 @@
 # Volunteer Call List
 
-175 physical clinics + 9 virtual. **Only 19 missing hours** (89% coverage). See [VOLUNTEER_GUIDE.md](VOLUNTEER_GUIDE.md) for the script.
+173 physical clinics + 9 virtual. **Only 18 missing hours** (90% coverage). See [VOLUNTEER_GUIDE.md](VOLUNTEER_GUIDE.md) for the script.
 
 **Why verify even if we have data?** Websites and directories go stale. Hours change seasonally. Phones get reassigned. The only way to know for sure is to call.
 
@@ -12,21 +12,20 @@
 
 | Borough       | Total | With Hours | Missing Hours |
 | ------------- | ----- | ---------- | ------------- |
-| Manhattan     | 79    | 70         | 9             |
+| Manhattan     | 78    | 70         | 8             |
 | Bronx         | 37    | 33         | 4             |
 | Brooklyn      | 30    | 26         | 4             |
 | Queens        | 21    | 21         | 0 ✓           |
-| Staten Island | 8     | 6          | 2             |
+| Staten Island | 7     | 5          | 2             |
 
 ---
 
-## Manhattan (79 clinics, 9 missing hours)
+## Manhattan (78 clinics, 8 missing hours)
 
 ### Priority: Missing Hours
 
 | Clinic                                  | Phone                   |
 | --------------------------------------- | ----------------------- |
-| ⚠️ Columbia Doctors Infectious Disease  | (212) 305-8039          |
 | ⚠️ Community Healthcare Network         | (212) 545-2400          |
 | ⚠️ Cortes and Velazquez Care, Inc.      | (212) 260-7474          |
 | ⚠️ Gotham Medical Group                 | (212) 620-0144          |
@@ -234,7 +233,7 @@ All Queens clinics have hours on file! Still worth verifying periodically:
 
 ---
 
-## Staten Island (8 clinics, 2 missing hours)
+## Staten Island (7 clinics, 2 missing hours)
 
 ### Priority: Missing Hours
 
@@ -268,4 +267,4 @@ For every clinic, try to confirm:
 
 ---
 
-_175 physical clinics + 9 virtual as of December 23, 2025. Hours coverage: 89% (156/175)._
+_173 physical clinics + 9 virtual as of December 23, 2025. Hours coverage: 90% (155/173)._

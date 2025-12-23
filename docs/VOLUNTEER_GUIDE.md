@@ -1,6 +1,6 @@
 # Volunteer Guide
 
-Help us build the most accurate sexual health directory for NYC. We now have **175 physical clinics + 9 virtual** listed. **Only 19 clinics are missing hours data** — this is where we need the most help.
+Help us build the most accurate sexual health directory for NYC. We now have **173 physical clinics + 9 virtual** listed. **Only 18 clinics are missing hours data** — this is where we need the most help.
 
 ## Before you call
 
