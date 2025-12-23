@@ -42,7 +42,7 @@ export default function ClinicMarkers({ clinics }) {
     points,
     bounds,
     zoom: mapViewport.zoom,
-    options: { radius: 40, maxZoom: 20, minPoints: 2 },
+    options: { radius: 30, maxZoom: 20, minPoints: 3 },
   });
 
   return (
