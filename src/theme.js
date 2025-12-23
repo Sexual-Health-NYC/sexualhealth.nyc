@@ -6,8 +6,8 @@ export const theme = {
     primaryLight: "#4ECDC4",
     primaryDark: "#047568",
 
-    // Accent/Selected - purple (used when marker is selected/expanded)
-    accent: "#7b2cbf",
+    // Accent/Selected - cyan from logo (used when marker is selected/expanded)
+    accent: "#4ECDC4",
 
     // Service colors - accessible pairs (light bg + dark text)
     stiTestingBg: "#ebdff5",
@@ -37,9 +37,9 @@ export const theme = {
     closed: "#64748b", // 4.76:1 contrast with white (WCAG AA compliant)
     verified: "#2563eb", // 5.17:1 contrast with white (WCAG AA compliant)
 
-    // Map markers - teal default, purple when selected
+    // Map markers - teal default, cyan when selected
     markerDefault: "#0D8078",
-    markerSelected: "#7b2cbf",
+    markerSelected: "#4ECDC4",
     markerBorder: "#ffffff",
   },
 
