@@ -492,19 +492,20 @@ export default function FilterBar() {
             marginBottom: theme.spacing[3],
           }}
         >
-          <img
-            src="/logo-horizontal.png"
-            srcSet="/logo-horizontal.png 1x, /logo-horizontal@2x.png 2x, /logo-horizontal@3x.png 3x"
-            alt="sexualhealth.nyc"
-            width={187}
-            height={40}
-            fetchPriority="high"
-            style={{
-              height: "40px",
-              width: "auto",
-              flexShrink: 0,
-            }}
-          />
+          <a href="/" style={{ display: "flex", flexShrink: 0 }}>
+            <img
+              src="/logo-horizontal.png"
+              srcSet="/logo-horizontal.png 1x, /logo-horizontal@2x.png 2x, /logo-horizontal@3x.png 3x"
+              alt="sexualhealth.nyc"
+              width={187}
+              height={40}
+              fetchPriority="high"
+              style={{
+                height: "40px",
+                width: "auto",
+              }}
+            />
+          </a>
 
           <div style={{ flex: 1, maxWidth: "400px", position: "relative" }}>
             <input
@@ -971,18 +972,20 @@ export default function FilterBar() {
             gap: theme.spacing[3],
           }}
         >
-          <img
-            src="/logo-horizontal.png"
-            srcSet="/logo-horizontal.png 1x, /logo-horizontal@2x.png 2x"
-            alt="sexualhealth.nyc"
-            width={140}
-            height={30}
-            fetchPriority="high"
-            style={{
-              height: "30px",
-              width: "auto",
-            }}
-          />
+          <a href="/" style={{ display: "flex" }}>
+            <img
+              src="/logo-horizontal.png"
+              srcSet="/logo-horizontal.png 1x, /logo-horizontal@2x.png 2x"
+              alt="sexualhealth.nyc"
+              width={140}
+              height={30}
+              fetchPriority="high"
+              style={{
+                height: "30px",
+                width: "auto",
+              }}
+            />
+          </a>
           <button
             onClick={() => setIsModalOpen(true)}
             aria-expanded={isModalOpen}
