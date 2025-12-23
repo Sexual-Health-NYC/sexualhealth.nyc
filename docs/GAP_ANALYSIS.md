@@ -1,22 +1,17 @@
-# Gap Analysis & Validation: Is sexualhealth.nyc Necessary?
+# Gap Analysis: Is sexualhealth.nyc Necessary?
 
-**Date:** December 21, 2025
 **Last Updated:** December 23, 2025
-**Status:** Validated — we're ahead of competitors
 
-## Executive Summary
+## Summary
 
-After auditing internal research and comparing against existing external resources (NYC Health Map, AbortionFinder.org, INeedAnA.com, Amida Care GIST), the "superset" hypothesis for `sexualhealth.nyc` is **strongly validated**. Not only do we match or exceed data coverage, our primary value is **usability, intersectionality, and granular filtering**.
+Yes. We have more data, better UX, and NYC-specific features that competitors lack.
 
-We scraped and parsed the actual competitor directories. The results are clear: **we have more NYC abortion providers with more detail than the leading abortion finders**.
-
-## Quantitative Comparison (December 2025)
-
-### Our Data
+## Our Data
 
 | Metric                | Count                        |
 | --------------------- | ---------------------------- |
-| Total clinics         | 175 physical + 9 virtual     |
+| Physical clinics      | 175                          |
+| Virtual/telehealth    | 9                            |
 | Abortion providers    | 21 (with gestational limits) |
 | Gender-affirming care | 34                           |
 | STI/HIV testing       | 58                           |
@@ -24,138 +19,58 @@ We scraped and parsed the actual competitor directories. The results are clear: 
 | PEP providers         | 79                           |
 | Contraception         | 43                           |
 | Accepts Medicaid      | 62                           |
-| Hours coverage        | 89% (156/175)                |
+| Hours coverage        | 89%                          |
 
-### Competitor Comparison
+## Competitor Comparison
 
-| Source                     | NYC Clinics Listed | Our Advantage                           |
-| -------------------------- | ------------------ | --------------------------------------- |
-| **INeedAnA.com**           | 3                  | We have 7x more abortion providers      |
-| **AbortionFinder.org**     | ~10 (NYC sample)   | We have 2x more with gestational limits |
-| **Amida Care GIST**        | 16 facilities      | We have all 16 + 159 more               |
-| **NYS DAC List**           | 33 NYC facilities  | We have 33 of 33 (100%) ✓               |
-| **NYS PrEP Provider Dir.** | 156 NYC facilities | We have 139 (89%) ✓                     |
+| Source                     | NYC Clinics | Our Advantage                           |
+| -------------------------- | ----------- | --------------------------------------- |
+| **INeedAnA.com**           | 3           | We have 7x more abortion providers      |
+| **AbortionFinder.org**     | ~10         | We have 2x more with gestational limits |
+| **Amida Care GIST**        | 16          | We have all 16 + 159 more               |
+| **NYS DAC List**           | 33          | We have 33 of 33 (100%)                 |
+| **NYS PrEP Provider Dir.** | 156         | We have 139 (89%)                       |
 
-### Abortion Data Detail
+## What We Track That Competitors Don't
 
-We track attributes that competitors don't:
+**Abortion**
 
-- **Gestational limits** (medication AND procedure separately)
-- **Walk-in availability**
-- **Insurance acceptance** (specific Medicaid MCOs)
-- **Transit access** (subway lines, bus routes)
-
-Example: Our data shows "NYC Health + Hospitals/Harlem" offers medication abortion up to 11 weeks and procedures up to 24 weeks. AbortionFinder just shows it exists.
-
-## Source Verification (Scraped December 2025)
-
-We downloaded and parsed primary source documents:
-
-| Source                                                                                                                                             | Status     | Findings                                                |
-| -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ------------------------------------------------------- |
-| [Amida Care GIST May 2025](https://www.amidacareny.org/wp-content/uploads/GIST-Provider-List-English-May-2025.pdf)                                 | Parsed     | 19 GAC procedure types, 16 facilities — all in our data |
-| [NYC Comptroller LGBTQ+ Guide 2025](https://comptroller.nyc.gov/wp-content/uploads/documents/LGBTQIA-Guide-2025.pdf)                               | Downloaded | Social services directory                               |
-| [NYS DAC Clinic Contacts](https://www.health.ny.gov/diseases/aids/providers/testing/docs/dac_clinics.pdf)                                          | Parsed     | 33 NYC facilities, we have all 33                       |
-| [MetroPlus LGBTQI Guide 2022](https://metroplus.org/wp-content/uploads/2022/08/MKT-22.042_2022-LGBTQI-Resource-Guide-Refresh-2022_web-version.pdf) | Downloaded | Resource guide                                          |
-
-## The Landscape of Existing Resources
-
-### 1. Abortion Finders (AbortionFinder.org, INeedAnA.com)
-
-- **Strengths:** Verified gestational limits, legal/financial aid info.
-- **Weaknesses:** Single-issue focus. Only 3-10 NYC clinics listed.
-- **Reality check:** We have 21 abortion providers with MORE granular data (medication vs procedure limits, insurance, walk-in status).
-
-### 2. Gender-Affirming Care Directories (Amida Care GIST, Erin Reed's Map)
-
-- **Strengths:** High cultural competence, detailed provider bios.
-- **Weaknesses:** PDFs and static lists, limited to specific insurance networks.
-- **Reality check:** We have all major facilities from GIST. We track hormones, surgery, and youth services. Could add more granular procedures (FFS, voice therapy, electrolysis).
-
-### 3. NYC Health Map (Official Government Tool)
-
-- **Strengths:** Comprehensive, official.
-- **Weaknesses:** Clunky UX, overwhelming non-sexual-health data, no transit filtering.
-- **Reality check:** We're a focused, fast, mobile-first alternative with subway/bus filters and 20-language support.
-
-## Attributes We Track That Competitors Don't
-
-### Abortion
-
-- Medication abortion limit (weeks)
-- Procedural abortion limit (weeks)
+- Medication vs procedural limits (separate fields)
 - Walk-in availability
 - Specific Medicaid MCO acceptance
 
-### Gender-Affirming Care
+**Gender-Affirming Care**
 
-- Hormones (yes/no)
-- Surgery (yes/no)
-- Youth services (yes/no, with age policies)
 - Informed consent HRT
+- Youth services
 - Specific procedures (FFS, FMS, voice therapy, electrolysis, laser, top/bottom surgery)
 
-### Access
+**Access**
 
-- Subway lines served
-- Bus routes served
-- Hours (structured, not free text)
+- Subway lines and bus routes
+- Structured hours (not free text)
 - Sliding scale availability
+- 20 languages (competitors: English + Spanish only)
 
-## The "20 Languages" Advantage
+## Why Existing Resources Fall Short
 
-- **Validation:** VERY HIGH
-- Most competitors: English + Spanish only
-- We provide: 20 languages including Haitian Creole, Yiddish, Arabic
-- Covers 98.6% of NYC's population with native-feeling (not Google Translate) UI
+**Abortion Finders (AbortionFinder.org, INeedAnA.com)**
+Single-issue focus, only 3-10 NYC clinics. We have 21 with more granular data.
 
-## Honest Risks
+**GAC Directories (Amida Care GIST)**
+PDFs and static lists, limited to specific insurance networks. We have all their facilities plus 159 more, with filterable procedures.
 
-1. **Data Freshness:** Our volunteer model is fragile. Mitigation: automated source monitoring (see `2025-12-21-automated-source-verification.md`).
+**NYC Health Map (Official)**
+Clunky UX, overwhelming non-sexual-health data, no transit filtering. We're focused, fast, and mobile-first.
 
-2. **Trust:** New domain needs to earn trust. Mitigation: Clear data source citations, professional design, community partnerships.
+## Risks
 
-## Conclusion
+1. **Data freshness** — Volunteer model is fragile. Mitigation: automated source monitoring, periodic verification calls.
 
-**We are not just filling a gap — we are ahead of the competition.**
+2. **Trust** — New domain needs to earn credibility. Mitigation: clear data source citations, professional design.
 
-- More abortion providers than AbortionFinder/INeedAnA
-- More comprehensive than single-issue directories
-- Better UX than government tools
-- NYC-specific features (transit, 20 languages)
+## Next Steps
 
-The "should we build this?" question is answered: **Yes, and we already have more data than the alternatives.**
-
-## Recent Improvements
-
-### December 23, 2025
-
-- ✓ Hours coverage improved from 54% to 89% (156/175 clinics)
-- ✓ Added Google Places API integration for hours data
-- ✓ Cleaned up duplicate clinics (6 removed)
-- ✓ Cleaned up duplicate/bad hours records (557 removed)
-- ✓ Fixed 18 website URLs missing https:// prefix
-- ✓ Added validation to prevent bad Google Places data (Sunday-only 24hr garbage)
-- ✓ Total clinics now 175 physical + 9 virtual
-
-### December 22, 2025
-
-- ✓ Cross-referenced NYS AIDS Institute PrEP Provider Directory
-- ✓ Added 102 new PrEP providers (now 139 total)
-- ✓ Added 9 virtual/telehealth clinics (Folx, Plume, Hey Jane, etc.)
-- ✓ Deduplicated database
-
-### December 21, 2025
-
-- ✓ Added 4 missing DAC facilities (now 100% coverage)
-- ✓ Scraped actual clinic hours from hospital websites using Bright Data
-- ✓ Added 8 new GAC procedure filter options
-- ✓ Added "By appointment only" UI indicator with translations
-- ✓ Updated all 20 locale files with new translations
-
-## Next Priorities
-
-1. ~~Fill in missing hours data~~ ✓ 89% complete (19 clinics remaining)
-2. Volunteer verification calls for remaining 19 clinics without hours
-3. Add DAC certification badge to eligible clinics
-4. Periodic re-verification of hours data (quarterly?)
+1. Fill remaining 19 clinics missing hours (volunteer calls)
+2. Add DAC certification badge to eligible clinics
+3. Quarterly re-verification of hours data
