@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import useAppStore from "../store/useAppStore";
 import theme from "../theme";
@@ -15,6 +15,7 @@ export default function ClinicDetailPanel() {
   const { t } = useTranslation(["actions", "forms"]);
   const { selectedClinic, selectClinic } = useAppStore();
   const [showCorrectionForm, setShowCorrectionForm] = useState(false);
+  const correctionFormRef = useRef(null);
 
   useEffect(() => {
     setShowCorrectionForm(false);
@@ -116,7 +117,18 @@ export default function ClinicDetailPanel() {
           }}
         >
           <button
-            onClick={() => setShowCorrectionForm(!showCorrectionForm)}
+            onClick={() => {
+              const willShow = !showCorrectionForm;
+              setShowCorrectionForm(willShow);
+              if (willShow) {
+                setTimeout(() => {
+                  correctionFormRef.current?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "end",
+                  });
+                }, 100);
+              }
+            }}
             style={{
               background: "none",
               border: "none",
@@ -140,11 +152,13 @@ export default function ClinicDetailPanel() {
               : t("actions:reportCorrection")}
           </button>
 
-          <CorrectionFormModal
-            clinicName={selectedClinic.name}
-            onClose={() => setShowCorrectionForm(false)}
-            isExpanded={showCorrectionForm}
-          />
+          <div ref={correctionFormRef}>
+            <CorrectionFormModal
+              clinicName={selectedClinic.name}
+              onClose={() => setShowCorrectionForm(false)}
+              isExpanded={showCorrectionForm}
+            />
+          </div>
         </div>
       </div>
     </div>

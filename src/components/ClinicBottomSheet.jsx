@@ -18,6 +18,7 @@ export default function ClinicBottomSheet() {
   const startY = useRef(0);
   const currentY = useRef(0);
   const [showCorrectionForm, setShowCorrectionForm] = useState(false);
+  const correctionFormRef = useRef(null);
 
   useEffect(() => {
     setShowCorrectionForm(false);
@@ -164,7 +165,18 @@ export default function ClinicBottomSheet() {
           }}
         >
           <button
-            onClick={() => setShowCorrectionForm(!showCorrectionForm)}
+            onClick={() => {
+              const willShow = !showCorrectionForm;
+              setShowCorrectionForm(willShow);
+              if (willShow) {
+                setTimeout(() => {
+                  correctionFormRef.current?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "end",
+                  });
+                }, 100);
+              }
+            }}
             style={{
               background: "none",
               border: "none",
@@ -188,11 +200,13 @@ export default function ClinicBottomSheet() {
               : t("actions:reportCorrection")}
           </button>
 
-          <CorrectionFormModal
-            clinicName={selectedClinic.name}
-            onClose={() => setShowCorrectionForm(false)}
-            isExpanded={showCorrectionForm}
-          />
+          <div ref={correctionFormRef}>
+            <CorrectionFormModal
+              clinicName={selectedClinic.name}
+              onClose={() => setShowCorrectionForm(false)}
+              isExpanded={showCorrectionForm}
+            />
+          </div>
         </div>
       </div>
     </div>
