@@ -10,7 +10,7 @@ Look up the clinic on our site first. Note what services we list for them — yo
 
 **Opening:**
 
-> "Hi, I'm a volunteer with sexualhealth.nyc — we're a free directory helping New Yorkers find sexual health services. I'm calling to make sure our listing for [clinic name] is accurate. Do you have a couple minutes?"
+> "Hi, I'm a volunteer with sexualhealth.nyc — we're a free directory of sexual health resources for New Yorkers. I'm calling to make sure the information we have for [clinic name] is accurate. Do you have a couple minutes?"
 
 If they're busy, ask when's better and call back then.
 
