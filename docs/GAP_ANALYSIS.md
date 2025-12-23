@@ -4,7 +4,7 @@
 
 ## Summary
 
-Yes. We have more data, better UX, and NYC-specific features that competitors lack.
+Yes. We aggregate data from multiple sources into one NYC-focused, multilingual directory with features the existing resources don't offer.
 
 ## Our Data
 
@@ -21,17 +21,17 @@ Yes. We have more data, better UX, and NYC-specific features that competitors la
 | Accepts Medicaid      | 62                           |
 | Hours coverage        | 89%                          |
 
-## Competitor Comparison
+## Data Sources We Built On
 
-| Source                     | NYC Clinics | Our Advantage                           |
-| -------------------------- | ----------- | --------------------------------------- |
-| **INeedAnA.com**           | 3           | We have 7x more abortion providers      |
-| **AbortionFinder.org**     | ~10         | We have 2x more with gestational limits |
-| **Amida Care GIST**        | 16          | We have all 16 + 159 more               |
-| **NYS DAC List**           | 33          | We have 33 of 33 (100%)                 |
-| **NYS PrEP Provider Dir.** | 156         | We have 139 (89%)                       |
+| Source                     | Their NYC Data | What We Added                              |
+| -------------------------- | -------------- | ------------------------------------------ |
+| **INeedAnA.com**           | 3 clinics      | 18 more abortion providers                 |
+| **AbortionFinder.org**     | ~10 clinics    | Gestational limits, insurance, walk-in     |
+| **Amida Care GIST**        | 16 facilities  | 159 more facilities, filterable procedures |
+| **NYS DAC List**           | 33 facilities  | All 33 included, plus hours and transit    |
+| **NYS PrEP Provider Dir.** | 156 facilities | 139 included with structured hours         |
 
-## What We Track That Competitors Don't
+## What We Add
 
 **Abortion**
 
@@ -50,18 +50,17 @@ Yes. We have more data, better UX, and NYC-specific features that competitors la
 - Subway lines and bus routes
 - Structured hours (not free text)
 - Sliding scale availability
-- 20 languages (competitors: English + Spanish only)
+- 20 languages (most resources: English + Spanish only)
 
-## Why Existing Resources Fall Short
+## Why This Directory Exists
 
-**Abortion Finders (AbortionFinder.org, INeedAnA.com)**
-Single-issue focus, only 3-10 NYC clinics. We have 21 with more granular data.
+**Abortion finders** are single-issue. Great for what they do, but if you need PrEP and contraception too, you're searching multiple sites.
 
-**GAC Directories (Amida Care GIST)**
-PDFs and static lists, limited to specific insurance networks. We have all their facilities plus 159 more, with filterable procedures.
+**GAC directories** are PDFs and static lists, often limited to specific insurance networks.
 
-**NYC Health Map (Official)**
-Clunky UX, overwhelming non-sexual-health data, no transit filtering. We're focused, fast, and mobile-first.
+**NYC Health Map** is comprehensive but overwhelming — too much non-sexual-health data, no transit filtering.
+
+We took the best data from all of these, added NYC-specific features (transit, 20 languages), and made it searchable in one place.
 
 ## Risks
 
