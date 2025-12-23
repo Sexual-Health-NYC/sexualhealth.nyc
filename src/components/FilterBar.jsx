@@ -1027,7 +1027,7 @@ export default function FilterBar() {
           </button>
           {getActiveFilterCount() > 0 && (
             <button
-              onClick={clearAllFilters}
+              onClick={clearFilters}
               className="btn-interactive"
               style={{
                 padding: `${theme.spacing[2]} ${theme.spacing[3]}`,
