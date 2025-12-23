@@ -7,6 +7,7 @@ import theme from "../theme";
 import SubwayBullet, { BusBullet } from "./SubwayBullet";
 import transitData from "../data/transitLines.json";
 import FilterControls from "./FilterControls";
+import SearchAutocomplete from "./SearchAutocomplete";
 
 export default function FilterBar() {
   const { t } = useTranslation([
@@ -37,10 +38,6 @@ export default function FilterBar() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
-  const [showAutocomplete, setShowAutocomplete] = useState(false);
-  const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(-1);
-  const searchInputRef = useRef(null);
-  const autocompleteRef = useRef(null);
   const dropdownRefs = {
     services: useRef(null),
     genderAffirming: useRef(null),
@@ -48,40 +45,6 @@ export default function FilterBar() {
     insurance: useRef(null),
     boroughs: useRef(null),
     gestational: useRef(null),
-  };
-
-  // Get matching clinic suggestions
-  const suggestions = filters.searchQuery.trim()
-    ? clinics
-        .filter((clinic) =>
-          clinic.name
-            .toLowerCase()
-            .includes(filters.searchQuery.toLowerCase().trim()),
-        )
-        .slice(0, 10)
-    : [];
-
-  // Helper function to highlight matching text
-  const highlightMatch = (text, query) => {
-    if (!query.trim()) return text;
-
-    const lowerText = text.toLowerCase();
-    const lowerQuery = query.toLowerCase().trim();
-    const index = lowerText.indexOf(lowerQuery);
-
-    if (index === -1) return text;
-
-    const before = text.slice(0, index);
-    const match = text.slice(index, index + query.length);
-    const after = text.slice(index + query.length);
-
-    return (
-      <>
-        {before}
-        <strong style={{ fontWeight: theme.fonts.weight.bold }}>{match}</strong>
-        {after}
-      </>
-    );
   };
 
   useEffect(() => {
@@ -98,21 +61,10 @@ export default function FilterBar() {
           setOpenDropdown(null);
         }
       }
-
-      if (
-        showAutocomplete &&
-        autocompleteRef.current &&
-        searchInputRef.current &&
-        !autocompleteRef.current.contains(event.target) &&
-        !searchInputRef.current.contains(event.target)
-      ) {
-        setShowAutocomplete(false);
-        setSelectedSuggestionIndex(-1);
-      }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [openDropdown, showAutocomplete]);
+  }, [openDropdown]);
 
   // Close mobile filter modal when a clinic is selected
   useEffect(() => {
@@ -295,6 +247,8 @@ export default function FilterBar() {
                     fontWeight: filters[category].has(option.value)
                       ? theme.fonts.weight.medium
                       : theme.fonts.weight.normal,
+                    userSelect: "none",
+                    flex: 1,
                   }}
                 >
                   {option.label}
@@ -424,6 +378,8 @@ export default function FilterBar() {
                       filters.gestationalWeeks === option.value
                         ? theme.fonts.weight.medium
                         : theme.fonts.weight.normal,
+                    userSelect: "none",
+                    flex: 1,
                   }}
                 >
                   {option.label}
@@ -522,144 +478,35 @@ export default function FilterBar() {
             />
           </a>
 
-          <div style={{ flex: 1, maxWidth: "400px", position: "relative" }}>
-            <input
-              ref={searchInputRef}
-              type="search"
-              placeholder={t("messages:searchByName")}
-              value={filters.searchQuery}
-              onChange={(e) => {
-                setFilter("searchQuery", e.target.value);
-                setShowAutocomplete(true);
-                setSelectedSuggestionIndex(-1);
-              }}
-              onKeyDown={(e) => {
-                if (!showAutocomplete || suggestions.length === 0) return;
-
-                if (e.key === "ArrowDown") {
-                  e.preventDefault();
-                  setSelectedSuggestionIndex((prev) =>
-                    prev < suggestions.length - 1 ? prev + 1 : prev,
-                  );
-                } else if (e.key === "ArrowUp") {
-                  e.preventDefault();
-                  setSelectedSuggestionIndex((prev) =>
-                    prev > 0 ? prev - 1 : -1,
-                  );
-                } else if (e.key === "Enter" && selectedSuggestionIndex >= 0) {
-                  e.preventDefault();
-                  setFilter(
-                    "searchQuery",
-                    suggestions[selectedSuggestionIndex].name,
-                  );
-                  setShowAutocomplete(false);
-                  setSelectedSuggestionIndex(-1);
-                } else if (e.key === "Escape") {
-                  setShowAutocomplete(false);
-                  setSelectedSuggestionIndex(-1);
-                }
-              }}
-              aria-label="Search clinics by name"
-              aria-autocomplete="list"
-              aria-controls="search-autocomplete"
-              aria-expanded={showAutocomplete && suggestions.length > 0}
-              spellCheck="false"
-              autoComplete="off"
-              autoCorrect="off"
-              autoCapitalize="off"
-              style={{
-                width: "100%",
-                padding: `${theme.spacing[2]} ${theme.spacing[3]}`,
-                border: `2px solid ${filters.searchQuery.trim() ? theme.colors.primary : theme.colors.border}`,
-                borderRadius: theme.borderRadius.md,
-                fontSize: theme.fonts.size.sm,
-                fontFamily: theme.fonts.family,
-              }}
-              onFocus={(e) => {
-                e.currentTarget.style.outline = theme.focus.outline;
-                e.currentTarget.style.outlineOffset = theme.focus.outlineOffset;
-                e.currentTarget.style.borderColor = theme.colors.primary;
-                if (filters.searchQuery.trim()) {
-                  setShowAutocomplete(true);
-                }
-              }}
-              onBlur={(e) => {
-                e.currentTarget.style.outline = "none";
-                e.currentTarget.style.borderColor = filters.searchQuery.trim()
-                  ? theme.colors.primary
-                  : theme.colors.border;
-              }}
-            />
-
-            {showAutocomplete && suggestions.length > 0 && (
-              <div
-                ref={autocompleteRef}
-                id="search-autocomplete"
-                role="listbox"
-                style={{
-                  position: "absolute",
-                  top: "100%",
-                  insetInlineStart: 0,
-                  insetInlineEnd: 0,
-                  marginTop: "4px",
-                  backgroundColor: "white",
-                  border: `1px solid ${theme.colors.border}`,
+          <SearchAutocomplete
+            t={t}
+            placeholder={t("messages:searchByName")}
+            style={{
+              container: { flex: 1, maxWidth: "400px" },
+              input: {
+                style: {
+                  width: "100%",
+                  padding: `${theme.spacing[2]} ${theme.spacing[3]}`,
+                  border: `2px solid ${filters.searchQuery.trim() ? theme.colors.primary : theme.colors.border}`,
                   borderRadius: theme.borderRadius.md,
-                  boxShadow: theme.shadows.lg,
-                  maxHeight: "300px",
-                  overflowY: "auto",
-                  zIndex: 1001,
-                }}
-              >
-                {suggestions.map((clinic, index) => (
-                  <div
-                    key={clinic.id}
-                    role="option"
-                    aria-selected={index === selectedSuggestionIndex}
-                    onClick={() => {
-                      setFilter("searchQuery", clinic.name);
-                      setShowAutocomplete(false);
-                      setSelectedSuggestionIndex(-1);
-                    }}
-                    onMouseEnter={() => setSelectedSuggestionIndex(index)}
-                    style={{
-                      padding: `${theme.spacing[2]} ${theme.spacing[3]}`,
-                      cursor: "pointer",
-                      backgroundColor:
-                        index === selectedSuggestionIndex
-                          ? theme.colors.surface
-                          : "white",
-                      borderBottom:
-                        index < suggestions.length - 1
-                          ? `1px solid ${theme.colors.border}`
-                          : "none",
-                    }}
-                  >
-                    <div
-                      style={{
-                        fontSize: theme.fonts.size.sm,
-                        fontWeight: theme.fonts.weight.medium,
-                        color: theme.colors.textPrimary,
-                      }}
-                    >
-                      {highlightMatch(clinic.name, filters.searchQuery)}
-                    </div>
-                    {clinic.borough && (
-                      <div
-                        style={{
-                          fontSize: theme.fonts.size.xs,
-                          color: theme.colors.textSecondary,
-                          marginTop: "2px",
-                        }}
-                      >
-                        {clinic.borough}
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
+                  fontSize: theme.fonts.size.sm,
+                  fontFamily: theme.fonts.family,
+                },
+                onFocus: (e) => {
+                  e.currentTarget.style.outline = theme.focus.outline;
+                  e.currentTarget.style.outlineOffset =
+                    theme.focus.outlineOffset;
+                  e.currentTarget.style.borderColor = theme.colors.primary;
+                },
+                onBlur: (e) => {
+                  e.currentTarget.style.outline = "none";
+                  e.currentTarget.style.borderColor = filters.searchQuery.trim()
+                    ? theme.colors.primary
+                    : theme.colors.border;
+                },
+              },
+            }}
+          />
 
           {getActiveFilterCount() > 0 && (
             <button

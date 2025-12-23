@@ -5,6 +5,7 @@ import useFilterOptions from "../hooks/useFilterOptions";
 import theme from "../theme";
 import SubwayBullet, { BusBullet } from "./SubwayBullet";
 import transitData from "../data/transitLines.json";
+import SearchAutocomplete from "./SearchAutocomplete";
 
 export default function FilterControls({ mode = "mobile" }) {
   const { t } = useTranslation(["actions", "messages", "sections", "filters"]);
@@ -35,23 +36,23 @@ export default function FilterControls({ mode = "mobile" }) {
   return (
     <>
       <FilterSection title={t("messages:search")}>
-        <input
-          type="search"
+        <SearchAutocomplete
+          t={t}
           placeholder={t("messages:searchByName")}
-          value={filters.searchQuery}
-          onChange={(e) => setFilter("searchQuery", e.target.value)}
-          aria-label="Search clinics by name"
-          spellCheck="false"
-          autoComplete="off"
-          autoCorrect="off"
-          autoCapitalize="off"
           style={{
-            width: "100%",
-            padding: theme.spacing[2],
-            border: `2px solid ${filters.searchQuery.trim() ? theme.colors.primary : theme.colors.border}`,
-            borderRadius: theme.borderRadius.md,
-            fontSize: theme.fonts.size.sm,
-            fontFamily: theme.fonts.family,
+            input: {
+              style: {
+                width: "100%",
+                padding: theme.spacing[2],
+                border: `2px solid ${filters.searchQuery.trim() ? theme.colors.primary : theme.colors.border}`,
+                borderRadius: theme.borderRadius.md,
+                fontSize: theme.fonts.size.sm,
+                fontFamily: theme.fonts.family,
+              },
+            },
+            dropdown: {
+              maxHeight: "200px",
+            },
           }}
         />
       </FilterSection>

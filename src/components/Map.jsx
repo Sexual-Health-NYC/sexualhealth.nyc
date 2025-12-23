@@ -203,8 +203,16 @@ export default function Map({ filteredClinics, onShowList }) {
           onClick={onShowList}
           style={{
             position: "absolute",
-            bottom: isMobile ? "70px" : "20px",
-            left: "50%",
+            bottom: isMobile
+              ? selectedClinic
+                ? `calc(50vh + 20px)`
+                : "70px"
+              : "20px",
+            left: isMobile
+              ? "50%"
+              : selectedClinic
+                ? "calc(50% - 200px)"
+                : "50%",
             transform: "translateX(-50%)",
             display: "flex",
             alignItems: "center",
@@ -219,6 +227,7 @@ export default function Map({ filteredClinics, onShowList }) {
             fontWeight: theme.fonts.weight.medium,
             color: theme.colors.textPrimary,
             whiteSpace: "nowrap",
+            transition: `left ${theme.transitions.normal}, bottom ${theme.transitions.normal}`,
           }}
         >
           <span>💻</span>
