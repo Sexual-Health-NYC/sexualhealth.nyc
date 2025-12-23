@@ -122,6 +122,7 @@
           {
             "department": "General",
             "days": [
+              "Mon",
               "Fri"
             ],
             "open": "09:00",
@@ -132,37 +133,9 @@
           {
             "department": "General",
             "days": [
-              "Wed"
-            ],
-            "open": "09:00",
-            "close": "16:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
+              "Tue",
+              "Wed",
               "Thu"
-            ],
-            "open": "09:00",
-            "close": "16:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Mon"
-            ],
-            "open": "09:00",
-            "close": "15:30",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Tue"
             ],
             "open": "09:00",
             "close": "16:00",
@@ -523,47 +496,11 @@
           {
             "department": "General",
             "days": [
-              "Mon"
-            ],
-            "open": "08:00",
-            "close": "17:30",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Wed"
-            ],
-            "open": "08:00",
-            "close": "17:30",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Thu"
-            ],
-            "open": "08:00",
-            "close": "17:30",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
               "Fri"
-            ],
-            "open": "08:00",
-            "close": "17:30",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Tue"
             ],
             "open": "08:00",
             "close": "17:30",
@@ -733,47 +670,11 @@
           {
             "department": "General",
             "days": [
-              "Thu"
-            ],
-            "open": "10:00",
-            "close": "19:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Tue"
-            ],
-            "open": "10:00",
-            "close": "19:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
               "Fri"
-            ],
-            "open": "10:00",
-            "close": "19:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Mon"
-            ],
-            "open": "10:00",
-            "close": "19:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Wed"
             ],
             "open": "10:00",
             "close": "19:00",
@@ -1504,36 +1405,7 @@
           {
             "department": "General",
             "days": [
-              "Tue"
-            ],
-            "open": "08:00",
-            "close": "20:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Mon"
-            ],
-            "open": "08:00",
-            "close": "18:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Fri"
-            ],
-            "open": "08:00",
-            "close": "18:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
+              "Tue",
               "Thu"
             ],
             "open": "08:00",
@@ -1544,7 +1416,9 @@
           {
             "department": "General",
             "days": [
-              "Wed"
+              "Mon",
+              "Wed",
+              "Fri"
             ],
             "open": "08:00",
             "close": "18:00",
@@ -1868,47 +1742,11 @@
           {
             "department": "General",
             "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
               "Fri"
-            ],
-            "open": "08:00",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Mon"
-            ],
-            "open": "08:00",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Thu"
-            ],
-            "open": "08:00",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Tue"
-            ],
-            "open": "08:00",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Wed"
             ],
             "open": "08:00",
             "close": "17:00",
@@ -1986,47 +1824,11 @@
           {
             "department": "General",
             "days": [
-              "Thu"
-            ],
-            "open": "09:00",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
               "Fri"
-            ],
-            "open": "09:00",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Wed"
-            ],
-            "open": "09:00",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Mon"
-            ],
-            "open": "09:00",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Tue"
             ],
             "open": "09:00",
             "close": "17:00",
@@ -2350,26 +2152,8 @@
           {
             "department": "General",
             "days": [
-              "Wed"
-            ],
-            "open": "08:00",
-            "close": "18:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Thu"
-            ],
-            "open": "08:00",
-            "close": "20:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
+              "Mon",
+              "Wed",
               "Fri"
             ],
             "open": "08:00",
@@ -2380,17 +2164,8 @@
           {
             "department": "General",
             "days": [
-              "Mon"
-            ],
-            "open": "08:00",
-            "close": "18:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Tue"
+              "Tue",
+              "Thu"
             ],
             "open": "08:00",
             "close": "20:00",
@@ -2546,7 +2321,22 @@
         "borough": "Manhattan",
         "phone": "(212) 305-8039",
         "website": "https://doctors.columbia.edu/us/ny/new-york/deborah-a-theodore-md-180-fort-washington-avenue?utm_source=yextgmb&utm_medium=organic&utm_campaign=yext_doctor_listings&y_source=1_NzU5NDg4MTMtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
-        "hours": [],
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
         "organization": "",
         "clinic_type": "",
         "has_sti_testing": false,
@@ -2833,47 +2623,11 @@
           {
             "department": "General",
             "days": [
-              "Tue"
-            ],
-            "open": "07:00",
-            "close": "18:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Wed"
-            ],
-            "open": "07:00",
-            "close": "18:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
               "Fri"
-            ],
-            "open": "07:00",
-            "close": "18:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Mon"
-            ],
-            "open": "07:00",
-            "close": "18:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Thu"
             ],
             "open": "07:00",
             "close": "18:00",
@@ -3249,27 +3003,10 @@
           {
             "department": "General",
             "days": [
+              "Tue",
+              "Wed",
+              "Thu",
               "Fri"
-            ],
-            "open": "12:00",
-            "close": "18:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Tue"
-            ],
-            "open": "12:00",
-            "close": "18:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Wed"
             ],
             "open": "12:00",
             "close": "18:00",
@@ -3283,16 +3020,6 @@
             ],
             "open": "12:00",
             "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Thu"
-            ],
-            "open": "12:00",
-            "close": "18:00",
             "allDay": false,
             "notes": ""
           }
@@ -3531,47 +3258,11 @@
           {
             "department": "General",
             "days": [
-              "Wed"
-            ],
-            "open": "08:30",
-            "close": "18:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Thu"
-            ],
-            "open": "08:30",
-            "close": "18:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Tue"
-            ],
-            "open": "08:30",
-            "close": "18:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
               "Fri"
-            ],
-            "open": "08:30",
-            "close": "18:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Mon"
             ],
             "open": "08:30",
             "close": "18:00",
@@ -3649,27 +3340,10 @@
           {
             "department": "General",
             "days": [
-              "Tue"
-            ],
-            "open": "08:30",
-            "close": "16:30",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Mon"
-            ],
-            "open": "08:30",
-            "close": "16:30",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Wed"
+              "Mon",
+              "Tue",
+              "Wed",
+              "Fri"
             ],
             "open": "08:30",
             "close": "16:30",
@@ -3683,16 +3357,6 @@
             ],
             "open": "10:30",
             "close": "18:30",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Fri"
-            ],
-            "open": "08:30",
-            "close": "16:30",
             "allDay": false,
             "notes": ""
           }
@@ -3931,27 +3595,11 @@
           {
             "department": "General",
             "days": [
-              "Wed"
-            ],
-            "open": "17:00",
-            "close": "21:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Mon"
-            ],
-            "open": "17:00",
-            "close": "21:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Tue"
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
             ],
             "open": "17:00",
             "close": "21:00",
@@ -3965,26 +3613,6 @@
             ],
             "open": "13:00",
             "close": "18:30",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Fri"
-            ],
-            "open": "17:00",
-            "close": "21:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Thu"
-            ],
-            "open": "17:00",
-            "close": "21:00",
             "allDay": false,
             "notes": ""
           }
@@ -4844,6 +4472,7 @@
           {
             "department": "General",
             "days": [
+              "Mon",
               "Tue"
             ],
             "open": "09:00",
@@ -4854,6 +4483,7 @@
           {
             "department": "General",
             "days": [
+              "Wed",
               "Thu"
             ],
             "open": "09:00",
@@ -4878,26 +4508,6 @@
             ],
             "open": "09:00",
             "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Mon"
-            ],
-            "open": "09:00",
-            "close": "17:30",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Wed"
-            ],
-            "open": "09:00",
-            "close": "18:30",
             "allDay": false,
             "notes": ""
           }
@@ -5386,37 +4996,10 @@
           {
             "department": "General",
             "days": [
+              "Tue",
+              "Wed",
+              "Thu",
               "Fri"
-            ],
-            "open": "09:00",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Thu"
-            ],
-            "open": "09:00",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Tue"
-            ],
-            "open": "09:00",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Wed"
             ],
             "open": "09:00",
             "close": "17:00",
@@ -5494,37 +5077,10 @@
           {
             "department": "General",
             "days": [
-              "Tue"
-            ],
-            "open": "08:00",
-            "close": "19:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
               "Thu"
-            ],
-            "open": "08:00",
-            "close": "19:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Wed"
-            ],
-            "open": "08:00",
-            "close": "19:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Mon"
             ],
             "open": "08:00",
             "close": "19:00",
@@ -5934,27 +5490,10 @@
           {
             "department": "General",
             "days": [
+              "Mon",
+              "Tue",
+              "Wed",
               "Thu"
-            ],
-            "open": "08:00",
-            "close": "20:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Tue"
-            ],
-            "open": "08:00",
-            "close": "20:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Wed"
             ],
             "open": "08:00",
             "close": "20:00",
@@ -5968,16 +5507,6 @@
             ],
             "open": "08:00",
             "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Mon"
-            ],
-            "open": "08:00",
-            "close": "20:00",
             "allDay": false,
             "notes": ""
           }
@@ -6330,27 +5859,11 @@
           {
             "department": "General",
             "days": [
-              "Tue"
-            ],
-            "open": "07:30",
-            "close": "17:30",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Thu"
-            ],
-            "open": "07:30",
-            "close": "17:30",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Mon"
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
             ],
             "open": "07:30",
             "close": "17:30",
@@ -6364,26 +5877,6 @@
             ],
             "open": "07:30",
             "close": "15:30",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Fri"
-            ],
-            "open": "07:30",
-            "close": "17:30",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Wed"
-            ],
-            "open": "07:30",
-            "close": "17:30",
             "allDay": false,
             "notes": ""
           }
@@ -6540,27 +6033,11 @@
           {
             "department": "General",
             "days": [
-              "Wed"
-            ],
-            "open": "09:00",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
               "Fri"
-            ],
-            "open": "09:00",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Mon"
             ],
             "open": "09:00",
             "close": "17:00",
@@ -6574,26 +6051,6 @@
             ],
             "open": "09:00",
             "close": "16:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Thu"
-            ],
-            "open": "09:00",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Tue"
-            ],
-            "open": "09:00",
-            "close": "17:00",
             "allDay": false,
             "notes": ""
           }
@@ -7329,47 +6786,11 @@
           {
             "department": "General",
             "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
               "Fri"
-            ],
-            "open": "09:00",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Thu"
-            ],
-            "open": "09:00",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Wed"
-            ],
-            "open": "09:00",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Mon"
-            ],
-            "open": "09:00",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Tue"
             ],
             "open": "09:00",
             "close": "17:00",
@@ -7529,6 +6950,9 @@
           {
             "department": "General",
             "days": [
+              "Mon",
+              "Tue",
+              "Wed",
               "Fri"
             ],
             "open": "08:30",
@@ -7543,36 +6967,6 @@
             ],
             "open": "10:30",
             "close": "18:30",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Tue"
-            ],
-            "open": "08:30",
-            "close": "16:30",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Mon"
-            ],
-            "open": "08:30",
-            "close": "16:30",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Wed"
-            ],
-            "open": "08:30",
-            "close": "16:30",
             "allDay": false,
             "notes": ""
           }
@@ -7647,17 +7041,10 @@
           {
             "department": "General",
             "days": [
-              "Tue"
-            ],
-            "open": "08:00",
-            "close": "19:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Wed"
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu"
             ],
             "open": "08:00",
             "close": "19:00",
@@ -7681,40 +7068,11 @@
           {
             "department": "General",
             "days": [
-              "Fri"
-            ],
-            "open": "08:00",
-            "close": "18:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
+              "Fri",
               "Sat"
             ],
             "open": "08:00",
             "close": "18:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Thu"
-            ],
-            "open": "08:00",
-            "close": "19:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Mon"
-            ],
-            "open": "08:00",
-            "close": "19:00",
             "allDay": false,
             "notes": ""
           }
@@ -8705,16 +8063,8 @@
           {
             "department": "General",
             "days": [
-              "Mon"
-            ],
-            "open": "08:30",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
+              "Mon",
+              "Thu",
               "Fri"
             ],
             "open": "08:30",
@@ -8729,16 +8079,6 @@
             ],
             "open": "08:30",
             "close": "19:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Thu"
-            ],
-            "open": "08:30",
-            "close": "17:00",
             "allDay": false,
             "notes": ""
           },
@@ -8833,26 +8173,7 @@
           {
             "department": "General",
             "days": [
-              "Tue"
-            ],
-            "open": "08:00",
-            "close": "22:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Wed"
-            ],
-            "open": "08:00",
-            "close": "20:30",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
+              "Tue",
               "Thu"
             ],
             "open": "08:00",
@@ -8863,7 +8184,8 @@
           {
             "department": "General",
             "days": [
-              "Mon"
+              "Mon",
+              "Wed"
             ],
             "open": "08:00",
             "close": "20:30",
@@ -9527,67 +8849,13 @@
           {
             "department": "General",
             "days": [
-              "Thu"
-            ],
-            "open": "07:00",
-            "close": "22:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Fri"
-            ],
-            "open": "07:00",
-            "close": "22:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Wed"
-            ],
-            "open": "07:00",
-            "close": "22:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
+              "Sun",
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri",
               "Sat"
-            ],
-            "open": "07:00",
-            "close": "22:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Sun"
-            ],
-            "open": "07:00",
-            "close": "22:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Mon"
-            ],
-            "open": "07:00",
-            "close": "22:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Tue"
             ],
             "open": "07:00",
             "close": "22:00",
@@ -10472,46 +9740,10 @@
           {
             "department": "General",
             "days": [
-              "Tue"
-            ],
-            "open": "09:00",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Wed"
-            ],
-            "open": "09:00",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Mon"
-            ],
-            "open": "09:00",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Thu"
-            ],
-            "open": "09:00",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
               "Fri"
             ],
             "open": "09:00",
@@ -10672,50 +9904,23 @@
           {
             "department": "General",
             "days": [
-              "Thu"
-            ],
-            "open": "09:00",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Fri"
-            ],
-            "open": "09:00",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Tue"
-            ],
-            "open": "09:00",
-            "close": "13:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Wed"
-            ],
-            "open": "09:00",
-            "close": "13:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
+              "Thu",
+              "Fri",
               "Sat"
             ],
             "open": "09:00",
             "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Tue",
+              "Wed"
+            ],
+            "open": "09:00",
+            "close": "13:00",
             "allDay": false,
             "notes": ""
           }
@@ -11616,16 +10821,8 @@
           {
             "department": "General",
             "days": [
-              "Wed"
-            ],
-            "open": "09:30",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
+              "Mon",
+              "Wed",
               "Fri"
             ],
             "open": "09:30",
@@ -11646,26 +10843,7 @@
           {
             "department": "General",
             "days": [
-              "Mon"
-            ],
-            "open": "09:30",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Tue"
-            ],
-            "open": "08:00",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
+              "Tue",
               "Thu"
             ],
             "open": "08:00",
@@ -12829,16 +12007,9 @@
           {
             "department": "General",
             "days": [
-              "Tue"
-            ],
-            "open": "09:00",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
               "Thu"
             ],
             "open": "09:00",
@@ -12853,26 +12024,6 @@
             ],
             "open": "09:00",
             "close": "16:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Mon"
-            ],
-            "open": "09:00",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Wed"
-            ],
-            "open": "09:00",
-            "close": "17:00",
             "allDay": false,
             "notes": ""
           }
@@ -13573,26 +12724,10 @@
           {
             "department": "General",
             "days": [
-              "Thu"
-            ],
-            "open": "07:00",
-            "close": "20:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Tue"
-            ],
-            "open": "07:00",
-            "close": "20:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
               "Fri"
             ],
             "open": "07:00",
@@ -13607,26 +12742,6 @@
             ],
             "open": "07:00",
             "close": "14:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Mon"
-            ],
-            "open": "07:00",
-            "close": "20:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Wed"
-            ],
-            "open": "07:00",
-            "close": "20:00",
             "allDay": false,
             "notes": ""
           }
@@ -14540,27 +13655,10 @@
           {
             "department": "General",
             "days": [
-              "Tue"
-            ],
-            "open": "08:30",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
+              "Tue",
+              "Wed",
+              "Thu",
               "Fri"
-            ],
-            "open": "08:30",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Thu"
             ],
             "open": "08:30",
             "close": "17:00",
@@ -14574,16 +13672,6 @@
             ],
             "open": "09:00",
             "close": "14:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Wed"
-            ],
-            "open": "08:30",
-            "close": "17:00",
             "allDay": false,
             "notes": ""
           }
@@ -14792,6 +13880,7 @@
           {
             "department": "General",
             "days": [
+              "Wed",
               "Thu"
             ],
             "open": "09:00",
@@ -14826,37 +13915,9 @@
           {
             "department": "General",
             "days": [
-              "Mon"
-            ],
-            "open": "09:00",
-            "close": "17:30",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
+              "Mon",
+              "Tue",
               "Fri"
-            ],
-            "open": "09:00",
-            "close": "17:30",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Wed"
-            ],
-            "open": "09:00",
-            "close": "19:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Tue"
             ],
             "open": "09:00",
             "close": "17:30",
@@ -14934,46 +13995,10 @@
           {
             "department": "General",
             "days": [
-              "Wed"
-            ],
-            "open": "08:30",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Thu"
-            ],
-            "open": "08:30",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Mon"
-            ],
-            "open": "08:30",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
-              "Tue"
-            ],
-            "open": "08:30",
-            "close": "17:00",
-            "allDay": false,
-            "notes": ""
-          },
-          {
-            "department": "General",
-            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
               "Fri"
             ],
             "open": "08:30",
@@ -15876,7 +14901,7 @@
     }
   ],
   "metadata": {
-    "generated": "2025-12-23T18:23:21.491Z",
+    "generated": "2025-12-23T20:35:13.221Z",
     "source": "Airtable",
     "total_records": 184,
     "records_with_coords": 173
