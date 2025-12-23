@@ -1,7 +1,7 @@
 # Gap Analysis & Validation: Is sexualhealth.nyc Necessary?
 
 **Date:** December 21, 2025
-**Last Updated:** December 22, 2025
+**Last Updated:** December 23, 2025
 **Status:** Validated — we're ahead of competitors
 
 ## Executive Summary
@@ -16,15 +16,15 @@ We scraped and parsed the actual competitor directories. The results are clear: 
 
 | Metric                | Count                        |
 | --------------------- | ---------------------------- |
-| Total clinics         | 184                          |
+| Total clinics         | 175 physical + 9 virtual     |
 | Abortion providers    | 21 (with gestational limits) |
-| Gender-affirming care | 31                           |
-| STI/HIV testing       | 60                           |
-| PrEP providers        | 148                          |
-| PEP providers         | 86                           |
+| Gender-affirming care | 34                           |
+| STI/HIV testing       | 58                           |
+| PrEP providers        | 139                          |
+| PEP providers         | 79                           |
 | Contraception         | 43                           |
 | Accepts Medicaid      | 62                           |
-| Virtual/telehealth    | 9                            |
+| Hours coverage        | 89% (156/175)                |
 
 ### Competitor Comparison
 
@@ -32,9 +32,9 @@ We scraped and parsed the actual competitor directories. The results are clear: 
 | -------------------------- | ------------------ | --------------------------------------- |
 | **INeedAnA.com**           | 3                  | We have 7x more abortion providers      |
 | **AbortionFinder.org**     | ~10 (NYC sample)   | We have 2x more with gestational limits |
-| **Amida Care GIST**        | 16 facilities      | We have all 16 + 168 more               |
+| **Amida Care GIST**        | 16 facilities      | We have all 16 + 159 more               |
 | **NYS DAC List**           | 33 NYC facilities  | We have 33 of 33 (100%) ✓               |
-| **NYS PrEP Provider Dir.** | 156 NYC facilities | We have 148 (95%) ✓                     |
+| **NYS PrEP Provider Dir.** | 156 NYC facilities | We have 139 (89%) ✓                     |
 
 ### Abortion Data Detail
 
@@ -55,17 +55,8 @@ We downloaded and parsed primary source documents:
 | -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ------------------------------------------------------- |
 | [Amida Care GIST May 2025](https://www.amidacareny.org/wp-content/uploads/GIST-Provider-List-English-May-2025.pdf)                                 | Parsed     | 19 GAC procedure types, 16 facilities — all in our data |
 | [NYC Comptroller LGBTQ+ Guide 2025](https://comptroller.nyc.gov/wp-content/uploads/documents/LGBTQIA-Guide-2025.pdf)                               | Downloaded | Social services directory                               |
-| [NYS DAC Clinic Contacts](https://www.health.ny.gov/diseases/aids/providers/testing/docs/dac_clinics.pdf)                                          | Parsed     | 33 NYC facilities, we have 29                           |
+| [NYS DAC Clinic Contacts](https://www.health.ny.gov/diseases/aids/providers/testing/docs/dac_clinics.pdf)                                          | Parsed     | 33 NYC facilities, we have all 33                       |
 | [MetroPlus LGBTQI Guide 2022](https://metroplus.org/wp-content/uploads/2022/08/MKT-22.042_2022-LGBTQI-Resource-Guide-Refresh-2022_web-version.pdf) | Downloaded | Resource guide                                          |
-
-### Previously Missing DAC Clinics (Now Added ✓)
-
-All 4 previously missing DAC facilities have been added with hours from website scraping:
-
-- ✓ St. Barnabas Hospital - Pathways Center (Bronx) - appointment-based
-- ✓ Kingsbrook Jewish Medical Center (Brooklyn) - appointment-based
-- ✓ SUNY Downstate - STAR Health Center (Brooklyn) - M/T/W/F 9-5, Thu 1:30-5
-- ✓ Lenox Hill Hospital - Northwell (Manhattan) - appointment-based
 
 ## The Landscape of Existing Resources
 
@@ -101,6 +92,8 @@ All 4 previously missing DAC facilities have been added with hours from website 
 - Hormones (yes/no)
 - Surgery (yes/no)
 - Youth services (yes/no, with age policies)
+- Informed consent HRT
+- Specific procedures (FFS, FMS, voice therapy, electrolysis, laser, top/bottom surgery)
 
 ### Access
 
@@ -108,31 +101,6 @@ All 4 previously missing DAC facilities have been added with hours from website 
 - Bus routes served
 - Hours (structured, not free text)
 - Sliding scale availability
-
-## Potential Additions (from source analysis)
-
-### New GAC Procedure Flags (from Amida GIST) — IMPLEMENTED ✓
-
-The GIST directory lists 19 specific procedures. We now track:
-
-- [x] Hormones (existing)
-- [x] Surgery (existing)
-- [x] Youth services (existing)
-- [x] Facial feminization (FFS) — NEW
-- [x] Facial masculinization (FMS) — NEW
-- [x] Voice therapy — NEW
-- [x] Electrolysis — NEW
-- [x] Laser hair removal — NEW
-- [x] Top surgery — NEW
-- [x] Bottom surgery — NEW
-- [x] Informed consent HRT — NEW
-
-Filter UI updated with all new options. Airtable schema documented in `docs/airtable-schema.md`.
-
-### New Certifications
-
-- [ ] DAC certified (Designated AIDS Center) — could add as badge
-- [x] Informed consent HRT — IMPLEMENTED as filter option
 
 ## The "20 Languages" Advantage
 
@@ -160,13 +128,22 @@ The "should we build this?" question is answered: **Yes, and we already have mor
 
 ## Recent Improvements
 
+### December 23, 2025
+
+- ✓ Hours coverage improved from 54% to 89% (156/175 clinics)
+- ✓ Added Google Places API integration for hours data
+- ✓ Cleaned up duplicate clinics (6 removed)
+- ✓ Cleaned up duplicate/bad hours records (557 removed)
+- ✓ Fixed 18 website URLs missing https:// prefix
+- ✓ Added validation to prevent bad Google Places data (Sunday-only 24hr garbage)
+- ✓ Total clinics now 175 physical + 9 virtual
+
 ### December 22, 2025
 
 - ✓ Cross-referenced NYS AIDS Institute PrEP Provider Directory
-- ✓ Added 102 new PrEP providers (now 148 total, up from 48)
-- ✓ Total clinics now 184 (up from 79)
+- ✓ Added 102 new PrEP providers (now 139 total)
 - ✓ Added 9 virtual/telehealth clinics (Folx, Plume, Hey Jane, etc.)
-- ✓ Deduplicated database (removed 2 exact duplicates)
+- ✓ Deduplicated database
 
 ### December 21, 2025
 
@@ -178,7 +155,7 @@ The "should we build this?" question is answered: **Yes, and we already have mor
 
 ## Next Priorities
 
-1. ~~Cross-reference GetPrEPNYC for any missing PrEP providers~~ ✓ DONE (added 102 from NYS AIDS Institute)
-2. Bulk scrape clinic websites to fill in missing hours data (117 clinics still missing hours)
+1. ~~Fill in missing hours data~~ ✓ 89% complete (19 clinics remaining)
+2. Volunteer verification calls for remaining 19 clinics without hours
 3. Add DAC certification badge to eligible clinics
-4. Verify newly added PrEP providers have correct hours/contact info
+4. Periodic re-verification of hours data (quarterly?)
