@@ -615,7 +615,7 @@
         "youth_friendly": false,
         "anonymous_testing": false,
         "transit": "A/C/E at W 4 St-Wash Sq (420 ft)",
-        "bus": "B99, M55, SIM1C, SIM33... at AV OF THE AMERICAS/WAVERLY PL (451 ft)",
+        "bus": "B99, M55, SIM1C, SIM33, SIM33C, SIM3C, SIM4C, SIM7, SIM9 at AV OF THE AMERICAS/WAVERLY PL (451 ft)",
         "last_verified": "",
         "data_sources": "NYS AIDS Institute Provider Directory Dec 2025",
         "is_virtual": false
@@ -697,7 +697,7 @@
         "youth_friendly": false,
         "anonymous_testing": false,
         "transit": "6 at 103 St (0.25 mi)",
-        "bus": "M1, M106, M2, M3... at MADISON AV/E 102 ST (277 ft)",
+        "bus": "M1, M106, M2, M3, M4 at MADISON AV/E 102 ST (277 ft)",
         "last_verified": "",
         "data_sources": "NYS AIDS Institute Provider Directory Dec 2025",
         "is_virtual": false
@@ -999,7 +999,7 @@
         "youth_friendly": false,
         "anonymous_testing": false,
         "transit": "6 at 103 St (0.24 mi)",
-        "bus": "M1, M106, M2, M3... at MADISON AV/E 102 ST (259 ft)",
+        "bus": "M1, M106, M2, M3, M4 at MADISON AV/E 102 ST (259 ft)",
         "last_verified": "",
         "data_sources": "NYS AIDS Institute Provider Directory Dec 2025",
         "is_virtual": false
@@ -1678,7 +1678,7 @@
         "youth_friendly": true,
         "anonymous_testing": false,
         "transit": "4 at Mosholu Pkwy (0.20 mi)",
-        "bus": "Bx10, Bx16, Bx28, Bx30... at BAINBRIDGE AV/E GUN HILL RD (666 ft)",
+        "bus": "Bx10, Bx16, Bx28, Bx30, Bx34, Bx38 at BAINBRIDGE AV/E GUN HILL RD (666 ft)",
         "last_verified": "",
         "data_sources": "",
         "is_virtual": false
@@ -5658,7 +5658,7 @@
         "youth_friendly": false,
         "anonymous_testing": false,
         "transit": "6 at 96 St (0.28 mi)",
-        "bus": "M1, M106, M2, M3... at MADISON AV/E 98 ST (301 ft)",
+        "bus": "M1, M106, M2, M3, M4 at MADISON AV/E 98 ST (301 ft)",
         "last_verified": "",
         "data_sources": "",
         "is_virtual": false
@@ -7961,7 +7961,7 @@
         "youth_friendly": true,
         "anonymous_testing": false,
         "transit": "6 at 33 St (764 ft)",
-        "bus": "BM5, M34-SBS, M34A-SBS, QM1... at E 34 ST/PARK AV (319 ft)",
+        "bus": "BM5, M34-SBS, M34A-SBS, QM1, QM10, QM12, QM15, QM16, QM17, QM18, QM2, QM20, QM24, QM3, QM4, QM5, QM6, X68 at E 34 ST/PARK AV (319 ft)",
         "last_verified": "",
         "data_sources": "GEMINI-GENDER-AFFIRMING.md research (Dec 2024); NYU Langone website. IMPORTANT: In Jan 2025, NYU Langone paused youth gender-affirming care following federal executive order. As of March 2025, care has reportedly resumed but may be limited to existing patients. Callers should verify current acceptance of new minor patients.",
         "is_virtual": false
@@ -12067,7 +12067,7 @@
         "youth_friendly": true,
         "anonymous_testing": false,
         "transit": "R/W at 8 St-NYU (199 ft)",
-        "bus": "SIM1C, SIM33C, SIM3C, SIM4C... at BROADWAY/WAVERLY PL (193 ft)",
+        "bus": "SIM1C, SIM33C, SIM3C, SIM4C, X27, X28 at BROADWAY/WAVERLY PL (193 ft)",
         "last_verified": "",
         "data_sources": "",
         "is_virtual": false
@@ -12381,7 +12381,7 @@
         "youth_friendly": true,
         "anonymous_testing": false,
         "transit": "4/5 at Borough Hall (347 ft)",
-        "bus": "B103, B25, B26, B38... at JORALEMON ST/COURT ST (196 ft)",
+        "bus": "B103, B25, B26, B38, B41, B45, B52 at JORALEMON ST/COURT ST (196 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025",
         "is_virtual": false
@@ -12612,7 +12612,7 @@
         "youth_friendly": false,
         "anonymous_testing": false,
         "transit": "6 at 103 St (0.27 mi)",
-        "bus": "M1, M106, M2, M3... at MADISON AV/E 101 ST (247 ft)",
+        "bus": "M1, M106, M2, M3, M4 at MADISON AV/E 101 ST (247 ft)",
         "last_verified": "",
         "data_sources": "NAF Provider List Dec 2025, Mount Sinai website, ineedana.com",
         "is_virtual": false
@@ -13070,7 +13070,7 @@
         "youth_friendly": false,
         "anonymous_testing": false,
         "transit": "E/J/Z at Sutphin Blvd-Archer Av-JFK Airport (0.27 mi)",
-        "bus": "Q40, Q6, Q60, Q8... at SUTPHIN BL /97 AV (160 ft)",
+        "bus": "Q40, Q6, Q60, Q8, Q9 at SUTPHIN BL /97 AV (160 ft)",
         "last_verified": "",
         "data_sources": "Gemini Deep Research Dec 2025",
         "is_virtual": false
@@ -15291,7 +15291,7 @@
         "youth_friendly": false,
         "anonymous_testing": false,
         "transit": "SIR at St George (0.21 mi)",
-        "bus": "S42, S46, S48, S51... at BAY ST/NICK LAPORTE PL (218 ft)",
+        "bus": "S42, S46, S48, S51, S52, S61, S62, S66, S74, S76, S78, S86, S91, S92, S96, S98 at BAY ST/NICK LAPORTE PL (218 ft)",
         "last_verified": "",
         "data_sources": "NYC Open Data: hiv_services",
         "is_virtual": false
@@ -15876,7 +15876,7 @@
     }
   ],
   "metadata": {
-    "generated": "2025-12-23T17:53:30.646Z",
+    "generated": "2025-12-23T18:23:21.491Z",
     "source": "Airtable",
     "total_records": 184,
     "records_with_coords": 173

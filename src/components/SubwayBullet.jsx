@@ -118,7 +118,19 @@ export function TransitInfo({ transit }) {
 }
 
 /**
- * Bus route bullet - simpler blue style for buses
+ * Get MTA bus color based on route type
+ * - Local (M, B, Q, Bx, S): Blue
+ * - SBS (Select Bus Service): Teal
+ * - Express (X, BM, QM, SIM): Brown/Maroon
+ */
+function getBusColor(route) {
+  if (route.includes("-SBS")) return "#00A1DE"; // SBS teal
+  if (/^(X|BM|QM|SIM)/.test(route)) return "#6E3219"; // Express brown
+  return "#004F9F"; // Local blue
+}
+
+/**
+ * Bus route bullet - colored by bus type
  */
 export function BusBullet({ route }) {
   return (
@@ -129,7 +141,7 @@ export function BusBullet({ route }) {
         justifyContent: "center",
         height: "18px",
         padding: "0 5px",
-        backgroundColor: "#004F9F", // MTA bus blue
+        backgroundColor: getBusColor(route),
         color: "#fff",
         borderRadius: "3px",
         fontSize: "11px",
@@ -158,9 +170,8 @@ export function BusInfo({ bus }) {
   }
 
   const [, routesStr, stopAndDistance] = match;
-  // Routes are comma-separated, may have "..." at end
-  const routes = routesStr.split(", ").filter((r) => r && r !== "...");
-  const hasMore = routesStr.includes("...");
+  // Routes are comma-separated
+  const routes = routesStr.split(", ").filter((r) => r);
 
   return (
     <span
@@ -174,9 +185,6 @@ export function BusInfo({ bus }) {
       {routes.map((route) => (
         <BusBullet key={route} route={route} />
       ))}
-      {hasMore && (
-        <span style={{ fontSize: "11px", color: "#666" }}>+more</span>
-      )}
       <span style={{ marginInlineStart: "4px" }}>{stopAndDistance}</span>
     </span>
   );

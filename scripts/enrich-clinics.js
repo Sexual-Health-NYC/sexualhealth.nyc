@@ -281,11 +281,8 @@ function formatBusInfo(stop) {
     distanceStr = `${stop.distance.toFixed(2)} mi`;
   }
 
-  const routes = stop.routes.split(", ").slice(0, 4);
-  const routeStr =
-    routes.length < stop.routes.split(", ").length
-      ? routes.join(", ") + "..."
-      : routes.join(", ");
+  // Show all routes, no truncation
+  const routeStr = stop.routes;
 
   return `${routeStr} at ${stop.name} (${distanceStr})`;
 }
