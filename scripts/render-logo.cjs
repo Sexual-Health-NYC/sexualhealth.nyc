@@ -43,7 +43,7 @@ async function renderLogo() {
           body {
             margin: 0;
             padding: 20px;
-            background: white;
+            background: transparent;
           }
           svg {
             width: ${config.size}px;
