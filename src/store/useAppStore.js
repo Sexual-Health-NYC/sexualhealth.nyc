@@ -1,5 +1,39 @@
 import { create } from "zustand";
 
+// Filter hierarchy: when a parent filter is cleared, clear all children
+// Format: { parentFilter: { parentValue: [childFilter1, childFilter2, ...] } }
+const filterHierarchy = {
+  services: {
+    gender_affirming: ["genderAffirming"],
+    abortion: ["gestationalWeeks"],
+  },
+};
+
+// Get child filters that should be cleared when a parent value is removed
+function getChildFiltersToReset(filterKey, oldValues, newValues) {
+  const hierarchy = filterHierarchy[filterKey];
+  if (!hierarchy) return {};
+
+  const resets = {};
+  const removedValues = [...oldValues].filter((v) => !newValues.has(v));
+
+  for (const removedValue of removedValues) {
+    const childFilters = hierarchy[removedValue];
+    if (childFilters) {
+      for (const childFilter of childFilters) {
+        // gestationalWeeks is a special case (not a Set)
+        if (childFilter === "gestationalWeeks") {
+          resets[childFilter] = null;
+        } else {
+          resets[childFilter] = new Set();
+        }
+      }
+    }
+  }
+
+  return resets;
+}
+
 const useAppStore = create((set) => ({
   // Data
   clinics: [],
@@ -38,9 +72,19 @@ const useAppStore = create((set) => ({
   selectClinic: (clinic) => set({ selectedClinic: clinic }),
   setMapViewport: (viewport) => set({ mapViewport: viewport }),
   setFilter: (category, value) =>
-    set((state) => ({
-      filters: { ...state.filters, [category]: value },
-    })),
+    set((state) => {
+      // Check if we need to cascade-clear child filters
+      const oldValue = state.filters[category];
+      let childResets = {};
+
+      if (oldValue instanceof Set && value instanceof Set) {
+        childResets = getChildFiltersToReset(category, oldValue, value);
+      }
+
+      return {
+        filters: { ...state.filters, [category]: value, ...childResets },
+      };
+    }),
   clearFilters: () =>
     set({
       filters: {
