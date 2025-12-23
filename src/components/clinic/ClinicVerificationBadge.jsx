@@ -80,10 +80,10 @@ export default function ClinicVerificationBadge({ clinic }) {
   const { status, date } = getVerificationStatus(clinic);
 
   const statusColors = {
-    recent: theme.colors.open,
-    aging: "#d97706", // amber/orange
-    stale: theme.colors.textSecondary,
-    unknown: theme.colors.textSecondary,
+    recent: theme.colors.open, // green - recently verified
+    aging: "#d97706", // amber/orange - getting stale
+    stale: "#dc2626", // red - needs re-verification
+    unknown: "#9ca3af", // light gray - not yet verified (not alarming)
   };
 
   // Format as relative time using native Intl API (supports all our languages)
