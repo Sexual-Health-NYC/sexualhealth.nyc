@@ -73,18 +73,16 @@ async function renderLogo() {
   // Render horizontal logos (icon + text)
   const horizontalLogoSvg = `
     <svg width="280" height="60" viewBox="0 0 280 60" xmlns="http://www.w3.org/2000/svg">
-      <!-- Shield icon on left -->
-      <g transform="translate(5, 5)">
-        <path d="M25 2 L48 10 L48 30 C48 40, 25 48, 25 48 C25 48, 2 40, 2 30 L2 10 Z" fill="#7b2cbf" stroke="#ffffff" stroke-width="1.5"/>
-        <line x1="15" y1="15" x2="15" y2="35" stroke="#e63946" stroke-width="2.2" stroke-linecap="round"/>
-        <line x1="18" y1="15" x2="32" y2="35" stroke="#0096c7" stroke-width="2.2" stroke-linecap="round"/>
-        <line x1="12" y1="25" x2="38" y2="25" stroke="#9d4edd" stroke-width="2.2" stroke-linecap="round"/>
-        <line x1="32" y1="15" x2="18" y2="35" stroke="#ffd60a" stroke-width="2.2" stroke-linecap="round"/>
-        <line x1="35" y1="15" x2="35" y2="35" stroke="#06a77d" stroke-width="2.2" stroke-linecap="round"/>
-        <circle cx="25" cy="25" r="6.5" fill="none" stroke="#ffffff" stroke-width="1.8"/>
+      <!-- Apple/heart icon on left -->
+      <g transform="translate(5, 5) scale(0.25)">
+        <path d="M100 40 C 80 40, 50 50, 50 90 C 50 140, 80 160, 100 160 C 120 160, 150 140, 150 90 C 150 50, 120 40, 100 40" fill="#FF6B6B" />
+        <path d="M100 40 Q 90 10, 120 10 Q 130 30, 100 40" fill="#4ECDC4" />
+        <path d="M100 65 C 85 65, 75 75, 75 90 C 75 110, 100 135, 100 135 C 100 135, 125 110, 125 90 C 125 75, 115 65, 100 65 Z" fill="white" />
+        <rect x="96" y="78" width="8" height="24" rx="2" fill="#FF6B6B" />
+        <rect x="88" y="86" width="24" height="8" rx="2" fill="#FF6B6B" />
       </g>
       <!-- Text -->
-      <text x="65" y="40" font-family="Montserrat" font-size="24" font-weight="700" fill="#7b2cbf">sexualhealth.nyc</text>
+      <text x="65" y="40" font-family="Montserrat" font-size="24" font-weight="700" fill="#FF6B6B">sexualhealth.nyc</text>
     </svg>
   `;
 
