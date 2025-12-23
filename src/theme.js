@@ -1,12 +1,13 @@
 export const theme = {
   colors: {
-    // Primary (brand)
-    primary: "#7b2cbf",
-    primaryLight: "#9d4edd",
-    primaryDark: "#5a189a",
+    // Primary (brand) - teal from logo
+    // #0D8078 passes WCAG AA (4.8:1)
+    primary: "#0D8078",
+    primaryLight: "#4ECDC4",
+    primaryDark: "#047568",
 
-    // Accent
-    accent: "#ff006e",
+    // Accent/Selected - purple (used when marker is selected/expanded)
+    accent: "#7b2cbf",
 
     // Service colors - accessible pairs (light bg + dark text)
     stiTestingBg: "#ebdff5",
@@ -36,9 +37,9 @@ export const theme = {
     closed: "#64748b", // 4.76:1 contrast with white (WCAG AA compliant)
     verified: "#2563eb", // 5.17:1 contrast with white (WCAG AA compliant)
 
-    // Map markers
-    markerDefault: "#7b2cbf",
-    markerSelected: "#0096c7",
+    // Map markers - teal default, purple when selected
+    markerDefault: "#0D8078",
+    markerSelected: "#7b2cbf",
     markerBorder: "#ffffff",
   },
 
@@ -110,7 +111,7 @@ export const theme = {
 
   // Accessibility
   focus: {
-    outline: `2px solid #7b2cbf`,
+    outline: `2px solid #0D8078`,
     outlineOffset: "2px",
   },
 };
