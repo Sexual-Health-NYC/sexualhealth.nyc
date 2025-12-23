@@ -352,7 +352,10 @@ export default function App() {
         {/* Content */}
         {viewMode === "map" ? (
           <>
-            <Map filteredClinics={filteredClinics} />
+            <Map
+              filteredClinics={filteredClinics}
+              onShowList={() => setViewMode("list")}
+            />
             {isMobile ? <ClinicBottomSheet /> : <ClinicDetailPanel />}
           </>
         ) : (

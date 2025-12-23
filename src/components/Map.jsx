@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import MapGL, { NavigationControl } from "react-map-gl/mapbox";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import useAppStore from "../store/useAppStore";
+import theme from "../theme";
 import ClinicMarkers from "./ClinicMarkers";
 
 // Enable RTL text support
@@ -17,12 +19,15 @@ if (mapboxgl.getRTLTextPluginStatus() === "unavailable") {
 const MAPBOX_TOKEN =
   "pk.eyJ1Ijoic2V4dWFsLWhlYWx0aC1ueWMiLCJhIjoiY21qZHF2ZTAyMDQ3aTNjb3MxbDFscWowZiJ9.BXuUrUio_grUlyoxU6WFBQ";
 
-export default function Map({ filteredClinics }) {
+export default function Map({ filteredClinics, onShowList }) {
+  const { t } = useTranslation(["messages"]);
   const {
     mapViewport,
     setMapViewport,
     setClinics,
     setVirtualClinics,
+    virtualClinics,
+    filters,
     selectedClinic,
     selectClinic,
     setMapRef,
@@ -98,6 +103,19 @@ export default function Map({ filteredClinics }) {
     }
   }, [selectedClinic, isMobile]);
 
+  // Count matching virtual clinics for banner
+  const matchingVirtualClinics = virtualClinics.filter((clinic) => {
+    if (filters.services.size === 0) return false;
+    return Array.from(filters.services).some((service) => {
+      if (service === "abortion") return clinic.has_abortion;
+      if (service === "gender_affirming") return clinic.has_gender_affirming;
+      if (service === "prep") return clinic.has_prep;
+      if (service === "contraception") return clinic.has_contraception;
+      if (service === "sti_testing") return clinic.has_sti_testing;
+      return false;
+    });
+  });
+
   // Recenter map when filters change to fit visible clinics
   // Only auto-fit when the actual filter results change, not when selecting/deselecting clinics
   useEffect(() => {
@@ -148,6 +166,38 @@ export default function Map({ filteredClinics }) {
         <NavigationControl position="top-right" />
         <ClinicMarkers clinics={filteredClinics} />
       </MapGL>
+
+      {/* Virtual/telehealth banner */}
+      {matchingVirtualClinics.length > 0 && onShowList && (
+        <button
+          onClick={onShowList}
+          style={{
+            position: "absolute",
+            bottom: isMobile ? "70px" : "20px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            display: "flex",
+            alignItems: "center",
+            gap: theme.spacing[2],
+            padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
+            backgroundColor: "white",
+            border: `1px solid ${theme.colors.border}`,
+            borderRadius: theme.borderRadius.full,
+            boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+            cursor: "pointer",
+            fontSize: theme.fonts.size.sm,
+            fontWeight: theme.fonts.weight.medium,
+            color: theme.colors.textPrimary,
+            whiteSpace: "nowrap",
+          }}
+        >
+          <span>💻</span>
+          {t("messages:telehealthBanner", {
+            count: matchingVirtualClinics.length,
+            defaultValue: "{{count}} telehealth options — view in List",
+          })}
+        </button>
+      )}
     </div>
   );
 }
