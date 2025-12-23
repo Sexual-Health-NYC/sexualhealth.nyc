@@ -11,7 +11,7 @@
            C 75 110, 100 135, 100 135
            C 100 135, 125 110, 125 90
            C 125 75, 115 65, 100 65 Z"
-           fill="white" />
+           fill="none" />
   <rect x="96" y="78" width="8" height="24" rx="2" fill="#FF6B6B" />
   <rect x="88" y="86" width="24" height="8" rx="2" fill="#FF6B6B" />
 </svg>

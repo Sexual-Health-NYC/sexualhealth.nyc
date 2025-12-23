@@ -78,7 +78,7 @@ async function renderLogo() {
       <g transform="translate(2, 5) scale(0.25)">
         <path d="M100 40 C 80 40, 50 50, 50 90 C 50 140, 80 160, 100 160 C 120 160, 150 140, 150 90 C 150 50, 120 40, 100 40" fill="#FF6B6B" />
         <path d="M100 40 Q 90 10, 120 10 Q 130 30, 100 40" fill="#4ECDC4" />
-        <path d="M100 65 C 85 65, 75 75, 75 90 C 75 110, 100 135, 100 135 C 100 135, 125 110, 125 90 C 125 75, 115 65, 100 65 Z" fill="white" />
+        <path d="M100 65 C 85 65, 75 75, 75 90 C 75 110, 100 135, 100 135 C 100 135, 125 110, 125 90 C 125 75, 115 65, 100 65 Z" fill="none" />
         <rect x="96" y="78" width="8" height="24" rx="2" fill="#FF6B6B" />
         <rect x="88" y="86" width="24" height="8" rx="2" fill="#FF6B6B" />
       </g>
@@ -197,7 +197,7 @@ async function renderLogo() {
       <g transform="translate(450, 120) scale(1.5)">
         <path d="M100 40 C 80 40, 50 50, 50 90 C 50 140, 80 160, 100 160 C 120 160, 150 140, 150 90 C 150 50, 120 40, 100 40" fill="#FF6B6B" />
         <path d="M100 40 Q 90 10, 120 10 Q 130 30, 100 40" fill="#4ECDC4" />
-        <path d="M100 65 C 85 65, 75 75, 75 90 C 75 110, 100 135, 100 135 C 100 135, 125 110, 125 90 C 125 75, 115 65, 100 65 Z" fill="white" />
+        <path d="M100 65 C 85 65, 75 75, 75 90 C 75 110, 100 135, 100 135 C 100 135, 125 110, 125 90 C 125 75, 115 65, 100 65 Z" fill="none" />
         <rect x="96" y="78" width="8" height="24" rx="2" fill="#FF6B6B" />
         <rect x="88" y="86" width="24" height="8" rx="2" fill="#FF6B6B" />
       </g>
