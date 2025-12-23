@@ -178,6 +178,39 @@
           {
             "department": "General",
             "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu"
+            ],
+            "open": "08:15",
+            "close": "20:15",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Sat"
+            ],
+            "open": "09:00",
+            "close": "15:15",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Fri"
+            ],
+            "open": "09:45",
+            "close": "16:45",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
               "Fri"
             ],
             "open": "09:45",
@@ -462,6 +495,31 @@
         "phone": "(718) 886-1200",
         "website": "https://www.cbwchc.org",
         "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Thu",
+              "Fri",
+              "Sat",
+              "Sun"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Wed"
+            ],
+            "open": "10:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
           {
             "department": "General",
             "days": [
@@ -1135,7 +1193,41 @@
         "borough": "Manhattan",
         "phone": "(212) 227-8401 ext183",
         "website": "Betanceshealthcenter.org",
-        "hours": [],
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Sat"
+            ],
+            "open": "10:00",
+            "close": "14:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Thu"
+            ],
+            "open": "10:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Fri"
+            ],
+            "open": "08:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
         "organization": "",
         "clinic_type": "",
         "has_sti_testing": false,
@@ -1568,6 +1660,20 @@
         "phone": "(718) 589-8775",
         "website": "https://www.institute.org/",
         "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "08:30",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
           {
             "department": "General",
             "days": [
@@ -2502,6 +2608,20 @@
             "close": "17:00",
             "allDay": false,
             "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "08:30",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
           }
         ],
         "organization": "",
@@ -3188,6 +3308,20 @@
             "close": "17:00",
             "allDay": false,
             "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "08:30",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
           }
         ],
         "organization": "",
@@ -3605,6 +3739,20 @@
             "close": "17:00",
             "allDay": false,
             "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "08:30",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
           }
         ],
         "organization": "",
@@ -3674,6 +3822,20 @@
         "phone": "(718) 882-5482 ext2313",
         "website": "https://www.montefiore.org/std",
         "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "08:30",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
           {
             "department": "General",
             "days": [
@@ -3759,10 +3921,32 @@
           {
             "department": "General",
             "days": [
+              "Wed",
+              "Thu"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
               "Fri"
             ],
             "open": "10:00",
             "close": "16:45",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue"
+            ],
+            "open": "08:30",
+            "close": "20:00",
             "allDay": false,
             "notes": ""
           },
@@ -3785,6 +3969,16 @@
             ],
             "open": "09:00",
             "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Fri"
+            ],
+            "open": "10:00",
+            "close": "16:45",
             "allDay": false,
             "notes": ""
           }
@@ -4217,6 +4411,20 @@
         "phone": "(718) 369-4850",
         "website": "https://www.aidshealth.org/",
         "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
           {
             "department": "General",
             "days": [
@@ -5446,7 +5654,33 @@
         "borough": "Manhattan",
         "phone": "(212) 379-6988",
         "website": "https://www.cbwchc.org",
-        "hours": [],
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Wed"
+            ],
+            "open": "10:00",
+            "close": "18:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Thu",
+              "Fri",
+              "Sat",
+              "Sun"
+            ],
+            "open": "09:00",
+            "close": "18:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
         "organization": "",
         "clinic_type": "",
         "has_sti_testing": true,
@@ -5581,6 +5815,22 @@
         "phone": "(212) 863-9058",
         "website": "https://www.niosspa.com",
         "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri",
+              "Sat",
+              "Sun"
+            ],
+            "open": "09:00",
+            "close": "20:00",
+            "allDay": false,
+            "notes": ""
+          },
           {
             "department": "General",
             "days": [
@@ -6432,6 +6682,20 @@
             "close": "17:30",
             "allDay": false,
             "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "17:30",
+            "allDay": false,
+            "notes": ""
           }
         ],
         "organization": "",
@@ -6567,7 +6831,32 @@
         "borough": "Manhattan",
         "phone": "(212) 965-7000",
         "website": "www.ppnyc.org",
-        "hours": [],
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Sat"
+            ],
+            "open": "09:00",
+            "close": "15:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
         "organization": "",
         "clinic_type": "",
         "has_sti_testing": false,
@@ -6826,6 +7115,20 @@
             ],
             "open": "08:00",
             "close": "19:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "17:00",
             "allDay": false,
             "notes": ""
           }
@@ -7268,6 +7571,22 @@
             "close": "20:00",
             "allDay": false,
             "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri",
+              "Sat",
+              "Sun"
+            ],
+            "open": "09:00",
+            "close": "20:00",
+            "allDay": false,
+            "notes": ""
           }
         ],
         "organization": "",
@@ -7404,6 +7723,20 @@
         "phone": "(718) 293-3900",
         "website": "https://www.institute.org/",
         "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "08:30",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
           {
             "department": "General",
             "days": [
@@ -7987,7 +8320,22 @@
         "borough": "Bronx",
         "phone": "(347) 341-4300",
         "website": "https://www.montefiore.org/mmg-wakefield-ambulatory-care-center",
-        "hours": [],
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
         "organization": "",
         "clinic_type": "",
         "has_sti_testing": false,
@@ -9257,6 +9605,29 @@
           {
             "department": "General",
             "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu"
+            ],
+            "open": "08:30",
+            "close": "19:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Fri"
+            ],
+            "open": "10:30",
+            "close": "16:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
               "Fri"
             ],
             "open": "10:30",
@@ -9348,6 +9719,19 @@
           {
             "department": "General",
             "days": [
+              "Mon",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "08:30",
+            "close": "15:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
               "Tue"
             ],
             "open": "",
@@ -9376,6 +9760,16 @@
             ],
             "open": "08:30",
             "close": "15:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "Express",
+            "days": [
+              "Tue"
+            ],
+            "open": "08:30",
+            "close": "19:00",
             "allDay": false,
             "notes": ""
           }
@@ -10133,6 +10527,20 @@
           {
             "department": "General",
             "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "08:30",
+            "close": "15:30",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
               "Tue"
             ],
             "open": "17:00",
@@ -10391,6 +10799,20 @@
             ],
             "open": "08:00",
             "close": "18:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "17:00",
             "allDay": false,
             "notes": ""
           }
@@ -11129,6 +11551,30 @@
           {
             "department": "General",
             "days": [
+              "Sat"
+            ],
+            "open": "09:00",
+            "close": "15:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
               "Mon",
               "Tue",
               "Wed",
@@ -11257,6 +11703,20 @@
         "phone": "(212) 367-1000",
         "website": "https://gmhc.org",
         "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "09:30",
+            "close": "16:30",
+            "allDay": false,
+            "notes": ""
+          },
           {
             "department": "General",
             "days": [
@@ -12192,6 +12652,20 @@
             "close": "15:30",
             "allDay": false,
             "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "08:30",
+            "close": "15:30",
+            "allDay": false,
+            "notes": ""
           }
         ],
         "organization": "NYC Health Dept (DOH)",
@@ -12565,6 +13039,20 @@
             "close": "15:30",
             "allDay": false,
             "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "08:30",
+            "close": "15:30",
+            "allDay": false,
+            "notes": ""
           }
         ],
         "organization": "NYC Health Dept (DOH)",
@@ -12633,7 +13121,22 @@
         "borough": "Bronx",
         "phone": "(718) 589-2440",
         "website": "",
-        "hours": [],
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "08:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
         "organization": "",
         "clinic_type": "",
         "has_sti_testing": false,
@@ -12701,6 +13204,20 @@
         "phone": "(718) 583-3060",
         "website": "https://www.institute.org/",
         "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "08:30",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
           {
             "department": "General",
             "days": [
@@ -13114,6 +13631,20 @@
             "close": "17:00",
             "allDay": false,
             "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "08:30",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
           }
         ],
         "organization": "",
@@ -13395,6 +13926,20 @@
             "close": "19:00",
             "allDay": false,
             "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
           }
         ],
         "organization": "Planned Parenthood",
@@ -13590,6 +14135,20 @@
             "close": "17:30",
             "allDay": false,
             "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "17:30",
+            "allDay": false,
+            "notes": ""
           }
         ],
         "organization": "",
@@ -13776,7 +14335,22 @@
         "borough": "Bronx",
         "phone": "(718) 901-8297",
         "website": "",
-        "hours": [],
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
         "organization": "",
         "clinic_type": "",
         "has_sti_testing": false,
@@ -13847,6 +14421,16 @@
           {
             "department": "General",
             "days": [
+              "Thu"
+            ],
+            "open": "12:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
               "Mon",
               "Tue",
               "Wed",
@@ -13857,6 +14441,29 @@
             "open": "",
             "close": "",
             "allDay": true,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Sat"
+            ],
+            "open": "08:30",
+            "close": "16:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Fri"
+            ],
+            "open": "08:30",
+            "close": "17:00",
+            "allDay": false,
             "notes": ""
           }
         ],
@@ -14084,7 +14691,22 @@
         "borough": "Bronx",
         "phone": "(718) 589-2440 ext4700",
         "website": "https://www.urbanhealthplan.org/locations/adolescent-health-and-wellness-center/",
-        "hours": [],
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "08:00",
+            "close": "18:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
         "organization": "",
         "clinic_type": "",
         "has_sti_testing": false,
@@ -14174,6 +14796,29 @@
             "close": "19:00",
             "allDay": false,
             "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon"
+            ],
+            "open": "08:30",
+            "close": "19:00",
+            "allDay": false,
+            "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "08:30",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
           }
         ],
         "organization": "",
@@ -14242,7 +14887,22 @@
         "borough": "Queens",
         "phone": "(855) 681-8700",
         "website": "",
-        "hours": [],
+        "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "09:00",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
+          }
+        ],
         "organization": "",
         "clinic_type": "",
         "has_sti_testing": false,
@@ -14310,6 +14970,20 @@
         "phone": "(347) 396-7959",
         "website": "https://www.nyc.gov/site/doh/services/sexual-health-clinics.page",
         "hours": [
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "08:30",
+            "close": "15:30",
+            "allDay": false,
+            "notes": ""
+          },
           {
             "department": "General",
             "days": [
@@ -14486,6 +15160,20 @@
             "close": "17:00",
             "allDay": false,
             "notes": ""
+          },
+          {
+            "department": "General",
+            "days": [
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri"
+            ],
+            "open": "08:30",
+            "close": "17:00",
+            "allDay": false,
+            "notes": ""
           }
         ],
         "organization": "",
@@ -14540,7 +15228,7 @@
     }
   ],
   "metadata": {
-    "generated": "2025-12-22T23:17:08.325Z",
+    "generated": "2025-12-23T03:13:03.687Z",
     "source": "Airtable",
     "total_records": 192,
     "records_with_coords": 181
