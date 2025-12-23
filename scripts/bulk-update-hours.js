@@ -1173,7 +1173,10 @@ async function updateClinicHours(clinicId, clinicName, newHours) {
   // 1. Fetch existing hours
   const existing = await fetchExistingHours(clinicId);
 
-  // Skip if already has hours
+  // DUPLICATE PROTECTION: Skip if clinic already has ANY hours records.
+  // This prevents creating duplicates when running the script multiple times.
+  // If you need to update hours for a clinic that already has them,
+  // first delete the existing records via cleanup-data.js or Airtable UI.
   if (existing.length > 0) {
     console.log(`  Already has ${existing.length} hours records - skipping`);
     return false;

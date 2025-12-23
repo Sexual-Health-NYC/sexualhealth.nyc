@@ -46,6 +46,35 @@ async function updateClinic(clinicId, fields) {
   return await res.json();
 }
 
+// Validate hours data - reject bad patterns from Google Places
+function isValidHours(hoursData) {
+  for (const dept of hoursData) {
+    for (const sched of dept.schedule) {
+      const days = sched.days || [];
+      const open = sched.open || "";
+      const close = sched.close || "";
+
+      // Reject: Sunday only with 24 hours (Google Places garbage)
+      if (days.length === 1 && days[0] === "Sunday" &&
+          open.match(/12.*AM/i) && close.match(/11:59.*PM/i)) {
+        return { valid: false, reason: "Sunday-only 24hrs (Google garbage)" };
+      }
+
+      // Reject: empty times
+      if (!open || !close) {
+        return { valid: false, reason: "Empty open/close times" };
+      }
+
+      // Reject: single day with midnight-to-midnight (likely bad data)
+      if (days.length === 1 && open.match(/12.*AM/i) &&
+          (close.match(/11:59.*PM/i) || close.match(/12.*AM/i))) {
+        return { valid: false, reason: `Single day (${days[0]}) with 24hrs` };
+      }
+    }
+  }
+  return { valid: true };
+}
+
 async function createHoursRecords(clinicId, hoursData) {
   // hoursData is our parsed format: [{ department, schedule: [{ days, open, close }] }]
   const records = [];
@@ -170,6 +199,13 @@ async function main() {
 
     // Hours - add if we have them and clinic is missing hours
     if (fact.hours && (!current.hours || current.hours.length === 0)) {
+      // Validate hours data first
+      const validation = isValidHours(fact.hours);
+      if (!validation.valid) {
+        console.log(`⚠ Skipping hours for ${fact.clinicName}: ${validation.reason}`);
+        continue;
+      }
+
       console.log(`Adding hours for ${fact.clinicName}...`);
       try {
         const count = await createHoursRecords(clinicId, fact.hours);
