@@ -1215,7 +1215,7 @@
         "address": "280 Henry St, New York, NY, 10002",
         "borough": "Manhattan",
         "phone": "(212) 227-8401 ext183",
-        "website": "Betanceshealthcenter.org",
+        "website": "https://betanceshealthcenter.org",
         "hours": [
           {
             "department": "General",
@@ -1863,7 +1863,7 @@
         "address": "439 Port Richmond Avenue, Staten Island, NY 10302",
         "borough": "Staten Island",
         "phone": "(718) 876-1732",
-        "website": "chcrichmond.org",
+        "website": "https://chcrichmond.org",
         "hours": [
           {
             "department": "General",
@@ -3013,7 +3013,7 @@
         "address": "890 Hunts Point Ave, Bronx, NY, 10474",
         "borough": "Bronx",
         "phone": "(718) 589-2141",
-        "website": "www.urbanhealthplan.org",
+        "website": "https://www.urbanhealthplan.org",
         "hours": [
           {
             "department": "General",
@@ -3162,7 +3162,7 @@
         "address": "112 Bowery, #636, New York, NY, 10013",
         "borough": "Manhattan",
         "phone": "(833) 427-7969",
-        "website": "www.happyhealthyny.com",
+        "website": "https://www.happyhealthyny.com",
         "hours": [
           {
             "department": "General",
@@ -3362,7 +3362,7 @@
         "address": "1776 Clay Ave, Bronx, NY, 10457",
         "borough": "Bronx",
         "phone": "(718) 299-1100",
-        "website": "Acacia Network",
+        "website": "",
         "hours": [
           {
             "department": "General",
@@ -4675,7 +4675,7 @@
         "address": "132 Crosby St, 13A, New York, NY, 10025",
         "borough": "Manhattan",
         "phone": "(212) 280-4740",
-        "website": "www.wfmnyc.com",
+        "website": "https://www.wfmnyc.com",
         "hours": [
           {
             "department": "General",
@@ -5222,7 +5222,7 @@
         "address": "4719 Fort Hamilton Parkway, Brooklyn, NY, 11219",
         "borough": "Brooklyn",
         "phone": "(718) 283-5912",
-        "website": "www.maimo.org",
+        "website": "https://www.maimonides.org",
         "hours": [
           {
             "department": "General",
@@ -6453,7 +6453,7 @@
         "address": "5123 A Queens Blvd, Wood Side, NY, 11377",
         "borough": "Queens",
         "phone": "(646) 707-3407",
-        "website": "www.familyhealthnewyork.com",
+        "website": "https://www.familyhealthnewyork.com",
         "hours": [
           {
             "department": "General",
@@ -7442,7 +7442,7 @@
         "address": "26 Bleecker Street, New York, NY, 10012",
         "borough": "Manhattan",
         "phone": "(212) 965-7000",
-        "website": "www.ppnyc.org",
+        "website": "https://www.ppnyc.org",
         "hours": [
           {
             "department": "General",
@@ -7534,7 +7534,7 @@
         "address": "770 E 176th St, 2nd Floor, Bronx, NY, 10460",
         "borough": "Bronx",
         "phone": "(718) 466-8244",
-        "website": "vipservices.org",
+        "website": "https://vipservices.org",
         "hours": [
           {
             "department": "General",
@@ -8316,7 +8316,7 @@
         "address": "259 Bristol St, Brooklyn, NY, 11212",
         "borough": "Brooklyn",
         "phone": "(718) 342-0060 ext4709",
-        "website": "bmsfamilyhealth.org",
+        "website": "https://bmsfamilyhealth.org",
         "hours": [
           {
             "department": "General",
@@ -8628,7 +8628,7 @@
         "address": "3400 Bainbridge Ave, 2nd Floor, Desk B, Bronx, NY, 10467",
         "borough": "Bronx",
         "phone": "(866) 633-8255",
-        "website": "www.montefiore.org",
+        "website": "https://www.montefiore.org",
         "hours": [
           {
             "department": "General",
@@ -8910,7 +8910,7 @@
         "address": "235 Port Richmond Avenue, Staten Island, NY 10302",
         "borough": "Staten Island",
         "phone": "(718) 924-2254",
-        "website": "www.chcrichmond.org",
+        "website": "https://www.chcrichmond.org",
         "hours": [
           {
             "department": "General",
@@ -9465,7 +9465,7 @@
         "address": "261 e 161 Street, Bronx, NY, 10452",
         "borough": "Bronx",
         "phone": "(914) 377-1191",
-        "website": "Nationalcert.net",
+        "website": "https://nationalcert.net",
         "hours": [],
         "organization": "",
         "clinic_type": "",
@@ -11913,7 +11913,7 @@
         "address": "516 W 168 Street, New York, NY, 10032",
         "borough": "Manhattan",
         "phone": "(212) 326-5705",
-        "website": "columbianps.org",
+        "website": "https://columbianps.org",
         "hours": [
           {
             "department": "General",
@@ -13429,7 +13429,7 @@
         "address": "311 West 35th Street, Floor  6, New York, NY, 10001",
         "borough": "Manhattan",
         "phone": "(212) 736-5900 ext152__",
-        "website": "WestMidtownMedicalGroup.com",
+        "website": "https://westmidtownmedicalgroup.com",
         "hours": [
           {
             "department": "General",
@@ -15416,7 +15416,7 @@
         "address": "26 Bay Street, Staten Island, NY 10301",
         "borough": "Staten Island",
         "phone": "(718) 808-1300",
-        "website": "www.chasiny.org",
+        "website": "https://www.chasiny.org",
         "hours": [
           {
             "department": "General",
@@ -15993,7 +15993,7 @@
         "address": "1824 Madison Ave, New York, NY, 10035",
         "borough": "Manhattan",
         "phone": "(212) 423-4500",
-        "website": "www.institute.org",
+        "website": "https://www.institute.org",
         "hours": [
           {
             "department": "General",
@@ -16062,7 +16062,7 @@
     }
   ],
   "metadata": {
-    "generated": "2025-12-23T14:10:32.636Z",
+    "generated": "2025-12-23T14:25:58.424Z",
     "source": "Airtable",
     "total_records": 186,
     "records_with_coords": 175
