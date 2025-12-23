@@ -105,7 +105,7 @@ export default function Map({ filteredClinics, onShowList }) {
 
   // Count matching virtual clinics for banner
   const matchingVirtualClinics = virtualClinics.filter((clinic) => {
-    if (filters.services.size === 0) return false;
+    if (!filters.services || filters.services.size === 0) return false;
     return Array.from(filters.services).some((service) => {
       if (service === "abortion") return clinic.has_abortion;
       if (service === "gender_affirming") return clinic.has_gender_affirming;
