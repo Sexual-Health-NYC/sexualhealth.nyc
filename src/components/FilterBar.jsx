@@ -159,9 +159,21 @@ export default function FilterBar() {
     setFilter(category, new Set(newFilters[category]));
   };
 
-  const FilterDropdown = ({ name, title, options, category }) => {
+  const FilterDropdown = ({
+    name,
+    title,
+    options,
+    category,
+    isChildFilter,
+  }) => {
     const isOpen = openDropdown === name;
     const activeCount = filters[category].size;
+
+    // Child filters use a subtle tinted background when inactive
+    const inactiveBg = isChildFilter ? theme.colors.childFilterBg : "white";
+    const inactiveBorder = isChildFilter
+      ? theme.colors.childFilterBorder
+      : theme.colors.border;
 
     return (
       <div
@@ -180,9 +192,10 @@ export default function FilterBar() {
           className={`filter-pill${activeCount > 0 ? " active" : ""}`}
           style={{
             padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
-            backgroundColor: activeCount > 0 ? theme.colors.primary : "white",
+            backgroundColor:
+              activeCount > 0 ? theme.colors.primary : inactiveBg,
             color: activeCount > 0 ? "white" : theme.colors.textPrimary,
-            border: `2px solid ${activeCount > 0 ? theme.colors.primary : theme.colors.border}`,
+            border: `2px solid ${activeCount > 0 ? theme.colors.primary : inactiveBorder}`,
             borderRadius: theme.borderRadius.md,
             fontSize: theme.fonts.size.sm,
             fontWeight: theme.fonts.weight.medium,
@@ -318,9 +331,11 @@ export default function FilterBar() {
           className={`filter-pill${hasFilter ? " active" : ""}`}
           style={{
             padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
-            backgroundColor: hasFilter ? theme.colors.accent : "white",
+            backgroundColor: hasFilter
+              ? theme.colors.accent
+              : theme.colors.childFilterBg,
             color: hasFilter ? "white" : theme.colors.textPrimary,
-            border: `2px solid ${hasFilter ? theme.colors.accent : theme.colors.border}`,
+            border: `2px solid ${hasFilter ? theme.colors.accent : theme.colors.childFilterBorder}`,
             borderRadius: theme.borderRadius.md,
             fontSize: theme.fonts.size.sm,
             fontWeight: theme.fonts.weight.medium,
@@ -696,6 +711,7 @@ export default function FilterBar() {
               title={t("filters:genderAffirmingCare")}
               options={genderAffirmingOptions}
               category="genderAffirming"
+              isChildFilter
             />
           )}
           {filters.services.has("prep") && (

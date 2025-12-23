@@ -25,6 +25,10 @@ export const theme = {
     lgbtqBg: "#ffd9e9",
     lgbtqText: "#b3004d",
 
+    // Child filter buttons (Weeks Pregnant, GA Care options)
+    childFilterBg: "#f5f0f7",
+    childFilterBorder: "#e0d4e8",
+
     // Neutrals
     textPrimary: "#212529",
     textSecondary: "#5a6570", // Changed from #6c757d for WCAG AA contrast (4.52:1)
