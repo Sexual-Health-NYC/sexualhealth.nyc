@@ -1025,6 +1025,25 @@ export default function FilterBar() {
               </span>
             )}
           </button>
+          {getActiveFilterCount() > 0 && (
+            <button
+              onClick={clearAllFilters}
+              className="btn-interactive"
+              style={{
+                padding: `${theme.spacing[2]} ${theme.spacing[3]}`,
+                backgroundColor: "transparent",
+                color: theme.colors.primary,
+                border: `1px solid ${theme.colors.primary}`,
+                borderRadius: theme.borderRadius.md,
+                fontSize: theme.fonts.size.sm,
+                fontWeight: theme.fonts.weight.medium,
+                cursor: "pointer",
+                whiteSpace: "nowrap",
+              }}
+            >
+              {t("actions:clearAll")}
+            </button>
+          )}
         </div>
       </div>
 
