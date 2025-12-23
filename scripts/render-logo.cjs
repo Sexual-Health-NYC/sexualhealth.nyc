@@ -140,7 +140,7 @@ async function renderLogo() {
     { name: "apple-touch-icon.png", size: 180 },
     { name: "favicon-192.png", size: 192 },
     { name: "favicon-512.png", size: 512 },
-    { name: "favicon.png", size: 48 }, // Increased from 32 to 48 for better visibility
+    { name: "favicon.png", size: 64 }, // Increased to 64 for maximum tab visibility
   ];
 
   const iconSvg = fs.readFileSync(
@@ -238,7 +238,7 @@ async function renderLogo() {
   const faviconPng = path.join(publicDir, "favicon.png");
   const faviconIco = path.join(publicDir, "favicon.ico");
   const faviconBuffer = fs.readFileSync(faviconPng);
-  const icoBuffer = await toIco([faviconBuffer], { sizes: [48] }); // Updated to match new favicon size
+  const icoBuffer = await toIco([faviconBuffer], { sizes: [64] }); // Updated to match new favicon size
   fs.writeFileSync(faviconIco, icoBuffer);
   console.log("Created favicon.ico");
 
