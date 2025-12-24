@@ -223,7 +223,7 @@ export default function Map({ filteredClinics, onShowList }) {
             bottom: isMobile
               ? selectedClinic
                 ? `calc(50vh + 20px)`
-                : "70px"
+                : "90px"
               : "20px",
             left: isMobile
               ? "50%"
@@ -245,6 +245,7 @@ export default function Map({ filteredClinics, onShowList }) {
             color: theme.colors.textPrimary,
             whiteSpace: "nowrap",
             transition: `left ${theme.transitions.normal}, bottom ${theme.transitions.normal}`,
+            zIndex: 20,
           }}
         >
           <span>💻</span>
