@@ -215,16 +215,12 @@ export default function Map({ filteredClinics, onShowList }) {
       </MapGL>
 
       {/* Virtual/telehealth banner */}
-      {matchingVirtualClinics.length > 0 && onShowList && (
+      {matchingVirtualClinics.length > 0 && onShowList && !selectedClinic && (
         <button
           onClick={onShowList}
           style={{
             position: "fixed",
-            bottom: isMobile
-              ? selectedClinic
-                ? `calc(50vh + 20px)`
-                : "90px"
-              : "20px",
+            bottom: isMobile ? "90px" : "20px",
             left: "50%",
             transform: "translateX(-50%)",
             display: "flex",
