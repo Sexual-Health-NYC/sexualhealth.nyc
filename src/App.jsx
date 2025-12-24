@@ -279,7 +279,7 @@ export default function App() {
         {/* View toggle */}
         <div
           style={{
-            position: "absolute",
+            position: "sticky",
             top: theme.spacing[4],
             left: theme.spacing[4],
             zIndex: 10,
