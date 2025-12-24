@@ -32,5 +32,7 @@
   "siteTitle": "Sexual Health NYC - Find Clinics for STI Testing, HIV Testing, PrEP, PEP, Contraception, and Abortion Services",
   "verifiedUnknown": "Not yet verified",
   "appointmentOnly": "By appointment only",
-  "telehealthBanner": "{{count}} telehealth options — view in List"
+  "telehealthBanner": "{{count}} telehealth options — view in List",
+  "youthFriendly": "Youth-friendly",
+  "vaccinesAvailable": "Vaccines available"
 }

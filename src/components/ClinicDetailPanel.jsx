@@ -1,25 +1,10 @@
-import { useState, useEffect, useRef } from "react";
-import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
 import useAppStore from "../store/useAppStore";
 import theme from "../theme";
-import CorrectionFormModal from "./CorrectionFormModal";
-import ClinicStatusBadge from "./clinic/ClinicStatusBadge";
-import ClinicServices from "./clinic/ClinicServices";
-import ClinicAddress from "./clinic/ClinicAddress";
-import ClinicHours from "./clinic/ClinicHours";
-import ClinicContact from "./clinic/ClinicContact";
-import ClinicInsurance from "./clinic/ClinicInsurance";
-import ClinicVerificationBadge from "./clinic/ClinicVerificationBadge";
+import ClinicDetails from "./clinic/ClinicDetails";
 
 export default function ClinicDetailPanel() {
-  const { t } = useTranslation(["actions", "forms"]);
   const { selectedClinic, selectClinic } = useAppStore();
-  const [showCorrectionForm, setShowCorrectionForm] = useState(false);
-  const correctionFormRef = useRef(null);
-
-  useEffect(() => {
-    setShowCorrectionForm(false);
-  }, [selectedClinic]);
 
   useEffect(() => {
     const handleEscape = (e) => {
@@ -53,115 +38,10 @@ export default function ClinicDetailPanel() {
         animation: `slideInRight ${theme.motion.duration.slow} ${theme.motion.easing.gentle}`,
       }}
     >
-      <div style={{ padding: theme.spacing[4] }}>
-        {/* Header: Name + Status + Close */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "start",
-            marginBottom: theme.spacing[3],
-          }}
-        >
-          <div style={{ flex: 1 }}>
-            <h2
-              style={{
-                fontSize: theme.fonts.size.xl,
-                fontWeight: theme.fonts.weight.semibold,
-                color: theme.colors.textPrimary,
-                margin: 0,
-                lineHeight: 1.3,
-                marginBottom: theme.spacing[2],
-              }}
-            >
-              {selectedClinic.name}
-            </h2>
-            <ClinicStatusBadge clinic={selectedClinic} />
-            <ClinicVerificationBadge clinic={selectedClinic} />
-          </div>
-          <button
-            onClick={() => selectClinic(null)}
-            style={{
-              background: "none",
-              border: "none",
-              fontSize: theme.fonts.size.xl,
-              color: theme.colors.textSecondary,
-              cursor: "pointer",
-              padding: 0,
-              marginInlineStart: theme.spacing[2],
-            }}
-            aria-label={t("actions:close")}
-          >
-            ×
-          </button>
-        </div>
-
-        <div style={{ marginBottom: theme.spacing[3] }}>
-          <ClinicServices clinic={selectedClinic} />
-        </div>
-
-        <div style={{ marginBottom: theme.spacing[3] }}>
-          <ClinicAddress clinic={selectedClinic} />
-        </div>
-
-        <ClinicContact clinic={selectedClinic} />
-
-        <ClinicHours clinic={selectedClinic} />
-
-        <ClinicInsurance clinic={selectedClinic} />
-
-        {/* Report Correction */}
-        <div
-          style={{
-            paddingTop: theme.spacing[3],
-            borderTop: `1px solid ${theme.colors.border}`,
-          }}
-        >
-          <button
-            onClick={() => {
-              const willShow = !showCorrectionForm;
-              setShowCorrectionForm(willShow);
-              if (willShow) {
-                setTimeout(() => {
-                  correctionFormRef.current?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "end",
-                  });
-                }, 100);
-              }
-            }}
-            style={{
-              background: "none",
-              border: "none",
-              color: theme.colors.textSecondary,
-              fontSize: theme.fonts.size.sm,
-              cursor: "pointer",
-              padding: 0,
-              textDecoration: "underline",
-            }}
-            onFocus={(e) => {
-              e.currentTarget.style.outline = theme.focus.outline;
-              e.currentTarget.style.outlineOffset = theme.focus.outlineOffset;
-            }}
-            onBlur={(e) => {
-              e.currentTarget.style.outline = "none";
-            }}
-            aria-expanded={showCorrectionForm}
-          >
-            {showCorrectionForm
-              ? t("forms:cancel")
-              : t("actions:reportCorrection")}
-          </button>
-
-          <div ref={correctionFormRef}>
-            <CorrectionFormModal
-              clinicName={selectedClinic.name}
-              onClose={() => setShowCorrectionForm(false)}
-              isExpanded={showCorrectionForm}
-            />
-          </div>
-        </div>
-      </div>
+      <ClinicDetails
+        clinic={selectedClinic}
+        onClose={() => selectClinic(null)}
+      />
     </div>
   );
 }
