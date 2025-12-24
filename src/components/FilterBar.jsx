@@ -405,11 +405,9 @@ export default function FilterBar() {
           alignItems: "center",
           gap: theme.spacing[2],
           padding: `${theme.spacing[1]} ${theme.spacing[3]}`,
-          backgroundColor: isHovered
-            ? theme.colors.primaryLight
-            : theme.colors.primary,
-          color: "white",
-          border: `1px solid ${theme.colors.primary}`,
+          backgroundColor: isHovered ? "#e6f7f6" : theme.colors.surface,
+          color: theme.colors.primary,
+          border: `1.5px solid ${theme.colors.primary}`,
           borderRadius: theme.borderRadius.full,
           fontSize: theme.fonts.size.sm,
           fontWeight: theme.fonts.weight.medium,
@@ -424,7 +422,7 @@ export default function FilterBar() {
           style={{
             background: "none",
             border: "none",
-            color: "white",
+            color: theme.colors.primary,
             cursor: "pointer",
             fontSize: theme.fonts.size.lg,
             padding: theme.spacing[2],
