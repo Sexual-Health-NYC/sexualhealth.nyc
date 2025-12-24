@@ -4,83 +4,132 @@ import theme from "../../theme";
 export default function ClinicServices({ clinic }) {
   const { t } = useTranslation(["services", "filters"]);
 
-  const services = [];
-  if (clinic.has_sti_testing)
-    services.push({
+  const serviceConfig = [
+    {
+      field: "has_sti_testing",
       label: t("services:stiTesting"),
       bgColor: theme.colors.stiTestingBg,
       textColor: theme.colors.stiTestingText,
-    });
-  if (clinic.has_hiv_testing)
-    services.push({
+    },
+    {
+      field: "has_hiv_testing",
       label: t("services:hivTesting"),
       bgColor: theme.colors.hivTestingBg,
       textColor: theme.colors.hivTestingText,
-    });
-  if (clinic.has_prep)
-    services.push({
+    },
+    {
+      field: "has_prep",
       label: t("services:prep"),
       bgColor: theme.colors.prepBg,
       textColor: theme.colors.prepText,
-    });
-  if (clinic.has_pep)
-    services.push({
+    },
+    {
+      field: "has_pep",
       label: t("services:pep"),
       bgColor: theme.colors.pepBg,
       textColor: theme.colors.pepText,
-    });
-  if (clinic.has_contraception)
-    services.push({
+    },
+    {
+      field: "has_contraception",
       label: t("services:contraception"),
       bgColor: theme.colors.contraceptionBg,
       textColor: theme.colors.contraceptionText,
-    });
-  if (clinic.has_abortion)
-    services.push({
+    },
+    {
+      field: "has_abortion",
       label: t("services:abortion"),
       bgColor: theme.colors.abortionBg,
       textColor: theme.colors.abortionText,
-    });
-
-  // New Gender-Affirming Care Services
-  if (clinic.gender_affirming_youth)
-    services.push({
+    },
+    {
+      field: "gender_affirming_youth",
       label: t("filters:genderAffirmingYouth"),
       bgColor: theme.colors.lgbtqBg,
       textColor: theme.colors.lgbtqText,
-    });
-  if (clinic.gender_affirming_hormones)
-    services.push({
+    },
+    {
+      field: "gender_affirming_hormones",
       label: t("filters:genderAffirmingHormones"),
       bgColor: theme.colors.lgbtqBg,
       textColor: theme.colors.lgbtqText,
-    });
-  if (clinic.gender_affirming_surgery)
-    services.push({
+    },
+    {
+      field: "gender_affirming_informed_consent",
+      label: t("filters:informedConsentHRT"),
+      bgColor: theme.colors.lgbtqBg,
+      textColor: theme.colors.lgbtqText,
+    },
+    {
+      field: "gender_affirming_surgery",
       label: t("filters:genderAffirmingSurgery"),
       bgColor: theme.colors.lgbtqBg,
       textColor: theme.colors.lgbtqText,
-    });
-
-  // PrEP Types
-  if (clinic.prep_starter)
-    services.push({
+    },
+    {
+      field: "gender_affirming_top_surgery",
+      label: t("filters:topSurgery"),
+      bgColor: theme.colors.lgbtqBg,
+      textColor: theme.colors.lgbtqText,
+    },
+    {
+      field: "gender_affirming_bottom_surgery",
+      label: t("filters:bottomSurgery"),
+      bgColor: theme.colors.lgbtqBg,
+      textColor: theme.colors.lgbtqText,
+    },
+    {
+      field: "gender_affirming_ffs",
+      label: t("filters:facialFeminization"),
+      bgColor: theme.colors.lgbtqBg,
+      textColor: theme.colors.lgbtqText,
+    },
+    {
+      field: "gender_affirming_fms",
+      label: t("filters:facialMasculinization"),
+      bgColor: theme.colors.lgbtqBg,
+      textColor: theme.colors.lgbtqText,
+    },
+    {
+      field: "gender_affirming_voice",
+      label: t("filters:voiceTherapy"),
+      bgColor: theme.colors.lgbtqBg,
+      textColor: theme.colors.lgbtqText,
+    },
+    {
+      field: "gender_affirming_electrolysis",
+      label: t("filters:electrolysis"),
+      bgColor: theme.colors.lgbtqBg,
+      textColor: theme.colors.lgbtqText,
+    },
+    {
+      field: "gender_affirming_laser",
+      label: t("filters:laserHairRemoval"),
+      bgColor: theme.colors.lgbtqBg,
+      textColor: theme.colors.lgbtqText,
+    },
+    {
+      field: "prep_starter",
       label: t("filters:prepStarter"),
       bgColor: theme.colors.prepBg,
       textColor: theme.colors.prepText,
-    });
-  if (clinic.prep_prescriber)
-    services.push({
+    },
+    {
+      field: "prep_prescriber",
       label: t("filters:prepPrescriber"),
       bgColor: theme.colors.prepBg,
       textColor: theme.colors.prepText,
-    });
-  if (clinic.prep_ap_registered)
-    services.push({
+    },
+    {
+      field: "prep_ap_registered",
       label: t("filters:prepAP"),
       bgColor: theme.colors.prepBg,
       textColor: theme.colors.prepText,
-    });
+    },
+  ];
+
+  const services = serviceConfig
+    .filter((config) => clinic[config.field])
+    .map(({ label, bgColor, textColor }) => ({ label, bgColor, textColor }));
 
   if (services.length === 0) return null;
 
