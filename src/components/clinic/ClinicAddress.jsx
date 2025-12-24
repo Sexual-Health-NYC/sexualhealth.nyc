@@ -7,6 +7,24 @@ import { TransitInfo, BusInfo } from "../SubwayBullet";
 export default function ClinicAddress({ clinic }) {
   const { t } = useTranslation(["actions", "sections", "dynamic"]);
   const [copiedAddress, setCopiedAddress] = useState(false);
+  const [showDirections, setShowDirections] = useState(false);
+
+  const encodedAddress = encodeURIComponent(clinic.address);
+  const directionsOptions = [
+    {
+      name: "OpenStreetMap",
+      url: `https://www.openstreetmap.org/directions?to=${clinic.latitude},${clinic.longitude}`,
+      note: t("actions:privacyFriendly"),
+    },
+    {
+      name: "Google Maps",
+      url: `https://www.google.com/maps/dir/?api=1&destination=${encodedAddress}`,
+    },
+    {
+      name: "Apple Maps",
+      url: `https://maps.apple.com/?daddr=${encodedAddress}`,
+    },
+  ];
 
   return (
     <div>
@@ -99,25 +117,82 @@ export default function ClinicAddress({ clinic }) {
               </>
             )}
           </button>
-          <a
-            href={`https://www.openstreetmap.org/directions?to=${clinic.latitude},${clinic.longitude}`}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => setShowDirections(!showDirections)}
             style={{
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              padding: 0,
               color: theme.colors.primary,
               fontSize: theme.fonts.size.sm,
-              textDecoration: "none",
+              textAlign: "start",
               whiteSpace: "nowrap",
+              display: "flex",
+              alignItems: "center",
+              gap: "4px",
             }}
-            title={t("actions:openInMaps")}
+            aria-expanded={showDirections}
+            aria-label={t("actions:getDirections")}
           >
-            <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-              <MapIcon style={{ width: "16px", height: "16px" }} />
-              {t("actions:getDirections")}
-            </div>
-          </a>
+            <MapIcon style={{ width: "16px", height: "16px" }} />
+            {t("actions:getDirections")}
+            <span
+              style={{
+                display: "inline-block",
+                transform: showDirections ? "rotate(180deg)" : "rotate(0deg)",
+                transition: `transform ${theme.transitions.fast}`,
+                fontSize: "10px",
+              }}
+            >
+              ▼
+            </span>
+          </button>
         </div>
       </div>
+
+      {showDirections && (
+        <div
+          style={{
+            marginTop: theme.spacing[2],
+            padding: theme.spacing[2],
+            backgroundColor: theme.colors.backgroundAlt,
+            borderRadius: theme.borderRadius.md,
+            display: "flex",
+            flexDirection: "column",
+            gap: theme.spacing[1],
+          }}
+        >
+          {directionsOptions.map((option) => (
+            <a
+              key={option.name}
+              href={option.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: theme.colors.primary,
+                fontSize: theme.fonts.size.sm,
+                textDecoration: "none",
+                display: "flex",
+                alignItems: "center",
+                gap: theme.spacing[2],
+              }}
+            >
+              {option.name}
+              {option.note && (
+                <span
+                  style={{
+                    fontSize: theme.fonts.size.xs,
+                    color: theme.colors.textSecondary,
+                  }}
+                >
+                  ({option.note})
+                </span>
+              )}
+            </a>
+          ))}
+        </div>
+      )}
 
       {/* Transit */}
       {(clinic.transit || clinic.bus) && (
