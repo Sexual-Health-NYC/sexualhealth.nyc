@@ -55,10 +55,31 @@ export default function Map({ filteredClinics, onShowList }) {
     if (!mapRef.current) return;
 
     const map = mapRef.current;
+
+    // Dynamically measure UI overlay dimensions
+    let bottomPadding = 0;
+    let rightPadding = 0;
+
+    if (selectedClinic) {
+      if (isMobile) {
+        // Measure actual bottom sheet height
+        const bottomSheet = document.querySelector("[data-bottom-sheet]");
+        if (bottomSheet) {
+          bottomPadding = bottomSheet.offsetHeight;
+        }
+      } else {
+        // Measure actual sidebar width
+        const sidebar = document.querySelector("[data-detail-panel]");
+        if (sidebar) {
+          rightPadding = sidebar.offsetWidth;
+        }
+      }
+    }
+
     const padding = isMobile
       ? {
           top: 0,
-          bottom: selectedClinic ? window.innerHeight * 0.5 : 0,
+          bottom: bottomPadding,
           left: 0,
           right: 0,
         }
@@ -66,7 +87,7 @@ export default function Map({ filteredClinics, onShowList }) {
           top: 0,
           bottom: 0,
           left: 0,
-          right: selectedClinic ? 400 : 0,
+          right: rightPadding,
         };
 
     // Animate padding change smoothly

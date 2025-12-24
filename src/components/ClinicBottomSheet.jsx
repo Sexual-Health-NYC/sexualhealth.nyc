@@ -69,6 +69,7 @@ export default function ClinicBottomSheet() {
   return (
     <div
       ref={sheetRef}
+      data-bottom-sheet
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}

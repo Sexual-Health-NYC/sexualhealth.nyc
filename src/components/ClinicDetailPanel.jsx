@@ -38,6 +38,7 @@ export default function ClinicDetailPanel() {
 
   return (
     <div
+      data-detail-panel
       onClick={(e) => e.stopPropagation()}
       style={{
         position: "absolute",
