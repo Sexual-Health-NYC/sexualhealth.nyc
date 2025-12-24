@@ -394,6 +394,7 @@ export default function FilterBar() {
 
   const ActiveFilterPill = ({ category, value, label }) => {
     const [isHovered, setIsHovered] = useState(false);
+    const [isFocused, setIsFocused] = useState(false);
 
     return (
       <span
@@ -404,9 +405,11 @@ export default function FilterBar() {
           alignItems: "center",
           gap: theme.spacing[2],
           padding: `${theme.spacing[1]} ${theme.spacing[3]}`,
-          backgroundColor: isHovered ? "#e9d5ff" : "#f3e8ff",
-          color: theme.colors.primaryDark,
-          border: `1px solid ${isHovered ? theme.colors.primary : theme.colors.primaryLight}`,
+          backgroundColor: isHovered
+            ? theme.colors.primaryLight
+            : theme.colors.primary,
+          color: "white",
+          border: `1px solid ${theme.colors.primary}`,
           borderRadius: theme.borderRadius.full,
           fontSize: theme.fonts.size.sm,
           fontWeight: theme.fonts.weight.medium,
@@ -421,20 +424,22 @@ export default function FilterBar() {
           style={{
             background: "none",
             border: "none",
-            color: theme.colors.primaryDark,
+            color: "white",
             cursor: "pointer",
-            fontSize: theme.fonts.size.base,
-            padding: 0,
+            fontSize: theme.fonts.size.lg,
+            padding: theme.spacing[2],
+            minWidth: "20px",
+            minHeight: "20px",
             display: "flex",
             alignItems: "center",
+            justifyContent: "center",
+            borderRadius: theme.borderRadius.sm,
+            outline: isFocused ? theme.focus.outline : "none",
+            outlineOffset: isFocused ? theme.focus.outlineOffset : "0",
+            marginInlineEnd: `-${theme.spacing[1]}`,
           }}
-          onFocus={(e) => {
-            e.currentTarget.style.outline = theme.focus.outline;
-            e.currentTarget.style.outlineOffset = theme.focus.outlineOffset;
-          }}
-          onBlur={(e) => {
-            e.currentTarget.style.outline = "none";
-          }}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
         >
           ×
         </button>
