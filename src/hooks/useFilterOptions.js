@@ -52,6 +52,10 @@ export default function useFilterOptions() {
     { value: "Staten Island", label: t("locations:boroughs.Staten Island") },
   ];
 
+  const accessOptions = [
+    { value: "walk_in", label: t("messages:walkInsAccepted") },
+  ];
+
   const gestationalOptions = [
     { value: null, label: t("gestational:any") },
     { value: 10, label: t("gestational:upTo10") },
@@ -67,6 +71,7 @@ export default function useFilterOptions() {
     prepOptions,
     insuranceOptions,
     boroughOptions,
+    accessOptions,
     gestationalOptions,
   };
 }

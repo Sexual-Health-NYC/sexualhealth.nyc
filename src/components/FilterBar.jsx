@@ -1,13 +1,13 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import Select from "react-select";
 import useAppStore from "../store/useAppStore";
 import useFilterOptions from "../hooks/useFilterOptions";
+import useVisibleFilters from "../hooks/useVisibleFilters";
 import theme from "../theme";
-import SubwayBullet, { BusBullet } from "./SubwayBullet";
-import transitData from "../data/transitLines.json";
 import FilterControls from "./FilterControls";
 import SearchAutocomplete from "./SearchAutocomplete";
+import DesktopFilterRenderer from "./DesktopFilterRenderer";
+import { FILTER_TYPES } from "../config/filterConfig";
 
 export default function FilterBar() {
   const { t } = useTranslation([
@@ -25,46 +25,18 @@ export default function FilterBar() {
     clearFilters,
     setGestationalWeeks,
     selectedClinic,
-    clinics,
   } = useAppStore();
-  const {
-    serviceOptions,
-    genderAffirmingOptions,
-    prepOptions,
-    insuranceOptions,
-    boroughOptions,
-    gestationalOptions,
-  } = useFilterOptions();
+  const filterOptions = useFilterOptions();
+  const visibleFilters = useVisibleFilters();
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
-  const dropdownRefs = {
-    services: useRef(null),
-    genderAffirming: useRef(null),
-    prep: useRef(null),
-    insurance: useRef(null),
-    boroughs: useRef(null),
-    gestational: useRef(null),
-  };
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (openDropdown && dropdownRefs[openDropdown].current) {
-        if (!dropdownRefs[openDropdown].current.contains(event.target)) {
-          setOpenDropdown(null);
-        }
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [openDropdown]);
 
   // Close mobile filter modal when a clinic is selected
   useEffect(() => {
@@ -120,6 +92,25 @@ export default function FilterBar() {
   }) => {
     const isOpen = openDropdown === name;
     const activeCount = filters[category].size;
+    const dropdownRef = useRef(null);
+
+    // Close dropdown when clicking outside
+    useEffect(() => {
+      if (!isOpen) return;
+
+      const handleClickOutside = (event) => {
+        if (
+          dropdownRef.current &&
+          !dropdownRef.current.contains(event.target)
+        ) {
+          setOpenDropdown(null);
+        }
+      };
+
+      document.addEventListener("mousedown", handleClickOutside);
+      return () =>
+        document.removeEventListener("mousedown", handleClickOutside);
+    }, [isOpen]);
 
     // Child filters use a subtle tinted background when inactive
     const inactiveBg = isChildFilter ? theme.colors.childFilterBg : "white";
@@ -129,7 +120,7 @@ export default function FilterBar() {
 
     return (
       <div
-        ref={dropdownRefs[name]}
+        ref={dropdownRef}
         style={{
           position: "relative",
           display: "inline-block",
@@ -264,13 +255,33 @@ export default function FilterBar() {
   const GestationalDropdown = () => {
     const isOpen = openDropdown === "gestational";
     const hasFilter = filters.gestationalWeeks !== null;
+    const dropdownRef = useRef(null);
+    const { gestationalOptions } = filterOptions;
     const currentLabel =
       gestationalOptions.find((o) => o.value === filters.gestationalWeeks)
         ?.label || t("gestational:weeksPregnant");
 
+    // Close dropdown when clicking outside
+    useEffect(() => {
+      if (!isOpen) return;
+
+      const handleClickOutside = (event) => {
+        if (
+          dropdownRef.current &&
+          !dropdownRef.current.contains(event.target)
+        ) {
+          setOpenDropdown(null);
+        }
+      };
+
+      document.addEventListener("mousedown", handleClickOutside);
+      return () =>
+        document.removeEventListener("mousedown", handleClickOutside);
+    }, [isOpen]);
+
     return (
       <div
-        ref={dropdownRefs.gestational}
+        ref={dropdownRef}
         style={{
           position: "relative",
           display: "inline-block",
@@ -539,7 +550,7 @@ export default function FilterBar() {
           )}
         </div>
 
-        {/* Filter dropdowns row */}
+        {/* Filter dropdowns row - config-driven */}
         <div
           style={{
             display: "flex",
@@ -549,176 +560,19 @@ export default function FilterBar() {
             marginBottom: getActiveFilterCount() > 0 ? theme.spacing[3] : 0,
           }}
         >
-          <FilterDropdown
-            name="services"
-            title={t("sections:services")}
-            options={serviceOptions}
-            category="services"
-          />
-          {filters.services.has("gender_affirming") && (
-            <FilterDropdown
-              name="genderAffirming"
-              title={t("filters:genderAffirmingCare")}
-              options={genderAffirmingOptions}
-              category="genderAffirming"
-              isChildFilter
+          {visibleFilters.map((config) => (
+            <DesktopFilterRenderer
+              key={config.id}
+              config={config}
+              openDropdown={openDropdown}
+              setOpenDropdown={setOpenDropdown}
+              FilterDropdown={FilterDropdown}
+              GestationalDropdown={GestationalDropdown}
             />
-          )}
-          {filters.services.has("prep") && (
-            <FilterDropdown
-              name="prep"
-              title={t("filters:prepServices")}
-              options={prepOptions}
-              category="prep"
-            />
-          )}
-          {filters.services.has("abortion") && <GestationalDropdown />}
-          <FilterDropdown
-            name="insurance"
-            title={t("sections:insuranceAndCost")}
-            options={insuranceOptions}
-            category="insurance"
-          />
-          <FilterDropdown
-            name="boroughs"
-            title={t("sections:borough")}
-            options={boroughOptions}
-            category="boroughs"
-          />
-
-          {/* Time filters */}
-          <button
-            onClick={() => setFilter("openNow", !filters.openNow)}
-            className={`filter-pill${filters.openNow ? " active" : ""}`}
-            style={{
-              padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
-              backgroundColor: filters.openNow ? theme.colors.open : "white",
-              color: filters.openNow ? "white" : theme.colors.textPrimary,
-              border: `2px solid ${filters.openNow ? theme.colors.open : theme.colors.border}`,
-              borderRadius: theme.borderRadius.md,
-              fontSize: theme.fonts.size.sm,
-              fontWeight: theme.fonts.weight.medium,
-              cursor: "pointer",
-            }}
-          >
-            {t("messages:openNow")}
-          </button>
-          <button
-            onClick={() => setFilter("openAfter5pm", !filters.openAfter5pm)}
-            className={`filter-pill${filters.openAfter5pm ? " active" : ""}`}
-            style={{
-              padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
-              backgroundColor: filters.openAfter5pm
-                ? theme.colors.primary
-                : "white",
-              color: filters.openAfter5pm ? "white" : theme.colors.textPrimary,
-              border: `2px solid ${filters.openAfter5pm ? theme.colors.primary : theme.colors.border}`,
-              borderRadius: theme.borderRadius.md,
-              fontSize: theme.fonts.size.sm,
-              fontWeight: theme.fonts.weight.medium,
-              cursor: "pointer",
-            }}
-          >
-            {t("messages:openAfter5pm")}
-          </button>
-
-          {/* Subway filter */}
-          <div style={{ minWidth: "180px" }}>
-            <Select
-              isMulti
-              placeholder={t("messages:subway")}
-              value={Array.from(filters.subwayLines).map((line) => ({
-                value: line,
-                label: line,
-              }))}
-              onChange={(selected) => {
-                setFilter(
-                  "subwayLines",
-                  new Set(selected?.map((s) => s.value) || []),
-                );
-              }}
-              options={transitData.subwayLines.map((line) => ({
-                value: line,
-                label: line,
-              }))}
-              formatOptionLabel={({ value }) => (
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "8px",
-                  }}
-                >
-                  <SubwayBullet line={value} />
-                  <span>{value} train</span>
-                </div>
-              )}
-              styles={{
-                control: (base) => ({
-                  ...base,
-                  borderColor:
-                    filters.subwayLines.size > 0
-                      ? theme.colors.primary
-                      : theme.colors.border,
-                  borderWidth: "2px",
-                  "&:hover": { borderColor: theme.colors.primaryLight },
-                }),
-                multiValue: (base) => ({
-                  ...base,
-                  backgroundColor: `${theme.colors.primary}20`,
-                }),
-                menu: (base) => ({
-                  ...base,
-                  zIndex: 1000,
-                }),
-              }}
-            />
-          </div>
-
-          {/* Bus filter */}
-          <div style={{ minWidth: "180px" }}>
-            <Select
-              isMulti
-              placeholder={t("messages:bus")}
-              value={Array.from(filters.busRoutes).map((route) => ({
-                value: route,
-                label: route,
-              }))}
-              onChange={(selected) => {
-                setFilter(
-                  "busRoutes",
-                  new Set(selected?.map((s) => s.value) || []),
-                );
-              }}
-              options={transitData.busRoutes.map((route) => ({
-                value: route,
-                label: route,
-              }))}
-              formatOptionLabel={({ value }) => <BusBullet route={value} />}
-              styles={{
-                control: (base) => ({
-                  ...base,
-                  borderColor:
-                    filters.busRoutes.size > 0
-                      ? theme.colors.primary
-                      : theme.colors.border,
-                  borderWidth: "2px",
-                  "&:hover": { borderColor: theme.colors.primaryLight },
-                }),
-                multiValue: (base) => ({
-                  ...base,
-                  backgroundColor: `${theme.colors.primary}20`,
-                }),
-                menu: (base) => ({
-                  ...base,
-                  zIndex: 1000,
-                }),
-              }}
-            />
-          </div>
+          ))}
         </div>
 
-        {/* Bottom row: Active filter pills */}
+        {/* Bottom row: Active filter pills - config-driven */}
         {getActiveFilterCount() > 0 && (
           <div
             role="status"
@@ -730,91 +584,69 @@ export default function FilterBar() {
               gap: theme.spacing[2],
             }}
           >
-            {Array.from(filters.services).map((value) => (
-              <ActiveFilterPill
-                key={value}
-                category="services"
-                value={value}
-                label={serviceOptions.find((o) => o.value === value)?.label}
-              />
-            ))}
-            {Array.from(filters.genderAffirming || []).map((value) => (
-              <ActiveFilterPill
-                key={`ga-${value}`}
-                category="genderAffirming"
-                value={value}
-                label={
-                  genderAffirmingOptions.find((o) => o.value === value)?.label
-                }
-              />
-            ))}
-            {Array.from(filters.prep || []).map((value) => (
-              <ActiveFilterPill
-                key={`prep-${value}`}
-                category="prep"
-                value={value}
-                label={prepOptions.find((o) => o.value === value)?.label}
-              />
-            ))}
-            {Array.from(filters.insurance).map((value) => (
-              <ActiveFilterPill
-                key={value}
-                category="insurance"
-                value={value}
-                label={insuranceOptions.find((o) => o.value === value)?.label}
-              />
-            ))}
-            {filters.access.has("walk_in") && (
-              <ActiveFilterPill
-                category="access"
-                value="walk_in"
-                label={t("messages:walkIns")}
-              />
-            )}
-            {Array.from(filters.boroughs).map((value) => (
-              <ActiveFilterPill
-                key={value}
-                category="boroughs"
-                value={value}
-                label={boroughOptions.find((o) => o.value === value)?.label}
-              />
-            ))}
-            {filters.gestationalWeeks !== null && (
-              <span
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: theme.spacing[2],
-                  padding: `${theme.spacing[1]} ${theme.spacing[3]}`,
-                  backgroundColor: "#ffe9e9",
-                  color: theme.colors.accent,
-                  border: `1px solid ${theme.colors.accent}`,
-                  borderRadius: theme.borderRadius.full,
-                  fontSize: theme.fonts.size.sm,
-                  fontWeight: theme.fonts.weight.medium,
-                }}
-              >
-                {gestationalOptions.find(
-                  (o) => o.value === filters.gestationalWeeks,
-                )?.label || ""}
-                <button
-                  onClick={() => setGestationalWeeks(null)}
-                  aria-label="Remove gestational filter"
-                  style={{
-                    background: "none",
-                    border: "none",
-                    color: theme.colors.accent,
-                    cursor: "pointer",
-                    fontSize: theme.fonts.size.base,
-                    padding: 0,
-                    display: "flex",
-                    alignItems: "center",
-                  }}
-                >
-                  ×
-                </button>
-              </span>
-            )}
+            {visibleFilters.map((config) => {
+              const filterValue = filters[config.category];
+              const options = config.optionsKey
+                ? filterOptions[config.optionsKey]
+                : [];
+
+              // Multi-select filters (Set)
+              if (filterValue instanceof Set && filterValue.size > 0) {
+                return Array.from(filterValue).map((value) => (
+                  <ActiveFilterPill
+                    key={`${config.category}-${value}`}
+                    category={config.category}
+                    value={value}
+                    label={options.find((o) => o.value === value)?.label}
+                  />
+                ));
+              }
+
+              // Gestational filter (special case)
+              if (
+                config.type === "gestational" &&
+                filters.gestationalWeeks !== null
+              ) {
+                return (
+                  <span
+                    key="gestational"
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: theme.spacing[2],
+                      padding: `${theme.spacing[1]} ${theme.spacing[3]}`,
+                      backgroundColor: "#ffe9e9",
+                      color: theme.colors.accent,
+                      border: `1px solid ${theme.colors.accent}`,
+                      borderRadius: theme.borderRadius.full,
+                      fontSize: theme.fonts.size.sm,
+                      fontWeight: theme.fonts.weight.medium,
+                    }}
+                  >
+                    {options.find((o) => o.value === filters.gestationalWeeks)
+                      ?.label || ""}
+                    <button
+                      onClick={() => setGestationalWeeks(null)}
+                      aria-label="Remove gestational filter"
+                      style={{
+                        background: "none",
+                        border: "none",
+                        color: theme.colors.accent,
+                        cursor: "pointer",
+                        fontSize: theme.fonts.size.base,
+                        padding: 0,
+                        display: "flex",
+                        alignItems: "center",
+                      }}
+                    >
+                      ×
+                    </button>
+                  </span>
+                );
+              }
+
+              return null;
+            })}
           </div>
         )}
       </div>
