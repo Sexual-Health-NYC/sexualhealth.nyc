@@ -56,45 +56,41 @@ export default function Map({ filteredClinics, onShowList }) {
 
     const map = mapRef.current;
 
-    // Dynamically measure UI overlay dimensions
-    let bottomPadding = 0;
-    let rightPadding = 0;
+    const updatePadding = () => {
+      // Measure all possible UI overlays and use the largest
+      let bottomPadding = 0;
+      let rightPadding = 0;
 
-    if (selectedClinic) {
       if (isMobile) {
-        // Measure actual bottom sheet height
+        // Check for bottom sheet (clinic detail) or filter modal
         const bottomSheet = document.querySelector("[data-bottom-sheet]");
+        const filterModal = document.querySelector("[data-filter-modal]");
+
         if (bottomSheet) {
-          bottomPadding = bottomSheet.offsetHeight;
+          bottomPadding = Math.max(bottomPadding, bottomSheet.offsetHeight);
+        }
+        if (filterModal) {
+          bottomPadding = Math.max(bottomPadding, filterModal.offsetHeight);
         }
       } else {
-        // Measure actual sidebar width
+        // Desktop: measure sidebar width
         const sidebar = document.querySelector("[data-detail-panel]");
         if (sidebar) {
           rightPadding = sidebar.offsetWidth;
         }
       }
-    }
 
-    const padding = isMobile
-      ? {
-          top: 0,
-          bottom: bottomPadding,
-          left: 0,
-          right: 0,
-        }
-      : {
-          top: 0,
-          bottom: 0,
-          left: 0,
-          right: rightPadding,
-        };
+      const padding = isMobile
+        ? { top: 0, bottom: bottomPadding, left: 0, right: 0 }
+        : { top: 0, bottom: 0, left: 0, right: rightPadding };
 
-    // Animate padding change smoothly
-    map.easeTo({
-      padding,
-      duration: 300,
-    });
+      map.easeTo({ padding, duration: 300 });
+    };
+
+    // Delay to allow DOM elements to render
+    const timeoutId = setTimeout(updatePadding, 100);
+
+    return () => clearTimeout(timeoutId);
   }, [isMobile, selectedClinic]);
 
   useEffect(() => {

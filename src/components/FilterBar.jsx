@@ -931,6 +931,7 @@ export default function FilterBar() {
             aria-hidden="true"
           />
           <div
+            data-filter-modal
             role="dialog"
             aria-modal="true"
             aria-label="Filter options"
