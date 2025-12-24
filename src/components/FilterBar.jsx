@@ -827,6 +827,9 @@ export default function FilterBar() {
       {/* Mobile filter button */}
       <div
         style={{
+          position: "sticky",
+          top: 0,
+          zIndex: 100,
           borderBottom: `1px solid ${theme.colors.border}`,
           backgroundColor: "white",
           padding: theme.spacing[3],

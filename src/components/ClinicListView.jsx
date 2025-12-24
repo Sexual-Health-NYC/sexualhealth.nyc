@@ -171,23 +171,24 @@ function ClinicCard({ clinic, expanded, onToggle, onShowOnMap, t }) {
           {clinic.name}
         </h3>
         <span
+          aria-hidden="true"
           style={{
             display: "inline-flex",
             alignItems: "center",
             justifyContent: "center",
-            width: "28px",
-            height: "28px",
-            fontSize: "20px",
-            color: theme.colors.primary,
-            backgroundColor: `${theme.colors.primary}15`,
+            width: "32px",
+            height: "32px",
+            fontSize: "24px",
+            fontWeight: theme.fonts.weight.bold,
+            color: "white",
+            backgroundColor: theme.colors.primary,
             borderRadius: theme.borderRadius.full,
             marginInlineStart: theme.spacing[2],
-            transform: expanded ? "rotate(180deg)" : "rotate(0deg)",
-            transition: `transform ${theme.motion.duration.fast}`,
             flexShrink: 0,
+            lineHeight: 1,
           }}
         >
-          ▾
+          {expanded ? "−" : "+"}
         </span>
       </div>
 
