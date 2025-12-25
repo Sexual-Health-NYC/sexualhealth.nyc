@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
 import tidewave from "tidewave/vite-plugin";
 import { execSync } from "child_process";
 
@@ -15,7 +16,7 @@ let commitHash =
   })();
 
 export default defineConfig({
-  plugins: [react(), tidewave()],
+  plugins: [react(), tailwindcss(), tidewave()],
   define: {
     __COMMIT_HASH__: JSON.stringify(commitHash),
   },

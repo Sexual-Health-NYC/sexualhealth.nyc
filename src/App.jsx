@@ -10,7 +10,6 @@ import useAppStore from "./store/useAppStore";
 import useIsMobile from "./hooks/useIsMobile";
 import useEscapeKey from "./hooks/useEscapeKey";
 import useFilteredClinics from "./hooks/useFilteredClinics";
-import theme from "./theme";
 
 export default function App() {
   const { t, i18n } = useTranslation(["messages", "actions"]);
@@ -36,95 +35,22 @@ export default function App() {
   useEscapeKey(handleEscape, !!selectedClinic);
 
   return (
-    <div
-      className="animate-fade-in"
-      style={{
-        width: "100%",
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
+    <div className="animate-fade-in w-full h-screen flex flex-col">
       {/* Skip to main content link for keyboard navigation */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-2 focus:bg-primary focus:text-white"
-        style={{
-          position: "absolute",
-          width: "1px",
-          height: "1px",
-          padding: 0,
-          margin: "-1px",
-          overflow: "hidden",
-          clip: "rect(0, 0, 0, 0)",
-          whiteSpace: "nowrap",
-          border: 0,
-        }}
-        onFocus={(e) => {
-          e.currentTarget.style.position = "absolute";
-          e.currentTarget.style.width = "auto";
-          e.currentTarget.style.height = "auto";
-          e.currentTarget.style.padding = theme.spacing[2];
-          e.currentTarget.style.margin = "0";
-          e.currentTarget.style.overflow = "visible";
-          e.currentTarget.style.clip = "auto";
-          e.currentTarget.style.whiteSpace = "normal";
-          e.currentTarget.style.insetInlineStart = theme.spacing[2];
-          e.currentTarget.style.top = theme.spacing[2];
-          e.currentTarget.style.zIndex = "100";
-          e.currentTarget.style.backgroundColor = theme.colors.primary;
-          e.currentTarget.style.color = "white";
-          e.currentTarget.style.textDecoration = "none";
-        }}
-        onBlur={(e) => {
-          e.currentTarget.style.position = "absolute";
-          e.currentTarget.style.width = "1px";
-          e.currentTarget.style.height = "1px";
-          e.currentTarget.style.padding = "0";
-          e.currentTarget.style.margin = "-1px";
-          e.currentTarget.style.overflow = "hidden";
-          e.currentTarget.style.clip = "rect(0, 0, 0, 0)";
-          e.currentTarget.style.whiteSpace = "nowrap";
-        }}
+        className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-2 focus:bg-primary focus:text-white focus:no-underline focus:top-2 focus:left-2"
       >
         {t("messages:skipToMain")}
       </a>
 
       {/* Visually hidden page title for screen readers */}
-      <h1
-        style={{
-          position: "absolute",
-          width: "1px",
-          height: "1px",
-          padding: 0,
-          margin: "-1px",
-          overflow: "hidden",
-          clip: "rect(0, 0, 0, 0)",
-          whiteSpace: "nowrap",
-          border: 0,
-        }}
-      >
-        {t("messages:siteTitle")}
-      </h1>
+      <h1 className="sr-only">{t("messages:siteTitle")}</h1>
 
       <FilterBar />
 
       {/* Live region for screen reader announcements */}
-      <div
-        aria-live="polite"
-        aria-atomic="true"
-        style={{
-          position: "absolute",
-          width: "1px",
-          height: "1px",
-          padding: 0,
-          margin: "-1px",
-          overflow: "hidden",
-          clip: "rect(0, 0, 0, 0)",
-          whiteSpace: "nowrap",
-          border: 0,
-        }}
-      >
+      <div className="sr-only" aria-live="polite" aria-atomic="true">
         {filteredClinics
           ? t("messages:clinicsFound", { count: filteredClinics.length })
           : ""}
@@ -133,76 +59,29 @@ export default function App() {
       <main
         id="main-content"
         aria-label="Main content"
-        style={{ flex: 1, position: "relative" }}
+        className="flex-1 relative"
       >
         {/* View toggle */}
-        <div
-          style={{
-            position: "absolute",
-            top: theme.spacing[4],
-            left: theme.spacing[4],
-            zIndex: 10,
-            display: "flex",
-            gap: theme.spacing[2],
-          }}
-        >
+        <div className="absolute top-4 left-4 z-10 flex gap-2">
           <button
             onClick={() => setViewMode("map")}
             aria-pressed={viewMode === "map"}
-            className="btn-interactive"
-            style={{
-              padding: `${theme.spacing[2]} ${theme.spacing[3]}`,
-              backgroundColor:
-                viewMode === "map"
-                  ? theme.colors.primary
-                  : theme.colors.surface,
-              color: viewMode === "map" ? "white" : theme.colors.textPrimary,
-              border:
-                viewMode === "map"
-                  ? "none"
-                  : `1px solid ${theme.colors.border}`,
-              borderRadius: theme.borderRadius.sm,
-              fontSize: theme.fonts.size.sm,
-              fontWeight: theme.fonts.weight.medium,
-              cursor: "pointer",
-            }}
-            onFocus={(e) => {
-              e.currentTarget.style.outline = theme.focus.outline;
-              e.currentTarget.style.outlineOffset = theme.focus.outlineOffset;
-            }}
-            onBlur={(e) => {
-              e.currentTarget.style.outline = "none";
-            }}
+            className={`btn-interactive px-3 py-2 rounded-sm text-sm font-medium cursor-pointer focus-ring ${
+              viewMode === "map"
+                ? "bg-primary text-white border-none"
+                : "bg-surface text-text-primary border border-border"
+            }`}
           >
             {t("actions:map")}
           </button>
           <button
             onClick={() => setViewMode("list")}
             aria-pressed={viewMode === "list"}
-            className="btn-interactive"
-            style={{
-              padding: `${theme.spacing[2]} ${theme.spacing[3]}`,
-              backgroundColor:
-                viewMode === "list"
-                  ? theme.colors.primary
-                  : theme.colors.surface,
-              color: viewMode === "list" ? "white" : theme.colors.textPrimary,
-              border:
-                viewMode === "list"
-                  ? "none"
-                  : `1px solid ${theme.colors.border}`,
-              borderRadius: theme.borderRadius.sm,
-              fontSize: theme.fonts.size.sm,
-              fontWeight: theme.fonts.weight.medium,
-              cursor: "pointer",
-            }}
-            onFocus={(e) => {
-              e.currentTarget.style.outline = theme.focus.outline;
-              e.currentTarget.style.outlineOffset = theme.focus.outlineOffset;
-            }}
-            onBlur={(e) => {
-              e.currentTarget.style.outline = "none";
-            }}
+            className={`btn-interactive px-3 py-2 rounded-sm text-sm font-medium cursor-pointer focus-ring ${
+              viewMode === "list"
+                ? "bg-primary text-white border-none"
+                : "bg-surface text-text-primary border border-border"
+            }`}
           >
             {t("actions:list")}
           </button>
