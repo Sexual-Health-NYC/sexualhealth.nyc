@@ -1,12 +1,15 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import useAppStore from "../store/useAppStore";
 import useFilterOptions from "../hooks/useFilterOptions";
 import useVisibleFilters from "../hooks/useVisibleFilters";
-import theme from "../theme";
+import useIsMobile from "../hooks/useIsMobile";
 import FilterControls from "./FilterControls";
 import SearchAutocomplete from "./SearchAutocomplete";
 import DesktopFilterRenderer from "./DesktopFilterRenderer";
+import FilterDropdown from "./filters/FilterDropdown";
+import GestationalDropdown from "./filters/GestationalDropdown";
+import ActiveFilterPill from "./filters/ActiveFilterPill";
 
 export default function FilterBar() {
   const { t } = useTranslation([
@@ -24,18 +27,13 @@ export default function FilterBar() {
     clearFilters,
     setGestationalWeeks,
     selectedClinic,
+    getActiveFilterCount,
   } = useAppStore();
   const filterOptions = useFilterOptions();
   const visibleFilters = useVisibleFilters();
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const isMobile = useIsMobile();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   // Close mobile filter modal when a clinic is selected
   useEffect(() => {
@@ -59,401 +57,33 @@ export default function FilterBar() {
     setFilter(category, new Set(newFilters[category]));
   };
 
-  const getActiveFilterCount = () => {
-    return (
-      filters.services.size +
-      (filters.genderAffirming?.size || 0) +
-      (filters.prep?.size || 0) +
-      filters.insurance.size +
-      filters.access.size +
-      filters.boroughs.size +
-      (filters.gestationalWeeks !== null ? 1 : 0) +
-      (filters.openNow ? 1 : 0) +
-      (filters.openAfter5pm ? 1 : 0) +
-      filters.subwayLines.size +
-      filters.busRoutes.size +
-      (filters.searchQuery.trim() ? 1 : 0)
-    );
-  };
-
   const removeFilter = (category, value) => {
     const newFilters = { ...filters };
     newFilters[category].delete(value);
     setFilter(category, new Set(newFilters[category]));
   };
 
-  const FilterDropdown = ({
-    name,
-    title,
-    options,
-    category,
-    isChildFilter,
-  }) => {
-    const isOpen = openDropdown === name;
-    const activeCount = filters[category].size;
-    const dropdownRef = useRef(null);
+  // Wrapper to pass required props to FilterDropdown
+  const renderFilterDropdown = (props) => (
+    <FilterDropdown
+      {...props}
+      filters={filters}
+      openDropdown={openDropdown}
+      setOpenDropdown={setOpenDropdown}
+      handleCheckbox={handleCheckbox}
+    />
+  );
 
-    // Close dropdown when clicking outside
-    useEffect(() => {
-      if (!isOpen) return;
-
-      const handleClickOutside = (event) => {
-        if (
-          dropdownRef.current &&
-          !dropdownRef.current.contains(event.target)
-        ) {
-          setOpenDropdown(null);
-        }
-      };
-
-      document.addEventListener("mousedown", handleClickOutside);
-      return () =>
-        document.removeEventListener("mousedown", handleClickOutside);
-    }, [isOpen]);
-
-    // Child filters use a subtle tinted background when inactive
-    const inactiveBg = isChildFilter ? theme.colors.childFilterBg : "white";
-    const inactiveBorder = isChildFilter
-      ? theme.colors.childFilterBorder
-      : theme.colors.border;
-
-    return (
-      <div
-        ref={dropdownRef}
-        style={{
-          position: "relative",
-          display: "inline-block",
-          transition: "transform 0.2s ease-out",
-        }}
-      >
-        <button
-          onClick={() => setOpenDropdown(isOpen ? null : name)}
-          aria-expanded={isOpen}
-          aria-haspopup="true"
-          aria-label={`${title} filter${activeCount > 0 ? `, ${activeCount} selected` : ""}`}
-          className={`filter-pill${activeCount > 0 ? " active" : ""}`}
-          style={{
-            padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
-            backgroundColor:
-              activeCount > 0 ? theme.colors.primary : inactiveBg,
-            color: activeCount > 0 ? "white" : theme.colors.textPrimary,
-            border: `2px solid ${activeCount > 0 ? theme.colors.primary : inactiveBorder}`,
-            borderRadius: theme.borderRadius.md,
-            fontSize: theme.fonts.size.sm,
-            fontWeight: theme.fonts.weight.medium,
-            cursor: "pointer",
-            display: "flex",
-            alignItems: "center",
-            gap: theme.spacing[2],
-          }}
-          onFocus={(e) => {
-            e.currentTarget.style.outline = theme.focus.outline;
-            e.currentTarget.style.outlineOffset = theme.focus.outlineOffset;
-          }}
-          onBlur={(e) => {
-            e.currentTarget.style.outline = "none";
-          }}
-        >
-          {title}
-          {activeCount > 0 && (
-            <span
-              style={{
-                backgroundColor: "white",
-                color: theme.colors.primary,
-                borderRadius: theme.borderRadius.full,
-                padding: `0 ${theme.spacing[2]}`,
-                fontSize: theme.fonts.size.xs,
-                fontWeight: theme.fonts.weight.bold,
-                minWidth: "20px",
-                textAlign: "center",
-              }}
-              aria-hidden="true"
-            >
-              {activeCount}
-            </span>
-          )}
-          <span aria-hidden="true">{isOpen ? "▲" : "▼"}</span>
-        </button>
-
-        {isOpen && (
-          <div
-            role="menu"
-            style={{
-              position: "absolute",
-              top: "calc(100% + 4px)",
-              insetInlineStart: 0,
-              backgroundColor: "white",
-              border: `1px solid ${theme.colors.border}`,
-              borderRadius: theme.borderRadius.md,
-              boxShadow: theme.shadows.lg,
-              padding: theme.spacing[2],
-              minWidth: "220px",
-              zIndex: 1000,
-            }}
-          >
-            {options.map((option) => (
-              <label
-                key={option.value}
-                role="menuitemcheckbox"
-                aria-checked={filters[category].has(option.value)}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  padding: theme.spacing[2],
-                  cursor: "pointer",
-                  borderRadius: theme.borderRadius.sm,
-                  transition: `background-color ${theme.transitions.fast}`,
-                  backgroundColor: filters[category].has(option.value)
-                    ? `${theme.colors.primaryLight}15`
-                    : "transparent",
-                }}
-                onMouseEnter={(e) => {
-                  if (!filters[category].has(option.value)) {
-                    e.currentTarget.style.backgroundColor =
-                      theme.colors.surface;
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (!filters[category].has(option.value)) {
-                    e.currentTarget.style.backgroundColor = "transparent";
-                  }
-                }}
-              >
-                <input
-                  type="checkbox"
-                  checked={filters[category].has(option.value)}
-                  onChange={() => handleCheckbox(category, option.value)}
-                  style={{
-                    marginInlineEnd: theme.spacing[2],
-                    width: "18px",
-                    height: "18px",
-                    cursor: "pointer",
-                    accentColor: theme.colors.primary,
-                  }}
-                />
-                <span
-                  style={{
-                    fontSize: theme.fonts.size.sm,
-                    fontWeight: filters[category].has(option.value)
-                      ? theme.fonts.weight.medium
-                      : theme.fonts.weight.normal,
-                    userSelect: "none",
-                    flex: 1,
-                  }}
-                >
-                  {option.label}
-                </span>
-              </label>
-            ))}
-          </div>
-        )}
-      </div>
-    );
-  };
-
-  const GestationalDropdown = () => {
-    const isOpen = openDropdown === "gestational";
-    const hasFilter = filters.gestationalWeeks !== null;
-    const dropdownRef = useRef(null);
-    const { gestationalOptions } = filterOptions;
-    const currentLabel =
-      gestationalOptions.find((o) => o.value === filters.gestationalWeeks)
-        ?.label || t("gestational:weeksPregnant");
-
-    // Close dropdown when clicking outside
-    useEffect(() => {
-      if (!isOpen) return;
-
-      const handleClickOutside = (event) => {
-        if (
-          dropdownRef.current &&
-          !dropdownRef.current.contains(event.target)
-        ) {
-          setOpenDropdown(null);
-        }
-      };
-
-      document.addEventListener("mousedown", handleClickOutside);
-      return () =>
-        document.removeEventListener("mousedown", handleClickOutside);
-    }, [isOpen]);
-
-    return (
-      <div
-        ref={dropdownRef}
-        style={{
-          position: "relative",
-          display: "inline-block",
-          transition: "transform 0.2s ease-out",
-        }}
-      >
-        <button
-          onClick={() => setOpenDropdown(isOpen ? null : "gestational")}
-          aria-expanded={isOpen}
-          aria-haspopup="true"
-          aria-label={`Gestational age filter${hasFilter ? `, ${currentLabel}` : ""}`}
-          className={`filter-pill${hasFilter ? " active" : ""}`}
-          style={{
-            padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
-            backgroundColor: hasFilter
-              ? theme.colors.primary
-              : theme.colors.childFilterBg,
-            color: hasFilter ? "white" : theme.colors.textPrimary,
-            border: `2px solid ${hasFilter ? theme.colors.primary : theme.colors.childFilterBorder}`,
-            borderRadius: theme.borderRadius.md,
-            fontSize: theme.fonts.size.sm,
-            fontWeight: theme.fonts.weight.medium,
-            cursor: "pointer",
-            display: "flex",
-            alignItems: "center",
-            gap: theme.spacing[2],
-          }}
-          onFocus={(e) => {
-            e.currentTarget.style.outline = theme.focus.outline;
-            e.currentTarget.style.outlineOffset = theme.focus.outlineOffset;
-          }}
-          onBlur={(e) => {
-            e.currentTarget.style.outline = "none";
-          }}
-        >
-          {hasFilter ? currentLabel : t("gestational:weeksPregnant")}
-          <span aria-hidden="true">{isOpen ? "▲" : "▼"}</span>
-        </button>
-
-        {isOpen && (
-          <div
-            role="menu"
-            style={{
-              position: "absolute",
-              top: "calc(100% + 4px)",
-              insetInlineStart: 0,
-              backgroundColor: "white",
-              border: `1px solid ${theme.colors.border}`,
-              borderRadius: theme.borderRadius.md,
-              boxShadow: theme.shadows.lg,
-              padding: theme.spacing[2],
-              minWidth: "200px",
-              zIndex: 1000,
-            }}
-          >
-            {gestationalOptions.map((option) => (
-              <label
-                key={option.value ?? "any"}
-                role="menuitemradio"
-                aria-checked={filters.gestationalWeeks === option.value}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  padding: theme.spacing[2],
-                  cursor: "pointer",
-                  borderRadius: theme.borderRadius.sm,
-                  transition: `background-color ${theme.transitions.fast}`,
-                  backgroundColor:
-                    filters.gestationalWeeks === option.value
-                      ? `${theme.colors.accent}15`
-                      : "transparent",
-                }}
-                onMouseEnter={(e) => {
-                  if (filters.gestationalWeeks !== option.value) {
-                    e.currentTarget.style.backgroundColor =
-                      theme.colors.surface;
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (filters.gestationalWeeks !== option.value) {
-                    e.currentTarget.style.backgroundColor = "transparent";
-                  }
-                }}
-              >
-                <input
-                  type="radio"
-                  name="gestational"
-                  checked={filters.gestationalWeeks === option.value}
-                  onChange={() => {
-                    setGestationalWeeks(option.value);
-                    setOpenDropdown(null);
-                  }}
-                  style={{
-                    marginInlineEnd: theme.spacing[2],
-                    width: "18px",
-                    height: "18px",
-                    cursor: "pointer",
-                    accentColor: theme.colors.accent,
-                  }}
-                />
-                <span
-                  style={{
-                    fontSize: theme.fonts.size.sm,
-                    fontWeight:
-                      filters.gestationalWeeks === option.value
-                        ? theme.fonts.weight.medium
-                        : theme.fonts.weight.normal,
-                    userSelect: "none",
-                    flex: 1,
-                  }}
-                >
-                  {option.label}
-                </span>
-              </label>
-            ))}
-          </div>
-        )}
-      </div>
-    );
-  };
-
-  const ActiveFilterPill = ({ category, value, label }) => {
-    const [isHovered, setIsHovered] = useState(false);
-    const [isFocused, setIsFocused] = useState(false);
-
-    return (
-      <span
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        style={{
-          display: "inline-flex",
-          alignItems: "center",
-          gap: theme.spacing[2],
-          padding: `${theme.spacing[1]} ${theme.spacing[3]}`,
-          backgroundColor: isHovered ? "#e6f7f6" : theme.colors.surface,
-          color: theme.colors.primary,
-          border: `1.5px solid ${theme.colors.primary}`,
-          borderRadius: theme.borderRadius.full,
-          fontSize: theme.fonts.size.sm,
-          fontWeight: theme.fonts.weight.medium,
-          transition: `all ${theme.transitions.fast}`,
-          cursor: "default",
-        }}
-      >
-        {label}
-        <button
-          onClick={() => removeFilter(category, value)}
-          aria-label={`Remove ${label} filter`}
-          style={{
-            background: "none",
-            border: "none",
-            color: theme.colors.primary,
-            cursor: "pointer",
-            fontSize: theme.fonts.size.lg,
-            padding: theme.spacing[2],
-            minWidth: "20px",
-            minHeight: "20px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            borderRadius: theme.borderRadius.sm,
-            outline: isFocused ? theme.focus.outline : "none",
-            outlineOffset: isFocused ? theme.focus.outlineOffset : "0",
-            marginInlineEnd: `-${theme.spacing[1]}`,
-          }}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
-        >
-          ×
-        </button>
-      </span>
-    );
-  };
+  // Wrapper to pass required props to GestationalDropdown
+  const renderGestationalDropdown = () => (
+    <GestationalDropdown
+      filters={filters}
+      gestationalOptions={filterOptions.gestationalOptions}
+      openDropdown={openDropdown}
+      setOpenDropdown={setOpenDropdown}
+      setGestationalWeeks={setGestationalWeeks}
+    />
+  );
 
   // Desktop view
   if (!isMobile) {
@@ -461,22 +91,11 @@ export default function FilterBar() {
       <div
         role="region"
         aria-label="Filter clinics"
-        style={{
-          borderBottom: `1px solid ${theme.colors.border}`,
-          backgroundColor: "white",
-          padding: `${theme.spacing[3]} ${theme.spacing[6]}`,
-        }}
+        className="border-b border-border bg-white py-3 px-6"
       >
         {/* Top row: Logo, Search, Clear All, and Language */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: theme.spacing[3],
-            marginBottom: theme.spacing[3],
-          }}
-        >
-          <a href="/" style={{ display: "flex", flexShrink: 0 }}>
+        <div className="flex items-center gap-3 mb-3">
+          <a href="/" className="flex shrink-0">
             <img
               src="/logo-horizontal.png"
               srcSet="/logo-horizontal.png 1x, /logo-horizontal@2x.png 2x, /logo-horizontal@3x.png 3x"
@@ -484,64 +103,19 @@ export default function FilterBar() {
               width={187}
               height={40}
               fetchPriority="high"
-              style={{
-                height: "40px",
-                width: "auto",
-              }}
+              className="h-10 w-auto"
             />
           </a>
 
           <SearchAutocomplete
             placeholder={t("messages:searchByName")}
-            style={{
-              container: { flex: 1, maxWidth: "400px" },
-              input: {
-                style: {
-                  width: "100%",
-                  padding: `${theme.spacing[2]} ${theme.spacing[3]}`,
-                  border: `2px solid ${filters.searchQuery.trim() ? theme.colors.primary : theme.colors.border}`,
-                  borderRadius: theme.borderRadius.md,
-                  fontSize: theme.fonts.size.sm,
-                  fontFamily: theme.fonts.family,
-                },
-                onFocus: (e) => {
-                  e.currentTarget.style.outline = theme.focus.outline;
-                  e.currentTarget.style.outlineOffset =
-                    theme.focus.outlineOffset;
-                  e.currentTarget.style.borderColor = theme.colors.primary;
-                },
-                onBlur: (e) => {
-                  e.currentTarget.style.outline = "none";
-                  e.currentTarget.style.borderColor = filters.searchQuery.trim()
-                    ? theme.colors.primary
-                    : theme.colors.border;
-                },
-              },
-            }}
+            className="flex-1 max-w-[400px]"
           />
 
           {getActiveFilterCount() > 0 && (
             <button
               onClick={clearFilters}
-              className="btn-interactive"
-              style={{
-                padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
-                backgroundColor: "white",
-                color: theme.colors.textSecondary,
-                border: `1px solid ${theme.colors.border}`,
-                borderRadius: theme.borderRadius.md,
-                fontSize: theme.fonts.size.sm,
-                fontWeight: theme.fonts.weight.medium,
-                cursor: "pointer",
-                marginInlineStart: "auto",
-              }}
-              onFocus={(e) => {
-                e.currentTarget.style.outline = theme.focus.outline;
-                e.currentTarget.style.outlineOffset = theme.focus.outlineOffset;
-              }}
-              onBlur={(e) => {
-                e.currentTarget.style.outline = "none";
-              }}
+              className="btn-interactive py-2 px-4 bg-white text-text-secondary border border-border rounded-md text-sm font-medium cursor-pointer ms-auto focus-ring"
             >
               {t("actions:clearAll")}
             </button>
@@ -550,20 +124,14 @@ export default function FilterBar() {
 
         {/* Filter dropdowns row - config-driven */}
         <div
-          style={{
-            display: "flex",
-            gap: theme.spacing[3],
-            flexWrap: "wrap",
-            alignItems: "center",
-            marginBottom: getActiveFilterCount() > 0 ? theme.spacing[3] : 0,
-          }}
+          className={`flex gap-3 flex-wrap items-center ${getActiveFilterCount() > 0 ? "mb-3" : ""}`}
         >
           {visibleFilters.map((config) => (
             <DesktopFilterRenderer
               key={config.id}
               config={config}
-              FilterDropdown={FilterDropdown}
-              GestationalDropdown={GestationalDropdown}
+              FilterDropdown={renderFilterDropdown}
+              GestationalDropdown={renderGestationalDropdown}
             />
           ))}
         </div>
@@ -574,11 +142,7 @@ export default function FilterBar() {
             role="status"
             aria-live="polite"
             aria-label={`${getActiveFilterCount()} filters active`}
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: theme.spacing[2],
-            }}
+            className="flex flex-wrap gap-2"
           >
             {visibleFilters.map((config) => {
               const filterValue = filters[config.category];
@@ -594,6 +158,7 @@ export default function FilterBar() {
                     category={config.category}
                     value={value}
                     label={options.find((o) => o.value === value)?.label}
+                    onRemove={removeFilter}
                   />
                 ));
               }
@@ -606,34 +171,14 @@ export default function FilterBar() {
                 return (
                   <span
                     key="gestational"
-                    style={{
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: theme.spacing[2],
-                      padding: `${theme.spacing[1]} ${theme.spacing[3]}`,
-                      backgroundColor: "#ffe9e9",
-                      color: theme.colors.accent,
-                      border: `1px solid ${theme.colors.accent}`,
-                      borderRadius: theme.borderRadius.full,
-                      fontSize: theme.fonts.size.sm,
-                      fontWeight: theme.fonts.weight.medium,
-                    }}
+                    className="inline-flex items-center gap-2 py-1 px-3 bg-service-abortion-bg text-accent border border-accent rounded-full text-sm font-medium"
                   >
                     {options.find((o) => o.value === filters.gestationalWeeks)
                       ?.label || ""}
                     <button
                       onClick={() => setGestationalWeeks(null)}
                       aria-label="Remove gestational filter"
-                      style={{
-                        background: "none",
-                        border: "none",
-                        color: theme.colors.accent,
-                        cursor: "pointer",
-                        fontSize: theme.fonts.size.base,
-                        padding: 0,
-                        display: "flex",
-                        alignItems: "center",
-                      }}
+                      className="bg-transparent border-none text-accent cursor-pointer text-base p-0 flex items-center"
                     >
                       ×
                     </button>
@@ -653,24 +198,9 @@ export default function FilterBar() {
   return (
     <>
       {/* Mobile filter button */}
-      <div
-        style={{
-          position: "sticky",
-          top: 0,
-          zIndex: 100,
-          borderBottom: `1px solid ${theme.colors.border}`,
-          backgroundColor: "white",
-          padding: theme.spacing[3],
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: theme.spacing[3],
-          }}
-        >
-          <a href="/" style={{ display: "flex" }}>
+      <div className="sticky top-0 z-[100] border-b border-border bg-white p-3">
+        <div className="flex items-center gap-3">
+          <a href="/" className="flex">
             <img
               src="/logo-horizontal.png"
               srcSet="/logo-horizontal.png 1x, /logo-horizontal@2x.png 2x"
@@ -678,46 +208,18 @@ export default function FilterBar() {
               width={140}
               height={30}
               fetchPriority="high"
-              style={{
-                height: "30px",
-                width: "auto",
-              }}
+              className="h-[30px] w-auto"
             />
           </a>
           <button
             onClick={() => setIsModalOpen(true)}
             aria-expanded={isModalOpen}
             aria-label={`${t("actions:filters")}${getActiveFilterCount() > 0 ? `, ${getActiveFilterCount()} active` : ""}`}
-            className="btn-interactive"
-            style={{
-              flex: 1,
-              padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
-              backgroundColor: theme.colors.primary,
-              color: "white",
-              border: "none",
-              borderRadius: theme.borderRadius.md,
-              fontSize: theme.fonts.size.sm,
-              fontWeight: theme.fonts.weight.medium,
-              cursor: "pointer",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: theme.spacing[2],
-            }}
+            className="btn-interactive flex-1 py-2 px-4 bg-primary text-white border-none rounded-md text-sm font-medium cursor-pointer flex items-center justify-center gap-2"
           >
             {t("actions:filters")}
             {getActiveFilterCount() > 0 && (
-              <span
-                style={{
-                  backgroundColor: "white",
-                  color: theme.colors.primary,
-                  borderRadius: theme.borderRadius.full,
-                  padding: `2px ${theme.spacing[2]}`,
-                  fontSize: theme.fonts.size.xs,
-                  fontWeight: theme.fonts.weight.bold,
-                  minWidth: "20px",
-                }}
-              >
+              <span className="bg-white text-primary rounded-full px-2 py-0.5 text-xs font-bold min-w-[20px]">
                 {getActiveFilterCount()}
               </span>
             )}
@@ -725,18 +227,7 @@ export default function FilterBar() {
           {getActiveFilterCount() > 0 && (
             <button
               onClick={clearFilters}
-              className="btn-interactive"
-              style={{
-                padding: `${theme.spacing[2]} ${theme.spacing[3]}`,
-                backgroundColor: "transparent",
-                color: theme.colors.primary,
-                border: `1px solid ${theme.colors.primary}`,
-                borderRadius: theme.borderRadius.md,
-                fontSize: theme.fonts.size.sm,
-                fontWeight: theme.fonts.weight.medium,
-                cursor: "pointer",
-                whiteSpace: "nowrap",
-              }}
+              className="btn-interactive py-2 px-3 bg-transparent text-primary border border-primary rounded-md text-sm font-medium cursor-pointer whitespace-nowrap"
             >
               {t("actions:clearAll")}
             </button>
@@ -749,16 +240,7 @@ export default function FilterBar() {
         <>
           <div
             onClick={() => setIsModalOpen(false)}
-            style={{
-              position: "fixed",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              backgroundColor: "rgba(0, 0, 0, 0.3)",
-              zIndex: 1000,
-              pointerEvents: "none",
-            }}
+            className="fixed inset-0 bg-black/30 z-[1000] pointer-events-none"
             aria-hidden="true"
           />
           <div
@@ -766,112 +248,38 @@ export default function FilterBar() {
             role="dialog"
             aria-modal="true"
             aria-label="Filter options"
-            style={{
-              position: "fixed",
-              bottom: 0,
-              left: 0,
-              right: 0,
-              backgroundColor: "white",
-              borderTopLeftRadius: theme.borderRadius.lg,
-              borderTopRightRadius: theme.borderRadius.lg,
-              maxHeight: "60vh",
-              zIndex: 1001,
-              display: "flex",
-              flexDirection: "column",
-              pointerEvents: "auto",
-            }}
+            className="fixed bottom-0 left-0 right-0 bg-white rounded-t-lg max-h-[60vh] z-[1001] flex flex-col pointer-events-auto"
           >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                padding: theme.spacing[4],
-                paddingBottom: theme.spacing[3],
-                borderBottom: `1px solid ${theme.colors.border}`,
-                flexShrink: 0,
-              }}
-            >
-              <h2
-                style={{
-                  fontSize: theme.fonts.size.xl,
-                  fontWeight: theme.fonts.weight.bold,
-                  margin: 0,
-                }}
-              >
-                {t("actions:filters")}
-              </h2>
+            <div className="flex justify-between items-center p-4 pb-3 border-b border-border shrink-0">
+              <h2 className="text-xl font-bold m-0">{t("actions:filters")}</h2>
               <button
                 onClick={() => setIsModalOpen(false)}
                 aria-label="Close filters"
-                style={{
-                  background: "none",
-                  border: "none",
-                  fontSize: theme.fonts.size["2xl"],
-                  cursor: "pointer",
-                  padding: 0,
-                }}
+                className="bg-transparent border-none text-2xl cursor-pointer p-0"
               >
                 ×
               </button>
             </div>
 
-            <div
-              style={{
-                overflowY: "auto",
-                flex: 1,
-                padding: theme.spacing[4],
-                paddingTop: theme.spacing[3],
-              }}
-            >
+            <div className="overflow-y-auto flex-1 p-4 pt-3">
               <FilterControls mode="mobile" />
             </div>
 
-            <div
-              style={{
-                display: "flex",
-                gap: theme.spacing[3],
-                padding: theme.spacing[4],
-                paddingTop: theme.spacing[3],
-                borderTop: `1px solid ${theme.colors.border}`,
-                flexShrink: 0,
-              }}
-            >
+            <div className="flex gap-3 p-4 pt-3 border-t border-border shrink-0">
               {getActiveFilterCount() > 0 && (
                 <button
                   onClick={() => {
                     clearFilters();
                     setIsModalOpen(false);
                   }}
-                  style={{
-                    flex: 1,
-                    padding: theme.spacing[3],
-                    backgroundColor: "white",
-                    color: theme.colors.textSecondary,
-                    border: `1px solid ${theme.colors.border}`,
-                    borderRadius: theme.borderRadius.md,
-                    fontSize: theme.fonts.size.base,
-                    fontWeight: theme.fonts.weight.medium,
-                    cursor: "pointer",
-                  }}
+                  className="flex-1 p-3 bg-white text-text-secondary border border-border rounded-md text-base font-medium cursor-pointer"
                 >
                   {t("actions:clearAll")}
                 </button>
               )}
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="btn-interactive"
-                style={{
-                  flex: 1,
-                  padding: theme.spacing[3],
-                  backgroundColor: theme.colors.primary,
-                  color: "white",
-                  border: "none",
-                  borderRadius: theme.borderRadius.md,
-                  fontSize: theme.fonts.size.base,
-                  fontWeight: theme.fonts.weight.medium,
-                  cursor: "pointer",
-                }}
+                className="btn-interactive flex-1 p-3 bg-primary text-white border-none rounded-md text-base font-medium cursor-pointer"
               >
                 {t("actions:apply")}
               </button>

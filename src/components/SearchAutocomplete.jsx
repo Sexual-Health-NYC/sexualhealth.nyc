@@ -1,8 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import useAppStore from "../store/useAppStore";
-import theme from "../theme";
 
-export default function SearchAutocomplete({ placeholder, style }) {
+export default function SearchAutocomplete({ placeholder, className }) {
   const { filters, setFilter, clinics } = useAppStore();
   const [showAutocomplete, setShowAutocomplete] = useState(false);
   const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(-1);
@@ -37,7 +36,7 @@ export default function SearchAutocomplete({ placeholder, style }) {
     return (
       <>
         {before}
-        <strong style={{ fontWeight: theme.fonts.weight.bold }}>{match}</strong>
+        <strong className="font-bold">{match}</strong>
         {after}
       </>
     );
@@ -62,7 +61,7 @@ export default function SearchAutocomplete({ placeholder, style }) {
   }, [showAutocomplete]);
 
   return (
-    <div style={{ position: "relative", ...style?.container }}>
+    <div className={`relative ${className || ""}`}>
       <input
         ref={searchInputRef}
         type="search"
@@ -94,16 +93,13 @@ export default function SearchAutocomplete({ placeholder, style }) {
             setSelectedSuggestionIndex(-1);
           }
         }}
-        onFocus={(e) => {
+        onFocus={() => {
           if (filters.searchQuery.trim()) {
             setShowAutocomplete(true);
           }
-          style?.input?.onFocus?.(e);
-        }}
-        onBlur={(e) => {
-          style?.input?.onBlur?.(e);
         }}
         aria-label="Search clinics by name"
+        role="combobox"
         aria-autocomplete="list"
         aria-controls="search-autocomplete"
         aria-expanded={showAutocomplete && suggestions.length > 0}
@@ -111,7 +107,11 @@ export default function SearchAutocomplete({ placeholder, style }) {
         autoComplete="off"
         autoCorrect="off"
         autoCapitalize="off"
-        style={style?.input?.style}
+        className={`w-full py-2 px-3 border-2 rounded-md text-sm focus-ring ${
+          filters.searchQuery.trim()
+            ? "border-primary"
+            : "border-border focus:border-primary"
+        }`}
       />
 
       {showAutocomplete && suggestions.length > 0 && (
@@ -119,20 +119,7 @@ export default function SearchAutocomplete({ placeholder, style }) {
           ref={autocompleteRef}
           id="search-autocomplete"
           role="listbox"
-          style={{
-            position: "absolute",
-            top: "100%",
-            insetInlineStart: 0,
-            insetInlineEnd: 0,
-            marginTop: "4px",
-            backgroundColor: "white",
-            border: `1px solid ${theme.colors.border}`,
-            borderRadius: theme.borderRadius.md,
-            boxShadow: theme.shadows.lg,
-            maxHeight: style?.dropdown?.maxHeight || "300px",
-            overflowY: "auto",
-            zIndex: 1001,
-          }}
+          className="absolute top-full start-0 end-0 mt-1 bg-white border border-border rounded-md shadow-lg max-h-[300px] overflow-y-auto z-[1001]"
         >
           {suggestions.map((clinic, index) => (
             <div
@@ -145,36 +132,15 @@ export default function SearchAutocomplete({ placeholder, style }) {
                 setSelectedSuggestionIndex(-1);
               }}
               onMouseEnter={() => setSelectedSuggestionIndex(index)}
-              style={{
-                padding: `${theme.spacing[2]} ${theme.spacing[3]}`,
-                cursor: "pointer",
-                backgroundColor:
-                  index === selectedSuggestionIndex
-                    ? theme.colors.surface
-                    : "white",
-                borderBottom:
-                  index < suggestions.length - 1
-                    ? `1px solid ${theme.colors.border}`
-                    : "none",
-              }}
+              className={`py-2 px-3 cursor-pointer ${
+                index === selectedSuggestionIndex ? "bg-surface" : "bg-white"
+              } ${index < suggestions.length - 1 ? "border-b border-border" : ""}`}
             >
-              <div
-                style={{
-                  fontSize: theme.fonts.size.sm,
-                  fontWeight: theme.fonts.weight.medium,
-                  color: theme.colors.textPrimary,
-                }}
-              >
+              <div className="text-sm font-medium text-text-primary">
                 {highlightMatch(clinic.name, filters.searchQuery)}
               </div>
               {clinic.borough && (
-                <div
-                  style={{
-                    fontSize: theme.fonts.size.xs,
-                    color: theme.colors.textSecondary,
-                    marginTop: "2px",
-                  }}
-                >
+                <div className="text-xs text-text-secondary mt-0.5">
                   {clinic.borough}
                 </div>
               )}

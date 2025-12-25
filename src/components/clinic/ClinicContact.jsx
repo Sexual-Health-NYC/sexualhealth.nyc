@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import theme from "../../theme";
 
 export default function ClinicContact({ clinic }) {
   const { t } = useTranslation(["sections", "actions"]);
@@ -7,52 +6,29 @@ export default function ClinicContact({ clinic }) {
   if (!clinic.phone && !clinic.website) return null;
 
   return (
-    <div style={{ marginBottom: theme.spacing[3] }}>
+    <div className="mb-3">
       {clinic.phone && !clinic.phone.includes("@") && (
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: theme.spacing[2],
-            marginBottom: theme.spacing[2],
-          }}
-        >
-          <span style={{ fontSize: theme.fonts.size.base }}>
-            <span style={{ color: theme.colors.textSecondary }}>
-              {t("sections:phone")}:{" "}
-            </span>
+        <div className="flex items-center gap-2 mb-2">
+          <span className="text-base">
+            <span className="text-text-secondary">{t("sections:phone")}: </span>
             <a
               href={`tel:${clinic.phone}`}
-              style={{
-                color: theme.colors.primary,
-                textDecoration: "none",
-              }}
+              className="text-primary no-underline"
             >
               {clinic.phone}
             </a>
           </span>
           <a
             href={`tel:${clinic.phone}`}
-            style={{
-              marginInlineStart: "auto",
-              padding: `${theme.spacing[1]} ${theme.spacing[3]}`,
-              backgroundColor: theme.colors.prep,
-              color: "white",
-              textDecoration: "none",
-              borderRadius: theme.borderRadius.sm,
-              fontSize: theme.fonts.size.xs,
-              fontWeight: theme.fonts.weight.medium,
-            }}
+            className="ms-auto py-1 px-3 bg-service-prep-text text-white no-underline rounded-sm text-xs font-medium"
           >
             {t("actions:callNow")}
           </a>
         </div>
       )}
       {clinic.website && (
-        <div style={{ fontSize: theme.fonts.size.base }}>
-          <span style={{ color: theme.colors.textSecondary }}>
-            {t("sections:website")}:{" "}
-          </span>
+        <div className="text-base">
+          <span className="text-text-secondary">{t("sections:website")}: </span>
           <a
             href={
               clinic.website.startsWith("http")
@@ -61,10 +37,7 @@ export default function ClinicContact({ clinic }) {
             }
             target="_blank"
             rel="noopener noreferrer"
-            style={{
-              color: theme.colors.primary,
-              wordBreak: "break-all",
-            }}
+            className="text-primary break-all"
           >
             {clinic.website
               .replace(/^https?:\/\//, "")

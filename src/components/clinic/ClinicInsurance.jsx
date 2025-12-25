@@ -1,16 +1,11 @@
 import { useTranslation } from "react-i18next";
-import theme from "../../theme";
 
 function InfoItem({ text, highlight }) {
   return (
     <div
-      style={{
-        padding: `${theme.spacing[1]} ${theme.spacing[2]}`,
-        backgroundColor: highlight ? theme.colors.surface : "transparent",
-        borderRadius: theme.borderRadius.sm,
-        fontSize: theme.fonts.size.sm,
-        color: theme.colors.textPrimary,
-      }}
+      className={`py-1 px-2 rounded-sm text-sm text-text-primary ${
+        highlight ? "bg-surface" : "bg-transparent"
+      }`}
     >
       ✓ {text}
     </div>
@@ -21,15 +16,8 @@ export default function ClinicInsurance({ clinic }) {
   const { t } = useTranslation(["sections", "insurance", "messages"]);
 
   return (
-    <div style={{ marginBottom: theme.spacing[6] }}>
-      <h3
-        style={{
-          fontSize: theme.fonts.size.base,
-          fontWeight: theme.fonts.weight.semibold,
-          color: theme.colors.textPrimary,
-          marginBottom: theme.spacing[3],
-        }}
-      >
+    <div className="mb-6">
+      <h3 className="text-base font-semibold text-text-primary mb-3">
         {t("sections:insuranceAndCost")}
       </h3>
 
@@ -37,24 +25,11 @@ export default function ClinicInsurance({ clinic }) {
       !clinic.accepts_medicare &&
       !clinic.no_insurance_ok &&
       !clinic.sliding_scale ? (
-        <p
-          style={{
-            margin: 0,
-            color: theme.colors.textSecondary,
-            fontSize: theme.fonts.size.sm,
-            fontStyle: "italic",
-          }}
-        >
+        <p className="m-0 text-text-secondary text-sm italic">
           {t("messages:unknownContactClinic")}
         </p>
       ) : (
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: theme.spacing[1],
-          }}
-        >
+        <div className="flex flex-col gap-1">
           {clinic.accepts_medicaid && (
             <InfoItem text={t("insurance:acceptsMedicaid")} />
           )}

@@ -1,15 +1,9 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import useAppStore from "../store/useAppStore";
-import theme from "../theme";
-import CorrectionFormModal from "./CorrectionFormModal";
-import ClinicStatusBadge from "./clinic/ClinicStatusBadge";
-import ClinicServices from "./clinic/ClinicServices";
-import ClinicAddress from "./clinic/ClinicAddress";
-import ClinicHours from "./clinic/ClinicHours";
-import ClinicContact from "./clinic/ClinicContact";
-import ClinicQuickFacts from "./clinic/ClinicQuickFacts";
+import ClinicCard from "./ClinicCard";
 import VirtualClinicSection from "./VirtualClinicSection";
+import { filterVirtualClinicsByServices } from "../utils/virtualClinics";
 
 export default function ClinicListView({ clinics, onShowMap }) {
   const { t } = useTranslation(["messages", "actions"]);
@@ -18,21 +12,10 @@ export default function ClinicListView({ clinics, onShowMap }) {
   const [expandedId, setExpandedId] = useState(null);
 
   // Filter virtual clinics based on selected service filters
-  // Show virtual clinics section if any filtered service has virtual providers
-  const filteredVirtualClinics = virtualClinics.filter((clinic) => {
-    // If no service filters, don't show virtual section
-    if (filters.services.size === 0) return false;
-
-    // Check if virtual clinic offers any of the selected services
-    return Array.from(filters.services).some((service) => {
-      if (service === "abortion") return clinic.has_abortion;
-      if (service === "gender_affirming") return clinic.has_gender_affirming;
-      if (service === "prep") return clinic.has_prep;
-      if (service === "contraception") return clinic.has_contraception;
-      if (service === "sti_testing") return clinic.has_sti_testing;
-      return false;
-    });
-  });
+  const filteredVirtualClinics = filterVirtualClinicsByServices(
+    virtualClinics,
+    filters.services,
+  );
 
   const showVirtualClinics = filteredVirtualClinics.length > 0;
 
@@ -41,32 +24,15 @@ export default function ClinicListView({ clinics, onShowMap }) {
     !(showVirtualClinics && filteredVirtualClinics.length > 0)
   ) {
     return (
-      <div
-        style={{
-          padding: theme.spacing[8],
-          textAlign: "center",
-          color: theme.colors.textSecondary,
-          fontSize: theme.fonts.size.lg,
-        }}
-      >
-        <p style={{ margin: 0 }}>{t("messages:noMatches")}</p>
-        <p style={{ margin: theme.spacing[2], fontSize: theme.fonts.size.sm }}>
-          {t("messages:tryAdjustingFilters")}
-        </p>
+      <div className="p-8 text-center text-text-secondary text-lg">
+        <p className="m-0">{t("messages:noMatches")}</p>
+        <p className="my-2 text-sm">{t("messages:tryAdjustingFilters")}</p>
       </div>
     );
   }
 
   return (
-    <div
-      style={{
-        height: "100%",
-        overflowY: "auto",
-        padding: theme.spacing[4],
-        paddingTop: "60px",
-        backgroundColor: theme.colors.surface,
-      }}
-    >
+    <div className="h-full overflow-y-auto p-4 pt-[60px] bg-surface">
       {/* Virtual/Telehealth clinics section - shown when any matching service is filtered */}
       {showVirtualClinics && (
         <VirtualClinicSection
@@ -75,14 +41,7 @@ export default function ClinicListView({ clinics, onShowMap }) {
         />
       )}
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-          gap: theme.spacing[4],
-          alignItems: "start",
-        }}
-      >
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-4 items-start">
         {clinics.map((clinic) => (
           <ClinicCard
             key={clinic.id}
@@ -104,191 +63,6 @@ export default function ClinicListView({ clinics, onShowMap }) {
           />
         ))}
       </div>
-    </div>
-  );
-}
-
-function ClinicCard({ clinic, expanded, onToggle, onShowOnMap, t }) {
-  const [showCorrectionForm, setShowCorrectionForm] = useState(false);
-
-  return (
-    <div
-      role="button"
-      tabIndex={0}
-      onClick={onToggle}
-      onKeyDown={(e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          onToggle();
-        }
-      }}
-      aria-expanded={expanded}
-      aria-label={t("messages:viewDetails", { name: clinic.name })}
-      style={{
-        backgroundColor: "white",
-        borderRadius: theme.borderRadius.lg,
-        padding: theme.spacing[4],
-        cursor: "pointer",
-        boxShadow: expanded
-          ? "0 8px 24px rgba(123, 44, 191, 0.18)"
-          : "0 2px 8px rgba(123, 44, 191, 0.08)",
-        transition: `all ${theme.motion.duration.normal} ${theme.motion.easing.gentle}`,
-        border: `2px solid ${expanded ? theme.colors.primary : theme.colors.border}`,
-      }}
-      onMouseEnter={(e) => {
-        if (!expanded) {
-          e.currentTarget.style.boxShadow =
-            "0 8px 20px rgba(123, 44, 191, 0.15)";
-          e.currentTarget.style.borderColor = theme.colors.primaryLight;
-        }
-      }}
-      onMouseLeave={(e) => {
-        if (!expanded) {
-          e.currentTarget.style.boxShadow =
-            "0 2px 8px rgba(123, 44, 191, 0.08)";
-          e.currentTarget.style.borderColor = theme.colors.border;
-        }
-      }}
-    >
-      {/* Header */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "start",
-          marginBottom: theme.spacing[2],
-        }}
-      >
-        <h3
-          style={{
-            fontSize: theme.fonts.size.lg,
-            fontWeight: theme.fonts.weight.semibold,
-            color: theme.colors.textPrimary,
-            margin: 0,
-            flex: 1,
-          }}
-        >
-          {clinic.name}
-        </h3>
-        <span
-          aria-hidden="true"
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            justifyContent: "center",
-            width: "32px",
-            height: "32px",
-            fontSize: "24px",
-            fontWeight: theme.fonts.weight.bold,
-            color: "white",
-            backgroundColor: theme.colors.primary,
-            borderRadius: theme.borderRadius.full,
-            marginInlineStart: theme.spacing[2],
-            flexShrink: 0,
-            lineHeight: 1,
-          }}
-        >
-          {expanded ? "−" : "+"}
-        </span>
-      </div>
-
-      <div style={{ marginBottom: theme.spacing[2] }}>
-        <ClinicStatusBadge clinic={clinic} />
-      </div>
-
-      <div style={{ marginBottom: theme.spacing[2] }}>
-        <ClinicServices clinic={clinic} />
-      </div>
-
-      {!expanded && (
-        <p
-          style={{
-            margin: 0,
-            color: theme.colors.textSecondary,
-            fontSize: theme.fonts.size.sm,
-          }}
-        >
-          {clinic.borough}
-        </p>
-      )}
-
-      {expanded && (
-        <div
-          style={{
-            marginTop: theme.spacing[3],
-            paddingTop: theme.spacing[3],
-            borderTop: `1px solid ${theme.colors.border}`,
-          }}
-          onClick={(e) => e.stopPropagation()} // Stop click from toggling card
-        >
-          <div style={{ marginBottom: theme.spacing[3] }}>
-            <ClinicAddress clinic={clinic} />
-          </div>
-
-          <div style={{ marginBottom: theme.spacing[3] }}>
-            <ClinicQuickFacts clinic={clinic} />
-          </div>
-
-          <ClinicHours clinic={clinic} />
-
-          <ClinicContact clinic={clinic} />
-
-          {/* Report Correction */}
-          <div
-            style={{
-              paddingBottom: theme.spacing[3],
-              marginBottom: theme.spacing[3],
-              borderBottom: `1px solid ${theme.colors.border}`,
-            }}
-          >
-            <button
-              onClick={() => setShowCorrectionForm(!showCorrectionForm)}
-              style={{
-                background: "none",
-                border: "none",
-                color: theme.colors.textSecondary,
-                fontSize: theme.fonts.size.xs,
-                cursor: "pointer",
-                padding: 0,
-                textDecoration: "underline",
-              }}
-            >
-              {showCorrectionForm
-                ? t("actions:cancelCorrection")
-                : t("actions:reportCorrection")}
-            </button>
-            <CorrectionFormModal
-              clinicName={clinic.name}
-              onClose={() => setShowCorrectionForm(false)}
-              isExpanded={showCorrectionForm}
-            />
-          </div>
-
-          <button
-            onClick={onShowOnMap}
-            style={{
-              width: "100%",
-              padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
-              backgroundColor: theme.colors.primary,
-              color: "white",
-              border: "none",
-              borderRadius: theme.borderRadius.md,
-              fontSize: theme.fonts.size.sm,
-              fontWeight: theme.fonts.weight.medium,
-              cursor: "pointer",
-              transition: `background-color ${theme.motion.duration.fast}`,
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = theme.colors.primaryDark;
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = theme.colors.primary;
-            }}
-          >
-            {t("actions:showOnMap")}
-          </button>
-        </div>
-      )}
     </div>
   );
 }

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import theme from "../../theme";
 import { ClipboardIcon, CheckIcon, MapIcon } from "../Icons";
 import { TransitInfo, BusInfo } from "../SubwayBullet";
 
@@ -28,14 +27,8 @@ export default function ClinicAddress({ clinic }) {
 
   return (
     <div>
-      <div
-        style={{
-          display: "flex",
-          gap: theme.spacing[2],
-          alignItems: "flex-start",
-        }}
-      >
-        <div style={{ flex: 1 }}>
+      <div className="flex gap-2 items-start">
+        <div className="flex-1">
           {(() => {
             // Split address: street on first line, city/state/zip on second
             const parts = clinic.address.split(/, (?=[A-Z])/);
@@ -43,23 +36,11 @@ export default function ClinicAddress({ clinic }) {
             const cityStateZip = parts.slice(1).join(", ");
             return (
               <>
-                <div
-                  style={{
-                    color: theme.colors.textPrimary,
-                    fontSize: theme.fonts.size.base,
-                    lineHeight: 1.5,
-                  }}
-                >
+                <div className="text-text-primary text-base leading-relaxed">
                   {street}
                 </div>
                 {cityStateZip && (
-                  <div
-                    style={{
-                      color: theme.colors.textPrimary,
-                      fontSize: theme.fonts.size.base,
-                      lineHeight: 1.5,
-                    }}
-                  >
+                  <div className="text-text-primary text-base leading-relaxed">
                     {cityStateZip}
                   </div>
                 )}
@@ -67,13 +48,7 @@ export default function ClinicAddress({ clinic }) {
             );
           })()}
         </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: theme.spacing[1],
-          }}
-        >
+        <div className="flex flex-col gap-1">
           <button
             onClick={() => {
               let fullAddress = clinic.address;
@@ -90,60 +65,34 @@ export default function ClinicAddress({ clinic }) {
               copiedAddress ? t("actions:copied") : t("actions:copyAddress")
             }
             aria-label={t("actions:copyAddressToClipboard")}
-            style={{
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-              padding: 0,
-              color: copiedAddress ? theme.colors.open : theme.colors.primary,
-              fontSize: theme.fonts.size.sm,
-              textAlign: "start",
-              whiteSpace: "nowrap",
-              transition: `color ${theme.transitions.fast}`,
-              display: "flex",
-              alignItems: "center",
-              gap: "4px",
-            }}
+            className={`bg-transparent border-none cursor-pointer p-0 text-sm text-start whitespace-nowrap transition-colors flex items-center gap-1 ${
+              copiedAddress ? "text-open" : "text-primary"
+            }`}
           >
             {copiedAddress ? (
               <>
-                <CheckIcon style={{ width: "16px", height: "16px" }} />
+                <CheckIcon className="w-4 h-4" />
                 {t("actions:copied")}
               </>
             ) : (
               <>
-                <ClipboardIcon style={{ width: "16px", height: "16px" }} />
+                <ClipboardIcon className="w-4 h-4" />
                 {t("actions:copyAddress")}
               </>
             )}
           </button>
           <button
             onClick={() => setShowDirections(!showDirections)}
-            style={{
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-              padding: 0,
-              color: theme.colors.primary,
-              fontSize: theme.fonts.size.sm,
-              textAlign: "start",
-              whiteSpace: "nowrap",
-              display: "flex",
-              alignItems: "center",
-              gap: "4px",
-            }}
+            className="bg-transparent border-none cursor-pointer p-0 text-primary text-sm text-start whitespace-nowrap flex items-center gap-1"
             aria-expanded={showDirections}
             aria-label={t("actions:getDirections")}
           >
-            <MapIcon style={{ width: "16px", height: "16px" }} />
+            <MapIcon className="w-4 h-4" />
             {t("actions:getDirections")}
             <span
-              style={{
-                display: "inline-block",
-                transform: showDirections ? "rotate(180deg)" : "rotate(0deg)",
-                transition: `transform ${theme.transitions.fast}`,
-                fontSize: "10px",
-              }}
+              className={`inline-block text-[10px] transition-transform ${
+                showDirections ? "rotate-180" : "rotate-0"
+              }`}
             >
               ▼
             </span>
@@ -152,40 +101,18 @@ export default function ClinicAddress({ clinic }) {
       </div>
 
       {showDirections && (
-        <div
-          style={{
-            marginTop: theme.spacing[2],
-            padding: theme.spacing[2],
-            backgroundColor: theme.colors.backgroundAlt,
-            borderRadius: theme.borderRadius.md,
-            display: "flex",
-            flexDirection: "column",
-            gap: theme.spacing[1],
-          }}
-        >
+        <div className="mt-2 p-2 bg-surface rounded-md flex flex-col gap-1">
           {directionsOptions.map((option) => (
             <a
               key={option.name}
               href={option.url}
               target="_blank"
               rel="noopener noreferrer"
-              style={{
-                color: theme.colors.primary,
-                fontSize: theme.fonts.size.sm,
-                textDecoration: "none",
-                display: "flex",
-                alignItems: "center",
-                gap: theme.spacing[2],
-              }}
+              className="text-primary text-sm no-underline flex items-center gap-2"
             >
               {option.name}
               {option.note && (
-                <span
-                  style={{
-                    fontSize: theme.fonts.size.xs,
-                    color: theme.colors.textSecondary,
-                  }}
-                >
+                <span className="text-xs text-text-secondary">
                   ({option.note})
                 </span>
               )}
@@ -196,15 +123,9 @@ export default function ClinicAddress({ clinic }) {
 
       {/* Transit */}
       {(clinic.transit || clinic.bus) && (
-        <div
-          style={{
-            marginTop: theme.spacing[2],
-            fontSize: theme.fonts.size.xs,
-            color: theme.colors.textSecondary,
-          }}
-        >
+        <div className="mt-2 text-xs text-text-secondary">
           {clinic.transit && (
-            <div style={{ marginBottom: theme.spacing[1] }}>
+            <div className="mb-1">
               <TransitInfo transit={clinic.transit} />
             </div>
           )}

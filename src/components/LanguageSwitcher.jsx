@@ -1,6 +1,5 @@
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
-import theme from "../theme";
 
 export default function LanguageSwitcher({ onLanguageChange }) {
   const { i18n } = useTranslation();
@@ -23,23 +22,7 @@ export default function LanguageSwitcher({ onLanguageChange }) {
       value={i18n.language}
       onChange={handleChange}
       aria-label="Select language"
-      style={{
-        padding: `${theme.spacing[2]} ${theme.spacing[3]}`,
-        backgroundColor: theme.colors.surface,
-        color: theme.colors.textPrimary,
-        border: `1px solid ${theme.colors.border}`,
-        borderRadius: theme.borderRadius.sm,
-        fontSize: theme.fonts.size.sm,
-        fontWeight: theme.fonts.weight.medium,
-        cursor: "pointer",
-      }}
-      onFocus={(e) => {
-        e.currentTarget.style.outline = theme.focus.outline;
-        e.currentTarget.style.outlineOffset = theme.focus.outlineOffset;
-      }}
-      onBlur={(e) => {
-        e.currentTarget.style.outline = "none";
-      }}
+      className="py-2 px-3 bg-surface text-text-primary border border-border rounded-sm text-sm font-medium cursor-pointer focus-ring"
     >
       <option value="en">English</option>
       <option value="es">Español</option>

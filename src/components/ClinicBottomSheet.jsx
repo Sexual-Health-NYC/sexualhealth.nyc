@@ -1,6 +1,6 @@
-import { useRef, useEffect } from "react";
+import { useRef, useCallback } from "react";
 import useAppStore from "../store/useAppStore";
-import theme from "../theme";
+import useEscapeKey from "../hooks/useEscapeKey";
 import ClinicDetails from "./clinic/ClinicDetails";
 
 export default function ClinicBottomSheet() {
@@ -9,18 +9,11 @@ export default function ClinicBottomSheet() {
   const startY = useRef(0);
   const currentY = useRef(0);
 
-  useEffect(() => {
-    const handleEscape = (e) => {
-      if (e.key === "Escape" && selectedClinic) {
-        e.preventDefault();
-        e.stopPropagation();
-        selectClinic(null);
-      }
-    };
+  const handleClose = useCallback(() => {
+    selectClinic(null);
+  }, [selectClinic]);
 
-    window.addEventListener("keydown", handleEscape, true);
-    return () => window.removeEventListener("keydown", handleEscape, true);
-  }, [selectedClinic, selectClinic]);
+  useEscapeKey(handleClose, !!selectedClinic);
 
   if (!selectedClinic) return null;
 
@@ -44,7 +37,7 @@ export default function ClinicBottomSheet() {
     if (sheetRef.current) {
       // If dragged down more than 100px, close the sheet
       if (diff > 100) {
-        selectClinic(null);
+        handleClose();
       }
       // Reset position
       sheetRef.current.style.transform = "translateY(0)";
@@ -59,37 +52,13 @@ export default function ClinicBottomSheet() {
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
       onClick={(e) => e.stopPropagation()}
-      style={{
-        position: "fixed",
-        bottom: 0,
-        left: 0,
-        right: 0,
-        backgroundColor: theme.colors.background,
-        borderTopLeftRadius: theme.borderRadius.lg,
-        borderTopRightRadius: theme.borderRadius.lg,
-        boxShadow: theme.shadows.lg,
-        maxHeight: "50vh",
-        overflowY: "auto",
-        zIndex: 20,
-        transition: `transform ${theme.transitions.base}`,
-        animation: `slideInUp ${theme.motion.duration.slow} ${theme.motion.easing.gentle}`,
-      }}
+      className="fixed bottom-0 left-0 right-0 bg-white rounded-t-lg shadow-lg max-h-[50vh] overflow-y-auto z-20 transition-transform duration-200 animate-slide-in-up"
+      style={{ animation: "slideInUp 350ms cubic-bezier(0.4, 0, 0.2, 1)" }}
     >
       {/* Drag handle */}
-      <div
-        style={{
-          width: "40px",
-          height: "4px",
-          backgroundColor: theme.colors.border,
-          borderRadius: theme.borderRadius.full,
-          margin: `${theme.spacing[2]} auto`,
-        }}
-      />
+      <div className="w-10 h-1 bg-border rounded-full mx-auto my-2" />
 
-      <ClinicDetails
-        clinic={selectedClinic}
-        onClose={() => selectClinic(null)}
-      />
+      <ClinicDetails clinic={selectedClinic} onClose={handleClose} />
     </div>
   );
 }

@@ -3,7 +3,6 @@ import Select from "react-select";
 import useAppStore from "../store/useAppStore";
 import useFilterOptions from "../hooks/useFilterOptions";
 import { FILTER_TYPES } from "../config/filterConfig";
-import theme from "../theme";
 import SubwayBullet, { BusBullet } from "./SubwayBullet";
 import transitData from "../data/transitLines.json";
 
@@ -46,24 +45,15 @@ export default function DesktopFilterRenderer({
   // Toggle button
   if (config.type === FILTER_TYPES.TOGGLE) {
     const isActive = filters[config.category];
-    const colorKey = config.desktopStyle?.color || "primary";
-    const bgColor = isActive ? theme.colors[colorKey] : "white";
-    const borderColor = isActive ? theme.colors[colorKey] : theme.colors.border;
 
     return (
       <button
         onClick={() => setFilter(config.category, !isActive)}
-        className={`filter-pill${isActive ? " active" : ""}`}
-        style={{
-          padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
-          backgroundColor: bgColor,
-          color: isActive ? "white" : theme.colors.textPrimary,
-          border: `2px solid ${borderColor}`,
-          borderRadius: theme.borderRadius.md,
-          fontSize: theme.fonts.size.sm,
-          fontWeight: theme.fonts.weight.medium,
-          cursor: "pointer",
-        }}
+        className={`filter-pill py-2 px-4 rounded-md text-sm font-medium cursor-pointer ${
+          isActive
+            ? "bg-primary text-white border-2 border-primary"
+            : "bg-white text-text-primary border-2 border-border"
+        }`}
       >
         {t(config.titleKey)}
       </button>
@@ -78,9 +68,10 @@ export default function DesktopFilterRenderer({
         : transitData.busRoutes;
 
     return (
-      <div style={{ minWidth: "180px" }}>
+      <div className="min-w-[180px]">
         <Select
           isMulti
+          aria-label={t(config.titleKey)}
           placeholder={t(config.placeholderKey || config.titleKey)}
           value={Array.from(filters[config.category]).map((item) => ({
             value: item,
@@ -98,9 +89,7 @@ export default function DesktopFilterRenderer({
           }))}
           formatOptionLabel={({ value }) =>
             config.formatLabel === "subway" ? (
-              <div
-                style={{ display: "flex", alignItems: "center", gap: "8px" }}
-              >
+              <div className="flex items-center gap-2">
                 <SubwayBullet line={value} />
                 <span>{value} train</span>
               </div>
@@ -112,15 +101,13 @@ export default function DesktopFilterRenderer({
             control: (base) => ({
               ...base,
               borderColor:
-                filters[config.category].size > 0
-                  ? theme.colors.primary
-                  : theme.colors.border,
+                filters[config.category].size > 0 ? "#0D8078" : "#dee2e6",
               borderWidth: "2px",
-              "&:hover": { borderColor: theme.colors.primaryLight },
+              "&:hover": { borderColor: "#4ECDC4" },
             }),
             multiValue: (base) => ({
               ...base,
-              backgroundColor: `${theme.colors.primary}20`,
+              backgroundColor: "rgba(13, 128, 120, 0.125)",
             }),
             menu: (base) => ({
               ...base,

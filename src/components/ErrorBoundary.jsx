@@ -1,5 +1,4 @@
 import { Component } from "react";
-import theme from "../theme";
 
 export default class ErrorBoundary extends Component {
   constructor(props) {
@@ -18,91 +17,28 @@ export default class ErrorBoundary extends Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            minHeight: "100vh",
-            padding: theme.spacing[6],
-            backgroundColor: theme.colors.surface,
-            textAlign: "center",
-          }}
-        >
-          <div
-            style={{
-              maxWidth: "500px",
-              padding: theme.spacing[6],
-              backgroundColor: "white",
-              borderRadius: theme.borderRadius.lg,
-              boxShadow: theme.shadows.lg,
-            }}
-          >
-            <h1
-              style={{
-                fontSize: theme.fonts.size["2xl"],
-                fontWeight: theme.fonts.weight.bold,
-                color: theme.colors.error,
-                marginBottom: theme.spacing[4],
-              }}
-            >
+        <div className="flex flex-col items-center justify-center min-h-screen p-6 bg-surface text-center">
+          <div className="max-w-[500px] p-6 bg-white rounded-lg shadow-lg">
+            <h1 className="text-2xl font-bold text-red-600 mb-4">
               Something went wrong
             </h1>
-            <p
-              style={{
-                fontSize: theme.fonts.size.base,
-                color: theme.colors.textSecondary,
-                marginBottom: theme.spacing[6],
-              }}
-            >
+            <p className="text-base text-text-secondary mb-6">
               We encountered an unexpected error. Please try refreshing the
               page.
             </p>
             {this.state.error && (
-              <details
-                style={{
-                  textAlign: "left",
-                  marginBottom: theme.spacing[4],
-                  padding: theme.spacing[3],
-                  backgroundColor: theme.colors.surface,
-                  borderRadius: theme.borderRadius.md,
-                  fontSize: theme.fonts.size.sm,
-                }}
-              >
-                <summary
-                  style={{
-                    cursor: "pointer",
-                    fontWeight: theme.fonts.weight.medium,
-                    marginBottom: theme.spacing[2],
-                  }}
-                >
+              <details className="text-left mb-4 p-3 bg-surface rounded-md text-sm">
+                <summary className="cursor-pointer font-medium mb-2">
                   Error details
                 </summary>
-                <code
-                  style={{
-                    display: "block",
-                    whiteSpace: "pre-wrap",
-                    wordBreak: "break-word",
-                    color: theme.colors.error,
-                  }}
-                >
+                <code className="block whitespace-pre-wrap break-words text-red-600">
                   {this.state.error.toString()}
                 </code>
               </details>
             )}
             <button
               onClick={() => window.location.reload()}
-              style={{
-                padding: `${theme.spacing[3]} ${theme.spacing[6]}`,
-                backgroundColor: theme.colors.primary,
-                color: "white",
-                border: "none",
-                borderRadius: theme.borderRadius.md,
-                fontSize: theme.fonts.size.base,
-                fontWeight: theme.fonts.weight.medium,
-                cursor: "pointer",
-              }}
+              className="py-3 px-6 bg-primary text-white border-none rounded-md text-base font-medium cursor-pointer"
             >
               Reload page
             </button>

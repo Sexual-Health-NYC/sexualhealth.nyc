@@ -1,23 +1,16 @@
-import { useEffect } from "react";
+import { useCallback } from "react";
 import useAppStore from "../store/useAppStore";
-import theme from "../theme";
+import useEscapeKey from "../hooks/useEscapeKey";
 import ClinicDetails from "./clinic/ClinicDetails";
 
 export default function ClinicDetailPanel() {
   const { selectedClinic, selectClinic } = useAppStore();
 
-  useEffect(() => {
-    const handleEscape = (e) => {
-      if (e.key === "Escape" && selectedClinic) {
-        e.preventDefault();
-        e.stopPropagation();
-        selectClinic(null);
-      }
-    };
+  const handleClose = useCallback(() => {
+    selectClinic(null);
+  }, [selectClinic]);
 
-    window.addEventListener("keydown", handleEscape, true);
-    return () => window.removeEventListener("keydown", handleEscape, true);
-  }, [selectedClinic, selectClinic]);
+  useEscapeKey(handleClose, !!selectedClinic);
 
   if (!selectedClinic) return null;
 
@@ -25,23 +18,9 @@ export default function ClinicDetailPanel() {
     <div
       data-detail-panel
       onClick={(e) => e.stopPropagation()}
-      style={{
-        position: "absolute",
-        top: 0,
-        right: 0,
-        width: "400px",
-        height: "100%",
-        backgroundColor: theme.colors.background,
-        boxShadow: theme.shadows.lg,
-        overflowY: "auto",
-        zIndex: 10,
-        animation: `slideInRight ${theme.motion.duration.slow} ${theme.motion.easing.gentle}`,
-      }}
+      className="absolute top-0 right-0 w-[400px] h-full bg-white shadow-lg overflow-y-auto z-10 animate-slide-in-right"
     >
-      <ClinicDetails
-        clinic={selectedClinic}
-        onClose={() => selectClinic(null)}
-      />
+      <ClinicDetails clinic={selectedClinic} onClose={handleClose} />
     </div>
   );
 }
