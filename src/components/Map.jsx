@@ -186,11 +186,18 @@ export default function Map({ filteredClinics, onShowList }) {
       </MapGL>
 
       {/* Virtual/telehealth banner */}
-      {matchingVirtualClinics.length > 0 && onShowList && !selectedClinic && (
+      {matchingVirtualClinics.length > 0 && onShowList && (
         <button
           onClick={onShowList}
-          className={`fixed left-1/2 -translate-x-1/2 flex items-center gap-2 px-4 py-2 bg-white border border-border rounded-full shadow-md cursor-pointer text-sm font-medium text-text-primary whitespace-nowrap z-25 transition-all hover:shadow-lg ${
-            isMobile ? "bottom-[90px]" : "bottom-5"
+          data-telehealth-banner
+          className={`fixed left-1/2 -translate-x-1/2 flex items-center gap-2 px-4 py-2 bg-white border border-border rounded-full shadow-md cursor-pointer text-sm font-medium text-text-primary whitespace-nowrap transition-all hover:shadow-lg ${
+            isMobile
+              ? selectedClinic
+                ? "bottom-[calc(50vh+16px)] z-[1002]" // Above bottom sheet (50vh height + gap)
+                : "bottom-[90px] z-25"
+              : selectedClinic
+                ? "bottom-5 z-25"
+                : "bottom-5 z-25"
           }`}
         >
           <span>💻</span>
