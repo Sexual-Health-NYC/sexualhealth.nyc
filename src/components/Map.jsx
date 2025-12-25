@@ -1,9 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import MapGL, { NavigationControl } from "react-map-gl/mapbox";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import useAppStore from "../store/useAppStore";
+import useIsMobile from "../hooks/useIsMobile";
 import theme from "../theme";
 import ClinicMarkers from "./ClinicMarkers";
 
@@ -33,15 +34,8 @@ export default function Map({ filteredClinics, onShowList }) {
     setMapRef,
   } = useAppStore();
   const mapRef = useRef();
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const isMobile = useIsMobile();
   const previousFilteredClinicsRef = useRef(filteredClinics);
-
-  // Track window resize for mobile detection
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   // Store map ref globally for cluster zoom animations
   // This is set via onLoad callback in MapGL component below

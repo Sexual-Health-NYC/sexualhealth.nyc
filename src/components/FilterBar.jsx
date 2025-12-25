@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import useAppStore from "../store/useAppStore";
 import useFilterOptions from "../hooks/useFilterOptions";
 import useVisibleFilters from "../hooks/useVisibleFilters";
+import useIsMobile from "../hooks/useIsMobile";
 import theme from "../theme";
 import FilterControls from "./FilterControls";
 import SearchAutocomplete from "./SearchAutocomplete";
@@ -27,15 +28,9 @@ export default function FilterBar() {
   } = useAppStore();
   const filterOptions = useFilterOptions();
   const visibleFilters = useVisibleFilters();
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const isMobile = useIsMobile();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   // Close mobile filter modal when a clinic is selected
   useEffect(() => {

@@ -1,5 +1,6 @@
-import { useRef, useEffect } from "react";
+import { useRef, useCallback } from "react";
 import useAppStore from "../store/useAppStore";
+import useEscapeKey from "../hooks/useEscapeKey";
 import theme from "../theme";
 import ClinicDetails from "./clinic/ClinicDetails";
 
@@ -9,18 +10,11 @@ export default function ClinicBottomSheet() {
   const startY = useRef(0);
   const currentY = useRef(0);
 
-  useEffect(() => {
-    const handleEscape = (e) => {
-      if (e.key === "Escape" && selectedClinic) {
-        e.preventDefault();
-        e.stopPropagation();
-        selectClinic(null);
-      }
-    };
+  const handleClose = useCallback(() => {
+    selectClinic(null);
+  }, [selectClinic]);
 
-    window.addEventListener("keydown", handleEscape, true);
-    return () => window.removeEventListener("keydown", handleEscape, true);
-  }, [selectedClinic, selectClinic]);
+  useEscapeKey(handleClose, !!selectedClinic);
 
   if (!selectedClinic) return null;
 
@@ -44,7 +38,7 @@ export default function ClinicBottomSheet() {
     if (sheetRef.current) {
       // If dragged down more than 100px, close the sheet
       if (diff > 100) {
-        selectClinic(null);
+        handleClose();
       }
       // Reset position
       sheetRef.current.style.transform = "translateY(0)";
@@ -86,10 +80,7 @@ export default function ClinicBottomSheet() {
         }}
       />
 
-      <ClinicDetails
-        clinic={selectedClinic}
-        onClose={() => selectClinic(null)}
-      />
+      <ClinicDetails clinic={selectedClinic} onClose={handleClose} />
     </div>
   );
 }

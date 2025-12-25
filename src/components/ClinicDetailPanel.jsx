@@ -1,23 +1,17 @@
-import { useEffect } from "react";
+import { useCallback } from "react";
 import useAppStore from "../store/useAppStore";
+import useEscapeKey from "../hooks/useEscapeKey";
 import theme from "../theme";
 import ClinicDetails from "./clinic/ClinicDetails";
 
 export default function ClinicDetailPanel() {
   const { selectedClinic, selectClinic } = useAppStore();
 
-  useEffect(() => {
-    const handleEscape = (e) => {
-      if (e.key === "Escape" && selectedClinic) {
-        e.preventDefault();
-        e.stopPropagation();
-        selectClinic(null);
-      }
-    };
+  const handleClose = useCallback(() => {
+    selectClinic(null);
+  }, [selectClinic]);
 
-    window.addEventListener("keydown", handleEscape, true);
-    return () => window.removeEventListener("keydown", handleEscape, true);
-  }, [selectedClinic, selectClinic]);
+  useEscapeKey(handleClose, !!selectedClinic);
 
   if (!selectedClinic) return null;
 
@@ -38,10 +32,7 @@ export default function ClinicDetailPanel() {
         animation: `slideInRight ${theme.motion.duration.slow} ${theme.motion.easing.gentle}`,
       }}
     >
-      <ClinicDetails
-        clinic={selectedClinic}
-        onClose={() => selectClinic(null)}
-      />
+      <ClinicDetails clinic={selectedClinic} onClose={handleClose} />
     </div>
   );
 }
