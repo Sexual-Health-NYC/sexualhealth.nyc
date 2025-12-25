@@ -72,7 +72,6 @@ export default function DesktopFilterRenderer({
       <div className="min-w-[180px]">
         <Select
           isMulti
-          unstyled
           aria-label={t(config.titleKey)}
           placeholder={t(config.placeholderKey || config.titleKey)}
           value={Array.from(filters[config.category]).map((item) => ({
@@ -99,38 +98,103 @@ export default function DesktopFilterRenderer({
               <BusBullet route={value} />
             )
           }
-          classNames={{
-            control: () =>
-              `flex items-center min-h-[38px] px-2 rounded-md border-2 cursor-pointer text-sm font-medium transition-all ${
-                hasSelection
-                  ? "bg-primary border-primary text-white"
-                  : "bg-white border-border text-text-primary hover:border-primary-light"
-              }`,
-            valueContainer: () => "gap-1 py-0.5",
-            placeholder: () => "text-text-primary font-medium",
-            input: () => (hasSelection ? "text-white" : "text-text-primary"),
-            multiValue: () =>
-              `rounded px-1 ${hasSelection ? "bg-white/25" : "bg-primary/15"}`,
-            multiValueLabel: () =>
-              `text-sm px-1 ${hasSelection ? "text-white" : "text-text-primary"}`,
-            multiValueRemove: () =>
-              `rounded-r px-1 hover:bg-white/30 ${hasSelection ? "text-white" : "text-text-secondary"}`,
-            dropdownIndicator: () =>
-              `p-1.5 ${hasSelection ? "text-white" : "text-text-secondary"}`,
-            clearIndicator: () =>
-              `p-1.5 ${hasSelection ? "text-white" : "text-text-secondary"}`,
-            indicatorSeparator: () => "hidden",
-            menu: () =>
-              "mt-1 bg-white border border-border rounded-md shadow-lg z-[1000]",
-            menuList: () => "p-1",
-            option: ({ isSelected, isFocused }) =>
-              `text-sm rounded px-3 py-2 cursor-pointer ${
-                isSelected
-                  ? "bg-primary text-white"
-                  : isFocused
-                    ? "bg-surface"
-                    : "bg-white text-text-primary"
-              }`,
+          styles={{
+            control: (base, state) => ({
+              ...base,
+              minHeight: "38px",
+              backgroundColor: hasSelection ? "#0D8078" : "white",
+              borderColor: hasSelection ? "#0D8078" : "#dee2e6",
+              borderWidth: "2px",
+              borderRadius: "6px",
+              fontSize: "0.875rem",
+              fontWeight: 500,
+              cursor: "pointer",
+              boxShadow: state.isFocused
+                ? "0 0 0 2px rgba(13, 128, 120, 0.5)"
+                : "none",
+              "&:hover": {
+                borderColor: hasSelection ? "#047568" : "#4ECDC4",
+              },
+            }),
+            valueContainer: (base) => ({
+              ...base,
+              padding: "2px 8px",
+            }),
+            placeholder: (base) => ({
+              ...base,
+              color: "#212529",
+              fontWeight: 500,
+            }),
+            input: (base) => ({
+              ...base,
+              color: hasSelection ? "white" : "#212529",
+            }),
+            singleValue: (base) => ({
+              ...base,
+              color: hasSelection ? "white" : "#212529",
+            }),
+            multiValue: (base) => ({
+              ...base,
+              backgroundColor: hasSelection
+                ? "rgba(255,255,255,0.25)"
+                : "rgba(13, 128, 120, 0.15)",
+              borderRadius: "4px",
+            }),
+            multiValueLabel: (base) => ({
+              ...base,
+              fontSize: "0.875rem",
+              color: hasSelection ? "white" : "#212529",
+              padding: "2px 6px",
+            }),
+            multiValueRemove: (base) => ({
+              ...base,
+              color: hasSelection ? "white" : "#6c757d",
+              borderRadius: "0 4px 4px 0",
+              "&:hover": {
+                backgroundColor: hasSelection
+                  ? "rgba(255,255,255,0.3)"
+                  : "rgba(13, 128, 120, 0.25)",
+                color: hasSelection ? "white" : "#212529",
+              },
+            }),
+            dropdownIndicator: (base) => ({
+              ...base,
+              color: hasSelection ? "white" : "#6c757d",
+              padding: "6px",
+              "&:hover": { color: hasSelection ? "white" : "#212529" },
+            }),
+            clearIndicator: (base) => ({
+              ...base,
+              color: hasSelection ? "white" : "#6c757d",
+              padding: "6px",
+              "&:hover": { color: hasSelection ? "white" : "#212529" },
+            }),
+            indicatorSeparator: () => ({ display: "none" }),
+            menu: (base) => ({
+              ...base,
+              zIndex: 1000,
+              borderRadius: "6px",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+              border: "1px solid #dee2e6",
+            }),
+            menuList: (base) => ({
+              ...base,
+              padding: "4px",
+            }),
+            option: (base, state) => ({
+              ...base,
+              fontSize: "0.875rem",
+              borderRadius: "4px",
+              margin: "2px 0",
+              backgroundColor: state.isSelected
+                ? "#0D8078"
+                : state.isFocused
+                  ? "#f8f9fa"
+                  : "white",
+              color: state.isSelected ? "white" : "#212529",
+              cursor: "pointer",
+              "&:active": { backgroundColor: "#4ECDC4" },
+            }),
           }}
         />
       </div>
