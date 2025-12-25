@@ -132,77 +132,19 @@ export default function MobileFilterRenderer({
             )
           }
           styles={{
-            control: (base, state) => ({
+            control: (base) => ({
               ...base,
-              minHeight: "44px",
-              backgroundColor: hasSelection ? "#0D8078" : "white",
               borderColor: hasSelection ? "#0D8078" : "#dee2e6",
               borderWidth: "2px",
-              borderRadius: "6px",
-              fontSize: "1rem",
-              boxShadow: state.isFocused
-                ? "0 0 0 2px rgba(13, 128, 120, 0.5)"
-                : "none",
-              "&:hover": {
-                borderColor: hasSelection ? "#047568" : "#4ECDC4",
-              },
-            }),
-            valueContainer: (base) => ({
-              ...base,
-              padding: "4px 12px",
-            }),
-            placeholder: (base) => ({
-              ...base,
-              color: "#212529",
-            }),
-            input: (base) => ({
-              ...base,
-              color: hasSelection ? "white" : "#212529",
+              "&:hover": { borderColor: "#4ECDC4" },
             }),
             multiValue: (base) => ({
               ...base,
-              backgroundColor: hasSelection
-                ? "rgba(255,255,255,0.2)"
-                : "rgba(13, 128, 120, 0.125)",
+              backgroundColor: "rgba(13, 128, 120, 0.125)",
             }),
-            multiValueLabel: (base) => ({
-              ...base,
-              color: hasSelection ? "white" : "#212529",
-            }),
-            multiValueRemove: (base) => ({
-              ...base,
-              color: hasSelection ? "white" : "#212529",
-              "&:hover": {
-                backgroundColor: hasSelection
-                  ? "rgba(255,255,255,0.3)"
-                  : "rgba(13, 128, 120, 0.2)",
-                color: hasSelection ? "white" : "#212529",
-              },
-            }),
-            dropdownIndicator: (base) => ({
-              ...base,
-              color: hasSelection ? "white" : "#6c757d",
-              "&:hover": { color: hasSelection ? "white" : "#212529" },
-            }),
-            clearIndicator: (base) => ({
-              ...base,
-              color: hasSelection ? "white" : "#6c757d",
-              "&:hover": { color: hasSelection ? "white" : "#212529" },
-            }),
-            indicatorSeparator: () => ({ display: "none" }),
             menu: (base) => ({
               ...base,
               zIndex: 1000,
-            }),
-            option: (base, state) => ({
-              ...base,
-              backgroundColor: state.isSelected
-                ? "#0D8078"
-                : state.isFocused
-                  ? "#f8f9fa"
-                  : "white",
-              color: state.isSelected ? "white" : "#212529",
-              "&:active": { backgroundColor: "#4ECDC4" },
             }),
           }}
         />
