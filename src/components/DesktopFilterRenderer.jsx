@@ -66,6 +66,7 @@ export default function DesktopFilterRenderer({
       config.dataSource === "transitData.subwayLines"
         ? transitData.subwayLines
         : transitData.busRoutes;
+    const hasSelection = filters[config.category].size > 0;
 
     return (
       <div className="min-w-[180px]">
@@ -101,14 +102,18 @@ export default function DesktopFilterRenderer({
             control: (base, state) => ({
               ...base,
               minHeight: "38px",
-              borderColor:
-                filters[config.category].size > 0 ? "#0D8078" : "#dee2e6",
+              backgroundColor: hasSelection ? "#0D8078" : "white",
+              borderColor: hasSelection ? "#0D8078" : "#dee2e6",
               borderWidth: "2px",
               borderRadius: "6px",
               fontSize: "0.875rem",
               fontWeight: 500,
+              cursor: "pointer",
               boxShadow: state.isFocused ? "0 0 0 2px #0D8078" : "none",
-              "&:hover": { borderColor: "#4ECDC4" },
+              "&:hover": {
+                borderColor: hasSelection ? "#0D8078" : "#4ECDC4",
+                transform: "translateY(-1px)",
+              },
             }),
             valueContainer: (base) => ({
               ...base,
@@ -119,21 +124,56 @@ export default function DesktopFilterRenderer({
               color: "#212529",
               fontWeight: 500,
             }),
+            singleValue: (base) => ({
+              ...base,
+              color: hasSelection ? "white" : "#212529",
+            }),
             multiValue: (base) => ({
               ...base,
-              backgroundColor: "rgba(13, 128, 120, 0.125)",
+              backgroundColor: hasSelection
+                ? "rgba(255,255,255,0.2)"
+                : "rgba(13, 128, 120, 0.125)",
             }),
             multiValueLabel: (base) => ({
               ...base,
               fontSize: "0.875rem",
+              color: hasSelection ? "white" : "#212529",
             }),
+            multiValueRemove: (base) => ({
+              ...base,
+              color: hasSelection ? "white" : "#212529",
+              "&:hover": {
+                backgroundColor: hasSelection
+                  ? "rgba(255,255,255,0.3)"
+                  : "rgba(13, 128, 120, 0.2)",
+                color: hasSelection ? "white" : "#212529",
+              },
+            }),
+            dropdownIndicator: (base) => ({
+              ...base,
+              color: hasSelection ? "white" : "#212529",
+              "&:hover": { color: hasSelection ? "white" : "#212529" },
+            }),
+            clearIndicator: (base) => ({
+              ...base,
+              color: hasSelection ? "white" : "#212529",
+              "&:hover": { color: hasSelection ? "white" : "#212529" },
+            }),
+            indicatorSeparator: () => ({ display: "none" }),
             menu: (base) => ({
               ...base,
               zIndex: 1000,
             }),
-            option: (base) => ({
+            option: (base, state) => ({
               ...base,
               fontSize: "0.875rem",
+              backgroundColor: state.isSelected
+                ? "#0D8078"
+                : state.isFocused
+                  ? "#f8f9fa"
+                  : "white",
+              color: state.isSelected ? "white" : "#212529",
+              "&:active": { backgroundColor: "#4ECDC4" },
             }),
           }}
         />

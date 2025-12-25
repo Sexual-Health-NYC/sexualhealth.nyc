@@ -27,11 +27,7 @@ export default function Modal({ isOpen, onClose, title, children, className }) {
             </div>
           )}
           <Dialog.Description asChild>
-            <div
-              className={
-                title ? "p-4 text-sm text-text-primary leading-relaxed" : ""
-              }
-            >
+            <div className="p-4 text-sm text-text-primary leading-relaxed [&>p]:mb-3 [&>p:last-child]:mb-0">
               {children}
             </div>
           </Dialog.Description>

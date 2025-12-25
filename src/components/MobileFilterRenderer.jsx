@@ -99,6 +99,7 @@ export default function MobileFilterRenderer({
       config.dataSource === "transitData.subwayLines"
         ? transitData.subwayLines
         : transitData.busRoutes;
+    const hasSelection = filters[config.category].size > 0;
 
     return (
       <FilterSection title={t(config.titleKey)}>
@@ -134,13 +135,13 @@ export default function MobileFilterRenderer({
             control: (base, state) => ({
               ...base,
               minHeight: "44px",
-              borderColor:
-                filters[config.category].size > 0 ? "#0D8078" : "#dee2e6",
+              backgroundColor: hasSelection ? "#0D8078" : "white",
+              borderColor: hasSelection ? "#0D8078" : "#dee2e6",
               borderWidth: "2px",
               borderRadius: "6px",
               fontSize: "1rem",
               boxShadow: state.isFocused ? "0 0 0 2px #0D8078" : "none",
-              "&:hover": { borderColor: "#4ECDC4" },
+              "&:hover": { borderColor: hasSelection ? "#0D8078" : "#4ECDC4" },
             }),
             valueContainer: (base) => ({
               ...base,
@@ -152,7 +153,27 @@ export default function MobileFilterRenderer({
             }),
             multiValue: (base) => ({
               ...base,
-              backgroundColor: "rgba(13, 128, 120, 0.125)",
+              backgroundColor: hasSelection
+                ? "rgba(255,255,255,0.2)"
+                : "rgba(13, 128, 120, 0.125)",
+            }),
+            multiValueLabel: (base) => ({
+              ...base,
+              color: hasSelection ? "white" : "#212529",
+            }),
+            dropdownIndicator: (base) => ({
+              ...base,
+              color: hasSelection ? "white" : "#212529",
+            }),
+            indicatorSeparator: () => ({ display: "none" }),
+            option: (base, state) => ({
+              ...base,
+              backgroundColor: state.isSelected
+                ? "#0D8078"
+                : state.isFocused
+                  ? "#f8f9fa"
+                  : "white",
+              color: state.isSelected ? "white" : "#212529",
             }),
           }}
         />
