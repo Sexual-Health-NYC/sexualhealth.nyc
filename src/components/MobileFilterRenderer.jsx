@@ -131,12 +131,24 @@ export default function MobileFilterRenderer({
             )
           }
           styles={{
-            control: (base) => ({
+            control: (base, state) => ({
               ...base,
+              minHeight: "44px",
               borderColor:
                 filters[config.category].size > 0 ? "#0D8078" : "#dee2e6",
               borderWidth: "2px",
+              borderRadius: "6px",
+              fontSize: "1rem",
+              boxShadow: state.isFocused ? "0 0 0 2px #0D8078" : "none",
               "&:hover": { borderColor: "#4ECDC4" },
+            }),
+            valueContainer: (base) => ({
+              ...base,
+              padding: "4px 12px",
+            }),
+            placeholder: (base) => ({
+              ...base,
+              color: "#212529",
             }),
             multiValue: (base) => ({
               ...base,

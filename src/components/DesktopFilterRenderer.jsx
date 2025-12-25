@@ -98,20 +98,42 @@ export default function DesktopFilterRenderer({
             )
           }
           styles={{
-            control: (base) => ({
+            control: (base, state) => ({
               ...base,
+              minHeight: "38px",
               borderColor:
                 filters[config.category].size > 0 ? "#0D8078" : "#dee2e6",
               borderWidth: "2px",
+              borderRadius: "6px",
+              fontSize: "0.875rem",
+              fontWeight: 500,
+              boxShadow: state.isFocused ? "0 0 0 2px #0D8078" : "none",
               "&:hover": { borderColor: "#4ECDC4" },
+            }),
+            valueContainer: (base) => ({
+              ...base,
+              padding: "2px 8px",
+            }),
+            placeholder: (base) => ({
+              ...base,
+              color: "#212529",
+              fontWeight: 500,
             }),
             multiValue: (base) => ({
               ...base,
               backgroundColor: "rgba(13, 128, 120, 0.125)",
             }),
+            multiValueLabel: (base) => ({
+              ...base,
+              fontSize: "0.875rem",
+            }),
             menu: (base) => ({
               ...base,
               zIndex: 1000,
+            }),
+            option: (base) => ({
+              ...base,
+              fontSize: "0.875rem",
             }),
           }}
         />
