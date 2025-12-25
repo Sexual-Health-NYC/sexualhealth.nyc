@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useForm } from "react-hook-form";
 
 export default function CorrectionFormModal({
   clinicName,
@@ -7,20 +8,22 @@ export default function CorrectionFormModal({
   isExpanded,
 }) {
   const { t } = useTranslation(["forms"]);
-  const [correction, setCorrection] = useState("");
-  const [email, setEmail] = useState("");
   const [status, setStatus] = useState("idle");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      correction: "",
+      email: "",
+    },
+  });
 
-    if (!correction.trim()) {
-      setStatus("error");
-      setMessage(t("forms:correctionRequired"));
-      return;
-    }
-
+  const onSubmit = async (data) => {
     setStatus("submitting");
 
     try {
@@ -29,26 +32,25 @@ export default function CorrectionFormModal({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           clinicName,
-          correction: correction.trim(),
-          email: email.trim() || undefined,
+          correction: data.correction.trim(),
+          email: data.email.trim() || undefined,
         }),
       });
 
-      const data = await response.json();
+      const result = await response.json();
 
       if (response.ok) {
         setStatus("success");
-        setMessage(data.message || t("forms:correctionSuccess"));
+        setMessage(result.message || t("forms:correctionSuccess"));
         setTimeout(() => {
-          setCorrection("");
-          setEmail("");
+          reset();
           setStatus("idle");
           setMessage("");
           onClose();
         }, 3000);
       } else {
         setStatus("error");
-        setMessage(data.error || t("forms:correctionError"));
+        setMessage(result.error || t("forms:correctionError"));
       }
     } catch {
       setStatus("error");
@@ -64,7 +66,7 @@ export default function CorrectionFormModal({
         {t("forms:correctionFormDescription")} <strong>{clinicName}</strong>.
       </p>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-3">
           <label
             htmlFor="correction"
@@ -75,13 +77,20 @@ export default function CorrectionFormModal({
           </label>
           <textarea
             id="correction"
-            required
-            value={correction}
-            onChange={(e) => setCorrection(e.target.value)}
+            {...register("correction", {
+              required: t("forms:correctionRequired"),
+            })}
             placeholder={t("forms:correctionPlaceholder")}
             rows={4}
-            className="w-full p-3 border border-border rounded-md text-base resize-y focus-ring focus:border-primary"
+            className={`w-full p-3 border rounded-md text-base resize-y focus-ring focus:border-primary ${
+              errors.correction ? "border-red-500" : "border-border"
+            }`}
           />
+          {errors.correction && (
+            <p className="text-xs text-red-600 mt-1">
+              {errors.correction.message}
+            </p>
+          )}
         </div>
 
         <div className="mb-3">
@@ -94,11 +103,20 @@ export default function CorrectionFormModal({
           <input
             id="email"
             type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            {...register("email", {
+              pattern: {
+                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                message: t("forms:invalidEmail", "Invalid email address"),
+              },
+            })}
             placeholder={t("forms:emailPlaceholder")}
-            className="w-full p-3 border border-border rounded-md text-base focus-ring focus:border-primary"
+            className={`w-full p-3 border rounded-md text-base focus-ring focus:border-primary ${
+              errors.email ? "border-red-500" : "border-border"
+            }`}
           />
+          {errors.email && (
+            <p className="text-xs text-red-600 mt-1">{errors.email.message}</p>
+          )}
           <p className="text-xs text-text-secondary mt-1 mb-0">
             {t("forms:emailDisclaimer")}
           </p>

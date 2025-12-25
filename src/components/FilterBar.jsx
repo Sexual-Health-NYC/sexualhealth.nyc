@@ -79,8 +79,6 @@ export default function FilterBar() {
     <GestationalDropdown
       filters={filters}
       gestationalOptions={filterOptions.gestationalOptions}
-      openDropdown={openDropdown}
-      setOpenDropdown={setOpenDropdown}
       setGestationalWeeks={setGestationalWeeks}
     />
   );

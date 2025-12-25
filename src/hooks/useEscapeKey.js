@@ -1,28 +1,24 @@
-import { useEffect, useCallback } from "react";
+import { useEventListener } from "usehooks-ts";
+import { useCallback } from "react";
 
 /**
  * Hook to handle Escape key press.
- * Stops propagation to prevent multiple handlers firing.
+ * Wrapper around usehooks-ts useEventListener.
  *
  * @param {Function} onEscape - Callback when Escape is pressed
  * @param {boolean} isActive - Whether the handler is active (default: true)
  */
 export default function useEscapeKey(onEscape, isActive = true) {
-  const handleEscape = useCallback(
+  const handleKeyDown = useCallback(
     (e) => {
-      if (e.key === "Escape") {
+      if (isActive && e.key === "Escape") {
         e.preventDefault();
         e.stopPropagation();
         onEscape();
       }
     },
-    [onEscape],
+    [onEscape, isActive],
   );
 
-  useEffect(() => {
-    if (!isActive) return;
-
-    window.addEventListener("keydown", handleEscape, true);
-    return () => window.removeEventListener("keydown", handleEscape, true);
-  }, [handleEscape, isActive]);
+  useEventListener("keydown", handleKeyDown);
 }
