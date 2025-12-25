@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import theme from "../../theme";
 import { getOpenStatus, isHoliday, getHolidayKey } from "../../utils/hours";
 
 export default function ClinicStatusBadge({ clinic }) {
@@ -14,26 +13,11 @@ export default function ClinicStatusBadge({ clinic }) {
   if (!openStatus) return null;
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: theme.spacing[1],
-      }}
-    >
+    <div className="flex flex-col gap-1">
       <span
-        style={{
-          display: "inline-block",
-          padding: `2px ${theme.spacing[2]}`,
-          backgroundColor: openStatus.isOpen
-            ? theme.colors.open
-            : theme.colors.closed,
-          color: "white",
-          borderRadius: theme.borderRadius.sm,
-          fontSize: theme.fonts.size.xs,
-          fontWeight: theme.fonts.weight.medium,
-          width: "fit-content",
-        }}
+        className={`inline-block py-0.5 px-2 text-white rounded-sm text-xs font-medium w-fit ${
+          openStatus.isOpen ? "bg-open" : "bg-closed"
+        }`}
       >
         {openStatus.isOpen
           ? openStatus.closesAt
@@ -51,13 +35,7 @@ export default function ClinicStatusBadge({ clinic }) {
               : t("messages:closed")}
       </span>
       {holidayToday && (
-        <span
-          style={{
-            fontSize: theme.fonts.size.xs,
-            color: theme.colors.textSecondary,
-            fontStyle: "italic",
-          }}
-        >
+        <span className="text-xs text-text-secondary italic">
           {t("messages:holidayHoursWarning", { holiday: holidayName })}
         </span>
       )}

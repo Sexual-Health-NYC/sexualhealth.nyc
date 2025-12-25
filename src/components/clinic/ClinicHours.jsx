@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import theme from "../../theme";
 import { formatHoursForDisplay } from "../../utils/hours";
 import { CalendarIcon } from "../Icons";
 
@@ -19,73 +18,29 @@ export default function ClinicHours({ clinic }) {
     return null;
 
   return (
-    <div style={{ marginBottom: theme.spacing[3] }}>
-      <h3
-        style={{
-          fontSize: theme.fonts.size.sm,
-          fontWeight: theme.fonts.weight.semibold,
-          color: theme.colors.textSecondary,
-          margin: `0 0 ${theme.spacing[2]} 0`,
-          textTransform: "uppercase",
-          letterSpacing: "0.5px",
-        }}
-      >
+    <div className="mb-3">
+      <h3 className="text-sm font-semibold text-text-secondary m-0 mb-2 uppercase tracking-wide">
         {t("sections:hours")}
       </h3>
       {clinic.appointment_only && (
-        <div
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: theme.spacing[1],
-            backgroundColor: theme.colors.warningBg || "#FEF3C7",
-            color: theme.colors.warningText || "#92400E",
-            padding: `${theme.spacing[1]} ${theme.spacing[2]}`,
-            borderRadius: theme.borderRadius.sm,
-            fontSize: theme.fonts.size.sm,
-            fontWeight: theme.fonts.weight.medium,
-            marginBottom: theme.spacing[2],
-          }}
-        >
-          <CalendarIcon style={{ width: "16px", height: "16px" }} />
+        <div className="inline-flex items-center gap-1 bg-amber-100 text-amber-800 py-1 px-2 rounded-sm text-sm font-medium mb-2">
+          <CalendarIcon className="w-4 h-4" />
           <span>{t("messages:appointmentOnly")}</span>
         </div>
       )}
       {formattedHours &&
         formattedHours.map((dept, i) => (
-          <div key={i} style={{ marginBottom: theme.spacing[2] }}>
+          <div key={i} className="mb-2">
             {formattedHours.length > 1 && (
-              <p
-                style={{
-                  margin: `0 0 ${theme.spacing[1]} 0`,
-                  fontSize: theme.fonts.size.sm,
-                  fontWeight: theme.fonts.weight.medium,
-                  color: theme.colors.textSecondary,
-                }}
-              >
+              <p className="m-0 mb-1 text-sm font-medium text-text-secondary">
                 {t(dept.department, { ns: "dynamic" })}
               </p>
             )}
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "2px",
-              }}
-            >
+            <div className="flex flex-col gap-0.5">
               {dept.schedules.map((sched, j) => (
-                <div
-                  key={j}
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    fontSize: theme.fonts.size.base,
-                  }}
-                >
-                  <span style={{ color: theme.colors.textPrimary }}>
-                    {sched.days}
-                  </span>
-                  <span style={{ color: theme.colors.textSecondary }}>
+                <div key={j} className="flex justify-between text-base">
+                  <span className="text-text-primary">{sched.days}</span>
+                  <span className="text-text-secondary">
                     {sched.isAllDay ? t("messages:allDay") : sched.time}
                   </span>
                 </div>

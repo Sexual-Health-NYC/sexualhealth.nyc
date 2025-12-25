@@ -1,98 +1,38 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import theme from "../theme";
+import useEscapeKey from "../hooks/useEscapeKey";
 import { GlobeIcon } from "./Icons";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 function FooterModal({ isOpen, onClose, title, children }) {
   const { t } = useTranslation(["actions"]);
 
-  useEffect(() => {
-    if (!isOpen) return;
-
-    const handleEscape = (e) => {
-      if (e.key === "Escape") {
-        e.preventDefault();
-        e.stopPropagation();
-        onClose();
-      }
-    };
-
-    document.addEventListener("keydown", handleEscape);
-    return () => document.removeEventListener("keydown", handleEscape);
-  }, [isOpen, onClose]);
+  useEscapeKey(onClose, isOpen);
 
   if (!isOpen) return null;
 
   return (
     <div
-      style={{
-        position: "fixed",
-        inset: 0,
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        zIndex: 1000,
-        padding: theme.spacing[4],
-      }}
+      className="fixed inset-0 bg-black/50 flex items-center justify-center z-[1000] p-4"
       onClick={onClose}
     >
       <div
-        style={{
-          backgroundColor: theme.colors.background,
-          borderRadius: theme.borderRadius.lg,
-          maxWidth: "500px",
-          width: "100%",
-          maxHeight: "80vh",
-          overflow: "auto",
-          boxShadow: theme.shadows.lg,
-        }}
+        className="bg-white rounded-lg max-w-[500px] w-full max-h-[80vh] overflow-auto shadow-lg"
         onClick={(e) => e.stopPropagation()}
       >
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            padding: theme.spacing[4],
-            borderBottom: `1px solid ${theme.colors.border}`,
-          }}
-        >
-          <h2
-            style={{
-              margin: 0,
-              fontSize: theme.fonts.size.lg,
-              fontWeight: theme.fonts.weight.semibold,
-              color: theme.colors.textPrimary,
-            }}
-          >
+        <div className="flex justify-between items-center p-4 border-b border-border">
+          <h2 className="m-0 text-lg font-semibold text-text-primary">
             {title}
           </h2>
           <button
             onClick={onClose}
-            style={{
-              background: "none",
-              border: "none",
-              fontSize: theme.fonts.size.xl,
-              color: theme.colors.textSecondary,
-              cursor: "pointer",
-              padding: 0,
-              lineHeight: 1,
-            }}
+            className="bg-transparent border-none text-xl text-text-secondary cursor-pointer p-0 leading-none"
             aria-label={t("actions:close")}
           >
             ×
           </button>
         </div>
-        <div
-          style={{
-            padding: theme.spacing[4],
-            fontSize: theme.fonts.size.sm,
-            color: theme.colors.textPrimary,
-            lineHeight: 1.6,
-          }}
-        >
+        <div className="p-4 text-sm text-text-primary leading-relaxed">
           {children}
         </div>
       </div>
@@ -103,74 +43,26 @@ function FooterModal({ isOpen, onClose, title, children }) {
 function LanguageModal({ isOpen, onClose }) {
   const { t } = useTranslation(["footer", "actions"]);
 
-  useEffect(() => {
-    if (!isOpen) return;
-
-    const handleEscape = (e) => {
-      if (e.key === "Escape") {
-        e.preventDefault();
-        e.stopPropagation();
-        onClose();
-      }
-    };
-
-    document.addEventListener("keydown", handleEscape);
-    return () => document.removeEventListener("keydown", handleEscape);
-  }, [isOpen, onClose]);
+  useEscapeKey(onClose, isOpen);
 
   if (!isOpen) return null;
 
   return (
     <div
-      style={{
-        position: "fixed",
-        inset: 0,
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        zIndex: 1000,
-        padding: theme.spacing[4],
-      }}
+      className="fixed inset-0 bg-black/50 flex items-center justify-center z-[1000] p-4"
       onClick={onClose}
     >
       <div
-        style={{
-          backgroundColor: theme.colors.background,
-          borderRadius: theme.borderRadius.lg,
-          padding: theme.spacing[4],
-          boxShadow: theme.shadows.lg,
-        }}
+        className="bg-white rounded-lg p-4 shadow-lg"
         onClick={(e) => e.stopPropagation()}
       >
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            marginBottom: theme.spacing[3],
-            gap: theme.spacing[3],
-          }}
-        >
-          <div
-            style={{
-              fontSize: theme.fonts.size.sm,
-              color: theme.colors.textSecondary,
-            }}
-          >
+        <div className="flex justify-between items-center mb-3 gap-3">
+          <div className="text-sm text-text-secondary">
             {t("footer:selectLanguage")}
           </div>
           <button
             onClick={onClose}
-            style={{
-              background: "none",
-              border: "none",
-              fontSize: theme.fonts.size.xl,
-              color: theme.colors.textSecondary,
-              cursor: "pointer",
-              padding: 0,
-              lineHeight: 1,
-            }}
+            className="bg-transparent border-none text-xl text-text-secondary cursor-pointer p-0 leading-none"
             aria-label={t("actions:close")}
           >
             ×
@@ -194,68 +86,34 @@ export default function Footer({ isMobile, isMapMode }) {
   // On mobile in map mode, position fixed at bottom so it's always accessible
   const isFixed = isMobile && isMapMode;
 
+  const footerButtonClass =
+    "bg-transparent border-none text-text-secondary cursor-pointer p-0 text-xs";
+
   return (
     <>
       <footer
-        style={{
-          padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
-          borderTop: `1px solid ${theme.colors.border}`,
-          backgroundColor: theme.colors.surface,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: theme.spacing[4],
-          flexWrap: "wrap",
-          fontSize: theme.fonts.size.xs,
-          position: isFixed ? "fixed" : "relative",
-          bottom: isFixed ? 0 : "auto",
-          left: isFixed ? 0 : "auto",
-          right: isFixed ? 0 : "auto",
-          zIndex: 30,
-        }}
+        className={`py-2 px-4 border-t border-border bg-surface flex justify-center items-center gap-4 flex-wrap text-xs z-30 ${
+          isFixed ? "fixed bottom-0 left-0 right-0" : "relative"
+        }`}
       >
         <button
           onClick={() => setActiveModal("about")}
-          style={{
-            background: "none",
-            border: "none",
-            color: theme.colors.textSecondary,
-            cursor: "pointer",
-            padding: 0,
-            fontSize: "inherit",
-          }}
+          className={footerButtonClass}
         >
           {t("footer:about")}
         </button>
         <button
           onClick={() => setActiveModal("privacy")}
-          style={{
-            background: "none",
-            border: "none",
-            color: theme.colors.textSecondary,
-            cursor: "pointer",
-            padding: 0,
-            fontSize: "inherit",
-          }}
+          className={footerButtonClass}
         >
           {t("footer:privacy")}
         </button>
         <button
           onClick={() => setActiveModal("language")}
-          style={{
-            background: "none",
-            border: "none",
-            color: theme.colors.textSecondary,
-            cursor: "pointer",
-            padding: 0,
-            fontSize: "inherit",
-            display: "flex",
-            alignItems: "center",
-            gap: "4px",
-          }}
+          className={`${footerButtonClass} flex items-center gap-1`}
           aria-label={t("footer:changeLanguage")}
         >
-          <GlobeIcon style={{ width: "14px", height: "14px" }} />
+          <GlobeIcon className="w-3.5 h-3.5" />
         </button>
       </footer>
 
@@ -264,25 +122,10 @@ export default function Footer({ isMobile, isMapMode }) {
         onClose={() => setActiveModal(null)}
         title={t("footer:about")}
       >
-        <p style={{ margin: `0 0 ${theme.spacing[3]} 0` }}>
-          {t("footer:aboutText1")}
-        </p>
-        <p style={{ margin: `0 0 ${theme.spacing[3]} 0` }}>
-          {t("footer:aboutText2")}
-        </p>
-        <p style={{ margin: 0, fontStyle: "italic" }}>
-          {t("footer:aboutDisclaimer")}
-        </p>
-        <div
-          style={{
-            marginTop: theme.spacing[4],
-            paddingTop: theme.spacing[2],
-            borderTop: `1px solid ${theme.colors.border}`,
-            fontSize: "10px",
-            color: theme.colors.textSecondary,
-            fontFamily: "monospace",
-          }}
-        >
+        <p className="m-0 mb-3">{t("footer:aboutText1")}</p>
+        <p className="m-0 mb-3">{t("footer:aboutText2")}</p>
+        <p className="m-0 italic">{t("footer:aboutDisclaimer")}</p>
+        <div className="mt-4 pt-2 border-t border-border text-[10px] text-text-secondary font-mono">
           v.{__COMMIT_HASH__}
         </div>
       </FooterModal>
@@ -292,35 +135,15 @@ export default function Footer({ isMobile, isMapMode }) {
         onClose={() => setActiveModal(null)}
         title={t("footer:privacy")}
       >
-        <p
-          style={{
-            margin: `0 0 ${theme.spacing[3]} 0`,
-            fontWeight: theme.fonts.weight.medium,
-          }}
-        >
-          {t("footer:privacyIntro")}
-        </p>
-        <ul
-          style={{
-            margin: `0 0 ${theme.spacing[3]} 0`,
-            paddingInlineStart: theme.spacing[4],
-          }}
-        >
-          <li style={{ marginBottom: theme.spacing[2] }}>
-            {t("footer:privacyNoAccounts")}
-          </li>
-          <li style={{ marginBottom: theme.spacing[2] }}>
-            {t("footer:privacyAnalytics")}
-          </li>
-          <li style={{ marginBottom: theme.spacing[2] }}>
-            {t("footer:privacyLanguage")}
-          </li>
-          <li style={{ marginBottom: theme.spacing[2] }}>
-            {t("footer:privacyMaps")}
-          </li>
+        <p className="m-0 mb-3 font-medium">{t("footer:privacyIntro")}</p>
+        <ul className="m-0 mb-3 ps-4">
+          <li className="mb-2">{t("footer:privacyNoAccounts")}</li>
+          <li className="mb-2">{t("footer:privacyAnalytics")}</li>
+          <li className="mb-2">{t("footer:privacyLanguage")}</li>
+          <li className="mb-2">{t("footer:privacyMaps")}</li>
           <li>{t("footer:privacyCorrections")}</li>
         </ul>
-        <p style={{ margin: 0, color: theme.colors.textSecondary }}>
+        <p className="m-0 text-text-secondary">
           {t("footer:privacyNoCookies")}
         </p>
       </FooterModal>

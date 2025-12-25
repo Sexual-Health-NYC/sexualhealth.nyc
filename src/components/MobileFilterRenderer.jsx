@@ -3,7 +3,6 @@ import Select from "react-select";
 import useAppStore from "../store/useAppStore";
 import useFilterOptions from "../hooks/useFilterOptions";
 import { FILTER_TYPES } from "../config/filterConfig";
-import theme from "../theme";
 import SubwayBullet, { BusBullet } from "./SubwayBullet";
 import transitData from "../data/transitLines.json";
 
@@ -59,16 +58,8 @@ export default function MobileFilterRenderer({
   if (config.type === "gestational") {
     return (
       <FilterSection title={t("services:abortion")}>
-        <div style={{ marginBottom: theme.spacing[2] }}>
-          <label
-            style={{
-              fontSize: theme.fonts.size.sm,
-              fontWeight: theme.fonts.weight.medium,
-              color: theme.colors.textSecondary,
-              marginBottom: theme.spacing[1],
-              display: "block",
-            }}
-          >
+        <div className="mb-2">
+          <label className="text-sm font-medium text-text-secondary mb-1 block">
             {t(config.titleKey)}
           </label>
           <select
@@ -78,14 +69,7 @@ export default function MobileFilterRenderer({
                 e.target.value === "" ? null : Number(e.target.value),
               )
             }
-            style={{
-              width: "100%",
-              padding: theme.spacing[2],
-              borderRadius: theme.borderRadius.md,
-              border: `1px solid ${theme.colors.border}`,
-              fontSize: theme.fonts.size.sm,
-              backgroundColor: "white",
-            }}
+            className="w-full p-2 rounded-md border border-border text-sm bg-white"
           >
             {options.map((option) => (
               <option key={option.value ?? "any"} value={option.value ?? ""}>
@@ -120,6 +104,7 @@ export default function MobileFilterRenderer({
       <FilterSection title={t(config.titleKey)}>
         <Select
           isMulti
+          aria-label={t(config.titleKey)}
           placeholder={t(config.placeholderKey || config.titleKey)}
           value={Array.from(filters[config.category]).map((item) => ({
             value: item,
@@ -137,9 +122,7 @@ export default function MobileFilterRenderer({
           }))}
           formatOptionLabel={({ value }) =>
             config.formatLabel === "subway" ? (
-              <div
-                style={{ display: "flex", alignItems: "center", gap: "8px" }}
-              >
+              <div className="flex items-center gap-2">
                 <SubwayBullet line={value} />
                 <span>{value} train</span>
               </div>
@@ -151,15 +134,13 @@ export default function MobileFilterRenderer({
             control: (base) => ({
               ...base,
               borderColor:
-                filters[config.category].size > 0
-                  ? theme.colors.primary
-                  : theme.colors.border,
+                filters[config.category].size > 0 ? "#0D8078" : "#dee2e6",
               borderWidth: "2px",
-              "&:hover": { borderColor: theme.colors.primaryLight },
+              "&:hover": { borderColor: "#4ECDC4" },
             }),
             multiValue: (base) => ({
               ...base,
-              backgroundColor: `${theme.colors.primary}20`,
+              backgroundColor: "rgba(13, 128, 120, 0.125)",
             }),
           }}
         />

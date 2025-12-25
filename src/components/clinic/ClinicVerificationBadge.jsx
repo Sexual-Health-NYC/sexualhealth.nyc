@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import theme from "../../theme";
 
 function getVerificationStatus(clinic) {
   // Only use explicit last_verified field - data_sources date is NOT verification
@@ -30,10 +29,10 @@ export default function ClinicVerificationBadge({ clinic }) {
   const { status, date } = getVerificationStatus(clinic);
 
   const statusColors = {
-    recent: theme.colors.open, // green - recently verified
-    aging: "#d97706", // amber/orange - getting stale
-    stale: "#dc2626", // red - needs re-verification
-    unknown: "#9ca3af", // light gray - not yet verified (not alarming)
+    recent: "bg-open", // green - recently verified
+    aging: "bg-amber-600", // amber/orange - getting stale
+    stale: "bg-red-600", // red - needs re-verification
+    unknown: "bg-gray-400", // light gray - not yet verified (not alarming)
   };
 
   // Format as relative time using native Intl API (supports all our languages)
@@ -63,23 +62,9 @@ export default function ClinicVerificationBadge({ clinic }) {
   }
 
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: "6px",
-        fontSize: theme.fonts.size.xs,
-        color: theme.colors.textSecondary,
-      }}
-    >
+    <div className="flex items-center gap-1.5 text-xs text-text-secondary">
       <span
-        style={{
-          width: "8px",
-          height: "8px",
-          borderRadius: "50%",
-          backgroundColor: statusColors[status],
-          flexShrink: 0,
-        }}
+        className={`w-2 h-2 rounded-full shrink-0 ${statusColors[status]}`}
         aria-hidden="true"
       />
       <span>{timeDisplay || t("messages:verifiedUnknown")}</span>

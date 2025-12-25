@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import useAppStore from "../store/useAppStore";
-import theme from "../theme";
 
 const DEFAULT_VIEWPORT = {
   longitude: -73.9712,
@@ -51,84 +50,25 @@ export default function NearMeButton() {
   };
 
   return (
-    <div
-      style={{
-        position: "absolute",
-        top: theme.spacing[4],
-        right: theme.spacing[4],
-        zIndex: 10,
-        display: "flex",
-        flexDirection: "column",
-        gap: theme.spacing[2],
-      }}
-    >
+    <div className="absolute top-4 right-4 z-10 flex flex-col gap-2">
       <button
         onClick={handleNearMe}
         disabled={loading}
-        style={{
-          padding: `${theme.spacing[3]} ${theme.spacing[4]}`,
-          backgroundColor: theme.colors.primary,
-          color: "white",
-          border: "none",
-          borderRadius: theme.borderRadius.sm,
-          fontSize: theme.fonts.size.sm,
-          fontWeight: theme.fonts.weight.medium,
-          cursor: loading ? "not-allowed" : "pointer",
-          boxShadow: theme.shadows.md,
-          opacity: loading ? 0.7 : 1,
-          display: "flex",
-          alignItems: "center",
-          gap: theme.spacing[2],
-        }}
-        onFocus={(e) => {
-          e.currentTarget.style.outline = theme.focus.outline;
-          e.currentTarget.style.outlineOffset = theme.focus.outlineOffset;
-        }}
-        onBlur={(e) => {
-          e.currentTarget.style.outline = "none";
-        }}
+        className="py-3 px-4 bg-primary text-white border-none rounded-sm text-sm font-medium cursor-pointer shadow-md flex items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed focus-ring"
       >
-        <span style={{ fontSize: theme.fonts.size.lg }} aria-hidden="true">
+        <span className="text-lg" aria-hidden="true">
           📍
         </span>
         {loading ? t("actions:finding") : t("actions:nearMe")}
       </button>
       <button
         onClick={handleReset}
-        style={{
-          padding: `${theme.spacing[2]} ${theme.spacing[3]}`,
-          backgroundColor: theme.colors.surface,
-          color: theme.colors.textPrimary,
-          border: `1px solid ${theme.colors.border}`,
-          borderRadius: theme.borderRadius.sm,
-          fontSize: theme.fonts.size.sm,
-          fontWeight: theme.fonts.weight.medium,
-          cursor: "pointer",
-          boxShadow: theme.shadows.md,
-        }}
-        onFocus={(e) => {
-          e.currentTarget.style.outline = theme.focus.outline;
-          e.currentTarget.style.outlineOffset = theme.focus.outlineOffset;
-        }}
-        onBlur={(e) => {
-          e.currentTarget.style.outline = "none";
-        }}
+        className="py-2 px-3 bg-surface text-text-primary border border-border rounded-sm text-sm font-medium cursor-pointer shadow-md focus-ring"
       >
         {t("actions:resetView")}
       </button>
       {error && (
-        <div
-          style={{
-            marginTop: theme.spacing[2],
-            padding: theme.spacing[2],
-            backgroundColor: theme.colors.pep,
-            color: "white",
-            borderRadius: theme.borderRadius.sm,
-            fontSize: theme.fonts.size.xs,
-            textAlign: "center",
-            maxWidth: "200px",
-          }}
-        >
+        <div className="mt-2 p-2 bg-service-pep-text text-white rounded-sm text-xs text-center max-w-[200px]">
           {error}
         </div>
       )}

@@ -5,7 +5,6 @@ import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import useAppStore from "../store/useAppStore";
 import useIsMobile from "../hooks/useIsMobile";
-import theme from "../theme";
 import ClinicMarkers from "./ClinicMarkers";
 
 // Enable RTL text support
@@ -13,7 +12,7 @@ if (mapboxgl.getRTLTextPluginStatus() === "unavailable") {
   mapboxgl.setRTLTextPlugin(
     "https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.2.3/mapbox-gl-rtl-text.js",
     null,
-    true, // Lazy load
+    true,
   );
 }
 
@@ -37,9 +36,6 @@ export default function Map({ filteredClinics, onShowList }) {
   const isMobile = useIsMobile();
   const previousFilteredClinicsRef = useRef(filteredClinics);
 
-  // Store map ref globally for cluster zoom animations
-  // This is set via onLoad callback in MapGL component below
-
   // Set map padding based on device to account for UI overlays
   useEffect(() => {
     if (!mapRef.current) return;
@@ -47,12 +43,10 @@ export default function Map({ filteredClinics, onShowList }) {
     const map = mapRef.current;
 
     const updatePadding = () => {
-      // Measure all possible UI overlays and use the largest
       let bottomPadding = 0;
       let rightPadding = 0;
 
       if (isMobile) {
-        // Check for bottom sheet (clinic detail) or filter modal
         const bottomSheet = document.querySelector("[data-bottom-sheet]");
         const filterModal = document.querySelector("[data-filter-modal]");
 
@@ -63,7 +57,6 @@ export default function Map({ filteredClinics, onShowList }) {
           bottomPadding = Math.max(bottomPadding, filterModal.offsetHeight);
         }
       } else {
-        // Desktop: measure sidebar width
         const sidebar = document.querySelector("[data-detail-panel]");
         if (sidebar) {
           rightPadding = sidebar.offsetWidth;
@@ -77,9 +70,7 @@ export default function Map({ filteredClinics, onShowList }) {
       map.easeTo({ padding, duration: 300 });
     };
 
-    // Delay to allow DOM elements to render
     const timeoutId = setTimeout(updatePadding, 100);
-
     return () => clearTimeout(timeoutId);
   }, [isMobile, selectedClinic]);
 
@@ -112,22 +103,19 @@ export default function Map({ filteredClinics, onShowList }) {
       });
   }, [setClinics, setVirtualClinics]);
 
-  // Pan map when a clinic is selected to ensure marker is visible
+  // Pan map when a clinic is selected
   useEffect(() => {
     if (selectedClinic && mapRef.current) {
       const map = mapRef.current;
-
-      // Define padding based on device and where the sidebar/bottom sheet appears
       const padding = isMobile
         ? {
             top: 50,
             bottom: window.innerHeight * 0.5 + 50,
             left: 50,
             right: 50,
-          } // Bottom sheet on mobile (50vh + margin)
-        : { top: 50, bottom: 50, left: 50, right: 450 }; // Sidebar on desktop (right side)
+          }
+        : { top: 50, bottom: 50, left: 50, right: 450 };
 
-      // Pan to the selected clinic with smooth animation
       map.easeTo({
         center: [selectedClinic.longitude, selectedClinic.latitude],
         padding,
@@ -149,23 +137,20 @@ export default function Map({ filteredClinics, onShowList }) {
     });
   });
 
-  // Recenter map when filters change to fit visible clinics
-  // Only auto-fit when the actual filter results change, not when selecting/deselecting clinics
+  // Recenter map when filters change
   useEffect(() => {
     const filtersChanged =
       filteredClinics !== previousFilteredClinicsRef.current;
 
     if (filteredClinics.length > 0 && mapRef.current && filtersChanged) {
-      // Calculate bounds of filtered clinics
       const lngs = filteredClinics.map((c) => c.longitude);
       const lats = filteredClinics.map((c) => c.latitude);
 
       const bounds = [
-        [Math.min(...lngs), Math.min(...lats)], // Southwest
-        [Math.max(...lngs), Math.max(...lats)], // Northeast
+        [Math.min(...lngs), Math.min(...lats)],
+        [Math.max(...lngs), Math.max(...lats)],
       ];
 
-      // Fit map to bounds with padding that accounts for potential UI overlays
       const padding = isMobile
         ? { top: 80, bottom: 80, left: 50, right: 50 }
         : { top: 80, bottom: 80, left: 80, right: 480 };
@@ -182,7 +167,7 @@ export default function Map({ filteredClinics, onShowList }) {
 
   return (
     <div
-      style={{ position: "relative", width: "100%", height: "100%" }}
+      className="relative w-full h-full"
       role="application"
       aria-label="Interactive map of sexual health clinics in NYC. Use tab to navigate markers, or switch to list view for a text-based alternative."
     >
@@ -209,27 +194,9 @@ export default function Map({ filteredClinics, onShowList }) {
       {matchingVirtualClinics.length > 0 && onShowList && !selectedClinic && (
         <button
           onClick={onShowList}
-          style={{
-            position: "fixed",
-            bottom: isMobile ? "90px" : "20px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            display: "flex",
-            alignItems: "center",
-            gap: theme.spacing[2],
-            padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
-            backgroundColor: "white",
-            border: `1px solid ${theme.colors.border}`,
-            borderRadius: theme.borderRadius.full,
-            boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
-            cursor: "pointer",
-            fontSize: theme.fonts.size.sm,
-            fontWeight: theme.fonts.weight.medium,
-            color: theme.colors.textPrimary,
-            whiteSpace: "nowrap",
-            transition: `bottom ${theme.transitions.normal}`,
-            zIndex: 25,
-          }}
+          className={`fixed left-1/2 -translate-x-1/2 flex items-center gap-2 px-4 py-2 bg-white border border-border rounded-full shadow-md cursor-pointer text-sm font-medium text-text-primary whitespace-nowrap z-25 transition-all hover:shadow-lg ${
+            isMobile ? "bottom-[90px]" : "bottom-5"
+          }`}
         >
           <span>💻</span>
           {t("messages:telehealthBanner", {

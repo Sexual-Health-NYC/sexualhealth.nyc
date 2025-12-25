@@ -1,7 +1,6 @@
 import { Popup } from "react-map-gl";
 import { useTranslation } from "react-i18next";
 import useAppStore from "../store/useAppStore";
-import theme from "../theme";
 import { getOpenStatus } from "../utils/hours";
 
 export default function ClinicPopup() {
@@ -30,33 +29,17 @@ export default function ClinicPopup() {
       closeOnClick={false}
       maxWidth="400px"
     >
-      <div style={{ padding: theme.spacing[3], minWidth: "280px" }}>
-        <h3
-          style={{
-            margin: `0 0 ${theme.spacing[2]} 0`,
-            fontSize: theme.fonts.size.lg,
-            fontWeight: theme.fonts.weight.semibold,
-            color: theme.colors.textPrimary,
-          }}
-        >
+      <div className="p-3 min-w-[280px]">
+        <h3 className="m-0 mb-2 text-lg font-semibold text-text-primary">
           {selectedClinic.name}
         </h3>
 
         {services.length > 0 && (
-          <div style={{ marginBottom: theme.spacing[3] }}>
+          <div className="mb-3">
             {services.map((service) => (
               <span
                 key={service}
-                style={{
-                  display: "inline-block",
-                  padding: `${theme.spacing[1]} ${theme.spacing[2]}`,
-                  marginInlineEnd: theme.spacing[1],
-                  marginBottom: theme.spacing[1],
-                  fontSize: theme.fonts.size.xs,
-                  backgroundColor: theme.colors.primary,
-                  color: "white",
-                  borderRadius: theme.borderRadius.sm,
-                }}
+                className="inline-block py-1 px-2 me-1 mb-1 text-xs bg-primary text-white rounded-sm"
               >
                 {service}
               </span>
@@ -64,27 +47,16 @@ export default function ClinicPopup() {
           </div>
         )}
 
-        <p
-          style={{
-            margin: `0 0 ${theme.spacing[2]} 0`,
-            fontSize: theme.fonts.size.sm,
-            color: theme.colors.textSecondary,
-          }}
-        >
+        <p className="m-0 mb-2 text-sm text-text-secondary">
           {selectedClinic.address}
         </p>
 
         {selectedClinic.phone && (
-          <p
-            style={{
-              margin: `0 0 ${theme.spacing[2]} 0`,
-              fontSize: theme.fonts.size.sm,
-            }}
-          >
+          <p className="m-0 mb-2 text-sm">
             <strong>Phone:</strong>{" "}
             <a
               href={`tel:${selectedClinic.phone}`}
-              style={{ color: theme.colors.prep }}
+              className="text-service-prep-text"
             >
               {selectedClinic.phone}
             </a>
@@ -92,18 +64,10 @@ export default function ClinicPopup() {
         )}
 
         {openStatus && (
-          <p
-            style={{
-              margin: `0 0 ${theme.spacing[2]} 0`,
-              fontSize: theme.fonts.size.sm,
-            }}
-          >
+          <p className="m-0 mb-2 text-sm">
             <strong>{t("sections:hours")}:</strong>{" "}
             <span
-              style={{
-                color: openStatus.isOpen ? "#10b981" : "#64748b",
-                fontWeight: theme.fonts.weight.medium,
-              }}
+              className={`font-medium ${openStatus.isOpen ? "text-open" : "text-closed"}`}
             >
               {openStatus.isOpen
                 ? openStatus.closesAt
@@ -134,17 +98,7 @@ export default function ClinicPopup() {
             }
             target="_blank"
             rel="noopener noreferrer"
-            style={{
-              display: "inline-block",
-              marginTop: theme.spacing[2],
-              padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
-              backgroundColor: theme.colors.prep,
-              color: "white",
-              textDecoration: "none",
-              borderRadius: theme.borderRadius.sm,
-              fontSize: theme.fonts.size.sm,
-              fontWeight: theme.fonts.weight.medium,
-            }}
+            className="inline-block mt-2 py-2 px-4 bg-service-prep-text text-white no-underline rounded-sm text-sm font-medium"
           >
             Visit Website
           </a>

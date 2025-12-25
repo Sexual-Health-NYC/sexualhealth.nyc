@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import { Marker } from "react-map-gl/mapbox";
 import useSupercluster from "use-supercluster";
 import useAppStore from "../store/useAppStore";
-import theme from "../theme";
 
 export default function ClinicMarkers({ clinics }) {
   const { t } = useTranslation(["messages", "actions"]);
@@ -56,6 +55,7 @@ export default function ClinicMarkers({ clinics }) {
         } = cluster.properties;
 
         if (isCluster) {
+          const size = 30 + (pointCount / points.length) * 40;
           return (
             <Marker
               key={`cluster-${cluster.id}`}
@@ -90,30 +90,10 @@ export default function ClinicMarkers({ clinics }) {
                     });
                   }
                 }}
-                className="animate-scale-in"
+                className="animate-scale-in flex items-center justify-center rounded-full bg-primary border-[3px] border-white text-white font-bold text-sm cursor-pointer shadow-lg transition-transform hover:scale-110 focus-ring"
                 style={{
-                  width: `${30 + (pointCount / points.length) * 40}px`,
-                  height: `${30 + (pointCount / points.length) * 40}px`,
-                  borderRadius: theme.borderRadius.full,
-                  backgroundColor: theme.colors.primary,
-                  border: `3px solid ${theme.colors.markerBorder}`,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  color: "white",
-                  fontWeight: theme.fonts.weight.bold,
-                  fontSize: theme.fonts.size.sm,
-                  cursor: "pointer",
-                  boxShadow: theme.shadows.lg,
-                  transition: `transform ${theme.motion.duration.fast} ${theme.motion.easing.bounce}`,
-                }}
-                onFocus={(e) => {
-                  e.currentTarget.style.outline = theme.focus.outline;
-                  e.currentTarget.style.outlineOffset =
-                    theme.focus.outlineOffset;
-                }}
-                onBlur={(e) => {
-                  e.currentTarget.style.outline = "none";
+                  width: `${size}px`,
+                  height: `${size}px`,
                 }}
               >
                 {pointCount}
@@ -122,6 +102,7 @@ export default function ClinicMarkers({ clinics }) {
           );
         }
 
+        const isSelected = selectedClinic?.id === clinic.id;
         return (
           <Marker
             key={clinic.id}
@@ -138,54 +119,18 @@ export default function ClinicMarkers({ clinics }) {
               tabIndex={0}
               title={`${clinic.name} - ${t("actions:clickForInfo")}`}
               aria-label={t("messages:viewDetails", { name: clinic.name })}
-              aria-pressed={selectedClinic?.id === clinic.id}
-              className={
-                selectedClinic?.id === clinic.id ? "marker-bounce" : ""
-              }
-              style={{
-                width: selectedClinic?.id === clinic.id ? "36px" : "24px",
-                height: selectedClinic?.id === clinic.id ? "36px" : "24px",
-                backgroundColor:
-                  selectedClinic?.id === clinic.id
-                    ? theme.colors.markerSelected
-                    : theme.colors.markerDefault,
-                border: `2px solid ${theme.colors.markerBorder}`,
-                borderRadius: theme.borderRadius.full,
-                cursor: "pointer",
-                transition: `all ${theme.motion.duration.normal} ${theme.motion.easing.bounce}`,
-                boxShadow:
-                  selectedClinic?.id === clinic.id
-                    ? theme.shadows.lg
-                    : theme.shadows.md,
-                padding: 0,
-              }}
-              onMouseEnter={(e) => {
-                if (selectedClinic?.id !== clinic.id) {
-                  e.currentTarget.style.transform = "scale(1.15)";
-                  e.currentTarget.style.backgroundColor =
-                    theme.colors.primaryLight;
-                }
-              }}
-              onMouseLeave={(e) => {
-                if (selectedClinic?.id !== clinic.id) {
-                  e.currentTarget.style.transform = "scale(1)";
-                  e.currentTarget.style.backgroundColor =
-                    theme.colors.markerDefault;
-                }
-              }}
+              aria-pressed={isSelected}
+              className={`rounded-full border-2 border-white cursor-pointer p-0 transition-all focus-ring ${
+                isSelected
+                  ? "w-9 h-9 bg-accent shadow-lg marker-bounce"
+                  : "w-6 h-6 bg-primary shadow-md hover:scale-[1.15] hover:bg-primary-light"
+              }`}
               onClick={() => selectClinic(clinic)}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
                   e.preventDefault();
                   selectClinic(clinic);
                 }
-              }}
-              onFocus={(e) => {
-                e.currentTarget.style.outline = theme.focus.outline;
-                e.currentTarget.style.outlineOffset = theme.focus.outlineOffset;
-              }}
-              onBlur={(e) => {
-                e.currentTarget.style.outline = "none";
               }}
             />
           </Marker>
