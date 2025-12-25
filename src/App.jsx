@@ -17,7 +17,7 @@ export default function App() {
   useEffect(() => {
     document.documentElement.lang = i18n.language;
     document.documentElement.dir = i18n.dir(i18n.language);
-  }, [i18n.language]);
+  }, [i18n, i18n.language]);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [viewMode, setViewMode] = useState("map"); // "map" or "list"
   const { clinics, filters, selectedClinic, selectClinic } = useAppStore();
@@ -120,7 +120,7 @@ export default function App() {
         const clinicLines = clinic.transit
           .split(",")
           .map((t) => {
-            const match = t.trim().match(/^([A-Z0-9\/]+)\s+at/i);
+            const match = t.trim().match(/^([A-Z0-9/]+)\s+at/i);
             return match ? match[1].toUpperCase().split("/") : [];
           })
           .flat();

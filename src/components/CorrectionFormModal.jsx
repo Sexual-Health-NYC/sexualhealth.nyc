@@ -51,7 +51,7 @@ export default function CorrectionFormModal({
         setStatus("error");
         setMessage(data.error || t("forms:correctionError"));
       }
-    } catch (error) {
+    } catch {
       setStatus("error");
       setMessage(t("forms:correctionError"));
     }

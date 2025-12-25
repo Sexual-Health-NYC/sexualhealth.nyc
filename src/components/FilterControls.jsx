@@ -5,7 +5,7 @@ import SearchAutocomplete from "./SearchAutocomplete";
 import useVisibleFilters from "../hooks/useVisibleFilters";
 import MobileFilterRenderer from "./MobileFilterRenderer";
 
-export default function FilterControls({ mode = "mobile" }) {
+export default function FilterControls() {
   const { t } = useTranslation(["actions", "messages", "sections", "filters"]);
   const { filters } = useAppStore();
   const visibleFilters = useVisibleFilters();
@@ -15,7 +15,6 @@ export default function FilterControls({ mode = "mobile" }) {
       {/* Search filter - always first */}
       <FilterSection title={t("messages:search")}>
         <SearchAutocomplete
-          t={t}
           placeholder={t("messages:searchByName")}
           style={{
             input: {

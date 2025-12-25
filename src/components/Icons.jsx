@@ -1,5 +1,3 @@
-import React from "react";
-
 export function ClipboardIcon({ className, style }) {
   return (
     <svg

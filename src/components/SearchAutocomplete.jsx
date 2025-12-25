@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import useAppStore from "../store/useAppStore";
 import theme from "../theme";
 
-export default function SearchAutocomplete({ t, placeholder, style }) {
+export default function SearchAutocomplete({ placeholder, style }) {
   const { filters, setFilter, clinics } = useAppStore();
   const [showAutocomplete, setShowAutocomplete] = useState(false);
   const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(-1);

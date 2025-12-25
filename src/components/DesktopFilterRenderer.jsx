@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import Select from "react-select";
 import useAppStore from "../store/useAppStore";
@@ -14,15 +13,12 @@ import transitData from "../data/transitLines.json";
  */
 export default function DesktopFilterRenderer({
   config,
-  openDropdown,
-  setOpenDropdown,
   FilterDropdown,
   GestationalDropdown,
 }) {
   const { t } = useTranslation();
   const { filters, setFilter } = useAppStore();
   const filterOptions = useFilterOptions();
-  const dropdownRef = useRef(null);
 
   const options = config.optionsKey ? filterOptions[config.optionsKey] : [];
 
@@ -80,9 +76,6 @@ export default function DesktopFilterRenderer({
       config.dataSource === "transitData.subwayLines"
         ? transitData.subwayLines
         : transitData.busRoutes;
-
-    const FormatComponent =
-      config.formatLabel === "subway" ? SubwayBullet : BusBullet;
 
     return (
       <div style={{ minWidth: "180px" }}>

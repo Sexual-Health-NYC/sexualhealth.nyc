@@ -44,11 +44,7 @@ export default function Map({ filteredClinics, onShowList }) {
   }, []);
 
   // Store map ref globally for cluster zoom animations
-  useEffect(() => {
-    if (mapRef.current) {
-      setMapRef(mapRef);
-    }
-  }, [mapRef.current, setMapRef]);
+  // This is set via onLoad callback in MapGL component below
 
   // Set map padding based on device to account for UI overlays
   useEffect(() => {
@@ -200,6 +196,7 @@ export default function Map({ filteredClinics, onShowList }) {
         ref={mapRef}
         {...mapViewport}
         onMove={(evt) => setMapViewport(evt.viewState)}
+        onLoad={() => setMapRef(mapRef)}
         onClick={() => {
           if (selectedClinic) {
             selectClinic(null);

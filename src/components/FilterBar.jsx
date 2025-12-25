@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useMemo } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import useAppStore from "../store/useAppStore";
 import useFilterOptions from "../hooks/useFilterOptions";
@@ -7,7 +7,6 @@ import theme from "../theme";
 import FilterControls from "./FilterControls";
 import SearchAutocomplete from "./SearchAutocomplete";
 import DesktopFilterRenderer from "./DesktopFilterRenderer";
-import { FILTER_TYPES } from "../config/filterConfig";
 
 export default function FilterBar() {
   const { t } = useTranslation([
@@ -493,7 +492,6 @@ export default function FilterBar() {
           </a>
 
           <SearchAutocomplete
-            t={t}
             placeholder={t("messages:searchByName")}
             style={{
               container: { flex: 1, maxWidth: "400px" },
@@ -564,8 +562,6 @@ export default function FilterBar() {
             <DesktopFilterRenderer
               key={config.id}
               config={config}
-              openDropdown={openDropdown}
-              setOpenDropdown={setOpenDropdown}
               FilterDropdown={FilterDropdown}
               GestationalDropdown={GestationalDropdown}
             />
