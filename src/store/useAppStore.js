@@ -34,7 +34,7 @@ function getChildFiltersToReset(filterKey, oldValues, newValues) {
   return resets;
 }
 
-const useAppStore = create((set) => ({
+const useAppStore = create((set, get) => ({
   // Data
   clinics: [],
   virtualClinics: [],
@@ -107,6 +107,27 @@ const useAppStore = create((set) => ({
     set((state) => ({
       filters: { ...state.filters, gestationalWeeks: weeks },
     })),
+
+  // Selectors (derived state)
+  getActiveFilterCount: () => {
+    const { filters } = get();
+    return (
+      filters.services.size +
+      (filters.genderAffirming?.size || 0) +
+      (filters.prep?.size || 0) +
+      filters.insurance.size +
+      filters.access.size +
+      filters.boroughs.size +
+      (filters.gestationalWeeks !== null ? 1 : 0) +
+      (filters.openNow ? 1 : 0) +
+      (filters.openAfter5pm ? 1 : 0) +
+      filters.subwayLines.size +
+      filters.busRoutes.size +
+      (filters.searchQuery.trim() ? 1 : 0)
+    );
+  },
+
+  hasActiveFilters: () => get().getActiveFilterCount() > 0,
 }));
 
 export default useAppStore;

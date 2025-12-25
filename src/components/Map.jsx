@@ -6,6 +6,12 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import useAppStore from "../store/useAppStore";
 import useIsMobile from "../hooks/useIsMobile";
 import ClinicMarkers from "./ClinicMarkers";
+import { filterVirtualClinicsByServices } from "../utils/virtualClinics";
+import {
+  MAP_PADDING,
+  MAP_SELECTED_PADDING,
+  MAP_ANIMATION,
+} from "../constants/layout";
 
 // Enable RTL text support
 if (mapboxgl.getRTLTextPluginStatus() === "unavailable") {
@@ -67,7 +73,7 @@ export default function Map({ filteredClinics, onShowList }) {
         ? { top: 0, bottom: bottomPadding, left: 0, right: 0 }
         : { top: 0, bottom: 0, left: 0, right: rightPadding };
 
-      map.easeTo({ padding, duration: 300 });
+      map.easeTo({ padding, duration: MAP_ANIMATION.updatePadding });
     };
 
     const timeoutId = setTimeout(updatePadding, 100);
@@ -109,33 +115,24 @@ export default function Map({ filteredClinics, onShowList }) {
       const map = mapRef.current;
       const padding = isMobile
         ? {
-            top: 50,
-            bottom: window.innerHeight * 0.5 + 50,
-            left: 50,
-            right: 50,
+            ...MAP_SELECTED_PADDING.mobile,
+            bottom: window.innerHeight * 0.5 + MAP_SELECTED_PADDING.mobile.top,
           }
-        : { top: 50, bottom: 50, left: 50, right: 450 };
+        : MAP_SELECTED_PADDING.desktop;
 
       map.easeTo({
         center: [selectedClinic.longitude, selectedClinic.latitude],
         padding,
-        duration: 500,
+        duration: MAP_ANIMATION.easeToCenter,
       });
     }
   }, [selectedClinic, isMobile]);
 
   // Count matching virtual clinics for banner
-  const matchingVirtualClinics = virtualClinics.filter((clinic) => {
-    if (!filters.services || filters.services.size === 0) return false;
-    return Array.from(filters.services).some((service) => {
-      if (service === "abortion") return clinic.has_abortion;
-      if (service === "gender_affirming") return clinic.has_gender_affirming;
-      if (service === "prep") return clinic.has_prep;
-      if (service === "contraception") return clinic.has_contraception;
-      if (service === "sti_testing") return clinic.has_sti_testing;
-      return false;
-    });
-  });
+  const matchingVirtualClinics = filterVirtualClinicsByServices(
+    virtualClinics,
+    filters.services,
+  );
 
   // Recenter map when filters change
   useEffect(() => {
@@ -151,13 +148,11 @@ export default function Map({ filteredClinics, onShowList }) {
         [Math.max(...lngs), Math.max(...lats)],
       ];
 
-      const padding = isMobile
-        ? { top: 80, bottom: 80, left: 50, right: 50 }
-        : { top: 80, bottom: 80, left: 80, right: 480 };
+      const padding = isMobile ? MAP_PADDING.mobile : MAP_PADDING.desktop;
 
       mapRef.current.fitBounds(bounds, {
         padding,
-        duration: 1000,
+        duration: MAP_ANIMATION.fitBounds,
         maxZoom: 14,
       });
 

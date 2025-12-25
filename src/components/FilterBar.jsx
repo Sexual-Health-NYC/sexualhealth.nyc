@@ -1,13 +1,15 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import useAppStore from "../store/useAppStore";
 import useFilterOptions from "../hooks/useFilterOptions";
 import useVisibleFilters from "../hooks/useVisibleFilters";
 import useIsMobile from "../hooks/useIsMobile";
-import useClickOutside from "../hooks/useClickOutside";
 import FilterControls from "./FilterControls";
 import SearchAutocomplete from "./SearchAutocomplete";
 import DesktopFilterRenderer from "./DesktopFilterRenderer";
+import FilterDropdown from "./filters/FilterDropdown";
+import GestationalDropdown from "./filters/GestationalDropdown";
+import ActiveFilterPill from "./filters/ActiveFilterPill";
 
 export default function FilterBar() {
   const { t } = useTranslation([
@@ -25,6 +27,7 @@ export default function FilterBar() {
     clearFilters,
     setGestationalWeeks,
     selectedClinic,
+    getActiveFilterCount,
   } = useAppStore();
   const filterOptions = useFilterOptions();
   const visibleFilters = useVisibleFilters();
@@ -54,199 +57,33 @@ export default function FilterBar() {
     setFilter(category, new Set(newFilters[category]));
   };
 
-  const getActiveFilterCount = () => {
-    return (
-      filters.services.size +
-      (filters.genderAffirming?.size || 0) +
-      (filters.prep?.size || 0) +
-      filters.insurance.size +
-      filters.access.size +
-      filters.boroughs.size +
-      (filters.gestationalWeeks !== null ? 1 : 0) +
-      (filters.openNow ? 1 : 0) +
-      (filters.openAfter5pm ? 1 : 0) +
-      filters.subwayLines.size +
-      filters.busRoutes.size +
-      (filters.searchQuery.trim() ? 1 : 0)
-    );
-  };
-
   const removeFilter = (category, value) => {
     const newFilters = { ...filters };
     newFilters[category].delete(value);
     setFilter(category, new Set(newFilters[category]));
   };
 
-  const FilterDropdown = ({
-    name,
-    title,
-    options,
-    category,
-    isChildFilter,
-  }) => {
-    const isOpen = openDropdown === name;
-    const activeCount = filters[category].size;
-    const dropdownRef = useRef(null);
+  // Wrapper to pass required props to FilterDropdown
+  const renderFilterDropdown = (props) => (
+    <FilterDropdown
+      {...props}
+      filters={filters}
+      openDropdown={openDropdown}
+      setOpenDropdown={setOpenDropdown}
+      handleCheckbox={handleCheckbox}
+    />
+  );
 
-    useClickOutside(dropdownRef, () => setOpenDropdown(null), isOpen);
-
-    return (
-      <div
-        ref={dropdownRef}
-        className="relative inline-block transition-transform duration-200"
-      >
-        <button
-          onClick={() => setOpenDropdown(isOpen ? null : name)}
-          aria-expanded={isOpen}
-          aria-haspopup="true"
-          aria-label={`${title} filter${activeCount > 0 ? `, ${activeCount} selected` : ""}`}
-          className={`filter-pill py-2 px-4 rounded-md text-sm font-medium cursor-pointer flex items-center gap-2 focus-ring ${
-            activeCount > 0
-              ? "bg-primary text-white border-2 border-primary"
-              : isChildFilter
-                ? "bg-primary/5 text-text-primary border-2 border-primary/20"
-                : "bg-white text-text-primary border-2 border-border"
-          }`}
-        >
-          {title}
-          {activeCount > 0 && (
-            <span
-              className="bg-white text-primary rounded-full px-2 text-xs font-bold min-w-[20px] text-center"
-              aria-hidden="true"
-            >
-              {activeCount}
-            </span>
-          )}
-          <span aria-hidden="true">{isOpen ? "▲" : "▼"}</span>
-        </button>
-
-        {isOpen && (
-          <div
-            role="menu"
-            className="absolute top-[calc(100%+4px)] start-0 bg-white border border-border rounded-md shadow-lg p-2 min-w-[220px] z-[1000]"
-          >
-            {options.map((option) => (
-              <label
-                key={option.value}
-                role="menuitemcheckbox"
-                aria-checked={filters[category].has(option.value)}
-                className={`flex items-center p-2 cursor-pointer rounded-sm transition-colors ${
-                  filters[category].has(option.value)
-                    ? "bg-primary-light/15"
-                    : "hover:bg-surface"
-                }`}
-              >
-                <input
-                  type="checkbox"
-                  checked={filters[category].has(option.value)}
-                  onChange={() => handleCheckbox(category, option.value)}
-                  className="me-2 w-[18px] h-[18px] cursor-pointer accent-primary"
-                />
-                <span
-                  className={`text-sm select-none flex-1 ${
-                    filters[category].has(option.value)
-                      ? "font-medium"
-                      : "font-normal"
-                  }`}
-                >
-                  {option.label}
-                </span>
-              </label>
-            ))}
-          </div>
-        )}
-      </div>
-    );
-  };
-
-  const GestationalDropdown = () => {
-    const isOpen = openDropdown === "gestational";
-    const hasFilter = filters.gestationalWeeks !== null;
-    const dropdownRef = useRef(null);
-    const { gestationalOptions } = filterOptions;
-    const currentLabel =
-      gestationalOptions.find((o) => o.value === filters.gestationalWeeks)
-        ?.label || t("gestational:weeksPregnant");
-
-    useClickOutside(dropdownRef, () => setOpenDropdown(null), isOpen);
-
-    return (
-      <div
-        ref={dropdownRef}
-        className="relative inline-block transition-transform duration-200"
-      >
-        <button
-          onClick={() => setOpenDropdown(isOpen ? null : "gestational")}
-          aria-expanded={isOpen}
-          aria-haspopup="true"
-          aria-label={`Gestational age filter${hasFilter ? `, ${currentLabel}` : ""}`}
-          className={`filter-pill py-2 px-4 rounded-md text-sm font-medium cursor-pointer flex items-center gap-2 focus-ring ${
-            hasFilter
-              ? "bg-primary text-white border-2 border-primary"
-              : "bg-primary/5 text-text-primary border-2 border-primary/20"
-          }`}
-        >
-          {hasFilter ? currentLabel : t("gestational:weeksPregnant")}
-          <span aria-hidden="true">{isOpen ? "▲" : "▼"}</span>
-        </button>
-
-        {isOpen && (
-          <div
-            role="menu"
-            className="absolute top-[calc(100%+4px)] start-0 bg-white border border-border rounded-md shadow-lg p-2 min-w-[200px] z-[1000]"
-          >
-            {gestationalOptions.map((option) => (
-              <label
-                key={option.value ?? "any"}
-                role="menuitemradio"
-                aria-checked={filters.gestationalWeeks === option.value}
-                className={`flex items-center p-2 cursor-pointer rounded-sm transition-colors ${
-                  filters.gestationalWeeks === option.value
-                    ? "bg-accent/15"
-                    : "hover:bg-surface"
-                }`}
-              >
-                <input
-                  type="radio"
-                  name="gestational"
-                  checked={filters.gestationalWeeks === option.value}
-                  onChange={() => {
-                    setGestationalWeeks(option.value);
-                    setOpenDropdown(null);
-                  }}
-                  className="me-2 w-[18px] h-[18px] cursor-pointer accent-accent"
-                />
-                <span
-                  className={`text-sm select-none flex-1 ${
-                    filters.gestationalWeeks === option.value
-                      ? "font-medium"
-                      : "font-normal"
-                  }`}
-                >
-                  {option.label}
-                </span>
-              </label>
-            ))}
-          </div>
-        )}
-      </div>
-    );
-  };
-
-  const ActiveFilterPill = ({ category, value, label }) => {
-    return (
-      <span className="inline-flex items-center gap-2 py-1 px-3 bg-surface hover:bg-primary/10 text-primary border-[1.5px] border-primary rounded-full text-sm font-medium transition-colors">
-        {label}
-        <button
-          onClick={() => removeFilter(category, value)}
-          aria-label={`Remove ${label} filter`}
-          className="bg-transparent border-none text-primary cursor-pointer text-lg p-2 min-w-[20px] min-h-[20px] flex items-center justify-center rounded-sm focus-ring -me-1"
-        >
-          ×
-        </button>
-      </span>
-    );
-  };
+  // Wrapper to pass required props to GestationalDropdown
+  const renderGestationalDropdown = () => (
+    <GestationalDropdown
+      filters={filters}
+      gestationalOptions={filterOptions.gestationalOptions}
+      openDropdown={openDropdown}
+      setOpenDropdown={setOpenDropdown}
+      setGestationalWeeks={setGestationalWeeks}
+    />
+  );
 
   // Desktop view
   if (!isMobile) {
@@ -293,8 +130,8 @@ export default function FilterBar() {
             <DesktopFilterRenderer
               key={config.id}
               config={config}
-              FilterDropdown={FilterDropdown}
-              GestationalDropdown={GestationalDropdown}
+              FilterDropdown={renderFilterDropdown}
+              GestationalDropdown={renderGestationalDropdown}
             />
           ))}
         </div>
@@ -321,6 +158,7 @@ export default function FilterBar() {
                     category={config.category}
                     value={value}
                     label={options.find((o) => o.value === value)?.label}
+                    onRemove={removeFilter}
                   />
                 ));
               }

@@ -3,42 +3,8 @@ import { useTranslation } from "react-i18next";
 import useEscapeKey from "../hooks/useEscapeKey";
 import { GlobeIcon } from "./Icons";
 import LanguageSwitcher from "./LanguageSwitcher";
-
-function FooterModal({ isOpen, onClose, title, children }) {
-  const { t } = useTranslation(["actions"]);
-
-  useEscapeKey(onClose, isOpen);
-
-  if (!isOpen) return null;
-
-  return (
-    <div
-      className="fixed inset-0 bg-black/50 flex items-center justify-center z-[1000] p-4"
-      onClick={onClose}
-    >
-      <div
-        className="bg-white rounded-lg max-w-[500px] w-full max-h-[80vh] overflow-auto shadow-lg"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="flex justify-between items-center p-4 border-b border-border">
-          <h2 className="m-0 text-lg font-semibold text-text-primary">
-            {title}
-          </h2>
-          <button
-            onClick={onClose}
-            className="bg-transparent border-none text-xl text-text-secondary cursor-pointer p-0 leading-none"
-            aria-label={t("actions:close")}
-          >
-            ×
-          </button>
-        </div>
-        <div className="p-4 text-sm text-text-primary leading-relaxed">
-          {children}
-        </div>
-      </div>
-    </div>
-  );
-}
+import Modal from "./Modal";
+import CloseButton from "./CloseButton";
 
 function LanguageModal({ isOpen, onClose }) {
   const { t } = useTranslation(["footer", "actions"]);
@@ -60,13 +26,7 @@ function LanguageModal({ isOpen, onClose }) {
           <div className="text-sm text-text-secondary">
             {t("footer:selectLanguage")}
           </div>
-          <button
-            onClick={onClose}
-            className="bg-transparent border-none text-xl text-text-secondary cursor-pointer p-0 leading-none"
-            aria-label={t("actions:close")}
-          >
-            ×
-          </button>
+          <CloseButton onClick={onClose} />
         </div>
         <LanguageSwitcher onLanguageChange={onClose} />
       </div>
@@ -117,7 +77,7 @@ export default function Footer({ isMobile, isMapMode }) {
         </button>
       </footer>
 
-      <FooterModal
+      <Modal
         isOpen={activeModal === "about"}
         onClose={() => setActiveModal(null)}
         title={t("footer:about")}
@@ -128,9 +88,9 @@ export default function Footer({ isMobile, isMapMode }) {
         <div className="mt-4 pt-2 border-t border-border text-[10px] text-text-secondary font-mono">
           v.{__COMMIT_HASH__}
         </div>
-      </FooterModal>
+      </Modal>
 
-      <FooterModal
+      <Modal
         isOpen={activeModal === "privacy"}
         onClose={() => setActiveModal(null)}
         title={t("footer:privacy")}
@@ -146,7 +106,7 @@ export default function Footer({ isMobile, isMapMode }) {
         <p className="m-0 text-text-secondary">
           {t("footer:privacyNoCookies")}
         </p>
-      </FooterModal>
+      </Modal>
 
       <LanguageModal
         isOpen={activeModal === "language"}

@@ -23,6 +23,10 @@ vi.mock("../store/useAppStore", () => ({
     },
     setFilter: vi.fn(),
     setGestationalWeeks: vi.fn(),
+    clearFilters: vi.fn(),
+    selectedClinic: null,
+    getActiveFilterCount: () => 0,
+    hasActiveFilters: () => false,
     clinics: [],
   }),
 }));
